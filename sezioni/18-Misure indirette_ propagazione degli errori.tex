@@ -1,0 +1,297 @@
+\section{Misure indirette: propagazione degli errori}
+Quando si misura una grandezza attraverso un calcolo, l'incertezza presente nei dati si ``propaga'' e la ritroviamo nella misura finale. Il modo con cui le incertezze si propagano viene studiato col metodo della propagazione degli errori. Alla base di questo metodo, ci sono due formule, usate nel caso la formula contenga prodotti/quozienti oppure somme/differenze. Tali formule, è bene dirlo, hanno una bene precisa giusitificazione matematica, ma noi non la forniremo, accontentandoci dei risultati.
+\subsection{Somme/differenze}
+Supponiamo che 
+
+\[
+c=a+b
+\]
+
+dove $a$ e $b$ sono grandezze di cui conosciamo l'errore. Quanto valgono il miglior valore di $c$  e il suo errore assoluto $\Delta c$? Ovviamente il miglior valore di $c$ è $\overline{c}=\overline{a}+\overline{b}$ (ad esempio se $a=1$ e $b=3$ allora $c= 4$). Per conoscere invece l'errore assoluto $\Delta c$ dovremmo conoscere l'intervallo di incertezza di $c$, ma $c$ non è stato misurato con uno strumento, ma con un calcolo. Non disponiamo di una riga, una bilancia o qualunque altro strumento per valutare la sensibilità. Dunque non è così ovvio come procedere. I risultati della teoria prevedono che $c$ abbia un valore che è compreso tra $\overline{c} -\Delta c$ e $\overline{c} +\Delta c$ dove l'errore assoluto è semplicemente la somma degli errori:
+\[  \colorboxed{ocre}{
+\Delta c = \Delta a +\Delta b}
+\]
+
+Questa formula quando si applica? Molto semplice. Supponiamo di voler misurare la lunghezza di un tavolo di circa $\SI{1100}{\milli\meter}$ e di disporre di una riga di $\SI{600}{\milli\meter}$ di portata. Allora dovremmo usare \textit{due volte} la riga, una volta per intero   e una volta per una parte in modo che la nostra lunghezza diventi:
+\[
+\overline{l}= \SI{600}{\milli\meter} +\SI{500}{\milli\meter}=\SI{1100}{\milli\meter}
+\]
+Dunque, abbiamo fatto un calcolo. Accostando la riga cioè, abbiamo mentalmente fatto una somma perché ci sembra ovvio che, mettendo in fila la riga, le lunghezze si sommino. La teoria ci dice che l'errore sulla lunghezza vale:
+\[
+\Delta l = \SI{1}{\milli\meter}+\SI{1}{\milli\meter}=\SI{2}{\milli\meter}
+\]
+in quanto l'errore di lettura sulla riga è di $\SI{1}{\milli\meter}$.
+
+Lo stesso discorso si può fare in altri casi. Supponiamo ad esempio di disporre di una bilancia di portata $\SI{4000}{\gram}$. Se dobbiamo pesare due pacchi di peso $\SI{3500}{\gram}$ e $\SI{2000}{\gram}$, non possiamo metterli entrambi sulla bilancia perchè si romperebbe (lo so l'esempio vi sembra artificioso e vi starete chiedendo ``come fai a sapere quanto pesano senza pesarli?'', ma  si può  valutare  ad occhio la massa.) Poi è sempre meglio essere prudenti in queste cose e se una volta pesati separatamente, vediamo che la somma è minore di $\SI{4000}{\gram}$, allora significa che siamo stati troppo prudenti!). Anche  in questo caso quindi, ricorreremo ad una \underline{somma} e, supponendo che la singola pesata abbia un errore di $\SI{1}{g}$, il nostro risultato è :
+\[
+M =\left(5500 \pm 2 \right)\si{\gram}
+\]
+Notiamo che abbiamo preso come errore la somma degli errori, come nel caso precedente.
+
+Questo discorso vale anche per le differenze. La formula analoga alla precedente, nel caso $d=a-b$, è 
+
+
+\[  \colorboxed{ocre}{
+\Delta d = \Delta a + \Delta b}
+\]
+ossia facciamo \textbf{la somma degli errori}, non la differenza. Un esempio è la misura della'area di una figura cava.
+\begin{testexample}[ \thetcbcounter \, Area di un trapezio forato]
+ Guardando la figura in basso, si chiede di calcolare l'area della parte in grigio conoscendo l'area esterna e l'area del cerchio. Supponiamo che l'area esterna (trapezio) valga:
+\[
+A_{tot}=\left (120 \pm 2\right)\si{cm^2}
+\]
+mentre quella del cerchio
+\[
+A_{cerc}=\left( 65 \pm 1\right)\si{cm^2}
+\]
+\definecolor{ffffff}{rgb}{1,1,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.86,-0.18) rectangle (10.16,4.14);
+\fill[fill=black,fill opacity=0.65] (0,0) -- (4,4) -- (10,4) -- (10,0) -- cycle;
+\draw [line width=0.4pt,fill=black,fill opacity=1.0] (6.42,2) circle (1.4cm);
+\draw (0,0)-- (4,4);
+\draw (4,4)-- (10,4);
+\draw (10,4)-- (10,0);
+\draw (10,0)-- (0,0);
+\draw [color=ffffff](6,2.18) node[anchor=north west] {\textbf{$A_{cerc}$}};
+\draw [color=ffffff](2.52,0.92) node[anchor=north west] {\textbf{$A_{est}$}};
+\end{tikzpicture}
+
+allora l'area grigia vale:
+\[
+A_{est}=\left ( 55 \pm  3\right)\si{cm^2}
+\]
+\end{testexample}
+\subsection{Moltiplicazioni/divisioni}
+La regola per gli errori sui prodotti è più complessa. Essa afferma che se una grandezza è prodotto o rapporto tra due grandezze, il suo errore relativo si può calcolare direttamente senza calcolare l'errore assoluto. Quindi con i prodotti e quozienti noi calcoliamo subito l'errore relativo. Traduciamo in formule questa frase. Se $c=a \cdot b$, allora:
+\[  \colorboxed{ocre}{
+\frac{\Delta c}{\overline{c}} =\frac{\Delta b}{\overline{b}}+\frac{\Delta a}{\overline{b}}
+}
+\]
+Questa formula lega l'errore relativo su $c$ a quelli di $a$ e $b$. Facciamo un esempio. Supponiamo di aver misurato i lati $a$ e $b$ di un rettangolo coi relativi errori ottenendo: $a=\left(10,25  \pm 0,05\right)\si{mm}$ e  $b=\left(15,00  \pm 0,05\right)\si{mm}$. L'errore relativo su $c$ è pertanto:
+\[
+\frac{\Delta c}{\overline{c}}=\frac{0,05}{10,25} +\frac{0,05}{15,00}=0,008211382
+\]
+Essendo questo un errore relativo, possiamo lasciare qualche cifra significativa in più. Ora calcoliamo l'area :
+\[
+\overline{A}=\overline{a} \cdot \overline{b} = \SI{10,25}{mm} \cdot \SI{15,00}{mm}  = \SI{153.75}{mm^2} 
+\]
+Ora ci chiediamo come calcolare l'errore assoluto. Ma sappiamo che l'errore relativo e l'errore assoluto sono legati, e l'errore assoluto, si può calcolare da una formula inversa: $\Delta A = E_r \cdot \overline{A}=0,008211382 \cdot \SI{153.75}{mm^2}=\SI{1,26}{mm^2}	\approx \SI{1}{mm^2}$. In definitiva abbiamo:
+\[
+A=\left(154 \pm 1\right)\si{mm^2}
+\]
+Notiamo che abbiamo approssimato l'area per avere lo stesso numero di cifre decimali dell'errore.
+
+\textbf{Osservazione.} In questo esercizio abbiamo calcolato prima l'errore relativo e poi quello assoluto. Se in un problema è richiesto solo l'errore relativo, questo approccio è il più conveniente. In laboratorio di solito, si richiede di calcolare direttamente l'errore assoluto. In tal caso, possiamo verificare che la formula da applicare è:
+\[  \colorboxed{ocre}{
+\Delta c = \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}\right)}
+\]
+Notiamo che l'unità di misura dell'errore è la stessa di $c$ perché la quantità in parentesi è una somma di errori relativi e quindi non ha unità di misura. Per questo, quando si fanno gli esercizi. è sempre bene effettuare i calcoli portandosi dietro le unità di misura. Notiamo ancora che, in parentesi, c'è una somma di errori relativi. Se uno dei due è molto più piccolo dell'altro, allora possiamo trascurarlo. Questo significa che l'errore relativo finale è l'errore relativo della misura \underline{meno precisa}. Per questo, quando in laboratorio facciamo misure, dobbiamo evitare che una misura rozza ``rovini'' il risultato. Questa formula vale anche se vogliamo calcolare l'errore in un rapporto, ovvero, se $c=\frac{a}{b}$, allora: 
+
+\[
+\Delta c = \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}\right)
+\] 
+
+
+Facciamo un altro esempio.
+\vspace{0.5 cm}
+\begin{testexample}[\thetcbcounter \, Densità di un liquido]
+Supponiamo di aver misurato la massa e il volume di un liquido ottenendo i risultati: $M=\left(320,0  \pm 0,1 \right)\si{g} $ e $V=\left(407 \pm 1 \right)\si{mL}$. Calcoliamo la densità senza approssimarla:
+\[
+\overline{d}=\frac{\overline{M}}{\overline{V}}=\frac{\SI{320,0}{g}}{\SI{407}{mL}}=\SI{7,400491}{\frac{g}{mL}}
+\]
+Ora calcoliamo l'errore:
+\[
+\Delta d = \overline{d}\cdot \left(\frac{\Delta M}{\overline{M}} +\frac{\Delta V}{\overline{V}}  \right)   = \SI{7,400491}{\frac{g}{mL}}\cdot\left(\frac{0,1}{320,0} +\frac{1}{407}  \right) =\SI{0,02}{\frac{g}{mL}}
+\]
+In definitiva la nostra densità vale:
+\[
+d=\left(7,40 \pm 0.02 \right)\si{\frac{g}{mL}}
+\]
+\end{testexample}
+
+
+\begin{testexample}[\thetcbcounter \, Velocità media]
+Un gruppo di studenti ha misurato il tempo $t=\left(2,3450 \pm 0,0001\right)\,\si{\second}$ impiegato da un carrello, per percorrere  lo spazio percorso $s=\left(1822 \pm 1\right)\,\si{\milli\meter}$.  Determinare la velocità media e il suo errore assoluto e scrivere il risultato in forma corretta nel sistema internazionale: $v = \left( \overline{v} \pm \Delta v\right)\,\si{\meter\per\second}$.
+
+
+La velocità media $\overline{v}$ si ottiene dividendo lo spazio percorso $s$ per il tempo impiegato $t$:
+
+$$\overline{v} = \frac{\overline{s}}{\overline{t}} = \frac{1822\,\si{\milli\meter}}{2,345\,\si{\second}} = \SI{776,97}{\milli\meter\per\second} =  \SI{0,77697}{\meter\per\second}  $$
+Calcolo dell'errore assoluto:
+\[
+\Delta v = \overline{v}\cdot \left(\frac{\Delta s}{\overline{s}} +\frac{\Delta t}{\overline{t}}  \right) =  \left( \SI{0,77697}{\meter\per\second}\right)\cdot \left(\frac{1}{1822} +\frac{0,0001}{2,3450}  \right) = \SI{0,000459571}{\meter\per\second} \approx \SI{0,0005}{\meter\per\second}.   
+\]
+In definitiva:
+\[
+v=\left(0,7770 \pm 0,0005\right) \, \si{\meter\per\second}
+\]
+Osserviamo che nel calcolo dell'errore relativo, non occorre trasformare i dati nel sistema S.I. perché eventuali fattori di conversione, si semplificherebbero nella frazione. Inoltre, prima di inserire la velocità nella scrittura corretta, l'abbiamo approssimata alla quarta cifra decimale come l'errore. Si noti in fine, che non c'è stato bisogno di riportare i passaggi intermedi per gli errori relativi e applicare le regole sulle cifre significative nella somma, perché, quando si calcolano gli errori, quelle regole non vanno applicate e si può impostare tutto il calcolo direttamente sulla calcolatrice. Stesso discorso quando abbiamo molte potenze di 10: conviene inserirle nella calcolatrice e lasciare che si occupi del calcolo, questo non è un corso di matematica!
+ \end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Volume di un parallelepipedo]
+Il volume di un parallelepipedo è dato dalla formula:
+\[
+V=a \cdot b \cdot c
+\]
+Immaginiamo di avere i seguenti valori dei lati: $a=\left(10,2 \pm 0,1\right)\si{cm}$, $b=\left(8,0 \pm 0,1\right)\si{cm}$, e $c=\left(12,6 \pm 0,1\right)\si{cm}$.
+Calcoliamo l'errore assoluto sul volume. La regola del prodotto contiene tre fattori, pertanto avremo:
+\[
+\Delta V=\overline{V} \cdot \left( \frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}} +\frac{\Delta c}{\overline{c}}\right)
+\]
+Prima calcoliamo il volume: $\overline{V}=\left(\SI{10,2}{cm}\right)\cdot \left(\SI{8,0}{cm}\right)\cdot \left(\SI{12,6}{cm}\right)=\SI{1028,16}{cm^3}$.
+L'errore diventa:
+\[
+\Delta V=\SI{1028,16}{cm^3} \cdot \left( \frac{0,1}{10,2}+\frac{0,1}{8,0} +\frac{0,1}{12,6}\right)=\SI{31,092}{cm^3}
+\]
+Questo errore ha troppe cifre significative. Per ridurle, possiamo usare la notazione scientifica oppure, un multiplo del centimetro, in modo da ottenere un errore minore di 9 che sappiamo approssimare. Pertanto scriveremo:
+\[
+\Delta V = \SI{0,031092}{dm^3}\approx \SI{0,03}{dm^3}
+\]
+Analogamente si ha:
+\[
+V=\SI{1,02816}{dm^3} 
+\]
+Dunque la misura finale scritta col corretto numero di cifre significative è:
+\[
+V=\left(1,03 \pm 0,03\right)\si{dm^3}
+\]
+Quando gli errori sono maggiori di 10, è concesso lasciare gli zeri ammettendo che, anche se normalmente sarebbero significativi (perché alla fine del numero) in questo caso non lo sono. Quindi, volendo lasciare tutto in centimetri, avremmo anche potuto scrivere:
+\[
+V=\left(1030 \pm 30\right)\,\si{\cubic\centi\meter}.
+\]
+\end{testexample}
+\begin{testexample}[\thetcbcounter \, perimetro di un quadrato]
+Consideriamo un quadrato di lato  $l=\left(10,2 \pm 0,1\right)\si{cm}$. La formula del perimetro è:
+\[
+\overline{P}=4\overline{l} = 4\cdot \left(\SI{10,2}{\centi\meter} \right) =\SI{40,8}{\centi\meter}.
+\]
+pertanto, usando la regola per la propagazione dell'errore in un prodotto, abbiamo:
+\[
+\Delta P= \overline{P}\cdot\left( \cancel{\frac{\Delta 4}{4}} +\frac{\Delta l}{\overline{l}}  \right) = \left(\SI{40,8}{\centi\meter}\right)\cdot \left(\frac{0,1}{10,2} \right) =\SI{0,4}{\centi\meter} .
+\]
+dove abbiamo cancellato il primo addendo perché 4 (cosi come $\pi$ e tutte le costanti nelle formule) non ha errore (però bisogna metterlo nel calcolo del perimetro). In definitiva abbiamo:
+\[
+P=\left(40,8 \pm 0,4\right) \si{\centi\meter}.
+\]
+\end{testexample}
+
+
+
+
+Notiamo che se si ha una formula del tipo:
+\[
+c=\frac{a\cdot b^2}{d}
+\]
+ogni fattore al numeratore o al denominatore contribuisce tante volte all'errore relativo quanto è alta la sua potenza perchè la potenza non è altro che una moltiplicazione ripetuta. Dunque, la formula dell'errore diventa:
+\[
+\Delta c= \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}} +\frac{\Delta b}{\overline{b}}  +\frac{\Delta d}{\overline{d}} \right)= \left(\frac{\Delta a}{\overline{a}}+2\frac{\Delta b}{\overline{b}}  +\frac{\Delta d}{\overline{d}} \right)
+\]
+\begin{testexample}[\thetcbcounter \, Misura dell'accelerazione di gravità]
+Nella teoria del moto di un oggetto in caduta, si ricava la seguente formula per il calcolo dell'accelerazione di gravità $g$:
+\[
+g=\frac{2\cdot h}{t^2}
+\]
+essendo $h$ l'altezza da cui il corpo cade, e $t$ il tempo impiegato a cadere. Vogliamo calcolare l'errore su $g$ supponendo le seguenti misure: $h=\left(6,00 \pm 0,01\right)\si{m}$, e $t=\left(1,11\pm 0,01\right)\si{s}$. Inserendo i valori otteniamo subito: $g = \SI{9,74}{m/s^2}$.
+Per l'errore è facile convincersi che la formula da usare è:
+\[
+\Delta g= \overline{g}\left(\frac{\Delta h}{\overline{h}} +2\frac{\Delta t}{\overline{t}}\right)=\SI{0,19}{m/s^2}\approx \SI{0,2}{m/s^2}
+\]
+In definitiva:
+\[
+g=\left(9,7 \pm 0,2\right)\si{m/s^2}
+\]
+\end{testexample}
+\begin{testexample}[\thetcbcounter \,  Volume del cilindro]
+Consideriamo un cilindro di raggio $r=\left(1,205 \pm 0,005\right)\si{cm}$ e altezza $h=\left(4,000 \pm 0,005 \right)\si{cm}$. La formula per il calcolo del volume è:
+\[
+V=\pi\cdot  r^2 \cdot h
+\]
+pertanto il valore numerico risulta: $V =\SI{18,247}{cm^3}$, mentre per l'errore si ha:
+\[
+\Delta V=\overline{V}\cdot \left(2\frac{\Delta r}{\overline{r}} +\frac{\Delta h}{\overline{h}}\right)=\SI{0,174}{cm^3}\approx \SI{0,2}{cm^3}
+\]
+La misura comprensiva dell'errore è pertanto:
+\[
+V=\left(18,2 \pm 0,2\right)\si{cm^3}
+\]
+\end{testexample}
+
+
+\subsection{Esercizi}
+\begin{esercizio}
+In laboratorio si vuole misurare il volume di un solido irregolare. Per fare questo, si misura inizialmente il volume di una certa quantità d'acqua presente in un becker, ottenendo il valore  $V_i=\left(60 \pm 1\right)\si{mL}$. Una volta inserito il corpo, il livello sale a $V_f=\left(105 \pm 1\right)\si{mL}$. Determina il volume dell'oggetto sommerso e scrivi il risultato in forma corretta.\\
+ \hspace*{\fill}  $\left[V=\left(45 \pm 2\right)\si{mL}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Si vuole misurare la lunghezza di una stanza utilizzando un metro con portata $\SI{2,000}{m}$ e sensibilità $\SI{0,1}{cm}$. Il valore misurato risulta essere $L=\SI{6,450}{m}$. Scrivi il risultato in forma corretta (hai già il valore della grandezza, ti manca l'errore). Rifletti su come potrebbe essere stata effettuata la misura per capire quanto vale l'errore.\\
+ \hspace*{\fill}  $\left[L=\left(6,450 \pm 0,003\right)\si{m}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un pentagono regolare, ha lato $L=\left(2,5 \pm 0,1\right)\si{cm}$. Determina il suo perimetro e scrivi il risultato con l'errore.\\
+ \hspace*{\fill}   $\left[2P=\left(12,5 \pm 0,5\right)\si{cm}\right]$
+\end{esercizio}
+\begin{esercizio}
+Viene misurato 10 volte il tempo T di oscillazione di un pendolo, ottenendo i risultati in tabella:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+T(s)& Ripetuto\\
+\hline
+1,25 & 2 volte\\
+1,24 & 4 volte \\
+1,23 & 1 volta \\
+1,20 & 2 volte \\
+1,21 & 1 volta \\
+\hline
+\end{tabular}
+\end{center}
+Determina il valore medio e l'errore. In fine, scrivi il risultato in forma corretta.\\
+\hspace*{\fill}   $\left[T=\left(1,23 \pm 0,03\right)\si{s}\right]$
+\end{esercizio}
+\begin{esercizio}
+Un modo per misurare l'accelerazione di caduta, è usare la seguente relazione:
+\[
+g=\frac{v^2}{2 h}
+\]
+essendo $h$ l'altezza da cui si fa cadere un oggetto, e $v$ la velocità di caduta (misurata con un cronometro fatto partire automaticamente quando l'oggetto cade, tramite una fotocellula). Un gruppo di studenti, ha misurato $h$ e $v$ ottenendo:
+\[
+h=\left(1226 \pm 1 \right) \, \si{\milli\meter} \text{;}\,\, v=\left(4,8531 \pm  0,0001\right) \, \si{\meter\per\second} 
+\]
+Determina il valore di $g$ col suo errore e scrivi il risultato in forma corretta. \\\hspace*{\fill} [$g=\left(9,605 \pm 0,008 \right) \, \si{\meter\per\square\second}$] 
+\end{esercizio}
+
+\begin{esercizio}
+In geometria, il volume di una sfera di raggio $r$ si calcola con la formula:
+\[
+V=\frac{4\cdot\pi \cdot r^3}{3}
+\] 
+Supponiamo di aver misurato col calibro il diametro $d$ di una sfera avendo ottenuto $d=\left(9,555 \pm 0,005\right)\si{cm}$. Dimostra che la formula del volume, espressa rispetto al diametro è:
+\[
+V=\frac{\pi \cdot d^3}{6}
+\]
+Utilizzando questa formula:
+\begin{enumerate}
+\item[a)] Calcola il volume;
+\item[b)] Scrivi la formula per il calcolo dell'errore;
+\item[c)] Calcola l'errore.
+\item[d)] Scrivi il risultato in forma corretta.
+\end{enumerate}
+ \hspace*{\fill}   $\left[\overline{V}=\SI{456.76}{cm^3}\text{,} \Delta V=\overline{V}\cdot\left(3\frac{\Delta d}{d}\right)\approx\SI{0.7}{cm^3}\text{,} V=\left(456,8 \pm 0,7 \right)\si{cm^3}\right] $
+\end{esercizio}
+\vspace{0.2cm}
+\begin{esercizio}
+Si sa che una grandezza $f$ dipende dalle grandezze $a$, $b$, $c$, $d$, $e$ attraverso la formula:
+\[
+f = 4 \cdot \frac{a\cdot b^2 \cdot c^3}{d^4 \cdot e^5}
+\]
+Determina la formula per il calcolo dell'errore assoluto su $d$.\\
+
+\hspace*{\fill} $\left[\Delta d=\overline{d}\cdot\left(\frac{\Delta a}{\overline{a}}+ 2\cdot \frac{\Delta b}{\overline{b}} +3\cdot\frac{\Delta c}{\overline{c}} + 4\cdot \frac{\Delta d}{\overline{d}} + 5\cdot \frac{\Delta e}{\overline{e}}  \right)\right]$
+\end{esercizio}
+
+ \chapter{Grafici di misure}
+In fisica spesso è possibile verificare una formula facendo variare una delle grandezze contenute e osservando su un grafico come varia un'altra grandezza. A questo scopo si predispone una tabella coi dati e poi si realizza un grafico avendo come obiettivo una buona leggibilità. Elencheremo di seguito una procedura passo-passo, per realizzare dei buoni grafici elencando tutte le caratteristiche indispensabili. Nelle prossieme sezioni, realizzeremo, prima un grafico a mano, poi con l'uso del foglio di calcolo.

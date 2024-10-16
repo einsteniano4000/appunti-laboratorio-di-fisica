@@ -1,0 +1,26 @@
+\section{Stima di Media e Deviazione Standard}
+Data una serie di $n$ misurazioni sperimentali $\{x_1, x_2, \ldots, x_n\}$, possiamo stimare i parametri della distribuzione gaussiana, cioè la media $\mu$ e la deviazione standard $\sigma$, utilizzando le seguenti formule:
+
+\subsection{Calcolo della Media}
+La media campionaria $\hat{\mu}$ è data dalla somma di tutte le osservazioni divisa per il numero totale di osservazioni:
+
+\begin{equation}
+\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\end{equation}
+
+\subsection{Calcolo della Deviazione Standard}
+La deviazione standard campionaria $\hat{\sigma}$ è data dalla radice quadrata della somma dei quadrati delle differenze tra ciascuna osservazione e la media campionaria, divisa per il numero di osservazioni meno uno:
+
+\begin{equation}
+\hat{\sigma} = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \hat{\mu})^2}
+\end{equation}
+
+\subsection{Calcolo della Deviazione Standard della Media}
+La deviazione standard della media, nota anche come errore standard della media, è calcolata come:
+
+\begin{equation}
+\sigma_{\overline{x}} = \frac{\hat{\sigma}}{\sqrt{n}}
+\end{equation}
+
+Dove $\hat{\sigma}$ è la deviazione standard campionaria e $n$ è il numero di osservazioni. La deviazione standard della media rappresenta quanto la media campionaria è attesa essere distante dalla media vera della popolazione. Per una stima più precisa, questa deviazione standard della media viene approssimata a una cifra significativa.
+

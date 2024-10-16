@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{c+c1}{\PYGZsh{} Dati sperimentali}
+\PYG{n}{tempi} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{2.3}\PYG{p}{,} \PYG{l+m+mf}{2.5}\PYG{p}{,} \PYG{l+m+mf}{2.4}\PYG{p}{,} \PYG{l+m+mf}{2.6}\PYG{p}{,} \PYG{l+m+mf}{2.4}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{} Calcolo della media}
+\PYG{n}{media} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{tempi}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}La media dei tempi di caduta è: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{media}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ s\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Calcolo della deviazione standard}
+\PYG{n}{deviazione\PYGZus{}standard} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{tempi}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}La deviazione standard dei tempi di caduta è: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{deviazione\PYGZus{}standard}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ s\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

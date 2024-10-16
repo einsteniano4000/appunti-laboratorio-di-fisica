@@ -1,0 +1,54 @@
+\section{Confronto tra misure}
+Supponiamo che due gruppi di studenti abbiano misurato la densità di un oggetto ottenendo i valori $d_1=\left(6,7 \pm 0,2\right)\si{g/cm^3}$ e $d_2=\left(6,9 \pm 0,2\right)\si{g/cm^3}$. Ci chiediamo: questi due valori sono compatibili? All'apparenza no, perchè sono diversi. Siamo portati a pensare che i materiali siano leggermente diversi, oppure uno dei gruppi abbia sbagliato la presa dati. In realtà, per rispondere correttamente, dobbiamo ricordare che le misure sono incerte e il risultato è un intervallo di valori. Nel primo caso l'intervallo và da un minimo di $\SI{6,5}{g/	cm^3}$ ad un massimo di $\SI{6,9}{g/cm^3}$. Per il secondo gruppo, l'intervallo va da $\SI{6,7}{g/cm^3}$ a $\SI{7,1}{g/cm^3}$. La situazione è rappresentata in figura:
+
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqzz}{rgb}{0,0,0.6}
+\definecolor{zzqqtt}{rgb}{0.6,0,0.2}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.92,-2.28) rectangle (10.44,3.34);
+\fill[pattern color=zzttqq,fill=zzttqq,pattern=north east lines] (2.98,1.02) -- (2.96,0) -- (6,0) -- (6.02,1.02) -- cycle;
+\draw [line width=3.6pt,color=zzqqtt] (0,0)-- (6,0);
+\draw [line width=3.6pt,color=qqqqzz] (2.98,1.02)-- (8.98,1.02);
+\draw (-0.12,-0.14) node[anchor=north west] {$6,5 $};
+\draw (6.24,0.4) node[anchor=north west] {$6,9$};
+\draw (2.1,1.42) node[anchor=north west] {$6,7$};
+\draw (9.1,1.44) node[anchor=north west] {$7,1$};
+\draw [line width=2pt,dash pattern=on 2pt off 2pt] (2.96,1.94)-- (2.96,-1.06);
+\draw [dash pattern=on 2pt off 2pt] (6.02,1.94)-- (6.02,-1.06);
+\draw [color=zzttqq] (2.98,1.02)-- (2.96,0);
+\draw [color=zzttqq] (2.96,0)-- (6,0);
+\draw [color=zzttqq] (6,0)-- (6.02,1.02);
+\draw [color=zzttqq] (6.02,1.02)-- (2.98,1.02);
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\fill [color=qqqqff] (6,0) circle (1.5pt);
+\fill [color=qqqqff] (2.98,1.02) circle (1.5pt);
+\fill [color=qqqqff] (8.98,1.02) circle (1.5pt);
+\fill [color=uququq] (2.96,0) circle (1.5pt);
+\fill [color=uququq] (6.02,1.02) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+In questo grafico abbiamo riportato i due intervalli di misura in rosso e blu. La zona tratteggiata indica che i due intervalli hanno una zona in comune, ossia la nostra grandezza potrebbe avere come valore vero un valore compreso tra $6,7$ e $6,9$ ma non sappiamo dire di più. Si dice allora che le due misure sono compatibili. Se i due intervalli non si sovrappongono, allora le misure si dicono incompatibili. Nel seguente grafico vediamo proprio un caso simile.
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.92,-2.28) rectangle (14.94,3.34);
+\draw [line width=3.6pt,color=zzqqtt] (0,0)-- (5.02,0);
+\draw [line width=3.6pt,color=qqqqzz] (6.5,1.02)-- (8.98,1.02);
+\draw (-0.32,-0.04) node[anchor=north west] {$6,5 $};
+\draw (4.52,0.04) node[anchor=north west] {$6,9$};
+\draw (5.40,1.44) node[anchor=north west] {$6,10$};
+\draw (9.00,1.46) node[anchor=north west] {$6,11$};
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\fill [color=qqqqff] (5.02,0) circle (1.5pt);
+\fill [color=qqqqff] (6.5,1.02) circle (1.5pt);
+\fill [color=qqqqff] (8.98,1.02) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+Come si vede il valore massimo della prima misura, $6,9$, è minore del valore minimo della seconda ($6,10$) dunque non ci sono valori comuni ai due intervalli d'incertezza, per cui le misure sono incompatibili. Questo si può generalizzare al caso di più misure. Se anche un solo intervallo non si sovrappone agli altri, allora le misure sono incompatibli. Ovviamente, se tutte le altre sono vicine tra loro e una sola misura è parecchio diversa, probabilmente gli sperimentatori hanno commesso qualche errore di distrazione in quel momento e la misura andrebbe
+ ripetuta o semplicemente ignorata.
+ 
+ 

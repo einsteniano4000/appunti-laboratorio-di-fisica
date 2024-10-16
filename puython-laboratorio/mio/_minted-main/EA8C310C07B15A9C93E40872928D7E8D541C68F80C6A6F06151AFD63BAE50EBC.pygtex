@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Creazione di una lista}
+\PYG{n}{numeri} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Accesso agli elementi della lista}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{numeri}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}  \PYG{c+c1}{\PYGZsh{} Output: 1}
+
+\PYG{c+c1}{\PYGZsh{} Modifica di un elemento della lista}
+\PYG{n}{numeri}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{10}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{numeri}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: [1, 10, 3, 4, 5]}
+
+\PYG{c+c1}{\PYGZsh{} Aggiunta di un elemento alla lista}
+\PYG{n}{numeri}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{numeri}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: [1, 10, 3, 4, 5, 6]}
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{mintes}\PYG{p}{\PYGZcb{}}
+
+\PYGZbs{}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Cicli}\PYG{p}{\PYGZcb{}}
+\PYG{n}{I} \PYG{n}{cicli} \PYG{n}{sono} \PYG{n}{utilizzati} \PYG{n}{per} \PYG{n}{iterare} \PYG{n}{su} \PYG{n}{una} \PYG{n}{sequenza} \PYG{n}{di} \PYG{n}{elementi}\PYG{p}{,} \PYG{n}{come} \PYG{n}{una} \PYG{n}{lista}\PYG{o}{.}
+
+\PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{minted}\PYG{p}{\PYGZcb{}[}\PYG{n}{linenos}\PYG{p}{,}\PYG{n}{breaklines}\PYG{p}{]\PYGZob{}}\PYG{n}{python}\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{} Ciclo for}
+\PYG{k}{for} \PYG{n}{numero} \PYG{o+ow}{in} \PYG{n}{numeri}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{numero}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Ciclo while}
+\PYG{n}{contatore} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{while} \PYG{n}{contatore} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{contatore}\PYG{p}{)}
+    \PYG{n}{contatore} \PYG{o}{+=} \PYG{l+m+mi}{1}
+\end{Verbatim}

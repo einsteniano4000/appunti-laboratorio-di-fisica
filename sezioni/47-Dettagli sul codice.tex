@@ -1,0 +1,116 @@
+\section{Dettagli sul codice}
+
+\subsection{Dati Sperimentali}
+I dati di tempo e distanza sono memorizzati nei seguenti array:
+
+\begin{itemize}
+    \item \texttt{tempo}: Array contenente i valori di tempo (in secondi).
+    \item \texttt{distanza}: Array contenente i valori di distanza (in metri) misurati.
+    \item \texttt{error\_distanza}: Array contenente gli errori associati alle misure di distanza (in metri).
+\end{itemize}
+
+\subsection{Calcolo di \( t^2 \)}
+Per adattare il modello \( d = \frac{1}{2} g t^2 \), è necessario calcolare il tempo al quadrato. Questo viene fatto con:
+
+\begin{lstlisting}
+# Calcolo del tempo al quadrato
+tempo_squared = tempo**2
+\end{lstlisting}
+
+Il vettore \texttt{tempo\_squared} contiene i valori del tempo al quadrato, che sono usati per la regressione lineare.
+
+\subsection{Definizione della Funzione di Modello}
+Definiamo una funzione lineare che rappresenta la relazione tra distanza e tempo al quadrato:
+
+\begin{lstlisting}
+# Definizione della funzione lineare
+def linear_model(t_squared, g_over_2):
+    return g_over_2 * t_squared
+\end{lstlisting}
+
+Questa funzione modella la relazione \( d = \frac{1}{2} g t^2 \) e assume che l'intercetta sia zero. \texttt{g\_over\_2} rappresenta la metà dell'accelerazione di gravità.
+
+\subsection{Regressione Lineare}
+Utilizziamo la funzione \texttt{curve\_fit} per eseguire la regressione lineare. I parametri e la covarianza sono ottenuti da:
+
+\begin{lstlisting}
+# Regressione lineare forzata attraverso l'origine
+params, covariance = curve_fit(linear_model, tempo_squared, distanza, sigma=error_distanza, absolute_sigma=True)
+g_over_2 = params[0]
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{curve\_fit}: Funzione che calcola i parametri migliori per adattare il modello ai dati.
+    \item \texttt{linear\_model}: La funzione di modello lineare definita in precedenza.
+    \item \texttt{tempo\_squared}: Array contenente i valori di tempo al quadrato.
+    \item \texttt{distanza}: Array contenente i valori di distanza misurati.
+    \item \texttt{sigma=error\_distanza}: Specifica gli errori associati alle misure di distanza.
+    \item \texttt{absolute\_sigma=True}: Indica che gli errori forniti sono errori assoluti.
+    \item \texttt{params}: Array contenente i parametri stimati (in questo caso, \texttt{g\_over\_2}).
+    \item \texttt{covariance}: Matrice di covarianza dei parametri stimati, utilizzata per calcolare l'incertezza associata.
+\end{itemize}
+
+\subsection{Calcolo dell'Accelerazione di Gravità}
+L'accelerazione di gravità \( g \) è calcolata come:
+
+\begin{lstlisting}
+# Calcolo di g
+g = 2 * g_over_2
+\end{lstlisting}
+
+Poiché il nostro modello è \( d = \frac{1}{2} g t^2 \), la pendenza \( g\_over\_2 \) è la metà dell'accelerazione di gravità.
+
+\subsection{Calcolo dell'Errore Associato}
+L'errore associato a \( g \) è calcolato utilizzando la covarianza dei parametri:
+
+\begin{lstlisting}
+# Calcolo dell'errore associato
+std_err = np.sqrt(np.diag(covariance))
+g_error = 2 * std_err[0]
+
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{np.sqrt(np.diag(covariance))}: Calcola l'errore standard dei parametri stimati.
+    \item \texttt{std\_err}: Array contenente gli errori standard.
+    \item \texttt{g\_error}: L'errore associato all'accelerazione di gravità \( g \), calcolato come il doppio dell'errore della pendenza \( g/2 \).
+\end{itemize}
+
+\subsection{Creazione del Grafico}
+Il grafico visualizza i dati sperimentali e la retta di regressione. Le barre d'errore sono mostrate per indicare l'incertezza nella misura della distanza:
+
+\begin{lstlisting}
+# Creazione del grafico
+plt.figure(figsize=(8, 6))
+plt.errorbar(tempo_squared, distanza, yerr=error_distanza, fmt='o', label='Dati sperimentali', capsize=5)
+plt.plot(tempo_squared, linear_model(tempo_squared, *params), 'r-', label='Retta di regressione')
+plt.title('Misurazione dell\'Accelerazione di Gravità')
+plt.xlabel('Tempo al quadrato (s^2)')
+plt.ylabel('Distanza (m)')
+plt.legend()
+plt.grid(True)
+plt.show()
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{plt.figure(figsize=(8, 6))}: Crea una nuova figura di dimensioni 8x6 pollici.
+    \item \texttt{plt.errorbar}: Crea un grafico a dispersione con barre d'errore per ogni punto dati.
+    \item \texttt{tempo\_squared}: Array con i valori di tempo al quadrato.
+    \item \texttt{distanza}: Array con i valori di distanza misurati.
+    \item \texttt{yerr=error\_distanza}: Specifica gli errori associati alle misure di distanza.
+    \item \texttt{fmt='o'}: Specifica che i punti dati sono rappresentati come cerchi.
+    \item \texttt{label='Dati sperimentali'}: Etichetta per i dati sperimentali.
+    \item \texttt{capsize=5}: Lunghezza delle barre orizzontali alle estremità delle barre d'errore.
+    \item \texttt{plt.plot}: Disegna la retta di regressione.
+    \item \texttt{linear\_model(tempo\_squared, *params)}: Valori previsti dal modello lineare.
+    \item \texttt{'r-'}: Specifica che la retta di regressione è rossa e solida.
+    \item \texttt{label='Retta di regressione'}: Etichetta per la retta di regressione.
+    \item \texttt{plt.title}: Aggiunge il titolo al grafico.
+    \item \texttt{plt.xlabel}: Aggiunge l'etichetta all'asse delle ascisse.
+    \item \texttt{plt.ylabel}: Aggiunge l'etichetta all'asse delle ordinate.
+    \item \texttt{plt.legend()}: Mostra la legenda nel grafico.
+    \item \texttt{plt.grid(True)}: Aggiunge una griglia al grafico.
+    \item \texttt{plt.show()}: Visualizza il grafico.
+\end{itemize}
+
+

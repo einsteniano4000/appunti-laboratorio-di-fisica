@@ -1,0 +1,122 @@
+\section{Alcuni esempi sulla sensibilità e la portata}
+Quando dobbiamo valutare la sensibilità di uno strumento digitale (con display per intenderci) possiamo cercare questa informazione che dovrebbe essere riportata da qualche parte, insieme alla portata, sullo strumento stesso. Nelle nostre bilance di laboratorio è proprio così (figura~\ref{fig:bilancia}). Se non è scritto, la sensibilità è una unità sull'ultima posizione decimale che comprare sul display. Nel caso della bilancia in figura, vediamo che quando è scarica, sul display c'è scritto 0,0 g e capiamo che la sensibilità è di 0,1 g. Per la portata è più complicato in certi casi. 
+
+\begin{testexample}[\thetcbcounter \, Bilancia digitale]
+	
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.14]{bilancia}
+	\captionof{figure}{Bilancia digitale}
+	\label{fig:bilancia}
+\end{minipage}
+	
+	
+\end{testexample}
+\begin{testexample}[\thetcbcounter \,Cronometro analogico]
+Guardando il cronometro analogico in figura \ref{fig:cron}, vediamo che il valore massimo del tempo, si ottiene quando la lancetta interna (che và in 30 secondi dal bianco al rosso) arriva su 15 minuti, dunque la sensibilità è di 0,1 s e la portata da massima di 15 min = 900 s. La misura che vediamo in foto, corrisponde ad un tempo di 3 minuti e 5,6 secondi, ossia $3\times 60 \,\si{\second} +\SI{5,6}{\second}= \SI{185,6}{\second}$ quindi la scrittura formale (o corretta) della misura sarà:
+\[
+t=\left(185,6\pm 0,1\right)\,\si{\second}
+\]
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.2]{cronometro}
+	\captionof{figure}{Cronometro analogico}
+	\label{fig:cron}
+\end{minipage}
+
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Cilindro graduato]
+In chimica e in fisica, spesso si misurano volumi di liquidi usando un cilindro graduato. Guardando la figura \ref{fig:cil}, possiamo calcolare la sensibilità del cilindro, infatti, tra 70 mL e 80 mL ci sono 10 tacche, quindi la sensibilità vale:
+\[
+s = \frac{(80 - 70),\si{\milli\liter}}{10,\text{Div}} = \SI{1}{\milli\liter} 
+\]
+
+Per quanto riguarda invece il campo di misura, i valori sono: minimo $\SI{10}{\milli\liter}$ e massimo $\SI{100}{\milli\liter}$. In fine, la misura del liquido contenuto è:
+
+\[
+V=\left(60 \pm 1\right)\,\si{\milli\liter}
+\]
+
+E' bene comunque notare che non è sempre così semplice. In laboratorio, abbiamo cilindri con varie sensibilità. Se la sensibilità è ad esempio 5 mL e il liquido sale due tacche sopra i 200 mL, allora la nostra misura sarà: $$V=\left(210 \pm 5 \right) \, \si{\milli\liter}$$.
+
+
+\begin{minipage}{\linewidth}
+	\centering
+    \includegraphics[scale=0.35]{cil.jpg}
+   \captionof{figure}{Cilindro graduato}
+	\label{fig:cil}
+\end{minipage}
+\end{testexample}
+
+
+\begin{testexample}[\thetcbcounter \,Cordella metrica]
+	Lo strumento nella figura \ref{fig:cordella1} è una cordella metrica, usata per misurare lunghezze di alcuni metri. Guardando la figura, possiamo cercare di valutarne la sensibilità anche se sulla scala ci sono pochi numeri. Vediamo scritto 10 ma ovviamente non può trattarsi di millimetri, altrimenti 10 mm sarebbero un cm! Dunque sono 10 cm e, siccome tra 0 e 10 ci sono 10 divisioni, la sensibilità è di 1 cm. La portata è scritta sulla cordella ed è di 20 m (dovremmo usare la sensibilità come unità di misura anche per indicare la portata e quindi la portata si dovrebbe scrivere P= $20\times 100\,\si{\centi\meter = 2000\,\si{\centi\meter}}$)
+		
+		\begin{minipage}{\linewidth}
+			\centering
+		\includegraphics[scale=0.2]{cordella1}
+		\captionof{figure}{Cordella metrica da 1 cm di sensibilità}
+		\label{fig:cordella1}
+	\end{minipage}
+Nella figura  \ref{fig:cordella2}, vediamo invece una cordella metrica diversa.	Sulla scala leggiamo 1|0 che evidentemente indica 10 cm (infatti 2|0 dista grosso modo 10 cm da tale tacca). Tra 10 e 11 ci sono 5 tacche, pertanto la sensibilità, sarà:
+\[
+s=\frac{\left(11-10\right)\,\si{\centi\meter}}{5\, \text{Div}} = \SI{0,2}{\centi\meter}.
+\]
+	
+			\begin{minipage}{\linewidth}
+		\centering
+	\includegraphics[scale=0.2]{cordella2}
+		\captionof{figure}{Cordella metrica da 0,2 cm di sensibilità}
+		\label{fig:cordella2}
+	\end{minipage}
+
+mentre la portata è di	30 m.
+	
+\end{testexample}
+
+Quale strumento usare quando se ne hanno vari a disposizione? Il metro da falegname è più sensibile delle cordelle metriche col suo millimetro di sensibilità ma non è indicato per misurare lunghezze maggiori della sua portata di 2 metri. Se devo pesare una persona, non potrò usare la bilancia di laboratorio con la sua portata di 1200 g!
+
+
+\begin{testexample}[\thetcbcounter \,Una semplice misura di lunghezza.]
+Supponiamo di dover misurare la lunghezza di un muro e di usare la cordella metrica con sensibilità di 0,2 cm. Poiché la sensibilità è di 0,2 cm, il risultato dovrà essere indicato in cm. Guardando la figura, vediamo che la tacca più vicina al bordo è la terza dopo 360 cm, quindi $L = \SI{360}{\centi\meter} + 3\times (\SI{0,2}{\centi\meter}) = \SI{360,6}{\centi\meter}$, dunque la misura corretta si scriverà:
+\[
+l=\left(360,6 \pm 0,2\right)\si{\centi\meter}
+\]	
+% DISEGNAQUI e fai la foto in laboratorio	
+	\begin{tikzpicture}[x=1cm, y=1cm]
+
+% Tacche principali e etichette
+\foreach \x in {360,370} {
+    \draw[thick] (\x-360,0) -- (\x-360,1); % Tacche lunghe
+    \node[above] at (\x-360,1) {\pgfmathparse{int(\x/10)}\pgfmathresult|0}; % Etichette principali
+}
+
+% Tacche intermedie e etichette
+\foreach \i in {1,...,9} {
+    \draw (\i,0) -- (\i,0.5); % Tacche corte
+    \node[above] at (\i,0.5) {\i}; % Etichette intermedie
+
+    % Suddivisioni piccolissime
+    \foreach \j in {1,...,4} {
+        \draw (\i + \j*0.2,0) -- (\i + \j*0.2,0.25); % Tacche piccolissime
+    }
+}
+
+% Suddivisioni tra la tacca 9 e la tacca principale a 10
+\foreach \j in {1,...,4} {
+    \draw (9 + \j*0.2,0) -- (9 + \j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi ulteriori tacche piccole tra 0 e 1
+\foreach \j in {1,...,4} {
+    \draw (\j*0.2,0) -- (\j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi freccia rossa verticale che indica la terza tacca dopo 360 cm
+\draw[red, thick, ->] (0.6, -0.5) -- (0.6, 0.05); % Freccia rossa con punta alla y del terzo segmento
+
+\end{tikzpicture}
+\end{testexample}
+

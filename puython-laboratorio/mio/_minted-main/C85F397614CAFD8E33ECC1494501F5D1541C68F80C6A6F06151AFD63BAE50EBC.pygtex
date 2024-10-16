@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Esempi di variabili}
+\PYG{n}{intero} \PYG{o}{=} \PYG{l+m+mi}{10}
+\PYG{n}{virgola\PYGZus{}mobile} \PYG{o}{=} \PYG{l+m+mf}{10.5}
+\PYG{n}{stringa} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Ciao, mondo!\PYGZdq{}}
+\PYG{n}{booleano} \PYG{o}{=} \PYG{k+kc}{True}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{intero}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{virgola\PYGZus{}mobile}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{stringa}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{booleano}\PYG{p}{)}
+\end{Verbatim}

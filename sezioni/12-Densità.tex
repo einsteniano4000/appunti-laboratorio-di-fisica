@@ -1,0 +1,142 @@
+\section{Densità} Dato un corpo (solido, liquido o gassoso) di massa $M$ e volume $V$, la densità è la grandezza (derivata):
+\[
+d=\frac{M}{V}
+\]
+Guardando la formula, ricaviamo che l'unità di misura è quella di una massa diviso un volume. Nel sistema internazionale, l'unità base è $\si{\kilo\gram\per\cubic\meter}$ ma esistono ovviamente altre unità. Ad esempio $\si{\gram\per\cubic\centi\meter}$.
+
+\begin{testexample}[\thetcbcounter \,Calcoli con la densità]
+$\SI{7860}{\kilo\gram\per\cubic\meter} = \cdots  \si{\kilo\gram\per\cubic\centi\meter} $. Dobbiamo trasformare il denominatore con le regole che conosciamo (ricordiamo che $\SI{1}{\cubic\meter} = \SI{e+6}{\cubic\centi\meter}$):
+\[
+\SI{7860}{\kilo\gram\per\cubic\meter} =\frac{\SI{7860}{\kilogram}}{\SI{e+6}{\cubic\centi\meter}}  =\SI{7,860e-3}{\kilo\gram\per\cubic\centi\meter}
+\]
+
+$\SI{1000}{\kilo\gram\per\cubic\meter} = \cdots \si{\gram\per\milli\liter}$. Ricordiamo che $\SI{1}{\cubic\centi\meter} = \SI{1}{\milli\liter}$:
+
+
+
+\[
+\SI{1000}{\kilo\gram\per\cubic\meter} = \frac{1000\cdot \SI{e+3}{\gram}}{\SI{e6}{\milli\liter}} = \SI{1}{\gram\per\milli\liter}
+\]
+
+Questa equivalenza è molto importante nella pratica dove si usano spesso i millilitri, dunque la mettiamo in evidenza:
+\[
+\colorboxed{ocre}{
+\SI{e3}{\kilo\gram\per\cubic\meter} = \SI{1}{\gram\per\milli\liter}
+}
+\]
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Formule inverse e calcolo dimensionale.]
+
+Introduciamo il calcolo delle unità di misura (calcolo dimensionale). Per ricavare l' unità di misura di una grandezza G (rappresentata dalla scrittura [G]) basta inserire nella formula, al posto di ogni grandezza, la sua unità di misura. Facciamo un esempio.
+Notiamo che la formula del volume è corretta dal punto di vista delle unità di misura. Infatti, $[m]=\text{kg}\;\, [d]=\frac{\text{kg}}{{\text{m}^3}}$ e quindi:
+        \[
+        [V]=\frac{\text{kg}}{\frac{\text{kg}}{{\text{m}^3}}}=\cancel{\text{kg}}\cdot \frac{\text{m}^3}{\cancel{\text{kg}}   }=\text{m}^3.
+      \]
+\end{testexample}
+
+
+
+\begin{testexample}[\thetcbcounter \,Esercizio sulla densità]
+
+Un'ampolla di vetro ha una massa di $\SI{85,382}{\gram}$ e un volume di $\SI{80}{\milli\liter}$. L'ampolla viene riempita con gas xenon e la sua massa diventa $\SI{85,852}{\gram}$.
+\begin{itemize}
+\item Calcola la densità $d_{X_e}$ dello xenon.
+\item In seguito, la lampada viene di nuovo svuotata e riempita di idrogeno, fino ad ottenere una densità di $0,153\, d_{X_e}$. Determina la  massa totale della lampada riempita di idrogeno.
+\end{itemize}
+\end{testexample}
+
+Approfittiamo per poter ripassare le formule inverse e le cifre significative. Calcoliamo anzitutto la massa dello xeon per differenza:
+\[
+M_{X_e} = \SI{85,852}{\gram} -\SI{85,382}{\gram}  = \SI{0,470}{\gram} =\SI{4,70e-4}{\kilo\gram}
+\]
+Il testo vuole la densità in $\si{\kilo\gram\per\cubic\meter}$, quindi trasformiamo il volume in $\si{\cubic\meter}$ :  $\SI{80}{\milli\liter} =\SI{8,0e-5}{\cubic\meter}$.
+Usando la formula per la densità, abbiamo:
+\[
+d_{X_e}=\frac{M}{V} = \frac{\SI{4,70e-4}{\kilo\gram}}{\SI{8,0e-5}{\cubic\meter}}=\SI{5,875}{\kilo\gram\per\cubic\meter}      \approx  \SI{5,9}{\kilo\gram\per\cubic\meter}.  
+\]
+Per determinare la massa totale della lampada riempita di idrogeno, dobbiamo sommare la massa dell'ampolla e la massa dell'idrogeno, massa che possiamo calcolare con la formula: $M=d\cdot V$.
+Dai dati, vediamo che la densità dell'idrogeno, vale: 
+\[
+d_{H} = 0,153 \cdot\left( \SI{5,9}{\kilo\gram\per\cubic\meter}\right) = \SI{0,9027}{\kilo\gram\per\cubic\meter } \approx \SI{0,90}{\kilo\gram\per\cubic\meter }.
+\]
+La massa totale dell'ampolla e dell'idrogeno è dunque:
+\[
+\begin{aligned}
+    M &= \SI{0,085382}{\kilo\gram} + d \cdot V \\
+      &= \SI{0,085382}{\kilo\gram} + \left(\SI{0,90}{\kilo\gram\per\cubic\meter}\right) \times \left(\SI{8,0e-5}{\cubic\meter}\right) \\
+      &= \SI{0,085382}{\kilo\gram}  + \SI{0,00045}{\kilo\gram} = \SI{0,085454}{\kilo\gram} = \SI{85,454}{\gram}.
+\end{aligned}
+\]
+
+Notiamo che abbiamo dovuto fare un passaggio in più per poter decidere nella somma quante cifre tenere, togliendo la notazione scientifica. Questa operazione è spesso lunga per cui capiterà in calcoli molto lunghi di non usare la regola per le cifre significative della somma e tenere nel risultato finale, tante cifre significative quante presenti nei dati meno precisi.
+
+
+\begin{testexample}[\thetcbcounter \,Esercizio sulla densità e il volume]
+Un cilindro di metallo ha un'altezza di \(h = \SI{50,0}{\centi\metre}\) e un diametro di base \(d = \SI{20,0}{\centi\metre}\). La massa del cilindro è \(M = \SI{15,0}{\kilogram}\).
+
+\begin{enumerate}
+    \item \textbf{Calcola il volume del cilindro in litri.}
+    \item \textbf{Calcola la densità del cilindro in \si{\kilogram\per\litre}.}
+\end{enumerate}
+\end{testexample}
+
+Le formule sono:
+
+\begin{itemize}
+    \item Il volume \(V\) di un cilindro si calcola con la formula:
+    \[
+    V = \pi \left(\frac{d}{2}\right)^2 h = \frac{\pi d^2 h}{4}
+    \]
+    dove \(d\) è il diametro della base e \(h\) è l'altezza.
+
+    \item La densità \(\rho\) di un oggetto si calcola con la formula:
+    \[
+    \rho = \frac{M}{V}
+    \]
+    dove \(M\) è la massa e \(V\) è il volume.
+\end{itemize}
+
+\textit{Svolgimento}\\
+
+\begin{enumerate}
+    \item \textbf{Calcolo del volume del cilindro:}
+
+    \begin{itemize}
+        \item Il diametro \(d\) e l'altezza \(h\) sono dati in centimetri:
+        \[
+        d = \SI{20,0}{\centi\metre}, \quad h = \SI{50,0}{\centi\metre}
+        \]
+        \item Il volume in centimetri cubi è:
+        \[
+        V = \frac{\pi d^2 h}{4} = \frac{\pi (\SI{20}{\centi\metre})^2 \times \SI{50}{\centi\metre}}{4} =  \SI{15708}{\centi\metre\cubed} \approx\SI{1,57e+4}{\centi\meter\cubed}
+        \]
+        \item Convertiamo il volume in litri (1 litro = 1000 centimetri cubi):
+        \[
+        V = \SI{1,57e+4}{\centi\meter\cubed} = \SI{15,7}{\liter}
+        \]
+    \end{itemize}
+
+    \item \textbf{Calcolo della densità del cilindro:}
+
+    \begin{itemize}
+        \item La massa \(M\) del cilindro è già data in chilogrammi:
+        \[
+        M = \SI{15}{\kilogram}
+        \]
+        \item Utilizziamo la formula della densità:
+        \[
+        \rho = \frac{M}{V} = \frac{\SI{15}{\kilogram}}{\SI{15.7}{\litre}} \approx \SI{0.955}{\kilogram\per\litre}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\chapter{Errori di misura}

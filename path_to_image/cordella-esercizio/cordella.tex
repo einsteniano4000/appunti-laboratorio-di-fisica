@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm]
+
+% Tacche principali e etichette
+\foreach \x in {360,370} {
+    \draw[thick] (\x-360,0) -- (\x-360,1); % Tacche lunghe
+    \node[above] at (\x-360,1) {\pgfmathparse{int(\x/10)}\pgfmathresult|0}; % Etichette principali
+}
+
+% Tacche intermedie e etichette
+\foreach \i in {1,...,9} {
+    \draw (\i,0) -- (\i,0.5); % Tacche corte
+    \node[above] at (\i,0.5) {\i}; % Etichette intermedie
+
+    % Suddivisioni piccolissime
+    \foreach \j in {1,...,4} {
+        \draw (\i + \j*0.2,0) -- (\i + \j*0.2,0.25); % Tacche piccolissime
+    }
+}
+
+% Suddivisioni tra la tacca 9 e la tacca principale a 10
+\foreach \j in {1,...,4} {
+    \draw (9 + \j*0.2,0) -- (9 + \j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi ulteriori tacche piccole tra 0 e 1
+\foreach \j in {1,...,4} {
+    \draw (\j*0.2,0) -- (\j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi freccia rossa verticale che indica la terza tacca dopo 360 cm
+\draw[red, thick, ->] (0.6, -0.5) -- (0.6, 0.05); % Freccia rossa con punta alla y del terzo segmento
+
+\end{tikzpicture}
+\end{document}

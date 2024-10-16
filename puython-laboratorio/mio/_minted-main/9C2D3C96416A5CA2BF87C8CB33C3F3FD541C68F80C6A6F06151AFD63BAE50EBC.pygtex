@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{scipy.stats} \PYG{k+kn}{import} \PYG{n}{linregress}
+
+\PYG{c+c1}{\PYGZsh{} Dati sperimentali}
+\PYG{n}{tempo} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{])}
+\PYG{n}{velocita} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{} Aggiunta degli errori di misura}
+\PYG{n}{errori\PYGZus{}tempo} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{])}
+\PYG{n}{errori\PYGZus{}velocita} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{} Calcolo della regressione lineare}
+\PYG{n}{slope}\PYG{p}{,} \PYG{n}{intercept}\PYG{p}{,} \PYG{n}{r\PYGZus{}value}\PYG{p}{,} \PYG{n}{p\PYGZus{}value}\PYG{p}{,} \PYG{n}{std\PYGZus{}err} \PYG{o}{=} \PYG{n}{linregress}\PYG{p}{(}\PYG{n}{tempo}\PYG{p}{,} \PYG{n}{velocita}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Stampa dei risultati}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Coefficiente angolare (velocità): }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{slope}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ m/s\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Intercetta: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{intercept}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ m\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}R\PYGZhy{}quadrato: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{r\PYGZus{}value}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Grafico dei dati e della retta di regressione con barre di errore}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{errorbar}\PYG{p}{(}\PYG{n}{tempo}\PYG{p}{,} \PYG{n}{velocita}\PYG{p}{,} \PYG{n}{xerr}\PYG{o}{=}\PYG{n}{errori\PYGZus{}tempo}\PYG{p}{,} \PYG{n}{yerr}\PYG{o}{=}\PYG{n}{errori\PYGZus{}velocita}\PYG{p}{,} \PYG{n}{fmt}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Dati sperimentali\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{tempo}\PYG{p}{,} \PYG{n}{slope}\PYG{o}{*}\PYG{n}{tempo} \PYG{o}{+} \PYG{n}{intercept}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Retta di regressione\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Tempo (s)\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Velocità (m/s)\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Regressione Lineare della Velocità in Funzione del Tempo con Barre di Errore\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}

@@ -1,0 +1,178 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Misura di grandezze}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduzione}{9}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Formule e formule inverse}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Sistema internazionale S.I.}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Sensibilità e scrittura formale}{13}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Proprietà degli strumenti}{14}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Equivalenze e notazione scientifica}{15}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Potenze di 10}{16}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Notazione scientifica}{17}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Alcuni esempi sulla sensibilità e la portata}{19}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Cifre significative}{23}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Valutazione a vista delle cifre significative}{23}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Cifre significative nelle operazioni}{24}{subsection.1.8.2}%
+\contentsline {section}{\numberline {1.9}Area e volume}{24}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Volumi di solidi regolari}{27}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Cubo}{27}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}Parallelepipedo}{27}{subsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.10.3}Cilindro}{27}{subsection.1.10.3}%
+\contentsline {subsection}{\numberline {1.10.4}Cono a base retta}{27}{subsection.1.10.4}%
+\contentsline {subsection}{\numberline {1.10.5}Sfera}{28}{subsection.1.10.5}%
+\contentsline {subsection}{\numberline {1.10.6}Esercizi svolti}{28}{subsection.1.10.6}%
+\contentsline {section}{\numberline {1.11}Densità}{29}{section.1.11}%
+\contentsline {chapter}{\numberline {2}Errori di misura}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Incertezza nelle misure ripetute }{33}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Incertezza relativa e e percentuale}{35}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Esercizi}{36}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Confronto tra misure}{37}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Esercizi}{38}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Misure indirette: propagazione degli errori}{38}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Somme/differenze}{39}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Moltiplicazioni/divisioni}{40}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Esercizi}{45}{subsection.2.6.3}%
+\contentsline {chapter}{\numberline {3}Grafici di misure}{47}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Un esempio di grafico realizzato a mano}{47}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Disegno degli assi e titolo del grafico}{47}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Scelta dei fattori di scala i valori maggiori}{47}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Uso di un foglio di calcolo}{51}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Inserire e modificare i dati}{52}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Formato di una cella}{52}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Inserire e modificare le formule}{53}{subsection.3.2.3}%
+\contentsline {subsubsection}{Riferimenti relativi}{54}{section*.3}%
+\contentsline {subsubsection}{Riferimenti assoluti}{55}{section*.4}%
+\contentsline {subsubsection}{Ricalcolo automatico}{55}{section*.5}%
+\contentsline {subsubsection}{Funzioni integrate}{55}{section*.6}%
+\contentsline {subsection}{\numberline {3.2.4}Grafici}{56}{subsection.3.2.4}%
+\contentsline {subsubsection}{Grafici cartesiani}{56}{section*.7}%
+\contentsline {subsection}{\numberline {3.2.5}Elementi accessori per l'analisi dei dati}{58}{subsection.3.2.5}%
+\contentsline {subsubsection}{Linea di tendenza}{60}{section*.8}%
+\contentsline {section}{\numberline {3.3}Uso dei fogli Google}{60}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Creazione del Documento}{61}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Inserimento dei dati}{62}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Creazione del Grafico a Dispersione}{63}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Personalizzazione del Grafico}{63}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Visualizzare due Grafici Contemporaneamente}{71}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Conclusione}{71}{subsection.3.3.6}%
+\contentsline {chapter}{\numberline {4}Relazioni di Laboratorio}{75}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Titolo e Scopo dell'Esperienza}{75}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Materiali e Strumenti}{75}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Raccolta Dati}{75}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Cenni Teorici}{76}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Elaborazione Dati}{76}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Calcolo degli Errori nelle Misure Indirette}{76}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Grafico Sperimentale}{76}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Conclusioni}{76}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Esempio: Studio del Moto}{77}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Titolo e Scopo dell'Esperienza}{77}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Materiali e Strumenti}{77}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Raccolta Dati}{77}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Cenni Teorici}{78}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}Elaborazione Dati}{78}{subsection.4.9.5}%
+\contentsline {subsection}{\numberline {4.9.6}Calcolo degli Errori nelle Misure Indirette}{78}{subsection.4.9.6}%
+\contentsline {subsection}{\numberline {4.9.7}Grafico Sperimentale}{79}{subsection.4.9.7}%
+\contentsline {subsection}{\numberline {4.9.8}Conclusioni}{79}{subsection.4.9.8}%
+\contentsline {section}{\numberline {4.10}Caduta lungo un piano inclinato}{80}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Obiettivo}{80}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Materiali}{81}{subsection.4.10.2}%
+\contentsline {subsection}{\numberline {4.10.3}Strumenti}{81}{subsection.4.10.3}%
+\contentsline {subsection}{\numberline {4.10.4}Procedura}{81}{subsection.4.10.4}%
+\contentsline {subsection}{\numberline {4.10.5}Dati e Calcoli}{81}{subsection.4.10.5}%
+\contentsline {subsubsection}{Esempi di Calcolo}{81}{section*.9}%
+\contentsline {subsubsection}{Calcolo del Tempo Medio e Semidispersione}{81}{section*.10}%
+\contentsline {subsubsection}{Calcolo dell'Errore sulla Forza Parallela}{82}{section*.11}%
+\contentsline {subsubsection}{Calcolo dell'Errore sull'Accelerazione}{83}{section*.12}%
+\contentsline {subsection}{\numberline {4.10.6}Grafico}{84}{subsection.4.10.6}%
+\contentsline {subsection}{\numberline {4.10.7}Analisi del Fit Lineare}{84}{subsection.4.10.7}%
+\contentsline {paragraph}{Interpretazione dei Risultati:}{84}{section*.13}%
+\contentsline {subsection}{\numberline {4.10.8}Conclusioni}{85}{subsection.4.10.8}%
+\contentsline {chapter}{\numberline {5}Guida linguaggio python}{87}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduzione}{87}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Sintassi Base e Ambiente di Sviluppo Google Colab}{87}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Accedere a Google Colab}{87}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Scrivere ed Eseguire Codice}{88}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Elementi del Linguaggio Python}{88}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Variabili e Oggetti}{88}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Stringhe}{88}{subsection.5.3.2}%
+\contentsline {subsubsection}{F-String}{88}{section*.14}%
+\contentsline {subsection}{\numberline {5.3.3}Costrutto di Selezione}{89}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Controllo di Flusso}{89}{subsection.5.3.4}%
+\contentsline {subsubsection}{Indentazione}{89}{section*.15}%
+\contentsline {subsubsection}{Cicli \textit {for}}{89}{section*.16}%
+\contentsline {paragraph}{Iterare su una Lista}{89}{section*.17}%
+\contentsline {paragraph}{Iterare su un Range di Numeri}{89}{section*.18}%
+\contentsline {paragraph}{Iterare su un Insieme}{90}{section*.19}%
+\contentsline {paragraph}{Iterare su un Dizionario}{90}{section*.20}%
+\contentsline {paragraph}{Enumerare gli Elementi di una Sequenza}{90}{section*.21}%
+\contentsline {paragraph}{Uso di \textit {zip} per Iterare su Più Sequenze}{90}{section*.22}%
+\contentsline {subsubsection}{Cicli \textit {while}}{90}{section*.23}%
+\contentsline {paragraph}{Esempio Base}{91}{section*.24}%
+\contentsline {paragraph}{Esempio con Lista}{91}{section*.25}%
+\contentsline {section}{\numberline {5.4}Elementi di NumPy}{91}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Array}{91}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Generazione di Array}{91}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Indicizzazione degli Array}{91}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Matematica con gli Array}{92}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Principali Funzioni Matematiche di NumPy}{92}{subsection.5.4.5}%
+\contentsline {subsubsection}{Funzioni Trigonometriche}{92}{section*.26}%
+\contentsline {subsubsection}{Funzioni Esponenziali e Logaritmiche}{92}{section*.27}%
+\contentsline {subsubsection}{Altre Funzioni Utili}{92}{section*.28}%
+\contentsline {subsection}{\numberline {5.4.6}Propagazione degli errori massimi}{92}{subsection.5.4.6}%
+\contentsline {section}{\numberline {5.5}Elementi di Matplotlib}{94}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Grafici a Dispersione}{95}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Grafici con Barre di Errore}{95}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Grafico Spazio-Tempo e Velocità-Tempo per Moto Uniforme a Tratti}{96}{subsection.5.5.3}%
+\contentsline {subsubsection}{Grafico Spazio-Tempo}{97}{section*.29}%
+\contentsline {subsubsection}{Grafico Velocità-Tempo}{97}{section*.30}%
+\contentsline {subsubsection}{Spiegazione dei Grafici}{98}{section*.31}%
+\contentsline {subsection}{\numberline {5.5.4}Grafico Altezza-Diametro di un Cilindro con Volume Fisso}{98}{subsection.5.5.4}%
+\contentsline {chapter}{\numberline {6}Statistica}{101}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduzione}{101}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Distribuzione di Probabilità}{101}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Cosa sono gli Istogrammi a Bins}{102}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Esempio di Istogramma}{102}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Codice Python per Generare l'Istogramma}{102}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}La Curva di Gauss}{103}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.5}Esempio di istogramma sperimentale}{104}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Introduzione}{104}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Descrizione dell'esperimento}{105}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Fisica dell'esperimento}{105}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Creazione dell'istogramma con Python}{105}{subsection.6.5.4}%
+\contentsline {subsubsection}{Spiegazione del codice}{106}{section*.32}%
+\contentsline {paragraph}{Importazione delle librerie}{106}{section*.33}%
+\contentsline {paragraph}{Definizione dei dati}{106}{section*.34}%
+\contentsline {paragraph}{Creazione dell'istogramma}{106}{section*.35}%
+\contentsline {paragraph}{Aggiunta di titolo e etichette}{107}{section*.36}%
+\contentsline {paragraph}{Visualizzazione e salvataggio dell'istogramma}{107}{section*.37}%
+\contentsline {subsection}{\numberline {6.5.5}Risultati}{107}{subsection.6.5.5}%
+\contentsline {section}{\numberline {6.6}Approssimazione della Gaussiana}{107}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Stima di Media e Deviazione Standard}{108}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Calcolo della Media}{108}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Calcolo della Deviazione Standard}{109}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}Calcolo della Deviazione Standard della Media}{109}{subsection.6.7.3}%
+\contentsline {section}{\numberline {6.8}Esempio Pratico in Python}{109}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Significato delle Variabili, Moduli, Funzioni e Parametri}{111}{subsection.6.8.1}%
+\contentsline {section}{\numberline {6.9}Uso di Matplotlib per la Visualizzazione dei Dati}{113}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Esempio di Grafico}{113}{subsection.6.9.1}%
+\contentsline {section}{\numberline {6.10}Regressione Lineare}{114}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Tabella dei Dati}{115}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Regressione Lineare}{115}{subsection.6.10.2}%
+\contentsline {subsection}{\numberline {6.10.3}Uso di Python per la Regressione Lineare}{115}{subsection.6.10.3}%
+\contentsline {subsection}{\numberline {6.10.4}Output del Codice Python}{116}{subsection.6.10.4}%
+\contentsline {section}{\numberline {6.11}Esempio complesso}{117}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Analisi dei Dati}{118}{subsection.6.11.1}%
+\contentsline {section}{\numberline {6.12}Dettagli sul codice}{120}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Dati Sperimentali}{120}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Calcolo di $t^2$}{121}{subsection.6.12.2}%
+\contentsline {subsection}{\numberline {6.12.3}Definizione della Funzione di Modello}{121}{subsection.6.12.3}%
+\contentsline {subsection}{\numberline {6.12.4}Regressione Lineare}{121}{subsection.6.12.4}%
+\contentsline {subsection}{\numberline {6.12.5}Calcolo dell'Accelerazione di Gravità}{122}{subsection.6.12.5}%
+\contentsline {subsection}{\numberline {6.12.6}Calcolo dell'Errore Associato}{122}{subsection.6.12.6}%
+\contentsline {subsection}{\numberline {6.12.7}Creazione del Grafico}{122}{subsection.6.12.7}%
+\contentsline {section}{\numberline {6.13}Conclusioni}{123}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Distribuzioni di Probabilità e Istogrammi}{124}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Regressione Lineare}{124}{subsection.6.13.2}%
+\contentsline {subsection}{\numberline {6.13.3}Script Python per l'Analisi}{124}{subsection.6.13.3}%
+\contentsline {subsection}{\numberline {6.13.4}Sintesi e Prospettive Future}{124}{subsection.6.13.4}%
+\contentsfinish 

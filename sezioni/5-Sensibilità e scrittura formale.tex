@@ -1,0 +1,29 @@
+\section{Sensibilità e scrittura formale}
+
+Ricordando l'esempio del tavolo, possiamo riassumere l'importante concetto di sensibilità di uno strumento di misura:
+
+\begin{sen}
+	La sensibilità di uno strumento di misura, è la più piccola variazione della grandezza fisica che lo strumento può misurare.
+\end{sen}
+
+Si badi alla parola ``variazione''. Se ho un termometro le cui divisioni hanno una differenza tra loro di un grado ma il termometro ha una temperatura minima di -20 gradi, la sensibilità sarà di un grado.
+Una volta definite le grandezze fisiche, bisogna prendere coscienza del fatto che la misura di una grandezza va sempre indicata come segue:
+
+\[
+x=\left( \overline{x} \pm \Delta x\right)
+\]
+dove :
+\begin{itemize}
+\item $x$ rappresenta il nome della grandezza;
+\item $\overline{x}$ rappresenta il valore misurato (direttamente o indirettamente, come vedremo). Talvolta esso viene chiamato il miglior valore. Questa espressione non significa che si tratti di uno dei tanti misurati ma si tratta di un valore che rappresenta meglio di altri il risultato della misura. Tale valore può essere una misura unica, una media o il risultato di calcoli;
+\item $\Delta x$ rappresenta l'incertezza di misura o \textbf{errore assoluto}. Questa incertezza può avere origine dallo strumento (in tal caso si usa la sensibilità)oppure, se la misura è indiretta, essere causata da un calcolo. In tal caso si parla di incertezza \textit{propagata}. Faremo solo alcuni cenni all'incertezza propagata. In generale, per noi l'incertezza $\Delta x$ sarà quel numero positivo tale che il risultato della misura, $\overline{x}$, sia compreso tra $\overline{x} -\Delta x$ e  $\overline{x} +\Delta x$
+\end{itemize}
+
+Misurando la lunghezza dell'altro lato del tavolo, avremmo potuto ottenere:
+\[
+L=\left(1,200 \pm 0,001\right)\si{\meter}  \,\, \text{abbiamo usato il metro come unità di misura.}
+\]
+
+Volendo usare la scrittura $L=\left(1,2 \pm 0,001\right)\si{\meter}$, sbaglieremmo, ed anche se scrivessimo $L=\left(1,2 \pm \SI{1}{\milli\meter}\right)$ o, ancora, $L=\left(1,200 \pm 1\right)\si{\meter}$ perché vorrebbe dire che la sensibilità (ossia la distanza tra due tacche) è un metro!
+
+Ricordiamo quindi che \textbf{la misura e l'errore assoluto, devono avere lo stesso numero di cifre decimali} (da non confondere con la cifre significative su cui ci soffermeremo più avanti).

@@ -1,0 +1,143 @@
+\section{Equivalenze e notazione scientifica}
+
+Misurare, vuol dire eseguire un confronto. Se scrivo:
+\[
+L=\SI{10}{\meter}
+\]
+significa che $\frac{L}{m} = 10$, ossia l'unità di misura è contenuta dieci volte nella misura della grandezza. Dobbiamo quindi conoscere le frazioni. Nella pratica, le grandezze fondamentali a volte sono scomode da usare. In luogo del metro ad esempio, nella meccanica di precisione si usa il millimetro, scritto mm ( 1 m = 1000 mm, si legge ``un metro è uguale a mille millimetri''). Si dice che il millimetro è un sottomultiplo del metro. Analogamente, il kilometro (simbolo km) è un multiplo del metro (1 km = 1000 m). Nella tabella \ref{tab:prefixes}indichiamo i prefissi del sistema metrico decimale. 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Nome prefisso} & \textbf{Simbolo prefisso} & \textbf{Significato} \\
+		\hline
+		Giga & G & \( \times 10^9 \) \\
+		\hline
+		Mega & M & \( \times 10^6 \) \\
+		\hline
+		Kilo & k & \( \times 10^3 \) \\
+		\hline
+		Etto & h & \( \times 10^2 \) \\
+		\hline
+		Deca & da & \( \times 10^1 \) \\
+		\hline
+		Deci & d & \( \frac{1}{10} \) \\
+		\hline
+		Centi & c & \( \frac{1}{100} \) \\
+		\hline
+		Milli & m & \( \frac{1}{1000} \) \\
+		\hline
+		Micro & \(\mu\) & \( \frac{1}{10^6} \) \\
+		\hline
+		Nano & n & \( \frac{1}{10^9} \) \\
+		\hline
+		Pico & p & \( \frac{1}{10^{12}} \) \\
+		\hline
+	\end{tabular}
+	\caption{Prefissi da Giga a Pico con simboli e significato}
+	\label{tab:prefixes}
+\end{table}
+
+\begin{testexample}[Qualche equivalenza]
+$\SI{0,48}{\meter} = \cdots \si{\centi\meter}$. Dobbiamo scrivere $\SI{1}{\meter} = \SI{100}{\centi\meter}$. Ok, e poi? $m=\SI{100}{\meter} \rightarrow \SI{0,48}{\meter} = 0,48\times\left(\SI{100}{\centi\meter}\right) = \SI{48}{\centi\meter}$ (abbiamo spostato la virgola). Come abbiamo fatto a sapere che  $\SI{1}{\meter} = \SI{100}{\centi\meter}$? Semplice, abbiamo usato una formula inversa! Dalla tabella vediamo che 
+\[
+\SI{1}{\centi\meter} = \frac{1}{100}\si{\meter}
+\]
+Vogliamo ricavare $m$:
+\[
+\textcolor{red}{100}\cdot \SI{1}{\centi\meter} = \frac{1}{\cancel{100}}\cdot m \cdot \textcolor{red}{\cancel{100}} \rightarrow \SI{100}{\centi\meter}  = \SI{1}{\meter}.
+\]
+Magico, vero? Facciamo un altro esempio.\\
+
+$\SI{27}{\milli\meter} = \cdots \si{\deca\meter}$. Questa è più difficile perché so che $ \SI{1}{\milli\meter}  = \frac{1}{1000} \si{\meter}$. Però, ricordiamo che $ \SI{1}{\meter}  = \frac
+{\SI{1}{\deca\meter}}{10}$ (provatelo), dunque $ \SI{27}{\milli\meter}  = 27\times \frac
+{1}{1000}\times\frac{\SI{1}{\deca\meter}}{10} =\frac{27}{10000}\si{\deca\meter} =\SI{0,027}{\deca\meter}$. 
+
+Questi numeri, numeri con molti zeri, sono scomodi da scrivere. Per sperimentare una notazione (ossia un modo di scrittura) più comodo per tali numeri, dobbiamo ripassare alcuni concetti sulle potenze.
+\end{testexample}
+
+\subsection{Potenze di 10}
+Ricordiamo che $10^5=10\times 10 \times 10\times 10\times10$. Esistono anche le potenze negative, ad esempio $10^{-2}$. Ma non possiamo moltiplicare un numero per ``meno due volte'' per sè stesso. In realtà, questa è una frazione che si scrive in forma decimale (sappiamo passare dai numeri alle frazioni, vero??):
+\[
+10^{-2}=\frac{1}{100} = 0,01
+\]
+In matematica imparerete anche a calcolare espressioni del tipo $\left(\frac{1}{3}\right)^{-2} =\left(\frac{3}{1}\right)^{2} = 9$ ma a noi non interessa così tanto l'algebra. poiché calcoleremo tutto usando la calcolatrice. Dobbiamo però capire il significato di certe scritture. Anzitutto dobbiamo capire che $10^{-2}$ \underline{non è negativo}, è solo un numero positivo minore di uno. Ovviamente, $10^{-2}=$ \underline{è} negativo e vale $-0,01$. -$2$ si chiama esponente  e $10$ la base. Le potenze di 10 godono di alcune proprietà che è bene conoscere. Moltiplicando due potenze \textbf{della stessa base} si ottiene una sola potenza che ha per esponente, \textbf{la somma degli esponenti}:
+\[
+10^2\times 10^3 = 10^5
+\]
+Vale anche con potenze negative:
+\[
+10^3\times10^{-5} = 10^{-2} = 0,01.
+\]
+Si possono ovviamente calcolare espressioni senza grande fatica, ad esempio:
+\[
+\left( 2 \cdot 10^2 \right) \times \left( 3 \cdot 10^3 \right) = \left( 3 \cdot 2 \right) \cdot 10^{(2+3)} = 6 \cdot 10^5
+\]
+A noi comunque, interessa il modo con cui è scritto il risultato, ossia  in notazione scientifica. Ne parleremo nella prossima sezione. Per concludere questi cenni, ricordiamo alcune altre proprietà delle potenze che ritroveremo. Il rapporto tra due potenze, si calcola usando la differenza di esponenti
+\[
+\frac{10^4}{10^2}=10^{4-2} = 10^2
+\]
+Vale anche se la seconda potenza è negativa:
+\[
+\frac{10^2}{10^{-5}}=10^{2-(-5)} = 10^{2+5} = 10^7.
+\]
+Ricordiamo ancora le identià (si assumono, non si dimostrano): $$a^0 =1 $$ (qualunque a diverso da zero)  ; $$a^1 = a$$ (qualunqiue sia il numero a).  
+\subsection{Notazione scientifica}
+Il numero $6 \cdot 10^5$ è scritto in notazione scientifica. Definiamo questo modo di scrivere i numeri:
+\begin{nsc}
+	Un numero è scritto in notazione scientifica se è scritto come il prodotto di un numero intero compreso tra 1 e 9 (esclusi 0 e 10) e una potenza di 10 (positiva) o negativa.
+\end{nsc}
+Secondo questa definizione, $24 \cdot 10^5$ non è scritto in notazione scientifica perché 24 è maggiore di 9. Nemmeno $0,2\times10^3$ è scritto in notazione scientifica perché 0,2 è minore di 1. Ogni numero si può scrivere in notazione scientifica usando le proprietà delle potenze e la rappresentazione decimale. Ad esempio: $24 \cdot 10^5 = (2,4\cdot10)\cdot10^5 = 2,4\times 10^{1+5}=2,4\cdot 10^6$. Abbiamo usato il fatto che $10^1 = 10$. Ricordiamo inoltre che $10^0 = 1$  ma che non ha senso calcolare $0^0$. Una proprietà che si rivelerà utile quando eseguiremo le equivalenze coi metri quadri, è la potenza di potenza. Vediamo come si applica:
+\[
+\left(10^2\right)^3 = 10^6
+\]
+ossia,  \textbf{si moltiplicano gli esponenti}. In fine, un esempio con potenze con segno negativo:
+\[
+\left(10^2\right)^{-3} = 10^{-6}
+\]
+Quando si lavora con le potenze, bisogna stare molto attenti a quello che si fa. Nel caso di questi due esempi, sarebbe sbagliato sommare gli esponenti, perché questo si fa solo quando si moltiplicano due potenze (quando si moltiplica ad esempio $10^2$ per $10^3$,  il risultato fa $10^5$ e non $10^6$). Notare poi come tutto torna, ad esempio $10^0\cdot 10^1 = 10^{0+1} =10^1 = 10$ il che è ovvio perché $10^0$ è uno e qualunque numero moltiplicato uno fa sempre uno. Queste considerazioni, valgono anche per espressioni contenenti frazioni, come questa:
+\[
+\left(\frac{1}{2}\right)^2\times \left(\frac{1}{2}\right)^3 \times\left(\frac{1}{2}\right)^{-6}= \left(\frac{1}{2}\right)^{2+3-6} = \left(\frac{1}{2}\right)^{-1} =2.
+\]
+ma ci fermiamo quì.
+
+
+\begin{testexample}[ \thetcbcounter \, Scrittura corretta]
+Supponiamo di avere misurato la quantità
+\[
+L=\left(1240\pm1\right)\si{\milli\meter}
+\]
+Voglio esprimere questa misura in metri (unità del sistema internazionale) in modo compatto. Potrei dividere tutto per mille e scrivere:
+\[
+L=\left(1,240\pm 0,001\right)\si{\meter}
+\]
+
+Tuttavia, usando le potenze di 10 abbiamo:
+\[
+L=\left(1240\pm 1\right)\cdot 10^{-3}\si{\meter}
+\]
+In questo modo, non dobbiamo cambiare la quantità in parentesi. Notiamo inoltre, che anche l'errore è moltiplicato per la potenza. La scrittura, è un modo breve di scrivere in realtà.
+
+\[
+L= 1240\cdot 10^{-3}\si{\meter} \pm 1\cdot 10^{-3}\si{\meter}
+\]
+Questa informazione è importante quando dobbiamo trasformare (non ci capiterà spesso) una misura di temperatura da Celsius a Kelvin e viceversa, ma questo lo vedremo dopo aver fatto qualche osservazione in più sugli strumenti di misura.
+
+Proviamo a scrivere nel sistema internazionale, la misura di massa:
+\[
+m=\left(240,0\pm 0,1\right)\si{\gram}
+\]
+Dobbiamo trasformare tutto (misura ed errore) in kilogrammi, in quanto questi rappresentano l'unità di massa (base) nel sistema internazionale. Sappiamo che $\SI{1}{\kilo\gram}=\SI{e3}{\gram}$. Ricaviamo la formula inversa:
+\[
+\frac{\SI{1}{\kilo\gram}}{10^3} = \frac{\textcolor{red}{\cancel{10^3}}\,\si{\gram}}{\textcolor{red}{\cancel{10^3}}} \rightarrow \SI{1}{\gram} = \frac{\SI{1}{\kilo\gram}}{10^3} = \SI{1}{\kilo\gram}\cdot 10^{-3}. 
+\]
+dunque,
+\[
+m=\left(240,0\pm 0,1\right)\,\si{\gram} = \left(240,0\pm 0,1\right)\cdot 10^{-3}\,\si{\kilo\gram}
+\]
+Comode le potenze negative!
+
+
+\end{testexample}
+

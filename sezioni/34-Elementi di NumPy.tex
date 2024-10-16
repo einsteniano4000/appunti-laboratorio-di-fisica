@@ -1,0 +1,152 @@
+\section{Elementi di NumPy}
+
+\subsection{Array}
+NumPy è una libreria fondamentale per il calcolo scientifico in Python. Gli array NumPy sono simili alle liste, ma permettono operazioni matematiche vettorizate. Esempio:
+\begin{lstlisting}[language=Python]
+import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(arr)
+\end{lstlisting}
+
+\subsection{Generazione di Array}
+NumPy fornisce diverse funzioni per creare array. Esempio:
+\begin{lstlisting}[language=Python]
+zeros = np.zeros(5)
+ones = np.ones(5)
+range_arr = np.arange(10)
+\end{lstlisting}
+
+\subsection{Indicizzazione degli Array}
+Gli elementi di un array possono essere accessi e modificati utilizzando gli indici. Esempio:
+\begin{lstlisting}[language=Python]
+arr = np.array([1, 2, 3, 4, 5])
+print(arr[0])  # Primo elemento
+print(arr[-1])  # Ultimo elemento
+arr[0] = 10  # Modifica il primo elemento
+\end{lstlisting}
+
+\subsection{Matematica con gli Array}
+NumPy permette di eseguire operazioni matematiche sugli array in modo semplice. Esempio:
+\begin{lstlisting}[language=Python]
+arr = np.array([1, 2, 3, 4])
+print(arr + 2)
+print(arr * 2)
+print(np.sqrt(arr))
+\end{lstlisting}
+
+\subsection{Principali Funzioni Matematiche di NumPy}
+NumPy offre molte funzioni matematiche utili per operare sugli array. Ecco alcune delle principali:
+
+\subsubsection{Funzioni Trigonometriche}
+\begin{lstlisting}[language=Python]
+import numpy as np
+angles = np.array([0, np.pi/2, np.pi])
+print(np.sin(angles))  # Calcola il seno
+print(np.cos(angles))  # Calcola il coseno
+print(np.tan(angles))  # Calcola la tangente
+\end{lstlisting}
+
+\subsubsection{Funzioni Esponenziali e Logaritmiche}
+\begin{lstlisting}[language=Python]
+values = np.array([1, 2, 3])
+print(np.exp(values))  # Calcola l'esponenziale
+print(np.log(values))  # Calcola il logaritmo naturale
+print(np.log10(values))  # Calcola il logaritmo in base 10
+\end{lstlisting}
+
+
+
+\subsubsection{Altre Funzioni Utili}
+\begin{lstlisting}[language=Python]
+values = np.array([-1, 2, -3])
+print(np.abs(values))  # Valore assoluto
+print(np.sqrt(values + 4))  # Radice quadrata (aggiungiamo 4 per evitare valori negativi)
+print(np.sum(values))  # Somma degli elementi
+print(np.prod(values))  # Prodotto degli elementi
+\end{lstlisting}
+
+\subsection{Propagazione degli errori massimi}
+In questa sezione, mostriamo tre esempi di codice python per il calcolo degli errori propagati in fisica. Come per gli esempi precedenti, la propagazione avverrà, appunto, con le due regole che abbiamo già visto. Se qualcuno di voi cercherà su internet questo argomento, troverà  anche un tipo di progazione che usa la cosiddetta \text{somma in quadratura}, una tecnica usata quando le grandezze iniziali sono affette da errore casuale (vedremo più avanti di cosa si tratta ma anticipiamo che in questo corso, la propagazione degli errori statistici non verrà adottata).
+
+
+\begin{testexample}[ \thetcbcounter \, Errore sulla velocità media]
+Un carrellino percorre una distanza s = (1.222 +- 0,001)m in un tempo t = (0,8730 +- 0,0001) s. Determina la migliore stima della velocità e il suo errore assoluto.
+
+\begin{minted}{python}
+s=1.222
+Ds=0.001
+t=0.8730
+Dt=0.0001
+v=s/t
+Dv=v*(Ds/s +Dt/t)
+f"v= {v} +-  {Dv} m/s"
+\end{minted}
+L'output del codice è il seguente:
+\begin{verbatim}
+v= 1.399770904925544 +-  0.0013058156821220556 m/s
+\end{verbatim}
+Il valore scritto in modo formale è: v = (1,400 +- 0,001)m/s
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Errore sulla densità]
+Un blocchetto di ferro di massa $m = (450,0 +- 0,1) g$, viene inserito in un cilindro graduato con dell'acqua all'interno. L'acqua inizialmente raggiunge il livello $V1 = ( 730 +- 1) cm^3$ mentre, dopo l'inserimento del blocchetto, raggiunge il volume $V2= (810 +-1 ) cm^3$. Determina la densità del cubetto in $g/cm^3$.
+\begin{minted}{python}
+m=450
+Dm=0.1
+V1=730
+DV1=1
+V2=810
+DV2=1
+V=V2-V1
+\end{minted}
+La densità vale $d = m/V$, pertanto il suo errore è $Dd = d*(Dm/m + DV/v)$ . L'errore assoluto sul volume però, è uguale alla somma degli errori assoluti di V1 e V2, pertanto, lo indichiamo con $DV = DV1+DV2$. Procediamo:
+\begin{minted}{python}
+DV=DV1+DV2
+d=m/V
+Dd=d*(Dm/m+DV/V)
+print(f"d = ({d} +- {d*(Dm/m+DV/V)}) g/cm^3")
+\end{minted}
+L'ouput è:
+\begin{verbatim}
+d = (5.625 +- 0.141875) g/cm^3
+\end{verbatim}
+In forma corretta abbiamo: $d = (5,6 +- 0,1) g/cm^3$.
+
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Errore nel moto uniformemente accelerato]
+
+Un'automobile, compie un sorpasso passando dalla velocità iniziale $V1=(89 +-1 )km/h$ alla velocità di $V2=(122 +-1) km/h$, percorrendo una distanza $S = (200,2 +- 0,1 ) m$.  Determina l'accelerazione col suo errore assoluto e scrivi la misura in forma corretta usando la formula: $a = (V2^2 -V1^2)/(2*S)$.
+
+In questo caso abbiamo molte regole da applicare. Anzitutto, il numeratore è una differenza, quindi il suo errore assoluto si scrive: $D(V2^2-V1^2)=D(V2^2) +D(V1^2)$. Ma noi sappiamo calcolare l'errore in una potenza: $D(V2^2) = 2*V2*DV2$ e, analogamente $D(V1^2)=2*V1*DV1$. Chiamiamo il numeratore $NUM$ e il denominatore $DEN$. In questo modo la nostra accelerazione, si scriverà $a = NUM/DEN$, essendo $NUM=V2^2 -V1^2$ e $DEN = 2*S$. Per quanto riguarda gli errori abbiamo:
+
+$D(NUM) = 2*V2*DV2 +2*V1*DV1$. Per il denominatore abbiamo: $DEN = 2*S$ con un errore $D(DEN)= 2*DS$ e, in definitiva:
+
+$Da = a*(D(NUM)/NUM +D(DEN)/DEN)$. Procediamo come prima, inserendo prima i dati e poi li assegnamo alle formule:
+
+\begin{minted}{python}
+V1 = 89/3.6
+DV1 = 1/3.6
+V2 = 122/3.6
+DV2 = 1/3.6
+S = 80.2
+DS = 0.1
+NUM=V2*V2-V1*V1
+DEN=2*S
+DNUM=2*V1*DV1+2*V2*DV2
+DDEN=2*DS
+a=NUM/DEN
+Da=a*(DNUM/NUM+DDEN/DEN)
+print(f"s = ({a} +-{Da}) m/s^2")
+\end{minted}
+Ecco l'output:
+\begin{verbatim}
+s = (3.3495543548536055 +-0.20717979592289554) m/s^2
+\end{verbatim}
+In forma corretta abbiamo $a = ( 3,5 +- 0,2) m/s^2$.
+
+
+
+\end{testexample}
+
+

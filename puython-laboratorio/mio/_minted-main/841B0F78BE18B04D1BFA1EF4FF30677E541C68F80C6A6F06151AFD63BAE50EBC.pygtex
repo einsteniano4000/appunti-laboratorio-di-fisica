@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Ciclo for}
+\PYG{k}{for} \PYG{n}{numero} \PYG{o+ow}{in} \PYG{n}{numeri}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{numero}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Ciclo while}
+\PYG{n}{contatore} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{while} \PYG{n}{contatore} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{contatore}\PYG{p}{)}
+    \PYG{n}{contatore} \PYG{o}{+=} \PYG{l+m+mi}{1}
+\end{Verbatim}

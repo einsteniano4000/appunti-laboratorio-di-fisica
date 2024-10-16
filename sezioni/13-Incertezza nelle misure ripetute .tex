@@ -1,0 +1,51 @@
+\section{Incertezza nelle misure ripetute }
+Supponiamo di voler misurare il periodo di oscillazione di un pendolo. Un pendolo, in fisica, è costituito da una sferetta sospesa ad un filo. Quando la pallina viene sollevata e lasciata andare, compie un moto periodico. Il tempo che impiega la pallina ad andare e venire, si chiama periodo e si misura in secondi. Si veda la figura \ref{fig:pendolo}. I due punti più in alto si chiamano \textit{punti morti superiori} e il punto più basso, \textit{punto morto inferiore}. Nei punti alti superiori il pendolo rimane per un attimo vermo (prima di invertire il senso del moto) mentre nel punto morto inferiore, raggiunge la massima velocità.
+
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{path_to_image/pendolo.png} 
+    \caption{Un pendolo oscillante.}
+    \label{fig:pendolo}
+\end{figure}  
+
+
+Se si cronometrano le oscillazioni, si vede che, ripetendo la misura, non si ottiene lo stesso tempo. La ragione è che questo tipo di misura è soggetto ad incertezze casuali (ad esempio dovute al tempo di reazione di chi misura, tempo che cambia ogni volta che si ripete la misura stessa). Per ovviare a questo problema, è stata sviluppata una teoria statistica che consente di valutare il miglior valore e l'errore da associare alla misura nel limite in cui si fanno tante misure con strumenti di alta sensibilità. Senza entrare nel merito, ricordiamo semplicemente che il miglior valore risulta la media dei valori :
+
+\[
+\overline{T} = \frac{1}{N} \sum_{i=1}^{N} T_i
+\]
+
+\noindent
+Questo significa che sommiamo tutti i valori $T_1, T_2, \ldots, T_N$ e poi dividiamo per il numero totale di valori $N$. In altre parole:
+\[
+\overline{T} = \frac{1}{N} (T_1 + T_2 + \cdots + T_N)
+\]
+Lo sparpagliamento dei dati  è legato alla cosiddetta deviazione standard:
+
+\[
+\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (T_i - \overline{T})^2}
+\]
+
+\noindent
+Questo significa che per ogni valore $T_i$, calcoliamo la differenza tra $T_i$ e la media $\overline{T}$, la eleviamo al quadrato, sommiamo questi quadrati per tutti i valori da $1$ a $N$, dividiamo per $N$, e infine prendiamo la radice quadrata. In altre parole:
+\[
+\sigma = \sqrt{\frac{1}{N} \left[ (T_1 - \overline{T})^2 + (T_2 - \overline{T})^2 + \cdots + (T_N - \overline{T})^2 \right]}
+\]
+
+Si assume invece, come incertezza (o errore assoluto), il rapporto tra la deviazione standard e la radice quadrata del numero di dati:
+\[
+\sigma_{\overline{T}}=\frac{\sigma}{\sqrt{N}}
+\] 
+Notiamo che questa quantità, diminuisce all'aumentare dei dati perché cresce il denominatore. Su questo punto, torneremo nell'ultimo capitolo di questi appunti.
+Dopo aver calcolato l'incertezza, dobbiamo sempre ricordarci di scriverla con una sola cifra significativa. Vedremo più avanti vari esempi su come farlo. Le formule sono abbastanza complesse ma è semplice usare un foglio di calcolo dove esistono funzioni apposite per questo tipo di calcoli, oppure si può usare un linguaggio di programmazione con librerie matematiche (ad esempio numpy di Python). \\
+
+Se non possiamo ripetere la misura molte volte (diciamo almeno 30) allora la statistica (ossia le tre formule scritte prima) non ci fornisce risultati attendibili. In tal caso, si segue una strada diversa. L'errore si calcola come semidispersione massima ed è dato dalla formula:
+\[
+\Delta X = \frac{X_{max}-X_{min}}{2}
+\]
+dove $X_{max}$  e$X_{min}$ sono il valore massimo e  il valore minimo dei nostri dati. Se questo valore viene più piccolo della sensibilità comunque, si assume come errore assoluto la sensibilità. Infatti,ricordando l'esempio del pendolo, se usiamo un cronometro con sensibilità di 0,1 s, è impossibile distinguere due valori che abbiano una differenza minore di questa quantità. 
+
+Supponiamo di aver misurato il periodo $T$ di oscillazione di un pendolo 5 volte e di aver calcolato la media e la semidispersione, ottenendo $T=\SI{1,21}{s}$ e $\Delta x = \SI{0,51}{s}$. Anzitutto attotondiamo l'errore ad \underline{una} cifra significativa, ossia $\Delta x \approx \SI{0,5}{s}$, poi arrotondiamo il periodo alla seconda cifra decimale: $T\approx \SI{1,2}{s}$ e , in fine, scriviamo il risultato corretto:
+\[
+T=\left(1,2 \pm 0,5 \right)\si{\second}
+\]  

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{V1} \PYG{o}{=} \PYG{l+m+mi}{89}\PYG{o}{/}\PYG{l+m+mf}{3.6}
+\PYG{n}{DV1} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mf}{3.6}
+\PYG{n}{V2} \PYG{o}{=} \PYG{l+m+mi}{122}\PYG{o}{/}\PYG{l+m+mf}{3.6}
+\PYG{n}{DV2} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mf}{3.6}
+\PYG{n}{S} \PYG{o}{=} \PYG{l+m+mf}{80.2}
+\PYG{n}{DS} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+\PYG{n}{NUM}\PYG{o}{=}\PYG{n}{V2}\PYG{o}{*}\PYG{n}{V2}\PYG{o}{\PYGZhy{}}\PYG{n}{V1}\PYG{o}{*}\PYG{n}{V1}
+\PYG{n}{DEN}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{S}
+\PYG{n}{DNUM}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{V1}\PYG{o}{*}\PYG{n}{DV1}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{V2}\PYG{o}{*}\PYG{n}{DV2}
+\PYG{n}{DDEN}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{DS}
+\PYG{n}{a}\PYG{o}{=}\PYG{n}{NUM}\PYG{o}{/}\PYG{n}{DEN}
+\PYG{n}{Da}\PYG{o}{=}\PYG{n}{a}\PYG{o}{*}\PYG{p}{(}\PYG{n}{DNUM}\PYG{o}{/}\PYG{n}{NUM}\PYG{o}{+}\PYG{n}{DDEN}\PYG{o}{/}\PYG{n}{DEN}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}s = (}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ +\PYGZhy{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{Da}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{) m/s\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
