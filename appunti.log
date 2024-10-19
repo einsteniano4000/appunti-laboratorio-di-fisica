@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.9.13)  16 OCT 2024 18:18
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.9.13)  19 OCT 2024 22:52
  system commands enabled.
  file:line:error style messages enabled.
 **/home/antonio/appunti-latex/appunti
@@ -1492,11 +1492,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [11]
-Overfull \hbox (33.6876pt too wide) in paragraph at lines 427--446
- [][] 
- []
-
-
 
 [12<./path_to_image/lun.jpg>]
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 468.
@@ -2396,7 +2391,7 @@ Here is how much of LuaTeX's memory you used:
  230 fonts using 15095783 bytes
  99i,19n,102p,1709b,2574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/media/antonio/texlive/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/media/antonio/texlive/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/media/antonio/texlive/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</media/antonio/texlive/texlive/texmf-dist/fonts/opentype/public/fontawesome5/FontAwesome5Free-Regular-400.otf></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on appunti.pdf (125 pages, 11683244 bytes).
+Output written on appunti.pdf (125 pages, 11683457 bytes).
 
 PDF statistics: 2440 PDF objects out of 2487 (max. 8388607)
  2000 compressed objects within 20 object streams
