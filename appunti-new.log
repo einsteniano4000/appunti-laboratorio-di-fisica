@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.22)  5 DEC 2024 16:21
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.22)  5 DEC 2024 20:02
  system commands enabled.
 **appunti-new.tex
 (./appunti-new.tex
@@ -2672,10 +2672,10 @@ LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 \pydata@fh@_88B50ADB6802289120D8B477E3B7AD88.data.minted=\write7
 
 \openout7 = _88B50ADB6802289120D8B477E3B7AD88.data.minted
-runsystem(latexminted config  --timestamp 20241205162149 88B50ADB6802289120D8B47
+runsystem(latexminted config  --timestamp 20241205200223 88B50ADB6802289120D8B47
 7E3B7AD88)...executed.
  (./_88B50ADB6802289120D8B477E3B7AD88.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20241205162149 88B50ADB6802289120
+runsystem(latexminted cleanconfig  --timestamp 20241205200223 88B50ADB6802289120
 D8B477E3B7AD88)...executed.
 
 (./_minted/default.style.minted)
