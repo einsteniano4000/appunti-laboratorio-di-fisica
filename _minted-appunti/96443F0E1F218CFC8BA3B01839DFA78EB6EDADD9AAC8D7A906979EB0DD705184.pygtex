@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{s}\PYG{o}{=}\PYG{l+m+mf}{1.222}
-\PYG{n}{Ds}\PYG{o}{=}\PYG{l+m+mf}{0.001}
-\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mf}{0.8730}
-\PYG{n}{Dt}\PYG{o}{=}\PYG{l+m+mf}{0.0001}
-\PYG{n}{v}\PYG{o}{=}\PYG{n}{s}\PYG{o}{/}\PYG{n}{t}
-\PYG{n}{Dv}\PYG{o}{=}\PYG{n}{v}\PYG{o}{*}\PYG{p}{(}\PYG{n}{Ds}\PYG{o}{/}\PYG{n}{s} \PYG{o}{+}\PYG{n}{Dt}\PYG{o}{/}\PYG{n}{t}\PYG{p}{)}
-\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}v= }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{v}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ +\PYGZhy{}  }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{Dv}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ m/s\PYGZdq{}}
-\end{Verbatim}

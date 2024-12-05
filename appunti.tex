@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper,oneside]{book}
 \usepackage{multirow}
 
+\newcommand{\measureline}{\mbox{\normalfont\underline{\hspace{2.5cm}}}}
 
 \usepackage[T1]{fontenc} 
 \usepackage{textcomp} 	
@@ -40,6 +41,7 @@
 \newtheorem{csf}{Cifre significative}
 \newtheorem{csp}{Cifre significative in un prodotto}
 \newtheorem{css}{Cifre significative in una somma}
+
 \usepackage{graphicx}
 \usepackage[font=scriptsize,labelfont=bf,hypcap=false]{caption}
 \usepackage{pgf,tikz}
@@ -756,6 +758,110 @@ l=\left(360,6 \pm 0,2\right)\si{\centi\meter}
 
 \end{tikzpicture}
 \end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Un esercizio completo]
+
+    \noindent \textbf{1) Determinare la misura, con il rispettivo errore assoluto, delle grandezze 
+    indicate, selezionando lo strumento più idoneo tra quelli indicati ed 
+    esprimere il risultato nella forma G = (G $\pm$ $\Delta$G) u.m. 
+    Trasformare poi la misura, ove necessario, in unità del S.I. (scrivere il 
+    risultato nella riga a fianco)}
+    
+    \vspace{0.2cm}
+    \noindent \textbf{(Privilegiare in ogni caso le misure dirette)}
+    
+    \vspace{0.3cm}
+    
+    \noindent\begin{tabular}{@{}p{4cm}@{\hspace{0.5cm}}p{5cm}@{\hspace{0.5cm}}p{2.5cm}@{\hspace{0.5cm}}p{2.5cm}@{}}
+        \textbf{a) Spessore} \newline \textbf{del libro di testo:}
+        & 1. Righello & \measureline & \measureline \\[1.5ex]
+        & 2. Calibro & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da sarto & \measureline & \measureline \\[1.5ex]
+        & 4. Cordella Metrica & \measureline & \measureline \\[2.5ex]
+    \textbf{b) Massa} \newline \textbf{dell'astuccio:}
+        & 1. Bilancia pesa persone & \measureline & \measureline \\[1.5ex]
+        & 2. Termometro digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da sarto & \measureline & \measureline \\[1.5ex]
+        & 4. Bilancia digitale & \measureline & \measureline \\[2.5ex]
+    \textbf{c) Tempo di 2} \newline \textbf{oscillazioni:}
+        & 1. Cronometro manuale & \measureline & \measureline \\[1.5ex]
+        & 2. Orologio da muro & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da falegname & \measureline & \measureline \\[1.5ex]
+        & 4. Termometro digitale & \measureline & \measureline \\[2.5ex]
+    \textbf{d) Volume del} \newline \textbf{liquido contenuto:}
+        & 1. Cilindro graduato marrone & \measureline & \measureline \\[1.5ex]
+        & 2. Bilancia digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Righello & \measureline & \measureline \\[1.5ex]
+        & 4. Cilindro graduato blu & \measureline & \measureline \\[2.5ex]
+    \textbf{e) Temperatura} \newline \textbf{del liquido:}
+        & 1. Cronometro manuale & \measureline & \measureline \\[1.5ex]
+        & 2. Termometro digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Termometro analogico & \measureline & \measureline \\[1.5ex]
+        & 4. Cilindro graduato blu & \measureline & \measureline \\[2.5ex]
+    \textbf{f) Altezza} \newline \textbf{della cattedra:}
+        & 1. Nastro metallico & \measureline & \measureline \\[1.5ex]
+        & 2. Calibro & \measureline & \measureline \\[1.5ex]
+        & 3. Riga & \measureline & \measureline \\[1.5ex]
+        & 4. Cordella metrica & \measureline & \measureline
+    \end{tabular}
+    
+\section*{Soluzione}
+\noindent\begin{tabular}{@{}p{2.8cm}p{5.5cm}@{\hspace{0.2cm}}p{8.5cm}@{}}
+    \textbf{a) Spessore} \newline \textbf{del libro di testo:}
+        & 1. Righello & \small{$d=(24\pm1)$ mm \quad $d=(24\pm 1)\times10^{-3}$ m} \\
+        & 2. Calibro & \\
+        & 3. Metro da sarto & \\
+        & 4. Cordella Metrica & \\[2.5ex]
+    \textbf{b) Massa} \newline \textbf{dell'astuccio:}
+        & 1. Bilancia pesa persone & \\
+        & 2. Termometro digitale & \\
+        & 3. Metro da sarto & \\
+        & 4. Bilancia digitale & \footnotesize{$m = (250,0\pm1)$ g \quad $m = (250,0\pm 0,1)\times10^{-3}$ kg} \\[2.5ex]
+    \textbf{c) Tempo di 2} \newline \textbf{oscillazioni:}
+        & 1. Cronometro manuale & \small{$t = (3,2\pm0,1)$ s \quad $t = (3,2\pm0,1)$ s} \\
+        & 2. Orologio da muro & \\
+        & 3. Metro da falegname & \\
+        & 4. Termometro digitale & \\[2.5ex]
+    \textbf{d) Volume del} \newline \textbf{liquido nel cilindro:}
+        & 1. Cilindro graduato marrone & \\
+        & 2. Bilancia digitale & \\
+        & 3. Righello & \\
+        & 4. Cilindro graduato blu & \small{$V = (125\pm 5)$ cm$^3$ \quad $V=(125\pm 5)\times10^{-6}$ m$^3$} \\[2.5ex]
+    \textbf{e) Temperatura} \newline \textbf{del liquido nel becker:}
+        & 1. Cronometro manuale & \\
+        & 2. Termometro digitale & \small{$ T =(22,3\pm0,1)$ $^\circ$C \quad $T = (22,3\pm 0,1)$ $^\circ$C} \\
+        & 3. Termometro analogico & \\
+        & 4. Cilindro graduato blu & \\[2.5ex]
+    \textbf{f) Altezza} \newline \textbf{della cattedra:}
+        & 1. Nastro metallico & \small{$h=(752\pm1)$ mm \quad $h=(752\pm 1)\times10^{-3}$ m} \\
+        & 2. Calibro & \\
+        & 3. Riga & \\
+        & 4. Cordella metrica & 
+    \end{tabular}
+    
+
+\end{testexample}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Cifre significative}
 	Diamo una importante definizione:
