@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.22)  5 DEC 2024 20:02
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.22)  5 DEC 2024 20:16
  system commands enabled.
 **appunti-new.tex
 (./appunti-new.tex
@@ -1894,7 +1894,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 11.39996pt on input line 394.
 [10]
-<img/lun.jpg, id=1048, 722.7pt x 479.6319pt>
+<img/lun.jpg, id=1085, 722.7pt x 479.6319pt>
 File: img/lun.jpg Graphic file (type jpg)
 <use img/lun.jpg>
 Package luatex.def Info: img/lun.jpg  used on input line 414.
@@ -1935,12 +1935,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 546--548
 [17]
 
 [18]
-<img/bilancia.jpg, id=1100, 1245.65375pt x 934.49126pt>
+<img/bilancia.jpg, id=1137, 1245.65375pt x 934.49126pt>
 File: img/bilancia.jpg Graphic file (type jpg)
 <use img/bilancia.jpg>
 Package luatex.def Info: img/bilancia.jpg  used on input line 647.
 (luatex.def)             Requested size: 174.39034pt x 130.82788pt.
-<img/cronometro.png, id=1102, 681.54625pt x 763.85374pt>
+<img/cronometro.png, id=1139, 681.54625pt x 763.85374pt>
 File: img/cronometro.png Graphic file (type png)
 <use img/cronometro.png>
 Package luatex.def Info: img/cronometro.png  used on input line 662.
@@ -1957,7 +1957,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.59998pt on input line 672.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 5.69998pt on input line 672.
-<img/cil.jpg, id=1113, 642.4pt x 856.19875pt>
+<img/cil.jpg, id=1150, 642.4pt x 856.19875pt>
 File: img/cil.jpg Graphic file (type jpg)
 <use img/cil.jpg>
 Package luatex.def Info: img/cil.jpg  used on input line 686.
@@ -1970,7 +1970,7 @@ Overfull \hbox (18.0pt too wide) in paragraph at lines 684--690
 
 
 [20<./img/cronometro.png>]
-<img/cordella1.jpg, id=1124, 1247.66125pt x 935.495pt>
+<img/cordella1.jpg, id=1162, 1247.66125pt x 935.495pt>
 File: img/cordella1.jpg Graphic file (type jpg)
 <use img/cordella1.jpg>
 Package luatex.def Info: img/cordella1.jpg  used on input line 698.
@@ -1980,7 +1980,7 @@ Overfull \hbox (18.0pt too wide) in paragraph at lines 696--703
 []$[]$
  []
 
-<img/cordella2.jpg, id=1126, 1247.66125pt x 935.495pt>
+<img/cordella2.jpg, id=1164, 1247.66125pt x 935.495pt>
 File: img/cordella2.jpg Graphic file (type jpg)
 <use img/cordella2.jpg>
 Package luatex.def Info: img/cordella2.jpg  used on input line 709.
@@ -2032,12 +2032,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 900--901
 
  []
 
-<img/quad.png, id=1164, 255.95625pt x 252.945pt>
+<img/quad.png, id=1201, 255.95625pt x 252.945pt>
 File: img/quad.png Graphic file (type png)
 <use img/quad.png>
 Package luatex.def Info: img/quad.png  used on input line 904.
 (luatex.def)             Requested size: 76.78746pt x 75.88408pt.
-<img/cub.png, id=1165, 316.18124pt x 317.185pt>
+<img/cub.png, id=1202, 316.18124pt x 317.185pt>
 File: img/cub.png Graphic file (type png)
 <use img/cub.png>
 Package luatex.def Info: img/cub.png  used on input line 910.
@@ -2050,7 +2050,7 @@ Overfull \hbox (18.0pt too wide) in paragraph at lines 902--914
 
 
 [27<./img/quad.png><./img/cub.png>]
-<img/da-m3-a-cm3.jpg, id=1178, 652.4375pt x 357.335pt>
+<img/da-m3-a-cm3.jpg, id=1215, 652.4375pt x 357.335pt>
 File: img/da-m3-a-cm3.jpg Graphic file (type jpg)
 <use img/da-m3-a-cm3.jpg>
 Package luatex.def Info: img/da-m3-a-cm3.jpg  used on input line 926.
@@ -2060,7 +2060,7 @@ Overfull \hbox (18.0pt too wide) in paragraph at lines 924--930
 []$[]$ 
  []
 
-<img/equiv2.png, id=1180, 620.3175pt x 387.4475pt>
+<img/equiv2.png, id=1217, 620.3175pt x 387.4475pt>
 File: img/equiv2.png Graphic file (type png)
 <use img/equiv2.png>
 Package luatex.def Info: img/equiv2.png  used on input line 951.
@@ -2086,7 +2086,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
 
 [34]
 Capitolo 2.
-<img/pendolo.png, id=1233, 480.79625pt x 438.63875pt>
+<img/pendolo.png, id=1270, 480.79625pt x 438.63875pt>
 File: img/pendolo.png Graphic file (type png)
 <use img/pendolo.png>
 Package luatex.def Info: img/pendolo.png  used on input line 1252.
@@ -2167,55 +2167,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 1758--1760
 
 
 [48]
+
+[49]
+
+[50]
 Capitolo 3.
-<img/titoloassi.pdf, id=1324, 845.1575pt x 598.235pt>
+<img/titoloassi.pdf, id=1370, 845.1575pt x 598.235pt>
 File: img/titoloassi.pdf Graphic file (type pdf)
 <use img/titoloassi.pdf>
-Package luatex.def Info: img/titoloassi.pdf  used on input line 1800.
+Package luatex.def Info: img/titoloassi.pdf  used on input line 1874.
 (luatex.def)             Requested size: 406.30359pt x 287.60596pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[49
+[51
 
 ]
 
-[50]
+[52]
 
-[51<./img/titoloassi.pdf>]
-<img/graficomanuale.pdf, id=1348, 845.1575pt x 598.235pt>
+[53<./img/titoloassi.pdf>]
+<img/graficomanuale.pdf, id=1394, 845.1575pt x 598.235pt>
 File: img/graficomanuale.pdf Graphic file (type pdf)
 <use img/graficomanuale.pdf>
-Package luatex.def Info: img/graficomanuale.pdf  used on input line 1849.
+Package luatex.def Info: img/graficomanuale.pdf  used on input line 1923.
 (luatex.def)             Requested size: 406.30359pt x 287.60596pt.
 
 
-[52<./img/graficomanuale.pdf>]
+[54<./img/graficomanuale.pdf>]
 (/media/antonio/texlive/texlive/texmf-dist/tex/latex/microtype/mt-TU-empty.cfg
 File: mt-TU-empty.cfg 2021/06/22 v1.1 microtype config. file: fonts with nonsta
 ndard glyph set (RS)
 )
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 1876--1876
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 1950--1950
 [] 
  []
 
-<img/calc.png, id=1361, 1552.80125pt x 787.94376pt>
+<img/calc.png, id=1407, 1552.80125pt x 787.94376pt>
 File: img/calc.png Graphic file (type png)
 <use img/calc.png>
-Package luatex.def Info: img/calc.png  used on input line 1882.
+Package luatex.def Info: img/calc.png  used on input line 1956.
 (luatex.def)             Requested size: 406.30359pt x 206.17105pt.
-<img/tasti.png, id=1362, 420.57124pt x 446.66875pt>
+<img/tasti.png, id=1408, 420.57124pt x 446.66875pt>
 File: img/tasti.png Graphic file (type png)
 <use img/tasti.png>
-Package luatex.def Info: img/tasti.png  used on input line 1890.
+Package luatex.def Info: img/tasti.png  used on input line 1964.
 (luatex.def)             Requested size: 126.17235pt x 134.00165pt.
 
 
-[53<./img/calc.png>]
+[55<./img/calc.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-895.
+969.
 
 (/media/antonio/texlive/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -2224,46 +2228,46 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<img/formato-cella.png, id=1369, 721.69624pt x 620.3175pt>
+<img/formato-cella.png, id=1415, 721.69624pt x 620.3175pt>
 File: img/formato-cella.png Graphic file (type png)
 <use img/formato-cella.png>
-Package luatex.def Info: img/formato-cella.png  used on input line 1917.
+Package luatex.def Info: img/formato-cella.png  used on input line 1991.
 (luatex.def)             Requested size: 288.67339pt x 248.1226pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/inserimento-dati.png, id=1371, 558.085pt x 236.885pt>
+<img/inserimento-dati.png, id=1417, 558.085pt x 236.885pt>
 File: img/inserimento-dati.png Graphic file (type png)
 <use img/inserimento-dati.png>
-Package luatex.def Info: img/inserimento-dati.png  used on input line 1926.
+Package luatex.def Info: img/inserimento-dati.png  used on input line 2000.
 (luatex.def)             Requested size: 223.23004pt x 94.75232pt.
 
 
-[54<./img/tasti.png>]
-<img/inserimento-formula.png, id=1380, 549.05125pt x 243.91125pt>
+[56<./img/tasti.png>]
+<img/inserimento-formula.png, id=1425, 549.05125pt x 243.91125pt>
 File: img/inserimento-formula.png Graphic file (type png)
 <use img/inserimento-formula.png>
-Package luatex.def Info: img/inserimento-formula.png  used on input line 1963.
+Package luatex.def Info: img/inserimento-formula.png  used on input line 2037.
 (luatex.def)             Requested size: 219.61661pt x 97.56276pt.
 
-Overfull \hbox (18.0pt too wide) in paragraph at lines 1961--1966
+Overfull \hbox (18.0pt too wide) in paragraph at lines 2035--2040
 []$[]$ 
  []
 
 
 
-[55<./img/formato-cella.png><./img/inserimento-dati.png>]
-<img/riferimenti-relativi.png, id=1387, 1011.78pt x 323.2075pt>
+[57<./img/formato-cella.png><./img/inserimento-dati.png>]
+<img/riferimenti-relativi.png, id=1432, 1011.78pt x 323.2075pt>
 File: img/riferimenti-relativi.png Graphic file (type png)
 <use img/riferimenti-relativi.png>
-Package luatex.def Info: img/riferimenti-relativi.png  used on input line 1978.
+Package luatex.def Info: img/riferimenti-relativi.png  used on input line 2052.
 
 (luatex.def)             Requested size: 404.70483pt x 129.2807pt.
-<img/copia-formula.png, id=1389, 555.07375pt x 317.185pt>
+<img/copia-formula.png, id=1434, 555.07375pt x 317.185pt>
 File: img/copia-formula.png Graphic file (type png)
 <use img/copia-formula.png>
-Package luatex.def Info: img/copia-formula.png  used on input line 1989.
+Package luatex.def Info: img/copia-formula.png  used on input line 2063.
 (luatex.def)             Requested size: 222.02556pt x 126.87173pt.
 
 
@@ -2271,251 +2275,251 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[56<./img/inserimento-formula.png><./img/riferimenti-relativi.png>]
-<img/ricalcolo.png, id=1402, 829.0975pt x 324.21124pt>
+[58<./img/inserimento-formula.png><./img/riferimenti-relativi.png>]
+<img/ricalcolo.png, id=1447, 829.0975pt x 324.21124pt>
 File: img/ricalcolo.png Graphic file (type png)
 <use img/ricalcolo.png>
-Package luatex.def Info: img/ricalcolo.png  used on input line 2018.
+Package luatex.def Info: img/ricalcolo.png  used on input line 2092.
 (luatex.def)             Requested size: 331.63313pt x 129.68219pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 2034.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 2108.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.40245pt on input line 2034.
-<img/somma.png, id=1404, 546.04pt x 365.365pt>
+(Font)              scaled to size 10.40245pt on input line 2108.
+<img/somma.png, id=1449, 546.04pt x 365.365pt>
 File: img/somma.png Graphic file (type png)
 <use img/somma.png>
-Package luatex.def Info: img/somma.png  used on input line 2039.
+Package luatex.def Info: img/somma.png  used on input line 2113.
 (luatex.def)             Requested size: 218.41212pt x 146.1434pt.
 
-Overfull \hbox (18.0pt too wide) in paragraph at lines 2037--2042
+Overfull \hbox (18.0pt too wide) in paragraph at lines 2111--2116
 []$[]$ 
  []
 
 
 
-[57<./img/copia-formula.png>]
+[59<./img/copia-formula.png>]
 
-[58<./img/ricalcolo.png><./img/somma.png>]
-<img/barre-libre.png, id=1422, 1266.7325pt x 678.535pt>
+[60<./img/ricalcolo.png><./img/somma.png>]
+<img/barre-libre.png, id=1468, 1266.7325pt x 678.535pt>
 File: img/barre-libre.png Graphic file (type png)
 <use img/barre-libre.png>
-Package luatex.def Info: img/barre-libre.png  used on input line 2071.
+Package luatex.def Info: img/barre-libre.png  used on input line 2145.
 (luatex.def)             Requested size: 253.34201pt x 135.70459pt.
-<img/dispersione-libreoffice.png, id=1423, 1348.03625pt x 475.7775pt>
+<img/dispersione-libreoffice.png, id=1469, 1348.03625pt x 475.7775pt>
 File: img/dispersione-libreoffice.png Graphic file (type png)
 <use img/dispersione-libreoffice.png>
-Package luatex.def Info: img/dispersione-libreoffice.png  used on input line 20
-86.
+Package luatex.def Info: img/dispersione-libreoffice.png  used on input line 21
+60.
 (luatex.def)             Requested size: 404.414pt x 142.73434pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/grafico-libreoffice.png, id=1424, 1372.12625pt x 576.1525pt>
+<img/grafico-libreoffice.png, id=1470, 1372.12625pt x 576.1525pt>
 File: img/grafico-libreoffice.png Graphic file (type png)
 <use img/grafico-libreoffice.png>
-Package luatex.def Info: img/grafico-libreoffice.png  used on input line 2099.
+Package luatex.def Info: img/grafico-libreoffice.png  used on input line 2173.
 (luatex.def)             Requested size: 411.64105pt x 172.84708pt.
 
-Overfull \hbox (5.33746pt too wide) in paragraph at lines 2099--2100
+Overfull \hbox (5.33746pt too wide) in paragraph at lines 2173--2174
  [][] 
  []
 
 
 
-[59<./img/barre-libre.png>]
+[61<./img/barre-libre.png>]
 
-[60<./img/dispersione-libreoffice.png><./img/grafico-libreoffice.png>]
-Overfull \hbox (5.46397pt too wide) in paragraph at lines 2121--2130
+[62<./img/dispersione-libreoffice.png><./img/grafico-libreoffice.png>]
+Overfull \hbox (5.46397pt too wide) in paragraph at lines 2195--2204
 \T1/lmtt/m/n/12 Struttura grafico/Aggiungi elemento grafico/Barre d'errore. \T1
 /ppl/m/n/12 In \T1/lmtt/m/n/12 Altre
  []
 
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 2130--2130
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 2204--2204
 [] 
  []
 
-<img/moto-carrello-libre.png, id=1447, 1325.95375pt x 860.21375pt>
+<img/moto-carrello-libre.png, id=1492, 1325.95375pt x 860.21375pt>
 File: img/moto-carrello-libre.png Graphic file (type png)
 <use img/moto-carrello-libre.png>
-Package luatex.def Info: img/moto-carrello-libre.png  used on input line 2139.
+Package luatex.def Info: img/moto-carrello-libre.png  used on input line 2213.
 (luatex.def)             Requested size: 397.7892pt x 258.06612pt.
 
-Overfull \hbox (2.86667pt too wide) in paragraph at lines 2139--2140
+Overfull \hbox (2.86667pt too wide) in paragraph at lines 2213--2214
  [][] 
  []
 
 
-Overfull \hbox (18.0pt too wide) in paragraph at lines 2137--2142
+Overfull \hbox (18.0pt too wide) in paragraph at lines 2211--2216
 []$[]$ 
  []
 
 
 
-[61<./img/moto-carrello-libre.png>]
-<img/linea-tendenza-libre.png, id=1454, 1761.58125pt x 785.93625pt>
+[63<./img/moto-carrello-libre.png>]
+<img/linea-tendenza-libre.png, id=1499, 1761.58125pt x 785.93625pt>
 File: img/linea-tendenza-libre.png Graphic file (type png)
 <use img/linea-tendenza-libre.png>
-Package luatex.def Info: img/linea-tendenza-libre.png  used on input line 2169.
+Package luatex.def Info: img/linea-tendenza-libre.png  used on input line 2243.
 
 (luatex.def)             Requested size: 352.31001pt x 157.18446pt.
 
-Overfull \hbox (18.0pt too wide) in paragraph at lines 2167--2172
+Overfull \hbox (18.0pt too wide) in paragraph at lines 2241--2246
 []$[]$ 
  []
 
-<img/creadoc.png, id=1455, 1263.72125pt x 547.04375pt>
+<img/creadoc.png, id=1500, 1263.72125pt x 547.04375pt>
 File: img/creadoc.png Graphic file (type png)
 <use img/creadoc.png>
-Package luatex.def Info: img/creadoc.png  used on input line 2186.
+Package luatex.def Info: img/creadoc.png  used on input line 2260.
 (luatex.def)             Requested size: 406.30359pt x 175.88394pt.
 
 
-[62<./img/linea-tendenza-libre.png>]
-<img/rinomina.png, id=1467, 1854.93pt x 1011.78pt>
+[64<./img/linea-tendenza-libre.png>]
+<img/rinomina.png, id=1513, 1854.93pt x 1011.78pt>
 File: img/rinomina.png Graphic file (type png)
 <use img/rinomina.png>
-Package luatex.def Info: img/rinomina.png  used on input line 2193.
+Package luatex.def Info: img/rinomina.png  used on input line 2267.
 (luatex.def)             Requested size: 406.30359pt x 221.61966pt.
 
 
-[63<./img/creadoc.png><./img/rinomina.png>]
-<img/dati.png, id=1480, 1927.2pt x 1084.05pt>
+[65<./img/creadoc.png><./img/rinomina.png>]
+<img/dati.png, id=1526, 1927.2pt x 1084.05pt>
 File: img/dati.png Graphic file (type png)
 <use img/dati.png>
-Package luatex.def Info: img/dati.png  used on input line 2221.
+Package luatex.def Info: img/dati.png  used on input line 2295.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 
-[64<./img/dati.png>]
-<img/selezione.png, id=1492, 1927.2pt x 1084.05pt>
+[66<./img/dati.png>]
+<img/selezione.png, id=1538, 1927.2pt x 1084.05pt>
 File: img/selezione.png Graphic file (type png)
 <use img/selezione.png>
-Package luatex.def Info: img/selezione.png  used on input line 2234.
+Package luatex.def Info: img/selezione.png  used on input line 2308.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
-<img/inseriscigrafico.png, id=1494, 1927.2pt x 1084.05pt>
+<img/inseriscigrafico.png, id=1540, 1927.2pt x 1084.05pt>
 File: img/inseriscigrafico.png Graphic file (type png)
 <use img/inseriscigrafico.png>
-Package luatex.def Info: img/inseriscigrafico.png  used on input line 2244.
+Package luatex.def Info: img/inseriscigrafico.png  used on input line 2318.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/dispersione.png, id=1496, 1927.2pt x 1084.05pt>
+<img/dispersione.png, id=1542, 1927.2pt x 1084.05pt>
 File: img/dispersione.png Graphic file (type png)
 <use img/dispersione.png>
-Package luatex.def Info: img/dispersione.png  used on input line 2255.
+Package luatex.def Info: img/dispersione.png  used on input line 2329.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/modifica.png, id=1497, 1927.2pt x 1084.05pt>
+<img/modifica.png, id=1543, 1927.2pt x 1084.05pt>
 File: img/modifica.png Graphic file (type png)
 <use img/modifica.png>
-Package luatex.def Info: img/modifica.png  used on input line 2269.
+Package luatex.def Info: img/modifica.png  used on input line 2343.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/personalizza.png, id=1499, 1752.5475pt x 985.6825pt>
+<img/personalizza.png, id=1545, 1752.5475pt x 985.6825pt>
 File: img/personalizza.png Graphic file (type png)
 <use img/personalizza.png>
-Package luatex.def Info: img/personalizza.png  used on input line 2276.
+Package luatex.def Info: img/personalizza.png  used on input line 2350.
 (luatex.def)             Requested size: 406.30359pt x 228.50703pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/titolo.png, id=1501, 1756.5625pt x 987.69pt>
+<img/titolo.png, id=1547, 1756.5625pt x 987.69pt>
 File: img/titolo.png Graphic file (type png)
 <use img/titolo.png>
-Package luatex.def Info: img/titolo.png  used on input line 2286.
+Package luatex.def Info: img/titolo.png  used on input line 2360.
 (luatex.def)             Requested size: 406.30359pt x 228.46002pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sceltax.png, id=1503, 1756.5625pt x 987.69pt>
+<img/sceltax.png, id=1549, 1756.5625pt x 987.69pt>
 File: img/sceltax.png Graphic file (type png)
 <use img/sceltax.png>
-Package luatex.def Info: img/sceltax.png  used on input line 2294.
+Package luatex.def Info: img/sceltax.png  used on input line 2368.
 (luatex.def)             Requested size: 406.30359pt x 228.46002pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/titolox.png, id=1505, 1766.6pt x 993.7125pt>
+<img/titolox.png, id=1551, 1766.6pt x 993.7125pt>
 File: img/titolox.png Graphic file (type png)
 <use img/titolox.png>
-Package luatex.def Info: img/titolox.png  used on input line 2304.
+Package luatex.def Info: img/titolox.png  used on input line 2378.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 
-[65<./img/selezione.png>]
+[67<./img/selezione.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sceltay.png, id=1527, 1786.675pt x 1004.75375pt>
+<img/sceltay.png, id=1572, 1786.675pt x 1004.75375pt>
 File: img/sceltay.png Graphic file (type png)
 <use img/sceltay.png>
-Package luatex.def Info: img/sceltay.png  used on input line 2314.
+Package luatex.def Info: img/sceltay.png  used on input line 2388.
 (luatex.def)             Requested size: 406.30359pt x 228.48218pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/titoloy.png, id=1529, 1927.2pt x 1084.05pt>
+<img/titoloy.png, id=1574, 1927.2pt x 1084.05pt>
 File: img/titoloy.png Graphic file (type png)
 <use img/titoloy.png>
-Package luatex.def Info: img/titoloy.png  used on input line 2326.
+Package luatex.def Info: img/titoloy.png  used on input line 2400.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 
-[66<./img/inseriscigrafico.png><./img/dispersione.png>]
+[68<./img/inseriscigrafico.png><./img/dispersione.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[67<./img/modifica.png><./img/personalizza.png>]
+[69<./img/modifica.png><./img/personalizza.png>]
 
-[68<./img/titolo.png><./img/sceltax.png>]
+[70<./img/titolo.png><./img/sceltax.png>]
 
-[69<./img/titolox.png><./img/sceltay.png>]
-<img/serie.png, id=1571, 1927.2pt x 1084.05pt>
+[71<./img/titolox.png><./img/sceltay.png>]
+<img/serie.png, id=1617, 1927.2pt x 1084.05pt>
 File: img/serie.png Graphic file (type png)
 <use img/serie.png>
-Package luatex.def Info: img/serie.png  used on input line 2344.
+Package luatex.def Info: img/serie.png  used on input line 2418.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/tendenza.png, id=1572, 1927.2pt x 1084.05pt>
+<img/tendenza.png, id=1618, 1927.2pt x 1084.05pt>
 File: img/tendenza.png Graphic file (type png)
 <use img/tendenza.png>
-Package luatex.def Info: img/tendenza.png  used on input line 2350.
+Package luatex.def Info: img/tendenza.png  used on input line 2424.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/polinomiale.png, id=1574, 1786.675pt x 1004.75375pt>
+<img/polinomiale.png, id=1620, 1786.675pt x 1004.75375pt>
 File: img/polinomiale.png Graphic file (type png)
 <use img/polinomiale.png>
-Package luatex.def Info: img/polinomiale.png  used on input line 2357.
+Package luatex.def Info: img/polinomiale.png  used on input line 2431.
 (luatex.def)             Requested size: 406.30359pt x 228.48218pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[70<./img/titoloy.png>]
-<img/r2.png, id=1584, 1786.675pt x 1004.75375pt>
+[72<./img/titoloy.png>]
+<img/r2.png, id=1629, 1786.675pt x 1004.75375pt>
 File: img/r2.png Graphic file (type png)
 <use img/r2.png>
-Package luatex.def Info: img/r2.png  used on input line 2365.
+Package luatex.def Info: img/r2.png  used on input line 2439.
 (luatex.def)             Requested size: 406.30359pt x 228.48218pt.
 
 
@@ -2523,61 +2527,57 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[71<./img/serie.png><./img/tendenza.png>]
+[73<./img/serie.png><./img/tendenza.png>]
 
-[72<./img/polinomiale.png><./img/r2.png>]
-<img/intervallo2.png, id=1603, 1786.675pt x 1004.75375pt>
+[74<./img/polinomiale.png><./img/r2.png>]
+<img/intervallo2.png, id=1648, 1786.675pt x 1004.75375pt>
 File: img/intervallo2.png Graphic file (type png)
 <use img/intervallo2.png>
-Package luatex.def Info: img/intervallo2.png  used on input line 2395.
+Package luatex.def Info: img/intervallo2.png  used on input line 2469.
 (luatex.def)             Requested size: 406.30359pt x 228.48218pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/intervallo2-dialogo.png, id=1604, 1788.6825pt x 1005.7575pt>
+<img/intervallo2-dialogo.png, id=1649, 1788.6825pt x 1005.7575pt>
 File: img/intervallo2-dialogo.png Graphic file (type png)
 <use img/intervallo2-dialogo.png>
-Package luatex.def Info: img/intervallo2-dialogo.png  used on input line 2403.
+Package luatex.def Info: img/intervallo2-dialogo.png  used on input line 2477.
 (luatex.def)             Requested size: 406.30359pt x 228.44954pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/finale.png, id=1605, 1927.2pt x 1084.05pt>
+<img/finale.png, id=1650, 1927.2pt x 1084.05pt>
 File: img/finale.png Graphic file (type png)
 <use img/finale.png>
-Package luatex.def Info: img/finale.png  used on input line 2410.
+Package luatex.def Info: img/finale.png  used on input line 2484.
 (luatex.def)             Requested size: 406.30359pt x 228.5339pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[73]
+[75]
 
-[74<./img/intervallo2.png><./img/intervallo2-dialogo.png>]
+[76<./img/intervallo2.png><./img/intervallo2-dialogo.png>]
 
-[75<./img/finale.png>]
+[77<./img/finale.png>]
 
-[76
+[78
 
 ]
 Capitolo 4.
 
 
-[77]
-
-[78]
-
 [79]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 
 [80]
 
 [81]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [82]
 
@@ -2591,31 +2591,35 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [87]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 [88]
 
 [89]
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
 [90]
+
+[91]
+
+[92]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[91]
+[93]
 
-[92]
-<img/nome_del_file_grafico.png, id=1753, 1223.5311pt x 536.2434pt>
+[94]
+<img/nome_del_file_grafico.png, id=1798, 1223.5311pt x 536.2434pt>
 File: img/nome_del_file_grafico.png Graphic file (type png)
 <use img/nome_del_file_grafico.png>
-Package luatex.def Info: img/nome_del_file_grafico.png  used on input line 3111
+Package luatex.def Info: img/nome_del_file_grafico.png  used on input line 3185
 .
 (luatex.def)             Requested size: 487.56306pt x 213.69168pt.
 
-Overfull \hbox (81.25948pt too wide) in paragraph at lines 3111--3112
+Overfull \hbox (81.25948pt too wide) in paragraph at lines 3185--3186
  [][] 
  []
 
@@ -2624,17 +2628,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[93]
-
-[94<./img/nome_del_file_grafico.png>]
-
 [95]
 
-[96]
+[96<./img/nome_del_file_grafico.png>]
+
+[97]
+
+[98]
 Capitolo 5.
 
 
-[97
+[99
 
 ] (/media/antonio/texlive/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
@@ -2644,7 +2648,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-3212.
+3286.
  (/media/antonio/texlive/texlive/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -2657,25 +2661,25 @@ Package microtype Info: Character `texttrademark ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 
-[98]
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 3253.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 10.40245pt on input line 3253.
-
-
-[99]
-
 [100]
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 3327.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 10.40245pt on input line 3327.
+
 
 [101]
+
+[102]
+
+[103]
 \pydata@fh@_88B50ADB6802289120D8B477E3B7AD88.data.minted=\write7
 
 \openout7 = _88B50ADB6802289120D8B477E3B7AD88.data.minted
-runsystem(latexminted config  --timestamp 20241205200223 88B50ADB6802289120D8B47
+runsystem(latexminted config  --timestamp 20241205201638 88B50ADB6802289120D8B47
 7E3B7AD88)...executed.
  (./_88B50ADB6802289120D8B477E3B7AD88.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20241205200223 88B50ADB6802289120
+runsystem(latexminted cleanconfig  --timestamp 20241205201638 88B50ADB6802289120
 D8B477E3B7AD88)...executed.
 
 (./_minted/default.style.minted)
@@ -2684,42 +2688,42 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 8.
 )
 
-[102] (./_minted/991B06C0A77D172D65F24B63FD28B5F5.highlight.minted)
+[104] (./_minted/991B06C0A77D172D65F24B63FD28B5F5.highlight.minted)
 (./_minted/355F6C75B7EFE1D0FF0B6BB066F3686A.highlight.minted)
 
-[103] (./_minted/0A72C9ABABF26EDBB16D8486257D4908.highlight.minted)
+[105] (./_minted/0A72C9ABABF26EDBB16D8486257D4908.highlight.minted)
 
-[104]
-<img/grafico_dispersione.png, id=1945, 462.528pt x 346.896pt>
+[106]
+<img/grafico_dispersione.png, id=1990, 462.528pt x 346.896pt>
 File: img/grafico_dispersione.png Graphic file (type png)
 <use img/grafico_dispersione.png>
-Package luatex.def Info: img/grafico_dispersione.png  used on input line 3509.
+Package luatex.def Info: img/grafico_dispersione.png  used on input line 3583.
 (luatex.def)             Requested size: 325.0441pt x 243.79419pt.
 
 
-[105<./img/grafico_dispersione.png>]
-<img/grafico_barre_errore.png, id=1967, 462.528pt x 346.896pt>
+[107<./img/grafico_dispersione.png>]
+<img/grafico_barre_errore.png, id=2012, 462.528pt x 346.896pt>
 File: img/grafico_barre_errore.png Graphic file (type png)
 <use img/grafico_barre_errore.png>
-Package luatex.def Info: img/grafico_barre_errore.png  used on input line 3538.
+Package luatex.def Info: img/grafico_barre_errore.png  used on input line 3612.
 
 (luatex.def)             Requested size: 325.0441pt x 243.79419pt.
 
 
-[106<./img/grafico_barre_errore.png>]
+[108<./img/grafico_barre_errore.png>]
 
-[107]
-<img/grafico_spazio_temporale.png, id=2035, 867.24pt x 433.62pt>
+[109]
+<img/grafico_spazio_temporale.png, id=2080, 867.24pt x 433.62pt>
 File: img/grafico_spazio_temporale.png Graphic file (type png)
 <use img/grafico_spazio_temporale.png>
 Package luatex.def Info: img/grafico_spazio_temporale.png  used on input line 3
-607.
+681.
 (luatex.def)             Requested size: 325.0441pt x 162.52109pt.
-<img/grafico_velocita_temporale.png, id=2036, 867.24pt x 433.62pt>
+<img/grafico_velocita_temporale.png, id=2081, 867.24pt x 433.62pt>
 File: img/grafico_velocita_temporale.png Graphic file (type png)
 <use img/grafico_velocita_temporale.png>
 Package luatex.def Info: img/grafico_velocita_temporale.png  used on input line
- 3614.
+ 3688.
 (luatex.def)             Requested size: 325.0441pt x 162.52109pt.
 
 
@@ -2727,12 +2731,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[108<./img/grafico_spazio_temporale.png>]
-<img/grafico_altezza_diametro.png, id=2052, 867.24pt x 433.62pt>
+[110<./img/grafico_spazio_temporale.png>]
+<img/grafico_altezza_diametro.png, id=2098, 867.24pt x 433.62pt>
 File: img/grafico_altezza_diametro.png Graphic file (type png)
 <use img/grafico_altezza_diametro.png>
 Package luatex.def Info: img/grafico_altezza_diametro.png  used on input line 3
-654.
+728.
 (luatex.def)             Requested size: 325.0441pt x 162.52109pt.
 
 
@@ -2740,91 +2744,91 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[109<./img/grafico_velocita_temporale.png>]
+[111<./img/grafico_velocita_temporale.png>]
 
-[110<./img/grafico_altezza_diametro.png>]
+[112<./img/grafico_altezza_diametro.png>]
 Capitolo 6.
 
 
-[111
+[113
 
 ]
-<img/histogram_example.png, id=2091, 462.528pt x 346.896pt>
+<img/histogram_example.png, id=2136, 462.528pt x 346.896pt>
 File: img/histogram_example.png Graphic file (type png)
 <use img/histogram_example.png>
-Package luatex.def Info: img/histogram_example.png  used on input line 3680.
+Package luatex.def Info: img/histogram_example.png  used on input line 3754.
 (luatex.def)             Requested size: 325.0441pt x 243.79419pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 3687.
+nput line 3761.
 
 
-[112]
+[114]
 
-[113<./img/histogram_example.png>]
-<img/curva_gaussiana.png, id=2125, 462.528pt x 346.896pt>
+[115<./img/histogram_example.png>]
+<img/curva_gaussiana.png, id=2171, 462.528pt x 346.896pt>
 File: img/curva_gaussiana.png Graphic file (type png)
 <use img/curva_gaussiana.png>
-Package luatex.def Info: img/curva_gaussiana.png  used on input line 3735.
+Package luatex.def Info: img/curva_gaussiana.png  used on input line 3809.
 (luatex.def)             Requested size: 323.76738pt x 242.82553pt.
 
 
-[114<./img/curva_gaussiana.png>]
-
-[115]
-
-[116]
-<img/istogramma2.png, id=2178, 722.7pt x 433.62pt>
-File: img/istogramma2.png Graphic file (type png)
-<use img/istogramma2.png>
-Package luatex.def Info: img/istogramma2.png  used on input line 3840.
-(luatex.def)             Requested size: 325.0441pt x 195.02794pt.
-
+[116<./img/curva_gaussiana.png>]
 
 [117]
 
-[118<./img/istogramma2.png>]
+[118]
+<img/istogramma2.png, id=2223, 722.7pt x 433.62pt>
+File: img/istogramma2.png Graphic file (type png)
+<use img/istogramma2.png>
+Package luatex.def Info: img/istogramma2.png  used on input line 3914.
+(luatex.def)             Requested size: 325.0441pt x 195.02794pt.
+
 
 [119]
 
-[120]
+[120<./img/istogramma2.png>]
 
 [121]
-<img/istogramma.png, id=2279, 462.528pt x 346.896pt>
+
+[122]
+
+[123]
+<img/istogramma.png, id=2324, 462.528pt x 346.896pt>
 File: img/istogramma.png Graphic file (type png)
 <use img/istogramma.png>
-Package luatex.def Info: img/istogramma.png  used on input line 3967.
+Package luatex.def Info: img/istogramma.png  used on input line 4041.
 (luatex.def)             Requested size: 325.0441pt x 243.79419pt.
 
 
-[122<./img/istogramma.png>]
+[124<./img/istogramma.png>]
 
-[123]
-<img/grafico_misure.png, id=2315, 867.24pt x 650.43pt>
+[125]
+<img/grafico_misure.png, id=2361, 867.24pt x 650.43pt>
 File: img/grafico_misure.png Graphic file (type png)
 <use img/grafico_misure.png>
-Package luatex.def Info: img/grafico_misure.png  used on input line 4031.
+Package luatex.def Info: img/grafico_misure.png  used on input line 4105.
 (luatex.def)             Requested size: 406.30359pt x 304.7295pt.
 
 
-[124<./img/grafico_misure.png>]
+[126<./img/grafico_misure.png>]
 
-[125]
+[127]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4135.
-Package mdframed Info: Not enough space on this page on input line 4138.
+(mdframed)              on input line 4209.
+Package mdframed Info: Not enough space on this page on input line 4212.
 
 
-[126]
-Package mdframed Info: Not enough space on this page on input line 4138.
-<img/regressione_lineare.png, id=2374, 578.16pt x 433.62pt>
+[128]
+Package mdframed Info: Not enough space on this page on input line 4212.
+<img/regressione_lineare.png, id=2419, 578.16pt x 433.62pt>
 File: img/regressione_lineare.png Graphic file (type png)
 <use img/regressione_lineare.png>
-Package luatex.def Info: img/regressione_lineare.png  used on input line 4150.
+Package luatex.def Info: img/regressione_lineare.png  used on input line 4224.
 (luatex.def)             Requested size: 325.0441pt x 243.77832pt.
 
 
@@ -2832,27 +2836,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[127<./img/regressione_lineare.png>]
+[129<./img/regressione_lineare.png>]
 
-[128]
+[130]
 
-[129]
-<img/g.png, id=2436, 578.16pt x 433.62pt>
+[131]
+<img/g.png, id=2483, 578.16pt x 433.62pt>
 File: img/g.png Graphic file (type png)
 <use img/g.png>
-Package luatex.def Info: img/g.png  used on input line 4276.
+Package luatex.def Info: img/g.png  used on input line 4350.
 (luatex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
-[130<./img/g.png>]
-
-[131]
-
-[132]
+[132<./img/g.png>]
 
 [133]
 
-[134] (./appunti-new.aux)
+[134]
+
+[135]
+
+[136] (./appunti-new.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -2862,19 +2866,19 @@ L3 programming layer <2024-11-02>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `appunti-new.out' has not changed.
-(rerunfilecheck)             Checksum: 14E5705971593C651171C8B3D854E0FF;28566.
+(rerunfilecheck)             Checksum: 3490508265F2579888A039EB138D4F3D;30150.
 )
 
 Here is how much of LuaTeX's memory you used:
- 60593 strings out of 475664
- 745525,2373549 words of node,token memory allocated
- 3873 words of node memory still in use:
+ 60607 strings out of 475664
+ 745558,2373549 words of node,token memory allocated
+ 3951 words of node memory still in use:
    69 hlist, 14 vlist, 30 rule, 1 local_par, 12 glue, 53 kern, 1 penalty, 7 glyp
-h, 517 attribute, 103 glue_spec, 314 attribute_list, 2 write, 24 pdf_literal, 32
- pdf_colorstack nodes
-   avail lists: 1:6,2:9312,3:2143,4:13946,5:12896,6:282,7:17422,8:97,9:32425,10:
-37,11:1224
- 80681 multiletter control sequences out of 65536+600000
+h, 541 attribute, 103 glue_spec, 326 attribute_list, 2 write, 24 pdf_literal, 1 
+pdf_action, 32 pdf_colorstack nodes
+   avail lists: 1:10,2:9312,3:2142,4:13946,5:12896,6:284,7:17422,8:95,9:32425,10
+:37,11:1224
+ 80687 multiletter control sequences out of 65536+600000
  252 fonts using 16486607 bytes
  96i,19n,102p,1689b,2574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/media/antonio/texlive/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/media/
@@ -2907,10 +2911,10 @@ fb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.p
 fb></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pf
 b></media/antonio/texlive/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pf
 b>
-Output written on appunti-new.pdf (135 pages, 11731731 bytes).
+Output written on appunti-new.pdf (137 pages, 11739457 bytes).
 
-PDF statistics: 2619 PDF objects out of 2984 (max. 8388607)
- 2149 compressed objects within 22 object streams
- 1004 named destinations out of 1200 (max. 131072)
- 1519 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2664 PDF objects out of 2984 (max. 8388607)
+ 2186 compressed objects within 22 object streams
+ 1012 named destinations out of 1200 (max. 131072)
+ 1567 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1466,7 +1466,7 @@ Determina se le seguenti misure sono compatibili:
 
 
  
-\section{Misure indirette: propagazione degli errori}
+\section{Misure indirette: propagazione degli errori massimi (o strumentali)}
 Quando si misura una grandezza attraverso un calcolo, l'incertezza presente nei dati si ``propaga'' e la ritroviamo nella misura finale. Il modo con cui le incertezze si propagano viene studiato col metodo della propagazione degli errori. Alla base di questo metodo, ci sono due formule, usate nel caso la formula contenga prodotti/quozienti oppure somme/differenze. Tali formule, è bene dirlo, hanno una bene precisa giusitificazione matematica, ma noi non la forniremo, accontentandoci dei risultati.
 \subsection{Somme/differenze}
 Supponiamo che 
@@ -1760,6 +1760,80 @@ Determina la formula per il calcolo dell'errore assoluto su $f$.\\
 
 \hspace*{\fill} $\left[\Delta f=\overline{f}\cdot\left(\frac{\Delta a}{\overline{a}}+ 2\cdot \frac{\Delta b}{\overline{b}} +3\cdot\frac{\Delta c}{\overline{c}} + 4\cdot \frac{\Delta d}{\overline{d}} + 5\cdot \frac{\Delta e}{\overline{e}}  \right)\right]$
 \end{esercizio}
+\section{Propagazione degli errori indipendenti e casuali}
+
+Nelle misure sperimentali, gli errori casuali associati a grandezze indipendenti si propagano secondo regole specifiche. Questo approccio, basato sulla **somma in quadratura**, si differenzia dalla propagazione degli errori massimi (strumentali), dove si sommano direttamente i contributi degli errori. Infine, vedremo come combinare un errore casuale con un errore massimo.
+
+\subsection{Somme e differenze}
+Per somme o differenze di grandezze indipendenti, l'errore assoluto totale è dato dalla **somma in quadratura** degli errori assoluti:
+
+\[
+\Delta S = \sqrt{(\Delta A)^2 + (\Delta B)^2},
+\]
+dove $S = A \pm B$.
+
+Questo approccio si applica quando gli errori sono **casuali e indipendenti**, ed è meno conservativo rispetto alla propagazione degli errori massimi, che semplicemente somma gli errori: $\Delta S = \Delta A + \Delta B$.
+
+**Esempio**:  
+Supponiamo di avere $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$. Calcoliamo $S = A + B$:
+\[
+S = 5,0 + 3,0 = 8,0,
+\]
+\[
+\Delta S = \sqrt{(0,2)^2 + (0,1)^2} = \sqrt{0,04 + 0,01} = \sqrt{0,05} \approx 0,2.
+\]
+Risultato: $S = 8,0 \pm 0,2$.  
+L'errore assoluto finale è stato arrotondato ad una sola cifra significativa.
+
+\subsection{Prodotti e quozienti}
+Per prodotti o quozienti di grandezze indipendenti, gli errori relativi si sommano in quadratura:
+
+\[
+\frac{\Delta R}{R} = \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2},
+\]
+dove $R = A \cdot B$ oppure $R = A / B$.  
+Da qui, l'errore assoluto risulta:
+\[
+\Delta R = R \cdot \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}.
+\]
+
+**Esempio**:  
+Se $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$, calcoliamo $R = A \cdot B$:
+\[
+R = 5,0 \cdot 3,0 = 15,0,
+\]
+\[
+\frac{\Delta R}{R} = \sqrt{\left(\frac{0,2}{5,0}\right)^2 + \left(\frac{0,1}{3,0}\right)^2} = \sqrt{0,0016 + 0,0011} \approx 0,053.
+\]
+\[
+\Delta R = 15,0 \cdot 0,053 \approx 0,8.
+\]
+Risultato: $R = 15,0 \pm 0,8$.
+
+\subsection{Combinazione di errori casuali ed errori massimi}
+Se una misura è affetta da un errore casuale $\Delta_c$ e da un errore massimo (strumentale) $\Delta_m$, questi possono essere combinati in quadratura:
+\[
+\Delta = \sqrt{(\Delta_c)^2 + (\Delta_m)^2}.
+\]
+
+**Esempio**:  
+Una grandezza $A = 10,0 \pm 0,3$ ha un errore casuale $\Delta_c = 0,3$ e un errore massimo $\Delta_m = 0,5$. L'errore totale sarà:
+\[
+\Delta A = \sqrt{(0,3)^2 + (0,5)^2} = \sqrt{0,09 + 0,25} = \sqrt{0,34} \approx 0,6.
+\]
+Risultato: $A = 10,0 \pm 0,6$.
+
+\subsection{Differenze rispetto alla propagazione degli errori massimi}
+Con la propagazione degli errori massimi, si assume il caso peggiore, cioè che tutti gli errori si sommino direttamente. Questo approccio è più conservativo ma spesso sovrastima l'incertezza, specialmente se gli errori sono indipendenti e casuali.
+
+Ad esempio, per $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$, nella propagazione degli errori massimi avremmo:
+\[
+\Delta S = \Delta A + \Delta B = 0,2 + 0,1 = 0,3,
+\]
+mentre la somma in quadratura dà $\Delta S \approx 0,2$, che è più realistico.
+
+\subsection{Conclusioni}
+La somma in quadratura fornisce un'approssimazione migliore dell'incertezza totale quando gli errori sono casuali e indipendenti, distinguendosi dall'approccio conservativo della propagazione degli errori massimi. La combinazione con errori massimi tramite la somma in quadratura è particolarmente utile per misure sperimentali complesse.
 
  \chapter{Grafici di misure}
 In fisica spesso è possibile verificare una formula facendo variare una delle grandezze contenute e osservando su un grafico come varia un'altra grandezza. A questo scopo si predispone una tabella coi dati e poi si realizza un grafico avendo come obiettivo una buona leggibilità. Elencheremo di seguito una procedura passo-passo, per realizzare dei buoni grafici elencando tutte le caratteristiche indispensabili. Nelle prossieme sezioni, realizzeremo, prima un grafico a mano, poi con l'uso del foglio di calcolo.
