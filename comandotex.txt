@@ -1,1 +1,0 @@
-lualatex  -synctex=1 -interaction=nonstopmode -shell-escape appunti.tex && xed appunti.tex && okular  appunti.pdf
