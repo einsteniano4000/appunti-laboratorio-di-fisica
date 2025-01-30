@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {2.3}Esercizi}{38}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Confronto tra misure}{39}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Esercizi}{40}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Misure indirette: propagazione degli errori massimi (o strumentali)}{40}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Misure indirette: propagazione degli errori.}{40}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Somme/differenze}{41}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Moltiplicazioni/divisioni}{42}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Esercizi}{47}{subsection.2.6.3}%

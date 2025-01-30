@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees,arrows.meta}
+\usepackage{amsmath}
+\begin{document}
+\begin{tikzpicture}[
+mindmap,
+concept color=blue!20,
+every node/.style={concept, execute at begin node=\hskip0pt},
+level 1/.style={level distance=4cm, sibling angle=90},
+level 2/.style={level distance=3cm, sibling angle=45}
+]
+% Nodo principale
+\node[concept] {Errori assoluti}
+% Primo livello: tre rami principali
+child[concept color=green!30] {
+node {$\Delta G = \text{sensibilità}$}
+edge from parent node[above] {Misure dirette}
+}
+child[concept color=green!30] {
+node[align=center] {
+Se $N < 5$: \
+$\Delta G = \frac{G_{max} - G_{min}}{2}$ \[1em]
+Se $N \geq 5$: \
+$\Delta G = \overline{\sigma} = \frac{\sqrt{\sum_{i=1}^N(\overline{G}-G_i)^2}}{N\sqrt{N}}$
+}
+edge from parent node[right] {Misure ripetute}
+}
+child[concept color=orange!30] {
+node {Misure indirette}
+% Secondo livello: due rami da misure indirette
+child[concept color=yellow!30] {
+node[align=center] {
+Se $\overline{G} = \overline{a} \pm \overline{b}$ \
+allora \
+$\Delta G = \Delta a + \Delta b$
+}
+edge from parent node[left] {Somme/differenze}
+}
+child[concept color=yellow!30] {
+node[align=center] {
+Se $\overline{G} = \overline{a} \cdot \overline{b}$ \
+oppure \
+$\overline{G} = \frac{\overline{a}}{\overline{b}}$ \
+allora \
+$\frac{\Delta G}{\overline{G}} = \frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}$ \
+ossia \
+$\Delta G = \overline{G} \cdot \left(\frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}\right)$
+}
+edge from parent node[right] {Prodotti/quozienti}
+}
+edge from parent node[left] {Misure indirette}
+};
+\end{tikzpicture}
+\end{document}
