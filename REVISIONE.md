@@ -2,10 +2,10 @@
 
 > **Avanzamento** (branch `revisione`)
 > - [x] Passo 1 – fix che non cambiano i contenuti: B1, B2, B3, B6, B7, A15, `\si{\square\s}`, refusi ricorrenti (D), «cubo di lato 1 m». Compila pulito (133 pagine, nessun label duplicato, nessun riferimento indefinito).
-> - [x] Passo 2 – correzioni di fisica: A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A13, A14, A16. **A11 e A12 rimandati al passo 4** (richiedono di rieseguire gli script). Ancora da uniformare A13 nella deviazione standard della media (già coerente) — fatto.
-> - [ ] Passo 3 – uniformare notazione: virgola/punto decimale, unità (C)
-> - [ ] Passo 4 – rieseguire gli script Python e sostituire gli output (+ A11, A12)
-> - [ ] Passo 5 – ampliamento (Parte II)
+> - [x] Passo 2 – correzioni di fisica: A1–A10, A13, A14, A16 (A11 e A12 risolti nel passo 3 togliendo gli script).
+> - [x] Passo 3 – (a) **eliminata tutta la trattazione di Python**: rimosso il capitolo "Guida linguaggio python"; nel capitolo "Statistica" tolti tutti i listati e la sezione "Dettagli sul codice", mantenendo teoria, risultati e figure (riformulati come "foglio di calcolo"). Rimosso `minted` dal preambolo → non serve più `--shell-escape`. (b) virgola decimale al posto del punto nelle tabelle dati. Output regressione ricalcolati e coerenti (A12); dataset "altezze" dichiarato illustrativo (A11). Compila pulito, **105 pagine**.
+> - [ ] Passo 4 – uniformare le unità (`\si{cm^3}` vs `\si{\cubic\centi\meter}` ecc.) e sistemare gli overfull hbox
+> - [ ] Passo 5 – ampliamento (Parte II: cinematica, dinamica, statica, energia, termologia, calore)
 
 Stato: il documento compila (`lualatex --shell-escape`, 137 pagine, exit 0) ma con
 5 warning di *label multiply defined* e 22 *overfull hbox*.
