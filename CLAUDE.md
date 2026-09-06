@@ -147,13 +147,14 @@ Stato compilazione: OK, ~145 pagine, pulito.
 
 ## Lavoro rimanente
 
-1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`, pp. stampate
-   172–203 = PDF 192–223, offset +20). IN CORSO:
-   - [x] §8.1 La pressione ($p=F/A$); §8.2 Legge di Stevino ($p=\rho g h$,
-     pressione assoluta/relativa). Numeri in `verifica/cap-fluidi.py`.
-   - [ ] §8.3 principio di Pascal (torchio idraulico) · §8.4 vasi comunicanti ·
-     §8.5 pressione atmosferica (Torricelli) · §8.6 principio di Archimede ·
-     §8.7 Problemi di riepilogo (~19).
+1. **Cap. "Equilibrio dei fluidi"** — **COMPLETO** (`capitoli/07-equilibrio-fluidi.tex`,
+   `\include` nel master). Fonte: Unità 5 di `tecnologico.pdf` (pp. stampate
+   172–203 = PDF 192–223, offset +20). §8.1 pressione ($p=F/A$) · §8.2 legge di
+   Stevino ($p=\rho g h$, assoluta/relativa) · §8.3 principio di Pascal (torchio
+   idraulico) · §8.4 vasi comunicanti (livello, due liquidi) · §8.5 pressione
+   atmosferica (Torricelli, unità, barometro) · §8.6 principio di Archimede
+   (spinta, galleggiamento, spinta aerostatica) · §8.7 Problemi di riepilogo (19).
+   Verifiche: `verifica/cap-fluidi.py`. Compila pulito, 179 pagine.
    - **Esercizi**: non solo applicazione diretta di una formula. Alta quota di
      problemi multi-step / a formule inverse, ispirati per *tipo e livello* a
      quelli del libro ma con scenari e numeri originali. Vale a fine paragrafo

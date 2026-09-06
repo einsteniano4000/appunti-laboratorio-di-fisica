@@ -170,3 +170,60 @@ print(f"chiatta: Delta h = {dh:.3f} m")
 S5 = 1.2 * 2000 * g
 P5 = (0.18 * 2000 + 400) * g
 print(f"pallone: S={S5:.0f} N, P={P5:.0f} N, S-P={S5-P5:.0f} N = {(S5-P5)/1e4:.1f} e4")
+
+# ---------------------------------------------------------------------------
+sez("8.7  Problemi di riepilogo")
+
+pa = 101325.0
+
+def show(n, val, unit=""):
+    print(f"  {n:>2}. {val}  {unit}")
+
+# 1 trattore vs cingolato
+Ft = 3200 * g
+show(1, f"trattore: F={Ft:.0f} N, p_ruote={Ft/0.24:.0f} Pa ; cingolato p={Ft/1.5:.0f} Pa (rapp {(Ft/0.24)/(Ft/1.5):.1f})")
+# 2 ventosa
+show(2, f"ventosa: dep min = {30/0.0012:.0f} Pa = 25 kPa ; p_aria <= {pa-30/0.0012:.0f} Pa")
+# 3 ghiaccio
+Pp = 65 * g
+show(3, f"persona {Pp:.0f} N ; scarpone 300 cm2 -> {Pp/0.03:.0f} Pa (>20k: sfonda) ; sci 0,25 m2 -> {Pp/0.25:.0f} Pa (ok)")
+# 4 torre acqua
+show(4, f"torre: p = {1000*g*27:.0f} Pa = {1000*g*27/1e5:.2f} bar")
+# 5 sub 1,8 bar mare
+show(5, f"sub: h = {1.8e5/(1030*g):.1f} m")
+# 6 oblo 400 m mare
+import math
+A_ob = math.pi*0.125**2
+p_ob = 1030*g*400
+show(6, f"oblo: p={p_ob:.3e} Pa, A={A_ob:.4f} m2, F={p_ob*A_ob:.0f} N")
+# 7 mercurio+acqua 20+20 cm
+show(7, f"recipiente: p_fondo = {13600*g*0.2 + 1000*g*0.2:.0f} Pa")
+# 8 martinetto d 15 mm / 12 cm
+show(8, f"martinetto: ratio={(120/15)**2:.0f}, F2 = {300*(120/15)**2:.0f} N")
+# 9 pressa n pompate
+show(9, f"pressa: n = {200*6/(4*30):.0f}")
+# 10 tubo U acqua/alcol
+hw = 790*15/1000
+show(10, f"U acqua/alcol: h_acqua={hw:.2f} cm, dislivello peli liberi = {15-hw:.2f} cm")
+# 12 barometro 748 mmHg
+show(12, f"748 mmHg = {748*133.3:.0f} Pa = {748*133.3/100:.0f} hPa")
+# 13 bassa pressione 980 hPa
+dh13 = (1013-980)*100/(13600*g)
+show(13, f"980 hPa: Delta h = {dh13*100:.1f} cm -> colonna {76-dh13*100:.1f} cm")
+# 14 coperchio, vuoto a 0,30 atm
+show(14, f"coperchio: F = {(1-0.30)*pa*0.02:.0f} N")
+# 15 sughero immerso
+show(15, f"sughero: F = {(1000-240)*0.002*g:.1f} N")
+# 16 corona
+S16 = 8.5-7.9
+V16 = S16/(1000*g)
+show(16, f"corona: S={S16:.1f} N, V={V16:.3e} m3, rho={(8.5/g)/V16:.0f} kg/m3 (oro=19300: no)")
+# 17 pontone
+show(17, f"pontone: Delta h = {3000/(1000*6.0):.2f} m")
+# 18 palloncino elio 6 L
+S18 = 1.2*0.006*g
+P18 = (0.003 + 0.18*0.006)*g
+show(18, f"palloncino: S={S18:.4f} N, P={P18:.4f} N, netto = {S18-P18:.4f} N (sale)")
+# 19 iceberg emerge 600 m3
+frac_em = 1 - 920/1025
+show(19, f"iceberg: frac emersa={frac_em:.4f}, V_tot = {600/frac_em:.0f} m3")

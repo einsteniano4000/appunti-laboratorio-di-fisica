@@ -18,9 +18,10 @@
 >   - [x] Cap. "Relazioni di Laboratorio": §4.1 riallineata allo schema ufficiale
 >     Keynes; nuove relazioni svolte **§4.3 legge di Hooke** e **§4.6 attrito
 >     statico** (rette di max/min pendenza). Numeri in `verifica/cap-relazioni.py`.
->   - [~] Cap. "Equilibrio dei fluidi" (Unità 5): §8.1 pressione, §8.2 Stevino
->     fatte (`verifica/cap-fluidi.py`); mancano Pascal, vasi comunicanti,
->     pressione atmosferica, Archimede, problemi di riepilogo.
+>   - [x] Cap. "Equilibrio dei fluidi" (Unità 5) — COMPLETO: §8.1 pressione ·
+>     §8.2 Stevino · §8.3 Pascal · §8.4 vasi comunicanti · §8.5 pressione
+>     atmosferica · §8.6 Archimede · §8.7 problemi di riepilogo (19).
+>     `verifica/cap-fluidi.py`. Figure TikZ (calibro §1.8 = foto CC BY-SA).
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
 Stato: il documento compila (`lualatex appunti-new.tex`, ~145 pagine, exit 0),
