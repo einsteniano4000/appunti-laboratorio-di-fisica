@@ -8,7 +8,8 @@
 > - [ ] Passo 4 – uniformare le unità (`\si{cm^3}` vs `\si{\cubic\centi\meter}` ecc.) e sistemare gli overfull hbox
 > - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–5). Figure ridisegnate in TikZ, esercizi con numeri propri verificati in `verifica/`.
 >   - [x] Cap. "Grandezze vettoriali e forze" §1–2: scalari/vettori, rappresentazione, vettore nullo/opposto; somma (retta, punta-coda, parallelogramma), differenza, prodotto per scalare, vettori perpendicolari (Pitagora). 7 figure TikZ, 2 esempi, 6 esercizi.
->   - [ ] §3 scomposizione di un vettore · §4 le forze · §5 legge di Hooke · §6 operazioni sulle forze · §7 attrito
+>   - [x] §3 scomposizione di un vettore (componenti, Pitagora, angoli notevoli); §4 le forze (contatto/distanza, forza come vettore, newton, forza-peso $P=mg$, massa vs peso). 3 figure TikZ, 3 esempi, 7 esercizi.
+>   - [ ] §5 legge di Hooke · §6 operazioni sulle forze · §7 attrito
 >   - [ ] Cap. "Equilibrio dei corpi solidi" (Unità 4)
 >   - [ ] Cap. "Equilibrio dei fluidi" (Unità 5)
 

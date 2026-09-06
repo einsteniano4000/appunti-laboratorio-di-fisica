@@ -3665,6 +3665,163 @@ Disegna su un foglio a quadretti due vettori $\vec{a}$ (orizzontale, verso destr
 \end{esercizio}
 
 
+\section{La scomposizione di un vettore}
+
+L'operazione inversa della somma si chiama \textbf{scomposizione}: dato un vettore $\vec{v}$, si cercano due vettori la cui somma sia $\vec{v}$. Il problema ha infinite soluzioni, ma quasi sempre conviene scegliere due direzioni \textbf{perpendicolari} tra loro, di solito quelle di un sistema di assi cartesiani $x$ e $y$.
+
+\subsection{Vettori componenti e componenti}
+Fissati gli assi, si tracciano dalla punta di $\vec{v}$ le perpendicolari ai due assi. Si ottengono così due vettori, $\vec{v}_x$ lungo l'asse $x$ e $\vec{v}_y$ lungo l'asse $y$, detti \textbf{vettori componenti} di $\vec{v}$, tali che (figura~\ref{fig:scomposizione}):
+\[
+\vec{v} = \vec{v}_x + \vec{v}_y .
+\]
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\draw[->] (-0.5,0) -- (5,0) node[right]{$x$};
+\draw[->] (0,-0.5) -- (0,3.4) node[above]{$y$};
+\coordinate (P) at (4,2.6);
+\draw[->,very thick,ocre] (0,0) -- (P) node[midway,above left]{$\vec{v}$};
+\draw[->,thick,blue!60!black] (0,0) -- (4,0) node[midway,below]{$\vec{v}_x$};
+\draw[->,thick,blue!60!black] (0,0) -- (0,2.6) node[midway,left]{$\vec{v}_y$};
+\draw[dashed,gray] (4,0) -- (P) -- (0,2.6);
+\draw (0.55,0) arc (0:33:0.55); \node at (0.95,0.22){\small $\alpha$};
+\end{tikzpicture}
+\caption{Scomposizione di un vettore lungo due assi perpendicolari.}
+\label{fig:scomposizione}
+\end{figure}
+
+Spesso è più comodo lavorare con numeri anziché con vettori. Si introducono allora le \textbf{componenti} $v_x$ e $v_y$: sono numeri (scalari) con segno, il cui valore assoluto è il modulo del corrispondente vettore componente, e il cui segno è positivo se il vettore componente è concorde con il verso dell'asse, negativo se è discorde. Le componenti si scrivono senza freccia.
+
+Poiché $\vec{v}$, $\vec{v}_x$ e $\vec{v}_y$ formano un triangolo rettangolo di cui $\vec{v}$ è l'ipotenusa, vale il \textbf{teorema di Pitagora}:
+\[
+\colorboxed{ocre}{\; v = \sqrt{v_x^2 + v_y^2}\; }
+\]
+
+\subsection{Calcolo delle componenti}
+Se si conosce l'angolo $\alpha$ che $\vec{v}$ forma con l'asse $x$:
+\begin{itemize}
+\item per $\alpha = 45^\circ$ le due componenti sono uguali e valgono $v_x = v_y = \dfrac{v}{\sqrt{2}} \approx 0,71\,v$;
+\item per $\alpha = 30^\circ$ o $\alpha = 60^\circ$ si usa il triangolo rettangolo con angoli $30^\circ$--$60^\circ$--$90^\circ$, in cui il cateto opposto all'angolo di $30^\circ$ è metà dell'ipotenusa;
+\item per un angolo qualunque, quando conoscerete la trigonometria, si userà $v_x = v\cos\alpha$ e $v_y = v\sin\alpha$.
+\end{itemize}
+
+\begin{testexample}[\thetcbcounter \, Scomposizione di uno spostamento]
+Uno spostamento $\vec{v}$ ha modulo $\SI{10}{\meter}$ e forma un angolo di $30^\circ$ con l'asse $x$. La componente lungo $y$ è metà del modulo: $v_y = \SI{5}{\meter}$. La componente lungo $x$ si ricava con Pitagora:
+\[
+v_x = \sqrt{v^2 - v_y^2} = \sqrt{(\SI{10}{\meter})^2 - (\SI{5}{\meter})^2} = \sqrt{\SI{75}{\meter\squared}} \approx \SI{8,7}{\meter}.
+\]
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Un vettore ha componenti $v_x = \SI{9}{\meter}$ e $v_y = \SI{12}{\meter}$. Calcola il suo modulo.\\
+\hspace*{\fill} $\left[v = \SI{15}{\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Uno spostamento di modulo $\SI{20}{\meter}$ forma un angolo di $60^\circ$ con l'asse $x$. Determina le due componenti (suggerimento: qual è metà dell'ipotenusa?).\\
+\hspace*{\fill} $\left[v_x = \SI{10}{\meter}\ ;\quad v_y \approx \SI{17,3}{\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una forza di modulo $\SI{50}{\newton}$ è inclinata di $45^\circ$ rispetto all'orizzontale. Quanto valgono le sue componenti orizzontale e verticale?\\
+\hspace*{\fill} $\left[F_x = F_y = \dfrac{50}{\sqrt{2}}\,\si{\newton} \approx \SI{35}{\newton}\right]$
+\end{esercizio}
+
+
+\section{Le forze}
+
+Nel linguaggio comune usiamo spesso la parola ``forza'', ma darne una definizione precisa non è semplice. Ci accorgiamo che è in gioco una forza quando osserviamo i suoi \textbf{effetti}: serve una forza per tenere fermo un aquilone che vorrebbe volare via, per sollevare uno zaino, per deformare una molla o una gomma da cancellare. Possiamo quindi dire:
+
+\begin{definizione}
+Una \textbf{forza} è tutto ciò che produce una variazione del moto (un'accelerazione) oppure una deformazione di un corpo.
+\end{definizione}
+
+\subsection{Forze di contatto e forze a distanza}
+Negli esempi visti sopra c'è sempre un contatto tra chi esercita la forza e il corpo su cui agisce: si parla di \textbf{forze di contatto}. Esistono però anche \textbf{forze a distanza}, che agiscono senza contatto: la forza con cui una calamita attira un chiodo di ferro, la forza elettrica tra oggetti carichi, e soprattutto la forza di gravità con cui la Terra attira tutti i corpi.
+
+\subsection{La forza come vettore}
+La forza è una grandezza \textbf{vettoriale}: per assegnarla occorrono un modulo (l'intensità), una direzione (la \textbf{retta d'azione} della forza) e un verso. Va inoltre specificato il \textbf{punto di applicazione}, cioè il punto del corpo su cui la forza agisce (figura~\ref{fig:forzavettore}).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\fill[gray!25] (0,0) rectangle (1.6,1);
+\draw (0,0) rectangle (1.6,1);
+\fill (1.6,0.5) circle (1.5pt) node[below right]{\small punto di applicazione};
+\draw[->,very thick,ocre] (1.6,0.5) -- (4.3,0.5) node[midway,above]{$\vec{F}$};
+\draw[dashed,gray] (-0.4,0.5) -- (5,0.5) node[right,black]{\small retta d'azione};
+\end{tikzpicture}
+\caption{Una forza: modulo, retta d'azione, verso, punto di applicazione.}
+\label{fig:forzavettore}
+\end{figure}
+
+L'unità di misura della forza nel Sistema Internazionale è il \textbf{newton} (simbolo $\si{\newton}$), che prende il nome dallo scienziato Isaac Newton. Per farsi un'idea: tenere in mano una mela ($\approx \SI{100}{\gram}$) richiede una forza di circa $\SI{1}{\newton}$.
+
+\subsection{La forza-peso}
+La Terra attira ogni corpo con una forza a distanza chiamata \textbf{forza di gravità} o \textbf{forza-peso} (o semplicemente \textbf{peso}). In realtà questa forza è distribuita su tutto il volume del corpo, ma per semplicità la trattiamo come un'unica forza applicata in un punto, il \textbf{baricentro}. Le sue caratteristiche sono:
+\begin{itemize}
+\item direzione: la \textbf{verticale} del luogo;
+\item verso: verso il basso;
+\item modulo: \textbf{direttamente proporzionale alla massa} del corpo.
+\end{itemize}
+La costante di proporzionalità si indica con $g$ e sulla superficie terrestre vale circa $\SI{9,81}{\newton\per\kilo\gram}$ (lo stesso numero dell'accelerazione di gravità, $\SI{9,81}{\meter\per\square\second}$). Vale dunque la relazione:
+\[
+\colorboxed{ocre}{\; P = m\,g \;}
+\]
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\draw[thick] (-1.5,0) -- (1.5,0);
+\shade[ball color=green!40] (0,0.8) circle (0.5);
+\fill (0,0.8) circle (1.2pt) node[above right=1pt]{\small baricentro};
+\draw[->,very thick,ocre] (0,0.8) -- (0,-0.6) node[right,black]{$\vec{P}=m\vec{g}$};
+\node at (0,-1.1) {\scriptsize superficie terrestre};
+\end{tikzpicture}
+\caption{La forza-peso: applicata al baricentro, diretta verso il basso lungo la verticale.}
+\label{fig:peso}
+\end{figure}
+
+\subsection{Massa e peso}
+Massa e peso sono grandezze diverse e non vanno confuse:
+\begin{itemize}
+\item la \textbf{massa} è una grandezza \textbf{scalare}, si misura in $\si{\kilo\gram}$, ed è una proprietà del corpo che non cambia se lo spostiamo (sulla Luna, in orbita, in cima a una montagna);
+\item il \textbf{peso} è una grandezza \textbf{vettoriale}, si misura in $\si{\newton}$, e \textbf{dipende dal luogo}, perché dipende da $g$: sulla Luna, dove $g_{\text{Luna}} \approx \SI{1,6}{\newton\per\kilo\gram}$, lo stesso corpo pesa circa sei volte meno che sulla Terra, pur avendo la stessa massa.
+\end{itemize}
+
+\begin{testexample}[\thetcbcounter \, Peso di una persona]
+Una persona ha massa $m = \SI{70}{\kilo\gram}$. Sulla Terra il suo peso è:
+\[
+P = m\,g = (\SI{70}{\kilo\gram}) \times (\SI{9,81}{\newton\per\kilo\gram}) \approx \SI{687}{\newton}.
+\]
+Sulla Luna la massa è sempre $\SI{70}{\kilo\gram}$, ma il peso diventa $P = (\SI{70}{\kilo\gram}) \times (\SI{1,6}{\newton\per\kilo\gram}) \approx \SI{112}{\newton}$.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Calcola il peso, sulla superficie terrestre, di un corpo di massa $\SI{2,0}{\kilo\gram}$ e di uno di massa $\SI{500}{\gram}$.\\
+\hspace*{\fill} $\left[\SI{19,6}{\newton}\ ;\quad \SI{4,9}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un oggetto pesa $\SI{58,9}{\newton}$ sulla Terra. Qual è la sua massa? Quanto peserebbe sulla Luna ($g_{\text{Luna}} \approx \SI{1,6}{\newton\per\kilo\gram}$)?\\
+\hspace*{\fill} $\left[m = \SI{6,0}{\kilo\gram}\ ;\quad P_{\text{Luna}} \approx \SI{9,6}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Spiega perché un astronauta sulla Luna può fare balzi molto più alti che sulla Terra, pur avendo la stessa massa.
+\end{esercizio}
+
+\begin{esercizio}
+Vero o falso: (a) la massa di un corpo si misura in newton; (b) il peso di un corpo è un vettore diretto verso il basso; (c) portando un corpo in cima a una montagna la sua massa diminuisce; (d) sulla Luna massa e peso di un corpo sono entrambi minori che sulla Terra.\\
+\hspace*{\fill} $\left[\text{a) F}\ ;\ \text{b) V}\ ;\ \text{c) F}\ ;\ \text{d) F (solo il peso)}\right]$
+\end{esercizio}
+
+
 \end{document}
 
 
