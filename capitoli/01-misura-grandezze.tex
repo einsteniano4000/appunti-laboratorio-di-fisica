@@ -533,6 +533,134 @@ l=\left(360,6 \pm 0,2\right)\si{\centi\meter}
 
 
 
+\section{Il calibro a corsoio}
+Fra gli strumenti per misurare lunghezze, il \textbf{calibro a corsoio} merita un discorso a parte, perché permette di apprezzare frazioni di millimetro senza bisogno di stimare ``a occhio'' fra due tacche. È lo strumento adatto per lo spessore di una lamiera, il diametro di una sferetta o di un foro, la profondità di un incavo: lunghezze piccole, fino a una decina di centimetri, che richiedono una buona precisione.
+
+Il calibro è formato da due parti che scorrono l'una sull'altra:
+\begin{itemize}
+    \item l'\textbf{asta fissa}, graduata in millimetri, che termina con un becco fisso;
+    \item il \textbf{corsoio} (o cursore), che porta il becco mobile e una seconda scala, il \textbf{nonio}, e che si blocca in posizione con una vite.
+\end{itemize}
+I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (spessori, diametri di alberi); i due becchi sottili in alto per le misure \emph{interne} (diametri di fori); un'astina solidale al corsoio esce dal fondo dell'asta e serve per le misure di \emph{profondità}.
+
+\begin{figure}[!htbp]
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{tikzpicture}[x=1mm,y=1mm,>=stealth,line join=round,font=\footnotesize]
+        % asta fissa
+        \draw[thick,fill=gray!10] (0,0) rectangle (116,7);
+        \foreach \i in {0,2,...,116}{\draw (\i,7)--(\i,5.4);}
+        \foreach \i in {0,10,...,110}{\draw[thick](\i,7)--(\i,4.4);}
+        % becchi fissi (sinistra): esterni in basso, interni in alto
+        \draw[thick,fill=gray!18] (0,0)--(0,-20)--(6,-20)--(6,0)--cycle;
+        \draw[thick,fill=gray!18] (0,7)--(0,16)--(5,16)--(5,7)--cycle;
+        % astina di profondita'
+        \draw[thick,fill=gray!18] (116,2) rectangle (144,5);
+        % corsoio + nonio + becchi mobili
+        \draw[thick,fill=gray!22] (58,-3) rectangle (90,12);
+        \foreach \k in {0,...,10}{\draw (60+\k*1.9,5.4)--(60+\k*1.9,3);}
+        \draw[thick,fill=gray!18] (58,0)--(58,-20)--(64,-20)--(64,0)--cycle;
+        \draw[thick,fill=gray!18] (58,7)--(58,16)--(63,16)--(63,7)--cycle;
+        \draw[thick,fill=white] (80,8) circle (1.8);
+        % etichette
+        \node at (32,12) {asta fissa (scala in mm)};
+        \node at (74,20) {nonio};            \draw[->] (74,17.5)--(70,6);
+        \node at (95,20) {vite di fissaggio}; \draw[->] (92,17.5)--(80,10);
+        \node at (128,-9) {astina di profondità}; \draw[->] (128,-6.5)--(128,1.5);
+        \node at (10,-26) {becchi per misure esterne};
+        \node at (8,22) {becchi per misure interne};
+    \end{tikzpicture}%
+    }
+    \caption{Schema di un calibro a corsoio. Il corsoio scorre sull'asta fissa; la misura si legge confrontando lo zero del nonio con la scala millimetrata.}
+    \label{fig:calibro-schema}
+\end{figure}
+
+\subsection{Il nonio ventesimale}
+Il nonio è la trovata che rende il calibro così preciso. Ne esistono di diversi tipi; il più comune è il \textbf{nonio ventesimale}, che descriviamo qui.
+
+Sul nonio ci sono \textbf{20 divisioni} che, tutte insieme, occupano una lunghezza di \textbf{19 mm} dell'asta fissa. Ogni divisione del nonio è quindi lunga
+\[ \frac{\SI{19}{\milli\metre}}{20} = \SI{0,95}{\milli\metre}, \]
+cioè $\SI{0,05}{\milli\metre}$ in meno di una divisione dell'asta fissa (che vale 1 mm). Proprio questa differenza,
+\[ \colorboxed{ocre}{ 1\ \si{\milli\metre} - 0{,}95\ \si{\milli\metre} = 0{,}05\ \si{\milli\metre} = \tfrac{1}{20}\ \si{\milli\metre}, } \]
+è la \textbf{sensibilità} del calibro ventesimale: la più piccola lunghezza che si riesce ad apprezzare.
+
+A calibro chiuso lo zero del nonio coincide con lo zero dell'asta, e allora l'unica altra tacca del nonio che si allinea con una tacca dell'asta è la ventesima, in corrispondenza dei 19 mm (figura~\ref{fig:nonio-zero}). Nessuna delle tacche intermedie è allineata: se spostiamo il corsoio di $\SI{0,05}{\milli\metre}$ si allinea la prima tacca del nonio, a $\SI{0,10}{\milli\metre}$ la seconda, e così via.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[x=5.6mm,y=1cm,>=stealth,font=\footnotesize]
+        % --- asta fissa: riga in alto, tacche verso il basso, numeri sopra ---
+        \draw[thick] (-0.6,1.0) -- (20.6,1.0);
+        \foreach \i in {0,...,20}{\draw (\i,1.0) -- (\i,0.82);}
+        \foreach \i in {0,5,10,15,20}{\draw[thick] (\i,1.0) -- (\i,0.76);
+            \node[above=1pt] at (\i,1.0) {\i};}
+        \node[left] at (-0.8,1.0) {asta};
+        % --- nonio: riga in basso, tacche verso l'alto, numeri sotto ---
+        \fill[gray!12] (-0.6,0.15) rectangle (20.6,0.58);
+        \draw[thick] (-0.6,0.58) -- (20.6,0.58);
+        \foreach \k in {0,...,20}{\draw (\k*0.95,0.58) -- (\k*0.95,0.76);}
+        \foreach \k/\lab in {0/0,10/10,20/20}{\node[below=1pt] at (\k*0.95,0.15) {\lab};}
+        \node[left] at (-0.8,0.37) {nonio};
+        % --- coincidenze: solo lo 0 e la 20a tacca ---
+        \draw[red!70!black,line width=0.9pt] (0,1.06) -- (0,0.10);
+        \draw[red!70!black,line width=0.9pt] (19,1.06) -- (19,0.10);
+        \node[red!70!black,align=center] (nz) at (10,1.75)
+            {si allineano solo lo $0$ e la $20^\text{a}$ tacca\\ (che cade sui $\SI{19}{\milli\metre}$ dell'asta)};
+        \draw[red!70!black,->,thin] (nz) .. controls (3,1.45) .. (0.15,1.12);
+        \draw[red!70!black,->,thin] (nz) .. controls (16,1.45) .. (18.85,1.12);
+    \end{tikzpicture}
+    \caption{Nonio ventesimale a calibro chiuso: le 20 divisioni del nonio coprono 19 mm dell'asta. Si allineano solo lo zero e la ventesima tacca.}
+    \label{fig:nonio-zero}
+\end{figure}
+
+\subsection{Come si legge una misura}
+La lettura si fa in due passi.
+\begin{elenco}
+    \item \textbf{Millimetri interi.} Si guarda dove si trova lo zero del nonio e si legge sull'asta fissa l'ultimo numero di millimetro che lo zero ha \emph{superato}.
+    \item \textbf{Ventesimi di millimetro.} Si cerca quale tacca del nonio è perfettamente allineata con una tacca qualsiasi dell'asta fissa. Il suo numero, moltiplicato per $\SI{0,05}{\milli\metre}$, dà la parte frazionaria da sommare.
+\end{elenco}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[x=6.6mm,y=1.15cm,>=stealth,font=\footnotesize]
+        % --- asta fissa ---
+        \draw[thick] (33.4,1.0) -- (44.7,1.0);
+        \foreach \i in {34,...,44}{\draw (\i,1.0) -- (\i,0.84);}
+        \foreach \i in {35,40}{\draw[thick] (\i,1.0) -- (\i,0.78);
+            \node[above=1pt] at (\i,1.0) {\i};}
+        \node[left] at (33.2,1.0) {asta};
+        % --- nonio: lo 0 cade a 35,40 mm ---
+        \fill[gray!12] (35.4,0.18) rectangle (44.3,0.58);
+        \draw[thick] (35.4,0.58) -- (44.3,0.58);
+        \foreach \k in {0,...,9}{\draw (35.4+\k*0.95,0.58) -- (35.4+\k*0.95,0.74);}
+        \node[left] at (33.2,0.38) {nonio};
+        % --- tacca 8 allineata (cade sui 43 mm dell'asta) ---
+        \draw[red!70!black,line width=0.9pt] (43,1.08) -- (43,0.16);
+        \node[red!70!black,align=center] (t8) at (37.3,1.72) {la $8^\text{a}$ tacca del nonio\\ coincide con l'asta};
+        \draw[red!70!black,->,thin] (t8) .. controls (40.2,1.45) and (42.2,1.28) .. (42.95,1.12);
+        % --- zero del nonio fra 35 e 36 ---
+        \draw[blue!60!black,line width=0.9pt] (35.4,0.66) -- (35.4,-0.12);
+        \node[blue!60!black,align=center] (z0) at (37.2,-0.55) {lo $0$ del nonio\\ è fra 35 e 36 mm};
+        \draw[blue!60!black,->,thin] (z0) .. controls (36.0,-0.36) .. (35.45,-0.08);
+    \end{tikzpicture}
+    \caption{Esempio di lettura. Lo zero del nonio è appena oltre i 35 mm; la tacca numero 8 del nonio si allinea con una tacca dell'asta. Misura: $35\ \si{\milli\metre} + 8\times 0{,}05\ \si{\milli\metre} = \SI{35,40}{\milli\metre}$.}
+    \label{fig:nonio-lettura}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Lettura di un calibro ventesimale]
+Nella figura~\ref{fig:nonio-lettura} lo zero del nonio si trova fra le tacche dei 35 mm e dei 36 mm: la parte intera della misura è dunque $\SI{35}{\milli\metre}$. Scorrendo lo sguardo lungo il nonio, la tacca che coincide con una divisione dell'asta è l'ottava, quindi la parte frazionaria vale $8\times\SI{0,05}{\milli\metre}=\SI{0,40}{\milli\metre}$. La misura, scritta in forma corretta con l'incertezza pari alla sensibilità, è
+\[
+    L=\left(35{,}40\pm 0{,}05\right)\si{\milli\metre}.
+\]
+\end{testexample}
+
+\begin{remark}
+Non confondere il \textbf{calibro a corsoio} con il \textbf{calibro Palmer} (o micrometro): quest'ultimo misura tramite una vite micrometrica graduata e arriva a una sensibilità di $\SI{0,01}{\milli\metre}$, ma ha una portata di pochi centimetri.
+\end{remark}
+
+Oltre a quello ventesimale esistono il nonio \emph{decimale} (10 divisioni su 9 mm, sensibilità $\SI{0,1}{\milli\metre}$) e il \emph{cinquantesimale} (50 divisioni su 49 mm, sensibilità $\SI{0,02}{\milli\metre}$). I calibri \emph{digitali} mostrano invece la misura direttamente su un display, con sensibilità di $\SI{0,01}{\milli\metre}$, e possono essere azzerati in qualsiasi posizione.
+
+
 \section{Cifre significative}
 	Diamo una importante definizione:
 \begin{csf}

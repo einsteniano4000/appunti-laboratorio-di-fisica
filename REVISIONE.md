@@ -13,6 +13,8 @@
 >     (00-prefazione … 06-equilibrio-corpi-solidi) + master con `\includeonly`
 >     commentato. Compilazione completa invariata (145 pag., pulita), `\includeonly`
 >     testato sul cap. 6 (26 pag., riferimenti incrociati OK dai `.aux`).
+>   - [x] Cap. "Misura di grandezze": nuova §1.8 "Il calibro a corsoio" (nonio
+>     ventesimale, lettura, 3 figure TikZ originali).
 >   - [x] Cap. "Relazioni di Laboratorio": §4.1 riallineata allo schema ufficiale
 >     Keynes; nuove relazioni svolte **§4.3 legge di Hooke** e **§4.6 attrito
 >     statico** (rette di max/min pendenza). Numeri in `verifica/cap-relazioni.py`.

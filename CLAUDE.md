@@ -98,6 +98,14 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
    l'incertezza sulla pendenza) con esempio sulla legge di Hooke.
 5. Introdotto il significato di $\Delta$ e $\Sigma$ prima del primo uso.
 
+### Cap. "Misura di grandezze" – ampliato
+- **Nuova §1.8 "Il calibro a corsoio"**: parti dello strumento, nonio ventesimale
+  (20 div su 19 mm → sensibilità 0,05 mm), lettura in due passi, esempio 35,40 mm,
+  cenni a decimale/cinquantesimale/digitale. 3 figure **originali in TikZ**
+  (schema, nonio a zero, esempio di lettura). Prosa originale; il file
+  `IL CALIBRO A CORSOIO.pdf` (deck di terzi) è servito solo da spunto, non
+  riprodotto.
+
 ### Cap. "Relazioni di Laboratorio" – ampliato
 - §4.1 riscritta sullo **schema ufficiale dell'Istituto Keynes** (da
   `MASCHERA RELAZIONE DI LABORATORIO.docx`): intestazione + Scopo · Schema della
