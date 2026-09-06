@@ -541,37 +541,40 @@ Il calibro è formato da due parti che scorrono l'una sull'altra:
     \item l'\textbf{asta fissa}, graduata in millimetri, che termina con un becco fisso;
     \item il \textbf{corsoio} (o cursore), che porta il becco mobile e una seconda scala, il \textbf{nonio}, e che si blocca in posizione con una vite.
 \end{itemize}
-I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (spessori, diametri di alberi); i due becchi sottili in alto per le misure \emph{interne} (diametri di fori); un'astina solidale al corsoio esce dal fondo dell'asta e serve per le misure di \emph{profondità}.
+I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (spessori, diametri di alberi); i due becchi sottili in alto per le misure \emph{interne} (diametri di fori); un'astina solidale al corsoio scorre in una scanalatura sul retro dell'asta ed esce dalla sua estremità, per le misure di \emph{profondità}.
 
 \begin{figure}[!htbp]
     \centering
-    \resizebox{\linewidth}{!}{%
-    \begin{tikzpicture}[x=1mm,y=1mm,>=stealth,line join=round,font=\footnotesize]
-        % asta fissa
-        \draw[thick,fill=gray!10] (0,0) rectangle (116,7);
-        \foreach \i in {0,2,...,116}{\draw (\i,7)--(\i,5.4);}
-        \foreach \i in {0,10,...,110}{\draw[thick](\i,7)--(\i,4.4);}
-        % becchi fissi (sinistra): esterni in basso, interni in alto
-        \draw[thick,fill=gray!18] (0,0)--(0,-20)--(6,-20)--(6,0)--cycle;
-        \draw[thick,fill=gray!18] (0,7)--(0,16)--(5,16)--(5,7)--cycle;
-        % astina di profondita'
-        \draw[thick,fill=gray!18] (116,2) rectangle (144,5);
-        % corsoio + nonio + becchi mobili
-        \draw[thick,fill=gray!22] (58,-3) rectangle (90,12);
-        \foreach \k in {0,...,10}{\draw (60+\k*1.9,5.4)--(60+\k*1.9,3);}
-        \draw[thick,fill=gray!18] (58,0)--(58,-20)--(64,-20)--(64,0)--cycle;
-        \draw[thick,fill=gray!18] (58,7)--(58,16)--(63,16)--(63,7)--cycle;
-        \draw[thick,fill=white] (80,8) circle (1.8);
-        % etichette
-        \node at (32,12) {asta fissa (scala in mm)};
-        \node at (74,20) {nonio};            \draw[->] (74,17.5)--(70,6);
-        \node at (95,20) {vite di fissaggio}; \draw[->] (92,17.5)--(80,10);
-        \node at (128,-9) {astina di profondità}; \draw[->] (128,-6.5)--(128,1.5);
-        \node at (10,-26) {becchi per misure esterne};
-        \node at (8,22) {becchi per misure interne};
-    \end{tikzpicture}%
-    }
-    \caption{Schema di un calibro a corsoio. Il corsoio scorre sull'asta fissa; la misura si legge confrontando lo zero del nonio con la scala millimetrata.}
+    \begin{tikzpicture}[font=\footnotesize,>=stealth]
+        \node[anchor=south west,inner sep=0] (im)
+            {\includegraphics[width=\linewidth]{img/calibro-foto.jpg}};
+        \begin{scope}[x={(im.south east)},y={(im.north west)}]
+            \tikzset{lab/.style={fill=white,fill opacity=0.85,text opacity=1,
+                                 inner sep=1.5pt,rounded corners=1pt},
+                     guida/.style={thin,gray!55}}
+            % punti sulle parti
+            \foreach \p in {(0.105,0.955),(0.205,0.905),(0.115,0.11),(0.215,0.30),
+                            (0.55,0.585),(0.365,0.79),(0.33,0.545),(0.405,0.42)}
+                \fill[red!70!black] \p circle (0.5pt);
+            % --- etichette sopra ---
+            \draw[guida] (0.365,0.79) -- (0.365,1.05);
+            \node[lab,anchor=south] at (0.365,1.05) {corsoio};
+            \draw[guida] (0.105,0.955) -- (0.135,1.05);
+            \draw[guida] (0.205,0.905) -- (0.155,1.05);
+            \node[lab,anchor=south] at (0.145,1.05) {becchi per misure interne};
+            \draw[guida] (0.55,0.585) .. controls (0.62,0.80) .. (0.70,0.90);
+            \node[lab,anchor=west] at (0.70,0.90) {asta fissa (scala in mm)};
+            % --- etichette sotto ---
+            \draw[guida] (0.115,0.11) -- (0.115,-0.06);
+            \draw[guida] (0.215,0.30) -- (0.16,-0.06);
+            \node[lab,anchor=north] at (0.14,-0.06) {becchi per misure esterne};
+            \draw[guida] (0.33,0.545) .. controls (0.36,0.20) .. (0.40,-0.06);
+            \node[lab,anchor=north] at (0.40,-0.06) {nonio};
+            \draw[guida] (0.405,0.42) .. controls (0.52,0.10) .. (0.63,-0.06);
+            \node[lab,anchor=north] at (0.63,-0.06) {vite di fissaggio};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Un calibro a corsoio con nonio ventesimale (sensibilità \SI{0,05}{\milli\metre}). L'astina di profondità è alloggiata in una scanalatura sul retro dell'asta ed esce dal suo estremo destro. \emph{Foto: Simon A. Eugster / Wikimedia Commons, CC BY-SA 3.0.}}
     \label{fig:calibro-schema}
 \end{figure}
 

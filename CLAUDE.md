@@ -101,10 +101,13 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 ### Cap. "Misura di grandezze" – ampliato
 - **Nuova §1.8 "Il calibro a corsoio"**: parti dello strumento, nonio ventesimale
   (20 div su 19 mm → sensibilità 0,05 mm), lettura in due passi, esempio 35,40 mm,
-  cenni a decimale/cinquantesimale/digitale. 3 figure **originali in TikZ**
-  (schema, nonio a zero, esempio di lettura). Prosa originale; il file
-  `IL CALIBRO A CORSOIO.pdf` (deck di terzi) è servito solo da spunto, non
-  riprodotto.
+  cenni a decimale/cinquantesimale/digitale. Prosa originale.
+  - Fig. 1.7 = **foto reale** (`img/calibro-foto.jpg`) con etichette sovrapposte
+    in TikZ. Fonte: File:Caliper_detail_view.jpeg di Simon A. Eugster, Wikimedia
+    Commons, **CC BY-SA 3.0** — attribuzione in didascalia (obbligatoria).
+  - Fig. 1.8–1.9 (nonio a zero / esempio di lettura) = **TikZ originali**.
+  - NB: `IL CALIBRO A CORSOIO.pdf` (deck di terzi) e `calibro.avif` (stock
+    illustration con watermark) NON sono utilizzabili — materiale protetto.
 
 ### Cap. "Relazioni di Laboratorio" – ampliato
 - §4.1 riscritta sullo **schema ufficiale dell'Istituto Keynes** (da
