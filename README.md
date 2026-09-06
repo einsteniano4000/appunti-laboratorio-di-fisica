@@ -24,19 +24,19 @@ Per compilare il documento, segui questi passi:
 
 Su Linux/macOS:
 ```
-lualatex --shell-escape -synctex=1 -interaction=nonstopmode -file-line-error appunti.tex
+lualatex --shell-escape -synctex=1 -interaction=nonstopmode -file-line-error appunti-new.tex
 ```
 
 Su Windows:
 ```
-lualatex.exe --shell-escape -synctex=1 -interaction=nonstopmode -file-line-error appunti.tex
+lualatex.exe --shell-escape -synctex=1 -interaction=nonstopmode -file-line-error appunti-new.tex
 ```
 
-4. Il comando genererà un file PDF chiamato `appunti.pdf` nella stessa cartella.
+4. Il comando genererà un file PDF chiamato `appunti-new.pdf` nella stessa cartella.
 
 ## Note
 
-- Il file principale del progetto è `appunti.tex`. Assicurati che questo file sia presente nella cartella del progetto.
+- Il file principale del progetto è `appunti-new.tex`. Assicurati che questo file sia presente nella cartella del progetto.
 - Il comando usa LuaLaTeX come motore di compilazione.
 - L'opzione `--shell-escape` è abilitata, permettendo l'esecuzione di comandi esterni (usa con cautela).
 - Se `lualatex` non viene riconosciuto come comando, potrebbe essere necessario aggiungere la cartella bin della tua distribuzione LaTeX al PATH del sistema, o usare il percorso completo al comando `lualatex`.

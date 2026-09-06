@@ -16,7 +16,6 @@
 \usepackage{minted}
 %=============================TIPOGRAFIA====================================
 \usepackage[bindingoffset=6mm]{geometry}
-\usepackage{microtype}
 %===========================================================================
 \usepackage{amsmath}
 \usepackage{siunitx}
@@ -43,7 +42,6 @@
 \newtheorem{css}{Cifre significative in una somma}
 
 \usepackage{graphicx}
-\usepackage[font=scriptsize,labelfont=bf,hypcap=false]{caption}
 \usepackage{pgf,tikz}
 \newcommand{\eserciziop}[1]{\noindent\textbf{\textit{Esercizio:}} #1}
 \newcommand{\soluzione}[1]{\noindent\textcolor{blue}{\textbf{Soluzione:}} #1}
@@ -53,7 +51,6 @@
  
 
 \newcounter{testexample} %serve per l'esempio
-\usepackage{cancel}
 \usepackage{hyperref}
 \usepackage{sectsty} %serve per colorare section
 \usepackage{multicol}
@@ -336,7 +333,7 @@
 \maketitle
 \tableofcontents
 \chapter*{Prefazione}
-In queste brevi note ho riassunto I principali concetti sulle grandezze fisiche, argomento propodeutico a tutto il corso. Lo stile usato è discorsivo, per approfondire i concetti fare riferimento al libro poichè in esso si trova una trattazione più sistematica (ma anche ridondante a mio parere). Buona lettura!
+In queste brevi note ho riassunto I principali concetti sulle grandezze fisiche, argomento propedeutico a tutto il corso. Lo stile usato è discorsivo, per approfondire i concetti fare riferimento al libro poichè in esso si trova una trattazione più sistematica (ma anche ridondante a mio parere). Buona lettura!
 \chapter{Misura di grandezze}
 \section{Introduzione}
 La fisica è una scienza sperimentale di tipo \textbf{quantitativo}, ossia una scienza che studia la natura attraverso l'uso della matematica. Le sue affermazioni sono sempre traducibili in equazioni. Cosa sia un'equazione lo imparerete presto. Da un punto di vista matematico, si tratta di una relazione (spesso algebrica, ma ce ne sono di più complesse) che lega tra loro i valori misurati di una o più grandezze fisiche. La fisica è un insieme di \textbf{teorie}. Una teoria, detta in modo semplice, è un modello della realtà. Un modello è una sorta di riproduzione semplificata della realtà. Per capire tutto ciò però, dobbiamo anzitutto cominciare ad allenare il cervello sui concetti matematici fondamentali.
@@ -916,7 +913,7 @@ L'area è definita nel sistema internazionale come la misura della superficie ri
 Poichè queste due grandezze non fanno parte delle 7 grandezze fondamentali, si chiamano \textit{derivate}. I multipli di \(\si{\square\meter}\) sono quadrati con lati di lunghezza \(\SI{1}{\deca\meter}\) (\(\si{\square\deca\meter}\), decametro quadro), \(\SI{1}{\hecto\meter}\) (\(\si{\square\hecto\meter}\), ettometro quadro), \(\SI{1}{\kilo\meter}\) (\(\si{\square\kilo\meter}\), chilometro quadro), mentre i sottomultipli sono quadrati di lato \(\SI{1}{\deci\meter}\) (\(\si{\square\deci\meter}\), decimetro quadro), \(\SI{1}{\centi\meter}\) (\(\si{\square\centi\meter}\), centimetro quadro), \(\SI{1}{\milli\meter}\)\ (\(\si{\square\milli\meter}\), millimetro quadro). Analogamente per il volume: \(\si{\cubic\deca\meter}\) (decametro cubo), \(\si{\cubic\deci\meter}\) (decimetro cubo), ecc.
 
 
-Le  equivalenze con questa grandezze si riducono a quelle lineari (basta contare i quadrati o i cubi contenuti) per andare dal multiplo a sottomultiplo). Per andare da sottomultipli a  multipli, basta dividere per un'opportuna potenza di 10. Vediamo un esempio: \,$\SI{1,5}{\cubic\meter} = \cdots \si{\cubic\centi\meter}$. Un cubo di lato $\SI{1}{\cubic\meter}$ contiene su ogni lato, 100 cm (oppure 10 dm, vedi  figura \ref{fig:da-m3-a-cm3}), dunque $\SI{1}{\cubic\meter} = 100\times100\times100 = \SI{e+6}{\cubic\centi\meter}$, per cui:
+Le  equivalenze con questa grandezze si riducono a quelle lineari (basta contare i quadrati o i cubi contenuti) per andare dal multiplo a sottomultiplo). Per andare da sottomultipli a  multipli, basta dividere per un'opportuna potenza di 10. Vediamo un esempio: \,$\SI{1,5}{\cubic\meter} = \cdots \si{\cubic\centi\meter}$. Un cubo di lato $\SI{1}{\meter}$ ha su ogni lato 100 cm (oppure 10 dm, vedi  figura \ref{fig:da-m3-a-cm3}), dunque $\SI{1}{\cubic\meter} = 100\times100\times100 = \SI{e+6}{\cubic\centi\meter}$, per cui:
 \[
 \SI{1,5}{\cubic\meter} = \SI{1,5e+6}{\cubic\centi\meter}
 \]
@@ -954,7 +951,7 @@ Abbiamo usato la regola seguente: se tra due multipli lineari c'è una potenza d
 \end{minipage}
 
 
-Questa equivalenza è particolarmente importante per cui la mettiamo in edidenza:
+Questa equivalenza è particolarmente importante per cui la mettiamo in evidenza:
 \[
 \colorboxed{ocre}{
 \SI{1}{\cubic\centi\meter} = \SI{1}{\milli\liter}
@@ -1245,7 +1242,7 @@ Le formule sono:
 
 \chapter{Errori di misura}
 \section{Incertezza nelle misure ripetute }
-Supponiamo di voler misurare il periodo di oscillazione di un pendolo. Un pendolo, in fisica, è costituito da una sferetta sospesa ad un filo. Quando la pallina viene sollevata e lasciata andare, compie un moto periodico. Il tempo che impiega la pallina ad andare e venire, si chiama periodo e si misura in secondi. Si veda la figura \ref{fig:pendolo}. I due punti più in alto si chiamano \textit{punti morti superiori} e il punto più basso, \textit{punto morto inferiore}. Nei punti alti superiori il pendolo rimane per un attimo vermo (prima di invertire il senso del moto) mentre nel punto morto inferiore, raggiunge la massima velocità.
+Supponiamo di voler misurare il periodo di oscillazione di un pendolo. Un pendolo, in fisica, è costituito da una sferetta sospesa ad un filo. Quando la pallina viene sollevata e lasciata andare, compie un moto periodico. Il tempo che impiega la pallina ad andare e venire, si chiama periodo e si misura in secondi. Si veda la figura \ref{fig:pendolo}. I due punti più in alto si chiamano \textit{punti morti superiori} e il punto più basso, \textit{punto morto inferiore}. Nei punti alti superiori il pendolo rimane per un attimo fermo (prima di invertire il senso del moto) mentre nel punto morto inferiore, raggiunge la massima velocità.
 
    \begin{figure}[h!]
     \centering
@@ -1291,7 +1288,7 @@ Se non possiamo ripetere la misura molte volte (diciamo almeno 30) allora la sta
 \]
 dove $X_{max}$  e$X_{min}$ sono il valore massimo e  il valore minimo dei nostri dati. Se questo valore viene più piccolo della sensibilità comunque, si assume come errore assoluto la sensibilità. Infatti,ricordando l'esempio del pendolo, se usiamo un cronometro con sensibilità di 0,1 s, è impossibile distinguere due valori che abbiano una differenza minore di questa quantità. 
 
-Supponiamo di aver misurato il periodo $T$ di oscillazione di un pendolo 5 volte e di aver calcolato la media e la semidispersione, ottenendo $T=\SI{1,21}{s}$ e $\Delta x = \SI{0,51}{s}$. Anzitutto attotondiamo l'errore ad \underline{una} cifra significativa, ossia $\Delta x \approx \SI{0,5}{s}$, poi arrotondiamo il periodo alla seconda cifra decimale: $T\approx \SI{1,2}{s}$ e , in fine, scriviamo il risultato corretto:
+Supponiamo di aver misurato il periodo $T$ di oscillazione di un pendolo 5 volte e di aver calcolato la media e la semidispersione, ottenendo $T=\SI{1,21}{s}$ e $\Delta x = \SI{0,51}{s}$. Anzitutto arrotondiamo l'errore ad \underline{una} cifra significativa, ossia $\Delta x \approx \SI{0,5}{s}$, poi arrotondiamo il periodo alla seconda cifra decimale: $T\approx \SI{1,2}{s}$ e , in fine, scriviamo il risultato corretto:
 \[
 T=\left(1,2 \pm 0,5 \right)\si{\second}
 \]  
@@ -1300,7 +1297,7 @@ Data una misura $x=\left( \overline{x} \pm \Delta x \right)$ si definisce incert
 \[  \colorboxed{ocre}{
 E_r =\frac{\Delta x}{\overline{x}}}
 \]
-L'incertezza relativa è un numero senza unità di misura, generalmente piccolo. Infatti, in un esperimento ben progettato, gli errori sono piccoli, rispetto alla grandezza, e dunque il rapporto è minore di uno. Strettamente legata all'incertezza, c'è l'incertezza precentuale, definita come il prodotto della prima per cento. L'incertezza relativa, consente di confrontare due misure, anche di grandezze diverse. Date due grandezze misurate, \textbf{quella più precisa ha l'incertezza relativa minore}. A titolo di esempio, calcoliamo l'incertezza relativa e percentuale della misura di periodo fatta sopra:
+L'incertezza relativa è un numero senza unità di misura, generalmente piccolo. Infatti, in un esperimento ben progettato, gli errori sono piccoli, rispetto alla grandezza, e dunque il rapporto è minore di uno. Strettamente legata all'incertezza, c'è l'incertezza percentuale, definita come il prodotto della prima per cento. L'incertezza relativa, consente di confrontare due misure, anche di grandezze diverse. Date due grandezze misurate, \textbf{quella più precisa ha l'incertezza relativa minore}. A titolo di esempio, calcoliamo l'incertezza relativa e percentuale della misura di periodo fatta sopra:
 \[
 Er=\frac{0,5}{1,2}=0,417
 \]
@@ -1762,19 +1759,19 @@ Determina la formula per il calcolo dell'errore assoluto su $f$.\\
 \end{esercizio}
 \section{Propagazione degli errori indipendenti e casuali}
 
-Nelle misure sperimentali, gli errori casuali associati a grandezze indipendenti si propagano secondo regole specifiche. Questo approccio, basato sulla **somma in quadratura**, si differenzia dalla propagazione degli errori massimi (strumentali), dove si sommano direttamente i contributi degli errori. Infine, vedremo come combinare un errore casuale con un errore massimo.
+Nelle misure sperimentali, gli errori casuali associati a grandezze indipendenti si propagano secondo regole specifiche. Questo approccio, basato sulla \textbf{somma in quadratura}, si differenzia dalla propagazione degli errori massimi (strumentali), dove si sommano direttamente i contributi degli errori. Infine, vedremo come combinare un errore casuale con un errore massimo.
 
 \subsection{Somme e differenze}
-Per somme o differenze di grandezze indipendenti, l'errore assoluto totale è dato dalla **somma in quadratura** degli errori assoluti:
+Per somme o differenze di grandezze indipendenti, l'errore assoluto totale è dato dalla \textbf{somma in quadratura} degli errori assoluti:
 
 \[
 \Delta S = \sqrt{(\Delta A)^2 + (\Delta B)^2},
 \]
 dove $S = A \pm B$.
 
-Questo approccio si applica quando gli errori sono **casuali e indipendenti**, ed è meno conservativo rispetto alla propagazione degli errori massimi, che semplicemente somma gli errori: $\Delta S = \Delta A + \Delta B$.
+Questo approccio si applica quando gli errori sono \textbf{casuali e indipendenti}, ed è meno conservativo rispetto alla propagazione degli errori massimi, che semplicemente somma gli errori: $\Delta S = \Delta A + \Delta B$.
 
-**Esempio**:  
+\textbf{Esempio.}
 Supponiamo di avere $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$. Calcoliamo $S = A + B$:
 \[
 S = 5,0 + 3,0 = 8,0,
@@ -1797,7 +1794,7 @@ Da qui, l'errore assoluto risulta:
 \Delta R = R \cdot \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}.
 \]
 
-**Esempio**:  
+\textbf{Esempio.}
 Se $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$, calcoliamo $R = A \cdot B$:
 \[
 R = 5,0 \cdot 3,0 = 15,0,
@@ -1816,7 +1813,7 @@ Se una misura è affetta da un errore casuale $\Delta_c$ e da un errore massimo 
 \Delta = \sqrt{(\Delta_c)^2 + (\Delta_m)^2}.
 \]
 
-**Esempio**:  
+\textbf{Esempio.}
 Una grandezza $A = 10,0 \pm 0,3$ ha un errore casuale $\Delta_c = 0,3$ e un errore massimo $\Delta_m = 0,5$. L'errore totale sarà:
 \[
 \Delta A = \sqrt{(0,3)^2 + (0,5)^2} = \sqrt{0,09 + 0,25} = \sqrt{0,34} \approx 0,6.
@@ -1836,7 +1833,7 @@ mentre la somma in quadratura dà $\Delta S \approx 0,2$, che è più realistico
 La somma in quadratura fornisce un'approssimazione migliore dell'incertezza totale quando gli errori sono casuali e indipendenti, distinguendosi dall'approccio conservativo della propagazione degli errori massimi. La combinazione con errori massimi tramite la somma in quadratura è particolarmente utile per misure sperimentali complesse.
 
  \chapter{Grafici di misure}
-In fisica spesso è possibile verificare una formula facendo variare una delle grandezze contenute e osservando su un grafico come varia un'altra grandezza. A questo scopo si predispone una tabella coi dati e poi si realizza un grafico avendo come obiettivo una buona leggibilità. Elencheremo di seguito una procedura passo-passo, per realizzare dei buoni grafici elencando tutte le caratteristiche indispensabili. Nelle prossieme sezioni, realizzeremo, prima un grafico a mano, poi con l'uso del foglio di calcolo.
+In fisica spesso è possibile verificare una formula facendo variare una delle grandezze contenute e osservando su un grafico come varia un'altra grandezza. A questo scopo si predispone una tabella coi dati e poi si realizza un grafico avendo come obiettivo una buona leggibilità. Elencheremo di seguito una procedura passo-passo, per realizzare dei buoni grafici elencando tutte le caratteristiche indispensabili. Nelle prossime sezioni, realizzeremo, prima un grafico a mano, poi con l'uso del foglio di calcolo.
 \section{Un esempio di grafico realizzato a mano}
 
 Supponiamo di aver misurato la capacità $C$ di un condensatore (unità di misura picofarad, pF)  in funzione della distanza tra le armature di un condensatore piano (distanza d espressa in mm). I dati sono in tabella \ref{tab:condensatore}: 
@@ -2006,7 +2003,7 @@ e nella colonna C, formattata in notazione scientifica con una cifra decimale.
 \begin{definizione}
 Una formula è un'espressione che, digitata in una cella,
  effettua automaticamente dei calcoli o delle operazioni sui dati del 
- foglio di calclo. Ogni formula deve essere preceduta dal simbolo =.
+ foglio di calcolo. Ogni formula deve essere preceduta dal simbolo =.
 \end{definizione}
 
 
@@ -2223,7 +2220,7 @@ i valori da assegnare alle barre su entrambi gli assi.
 \end{definizione}
 
 Possiamo chiedere al foglio elettronico di tracciare la linea di tendenza e 
-scriverna l'equazione. 
+scriverne l'equazione. 
 \begin{enumerate}
     \item Quando il grafico è attivo, clicchiamo col tasto destro sui punti e 
     selezioniamo \texttt{Aggiungi linea di tendenza}. 
@@ -2443,7 +2440,7 @@ Da notare che Google Sheets (``fogli di calcolo'', in italiano) utilizza le virg
  
     
 \end{enumerate}
-Tutti gli elementi grafici e  testuali sono ulteriormente personalizzabili (ad esempio l'aspetto dei punti del grafico, il font per i titoli degli assi etc.). Ti consiglio di sperimentare con questi aspetti modificando a tuo piacimemnto questi elementi dalla scheda personalizzazione. Il loro uso è molto intuitivo.
+Tutti gli elementi grafici e  testuali sono ulteriormente personalizzabili (ad esempio l'aspetto dei punti del grafico, il font per i titoli degli assi etc.). Ti consiglio di sperimentare con questi aspetti modificando a tuo piacimento questi elementi dalla scheda personalizzazione. Il loro uso è molto intuitivo.
 
 \subsection{Visualizzare due Grafici Contemporaneamente}
 \begin{enumerate}
@@ -2462,7 +2459,7 @@ Tutti gli elementi grafici e  testuali sono ulteriormente personalizzabili (ad e
     \hline
     \end{tabular}
     \end{center}
-    \item Seleziona i dati inseriti nelle colonne A, B e C. Puoi farlo cliccando e trascinando il mouse dall'angolo superiore sinistro (A1) all'angolo inferiore destro (C5) dei tuoi dati oppure (vedi figura \ref{fig:intervallo2}) selezionando \textbf{aggiungi serie}, figura \ref{fig:intervallo2} e. successivamente, cliccando il tasto ``+''. Si aprirà un campo di testo in cui inserire l'intervallo di cella. Per farlo, si può agire graficamente, selezionando tutta la colonna col tasto destro del mouse e verrà automaticamente scritto l'intervallo (figura \ref{fig:intervallo2-dialogo}. La scrittura \textit{Foglio1!C1:C6} indica di selezionare l'intervallo del foglio attuale (Foglio1) dalla cella C1 alla cella C6). In fine clicca ``Ok'' e la serie verrà inserita. A quesato punto puoi personalizzare il grafico come vuoi, inserire linee di tendenza etc. Come regola generale, si consiglia di realizzare grafici in cui le due serie sullì'asse Y sono della stessa natura ma non è vietato inserire anche serie diverse purché, è bene ribadirlo, sull'asse X, ci sia una sola serie per entrambe le grandezze dipendenti (ossia le Y, nel nostro caso, il tempo). Come esercizio, puoi provare a disegnare la linea di tendenza della serie 2. Il grafico finale è in figura \ref{fig:finale}.
+    \item Seleziona i dati inseriti nelle colonne A, B e C. Puoi farlo cliccando e trascinando il mouse dall'angolo superiore sinistro (A1) all'angolo inferiore destro (C5) dei tuoi dati oppure (vedi figura \ref{fig:intervallo2}) selezionando \textbf{aggiungi serie}, figura \ref{fig:intervallo2} e. successivamente, cliccando il tasto ``+''. Si aprirà un campo di testo in cui inserire l'intervallo di cella. Per farlo, si può agire graficamente, selezionando tutta la colonna col tasto destro del mouse e verrà automaticamente scritto l'intervallo (figura \ref{fig:intervallo2-dialogo}. La scrittura \textit{Foglio1!C1:C6} indica di selezionare l'intervallo del foglio attuale (Foglio1) dalla cella C1 alla cella C6). In fine clicca ``Ok'' e la serie verrà inserita. A questo punto puoi personalizzare il grafico come vuoi, inserire linee di tendenza etc. Come regola generale, si consiglia di realizzare grafici in cui le due serie sullì'asse Y sono della stessa natura ma non è vietato inserire anche serie diverse purché, è bene ribadirlo, sull'asse X, ci sia una sola serie per entrambe le grandezze dipendenti (ossia le Y, nel nostro caso, il tempo). Come esercizio, puoi provare a disegnare la linea di tendenza della serie 2. Il grafico finale è in figura \ref{fig:finale}.
     
       \begin{figure}[h!]
     \centering
@@ -2559,7 +2556,7 @@ Discutere i risultati ottenuti, confrontandoli con le previsioni teoriche.
         
         % Goniometro
         \draw (1.1,0) arc (0:30:1);
-        \node at (1.8,0.3) {$\SI{30}{\celsius}$};
+        \node at (1.8,0.3) {$30^\circ$};
         
         % Etichette
         \node[below] at (5,0) {2.00 m};
@@ -2625,7 +2622,7 @@ Con questa formula, calcoliamo gli errori su $t^2$ e li mettiamo in tabella \ref
 \centering
 \begin{tabular}{|c|c|}
 \hline
-$t^2$ (\si{\square\s}) & $\Delta \left( t^2 \right)$ (\si{\square\s}) \\
+$t^2$ (\si{\second\squared}) & $\Delta \left( t^2 \right)$ (\si{\second\squared}) \\
 \hline
 0.0841 & 0.006 \\
 0.1681 & 0.008 \\
@@ -2665,7 +2662,7 @@ $t^2$ (\si{\square\s}) & $\Delta \left( t^2 \right)$ (\si{\square\s}) \\
         \end{axis}
     \end{tikzpicture}
     \caption{Grafico di $s$ in funzione di $t^2$.}
-    \label{fig:grafico}
+    \label{fig:grafico-moto}
 \end{figure}
 Il grafico con le barre di errore è stato ottenuto con un software perché non è possibile realizzarlo coi fogli google (non si possono inserire barre di errore personalizzate ad esempio). Ovviamente si può realizzare un ottimo grafico manuale con le tecniche esposte nei precedenti paragrafi.
 \subsection{Conclusioni}
@@ -2872,190 +2869,6 @@ Per migliorare la precisione dell'esperimento si suggerisce di:
 \end{itemize}
 
 È importante sottolineare che l'utilizzo di una rotaia a cuscino d'aria eliminerebbe completamente l'attrito tra il carrello e il piano. In questo caso ideale, l'accelerazione misurata sperimentalmente corrisponderebbe a quella prevista teoricamente, poiché verrebbe rimossa la principale fonte di dissipazione energetica del sistema.
-\subsection{Titolo e Scopo dell'Esperienza}
-\textbf{Titolo:} Studio del Moto Uniformemente Accelerato\\
-\textbf{Scopo:} Verificare sperimentalmente le leggi del moto uniformemente accelerato.
-
-\subsection{Materiali e Strumenti}
-\begin{itemize}
-    \item Piano inclinato (base \SI{2000}{\milli\metre}) e inclinato di \SI{30}{\degree}.
-    \item Sfera metallica.
-    \item Cronometro digitale (sensibilità: \SI{0,01}{\second}, portata: \SI{999,99}{\second}).
-    \item Metro a nastro (sensibilità: \SI{1}{\milli\metre}, portata: \SI{3000}{\milli\metre}).
-    \item Goniometro (sensibilità: \SI{1}{\degree}, portata: \SI{180}{\degree}).
-\end{itemize}
-
-\begin{figure}[!htbp] 
-    \centering
-    \begin{tikzpicture}[scale=0.7]
-        % Piano inclinato
-        \draw[thick] (0,0) -- (10,5);
-        \draw[thick] (0,0) -- (10,0);
-        
-        % Sfera
-        \fill[gray] (3,1.8) circle (0.3);
-        
-        % Cronometro
-        \draw[rounded corners] (11,4) rectangle (13,6);
-        \node at (12,5) {00:00};
-        
-        % Metro a nastro
-        \draw[thick] (0,-0.5) -- (10,-0.5);
-        \foreach \x in {0,1,...,10}
-            \draw (\x,-0.7) -- (\x,-0.5);
-        \node at (5,-1) {Metro a nastro};
-        
-        % Goniometro
-        \draw (1.1,0) arc (0:30:1);
-        \node at (1.8,0.3) {$\SI{30}{\celsius}$};
-        
-        % Etichette
-        \node[below] at (5,0) {2.00 m};
-        \node[above right] at (3,2.1) {Sfera};
-        \node[above] at (12,6) {Cronometro};
-    \end{tikzpicture}
-    \caption{Apparato sperimentale per lo studio del moto uniformemente accelerato.}
-    \label{fig:apparato}
-\end{figure}
-
-\subsection{Raccolta Dati}
-Abbiamo misurato il tempo impiegato dalla sfera per percorrere diverse distanze lungo il piano inclinato, inclinato di \SI{30}{\degree} rispetto all'orizzontale.
-
-\begin{table}[!htbp] 
-    \centering
-    \begin{tabular}{@{}ccc@{}}
-        \toprule
-        Distanza (\si{\metre}) & Tempo (\si{\second}) & Errore sul tempo (\si{\second}) \\
-        \midrule
-        0,200 & 0.29 & 0,01 \\
-        0,400 & 0.41 & 0,01 \\
-        0,600 & 0.50 & 0,01 \\
-        0,800 & 0.58 & 0,01 \\
-        1,000 & 0.65 & 0,01 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Dati sperimentali}
-    \label{tab:datitab}
-\end{table}
-
-\subsection{Cenni Teorici}
-Nel moto uniformemente accelerato, la posizione $s$ in funzione del tempo $t$ è data da:
-
-\begin{equation}
-    s = \frac{1}{2}at^2
-\end{equation}
-
-dove $a$ è l'accelerazione. Nel nostro caso, l'accelerazione lungo il piano inclinato è data da:
-
-\begin{equation}
-    a = g\sin\theta
-\end{equation}
-
-dove $g$ è l'accelerazione di gravità e $\theta$ è l'angolo di inclinazione del piano.
-
-\subsection{Elaborazione Dati}
-Per verificare la relazione $s = \frac{1}{2}at^2$, plotteremo $s$ in funzione di $t^2$.
- La pendenza della retta di best fit sarà $\frac{1}{2}a$. Prima di realizzare il grafico,
- calcoliamo anzitutto gli errori e poi metteremo i punti sul piano cartesiano. In fine calcoleremo
- l'accelerazione di gravità dalla pendenza. I dettagli per farlo,sono riassunti nei paragrafi
- sull'uso del foglio di calcolo (o con la procedura manuale) e l'uso di python con la libreria 
- \texttt{matplotlib}.
-
-\subsection{Calcolo degli Errori nelle Misure Indirette}
-L'errore su $t^2$ si propaga come:
-
-\begin{equation}
-    \Delta(t^2) =\overline{t^2} \left(2\cdot\frac{\Delta t}{\overline{t}}  \right)= 2\overline{t}\Delta t.
-\end{equation}
-Con questa formula, calcoliamo gli errori su $t^2$ e li mettiamo in tabella \ref{tab:tquadro}:
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|}
-\hline
-$t^2$ (\si{\square\s}) & $\Delta \left( t^2 \right)$ (\si{\square\s}) \\
-\hline
-0.0841 & 0.006 \\
-0.1681 & 0.008 \\
-0.25   & 0.01   \\
-0.3364 & 0.01 \\
-0.4225 & 0.01  \\
-\hline
-\end{tabular}
-\caption{Valori calcolati di $t^2$ e $\Delta t^2$}
-\label{tab:tquadro}
-\end{table}
-
-\subsection{Grafico Sperimentale}
-
-\begin{figure}[!htbp] 
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width=0.8\textwidth,
-            height=0.6\textwidth,
-            xlabel={$t^2$ (\si{\second\squared})},
-            ylabel={$s$ (\si{\metre})},
-            xmin=0, xmax=0.5,
-            ymin=0, ymax=1.2,
-            legend pos=north west,
-            ]
-            \addplot[only marks,error bars/.cd,x dir=both,x explicit,y dir=both,y explicit]
-            coordinates {
-                (0.0841, 0.20) +- (0.0058, 0.001)
-                (0.1681, 0.40) +- (0.0082, 0.001)
-                (0.2500, 0.60) +- (0.0100, 0.001)
-                (0.3364, 0.80) +- (0.0116, 0.001)
-                (0.4225, 1.00) +- (0.0130, 0.001)
-            };
-            \addplot[domain=0:0.5, samples=100, smooth, thick, red] {2.3604*x};
-            \legend{Dati sperimentali, Fit lineare}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Grafico di $s$ in funzione di $t^2$.}
-    \label{fig:grafico}
-\end{figure}
-Il grafico con le barre di errore è stato ottenuto con un software perché non è possibile realizzarlo coi fogli google (non si possono inserire barre di errore personalizzate ad esempio). Ovviamente si può realizzare un ottimo grafico manuale con le tecniche esposte nei precedenti paragrafi.
-\subsection{Conclusioni}
-Dal fit lineare dei dati, abbiamo ottenuto una pendenza di \SI{2.3604}{\metre\per\second\squared}, che corrisponde a $\frac{1}{2}a$. La pendenza si misura sul grafico tracciando la retta a mano  oppure, se si è realizzato il grafico col foglio di calcolo, basta fargli scrivere l'equazione che sarà del tipo $y= bx +a$, dove $b$ è la pendenza. Quindi, l'accelerazione sperimentale è:
-
-\begin{equation}
-    a_{\text{exp}} = \SI{4.7208}{\metre\per\second\squared}
-\end{equation}
-
-Teoricamente, l'accelerazione dovrebbe essere:
-
-\begin{equation}
-    a_{\text{th}} = g\sin\theta = \SI{9.81}{\metre\per\second\squared} \cdot \sin(\SI{30}{\degree}) = \SI{4.905}{\metre\per\second\squared}
-\end{equation}
-
-La differenza relativa tra il valore sperimentale e quello teorico è:
-
-\begin{equation}
-    \frac{|a_{\text{exp}} - a_{\text{th}}|}{a_{\text{th}}} \cdot 100\% = \frac{|\SI{4.7208}{\metre\per\second\squared} - \SI{4.905}{\metre\per\second\squared}|}{\SI{4.905}{\metre\per\second\squared}} \cdot 100\% \approx 3.75\%
-\end{equation}
-
-Notiamo che non abbiamo potuto fare il confronto col metodo degli errori (sezione 2.4) perché non abbiamo calcolato l'errore sull'accelerazione e sul valore teorico atteso (sarebbe stato troppo complicato). Comunque, questa discrepanza del 3.75 \% tra il valore sperimentale e quello teorico è accettabile per un esperimento di laboratorio di fisica elementare. Le possibili fonti di errore includono:
-
-\begin{itemize}
-    \item Piccoli errori nella misurazione del tempo.
-    \item Leggero attrito tra la sfera e il piano inclinato.
-    \item Possibile imprecisione nella misurazione dell'angolo di inclinazione.
-    \item Errori di parallasse nella lettura delle distanze.
-\end{itemize}
-
-Per migliorare ulteriormente l'esperimento, si potrebbe:
-\begin{itemize}
-    \item Utilizzare un sistema di rilevamento del tempo più preciso, come un timer fotoelettrico.
-    \item Ridurre l'attrito utilizzando una superficie più liscia o una sfera con minore attrito.
-    \item Ripetere le misurazioni più volte per ogni distanza per ridurre gli errori casuali.
-\end{itemize}
-
-In conclusione, l'esperimento ha confermato con buona approssimazione la relazione tra spazio e tempo nel moto uniformemente accelerato, dimostrando l'efficacia del metodo sperimentale nell'investigare le leggi della fisica.
-
-%% ESEMPIO COMPLETO
-
-%% ESEMPIO COMPLETO
 \section{Caduta lungo un piano inclinato}
 \subsection{Obiettivo}
 L'obiettivo di questo esperimento è dimostrare la relazione di proporzionalità tra massa e accelerazione utilizzando un piano inclinato con altezza variabile.
@@ -3184,7 +2997,7 @@ Arrotondando alla prima cifra significativa dell'errore, otteniamo:
 \centering
 \includegraphics[width=1.2\textwidth]{img/nome_del_file_grafico.png}
 \caption{Relazione tra Forza Parallela e Accelerazione}
-\label{fig:grafico}
+\label{fig:grafico-pianoinc}
 \end{figure}
 
 \subsection{Analisi del Fit Lineare}
@@ -3242,7 +3055,7 @@ In conclusione, l'esperimento ha confermato con notevole precisione la relazione
 
 
 \section{Introduzione}
-Python è un linguaggio di programmazione versatile e potente, ideale per iniziare a programmare e per l'analisi dati. In questa guida, esploreremo la sintassi base, l'ambiente di sviluppo Google Colab, e alcuni elementi chiave di Python, NumPy e Matplotlib. In queste pagine sono inseriti i listati degli script python che uderemo nell'analisi dei dati. Si tratta di comandi del linguaggio  evidenziati da un bordo grigio. I listati non si possono copiare da questi appunti, sono disponibili in una cartella sul drive. Alcuni caratteri, richiedono l'uso combinato di più tasti (ad esempio, il carattere ''\textasciicircum`` sulla mia tastiera, si ottiene premendo contemporaneamente shift (una freccia spessa verso l'alto che si trova sulla destra della tastiera) e il tasto ì accentato (in alto a destra)). Per questi simboli, occorre imparare le opportune combinazioni che cambiano da tastiera a tastiera. Siccome si tratta solo di caratteri estetici, potete sostituirli come vi pare negli script (questi lavorano solo con numeri e lettere, i simboli non sono importanti ma dovendo inserire le unità di misura bisogna un pò ingegnarsi).
+Python è un linguaggio di programmazione versatile e potente, ideale per iniziare a programmare e per l'analisi dati. In questa guida, esploreremo la sintassi base, l'ambiente di sviluppo Google Colab, e alcuni elementi chiave di Python, NumPy e Matplotlib. In queste pagine sono inseriti i listati degli script python che useremo nell'analisi dei dati. Si tratta di comandi del linguaggio  evidenziati da un bordo grigio. I listati non si possono copiare da questi appunti, sono disponibili in una cartella sul drive. Alcuni caratteri, richiedono l'uso combinato di più tasti (ad esempio, il carattere ''\textasciicircum`` sulla mia tastiera, si ottiene premendo contemporaneamente shift (una freccia spessa verso l'alto che si trova sulla destra della tastiera) e il tasto ì accentato (in alto a destra)). Per questi simboli, occorre imparare le opportune combinazioni che cambiano da tastiera a tastiera. Siccome si tratta solo di caratteri estetici, potete sostituirli come vi pare negli script (questi lavorano solo con numeri e lettere, i simboli non sono importanti ma dovendo inserire le unità di misura bisogna un pò ingegnarsi).
  
 \section{Sintassi Base e Ambiente di Sviluppo Google Colab}
 Google Colab è un ambiente di sviluppo integrato (IDE) basato su Jupyter Notebook, che permette di eseguire codice Python direttamente nel browser.
@@ -3511,7 +3324,7 @@ d=m/V
 Dd=d*(Dm/m+DV/V)
 print(f"d = ({d} +- {d*(Dm/m+DV/V)}) g/cm^3")
 \end{minted}
-L'ouput è:
+L'output è:
 \begin{verbatim}
 d = (5.625 +- 0.141875) g/cm^3
 \end{verbatim}
@@ -4497,5 +4310,5 @@ In sintesi, questo capitolo ha fornito una panoramica delle tecniche di base per
 
 
 % Local Variables:
-% TeX-engine: xetex
+% TeX-engine: luatex
 % End:
