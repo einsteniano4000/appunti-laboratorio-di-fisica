@@ -13,6 +13,9 @@
 >     (00-prefazione … 06-equilibrio-corpi-solidi) + master con `\includeonly`
 >     commentato. Compilazione completa invariata (145 pag., pulita), `\includeonly`
 >     testato sul cap. 6 (26 pag., riferimenti incrociati OK dai `.aux`).
+>   - [x] Cap. "Relazioni di Laboratorio": §4.1 riallineata allo schema ufficiale
+>     Keynes; nuove relazioni svolte **§4.3 legge di Hooke** e **§4.6 attrito
+>     statico** (rette di max/min pendenza). Numeri in `verifica/cap-relazioni.py`.
 >   - [ ] Cap. "Equilibrio dei fluidi" (Unità 5) + Problemi di riepilogo
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 

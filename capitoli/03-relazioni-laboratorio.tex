@@ -1,47 +1,33 @@
 \chapter{Relazioni di Laboratorio}
-In questo capitolo, illustreremo la metodica per realizzare una relazione di laboratorio di fisica. L'esempio svolto sarà abbastanza completo ma si tenga conto del fatto che, a seconda degli argomenti e del tempo a disposizione,  una relazione reale potrebbe essere diversa per varie ragioni (non sempre si realizzano grafici o si calcolano gli errori come abbiamo fatto). Nel caso trattato, abbiamo usato una tecnica (l'uso della linea di tendenza o di \textit{bestfit}) molto efficace quando si ha la possibilità di misurare la variazione di due grandezze correlate (si può usare a tal proposito il foglio di calcolo). Alcune misure però, specialmente le prime che svolgeremo, richiedono solo misure dirette e lo scopo della relazione sarà la misura di una o più grandezze e la loro  scrittura corretta (quella del tipo $x=\left( \overline{x} \pm \Delta x\right)$ per intenderci).
-\section{Titolo e Scopo dell'Esperienza}
-Il titolo deve essere chiaro e conciso. Lo scopo dell'esperienza deve spiegare brevemente l'obiettivo dell'esperimento.
+In questo capitolo illustreremo la metodica per realizzare una relazione di laboratorio di fisica. Gli esempi svolti saranno abbastanza completi, ma si tenga conto del fatto che, a seconda degli argomenti e del tempo a disposizione, una relazione reale potrebbe essere diversa per varie ragioni (non sempre si realizzano grafici o si calcolano gli errori come faremo qui). In alcuni casi si usa una tecnica -- la retta di \emph{best fit} o linea di tendenza -- molto efficace quando si ha la possibilità di misurare come variano due grandezze correlate (si può usare a tal proposito il foglio di calcolo). Altre misure, invece, specialmente le prime che svolgeremo, richiedono solo misure dirette: in quei casi lo scopo della relazione è la misura di una o più grandezze e la loro scrittura corretta, quella del tipo $x=\left( \overline{x} \pm \Delta x\right)$ per intenderci.
 
-\section{Materiali e Strumenti}
-Elencare tutti i materiali e gli strumenti utilizzati, specificando la sensibilità e la portata degli strumenti di misura. Includere un'immagine dell'apparato sperimentale.
+\section{La struttura della relazione}
+Adotteremo lo schema in uso nel nostro istituto. Ogni relazione si apre con una piccola \textbf{intestazione} (numero della relazione, classe, nomi degli studenti, data, spazio per il visto del docente) ed è poi organizzata nelle sezioni seguenti.
 
-\section{Raccolta Dati}
-Presentare i dati raccolti in forma tabulare, includendo gli errori nelle misure dirette.
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Scopo della prova.} Una o due frasi che dichiarano che cosa si vuole misurare o verificare (per esempio: ``misurare la costante elastica di una molla'', ``verificare la legge del moto uniformemente accelerato'').
+    \item \textbf{Schema della prova.} Un disegno dell'apparato sperimentale, fatto a mano ma ordinato, con i nomi delle parti e i simboli delle grandezze che compaiono nella prova (lunghezze, forze, angoli). Serve a far capire in un colpo d'occhio \emph{come} è stata eseguita la misura.
+    \item \textbf{Strumenti e materiali.} L'elenco di tutto ciò che è stato usato. Per ogni \emph{strumento di misura} si indicano sensibilità e portata; i \emph{materiali} (molle, pesetti, sferette, fili\dots) si elencano a parte perché non misurano nulla.
+    \item \textbf{Cenni teorici della prova.} La teoria essenziale: le leggi fisiche coinvolte, le formule che si useranno e il loro significato. Qui si spiega anche, brevemente, il \emph{procedimento} seguito.
+    \item \textbf{Prelievo dati.} I dati raccolti, in forma di tabella, con l'errore sulle misure dirette (di solito la sensibilità dello strumento o la semidispersione delle misure ripetute). È bene mettere in tabella anche le grandezze calcolate direttamente da quelle misurate.
+    \item \textbf{Elaborazione dati.} Il cuore della relazione. Si mostrano i calcoli: valori medi e incertezze, \emph{propagazione degli errori} nelle misure indirette (sezione~\ref{sec:propagazione} del capitolo precedente), l'eventuale \emph{grafico sperimentale} con le barre di errore e la retta di best fit. Conviene riportare per esteso almeno un esempio di calcolo per ciascuna formula usata.
+    \item \textbf{Conclusioni.} Il risultato finale scritto in forma corretta, il confronto con il valore atteso (quando c'è) e una discussione onesta delle possibili fonti di errore.
+\end{enumerate}
 
-\section{Cenni Teorici}
-Esporre brevemente la teoria relativa all'esperimento, includendo le formule rilevanti.
-
-\section{Elaborazione Dati}
-Descrivere il processo di elaborazione dei dati raccolti.
-
-\section{Calcolo degli Errori nelle Misure Indirette}
-Spiegare come si propagano gli errori nelle misure indirette.
-
-\section{Grafico Sperimentale}
-Presentare i dati in forma grafica, includendo le barre di errore.
-
-\section{Conclusioni}
-Discutere i risultati ottenuti, confrontandoli con le previsioni teoriche.
+\begin{remark}
+Le sezioni ``propagazione degli errori'' e ``grafico'' non compaiono in ogni relazione: dipende dal tipo di misura. In una prova di sole misure dirette (per esempio la misura del volume di un solido) l'elaborazione può ridursi al calcolo del valore medio e dell'incertezza.
+\end{remark}
 
 \newpage
 
-\section{Esempio: Studio del Moto}
+\section[Esempio: studio del moto]{Esempio: studio del moto uniformemente accelerato}
 
-\subsection{Titolo e Scopo dell'Esperienza}
-\textbf{Titolo:} Studio del Moto Uniformemente Accelerato\\
-\textbf{Scopo:} Verificare sperimentalmente le leggi del moto uniformemente accelerato.
+\subsection{Scopo della prova}
+Verificare sperimentalmente le leggi del moto uniformemente accelerato, studiando la discesa di una sfera lungo un piano inclinato.
 
-\subsection{Materiali e Strumenti}
-\begin{itemize}
-    \item Piano inclinato (base \SI{2000}{\milli\metre}) e inclinato di \SI{30}{\degree}.
-    \item Sfera metallica.
-    \item Cronometro digitale (sensibilità: \SI{0,01}{\second}, portata: \SI{999,99}{\second}).
-    \item Metro a nastro (sensibilità: \SI{1}{\milli\metre}, portata: \SI{3000}{\milli\metre}).
-    \item Goniometro (sensibilità: \SI{1}{\degree}, portata: \SI{180}{\degree}).
-\end{itemize}
+\subsection{Schema della prova}
 
-\begin{figure}[!htbp] 
+\begin{figure}[!htbp]
     \centering
     \begin{tikzpicture}[scale=0.7]
         % Piano inclinato
@@ -74,7 +60,16 @@ Discutere i risultati ottenuti, confrontandoli con le previsioni teoriche.
     \label{fig:apparato}
 \end{figure}
 
-\subsection{Raccolta Dati}
+\subsection{Strumenti e materiali}
+\begin{itemize}
+    \item Piano inclinato (base \SI{2000}{\milli\metre}) inclinabile; qui inclinato di \SI{30}{\degree}.
+    \item Sfera metallica.
+    \item Cronometro digitale (sensibilità \SI{0,01}{\second}, portata \SI{999,99}{\second}).
+    \item Metro a nastro (sensibilità \SI{1}{\milli\metre}, portata \SI{3000}{\milli\metre}).
+    \item Goniometro (sensibilità \SI{1}{\degree}, portata \SI{180}{\degree}).
+\end{itemize}
+
+\subsection{Prelievo dati}
 Abbiamo misurato il tempo impiegato dalla sfera per percorrere diverse distanze lungo il piano inclinato, inclinato di \SI{30}{\degree} rispetto all'orizzontale.
 
 \begin{table}[!htbp] 
@@ -94,7 +89,7 @@ Abbiamo misurato il tempo impiegato dalla sfera per percorrere diverse distanze 
     \label{tab:datitab}
 \end{table}
 
-\subsection{Cenni Teorici}
+\subsection{Cenni teorici della prova}
 Nel moto uniformemente accelerato, la posizione $s$ in funzione del tempo $t$ è data da:
 
 \begin{equation}
@@ -109,14 +104,14 @@ dove $a$ è l'accelerazione. Nel nostro caso, l'accelerazione lungo il piano inc
 
 dove $g$ è l'accelerazione di gravità e $\theta$ è l'angolo di inclinazione del piano.
 
-\subsection{Elaborazione Dati}
+\subsection{Elaborazione dati}
 Per verificare la relazione $s = \frac{1}{2}at^2$, plotteremo $s$ in funzione di $t^2$.
  La pendenza della retta di best fit sarà $\frac{1}{2}a$. Prima di realizzare il grafico,
  calcoliamo anzitutto gli errori e poi metteremo i punti sul piano cartesiano. In fine calcoleremo
  l'accelerazione di gravità dalla pendenza. I dettagli per farlo sono riassunti nei paragrafi
  sull'uso del foglio di calcolo (o con la procedura manuale).
 
-\subsection{Calcolo degli Errori nelle Misure Indirette}
+\subsubsection{Calcolo degli errori nelle misure indirette}
 L'errore su $t^2$ si propaga come:
 
 \begin{equation}
@@ -141,9 +136,9 @@ $t^2$ (\si{\second\squared}) & $\Delta \left( t^2 \right)$ (\si{\second\squared}
 \label{tab:tquadro}
 \end{table}
 
-\subsection{Grafico Sperimentale}
+\subsubsection{Grafico sperimentale}
 
-\begin{figure}[!htbp] 
+\begin{figure}[!htbp]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
@@ -207,6 +202,176 @@ Per migliorare ulteriormente l'esperimento, si potrebbe:
 \end{itemize}
 
 In conclusione, l'esperimento ha confermato con buona approssimazione la relazione tra spazio e tempo nel moto uniformemente accelerato, dimostrando l'efficacia del metodo sperimentale nell'investigare le leggi della fisica.
+
+
+
+\newpage
+\section[Esempio: legge di Hooke]{Esempio: misura di una costante elastica}
+
+Questa è una prova di sole \emph{misure dirette}: non c'è propagazione di errori complicata e il grafico serve soprattutto a controllare ``a occhio'' che i dati siano allineati. È il tipo di relazione più semplice ed è un buon punto di partenza.
+
+\subsection{Scopo della prova}
+Misurare la costante elastica $k$ di una molla applicando la legge di Hooke, e verificare che il peso appeso e l'allungamento della molla siano direttamente proporzionali.
+
+\subsection{Schema della prova}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth, scale=1.0,
+        sostegno/.pic={
+            \draw[thick,fill=gray!20] (0,0.15) ellipse (0.8 and 0.15);
+            \draw[line width=1.2pt] (0,0.25) -- (0,5);
+            \draw[line width=1.2pt] (0,5) -- (1.1,5);
+            \fill (1.1,5) circle (1.1pt);
+            % scala graduata (il righello solidale al sostegno)
+            \foreach \y in {1,1.5,...,4.5}{\draw (0.06,\y) -- (0.24,\y);}
+            \draw[line width=0.4pt] (0.24,0.9) -- (0.24,4.6);
+        }]
+
+    % ============ MOLLA A RIPOSO ============
+    \begin{scope}[xshift=0cm]
+        \pic at (0,0) {sostegno};
+        \draw[thick,decorate,decoration={coil,aspect=0.6,segment length=4pt,amplitude=4.5pt}]
+            (1.1,4.95) -- (1.1,3.0);
+        % estremo libero + indice sulla scala
+        \draw[thick] (1.1,3.0) -- (1.35,3.0);
+        \fill[blue!60!black] (0.30,3.0) -- ++(0.28,0.11) -- ++(0,-0.22) -- cycle;
+        \draw[blue!60!black] (0.58,3.0) -- (1.1,3.0);
+        % quota lunghezza a riposo
+        \draw[<->] (2.0,5) -- (2.0,3.0) node[midway,fill=white,inner sep=1pt] {$\ell_1$};
+        \draw[dotted] (1.1,5) -- (2.0,5);
+        \draw[dotted] (1.35,3.0) -- (2.0,3.0);
+        \node[align=center] at (0.7,-0.5) {molla a riposo};
+    \end{scope}
+
+    % ============ MOLLA CON IL PESO ============
+    \begin{scope}[xshift=5.6cm]
+        \pic at (0,0) {sostegno};
+        \draw[thick,decorate,decoration={coil,aspect=0.6,segment length=4pt,amplitude=4.5pt}]
+            (1.1,4.95) -- (1.1,2.1);
+        % pesetto
+        \draw[thick,fill=gray!40] (0.85,1.6) rectangle (1.35,2.1);
+        % estremo libero + indice sulla scala
+        \draw[thick] (1.1,2.1) -- (1.35,2.1);
+        \fill[blue!60!black] (0.30,2.1) -- ++(0.28,0.11) -- ++(0,-0.22) -- cycle;
+        \draw[blue!60!black] (0.58,2.1) -- (1.1,2.1);
+        % forze sul pesetto (disegnate a lato, applicate al suo centro)
+        \draw[->,blue!60!black,thick] (1.9,1.85) -- (1.9,3.0) node[above] {$\vec F_e$};
+        \draw[->,ocre,thick] (1.9,1.85) -- (1.9,0.7) node[below] {$\vec P$};
+        \draw[dotted] (1.35,1.85) -- (1.9,1.85);
+        % quota lunghezza sotto carico
+        \draw[<->] (2.6,5) -- (2.6,2.1) node[midway,fill=white,inner sep=1pt] {$\ell_2$};
+        \draw[dotted] (1.1,5) -- (2.6,5);
+        \draw[dotted] (1.35,2.1) -- (2.6,2.1);
+        \node[align=center] at (0.7,-0.5) {molla con il peso};
+    \end{scope}
+
+    \end{tikzpicture}
+    \caption{A sinistra la molla a riposo (lunghezza $\ell_1$); a destra la stessa molla con un pesetto agganciato (lunghezza $\ell_2$). Il pesetto è in equilibrio sotto la forza peso $\vec P$ e la forza elastica $\vec F_e$, che quindi hanno lo stesso modulo. L'allungamento è $x=\ell_2-\ell_1$.}
+    \label{fig:apparato-hooke}
+\end{figure}
+
+\subsection{Strumenti e materiali}
+\begin{itemize}
+    \item Righello graduato solidale al sostegno (sensibilità \SI{1}{\milli\metre}, portata \SI{500}{\milli\metre}).
+    \item Bilancia elettronica (sensibilità \SI{0,1}{\gram}, portata \SI{1200}{\gram}).
+    \item Molla elicoidale, sostegno con asta verticale, serie di pesetti tarati uguali.
+\end{itemize}
+
+\subsection{Cenni teorici della prova}
+La legge di Hooke afferma che una molla, allungata di una quantità $x$ rispetto alla sua lunghezza a riposo, reagisce con una forza elastica di richiamo il cui modulo è
+\[ \colorboxed{ocre}{ F_e = k\,x } \]
+dove $k$ è la \textbf{costante elastica} della molla, che si misura in \si{\newton\per\metre} nel Sistema Internazionale (o in una qualunque unità del tipo forza fratto lunghezza). La formula dice che forza di richiamo e allungamento sono direttamente proporzionali: il grafico di $F_e$ in funzione di $x$ deve essere una retta passante per l'origine. Questo vale però finché la forza esterna non supera il \emph{limite di elasticità} della molla, oltre il quale la molla si deforma in modo permanente e non segue più la legge di Hooke.
+
+Nel nostro apparato la forza che allunga la molla è il peso $P=mg$ del pesetto agganciato. Poiché il pesetto resta fermo, esso è in equilibrio: la forza elastica e la forza peso hanno lo stesso modulo,
+\[ F_e = P \qquad\Longrightarrow\qquad k\,x = m g . \]
+Da qui si ricava la costante elastica a partire da grandezze tutte misurabili:
+\[ k = \frac{P}{x} = \frac{m g}{\ell_2-\ell_1}. \]
+
+\paragraph{Procedimento.} Abbiamo agganciato la molla all'estremità del sostegno e abbiamo letto sul righello la posizione dell'estremo libero, ottenendo la lunghezza a riposo $\ell_1$. Poi, per quattro volte, abbiamo pesato un gruppo di pesetti sulla bilancia, li abbiamo appesi alla molla e abbiamo letto la nuova lunghezza $\ell_2$. Per ogni carico abbiamo calcolato l'allungamento $x=\ell_2-\ell_1$, il peso $P=mg$ e la costante $k=P/x$. Infine abbiamo fatto la media dei quattro valori di $k$ con la loro semidispersione e abbiamo tracciato il grafico di $P$ in funzione di $x$.
+
+\subsection{Prelievo dati}
+La lunghezza a riposo è stata riletta a ogni prova (di qui le piccole differenze, entro la sensibilità del righello). Tutte le lunghezze hanno incertezza \SI{1}{\milli\metre}, le masse \SI{0,1}{\gram}.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$m$ (\si{\gram}) & $\ell_1$ (\si{\milli\metre}) & $\ell_2$ (\si{\milli\metre}) & $x=\ell_2-\ell_1$ (\si{\milli\metre}) & $P=mg$ (\si{\newton}) & $k=P/x$ (\si{\newton\per\metre}) \\
+\midrule
+100,0 & 150 & 189 & 39  & 0,981 & 25,2 \\
+200,0 & 150 & 231 & 81  & 1,962 & 24,2 \\
+300,0 & 149 & 270 & 121 & 2,943 & 24,3 \\
+400,0 & 151 & 310 & 159 & 3,924 & 24,7 \\
+\bottomrule
+\end{tabular}
+\caption{Dati sperimentali e grandezze calcolate. Esempio: $P=\SI{0,1000}{\kilo\gram}\cdot\SI{9,81}{\newton\per\kilo\gram}=\SI{0,981}{\newton}$; $k=0{,}981/0{,}039\approx\SI{25,2}{\newton\per\metre}$.}
+\label{tab:hooke-relazione}
+\end{table}
+
+\subsection{Elaborazione dati}
+
+\subsubsection{Valore della costante elastica}
+Dai quattro valori della tabella~\ref{tab:hooke-relazione} calcoliamo la media e la semidispersione:
+\[ \bar k = \frac{25{,}2+24{,}2+24{,}3+24{,}7}{4}\ \si{\newton\per\metre} \approx \SI{24,6}{\newton\per\metre}, \]
+\[ \Delta k = \frac{k_{\max}-k_{\min}}{2} = \frac{25{,}2-24{,}2}{2}\ \si{\newton\per\metre} \approx \SI{0,5}{\newton\per\metre}. \]
+Il risultato, in \si{\newton\per\metre} e nella più comoda \si{\newton\per\centi\metre} (con l'errore a una sola cifra significativa e la media arrotondata allo stesso ordine), è
+\[ \colorboxed{ocre}{ k = (24{,}6 \pm 0{,}5)\ \si{\newton\per\metre} = (0{,}246 \pm 0{,}005)\ \si{\newton\per\centi\metre}. } \]
+
+\subsubsection{Un controllo sugli errori}
+L'allungamento $x$ è la differenza di due lunghezze, ciascuna con incertezza \SI{1}{\milli\metre}; sommando in quadratura si ha $\Delta x=\sqrt{1^2+1^2}\approx\SI{1,4}{\milli\metre}$. L'errore relativo sul peso è trascurabile ($\Delta P/P=\Delta m/m\le 0{,}1/100=0{,}1\%$), quindi
+\[ \frac{\Delta k}{k}\approx\frac{\Delta x}{x}. \]
+Per il primo punto ($x=\SI{39}{\milli\metre}$) questo vale circa il $3{,}6\%$, cioè $\Delta k\approx\SI{0,9}{\newton\per\metre}$: la dispersione dei quattro valori di $k$ è dunque compatibile con i soli errori di lettura del righello, senza bisogno di invocare una molla ``difettosa''.
+
+\subsubsection{Grafico sperimentale}
+Riportiamo il peso $P$ in funzione dell'allungamento $x$, con le barre di errore su $x$.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.82\textwidth,
+            height=0.58\textwidth,
+            xlabel={allungamento $x$ (\si{\milli\metre})},
+            ylabel={peso $P$ (\si{\newton})},
+            xmin=0, xmax=175,
+            ymin=0, ymax=4.3,
+            axis lines=left,
+            legend pos=north west,
+            legend cell align=left,
+        ]
+            \addplot[only marks,mark=*,mark size=1.6pt,
+                     error bars/.cd,x dir=both,x explicit]
+            coordinates {
+                (39,0.981)  +- (1.4,0)
+                (81,1.962)  +- (1.4,0)
+                (121,2.943) +- (1.4,0)
+                (159,3.924) +- (1.4,0)
+            };
+            \addplot[thick,ocre,domain=0:175,samples=2] {0.02459*x};
+            \legend{dati sperimentali, retta $P=\bar k\,x$ con $\bar k=\SI{24,6}{\newton\per\metre}$}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{I punti sono ben allineati su una retta passante per l'origine: peso e allungamento sono direttamente proporzionali, come previsto dalla legge di Hooke.}
+    \label{fig:grafico-hooke}
+\end{figure}
+
+La retta di best fit tracciata sui dati passa per l'origine entro gli errori e ha pendenza $\approx\SI{24,5}{\newton\per\metre}$, in ottimo accordo con la media dei quattro valori di $k$.
+
+\subsection{Conclusioni}
+La costante elastica misurata è
+\[ k = (24{,}6 \pm 0{,}5)\ \si{\newton\per\metre} = (0{,}246 \pm 0{,}005)\ \si{\newton\per\centi\metre}, \]
+con un'incertezza relativa di circa il $2\%$. Il grafico di figura~\ref{fig:grafico-hooke} mostra che i punti $(x,P)$ giacciono su una retta passante per l'origine: la proporzionalità diretta tra forza e allungamento prevista dalla legge di Hooke è quindi verificata, nei limiti degli errori sperimentali e finché non si supera il limite di elasticità della molla.
+
+Le possibili fonti di errore erano:
+\begin{itemize}
+    \item il non perfetto allineamento tra il righello e la molla;
+    \item l'errore di parallasse nella lettura della scala (occhio non allineato con la tacca);
+    \item il fatto che la molla non è perfettamente ideale (ha una piccola massa propria e un breve tratto iniziale poco lineare);
+    \item eventuali errori sistematici degli strumenti (righello deformato, bilancia non tarata).
+\end{itemize}
+
+Per migliorare la misura si potrebbe usare un maggior numero di carichi diversi, ricavare $k$ dalla sola pendenza della retta di massima e minima pendenza (sezione~\ref{sec:rettemaxmin}) e controllare la taratura della bilancia con una massa campione.
 
 
 
@@ -559,5 +724,112 @@ Nonostante l'ottima corrispondenza tra i risultati sperimentali e le previsioni 
 \end{itemize}
 
 In conclusione, l'esperimento ha confermato con notevole precisione la relazione lineare tra forza e accelerazione prevista dalla seconda legge di Newton. La qualità dei risultati ottenuti testimonia l'accuratezza delle misurazioni e l'efficacia del setup sperimentale utilizzato.
+
+
+\newpage
+\section[Esempio: attrito statico]{Esempio: misura del coefficiente di attrito statico}
+
+Anche questa, come quella sulla molla, è una relazione di sole misure dirette; l'elaborazione consiste però nel ricavare una \emph{pendenza} da un grafico, con la sua incertezza, usando il metodo delle rette di massima e minima pendenza (sezione~\ref{sec:rettemaxmin}).
+
+\subsection{Scopo della prova}
+Misurare il coefficiente di attrito statico $k_s$ fra un blocchetto di legno e il piano d'appoggio, determinando la forza di primo distacco $F_{pd}$ al variare della forza premente $F_p$.
+
+\subsection{Schema della prova}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1.1]
+        % piano d'appoggio
+        \fill[pattern=north east lines] (-1.2,-0.3) rectangle (7.6,0);
+        \draw[thick] (-1.2,0) -- (7.6,0);
+        % blocchetto
+        \draw[thick,fill=brown!25] (1.0,0) rectangle (3.0,1.2);
+        \node at (2.0,0.6) {\small blocchetto};
+        % pesi impilati sopra
+        \draw[thick,fill=gray!30] (1.3,1.2) rectangle (2.7,1.55);
+        \draw[thick,fill=gray!30] (1.5,1.55) rectangle (2.5,1.85);
+        \draw[->] (4.7,2.15) .. controls (3.6,2.1) .. (2.3,1.75);
+        \node[right,align=left] at (4.6,2.25) {\small pesi: si aggiungono\\[-2pt] \small per aumentare $F_p$};
+        % dinamometro (tira il blocchetto verso destra)
+        \draw[thick] (3.0,0.55) -- (3.7,0.55);
+        \draw[thick,decorate,decoration={coil,aspect=0.6,segment length=4pt,amplitude=4pt}] (3.7,0.55) -- (5.3,0.55);
+        \draw[thick] (5.3,0.55) -- (6.0,0.55);
+        \draw[thick,fill=white] (6.0,0.35) rectangle (6.5,0.75);
+        \node[right] at (6.6,0.55) {\small dinamometro};
+        % forze
+        \draw[->,ocre,very thick] (1.7,0) -- (1.7,-1.1) node[below] {$\vec F_p$};
+        \draw[->,red!70!black,very thick] (3.0,1.0) -- (4.15,1.0);
+        \node[red!70!black,above] at (3.5,1.03) {$\vec F_{pd}$};
+        \draw[->,blue!60!black,very thick] (1.0,0.28) -- (-0.3,0.28) node[left] {attrito};
+    \end{tikzpicture}
+    \caption{Il blocchetto è tirato orizzontalmente dal dinamometro; sopra si appoggiano pesi via via maggiori. Si legge la forza $F_{pd}$ nell'istante in cui il blocchetto si stacca (primo distacco). La forza premente $F_p$ è il peso complessivo di blocchetto e pesi.}
+    \label{fig:apparato-attrito}
+\end{figure}
+
+\subsection{Strumenti e materiali}
+\begin{itemize}
+    \item Dinamometro (sensibilità \SI{0,05}{\newton}, portata \SI{5}{\newton}).
+    \item Blocchetto di legno con gancio, serie di pesi tarati, piano orizzontale.
+\end{itemize}
+
+\subsection{Cenni teorici della prova}
+Finché il blocchetto è fermo, la forza di attrito statico bilancia esattamente la forza applicata dal dinamometro. Quando quest'ultima raggiunge il valore massimo che l'attrito statico può contrastare, il blocchetto si stacca: quel valore è la \textbf{forza di primo distacco} $F_{pd}$. Essa è proporzionale alla forza premuta sul piano (cioè al peso $F_p$ che grava sulla superficie di contatto):
+\[ \colorboxed{ocre}{ F_{pd} = k_s\,F_p } \]
+dove $k_s$ è il \textbf{coefficiente di attrito statico}, un numero puro che dipende solo dalla natura delle due superfici. Nel grafico $(F_p,\,F_{pd})$ i punti devono quindi disporsi lungo una retta passante per l'origine, e $k_s$ è la sua \emph{pendenza}.
+
+\paragraph{Procedimento.} Abbiamo appoggiato il blocchetto sul piano e, con il dinamometro in orizzontale, lo abbiamo tirato lentamente fino al distacco, leggendo $F_{pd}$. Abbiamo ripetuto la misura cinque volte, ogni volta aggiungendo pesi sul blocchetto e registrando il nuovo peso complessivo $F_p$. Infine abbiamo riportato i punti sul grafico e ricavato $k_s$ dalla pendenza, con l'incertezza data dalle rette di massima e minima pendenza.
+
+\subsection{Prelievo dati}
+La forza premente $F_p$ è nota con buona precisione (pesata a parte); l'incertezza importante è quella sulla forza di primo distacco $F_{pd}$, difficile da cogliere con precisione nell'istante del distacco.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$i$ & $F_{p,i}$ (\si{\newton}) & $F_{pd,i}$ (\si{\newton}) & $e_{F_{pd},i}$ (\si{\newton}) \\
+\midrule
+1 & 2,45 & 0,93 & 0,02 \\
+2 & 3,45 & 1,29 & 0,02 \\
+3 & 4,40 & 1,64 & 0,03 \\
+4 & 5,40 & 2,00 & 0,03 \\
+5 & 6,38 & 2,33 & 0,03 \\
+\bottomrule
+\end{tabular}
+\caption{Forza di primo distacco al variare della forza premente.}
+\label{tab:attrito-relazione}
+\end{table}
+
+\subsection{Elaborazione dati}
+Per ricavare la pendenza e la sua incertezza usiamo il metodo grafico delle rette di massima e minima pendenza. Consideriamo solo il primo e l'ultimo punto (i più ``lontani'', quelli che vincolano di più la retta) e i quattro vertici delle loro barre d'errore:
+\begin{itemize}
+    \item primo punto: $A=(2{,}45;\ 0{,}95)$ in alto, $B=(2{,}45;\ 0{,}91)$ in basso;
+    \item ultimo punto: $C=(6{,}38;\ 2{,}36)$ in alto, $D=(6{,}38;\ 2{,}30)$ in basso.
+\end{itemize}
+La retta di \textbf{massima} pendenza congiunge $B$ con $C$ (basso a sinistra, alto a destra); quella di \textbf{minima} pendenza congiunge $A$ con $D$:
+\[ b_{\max} = \frac{2{,}36 - 0{,}91}{6{,}38 - 2{,}45} \approx 0{,}369, \qquad
+   b_{\min} = \frac{2{,}30 - 0{,}95}{6{,}38 - 2{,}45} \approx 0{,}344. \]
+Il coefficiente di attrito e la sua incertezza sono la semisomma e la semidifferenza:
+\[ k_s = \frac{b_{\max}+b_{\min}}{2} \approx 0{,}36, \qquad
+   \Delta k_s = \frac{b_{\max}-b_{\min}}{2} \approx 0{,}01. \]
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/attrito-statico-grafico.png}
+    \caption{I punti $(F_p,F_{pd})$ e le due rette limite. I punti sono allineati su una retta per l'origine: la forza di primo distacco è proporzionale alla forza premente.}
+    \label{fig:grafico-attrito}
+\end{figure}
+
+\subsection{Conclusioni}
+Il coefficiente di attrito statico fra blocchetto e piano è
+\[ \colorboxed{ocre}{ k_s = 0{,}36 \pm 0{,}01 } \]
+un numero puro (senza unità di misura), con un'incertezza relativa di circa il $3\%$. Il valore è in linea con quelli tabulati per il legno su legno o legno su metallo. Il grafico di figura~\ref{fig:grafico-attrito} conferma la proporzionalità diretta fra $F_{pd}$ e $F_p$ prevista dal modello.
+
+Le principali fonti di errore erano:
+\begin{itemize}
+    \item la difficoltà di leggere il dinamometro proprio nell'istante del distacco (la lancetta ``scatta'');
+    \item il fatto di dover tirare in modo perfettamente orizzontale e molto lentamente;
+    \item le irregolarità e la polvere sulle superfici di contatto, che cambiano da una prova all'altra;
+    \item l'attrito statico che in realtà non è perfettamente costante ma dipende un poco da come il blocchetto è stato appoggiato.
+\end{itemize}
 
 

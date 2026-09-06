@@ -98,6 +98,18 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
    l'incertezza sulla pendenza) con esempio sulla legge di Hooke.
 5. Introdotto il significato di $\Delta$ e $\Sigma$ prima del primo uso.
 
+### Cap. "Relazioni di Laboratorio" – ampliato
+- §4.1 riscritta sullo **schema ufficiale dell'Istituto Keynes** (da
+  `MASCHERA RELAZIONE DI LABORATORIO.docx`): intestazione + Scopo · Schema della
+  prova · Strumenti e materiali · Cenni teorici · Prelievo dati · Elaborazione
+  dati · Conclusioni. Sottosezioni dell'esempio "studio del moto" riallineate.
+- **Nuova §4.3 "Esempio: legge di Hooke"** (relazione svolta di sole misure
+  dirette + grafico). Apparato e grafico in TikZ. Da `LEGGE DI HOOKE.pdf`.
+- **Nuova §4.6 "Esempio: attrito statico"** (metodo rette max/min pendenza).
+  Apparato in TikZ; grafico = immagine ritagliata da `lab-attrito.pdf`
+  (`img/attrito-statico-grafico.png`). Da `lab-attrito.pdf`.
+- Verifiche numeriche: `verifica/cap-relazioni.py` (Hooke + attrito).
+
 ### Ampliamento – Parte "meccanica" (fonte: `tecnologico.pdf`, Unità 3–5)
 - **Cap. "Grandezze vettoriali e forze"** — COMPLETO. §1 scalari/vettori · §2
   operazioni (punta-coda, parallelogramma, differenza, prodotto per scalare,
