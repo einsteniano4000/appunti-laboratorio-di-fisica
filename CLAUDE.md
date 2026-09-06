@@ -117,8 +117,9 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 - **Nuova §4.3 "Esempio: legge di Hooke"** (relazione svolta di sole misure
   dirette + grafico). Apparato e grafico in TikZ. Da `LEGGE DI HOOKE.pdf`.
 - **Nuova §4.6 "Esempio: attrito statico"** (metodo rette max/min pendenza).
-  Apparato in TikZ; grafico = immagine ritagliata da `lab-attrito.pdf`
-  (`img/attrito-statico-grafico.png`). Da `lab-attrito.pdf`.
+  Fig. 4.6 apparato = `img/attrito-apparato.jpg` (illustrazione generata
+  dall'utente con Gemini, etichette già nell'immagine); grafico =
+  `img/attrito-statico-grafico.png` (ritaglio da `lab-attrito.pdf`).
 - Verifiche numeriche: `verifica/cap-relazioni.py` (Hooke + attrito).
 
 ### Ampliamento – Parte "meccanica" (fonte: `tecnologico.pdf`, Unità 3–6)
