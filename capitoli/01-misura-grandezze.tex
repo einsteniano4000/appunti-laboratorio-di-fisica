@@ -549,13 +549,13 @@ I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (s
         \node[anchor=south west,inner sep=0] (im)
             {\includegraphics[width=\linewidth]{img/calibro-foto.jpg}};
         \begin{scope}[x={(im.south east)},y={(im.north west)}]
-            \tikzset{lab/.style={fill=white,fill opacity=0.85,text opacity=1,
+            \tikzset{lab/.style={fill=white,fill opacity=0.9,text opacity=1,
                                  inner sep=1.5pt,rounded corners=1pt},
-                     guida/.style={thin,gray!55}}
+                     guida/.style={line width=0.9pt,black!75}}
             % punti sulle parti
-            \foreach \p in {(0.062,0.965),(0.104,0.975),(0.115,0.11),(0.215,0.30),
+            \foreach \p in {(0.062,0.965),(0.104,0.975),(0.09,0.20),(0.205,0.26),
                             (0.55,0.585),(0.365,0.79),(0.33,0.545),(0.405,0.42)}
-                \fill[red!70!black] \p circle (0.5pt);
+                \fill[black!80] \p circle (1pt);
             % --- etichette sopra ---
             \draw[guida] (0.365,0.79) -- (0.365,1.05);
             \node[lab,anchor=south] at (0.365,1.05) {corsoio};
@@ -565,8 +565,8 @@ I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (s
             \draw[guida] (0.55,0.585) .. controls (0.62,0.80) .. (0.70,0.90);
             \node[lab,anchor=west] at (0.70,0.90) {asta fissa (scala in mm)};
             % --- etichette sotto ---
-            \draw[guida] (0.115,0.11) -- (0.115,-0.06);
-            \draw[guida] (0.215,0.30) -- (0.16,-0.06);
+            \draw[guida] (0.09,0.20) .. controls (0.10,0.05) .. (0.115,-0.06);
+            \draw[guida] (0.205,0.26) .. controls (0.19,0.05) .. (0.165,-0.06);
             \node[lab,anchor=north] at (0.14,-0.06) {becchi per misure esterne};
             \draw[guida] (0.33,0.545) .. controls (0.36,0.20) .. (0.40,-0.06);
             \node[lab,anchor=north] at (0.40,-0.06) {nonio};
