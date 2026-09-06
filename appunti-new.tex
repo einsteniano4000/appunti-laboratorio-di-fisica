@@ -4306,6 +4306,165 @@ Una cassa è ferma su un piano inclinato di $18^\circ$. Misurando l'angolo limit
 \end{esercizio}
 
 
+\section{L'equilibrio di un corpo rigido}
+
+Il modello del punto materiale permette di studiare oggetti che possono solo \emph{traslare}. Per studiare oggetti che possono anche \emph{ruotare} serve un modello più ricco.
+
+\begin{definizione}
+Un \textbf{corpo rigido} è un oggetto dotato di forma e dimensioni, che non subisce deformazioni anche se soggetto a forze.
+\end{definizione}
+
+\subsection{Il braccio e il momento di una forza}
+Consideriamo una chiave inglese usata per svitare un bullone. La chiave può ruotare attorno al bullone; osserviamo come cambia la facilità di rotazione al variare della forza applicata:
+\begin{itemize}
+\item una forza più \textbf{intensa} fa ruotare più facilmente il bullone;
+\item una forza applicata in un punto più \textbf{lontano} dal bullone lo fa ruotare più facilmente di una forza uguale applicata vicino;
+\item una forza diretta \textbf{verso} il centro di rotazione non lo fa ruotare affatto.
+\end{itemize}
+L'effetto rotatorio di una forza dipende quindi dalla sua intensità, dal suo punto di applicazione e dalla sua direzione. Queste tre informazioni si riassumono in un'unica grandezza. Chiamiamo \textbf{braccio} della forza $b$ la distanza tra il centro di rotazione $O$ e la retta d'azione della forza (figura~\ref{fig:momento}).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\fill (0,0) circle (1.5pt) node[below left]{$O$};
+\draw[thick] (0,0) -- (3.6,0);
+\fill[gray!30] (3.2,-0.18) rectangle (3.9,0.18);
+\draw[->,very thick,ocre] (3.55,0) -- (3.55,-1.6) node[right,black]{$\vec{F}$};
+\draw[dashed,gray] (3.55,0.4) -- (3.55,-1.8);
+\draw[<->] (0,0.45) -- (3.55,0.45) node[midway,above]{$b$};
+\draw[dotted] (0,0) -- (0,0.55);
+\draw[dotted] (3.55,0) -- (3.55,0.55);
+\end{tikzpicture}
+\caption{Il braccio $b$ di una forza è la distanza tra il centro di rotazione $O$ e la retta d'azione della forza.}
+\label{fig:momento}
+\end{figure}
+
+\begin{definizione}
+Il \textbf{momento} di una forza $\vec{F}$ rispetto a un punto $O$ è il prodotto dell'intensità della forza per il suo braccio:
+\[
+\colorboxed{ocre}{\; M = F\cdot b \;}
+\]
+Nel Sistema Internazionale si misura in \textbf{newton per metro} ($\si{\newton\meter}$).
+\end{definizione}
+
+Per \textbf{convenzione}, il momento è \textbf{positivo} se la forza tende a far ruotare il corpo in senso antiorario, \textbf{negativo} se in senso orario. Se la retta d'azione passa per $O$, il braccio è nullo e il momento è nullo: la forza non produce rotazione.
+
+\begin{testexample}[\thetcbcounter \, Momento su una chiave]
+Su una chiave inglese si applica una forza di $\SI{100}{\newton}$ perpendicolare alla chiave, a $\SI{20}{\centi\meter}$ dal bullone. Il momento della forza rispetto al bullone è:
+\[
+M = F\cdot b = \SI{100}{\newton}\times\SI{0,20}{\meter} = \SI{20}{\newton\meter}.
+\]
+\end{testexample}
+
+\subsection{Le condizioni per l'equilibrio di un corpo rigido}
+Un corpo rigido può traslare (se la risultante delle forze non è nulla) e ruotare (se la somma dei momenti non è nulla). Perché sia in equilibrio devono valere \textbf{entrambe} le condizioni:
+
+\begin{definizione}
+Un corpo rigido è in equilibrio se e solo se:
+\begin{enumerate}
+\item la risultante di tutte le forze applicate è nulla \quad ($\vec{R} = \vec{F}_1 + \vec{F}_2 + \dots = \vec{0}$) \quad — \emph{equilibrio alla traslazione};
+\item la somma dei momenti di tutte le forze, calcolati rispetto a uno stesso punto, è nulla \quad ($M_1 + M_2 + \dots = 0$) \quad — \emph{equilibrio alla rotazione}.
+\end{enumerate}
+\end{definizione}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick] (-3,0) -- (3,0);
+\fill[gray!40] (-0.25,-0.5) -- (0.25,-0.5) -- (0,0) -- cycle;
+\fill (0,0) circle (1.2pt) node[above=2pt]{$O$};
+\draw[->,very thick,ocre] (-2,0) -- (-2,-1.4) node[below,black]{$\vec{F}_1$};
+\draw[->,very thick,ocre] (1.5,0) -- (1.5,-1.1) node[below,black]{$\vec{F}_2$};
+\draw[<->] (-2,0.4) -- (0,0.4) node[midway,above]{$b_1$};
+\draw[<->] (0,0.4) -- (1.5,0.4) node[midway,above]{$b_2$};
+\end{tikzpicture}
+\caption{Asta appoggiata su un fulcro $O$: è in equilibrio alla rotazione se $F_1 b_1 = F_2 b_2$ (i due momenti sono uguali e opposti).}
+\label{fig:asta}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Altalena in equilibrio]
+Su un'altalena, il cui fulcro è al centro, un bambino di peso $\SI{300}{\newton}$ si siede a $\SI{2,0}{\meter}$ dal fulcro. A quale distanza deve sedersi, dall'altra parte, un bambino di peso $\SI{400}{\newton}$ perché l'altalena sia in equilibrio?
+
+I due momenti devono essere uguali e opposti: $P_1\,b_1 = P_2\,b_2$, quindi
+\[
+b_2 = \frac{P_1\,b_1}{P_2} = \frac{\SI{300}{\newton}\times\SI{2,0}{\meter}}{\SI{400}{\newton}} = \SI{1,5}{\meter}.
+\]
+Il bambino più pesante deve sedersi più vicino al fulcro.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Una forza di $\SI{30}{\newton}$ è applicata perpendicolarmente a una porta, a $\SI{15}{\centi\meter}$ dai cardini. Quanto vale il momento della forza rispetto ai cardini? Perché le maniglie si mettono lontano dai cardini?\\
+\hspace*{\fill} $\left[M = \SI{4,5}{\newton\meter}\ ;\ \text{per avere un braccio grande e quindi un momento maggiore}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un'asta è appoggiata su un fulcro. A sinistra, a $\SI{80}{\centi\meter}$ dal fulcro, agisce verso il basso una forza di $\SI{250}{\newton}$. A destra, a $\SI{50}{\centi\meter}$ dal fulcro, quale forza verso il basso mantiene l'asta in equilibrio?\\
+\hspace*{\fill} $\left[F = \SI{400}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una chiave dinamometrica è regolata per un momento massimo di $\SI{40}{\newton\meter}$: oltre questo valore ``slitta'' e non stringe di più. Se la chiave è lunga $\SI{40}{\centi\meter}$ e si applica la forza all'estremità, qual è la massima forza applicabile?\\
+\hspace*{\fill} $\left[F = \SI{100}{\newton}\right]$
+\end{esercizio}
+
+
+\section{Le coppie di forze}
+
+\begin{definizione}
+Due forze parallele, di uguale intensità e verso opposto, applicate in punti diversi di uno stesso corpo rigido, formano una \textbf{coppia di forze}.
+\end{definizione}
+
+La risultante di una coppia è \textbf{nulla}, quindi il corpo non trasla; tuttavia il corpo \textbf{ruota}, perché ciascuna delle due forze produce una rotazione nello stesso senso. È quello che facciamo quando giriamo un volante con le due mani, o svitiamo un tappo con due dita.
+
+Si chiama \textbf{braccio della coppia} $b$ la distanza tra le rette d'azione delle due forze. Il \textbf{momento della coppia} è:
+\[
+\colorboxed{ocre}{\; M = F\cdot b \;}
+\]
+Una proprietà importante: il momento di una coppia è lo stesso rispetto a qualunque punto si scelga (non dipende dal polo).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick,gray!50] (-2.5,0.6) -- (2.5,-0.6);
+\draw[->,very thick,ocre] (-2,0.48) -- (-2,1.7) node[above,black]{$\vec{F}$};
+\draw[->,very thick,ocre] (2,-0.48) -- (2,-1.7) node[below,black]{$-\vec{F}$};
+\draw[dashed,gray] (-2,0.48) -- (-2,-1.5);
+\draw[dashed,gray] (2,-0.48) -- (2,1.5);
+\draw[<->] (-2,-1.0) -- (2,-1.0) node[midway,fill=white]{$b$};
+\end{tikzpicture}
+\caption{Una coppia di forze: risultante nulla, ma momento $M = F\,b$ non nullo. Il corpo ruota.}
+\label{fig:coppia}
+\end{figure}
+
+Come per il momento di una singola forza, si assume positivo il momento della coppia che produce una rotazione antioraria, negativo quello che produce una rotazione oraria.
+
+\begin{testexample}[\thetcbcounter \, Il volante]
+Un automobilista gira il volante applicando alle due estremità di un diametro (lungo $\SI{36}{\centi\meter}$) due forze uguali e opposte di $\SI{20}{\newton}$: si tratta di una coppia. Il suo momento è:
+\[
+M = F\cdot b = \SI{20}{\newton}\times\SI{0,36}{\meter} \approx \SI{7,2}{\newton\meter}.
+\]
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Su un righello agiscono due forze di $\SI{5}{\newton}$, parallele e di verso opposto, le cui rette d'azione distano $\SI{20}{\centi\meter}$. Qual è la risultante? Qual è il momento della coppia? Il righello ruota?\\
+\hspace*{\fill} $\left[\vec{R} = \vec{0}\ ;\quad M = \SI{1}{\newton\meter}\ ;\quad \text{sì, ruota}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Per svitare un tappo si applicano con due dita due forze di $\SI{8}{\newton}$ ai due lati del tappo, di diametro $\SI{4,0}{\centi\meter}$. Quanto vale il momento della coppia?\\
+\hspace*{\fill} $\left[M = \SI{0,32}{\newton\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Spiega la differenza tra una coppia di forze e due forze qualsiasi uguali e opposte applicate nello stesso punto.\\
+\hspace*{\fill} $\left[\text{stesso punto} \Rightarrow \text{risultante e momento nulli, equilibrio; punti diversi} \Rightarrow \text{coppia, il corpo ruota}\right]$
+\end{esercizio}
+
+
 \end{document}
 
 
