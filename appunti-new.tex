@@ -46,7 +46,7 @@
 \newcommand{\soluzione}[1]{\noindent\textcolor{blue}{\textbf{Soluzione:}} #1}
 \usepackage{stmaryrd}
 
-\usetikzlibrary{arrows,patterns,shadows}
+\usetikzlibrary{arrows,patterns,shadows,calc}
  
 
 \newcounter{testexample} %serve per l'esempio
@@ -1913,7 +1913,7 @@ Ovviamente, questi valori devono essere arrotondati per difetto al millimetrio p
 \end{figure}
 
 
-\section{Rette di massima e minima pendenza}
+\section{Rette di massima e minima pendenza}\label{sec:rettemaxmin}
 Quando i dati sperimentali si dispongono lungo una retta, spesso lo scopo dell'esperimento è misurare la \textbf{pendenza} di quella retta, perché la pendenza ha un significato fisico (una velocità, una costante elastica, l'accelerazione di gravità\dots). Tracciando ``a occhio'' una sola linea di tendenza otteniamo un valore per la pendenza, ma non la sua incertezza. Il \textbf{metodo delle rette di massima e minima pendenza} serve proprio a stimare l'errore sulla pendenza a partire dalle barre d'errore dei dati.
 
 \subsection{I quattro punti di ancoraggio}
@@ -3495,7 +3495,7 @@ Dato un vettore $\vec{v}$, il suo \textbf{opposto} $-\vec{v}$ ha lo \textbf{stes
 \label{fig:opposto}
 \end{figure}
 
-\section{Operazioni con i vettori}
+\section{Operazioni con i vettori}\label{sec:operazioni-vettori}
 
 \subsection{Somma di vettori sulla stessa retta}
 Se due spostamenti avvengono lungo la stessa retta, la somma si riduce a un calcolo con i numeri, tenendo conto del verso:
@@ -3665,7 +3665,7 @@ Disegna su un foglio a quadretti due vettori $\vec{a}$ (orizzontale, verso destr
 \end{esercizio}
 
 
-\section{La scomposizione di un vettore}
+\section{La scomposizione di un vettore}\label{sec:scomposizione}
 
 L'operazione inversa della somma si chiama \textbf{scomposizione}: dato un vettore $\vec{v}$, si cercano due vettori la cui somma sia $\vec{v}$. Il problema ha infinite soluzioni, ma quasi sempre conviene scegliere due direzioni \textbf{perpendicolari} tra loro, di solito quelle di un sistema di assi cartesiani $x$ e $y$.
 
@@ -3819,6 +3819,210 @@ Spiega perché un astronauta sulla Luna può fare balzi molto più alti che sull
 \begin{esercizio}
 Vero o falso: (a) la massa di un corpo si misura in newton; (b) il peso di un corpo è un vettore diretto verso il basso; (c) portando un corpo in cima a una montagna la sua massa diminuisce; (d) sulla Luna massa e peso di un corpo sono entrambi minori che sulla Terra.\\
 \hspace*{\fill} $\left[\text{a) F}\ ;\ \text{b) V}\ ;\ \text{c) F}\ ;\ \text{d) F (solo il peso)}\right]$
+\end{esercizio}
+
+
+\section{La legge di Hooke}
+
+Uno degli effetti di una forza è la deformazione. Un caso particolarmente semplice è quello di una \textbf{molla}: se appendiamo un peso a una molla, questa si allunga. Chiamiamo $L_0$ la lunghezza della molla a riposo e $L$ la sua lunghezza quando è caricata; l'\textbf{allungamento} è
+\[
+s = L - L_0 .
+\]
+
+Ripetendo la misura con pesi diversi si osserva un fatto notevole: se il peso raddoppia, l'allungamento raddoppia; se il peso triplica, l'allungamento triplica. Forza applicata e allungamento sono cioè \textbf{direttamente proporzionali}. Riportando l'allungamento in funzione della forza si ottengono punti allineati lungo una retta passante per l'origine.
+
+\begin{definizione}
+\textbf{Legge di Hooke.} Entro certi limiti, l'allungamento $s$ di una molla è direttamente proporzionale alla forza $F$ applicata:
+\[
+\colorboxed{ocre}{\; F = k\,s \;}
+\]
+La costante di proporzionalità $k$ si chiama \textbf{costante elastica} della molla e nel Sistema Internazionale si misura in newton su metro ($\si{\newton\per\meter}$).
+\end{definizione}
+
+A parità di forza, una molla con $k$ grande si allunga poco: nel linguaggio comune si dice che è ``dura''. Ogni molla ha la sua costante elastica, che dipende dalla forma e dal materiale. La legge vale finché non si supera il \textbf{limite di elasticità}: oltre quel valore la molla si deforma in modo permanente e non torna più alla lunghezza iniziale.
+
+\subsection{Il dinamometro}
+La legge di Hooke è alla base del \textbf{dinamometro}: una molla tarata, racchiusa in un tubo con una scala graduata, che misura direttamente l'intensità di una forza a partire dall'allungamento. Per misurare la costante elastica di una molla in laboratorio si carica la molla con pesi noti, si misura l'allungamento, si riporta $F$ in funzione di $s$ e si ricava $k$ come pendenza della retta di best fit; l'incertezza su $k$ si stima con il metodo delle rette di massima e minima pendenza (paragrafo~\ref{sec:rettemaxmin}).
+
+\begin{testexample}[\thetcbcounter \, Allungamento di una molla]
+Una molla ha costante elastica $k = \SI{200}{\newton\per\meter}$. Appendendo un corpo di peso $F = \SI{5,0}{\newton}$, l'allungamento è:
+\[
+s = \frac{F}{k} = \frac{\SI{5,0}{\newton}}{\SI{200}{\newton\per\meter}} = \SI{0,025}{\meter} = \SI{2,5}{\centi\meter}.
+\]
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Una molla si allunga di $\SI{4,0}{\centi\meter}$ quando le si applica una forza di $\SI{20}{\newton}$. Calcola la sua costante elastica.\\
+\hspace*{\fill} $\left[k = \SI{500}{\newton\per\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+A una molla di costante elastica $\SI{150}{\newton\per\meter}$ viene appeso un corpo di massa $\SI{1,2}{\kilo\gram}$. Di quanto si allunga la molla? (ricorda: prima calcola il peso).\\
+\hspace*{\fill} $\left[F = \SI{11,8}{\newton}\ ;\quad s \approx \SI{7,8}{\centi\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Due molle hanno costanti elastiche $k_1 = \SI{80}{\newton\per\meter}$ e $k_2 = \SI{240}{\newton\per\meter}$. Applicando la stessa forza a entrambe, quale si allunga di più e di quante volte?\\
+\hspace*{\fill} $\left[\text{la prima, 3 volte di più}\right]$
+\end{esercizio}
+
+
+\section{Le operazioni sulle forze}
+
+Poiché le forze sono grandezze vettoriali, per sommarle e sottrarle valgono tutte le regole viste nel paragrafo~\ref{sec:operazioni-vettori}: metodo punta-coda, regola del parallelogramma, somma sulla stessa retta, teorema di Pitagora per forze perpendicolari. La forza risultante $\vec{F}_r$ è la somma vettoriale di tutte le forze applicate.
+
+\begin{remark}
+\textbf{Principio di sovrapposizione.} Più forze applicate contemporaneamente a un corpo producono lo stesso effetto della loro forza risultante. Possiamo quindi sempre sostituire un insieme di forze con un'unica forza equivalente.
+\end{remark}
+
+\subsection{Scomposizione di una forza}
+Come ogni vettore, una forza si può scomporre lungo due direzioni perpendicolari (paragrafo~\ref{sec:scomposizione}). Questo è utile quando le due componenti hanno significati fisici distinti. L'esempio più importante è il \textbf{piano inclinato}.
+
+Consideriamo un corpo appoggiato su un piano inclinato di un angolo $\alpha$ rispetto all'orizzontale (figura~\ref{fig:pianoinclinato}). Il suo peso $\vec{P}$ è diretto verticalmente verso il basso. Conviene scomporlo lungo due assi solidali al piano:
+\begin{itemize}
+\item la componente \textbf{parallela} al piano, $\vec{P}_\parallel$, che tende a far scivolare il corpo lungo il piano;
+\item la componente \textbf{perpendicolare} al piano, $\vec{P}_\perp$, che schiaccia il corpo contro il piano.
+\end{itemize}
+Si dimostra (con considerazioni geometriche sugli angoli) che:
+\[
+\colorboxed{ocre}{\; P_\parallel = P\sin\alpha \qquad P_\perp = P\cos\alpha \;}
+\]
+Per esempio, su un piano inclinato di $30^\circ$ la componente parallela è esattamente \emph{metà} del peso.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\def\ang{28}
+\coordinate (O) at (0,0);
+\draw[thick] (O) -- (6,0) -- (6,{6*tan(\ang)}) -- cycle;
+\draw (1,0) arc (0:\ang:1); \node at (1.5,0.25){\small $\alpha$};
+% blocco appoggiato sul piano
+\begin{scope}[shift={(3.3,{3.3*tan(\ang)})},rotate=\ang]
+\fill[gray!25] (-0.55,0) rectangle (0.55,0.7);
+\draw (-0.55,0) rectangle (0.55,0.7);
+\end{scope}
+\coordinate (C) at (3.3,{3.3*tan(\ang)+0.35});
+% peso (verticale) e componenti lungo il piano
+\draw[->,very thick,ocre] (C) -- ++(0,-2.2) node[right,black]{$\vec{P}$};
+\draw[->,thick,blue!60!black] (C) -- ++({180+\ang}:{2.2*sin(\ang)}) node[above left,black]{$\vec{P}_\parallel$};
+\draw[->,thick,blue!60!black] (C) -- ++({270+\ang}:{2.2*cos(\ang)}) node[right,black]{$\vec{P}_\perp$};
+\draw[dashed,gray] ($(C)+(0,-2.2)$) -- ++({180+\ang}:{2.2*sin(\ang)});
+\draw[dashed,gray] ($(C)+(0,-2.2)$) -- ++({270+\ang}:{2.2*cos(\ang)});
+\end{tikzpicture}
+\caption{Scomposizione del peso sul piano inclinato: la componente parallela $\vec{P}_\parallel$ tende a far scivolare il corpo, la perpendicolare $\vec{P}_\perp$ lo schiaccia contro il piano.}
+\label{fig:pianoinclinato}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Corpo su un piano inclinato]
+Un blocco di massa $\SI{5,0}{\kilo\gram}$ è appoggiato su un piano inclinato di $30^\circ$. Il suo peso è $P = mg = \SI{49}{\newton}$. Le componenti valgono:
+\[
+P_\parallel = P\sin 30^\circ = \SI{49}{\newton}\times 0,5 = \SI{24,5}{\newton},
+\]
+\[
+P_\perp = P\cos 30^\circ = \SI{49}{\newton}\times 0,866 \approx \SI{42}{\newton}.
+\]
+La componente parallela ($\SI{24,5}{\newton}$) è la forza che tende a far scivolare il blocco lungo il piano.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Su un corpo agiscono due forze con la stessa retta d'azione: $\SI{15}{\newton}$ verso destra e $\SI{6}{\newton}$ verso sinistra. Determina modulo e verso della forza risultante.\\
+\hspace*{\fill} $\left[\SI{9}{\newton}\ \text{verso destra}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Due forze perpendicolari, di moduli $\SI{40}{\newton}$ e $\SI{30}{\newton}$, sono applicate nello stesso punto. Calcola il modulo della risultante.\\
+\hspace*{\fill} $\left[\SI{50}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un carrello di massa $\SI{10}{\kilo\gram}$ si trova su un piano inclinato di $30^\circ$. Calcola la componente del peso parallela al piano e quella perpendicolare.\\
+\hspace*{\fill} $\left[P_\parallel = \SI{49}{\newton}\ ;\quad P_\perp \approx \SI{85}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un piano inclinato di $45^\circ$ è appoggiato un corpo di peso $\SI{20}{\newton}$. Quanto valgono le due componenti del peso?\\
+\hspace*{\fill} $\left[P_\parallel = P_\perp = \dfrac{20}{\sqrt{2}}\,\si{\newton} \approx \SI{14}{\newton}\right]$
+\end{esercizio}
+
+
+\section{Le forze di attrito}
+
+Se proviamo a trascinare un blocco su un tavolo con una forza orizzontale piccola, il blocco non si muove: c'è una forza che si oppone al movimento, la \textbf{forza di attrito}. L'attrito nasce dal fatto che le due superfici a contatto, anche se sembrano lisce, presentano a livello microscopico delle irregolarità che si incastrano fra loro. Più le superfici sono ruvide, maggiore è l'attrito.
+
+\subsection{Attrito statico}
+Finché il corpo è fermo, la forza di attrito \textbf{statico} $\vec{F}_{as}$ ha sempre la stessa intensità della forza applicata (e verso opposto): si adatta, impedendo il moto. Ma non può crescere indefinitamente: esiste un valore massimo oltre il quale il corpo si mette in movimento. Questo massimo è proporzionale alla \textbf{forza premente} $F_p$, cioè alla forza con cui il corpo schiaccia la superficie (su un piano orizzontale, $F_p$ coincide con il peso):
+\[
+\colorboxed{ocre}{\; F_{as} \le k_s\, F_p \;}
+\]
+Il numero $k_s$ è il \textbf{coefficiente di attrito statico}: è un rapporto tra due forze, quindi \textbf{non ha unità di misura}, e dipende solo dalla natura e dalla ruvidità delle due superfici, \textbf{non} dall'estensione della zona di contatto. Alcuni valori indicativi:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Superfici a contatto & $k_s$ (indicativo) \\
+\midrule
+legno su legno & $0,4$ \\
+acciaio su acciaio & $0,6$ \\
+gomma su asfalto asciutto & $0,8$ \\
+gomma su asfalto bagnato & $0,5$ \\
+ghiaccio su ghiaccio & $0,1$ \\
+\bottomrule
+\end{tabular}
+\caption{Coefficienti di attrito statico (valori indicativi: dipendono dalle condizioni delle superfici).}
+\label{tab:attrito}
+\end{table}
+
+\subsection{Attrito dinamico}
+Quando il corpo è già in movimento, la forza di attrito non scompare ma diventa \textbf{attrito dinamico} $\vec{F}_{ad}$, diretta come la velocità ma con verso opposto, di intensità:
+\[
+\colorboxed{ocre}{\; F_{ad} = k_d\, F_p \;}
+\]
+dove $k_d$ è il \textbf{coefficiente di attrito dinamico}. Sperimentalmente si trova che $k_d < k_s$: serve più forza per \emph{mettere in moto} un corpo che per \emph{mantenerlo} in moto.
+
+Si distingue inoltre l'attrito \textbf{radente} (le superfici strisciano una sull'altra) dall'attrito \textbf{volvente} (un corpo rotola, come una ruota o una sfera): l'attrito volvente è molto minore di quello radente. È per questo che si usano le ruote e i cuscinetti a sfere.
+
+\begin{remark}
+Su un piano inclinato la forza premente non è tutto il peso, ma solo la sua componente perpendicolare al piano: $F_p = P_\perp = P\cos\alpha$. Quindi su un piano inclinato l'attrito è minore che su un piano orizzontale.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Forza per spostare una cassa]
+Una cassa di massa $\SI{20}{\kilo\gram}$ è ferma su un pavimento; il coefficiente di attrito statico vale $k_s = 0,5$ e quello dinamico $k_d = 0,4$. Su un piano orizzontale la forza premente è il peso, $F_p = mg = \SI{196}{\newton}$.
+
+La forza minima per mettere in movimento la cassa è:
+\[
+F_{as,\text{max}} = k_s\, F_p = 0,5 \times \SI{196}{\newton} \approx \SI{98}{\newton}.
+\]
+Una volta in moto, per mantenerla a velocità costante basta una forza pari all'attrito dinamico:
+\[
+F_{ad} = k_d\, F_p = 0,4 \times \SI{196}{\newton} \approx \SI{78}{\newton}.
+\]
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Un blocco preme su un piano orizzontale con una forza di $\SI{50}{\newton}$. Il coefficiente di attrito statico tra blocco e piano è $0,6$. Qual è la massima forza di attrito statico? Se applichiamo al blocco una forza orizzontale di $\SI{25}{\newton}$, il blocco si muove?\\
+\hspace*{\fill} $\left[F_{as,\text{max}} = \SI{30}{\newton}\ ;\quad \text{no, } 25 < 30\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa $\SI{1000}{\kilo\gram}$ frena su asfalto asciutto ($k_d \approx 0,7$). Calcola l'intensità della forza di attrito dinamico che agisce sui pneumatici.\\
+\hspace*{\fill} $\left[F_{ad} \approx \SI{6870}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo di peso $\SI{80}{\newton}$ è appoggiato su un piano orizzontale con $k_s = 0,35$. Poi lo stesso corpo viene messo su un piano inclinato di $60^\circ$. In quale dei due casi la massima forza di attrito statico è maggiore, e perché?\\
+\hspace*{\fill} $\left[\text{sul piano orizzontale: } F_p = \SI{80}{\newton}\ \text{contro}\ F_p = 80\cos 60^\circ = \SI{40}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Vero o falso: (a) il coefficiente di attrito si misura in newton; (b) l'attrito dinamico è in generale maggiore di quello statico massimo; (c) l'attrito statico dipende dall'area di contatto tra le superfici; (d) una ruota che rotola è soggetta ad attrito volvente, molto minore di quello radente.\\
+\hspace*{\fill} $\left[\text{a) F}\ ;\ \text{b) F}\ ;\ \text{c) F}\ ;\ \text{d) V}\right]$
 \end{esercizio}
 
 
