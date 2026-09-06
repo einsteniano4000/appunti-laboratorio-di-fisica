@@ -44,6 +44,9 @@
 \usepackage{pgf,tikz}
 \newcommand{\eserciziop}[1]{\noindent\textbf{\textit{Esercizio:}} #1}
 \newcommand{\soluzione}[1]{\noindent\textcolor{blue}{\textbf{Soluzione:}} #1}
+% Risultato di un esercizio: allineato a destra, corpo piccolo, va a capo se lungo
+\newcommand{\risp}[1]{\par\nopagebreak\vspace{0.3ex}%
+  {\raggedleft\footnotesize\relpenalty=0 \binoppenalty=0 [\,#1\,]\par}}
 \usepackage{stmaryrd}
 
 \usetikzlibrary{arrows,patterns,shadows,calc}
@@ -1311,17 +1314,17 @@ E' stato misurato il volume di un oggetto ottenendo il risultato
 V=\left( 90,0 \pm 0,4\right)\si{mL}.
 \]
 Determina il risultato corretto nel sistema SI.\\
-\hspace*{\fill}$\left[V=\left( 90,0 \pm 0,4\right)\times10^{-6}\,\si{m^3}\right]$ 
+\risp{$V=\left( 90,0 \pm 0,4\right)\times10^{-6}\,\si{m^3}$}
 \end{esercizio}
 
 \begin{esercizio}
 In laboratorio è stata misurata la durata del periodo di un pendolo ottenendo il valore $T=\SI{1,874}{s}$ con una semidispersione di $\Delta T =\SI{0,0291}{s}$. Scrivi il risultato in maniera corretta e calcola l'errore percentuale.\\
-\hspace*{\fill} $\left[T=\left(1,87 \pm 0,03\right)\si{s}\text{;} E_{\%}=1,6\%\right]$
+\risp{$T=\left(1,87 \pm 0,03\right)\si{s}\text{;} E_{\%}=1,6\%$}
 \end{esercizio}
 
 \begin{esercizio}
 Un gruppo di studenti ha misurato il periodo di oscillazione di un pendolo semplice per 20 volte. I dati raccolti sono riportati nella tabella \ref{tab:pend}. Calcola la media delle misure del periodo (\(\overline{T}\)) e l'incertezza $\Delta T$ e scrivi il risultato in forma corretta.
-\hspace*{\fill} $\left[T=\left(2,16 \pm 0,02 \right) \,\si{s} \right]$.
+\risp{$T=\left(2,16 \pm 0,02\right)\,\si{s}$}
 \begin{table}[h!]
 \centering
 \caption{Misure del periodo di oscillazione di un pendolo}
@@ -1345,7 +1348,7 @@ Un gruppo di studenti ha misurato il periodo di oscillazione di un pendolo sempl
 
 \begin{esercizio}
 E' stato misurato l'intervallo d'incertezza per la massa di un oggetto e si è ottenuto l'intervallo compreso tra $\SI{459,7}{g}$ e $\SI{460,3}{g}$. Determina la massa e il suo errore e scrivi il risultato in forma corretta.\\
- \hspace*{\fill}  $\left[M=\left(460,0 \pm 0,3\right)\si{g}\right]$
+ \risp{$M=\left(460,0 \pm 0,3\right)\si{g}$}
 \end{esercizio}
 
 
@@ -1360,7 +1363,7 @@ Elenca le seguenti misure per ordine crescente di precisione.
  \item[a)] $L=\left(20,2 \pm 0,1\right)\si{cm}$
  \item[b)] $M=\left(4,01 \pm 0,01\right)\si{kg}$
  \item[c)] $t=\left(1,22 \pm 0,02\right)\si{s}$ \\
- \hspace*{\fill}  $\left[\text{b, a, c}\right]$
+ \risp{b, a, c}
 \end{elenco}
 \end{multicols}
 
@@ -1429,7 +1432,7 @@ Determina se le seguenti misure sono compatibili ed eventualmente indica quella 
  \item[a)] $\left(20,2 \pm 0,2\right)\si{cm}$\\
  \item[b)] $\left(20,0 \pm 0,1\right)\si{cm}$\\
  \item[c)] $\left(19,0 \pm 0,5\right)\si{cm}$ \\
- \hspace*{\fill}$\left[\text{No}\right]$
+ \risp{No}
 \end{elenco}
 \end{multicols}
 
@@ -1442,7 +1445,7 @@ Determina se le seguenti misure sono compatibili:
  \item[a)] $\left(210 \pm 5\right)\si{mm}$
  \item[b)] $\left(20,0 \pm 0,6\right)\si{cm}$
  \item[c)] $\left(20.5 \pm 0,1\right)\si{cm}$ \\
- \hspace*{\fill}  $\left[\text{Si}\right]$
+ \risp{Si}
 \end{elenco}
 \end{multicols}
 
@@ -1676,17 +1679,17 @@ V=\left(18,2 \pm 0,2\right)\si{cm^3}
 \subsection{Esercizi}
 \begin{esercizio}
 In laboratorio si vuole misurare il volume di un solido irregolare. Per fare questo, si misura inizialmente il volume di una certa quantità d'acqua presente in un becker, ottenendo il valore  $V_i=\left(60 \pm 1\right)\si{mL}$. Una volta inserito il corpo, il livello sale a $V_f=\left(105 \pm 1\right)\si{mL}$. Determina il volume dell'oggetto sommerso e scrivi il risultato in forma corretta.\\
- \hspace*{\fill}  $\left[V=\left(45 \pm 2\right)\si{mL}\right]$
+ \risp{$V=\left(45 \pm 2\right)\si{mL}$}
 \end{esercizio}
 
 \begin{esercizio}
 Si vuole misurare la lunghezza di una stanza utilizzando un metro con portata $\SI{2,000}{m}$ e sensibilità $\SI{0,1}{cm}$. Il valore misurato risulta essere $L=\SI{6,450}{m}$. Scrivi il risultato in forma corretta (hai già il valore della grandezza, ti manca l'errore). Rifletti su come potrebbe essere stata effettuata la misura per capire quanto vale l'errore.\\
- \hspace*{\fill}  $\left[L=\left(6,450 \pm 0,003\right)\si{m}\right]$
+ \risp{$L=\left(6,450 \pm 0,003\right)\si{m}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un pentagono regolare, ha lato $L=\left(2,5 \pm 0,1\right)\si{cm}$. Determina il suo perimetro e scrivi il risultato con l'errore.\\
- \hspace*{\fill}   $\left[2P=\left(12,5 \pm 0,5\right)\si{cm}\right]$
+ \risp{$2P=\left(12,5 \pm 0,5\right)\si{cm}$}
 \end{esercizio}
 \begin{esercizio}
 Viene misurato 10 volte il tempo T di oscillazione di un pendolo, ottenendo i risultati in tabella:
@@ -1705,7 +1708,7 @@ T(s)& Ripetuto\\
 \end{tabular}
 \end{center}
 Determina il valore medio e l'errore. In fine, scrivi il risultato in forma corretta.\\
-\hspace*{\fill}   $\left[T=\left(1,23 \pm 0,03\right)\si{s}\right]$
+\risp{$T=\left(1,23 \pm 0,03\right)\si{s}$}
 \end{esercizio}
 \begin{esercizio}
 Un modo per misurare l'accelerazione di caduta, è usare la seguente relazione:
@@ -1745,7 +1748,7 @@ f = 4 \cdot \frac{a\cdot b^2 \cdot c^3}{d^4 \cdot e^5}
 \]
 Determina la formula per il calcolo dell'errore assoluto su $f$.\\
 
-\hspace*{\fill} $\left[\Delta f=\overline{f}\cdot\left(\frac{\Delta a}{\overline{a}}+ 2\cdot \frac{\Delta b}{\overline{b}} +3\cdot\frac{\Delta c}{\overline{c}} + 4\cdot \frac{\Delta d}{\overline{d}} + 5\cdot \frac{\Delta e}{\overline{e}}  \right)\right]$
+\risp{$\Delta f=\overline{f}\cdot\left(\frac{\Delta a}{\overline{a}}+ 2\cdot \frac{\Delta b}{\overline{b}} +3\cdot\frac{\Delta c}{\overline{c}} + 4\cdot \frac{\Delta d}{\overline{d}} + 5\cdot \frac{\Delta e}{\overline{e}}  \right)$}
 \end{esercizio}
 \section{Propagazione degli errori indipendenti e casuali}
 
@@ -3637,27 +3640,27 @@ Un carrello si sposta di $\SI{8}{\meter}$ verso destra, poi di $\SI{3}{\meter}$ 
 
 \begin{esercizio}
 Classifica le seguenti grandezze come scalari o vettoriali: massa, velocità, temperatura, forza, tempo, spostamento, volume, accelerazione.\\
-\hspace*{\fill} $\left[\text{scalari: massa, temperatura, tempo, volume; vettoriali: velocità, forza, spostamento, accelerazione}\right]$
+\risp{scalari: massa, temperatura, tempo, volume; vettoriali: velocità, forza, spostamento, accelerazione}
 \end{esercizio}
 
 \begin{esercizio}
 Due vettori giacciono sulla stessa retta: $\vec{a}$ ha modulo $\SI{12}{\newton}$ ed è diretto verso Est, $\vec{b}$ ha modulo $\SI{5}{\newton}$ ed è diretto verso Ovest. Determina modulo e verso di $\vec{a}+\vec{b}$ e di $\vec{a}-\vec{b}$.\\
-\hspace*{\fill} $\left[\vec{a}+\vec{b}:\ \SI{7}{\newton}\ \text{verso Est}\ ;\quad \vec{a}-\vec{b}:\ \SI{17}{\newton}\ \text{verso Est}\right]$
+\risp{$\vec{a}+\vec{b}:\ \SI{7}{\newton}\ \text{verso Est}\ ;\quad \vec{a}-\vec{b}:\ \SI{17}{\newton}\ \text{verso Est}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un'imbarcazione compie uno spostamento di $\SI{60}{\meter}$ verso Nord e uno di $\SI{80}{\meter}$ verso Est. Calcola il modulo dello spostamento risultante e l'angolo che esso forma con la direzione Nord.\\
-\hspace*{\fill} $\left[s=\SI{100}{\meter}\ ;\quad \theta \approx 53^\circ\right]$
+\risp{$s=\SI{100}{\meter}\ ;\quad \theta \approx 53^\circ$}
 \end{esercizio}
 
 \begin{esercizio}
 Un vettore $\vec{v}$ ha modulo $\SI{3}{\meter\per\second}$. Qual è il modulo del vettore $-2\,\vec{v}$? E il suo verso rispetto a $\vec{v}$?\\
-\hspace*{\fill} $\left[\text{modulo}\ \SI{6}{\meter\per\second}\ ;\quad \text{verso opposto a } \vec{v}\right]$
+\risp{$\text{modulo}\ \SI{6}{\meter\per\second}\ ;\quad \text{verso opposto a } \vec{v}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un punto agiscono due forze perpendicolari, di moduli $\SI{9}{\newton}$ e $\SI{12}{\newton}$. Determina il modulo della forza risultante.\\
-\hspace*{\fill} $\left[R=\SI{15}{\newton}\right]$
+\risp{$R=\SI{15}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
@@ -3717,17 +3720,17 @@ v_x = \sqrt{v^2 - v_y^2} = \sqrt{(\SI{10}{\meter})^2 - (\SI{5}{\meter})^2} = \sq
 
 \begin{esercizio}
 Un vettore ha componenti $v_x = \SI{9}{\meter}$ e $v_y = \SI{12}{\meter}$. Calcola il suo modulo.\\
-\hspace*{\fill} $\left[v = \SI{15}{\meter}\right]$
+\risp{$v = \SI{15}{\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Uno spostamento di modulo $\SI{20}{\meter}$ forma un angolo di $60^\circ$ con l'asse $x$. Determina le due componenti (suggerimento: qual è metà dell'ipotenusa?).\\
-\hspace*{\fill} $\left[v_x = \SI{10}{\meter}\ ;\quad v_y \approx \SI{17,3}{\meter}\right]$
+\risp{$v_x = \SI{10}{\meter}\ ;\quad v_y \approx \SI{17,3}{\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una forza di modulo $\SI{50}{\newton}$ è inclinata di $45^\circ$ rispetto all'orizzontale. Quanto valgono le sue componenti orizzontale e verticale?\\
-\hspace*{\fill} $\left[F_x = F_y = \dfrac{50}{\sqrt{2}}\,\si{\newton} \approx \SI{35}{\newton}\right]$
+\risp{$F_x = F_y = \dfrac{50}{\sqrt{2}}\,\si{\newton} \approx \SI{35}{\newton}$}
 \end{esercizio}
 
 
@@ -3804,12 +3807,12 @@ Sulla Luna la massa è sempre $\SI{70}{\kilo\gram}$, ma il peso diventa $P = (\S
 
 \begin{esercizio}
 Calcola il peso, sulla superficie terrestre, di un corpo di massa $\SI{2,0}{\kilo\gram}$ e di uno di massa $\SI{500}{\gram}$.\\
-\hspace*{\fill} $\left[\SI{19,6}{\newton}\ ;\quad \SI{4,9}{\newton}\right]$
+\risp{$\SI{19,6}{\newton}\ ;\quad \SI{4,9}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un oggetto pesa $\SI{58,9}{\newton}$ sulla Terra. Qual è la sua massa? Quanto peserebbe sulla Luna ($g_{\text{Luna}} \approx \SI{1,6}{\newton\per\kilo\gram}$)?\\
-\hspace*{\fill} $\left[m = \SI{6,0}{\kilo\gram}\ ;\quad P_{\text{Luna}} \approx \SI{9,6}{\newton}\right]$
+\risp{$m = \SI{6,0}{\kilo\gram}\ ;\quad P_{\text{Luna}} \approx \SI{9,6}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
@@ -3818,7 +3821,7 @@ Spiega perché un astronauta sulla Luna può fare balzi molto più alti che sull
 
 \begin{esercizio}
 Vero o falso: (a) la massa di un corpo si misura in newton; (b) il peso di un corpo è un vettore diretto verso il basso; (c) portando un corpo in cima a una montagna la sua massa diminuisce; (d) sulla Luna massa e peso di un corpo sono entrambi minori che sulla Terra.\\
-\hspace*{\fill} $\left[\text{a) F}\ ;\ \text{b) V}\ ;\ \text{c) F}\ ;\ \text{d) F (solo il peso)}\right]$
+\risp{$\text{a) F}\ ;\ \text{b) V}\ ;\ \text{c) F}\ ;\ \text{d) F (solo il peso)}$}
 \end{esercizio}
 
 
@@ -3855,17 +3858,17 @@ s = \frac{F}{k} = \frac{\SI{5,0}{\newton}}{\SI{200}{\newton\per\meter}} = \SI{0,
 
 \begin{esercizio}
 Una molla si allunga di $\SI{4,0}{\centi\meter}$ quando le si applica una forza di $\SI{20}{\newton}$. Calcola la sua costante elastica.\\
-\hspace*{\fill} $\left[k = \SI{500}{\newton\per\meter}\right]$
+\risp{$k = \SI{500}{\newton\per\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 A una molla di costante elastica $\SI{150}{\newton\per\meter}$ viene appeso un corpo di massa $\SI{1,2}{\kilo\gram}$. Di quanto si allunga la molla? (ricorda: prima calcola il peso).\\
-\hspace*{\fill} $\left[F = \SI{11,8}{\newton}\ ;\quad s \approx \SI{7,8}{\centi\meter}\right]$
+\risp{$F = \SI{11,8}{\newton}\ ;\quad s \approx \SI{7,8}{\centi\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Due molle hanno costanti elastiche $k_1 = \SI{80}{\newton\per\meter}$ e $k_2 = \SI{240}{\newton\per\meter}$. Applicando la stessa forza a entrambe, quale si allunga di più e di quante volte?\\
-\hspace*{\fill} $\left[\text{la prima, 3 volte di più}\right]$
+\risp{la prima, 3 volte di più}
 \end{esercizio}
 
 
@@ -3930,22 +3933,22 @@ La componente parallela ($\SI{24,5}{\newton}$) è la forza che tende a far scivo
 
 \begin{esercizio}
 Su un corpo agiscono due forze con la stessa retta d'azione: $\SI{15}{\newton}$ verso destra e $\SI{6}{\newton}$ verso sinistra. Determina modulo e verso della forza risultante.\\
-\hspace*{\fill} $\left[\SI{9}{\newton}\ \text{verso destra}\right]$
+\risp{$\SI{9}{\newton}\ \text{verso destra}$}
 \end{esercizio}
 
 \begin{esercizio}
 Due forze perpendicolari, di moduli $\SI{40}{\newton}$ e $\SI{30}{\newton}$, sono applicate nello stesso punto. Calcola il modulo della risultante.\\
-\hspace*{\fill} $\left[\SI{50}{\newton}\right]$
+\risp{$\SI{50}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un carrello di massa $\SI{10}{\kilo\gram}$ si trova su un piano inclinato di $30^\circ$. Calcola la componente del peso parallela al piano e quella perpendicolare.\\
-\hspace*{\fill} $\left[P_\parallel = \SI{49}{\newton}\ ;\quad P_\perp \approx \SI{85}{\newton}\right]$
+\risp{$P_\parallel = \SI{49}{\newton}\ ;\quad P_\perp \approx \SI{85}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un piano inclinato di $45^\circ$ è appoggiato un corpo di peso $\SI{20}{\newton}$. Quanto valgono le due componenti del peso?\\
-\hspace*{\fill} $\left[P_\parallel = P_\perp = \dfrac{20}{\sqrt{2}}\,\si{\newton} \approx \SI{14}{\newton}\right]$
+\risp{$P_\parallel = P_\perp = \dfrac{20}{\sqrt{2}}\,\si{\newton} \approx \SI{14}{\newton}$}
 \end{esercizio}
 
 
@@ -4007,22 +4010,22 @@ F_{ad} = k_d\, F_p = 0,4 \times \SI{196}{\newton} \approx \SI{78}{\newton}.
 
 \begin{esercizio}
 Un blocco preme su un piano orizzontale con una forza di $\SI{50}{\newton}$. Il coefficiente di attrito statico tra blocco e piano è $0,6$. Qual è la massima forza di attrito statico? Se applichiamo al blocco una forza orizzontale di $\SI{25}{\newton}$, il blocco si muove?\\
-\hspace*{\fill} $\left[F_{as,\text{max}} = \SI{30}{\newton}\ ;\quad \text{no, } 25 < 30\right]$
+\risp{$F_{as,\text{max}} = \SI{30}{\newton}\ ;\quad \text{no, } 25 < 30$}
 \end{esercizio}
 
 \begin{esercizio}
 Un'automobile di massa $\SI{1000}{\kilo\gram}$ frena su asfalto asciutto ($k_d \approx 0,7$). Calcola l'intensità della forza di attrito dinamico che agisce sui pneumatici.\\
-\hspace*{\fill} $\left[F_{ad} \approx \SI{6870}{\newton}\right]$
+\risp{$F_{ad} \approx \SI{6870}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un corpo di peso $\SI{80}{\newton}$ è appoggiato su un piano orizzontale con $k_s = 0,35$. Poi lo stesso corpo viene messo su un piano inclinato di $60^\circ$. In quale dei due casi la massima forza di attrito statico è maggiore, e perché?\\
-\hspace*{\fill} $\left[\text{sul piano orizzontale: } F_p = \SI{80}{\newton}\ \text{contro}\ F_p = 80\cos 60^\circ = \SI{40}{\newton}\right]$
+\risp{$\text{sul piano orizzontale: } F_p = \SI{80}{\newton}\ \text{contro}\ F_p = 80\cos 60^\circ = \SI{40}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Vero o falso: (a) il coefficiente di attrito si misura in newton; (b) l'attrito dinamico è in generale maggiore di quello statico massimo; (c) l'attrito statico dipende dall'area di contatto tra le superfici; (d) una ruota che rotola è soggetta ad attrito volvente, molto minore di quello radente.\\
-\hspace*{\fill} $\left[\text{a) F}\ ;\ \text{b) F}\ ;\ \text{c) F}\ ;\ \text{d) V}\right]$
+\risp{$\text{a) F}\ ;\ \text{b) F}\ ;\ \text{c) F}\ ;\ \text{d) V}$}
 \end{esercizio}
 
 
@@ -4034,86 +4037,86 @@ I problemi seguenti richiamano tutti gli argomenti del capitolo. Dove serve, usa
 
 \begin{esercizio}
 Partendo da un angolo di una stanza, una persona cammina per $\SI{60}{\centi\meter}$ lungo una parete, poi svolta di $90^\circ$ e percorre altri $\SI{30}{\centi\meter}$. Disegna il percorso e calcola il modulo dello spostamento risultante.\\
-\hspace*{\fill} $\left[s \approx \SI{67}{\centi\meter}\right]$
+\risp{$s \approx \SI{67}{\centi\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una nave si sposta di $\SI{80}{\kilo\meter}$ verso Nord, poi di $\SI{60}{\kilo\meter}$ verso Est, infine di altri $\SI{80}{\kilo\meter}$ verso Nord. Rappresenta gli spostamenti con un disegno e calcola il modulo dello spostamento risultante rispetto al punto di partenza.\\
-\hspace*{\fill} $\left[s \approx \SI{171}{\kilo\meter}\right]$
+\risp{$s \approx \SI{171}{\kilo\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una formica percorre un quarto di una circonferenza di raggio $r = \SI{20}{\centi\meter}$. Qual è il modulo del suo spostamento (cioè la distanza in linea retta tra partenza e arrivo)? Perché è diverso dalla lunghezza del percorso?\\
-\hspace*{\fill} $\left[s = r\sqrt{2} \approx \SI{28}{\centi\meter}\right]$
+\risp{$s = r\sqrt{2} \approx \SI{28}{\centi\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un vettore ha modulo $20$ unità e componente lungo l'asse $x$ pari a $12$ unità. Calcola la componente lungo $y$ e l'angolo che il vettore forma con l'asse $x$.\\
-\hspace*{\fill} $\left[v_y = 16\ \text{unità}\ ;\quad \alpha \approx 53^\circ\right]$
+\risp{$v_y = 16\ \text{unità}\ ;\quad \alpha \approx 53^\circ$}
 \end{esercizio}
 
 \begin{esercizio}
 Un disco da hockey scivola per $\SI{12}{\meter}$ verso Est, poi per $\SI{8}{\meter}$ verso Nord, infine per $\SI{5}{\meter}$ verso Ovest. Calcola il modulo dello spostamento complessivo.\\
-\hspace*{\fill} $\left[s \approx \SI{10,6}{\meter}\right]$
+\risp{$s \approx \SI{10,6}{\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 La lancetta dei minuti di un orologio è lunga $\SI{12}{\centi\meter}$. Scegliendo un sistema di assi con origine nel centro dell'orologio, $x$ verso destra e $y$ verso l'alto, scrivi le componenti del vettore che rappresenta la lancetta quando essa indica le ore 3, le ore 6 e le ore 9.\\
-\hspace*{\fill} $\left[(12;\,0)\ ;\quad (0;\,-12)\ ;\quad (-12;\,0)\ \si{\centi\meter}\right]$
+\risp{$(12;\,0)\ ;\quad (0;\,-12)\ ;\quad (-12;\,0)\ \si{\centi\meter}$}
 \end{esercizio}
 
 \subsection*{Forze, peso e legge di Hooke}
 
 \begin{esercizio}
 Su un punto materiale agiscono due forze perpendicolari, di moduli $\SI{12}{\newton}$ e $\SI{16}{\newton}$. Calcola il modulo della forza risultante e l'angolo che essa forma con la forza da $\SI{12}{\newton}$.\\
-\hspace*{\fill} $\left[R = \SI{20}{\newton}\ ;\quad \theta \approx 53^\circ\right]$
+\risp{$R = \SI{20}{\newton}\ ;\quad \theta \approx 53^\circ$}
 \end{esercizio}
 
 \begin{esercizio}
 Il record di sollevamento pesi nella prova di strappo è di circa $\SI{180}{\kilo\gram}$. A quale peso corrisponde sulla Terra? E quanto varrebbe questo peso sulla Luna, dove $g_{\text{Luna}} \approx \SI{1,6}{\newton\per\kilo\gram}$?\\
-\hspace*{\fill} $\left[P_{\text{Terra}} \approx \SI{1,77}{\kilo\newton}\ ;\quad P_{\text{Luna}} \approx \SI{288}{\newton}\right]$
+\risp{$P_{\text{Terra}} \approx \SI{1,77}{\kilo\newton}\ ;\quad P_{\text{Luna}} \approx \SI{288}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un dinamometro da laboratorio ha portata $\SI{2,0}{\newton}$ e la sua molla, a fondo scala, si allunga di $\SI{8,0}{\centi\meter}$. Qual è la costante elastica della molla, espressa in $\si{\newton\per\meter}$?\\
-\hspace*{\fill} $\left[k = \SI{25}{\newton\per\meter}\right]$
+\risp{$k = \SI{25}{\newton\per\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una molla di costante elastica $\SI{400}{\newton\per\meter}$ può allungarsi al massimo di $\SI{5,0}{\centi\meter}$ senza deformarsi in modo permanente. Qual è il massimo peso che vi si può appendere?\\
-\hspace*{\fill} $\left[P_{\text{max}} = \SI{20}{\newton}\right]$
+\risp{$P_{\text{max}} = \SI{20}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Quattro persone sollevano insieme una panca di massa $\SI{60}{\kilo\gram}$, dividendo il carico in parti uguali. Che forza esercita ciascuna?\\
-\hspace*{\fill} $\left[F \approx \SI{147}{\newton}\right]$
+\risp{$F \approx \SI{147}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un lampadario di peso $\SI{20}{\newton}$ è appeso a un filo che, spinto da una corrente d'aria, forma un angolo di $30^\circ$ con la verticale. Scomponi il peso lungo la direzione del filo e lungo la direzione a esso perpendicolare.\\
-\hspace*{\fill} $\left[\text{lungo il filo}\ \approx \SI{17}{\newton}\ ;\quad \text{perpendicolare}\ = \SI{10}{\newton}\right]$
+\risp{$\text{lungo il filo}\ \approx \SI{17}{\newton}\ ;\quad \text{perpendicolare}\ = \SI{10}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un montacarichi riporta la scritta ``carico massimo $\SI{2500}{\newton}$''. Quanti sacchi di cemento da $\SI{20}{\kilo\gram}$ ciascuno si possono sollevare in una sola volta?\\
-\hspace*{\fill} $\left[12\ \text{sacchi}\right]$
+\risp{$12\ \text{sacchi}$}
 \end{esercizio}
 
 \subsection*{Piano inclinato e attrito}
 
 \begin{esercizio}
 Un ciclista percorre $\SI{60}{\meter}$ lungo una rampa inclinata di $30^\circ$ rispetto all'orizzontale. Di quanto è salito in quota?\\
-\hspace*{\fill} $\left[h = \SI{30}{\meter}\right]$
+\risp{$h = \SI{30}{\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una cassa di massa $\SI{25}{\kilo\gram}$ è appoggiata su un piano inclinato di $20^\circ$. Calcola il peso della cassa, la componente del peso parallela al piano e quella perpendicolare (usa $\sin 20^\circ \approx 0,34$ e $\cos 20^\circ \approx 0,94$).\\
-\hspace*{\fill} $\left[P \approx \SI{245}{\newton}\ ;\quad P_\parallel \approx \SI{83}{\newton}\ ;\quad P_\perp \approx \SI{230}{\newton}\right]$
+\risp{$P \approx \SI{245}{\newton}\ ;\quad P_\parallel \approx \SI{83}{\newton}\ ;\quad P_\perp \approx \SI{230}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Uno sciatore di massa $\SI{65}{\kilo\gram}$ è fermo su una pista orizzontale. Il coefficiente di attrito statico tra sci e neve vale $0,10$. Qual è la massima forza orizzontale che si può applicare allo sciatore senza farlo scivolare?\\
-\hspace*{\fill} $\left[F_{as,\text{max}} \approx \SI{64}{\newton}\right]$
+\risp{$F_{as,\text{max}} \approx \SI{64}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
@@ -4122,17 +4125,17 @@ Un armadio di massa $\SI{80}{\kilo\gram}$ contiene $\SI{40}{\kilo\gram}$ di vest
 \item[a)] Quale forza orizzontale occorre per iniziare a trascinarlo?
 \item[b)] Se la massima forza che si riesce ad applicare è $\SI{500}{\newton}$, quanti chilogrammi di vestiti bisogna togliere per riuscire a spostarlo?
 \end{enumerate}
-\hspace*{\fill} $\left[\text{a)}\ \approx \SI{590}{\newton}\ ;\quad \text{b)}\ \approx \SI{18}{\kilo\gram}\right]$
+\risp{$\text{a)}\ \approx \SI{590}{\newton}\ ;\quad \text{b)}\ \approx \SI{18}{\kilo\gram}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un bambino di massa $\SI{30}{\kilo\gram}$ si siede su una giostrina montata su una molla di costante elastica $\SI{5000}{\newton\per\meter}$. Di quanto si abbassa la giostrina?\\
-\hspace*{\fill} $\left[s \approx \SI{5,9}{\centi\meter}\right]$
+\risp{$s \approx \SI{5,9}{\centi\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Per tenere un libro di massa $\SI{400}{\gram}$ fermo contro una parete verticale si esercita su di esso una forza orizzontale. Il coefficiente di attrito statico tra libro e parete è $0,5$. Qual è la minima forza orizzontale necessaria perché il libro non scivoli? (suggerimento: la forza di attrito statico, che può valere al massimo $k_s$ volte la forza orizzontale, deve poter equilibrare il peso del libro).\\
-\hspace*{\fill} $\left[F \approx \SI{7,8}{\newton}\right]$
+\risp{$F \approx \SI{7,8}{\newton}$}
 \end{esercizio}
 
 
@@ -4203,17 +4206,17 @@ Una lampada di peso $\SI{30}{\newton}$ è appesa al soffitto tramite due fili ve
 
 \begin{esercizio}
 Su un anello agiscono tre forze complanari. Due valgono $\SI{8}{\newton}$ verso Est e $\SI{8}{\newton}$ verso Ovest. Quanto deve valere la terza forza perché l'anello sia in equilibrio?\\
-\hspace*{\fill} $\left[\SI{0}{\newton}\ \text{(nulla): le prime due si bilanciano già)}\right]$
+\risp{$\SI{0}{\newton}\ \text{(nulla): le prime due si bilanciano già)}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un lampadario di peso $\SI{45}{\newton}$ è sostenuto da una catena verticale. Quanto vale la tensione della catena? Come si chiama, rispetto al lampadario, questa forza?\\
-\hspace*{\fill} $\left[T = \SI{45}{\newton}\ ;\ \text{forza equilibrante (reazione vincolare del gancio)}\right]$
+\risp{$T = \SI{45}{\newton}\ ;\ \text{forza equilibrante (reazione vincolare del gancio)}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un punto materiale agiscono due forze perpendicolari, di moduli $\SI{6}{\newton}$ e $\SI{8}{\newton}$. Quale forza equilibrante bisogna aggiungere per metterlo in equilibrio? (indica modulo e direzione).\\
-\hspace*{\fill} $\left[\SI{10}{\newton}\text{, opposta alla risultante delle due forze}\right]$
+\risp{$\SI{10}{\newton}\text{, opposta alla risultante delle due forze}$}
 \end{esercizio}
 
 
@@ -4292,17 +4295,17 @@ Massimo attrito statico: $k_s\,P_\perp = 0,50 \times \SI{46}{\newton} = \SI{23}{
 
 \begin{esercizio}
 Un piano inclinato è lungo $\SI{3,0}{\meter}$ e alto $\SI{1,5}{\meter}$. Un carrello di peso $\SI{80}{\newton}$ vi è appoggiato. Se il piano è liscio, quale forza parallela al piano serve per tenerlo fermo?\\
-\hspace*{\fill} $\left[F = \SI{40}{\newton}\right]$
+\risp{$F = \SI{40}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Il coefficiente di attrito statico tra un blocco e un piano inclinato vale $k_s = 0,70$. Qual è l'angolo limite? Un blocco più pesante avrebbe un angolo limite diverso?\\
-\hspace*{\fill} $\left[\alpha_0 = \arctan 0,70 \approx 35^\circ\ ;\ \text{no, non dipende dalla massa}\right]$
+\risp{$\alpha_0 = \arctan 0,70 \approx 35^\circ\ ;\ \text{no, non dipende dalla massa}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una cassa è ferma su un piano inclinato di $18^\circ$. Misurando l'angolo limite si trova $\alpha_0 = 22^\circ$. La cassa è in equilibrio? Quanto vale, circa, il coefficiente di attrito statico?\\
-\hspace*{\fill} $\left[\text{sì}\ (18^\circ < 22^\circ)\ ;\quad k_s = \tan 22^\circ \approx 0,40\right]$
+\risp{$\text{sì}\ (18^\circ < 22^\circ)\ ;\quad k_s = \tan 22^\circ \approx 0,40$}
 \end{esercizio}
 
 
@@ -4398,17 +4401,17 @@ Il bambino più pesante deve sedersi più vicino al fulcro.
 
 \begin{esercizio}
 Una forza di $\SI{30}{\newton}$ è applicata perpendicolarmente a una porta, a $\SI{15}{\centi\meter}$ dai cardini. Quanto vale il momento della forza rispetto ai cardini? Perché le maniglie si mettono lontano dai cardini?\\
-\hspace*{\fill} $\left[M = \SI{4,5}{\newton\meter}\ ;\ \text{per avere un braccio grande e quindi un momento maggiore}\right]$
+\risp{$M = \SI{4,5}{\newton\meter}\ ;\ \text{per avere un braccio grande e quindi un momento maggiore}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un'asta è appoggiata su un fulcro. A sinistra, a $\SI{80}{\centi\meter}$ dal fulcro, agisce verso il basso una forza di $\SI{250}{\newton}$. A destra, a $\SI{50}{\centi\meter}$ dal fulcro, quale forza verso il basso mantiene l'asta in equilibrio?\\
-\hspace*{\fill} $\left[F = \SI{400}{\newton}\right]$
+\risp{$F = \SI{400}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una chiave dinamometrica è regolata per un momento massimo di $\SI{40}{\newton\meter}$: oltre questo valore ``slitta'' e non stringe di più. Se la chiave è lunga $\SI{40}{\centi\meter}$ e si applica la forza all'estremità, qual è la massima forza applicabile?\\
-\hspace*{\fill} $\left[F = \SI{100}{\newton}\right]$
+\risp{$F = \SI{100}{\newton}$}
 \end{esercizio}
 
 
@@ -4453,17 +4456,17 @@ M = F\cdot b = \SI{20}{\newton}\times\SI{0,36}{\meter} \approx \SI{7,2}{\newton\
 
 \begin{esercizio}
 Su un righello agiscono due forze di $\SI{5}{\newton}$, parallele e di verso opposto, le cui rette d'azione distano $\SI{20}{\centi\meter}$. Qual è la risultante? Qual è il momento della coppia? Il righello ruota?\\
-\hspace*{\fill} $\left[\vec{R} = \vec{0}\ ;\quad M = \SI{1}{\newton\meter}\ ;\quad \text{sì, ruota}\right]$
+\risp{$\vec{R} = \vec{0}\ ;\quad M = \SI{1}{\newton\meter}\ ;\quad \text{sì, ruota}$}
 \end{esercizio}
 
 \begin{esercizio}
 Per svitare un tappo si applicano con due dita due forze di $\SI{8}{\newton}$ ai due lati del tappo, di diametro $\SI{4,0}{\centi\meter}$. Quanto vale il momento della coppia?\\
-\hspace*{\fill} $\left[M = \SI{0,32}{\newton\meter}\right]$
+\risp{$M = \SI{0,32}{\newton\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Spiega la differenza tra una coppia di forze e due forze qualsiasi uguali e opposte applicate nello stesso punto.\\
-\hspace*{\fill} $\left[\text{stesso punto} \Rightarrow \text{risultante e momento nulli, equilibrio; punti diversi} \Rightarrow \text{coppia, il corpo ruota}\right]$
+\risp{$\text{stesso punto} \Rightarrow \text{risultante e momento nulli, equilibrio; punti diversi} \Rightarrow \text{coppia, il corpo ruota}$}
 \end{esercizio}
 
 
@@ -4572,27 +4575,27 @@ Il guadagno è circa $0,11$: molto svantaggiosa in termini di forza, ma la mano 
 
 \begin{esercizio}
 Per sollevare un peso di $\SI{4500}{\newton}$ si usa una leva con guadagno $G = 6$. Quale forza motrice bisogna applicare?\\
-\hspace*{\fill} $\left[F_m = \SI{750}{\newton}\right]$
+\risp{$F_m = \SI{750}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una leva ha braccio della forza motrice $b_m = \SI{90}{\centi\meter}$ e braccio della forza resistente $b_r = \SI{30}{\centi\meter}$. Qual è il guadagno? La leva è vantaggiosa o svantaggiosa?\\
-\hspace*{\fill} $\left[G = 3\ ;\ \text{vantaggiosa}\right]$
+\risp{$G = 3\ ;\ \text{vantaggiosa}$}
 \end{esercizio}
 
 \begin{esercizio}
 In una carriola (leva di secondo genere) il carico pesa $\SI{800}{\newton}$ ed è a $\SI{30}{\centi\meter}$ dalla ruota; le stanghe si impugnano a $\SI{1,5}{\meter}$ dalla ruota. Quale forza deve applicare chi la solleva?\\
-\hspace*{\fill} $\left[F_m = \SI{160}{\newton}\right]$
+\risp{$F_m = \SI{160}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Uno schiaccianoci è una leva di secondo genere: si applica una forza di $\SI{40}{\newton}$ all'estremità dei manici, a $\SI{12}{\centi\meter}$ dalla cerniera, mentre la noce è a $\SI{3}{\centi\meter}$ dalla cerniera. Con quale forza viene schiacciata la noce?\\
-\hspace*{\fill} $\left[F_r = \SI{160}{\newton}\right]$
+\risp{$F_r = \SI{160}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Per ciascuno di questi attrezzi indica il genere di leva: pinzetta da sopracciglia, tenaglia, carriola, remo, altalena.\\
-\hspace*{\fill} $\left[\text{terzo; primo; secondo; secondo; primo}\right]$
+\risp{terzo; primo; secondo; secondo; primo}
 \end{esercizio}
 
 
@@ -4607,57 +4610,88 @@ Il peso di un corpo è la somma dei pesi di tutte le sue particelle: è una forz
 Il \textbf{baricentro} (o centro di gravità) è il punto in cui si può considerare applicata l'intera forza-peso di un corpo.
 \end{definizione}
 
-Per un corpo \textbf{omogeneo e regolare}, il baricentro coincide con il centro di simmetria. Per un corpo irregolare, o non omogeneo (come una mazza da baseball, più pesante da un lato), il baricentro è spostato verso la parte più pesante e si trova per via sperimentale: si appende il corpo per un punto e si traccia la verticale (con un filo a piombo); si ripete appendendolo per un altro punto; il baricentro è nell'intersezione delle due rette.
+Per un corpo \textbf{omogeneo e regolare}, il baricentro coincide con il centro di simmetria: al centro per una sfera o un cubo, nel punto d'incontro delle diagonali per un rettangolo. Per un corpo irregolare o non omogeneo (come una mazza da baseball, più pesante da un lato) il baricentro è spostato verso la parte più pesante e va cercato per via sperimentale.
 
 \begin{remark}
 Il baricentro è un punto \textbf{immaginario}: non deve necessariamente trovarsi dentro il materiale del corpo. Per un anello o un ferro di cavallo, per esempio, il baricentro cade nel vuoto.
 \end{remark}
 
-\subsection{Equilibrio stabile, instabile e indifferente}
-Consideriamo un corpo in equilibrio e spostiamolo leggermente dalla sua posizione. Possono succedere tre cose:
-\begin{itemize}
-\item il corpo torna nella posizione di partenza: l'equilibrio è \textbf{stabile};
-\item il corpo si allontana ancora di più: l'equilibrio è \textbf{instabile};
-\item il corpo resta nella nuova posizione: l'equilibrio è \textbf{indifferente}.
-\end{itemize}
-Il criterio si può esprimere osservando il baricentro: se lo spostamento lo \textbf{alza}, l'equilibrio è stabile (il peso tende a riportarlo giù); se lo \textbf{abbassa}, è instabile; se lo lascia \textbf{alla stessa quota}, è indifferente.
+\subsection{Ricerca sperimentale del baricentro}
+Per trovare il baricentro di un corpo piatto e irregolare (per esempio un cartoncino ritagliato) si procede così:
+\begin{enumerate}
+\item si appende il corpo a un chiodo, per un punto $A_1$ del bordo, e lo si lascia oscillare fino a fermarsi. All'equilibrio il baricentro si trova sulla \textbf{verticale} passante per $A_1$: se non lo fosse, peso e reazione del chiodo formerebbero una coppia che farebbe ancora ruotare il corpo;
+\item si appende allo stesso chiodo un \textbf{filo a piombo} e si traccia sul corpo la retta verticale $r_1$;
+\item si ripete l'operazione appendendo il corpo per un altro punto $A_2$, e si traccia la retta $r_2$.
+\end{enumerate}
+Il baricentro $B$ è il punto di \textbf{intersezione} delle due rette (figura~\ref{fig:baricentro}). Una terza sospensione serve solo come verifica: la sua verticale passa per lo stesso punto.
 
 \begin{figure}[h!]
 \centering
-\begin{tikzpicture}[scale=0.8,>=stealth]
-% stabile: vincolo sopra il baricentro (l'asta pende)
+\begin{tikzpicture}[scale=1,>=stealth]
+\coordinate (A1) at (0.7,2.1);
+\coordinate (A2) at (2.2,0.8);
+\coordinate (B) at (1.05,1.0);
+% corpo irregolare
+\draw[fill=gray!15,thick] (0,0) -- (1.6,-0.3) -- (2.2,0.8) -- (1.8,1.9) -- (0.7,2.1) -- (-0.2,1.2) -- cycle;
+% rette tracciate col filo a piombo
+\draw[ocre,dashed] (A1) -- ($(A1)!1.75!(B)$) node[pos=1,below]{\small $r_1$};
+\draw[blue!55!black,dashed] (A2) -- ($(A2)!1.95!(B)$) node[pos=1,left]{\small $r_2$};
+% chiodi
+\fill (A1) circle (1.6pt) node[above]{\small $A_1$};
+\fill (A2) circle (1.6pt) node[right]{\small $A_2$};
+% baricentro
+\fill[red] (B) circle (1.8pt) node[above right]{\small $B$};
+\end{tikzpicture}
+\caption{Ricerca del baricentro: le verticali tracciate col filo a piombo appendendo il corpo per $A_1$ e per $A_2$ si incontrano nel baricentro $B$.}
+\label{fig:baricentro}
+\end{figure}
+
+\subsection{Equilibrio stabile, instabile e indifferente}
+Non tutti gli equilibri si comportano allo stesso modo. Pensiamo a una pallina appoggiata su tre superfici diverse (figura~\ref{fig:stab}) e immaginiamo di spostarla di poco dalla sua posizione:
+\begin{itemize}
+\item sul \textbf{fondo di una cunetta} la pallina, lasciata libera, torna indietro fino al punto più basso: l'equilibrio è \textbf{stabile};
+\item sulla \textbf{sommità di una collinetta} la pallina rotola via e si allontana sempre di più: l'equilibrio è \textbf{instabile};
+\item su un \textbf{piano orizzontale} la pallina resta ferma nella nuova posizione: l'equilibrio è \textbf{indifferente}.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+% stabile: pallina nel fondo di una cunetta
 \begin{scope}
-\draw[thick,gray!55] (-0.8,2.2) -- (0.8,2.2);
-\foreach \x in {-0.6,-0.2,0.2,0.6}{\draw[gray!55] (\x,2.2) -- (\x-0.18,2.45);}
-\fill (0,2.2) circle (1.5pt) node[above right]{\small $V$};
-\draw[very thick] (0,2.2) -- (0,0.3);
-\fill[blue!60!black] (0,1) circle (1.5pt) node[right]{\small $B$};
-\draw[->,ocre,thick] (0,1) -- (0,-0.2) node[below,black]{$\vec{P}$};
-\node at (0,-0.9) {\scriptsize stabile};
+\draw[thick,domain=-1.25:1.25,samples=60] plot (\x,{0.55*\x*\x});
+\shade[ball color=orange!70] (0,0.18) circle (0.18);
+\draw[->,gray] (0.05,0.55) .. controls (0.55,0.75) .. (0.7,0.45);
+\draw[<-,gray] (-0.7,0.45) .. controls (-0.55,0.75) .. (-0.05,0.55);
+\node at (0,-0.7) {\scriptsize stabile};
 \end{scope}
-% instabile: vincolo sotto il baricentro (l'asta sta ritta)
-\begin{scope}[xshift=4.2cm]
-\fill[gray!55] (-0.4,0.3) rectangle (0.4,0.5);
-\fill (0,0.5) circle (1.5pt) node[left=2pt]{\small $V$};
-\draw[very thick] (0,0.5) -- (0,2.4);
-\fill[blue!60!black] (0,1.6) circle (1.5pt) node[right]{\small $B$};
-\draw[->,ocre,thick] (0,1.6) -- (0,0.55) node[right,black,midway]{$\vec{P}$};
-\node at (0,-0.9) {\scriptsize instabile};
+% instabile: pallina sulla sommita' di una collinetta
+\begin{scope}[xshift=4.6cm]
+\draw[thick,domain=-1.25:1.25,samples=60] plot (\x,{1-0.55*\x*\x});
+\shade[ball color=orange!70] (0,1.18) circle (0.18);
+\draw[->,gray] (0.15,1.0) .. controls (0.6,0.85) .. (0.95,0.45);
+\draw[->,gray] (-0.15,1.0) .. controls (-0.6,0.85) .. (-0.95,0.45);
+\node at (0,-0.7) {\scriptsize instabile};
 \end{scope}
-% indifferente: vincolo nel baricentro
-\begin{scope}[xshift=8.4cm]
-\draw[thick,gray!55] (-1,1.6) -- (1,1.6);
-\foreach \x in {-0.8,-0.4,0,0.4,0.8}{\draw[gray!55] (\x,1.6) -- (\x-0.18,1.85);}
-\draw[very thick] (0,1.6) -- (0,0.9);
-\fill (0,1.6) circle (1.5pt);
-\fill[blue!60!black] (0,1.6) circle (1.5pt) node[above right]{\small $V\equiv B$};
-\draw[->,ocre,thick] (0,1.6) -- (0,0.4) node[below,black]{$\vec{P}$};
-\node at (0,-0.9) {\scriptsize indifferente};
+% indifferente: pallina su un piano orizzontale
+\begin{scope}[xshift=9.2cm]
+\draw[thick] (-1.25,0) -- (1.25,0);
+\shade[ball color=orange!70] (0,0.18) circle (0.18);
+\draw[<->,gray] (-0.8,0.45) -- (0.8,0.45);
+\node at (0,-0.7) {\scriptsize indifferente};
 \end{scope}
 \end{tikzpicture}
-\caption{Corpo vincolato in un punto $V$: equilibrio stabile se $B$ sta sotto $V$, instabile se sta sopra, indifferente se $B$ coincide con $V$.}
+\caption{Equilibrio stabile (pallina nel fondo di una cunetta), instabile (sulla cima di una collinetta), indifferente (su un piano orizzontale).}
 \label{fig:stab}
 \end{figure}
+
+Il criterio generale si esprime osservando come cambia la \textbf{quota del baricentro} quando spostiamo il corpo:
+\begin{itemize}
+\item se lo spostamento \textbf{alza} il baricentro, l'equilibrio è \textbf{stabile}: il peso tende a riabbassarlo, riportando il corpo indietro (è il caso della cunetta);
+\item se lo spostamento \textbf{abbassa} il baricentro, l'equilibrio è \textbf{instabile}: il peso lo fa scendere ancora, allontanando il corpo (la collinetta);
+\item se il baricentro resta \textbf{alla stessa quota}, l'equilibrio è \textbf{indifferente} (il piano orizzontale).
+\end{itemize}
+Lo stesso vale per un corpo appeso a un punto: è in equilibrio stabile se il baricentro sta \emph{sotto} il punto di sospensione (spostandolo, si alza), instabile se sta \emph{sopra}, indifferente se il punto di sospensione passa per il baricentro.
 
 \subsection{Stabilità di un corpo appoggiato}
 Per un corpo appoggiato su una base, la regola è:
@@ -4671,32 +4705,40 @@ Ne segue che un corpo è tanto più stabile quanto più il suo baricentro è \te
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[scale=0.9,>=stealth]
-% caso stabile
+% caso stabile: box poco inclinato, la verticale per B cade tra i due spigoli di base
 \begin{scope}
-\draw[thick] (-0.4,0) -- (2.8,0);
-\begin{scope}[rotate around={14:(0.3,0)}]
-\fill[gray!20] (0.3,0) rectangle (1.9,1.8);
-\draw (0.3,0) rectangle (1.9,1.8);
-\coordinate (Ba) at (1.1,0.9);
+\draw[thick] (-0.5,0) -- (2.6,0);
+\begin{scope}[rotate around={16:(0.3,0)}]
+\fill[gray!20] (0.3,0) rectangle (1.7,1.9);
+\draw (0.3,0) rectangle (1.7,1.9);
+\draw[very thick] (0.3,0) -- (1.7,0);
+\coordinate (Pa) at (0.3,0);
+\coordinate (Qa) at (1.7,0);
+\coordinate (Ba) at (1.0,0.95);
 \end{scope}
-\fill[blue!60!black] (Ba) circle (1.4pt) node[above right]{\small $B$};
-\draw[->,ocre] (Ba) -- ($(Ba)+(0,-2)$);
-\node[align=center] at (1.3,-2.5) {\scriptsize la verticale cade\\[-2pt]\scriptsize nella base: stabile};
+\fill (Pa) circle (1.5pt);  \fill (Qa) circle (1.5pt);
+\fill[blue!60!black] (Ba) circle (1.5pt) node[above right]{\small $B$};
+\draw[ocre,dashed] (Ba) -- ($(Ba)+(0,-2.2)$);
+\node[align=center] at (1.1,-2.5) {\scriptsize la verticale per $B$ cade\\[-2pt]\scriptsize tra gli spigoli: \textbf{stabile}};
 \end{scope}
-% caso ribaltamento
-\begin{scope}[xshift=6.8cm]
-\draw[thick] (-0.4,0) -- (3.2,0);
-\begin{scope}[rotate around={34:(0.3,0)}]
-\fill[gray!20] (0.3,0) rectangle (1.9,1.8);
-\draw (0.3,0) rectangle (1.9,1.8);
-\coordinate (Bb) at (1.1,0.9);
+% caso ribaltamento: box molto inclinato, la verticale per B esce oltre lo spigolo di appoggio
+\begin{scope}[xshift=7cm]
+\draw[thick] (-0.5,0) -- (3,0);
+\begin{scope}[rotate around={52:(0.3,0)}]
+\fill[gray!20] (0.3,0) rectangle (1.7,1.9);
+\draw (0.3,0) rectangle (1.7,1.9);
+\draw[very thick] (0.3,0) -- (1.7,0);
+\coordinate (Pb) at (0.3,0);
+\coordinate (Qb) at (1.7,0);
+\coordinate (Bb) at (1.0,0.95);
 \end{scope}
-\fill[blue!60!black] (Bb) circle (1.4pt) node[above right]{\small $B$};
-\draw[->,ocre] (Bb) -- ($(Bb)+(0,-2.4)$);
-\node[align=center] at (1.6,-2.5) {\scriptsize la verticale esce\\[-2pt]\scriptsize dalla base: si ribalta};
+\fill (Pb) circle (1.5pt);  \fill (Qb) circle (1.5pt);
+\fill[blue!60!black] (Bb) circle (1.5pt) node[above right]{\small $B$};
+\draw[ocre,dashed] (Bb) -- ($(Bb)+(0,-2.4)$);
+\node[align=center] at (1.0,-2.5) {\scriptsize la verticale per $B$ esce oltre\\[-2pt]\scriptsize lo spigolo: \textbf{si ribalta}};
 \end{scope}
 \end{tikzpicture}
-\caption{Stabilità di un corpo appoggiato: dipende da dove cade la verticale per il baricentro rispetto alla base d'appoggio.}
+\caption{Stabilità di un corpo appoggiato: dipende da dove cade la verticale per il baricentro rispetto alla base d'appoggio (lo spigolo attorno a cui il corpo tende a ruotare).}
 \label{fig:ribalta}
 \end{figure}
 
@@ -4714,22 +4756,22 @@ da cui $\alpha \approx 18^\circ$. Una cassa più bassa e larga si ribalterebbe a
 
 \begin{esercizio}
 Dove si trova il baricentro di: una sfera di acciaio omogenea; un anello; una racchetta da tennis?\\
-\hspace*{\fill} $\left[\text{al centro; nel vuoto, al centro del foro; spostato verso il piatto}\right]$
+\risp{al centro; nel vuoto, al centro del foro; spostato verso il piatto}
 \end{esercizio}
 
 \begin{esercizio}
 Uno sgabello con una sola gamba non può mai stare in equilibrio da solo. Perché?\\
-\hspace*{\fill} $\left[\text{la base d'appoggio è quasi un punto: la verticale per } B \text{ ne esce a ogni minimo spostamento}\right]$
+\risp{$\text{la base d'appoggio è quasi un punto: la verticale per } B \text{ ne esce a ogni minimo spostamento}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un pendolo fermo nella posizione più bassa: che tipo di equilibrio? E un'asta tenuta verticale in bilico sulla punta di un dito?\\
-\hspace*{\fill} $\left[\text{stabile; instabile}\right]$
+\risp{stabile; instabile}
 \end{esercizio}
 
 \begin{esercizio}
 Un armadio ha base profonda $\SI{50}{\centi\meter}$ e baricentro ad altezza $\SI{90}{\centi\meter}$. Fino a quale angolo di inclinazione del pavimento resta in piedi?\\
-\hspace*{\fill} $\left[\tan\alpha = 25/90 \approx 0,28 \Rightarrow \alpha \approx 15,5^\circ\right]$
+\risp{$\tan\alpha = 25/90 \approx 0,28 \Rightarrow \alpha \approx 15,5^\circ$}
 \end{esercizio}
 
 
@@ -4741,93 +4783,93 @@ Dove serve usa $g = \SI{9,81}{\newton\per\kilo\gram}$; per gli angoli notevoli, 
 
 \begin{esercizio}
 Un libro di peso $\SI{12}{\newton}$ è appoggiato su un tavolo. Quanto vale la reazione vincolare del tavolo? Come è diretta?\\
-\hspace*{\fill} $\left[\SI{12}{\newton}\text{, verticale verso l'alto}\right]$
+\risp{$\SI{12}{\newton}\text{, verticale verso l'alto}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un punto materiale agiscono due forze perpendicolari di moduli $\SI{5}{\newton}$ e $\SI{12}{\newton}$. Quale forza equilibrante bisogna aggiungere?\\
-\hspace*{\fill} $\left[\SI{13}{\newton}\text{, opposta alla risultante delle due}\right]$
+\risp{$\SI{13}{\newton}\text{, opposta alla risultante delle due}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un carico di $\SI{800}{\newton}$ è tenuto sospeso da un cavo verticale. Quanto vale la tensione del cavo? È una reazione vincolare?\\
-\hspace*{\fill} $\left[\SI{800}{\newton}\text{; sì, del gancio}\right]$
+\risp{$\SI{800}{\newton}\text{; sì, del gancio}$}
 \end{esercizio}
 
 \subsection*{Piano inclinato e attrito}
 
 \begin{esercizio}
 Un piano inclinato liscio è lungo $\SI{4,0}{\meter}$ e alto $\SI{1,0}{\meter}$. Quale forza parallela al piano serve per tenere fermo un carrello di peso $\SI{60}{\newton}$?\\
-\hspace*{\fill} $\left[F = \SI{15}{\newton}\right]$
+\risp{$F = \SI{15}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Il coefficiente di attrito statico tra una cassa e un piano inclinato è $k_s = 0,45$. Qual è l'angolo limite? Una cassa doppia di peso avrebbe lo stesso angolo limite?\\
-\hspace*{\fill} $\left[\alpha_0 \approx 24^\circ\ ;\ \text{sì, non dipende dalla massa}\right]$
+\risp{$\alpha_0 \approx 24^\circ\ ;\ \text{sì, non dipende dalla massa}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una cassa è appoggiata su un piano inclinato di $15^\circ$; il coefficiente di attrito statico è $0,40$. La cassa scivola?\\
-\hspace*{\fill} $\left[\text{no: } \tan 15^\circ \approx 0,27 < 0,40\right]$
+\risp{$\text{no: } \tan 15^\circ \approx 0,27 < 0,40$}
 \end{esercizio}
 
 \begin{esercizio}
 Una cassa di massa $\SI{20}{\kilo\gram}$ è su un piano inclinato liscio di $25^\circ$. Quale forza parallela al piano la tiene ferma?\\
-\hspace*{\fill} $\left[F \approx \SI{83}{\newton}\right]$
+\risp{$F \approx \SI{83}{\newton}$}
 \end{esercizio}
 
 \subsection*{Momenti, coppie e leve}
 
 \begin{esercizio}
 Una forza di $\SI{25}{\newton}$ è applicata perpendicolarmente a un'asta, a $\SI{30}{\centi\meter}$ dal centro di rotazione. Quanto vale il momento?\\
-\hspace*{\fill} $\left[M = \SI{7,5}{\newton\meter}\right]$
+\risp{$M = \SI{7,5}{\newton\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un'altalena un bambino di peso $\SI{250}{\newton}$ si siede a $\SI{1,8}{\meter}$ dal fulcro. A che distanza deve sedersi, dall'altra parte, un bambino di $\SI{300}{\newton}$?\\
-\hspace*{\fill} $\left[\SI{1,5}{\meter}\right]$
+\risp{$\SI{1,5}{\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Un'asta è in equilibrio su un fulcro. A sinistra, a $\SI{25}{\centi\meter}$, agisce verso il basso una forza di $\SI{400}{\newton}$. A destra, a $\SI{1,0}{\meter}$ dal fulcro, quale forza verso il basso serve?\\
-\hspace*{\fill} $\left[F = \SI{100}{\newton}\right]$
+\risp{$F = \SI{100}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 Su un corpo agiscono due forze parallele di $\SI{6}{\newton}$, di verso opposto, le cui rette d'azione distano $\SI{30}{\centi\meter}$. Qual è la risultante? Qual è il momento della coppia?\\
-\hspace*{\fill} $\left[\vec{R} = \vec{0}\ ;\quad M = \SI{1,8}{\newton\meter}\right]$
+\risp{$\vec{R} = \vec{0}\ ;\quad M = \SI{1,8}{\newton\meter}$}
 \end{esercizio}
 
 \begin{esercizio}
 Con una leva di guadagno $G = 5$ si vuole sollevare un peso di $\SI{3000}{\newton}$. Quale forza motrice serve?\\
-\hspace*{\fill} $\left[F_m = \SI{600}{\newton}\right]$
+\risp{$F_m = \SI{600}{\newton}$}
 \end{esercizio}
 
 \begin{esercizio}
 In una carriola il carico pesa $\SI{900}{\newton}$ ed è a $\SI{35}{\centi\meter}$ dalla ruota; le stanghe si impugnano a $\SI{1,4}{\meter}$ dalla ruota. Quale forza deve applicare chi la solleva? Di che genere di leva si tratta?\\
-\hspace*{\fill} $\left[F_m = \SI{225}{\newton}\ ;\ \text{secondo genere}\right]$
+\risp{$F_m = \SI{225}{\newton}\ ;\ \text{secondo genere}$}
 \end{esercizio}
 
 \begin{esercizio}
 Una chiave dinamometrica lunga $\SI{25}{\centi\meter}$ è regolata per un momento massimo di $\SI{30}{\newton\meter}$. Applicando la forza all'estremità, qual è la massima forza applicabile?\\
-\hspace*{\fill} $\left[F = \SI{120}{\newton}\right]$
+\risp{$F = \SI{120}{\newton}$}
 \end{esercizio}
 
 \subsection*{Baricentro e stabilità}
 
 \begin{esercizio}
 Uno scatolone contiene oggetti pesanti solo sul fondo. Il suo baricentro è più in alto o più in basso rispetto a quello di uno scatolone omogeneo delle stesse dimensioni? Quale dei due è più stabile?\\
-\hspace*{\fill} $\left[\text{più in basso; quello con il peso sul fondo}\right]$
+\risp{più in basso; quello con il peso sul fondo}
 \end{esercizio}
 
 \begin{esercizio}
 Una cassa omogenea ha base di lato $\SI{50}{\centi\meter}$ e altezza $\SI{50}{\centi\meter}$ (baricentro al centro). A quale angolo di inclinazione del piano si ribalta?\\
-\hspace*{\fill} $\left[\tan\alpha = 25/25 = 1 \Rightarrow \alpha = 45^\circ\right]$
+\risp{$\tan\alpha = 25/25 = 1 \Rightarrow \alpha = 45^\circ$}
 \end{esercizio}
 
 \begin{esercizio}
 Spiega perché, portando uno zaino pesante sulle spalle, si tende a piegarsi in avanti.\\
-\hspace*{\fill} $\left[\text{per riportare la verticale del baricentro (spostato indietro dallo zaino) dentro la base d'appoggio dei piedi}\right]$
+\risp{per riportare la verticale del baricentro (spostato indietro dallo zaino) dentro la base d'appoggio dei piedi}
 \end{esercizio}
 
 
