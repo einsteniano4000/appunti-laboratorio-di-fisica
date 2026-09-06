@@ -2,9 +2,9 @@
 
 > **Avanzamento** (branch `revisione`)
 > - [x] Passo 1 – fix che non cambiano i contenuti: B1, B2, B3, B6, B7, A15, `\si{\square\s}`, refusi ricorrenti (D), «cubo di lato 1 m». Compila pulito (133 pagine, nessun label duplicato, nessun riferimento indefinito).
-> - [ ] Passo 2 – correzioni di fisica (A1–A16)
-> - [ ] Passo 3 – uniformare deviazione standard e notazione (C)
-> - [ ] Passo 4 – rieseguire gli script Python e sostituire gli output
+> - [x] Passo 2 – correzioni di fisica: A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A13, A14, A16. **A11 e A12 rimandati al passo 4** (richiedono di rieseguire gli script). Ancora da uniformare A13 nella deviazione standard della media (già coerente) — fatto.
+> - [ ] Passo 3 – uniformare notazione: virgola/punto decimale, unità (C)
+> - [ ] Passo 4 – rieseguire gli script Python e sostituire gli output (+ A11, A12)
 > - [ ] Passo 5 – ampliamento (Parte II)
 
 Stato: il documento compila (`lualatex --shell-escape`, 137 pagine, exit 0) ma con

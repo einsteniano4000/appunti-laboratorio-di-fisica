@@ -555,7 +555,7 @@ Ricordiamo che $10^5=10\times 10 \times 10\times 10\times10$. Esistono anche le 
 \[
 10^{-2}=\frac{1}{100} = 0,01
 \]
-In matematica imparerete anche a calcolare espressioni del tipo $\left(\frac{1}{3}\right)^{-2} =\left(\frac{3}{1}\right)^{2} = 9$ ma a noi non interessa così tanto l'algebra. poiché calcoleremo tutto usando la calcolatrice. Dobbiamo però capire il significato di certe scritture. Anzitutto dobbiamo capire che $10^{-2}$ \underline{non è negativo}, è solo un numero positivo minore di uno. Ovviamente, $10^{-2}=$ \underline{è} negativo e vale $-0,01$. -$2$ si chiama esponente  e $10$ la base. Le potenze di 10 godono di alcune proprietà che è bene conoscere. Moltiplicando due potenze \textbf{della stessa base} si ottiene una sola potenza che ha per esponente, \textbf{la somma degli esponenti}:
+In matematica imparerete anche a calcolare espressioni del tipo $\left(\frac{1}{3}\right)^{-2} =\left(\frac{3}{1}\right)^{2} = 9$ ma a noi non interessa così tanto l'algebra. poiché calcoleremo tutto usando la calcolatrice. Dobbiamo però capire il significato di certe scritture. Anzitutto dobbiamo capire che $10^{-2}$ \underline{non è negativo}, è solo un numero positivo minore di uno (vale $0,01$). È il segno \emph{davanti} alla potenza a renderla negativa: $-10^{2}=-100$ e $-10^{-2}=-0,01$. Nella scrittura $10^{-2}$, il numero $-2$ si chiama esponente e $10$ è la base. Le potenze di 10 godono di alcune proprietà che è bene conoscere. Moltiplicando due potenze \textbf{della stessa base} si ottiene una sola potenza che ha per esponente, \textbf{la somma degli esponenti}:
 \[
 10^2\times 10^3 = 10^5
 \]
@@ -579,9 +579,9 @@ Ricordiamo ancora le identià (si assumono, non si dimostrano): $$a^0 =1 $$ (qua
 \subsection{Notazione scientifica}
 Il numero $6 \cdot 10^5$ è scritto in notazione scientifica. Definiamo questo modo di scrivere i numeri:
 \begin{nsc}
-	Un numero è scritto in notazione scientifica se è scritto come il prodotto di un numero decimale compreso tra 1 e 9 (esclusi 0 e 10) e una potenza di 10 (positiva) o negativa.
+	Un numero è scritto in notazione scientifica se è scritto come il prodotto di un numero decimale $m$ maggiore o uguale a 1 e minore di 10 (cioè $1 \le m < 10$) e una potenza di 10 con esponente intero (positivo, negativo o nullo).
 \end{nsc}
-Secondo questa definizione, $24 \cdot 10^5$ non è scritto in notazione scientifica perché 24 è maggiore di 9. Nemmeno $0,2\times10^3$ è scritto in notazione scientifica perché 0,2 è minore di 1. Ogni numero si può scrivere in notazione scientifica usando le proprietà delle potenze e la rappresentazione decimale. Ad esempio: $24 \cdot 10^5 = (2,4\cdot10)\cdot10^5 = 2,4\times 10^{1+5}=2,4\cdot 10^6$. Abbiamo usato il fatto che $10^1 = 10$. Ricordiamo inoltre che $10^0 = 1$  ma che non ha senso calcolare $0^0$. Una proprietà che si rivelerà utile quando eseguiremo le equivalenze coi metri quadri, è la potenza di potenza. Vediamo come si applica:
+Secondo questa definizione, $24 \cdot 10^5$ non è scritto in notazione scientifica perché 24 non è minore di 10. Nemmeno $0,2\times10^3$ è scritto in notazione scientifica perché 0,2 è minore di 1. Ogni numero si può scrivere in notazione scientifica usando le proprietà delle potenze e la rappresentazione decimale. Ad esempio: $24 \cdot 10^5 = (2,4\cdot10)\cdot10^5 = 2,4\times 10^{1+5}=2,4\cdot 10^6$. Abbiamo usato il fatto che $10^1 = 10$. Ricordiamo inoltre che $10^0 = 1$  ma che non ha senso calcolare $0^0$. Una proprietà che si rivelerà utile quando eseguiremo le equivalenze coi metri quadri, è la potenza di potenza. Vediamo come si applica:
 \[
 \left(10^2\right)^3 = 10^6
 \]
@@ -957,9 +957,9 @@ Questa equivalenza è particolarmente importante per cui la mettiamo in evidenza
 \SI{1}{\cubic\centi\meter} = \SI{1}{\milli\liter}
 }
 \]
-Risolviamo in fine una equivalenza con un'area: $\SI{2,34e+4}{\square\deci\meter} = \cdots \si{\square\deca\meter}$. In questo caso vale la regola del ''2'' ossia le potenze vanno moltiplicate per due:
+Risolviamo in fine una equivalenza con un'area: $\SI{2,34e+4}{\square\deci\meter} = \cdots \si{\square\deca\meter}$. Qui vale la ``regola del 2'': se tra due unità lineari c'è una potenza di 10 ``$N$'', tra i quadrati c'è la potenza $2N$. Dal decimetro al decametro il fattore lineare è $10^{-2}$ (infatti $\SI{1}{\deci\meter} = 10^{-2}\,\si{\deca\meter}$), quindi tra i quadrati il fattore è $10^{-4}$:
 \[
-\SI{2,34e+4}{\square\deci\meter} = 2,34\times10^{4}\times 10^{-4}\,\si{\square\deca\meter} 
+\SI{2,34e+4}{\square\deci\meter} = 2,34\times10^{4}\times 10^{-4}\,\si{\square\deca\meter} = \SI{2,34}{\square\deca\meter}.
 \]
 
 \section{Volumi di solidi regolari}
@@ -1143,11 +1143,11 @@ Notiamo che la formula del volume è corretta dal punto di vista delle unità di
 Un'ampolla di vetro ha una massa di $\SI{85,382}{\gram}$ e un volume di $\SI{80}{\milli\liter}$. L'ampolla viene riempita con gas xenon e la sua massa diventa $\SI{85,852}{\gram}$.
 \begin{itemize}
 \item Calcola la densità $d_{X_e}$ dello xenon.
-\item In seguito, la lampada viene di nuovo svuotata e riempita di idrogeno, fino ad ottenere una densità di $0,153\, d_{X_e}$. Determina la  massa totale della lampada riempita di idrogeno.
+\item In seguito, la lampada viene di nuovo svuotata e riempita con un gas più leggero, di densità $d_g = 0,153\, d_{X_e}$ (valore scelto solo per l'esercizio, non corrisponde a un gas reale). Determina la  massa totale della lampada riempita con questo gas.
 \end{itemize}
 \end{testexample}
 
-Approfittiamo per poter ripassare le formule inverse e le cifre significative. Calcoliamo anzitutto la massa dello xeon per differenza:
+Approfittiamo per poter ripassare le formule inverse e le cifre significative. Calcoliamo anzitutto la massa dello xenon per differenza:
 \[
 M_{X_e} = \SI{85,852}{\gram} -\SI{85,382}{\gram}  = \SI{0,470}{\gram} =\SI{4,70e-4}{\kilo\gram}
 \]
@@ -1156,12 +1156,12 @@ Usando la formula per la densità, abbiamo:
 \[
 d_{X_e}=\frac{M}{V} = \frac{\SI{4,70e-4}{\kilo\gram}}{\SI{8,0e-5}{\cubic\meter}}=\SI{5,875}{\kilo\gram\per\cubic\meter}      \approx  \SI{5,9}{\kilo\gram\per\cubic\meter}.  
 \]
-Per determinare la massa totale della lampada riempita di idrogeno, dobbiamo sommare la massa dell'ampolla e la massa dell'idrogeno, massa che possiamo calcolare con la formula: $M=d\cdot V$.
-Dai dati, vediamo che la densità dell'idrogeno, vale: 
+Per determinare la massa totale della lampada riempita con il gas, dobbiamo sommare la massa dell'ampolla e la massa del gas, che possiamo calcolare con la formula: $M=d\cdot V$.
+Dai dati, vediamo che la densità del gas vale:
 \[
-d_{H} = 0,153 \cdot\left( \SI{5,9}{\kilo\gram\per\cubic\meter}\right) = \SI{0,9027}{\kilo\gram\per\cubic\meter } \approx \SI{0,90}{\kilo\gram\per\cubic\meter }.
+d_{g} = 0,153 \cdot\left( \SI{5,9}{\kilo\gram\per\cubic\meter}\right) = \SI{0,9027}{\kilo\gram\per\cubic\meter } \approx \SI{0,90}{\kilo\gram\per\cubic\meter }.
 \]
-La massa totale dell'ampolla e dell'idrogeno è dunque:
+La massa totale dell'ampolla e del gas è dunque:
 \[
 \begin{aligned}
     M &= \SI{0,085382}{\kilo\gram} + d \cdot V \\
@@ -1266,14 +1266,15 @@ Questo significa che sommiamo tutti i valori $T_1, T_2, \ldots, T_N$ e poi divid
 Lo sparpagliamento dei dati  è legato alla cosiddetta deviazione standard:
 
 \[
-\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (T_i - \overline{T})^2}
+\sigma = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (T_i - \overline{T})^2}
 \]
 
 \noindent
-Questo significa che per ogni valore $T_i$, calcoliamo la differenza tra $T_i$ e la media $\overline{T}$, la eleviamo al quadrato, sommiamo questi quadrati per tutti i valori da $1$ a $N$, dividiamo per $N$, e infine prendiamo la radice quadrata. In altre parole:
+Questo significa che per ogni valore $T_i$, calcoliamo la differenza tra $T_i$ e la media $\overline{T}$, la eleviamo al quadrato, sommiamo questi quadrati per tutti i valori da $1$ a $N$, dividiamo per $N-1$, e infine prendiamo la radice quadrata. In altre parole:
 \[
-\sigma = \sqrt{\frac{1}{N} \left[ (T_1 - \overline{T})^2 + (T_2 - \overline{T})^2 + \cdots + (T_N - \overline{T})^2 \right]}
+\sigma = \sqrt{\frac{1}{N-1} \left[ (T_1 - \overline{T})^2 + (T_2 - \overline{T})^2 + \cdots + (T_N - \overline{T})^2 \right]}
 \]
+(la divisione per $N-1$ anziché per $N$ è una correzione che rende la stima più attendibile quando i dati sono pochi; è la stessa formula usata dai fogli di calcolo con \texttt{DEV.ST} e da \texttt{numpy} con \texttt{ddof=1}).
 
 Si assume invece, come incertezza (o errore assoluto), il rapporto tra la deviazione standard e la radice quadrata del numero di dati:
 \[
@@ -1410,24 +1411,24 @@ Supponiamo che due gruppi di studenti abbiano misurato la densità di un oggetto
 \end{scriptsize}
 \end{tikzpicture}
 
-In questo grafico abbiamo riportato i due intervalli di misura in rosso e blu. La zona tratteggiata indica che i due intervalli hanno una zona in comune, ossia la nostra grandezza potrebbe avere come valore vero un valore compreso tra $6,7$ e $6,9$ ma non sappiamo dire di più. Si dice allora che le due misure sono compatibili. Se i due intervalli non si sovrappongono, allora le misure si dicono incompatibili. Nel seguente grafico vediamo proprio un caso simile.
+In questo grafico abbiamo riportato i due intervalli di misura in rosso e blu. La zona tratteggiata indica che i due intervalli hanno una zona in comune, ossia la nostra grandezza potrebbe avere come valore vero un valore compreso tra $6,7$ e $6,9$ ma non sappiamo dire di più. Si dice allora che le due misure sono compatibili. Se i due intervalli non si sovrappongono, allora le misure si dicono incompatibili. Consideriamo ad esempio le misure $d_1 = \left(6,7 \pm 0,1\right)\si{g/cm^3}$ e $d_2 = \left(7,1 \pm 0,1\right)\si{g/cm^3}$: il primo intervallo va da $6,6$ a $6,8$, il secondo da $7,0$ a $7,2$. Nel seguente grafico vediamo che non si sovrappongono.
 
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(-0.92,-2.28) rectangle (14.94,3.34);
 \draw [line width=3.6pt,color=zzqqtt] (0,0)-- (5.02,0);
-\draw [line width=3.6pt,color=qqqqzz] (6.5,1.02)-- (8.98,1.02);
-\draw (-0.32,-0.04) node[anchor=north west] {$6,5 $};
-\draw (4.52,0.04) node[anchor=north west] {$6,9$};
-\draw (5.40,1.44) node[anchor=north west] {$6,10$};
-\draw (9.00,1.46) node[anchor=north west] {$6,11$};
+\draw [line width=3.6pt,color=qqqqzz] (7.5,1.02)-- (12.52,1.02);
+\draw (-0.32,-0.04) node[anchor=north west] {$6,6 $};
+\draw (4.70,-0.04) node[anchor=north west] {$6,8$};
+\draw (7.18,1.44) node[anchor=north west] {$7,0$};
+\draw (12.20,1.44) node[anchor=north west] {$7,2$};
 \begin{scriptsize}
 \fill [color=qqqqff] (0,0) circle (1.5pt);
 \fill [color=qqqqff] (5.02,0) circle (1.5pt);
-\fill [color=qqqqff] (6.5,1.02) circle (1.5pt);
-\fill [color=qqqqff] (8.98,1.02) circle (1.5pt);
+\fill [color=qqqqff] (7.5,1.02) circle (1.5pt);
+\fill [color=qqqqff] (12.52,1.02) circle (1.5pt);
 \end{scriptsize}
 \end{tikzpicture}
-Come si vede il valore massimo della prima misura, $6,9$, è minore del valore minimo della seconda ($6,10$) dunque non ci sono valori comuni ai due intervalli d'incertezza, per cui le misure sono incompatibili. Questo si può generalizzare al caso di più misure. Se anche un solo intervallo non si sovrappone agli altri, allora le misure sono incompatibli. Ovviamente, se tutte le altre sono vicine tra loro e una sola misura è parecchio diversa, probabilmente gli sperimentatori hanno commesso qualche errore di distrazione in quel momento e la misura andrebbe
+Come si vede il valore massimo della prima misura, $6,8$, è minore del valore minimo della seconda ($7,0$) dunque non ci sono valori comuni ai due intervalli d'incertezza, per cui le misure sono incompatibili. Questo si può generalizzare al caso di più misure. Se anche un solo intervallo non si sovrappone agli altri, allora le misure sono incompatibili. Ovviamente, se tutte le altre sono vicine tra loro e una sola misura è parecchio diversa, probabilmente gli sperimentatori hanno commesso qualche errore di distrazione in quel momento e la misura andrebbe
  ripetuta o semplicemente ignorata.
  
  \section{Esercizi}
@@ -1530,7 +1531,7 @@ A_{est}=\left ( 55 \pm  3\right)\si{cm^2}
 \subsection{Moltiplicazioni/divisioni}
 La regola per gli errori sui prodotti è più complessa. Essa afferma che se una grandezza è prodotto o rapporto tra due grandezze, il suo errore relativo si può calcolare direttamente senza calcolare l'errore assoluto. Quindi con i prodotti e quozienti noi calcoliamo subito l'errore relativo. Traduciamo in formule questa frase. Se $c=a \cdot b$, allora:
 \[  \colorboxed{ocre}{
-\frac{\Delta c}{\overline{c}} =\frac{\Delta b}{\overline{b}}+\frac{\Delta a}{\overline{b}}
+\frac{\Delta c}{\overline{c}} =\frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}}
 }
 \]
 Questa formula lega l'errore relativo su $c$ a quelli di $a$ e $b$. Facciamo un esempio. Supponiamo di aver misurato i lati $a$ e $b$ di un rettangolo coi relativi errori ottenendo: $a=\left(10,25  \pm 0,05\right)\si{mm}$ e  $b=\left(15,00  \pm 0,05\right)\si{mm}$. L'errore relativo su $c$ è pertanto:
@@ -2833,50 +2834,55 @@ $s$ (m) & $\bar{t}$ (s) & $\Delta t$ (s) & $a$ (m/s$^2$) \\
 \end{table}
 
 \subsubsection{Analisi dei Risultati}
-Il valore teorico dell'accelerazione, trascurando gli attriti, è:
-\begin{equation}
-    a_{teorica} = \frac{m_2g}{m_1 + m_2} = \frac{0,100\,\text{kg} \cdot 9,81\,\text{m/s}^2}{0,600\,\text{kg}} = 1,635\,\text{m/s}^2
-\end{equation}
-
 Il valore sperimentale medio dell'accelerazione risulta:
 \begin{equation}
     a_{sperimentale} = (0,95 \pm 0,03)\,\text{m/s}^2
 \end{equation}
 
-La discrepanza tra il valore teorico e quello sperimentale è significativa e può essere attribuita a:
-\begin{itemize}
-    \item Attrito del carrello sul piano
-    \item Attrito della carrucola
-    \item Massa non trascurabile della carrucola e della fune
-    \item Resistenza dell'aria
-\end{itemize}
+Se \emph{trascurassimo} gli attriti, l'accelerazione prevista sarebbe:
+\begin{equation}
+    a_{ideale} = \frac{m_2g}{m_1 + m_2} = \frac{0,100\,\text{kg} \cdot 9,81\,\text{m/s}^2}{0,600\,\text{kg}} = 1,635\,\text{m/s}^2
+\end{equation}
+
+I due valori differiscono di circa il 40\%: la discrepanza è troppo grande per essere spiegata dagli errori di misura. La conclusione corretta non è che il secondo principio ``non funziona'', ma che \textbf{l'ipotesi di attrito trascurabile non è valida} per questo apparato. Riprendiamo allora le equazioni del moto senza trascurare l'attrito $f_a$ tra carrello e piano:
+\begin{equation}
+    m_2 g - f_a = (m_1 + m_2)\,a .
+\end{equation}
+Da qui ricaviamo la forza di attrito a partire dall'accelerazione misurata:
+\begin{equation}
+    f_a = m_2 g - (m_1 + m_2)\,a = 0,981\,\text{N} - 0,600\,\text{kg}\cdot 0,95\,\text{m/s}^2 \approx 0,41\,\text{N}.
+\end{equation}
+Il corrispondente coefficiente di attrito dinamico tra carrello e piano è
+\begin{equation}
+    \mu = \frac{f_a}{m_1 g} = \frac{0,41\,\text{N}}{0,500\,\text{kg}\cdot 9,81\,\text{m/s}^2} \approx 0,08,
+\end{equation}
+un valore ragionevole per due superfici metalliche non lubrificate.
 
 \subsection{Conclusioni}
-L'esperimento ha permesso di verificare qualitativamente il secondo principio della dinamica. In particolare:
+L'esperimento ha permesso di verificare il secondo principio della dinamica. In particolare:
 
 \begin{itemize}
-    \item I valori di accelerazione ottenuti sono consistenti tra loro entro le incertezze sperimentali
-    \item La discrepanza sistematica rispetto al valore teorico è principalmente dovuta agli attriti
-    \item La relazione di proporzionalità tra forza applicata e accelerazione è qualitativamente verificata
+    \item I valori di accelerazione ottenuti alle diverse distanze sono compatibili tra loro entro le incertezze: il moto è effettivamente uniformemente accelerato.
+    \item Il modello che \emph{trascura} l'attrito è in forte disaccordo con i dati; includendo la forza di attrito $f_a$, il secondo principio $m_2 g - f_a = (m_1+m_2)a$ è rispettato e permette anzi di \emph{misurare} $f_a$ e il coefficiente $\mu \approx 0,08$.
+    \item Questo mostra un aspetto importante del metodo sperimentale: un disaccordo netto tra dati e previsione, se sistematico, di solito segnala che il modello è incompleto, non che la legge è sbagliata.
 \end{itemize}
 
-Per migliorare la precisione dell'esperimento si suggerisce di:
+Per verificare in modo più diretto la proporzionalità $F \propto a$ (con $F = m_2 g - f_a$) si suggerisce di:
 \begin{itemize}
-    \item Utilizzare un sistema di acquisizione dati automatizzato
-    \item Impiegare una rotaia a cuscino d'aria per ridurre gli attriti
-    \item Utilizzare una carrucola con cuscinetti a sfera di alta qualità
-    \item Aumentare la statistica delle misure
+    \item Ripetere l'esperimento con diversi valori di $m_2$ e riportare $a$ in funzione di $m_2 g$, ricavando la massa del sistema dalla pendenza e $f_a$ dall'intercetta.
+    \item Impiegare una rotaia a cuscino d'aria per ridurre l'attrito e avvicinarsi al caso ideale.
+    \item Utilizzare un sistema di acquisizione dati automatizzato (fotocellule) e aumentare il numero di misure.
 \end{itemize}
 
 È importante sottolineare che l'utilizzo di una rotaia a cuscino d'aria eliminerebbe completamente l'attrito tra il carrello e il piano. In questo caso ideale, l'accelerazione misurata sperimentalmente corrisponderebbe a quella prevista teoricamente, poiché verrebbe rimossa la principale fonte di dissipazione energetica del sistema.
 \section{Caduta lungo un piano inclinato}
 \subsection{Obiettivo}
-L'obiettivo di questo esperimento è dimostrare la relazione di proporzionalità tra massa e accelerazione utilizzando un piano inclinato con altezza variabile.
+L'obiettivo di questo esperimento è verificare il secondo principio della dinamica, cioè la proporzionalità tra la forza applicata a un corpo e l'accelerazione che ne risulta. La massa del corpo resta fissa; si fa variare la forza cambiando l'inclinazione del piano, e si controlla che il rapporto forza/accelerazione sia costante e pari alla massa.
 
 \subsection{Materiali}
 \begin{itemize}
     \item Piano inclinato di lunghezza $L = \SI{1,000}{\meter}$
-    \item Pallina di massa $m = \SI{23,5}{\gram}$
+    \item Blocchetto di massa $m = \SI{23,5}{\gram}$ che scivola sul piano
     \item Spessori da inserire sotto uno dei due lati del piano
 \end{itemize}
 
@@ -2891,7 +2897,7 @@ L'obiettivo di questo esperimento è dimostrare la relazione di proporzionalità
 \begin{enumerate}
     \item Posizionare il piano inclinato e misurare la sua lunghezza $L$.
     \item Variare l'altezza $h$ del piano inserendo degli spessori.
-    \item Per ogni configurazione, far rotolare la pallina e misurare il tempo di caduta tre volte.
+    \item Per ogni configurazione, far scivolare il blocchetto e misurare il tempo di discesa tre volte.
     \item Calcolare il tempo medio di caduta.
     \item Calcolare l'accelerazione usando la formula $a = \frac{2L}{t^2}$.
     \item Calcolare la forza parallela $F_\parallel$ usando la formula $F_\parallel = m g \frac{h}{L}$.
@@ -2908,19 +2914,19 @@ L'obiettivo di questo esperimento è dimostrare la relazione di proporzionalità
 $h$ (m) & $t_1$ (s) & $t_2$ (s) & $t_3$ (s) & $t_{medio}$ (s) & $a$ (m/s$^2$) & $F_\parallel$ (N) \\
 \midrule
 \multirow{2}{*}{0,100} & 1,41 & 1,43 & 1,42 & 1,42 & 0,99 & 0,0230 \\
-& $\pm 0,001$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,02$ & $\pm 0,0002$ \\
+& $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,02$ & $\pm 0,0002$ \\
 \midrule
 \multirow{2}{*}{0,150} & 1,16 & 1,15 & 1,17 & 1,16 & 1,49 & 0,0346 \\
-& $\pm 0,001$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,03$ & $\pm 0,0003$ \\
+& $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,03$ & $\pm 0,0003$ \\
 \midrule
 \multirow{2}{*}{0,200} & 1,00 & 1,01 & 0,99 & 1,00 & 2,00 & 0,0461 \\
-& $\pm 0,001$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,04$ & $\pm 0,0005$ \\
+& $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,04$ & $\pm 0,0005$ \\
 \midrule
 \multirow{2}{*}{0,250} & 0,89 & 0,90 & 0,88 & 0,89 & 2,52 & 0,0576 \\
-& $\pm 0,001$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,06$ & $\pm 0,0006$ \\
+& $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,06$ & $\pm 0,0006$ \\
 \midrule
 \multirow{2}{*}{0,300} & 0,82 & 0,81 & 0,83 & 0,82 & 2,98 & 0,0691 \\
-& $\pm 0,001$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,07$ & $\pm 0,0007$ \\
+& $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,01$ & $\pm 0,07$ & $\pm 0,0007$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3307,17 +3313,17 @@ Il valore scritto in modo formale è: v = (1,400 +- 0,001)m/s
 \end{testexample}
 
 \begin{testexample}[\thetcbcounter \,Errore sulla densità]
-Un blocchetto di ferro di massa $m = (450,0 +- 0,1) g$, viene inserito in un cilindro graduato con dell'acqua all'interno. L'acqua inizialmente raggiunge il livello $V1 = ( 730 +- 1) cm^3$ mentre, dopo l'inserimento del blocchetto, raggiunge il volume $V2= (810 +-1 ) cm^3$. Determina la densità del cubetto in $g/cm^3$.
+Un blocchetto di ferro di massa $m = (450,0 +- 0,1) g$, viene inserito in un cilindro graduato con dell'acqua all'interno. L'acqua inizialmente raggiunge il livello $V1 = ( 730 +- 1) cm^3$ mentre, dopo l'inserimento del blocchetto, raggiunge il volume $V2= (787 +-1 ) cm^3$. Determina la densità del blocchetto in $g/cm^3$.
 \begin{minted}{python}
 m=450
 Dm=0.1
 V1=730
 DV1=1
-V2=810
+V2=787
 DV2=1
 V=V2-V1
 \end{minted}
-La densità vale $d = m/V$, pertanto il suo errore è $Dd = d*(Dm/m + DV/v)$ . L'errore assoluto sul volume però, è uguale alla somma degli errori assoluti di V1 e V2, pertanto, lo indichiamo con $DV = DV1+DV2$. Procediamo:
+La densità vale $d = m/V$, pertanto il suo errore è $Dd = d*(Dm/m + DV/V)$ . L'errore assoluto sul volume però, è uguale alla somma degli errori assoluti di V1 e V2, pertanto, lo indichiamo con $DV = DV1+DV2$. Procediamo:
 \begin{minted}{python}
 DV=DV1+DV2
 d=m/V
@@ -3326,15 +3332,15 @@ print(f"d = ({d} +- {d*(Dm/m+DV/V)}) g/cm^3")
 \end{minted}
 L'output è:
 \begin{verbatim}
-d = (5.625 +- 0.141875) g/cm^3
+d = (7.894736842105263 +- 0.27876269621421973) g/cm^3
 \end{verbatim}
-In forma corretta abbiamo: $d = (5,6 +- 0,1) g/cm^3$.
+In forma corretta abbiamo: $d = (7,9 +- 0,3) g/cm^3$, coerente con la densità del ferro.
 
 \end{testexample}
 
 \begin{testexample}[\thetcbcounter \,Errore nel moto uniformemente accelerato]
 
-Un'automobile, compie un sorpasso passando dalla velocità iniziale $V1=(89 +-1 )km/h$ alla velocità di $V2=(122 +-1) km/h$, percorrendo una distanza $S = (200,2 +- 0,1 ) m$.  Determina l'accelerazione col suo errore assoluto e scrivi la misura in forma corretta usando la formula: $a = (V2^2 -V1^2)/(2*S)$.
+Un'automobile, compie un sorpasso passando dalla velocità iniziale $V1=(89 +-1 )km/h$ alla velocità di $V2=(122 +-1) km/h$, percorrendo una distanza $S = (80,2 +- 0,1 ) m$.  Determina l'accelerazione col suo errore assoluto e scrivi la misura in forma corretta usando la formula: $a = (V2^2 -V1^2)/(2*S)$.
 
 In questo caso abbiamo molte regole da applicare. Anzitutto, il numeratore è una differenza, quindi il suo errore assoluto si scrive: $D(V2^2-V1^2)=D(V2^2) +D(V1^2)$. Ma noi sappiamo calcolare l'errore in una potenza: $D(V2^2) = 2*V2*DV2$ e, analogamente $D(V1^2)=2*V1*DV1$. Chiamiamo il numeratore $NUM$ e il denominatore $DEN$. In questo modo la nostra accelerazione, si scriverà $a = NUM/DEN$, essendo $NUM=V2^2 -V1^2$ e $DEN = 2*S$. Per quanto riguarda gli errori abbiamo:
 
@@ -3355,13 +3361,13 @@ DNUM=2*V1*DV1+2*V2*DV2
 DDEN=2*DS
 a=NUM/DEN
 Da=a*(DNUM/NUM+DDEN/DEN)
-print(f"s = ({a} +-{Da}) m/s^2")
+print(f"a = ({a} +-{Da}) m/s^2")
 \end{minted}
 Ecco l'output:
 \begin{verbatim}
-s = (3.3495543548536055 +-0.20717979592289554) m/s^2
+a = (3.3495543548536055 +-0.20717979592289554) m/s^2
 \end{verbatim}
-In forma corretta abbiamo $a = ( 3,5 +- 0,2) m/s^2$.
+In forma corretta abbiamo $a = (3,3 +- 0,2) m/s^2$.
 
 
 
@@ -3547,7 +3553,7 @@ Includi il grafico nel documento:
 La distribuzione gaussiana, nota anche come distribuzione normale, è una delle più importanti distribuzioni di probabilità in statistica e nelle scienze naturali. Molte grandezze fisiche e biologiche, quando vengono misurate, tendono a seguire una distribuzione normale, soprattutto quando sono influenzate da un gran numero di piccoli effetti casuali indipendenti. Un esempio classico è l'altezza delle persone in una popolazione.
 
 \section{Distribuzione di Probabilità}
-In questa e nelle prossime sezioni, parleremo di probabilità. Quando misuriamo una grandezza casuale, vediamo che alcuni valori si ripetono più frequentemente di altri, ossia abbiamo una \textit{distribuzione} di valori. La statistica ci permette di estrarre da questa distribuzione, informazioni sulla grandezza. Si suppone che ogni grandezza abbia un valore ''vero`` e che solo effetti casuali discostino il risultato da quest'ultimo. La distribuzione dei valori viene misurata non tanto dalla semidispersione massima (una stima troppo grande) ma dalla deviazione standard (il nostro famoso errore assoluto nel caso di misure ripetute). Ripetendo le misure molte volte, costruendo un  particolare grafico chiamato \textbf{istogramma delle frequenze}, otteniamo che questo istogramma diventa sempre  più liscio e  si avvicina ad una curva a forma di campana. In fisica, questa curva si presenta quando ripetiamo molte volte una misura casuale. In quel caso, la grandezza non ha sempre lo stesso valore ma ha, appunto, una \textit{distribuzione}. Se facciamo oscillare un pendolo, e misuriamo la durata $t$ di 20 oscillazioni con un cronometro manuale, non otterremo quasi mai due volte lo stesso valore (a causa di errori umani) ma una serie di valori. La statistica ci consente di prevedere quali saranno i valori più probabili e come questi si distribuiscono, (quanti ad esempio sono molto più grandi o più piccoli della media). Le prossime sezioni ci insegneranno come trarre informazioni utili dalla distribuzione di queste misure. Impareremo che il risultato di una misura è dato dalla media e dall'errore della media, come segue:
+In questa e nelle prossime sezioni, parleremo di probabilità. Quando misuriamo una grandezza casuale, vediamo che alcuni valori si ripetono più frequentemente di altri, ossia abbiamo una \textit{distribuzione} di valori. La statistica ci permette di estrarre da questa distribuzione, informazioni sulla grandezza. Si suppone che ogni grandezza abbia un valore ''vero`` e che solo effetti casuali discostino il risultato da quest'ultimo. La larghezza della distribuzione viene misurata non tanto dalla semidispersione massima (una stima troppo grande) ma dalla deviazione standard $\sigma$. Attenzione a non confonderla con l'incertezza da associare al risultato: quest'ultima è la \textit{deviazione standard della media} $\sigma_{\overline{x}} = \sigma/\sqrt{N}$, più piccola di $\sigma$ e decrescente all'aumentare del numero di misure. Ripetendo le misure molte volte, costruendo un  particolare grafico chiamato \textbf{istogramma delle frequenze}, otteniamo che questo istogramma diventa sempre  più liscio e  si avvicina ad una curva a forma di campana. In fisica, questa curva si presenta quando ripetiamo molte volte una misura casuale. In quel caso, la grandezza non ha sempre lo stesso valore ma ha, appunto, una \textit{distribuzione}. Se facciamo oscillare un pendolo, e misuriamo la durata $t$ di 20 oscillazioni con un cronometro manuale, non otterremo quasi mai due volte lo stesso valore (a causa di errori umani) ma una serie di valori. La statistica ci consente di prevedere quali saranno i valori più probabili e come questi si distribuiscono, (quanti ad esempio sono molto più grandi o più piccoli della media). Le prossime sezioni ci insegneranno come trarre informazioni utili dalla distribuzione di queste misure. Impareremo che il risultato di una misura è dato dalla media e dall'errore della media, come segue:
 \[
 x=\left(\overline{x} \pm \sigma_{\overline{x}}\right) \, \text{u.m.}
 \]
@@ -3732,7 +3738,9 @@ L'istogramma risultante mostra la distribuzione delle lunghezze delle barre meta
 
 
 \section{Approssimazione della Gaussiana}
-In un esperimento, se ripetiamo molte volte una misura e calcoliamo la media e la deviazione standard, al crescere del numero di misure, l'istogramma dei dati approssima sempre meglio la distribuzione gaussiana. Questo è dovuto al teorema centrale del limite, il quale afferma tra l'altro che le formule per media e deviazione standard della media, se applicate a campioni di dati molto grandi, ci restituiscono proprio i valori teorici di queste grandezze che restano comunque un concetto teorico. Quando una persona fà un esperimento di misura, a quella persona e quell'apparato, corrisponde una media teorica, ossia i valori delle grandezze si sparpaglieranno in un certo modo perché quella persona e quell'apparato hanno una sorta di sensibilità: se qualcun altro fà la misura, questa si \textit{sparpaglierà} diversamente. Ad esempio, se Marco lascia cadere un pallina mille volte (povero Marco... ) e misura la media e la deviazione standard dei tempi di caduta, magari otterrà una deviazione standard di 0,8 s e una media di 0,2 s. Se facciamo cadere la pallina usando una fotocellula per misurare il tempo, le misure si sparpaglieranno di meno e avremo una deviazione standard ad esempio di 0,01 s con una media di 0,16 s. Come si vede, la grandezza da misurare (il tempo di caduta) è la stessa ma uno dei sue sistemi è più preciso (quello con la fotocellula). Se andassimo a costruire gli istogrammi sperimentali, quello della misura del ragazzo, avrebbe una forma a campana più larga perché la deviazione standard misura tra l'altro quanto è largo l'istogramma. 
+In un esperimento, se ripetiamo molte volte una misura e calcoliamo la media e la deviazione standard, al crescere del numero di misure l'istogramma dei dati approssima sempre meglio una distribuzione gaussiana. Ci sono due fatti distinti dietro questa osservazione. Il primo è la \textit{legge dei grandi numeri}: al crescere del numero di misure, la media e la deviazione standard calcolate coi dati si avvicinano ai loro valori ``veri'' (quelli che otterremmo con infinite misure). Il secondo è il \textit{teorema centrale del limite}: quando una grandezza è il risultato di molti piccoli effetti casuali indipendenti, la sua distribuzione tende alla forma a campana, indipendentemente da come sono fatti i singoli effetti.
+
+Quando una persona esegue una misura, a quella persona e a quell'apparato corrisponde una certa distribuzione: i valori si sparpagliano attorno alla media in un modo che dipende dalla precisione del sistema di misura. Ad esempio, se Marco lascia cadere una pallina mille volte (povero Marco\dots) e misura i tempi di caduta con un cronometro a mano, magari otterrà una media di $\SI{0,45}{s}$ con una deviazione standard di $\SI{0,08}{s}$. Se ripetiamo l'esperimento usando una fotocellula, le misure si sparpagliano di meno: stessa media (circa $\SI{0,45}{s}$) ma deviazione standard di appena $\SI{0,01}{s}$. La grandezza da misurare (il tempo di caduta) è la stessa, ma il secondo sistema è più preciso. Costruendo gli istogrammi sperimentali, quello della misura a mano avrebbe una campana più larga, perché la deviazione standard misura proprio quanto è largo l'istogramma. 
 
 \section{Stima di Media e Deviazione Standard}
 Data una serie di $n$ misurazioni sperimentali $\{x_1, x_2, \ldots, x_n\}$, possiamo stimare i parametri della distribuzione gaussiana, cioè la media $\mu$ e la deviazione standard $\sigma$, utilizzando le seguenti formule:
