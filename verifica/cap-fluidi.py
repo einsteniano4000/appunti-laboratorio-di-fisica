@@ -130,3 +130,43 @@ import math
 r = 0.15
 F_mag = 101325 * math.pi * r**2
 print(f"Magdeburgo: F = {F_mag:.0f} N = {F_mag/1e3:.1f} e3")
+
+# ---------------------------------------------------------------------------
+sez("8.6  Principio di Archimede")
+
+# Esempio bilancia idrostatica: 5,40 N aria / 4,70 N acqua
+S = 5.40 - 4.70
+V = S / (rho_acqua * g)
+m = 5.40 / g
+print(f"bilancia idr.: S={S:.2f} N, V={V:.3e} m3, m={m:.3f} kg, rho={m/V:.0f} kg/m3")
+
+# Esempio zattera polistirolo rho=25, V=0,60 m3
+Smax = rho_acqua * 0.60 * g
+Pz = 25 * 0.60 * g
+mcar = (Smax - Pz) / g
+print(f"zattera: Smax={Smax:.0f} N, Pz={Pz:.0f} N, m_carico={mcar:.0f} kg")
+
+# es1: cubo legno 10 cm, rho 700  -> frazione immersa
+print(f"cubo legno: immerso {700/1000:.2f} -> sporge {10*(1-0.7):.0f} cm")
+
+# es2: sfera Al d=6 cm in acqua -> T
+rsf = 0.03
+Vsf = 4/3 * math.pi * rsf**3
+P_sf = 2700 * Vsf * g
+S_sf = 1000 * Vsf * g
+print(f"sfera Al: V={Vsf:.3e} m3, P={P_sf:.2f} N, S={S_sf:.2f} N, T={P_sf-S_sf:.2f} N")
+
+# es3: blocco 12,0 / 7,5 N
+S3 = 12.0 - 7.5
+V3 = S3 / (rho_acqua * g)
+m3 = 12.0 / g
+print(f"blocco: S={S3:.1f} N, V={V3:.3e} m3, rho={m3/V3:.0f} kg/m3")
+
+# es4: chiatta 8x3 m, carico 6,0 t
+dh = 6000 / (rho_acqua * 8.0 * 3.0)
+print(f"chiatta: Delta h = {dh:.3f} m")
+
+# es5: pallone V=2000, He 0,18, struttura 400 kg, aria 1,2
+S5 = 1.2 * 2000 * g
+P5 = (0.18 * 2000 + 400) * g
+print(f"pallone: S={S5:.0f} N, P={P5:.0f} N, S-P={S5-P5:.0f} N = {(S5-P5)/1e4:.1f} e4")

@@ -457,3 +457,138 @@ Un tubo lungo \SI{1,0}{\metre}, chiuso a un'estremità, viene riempito d'acqua e
 Due emisferi metallici vengono accostati e si fa il vuoto al loro interno. Il loro cerchio di contatto ha un diametro di \SI{30}{\centi\metre}. Stima la forza minima necessaria per staccarli (emisferi di Magdeburgo).\\
 \risp{$F \approx p_0 \cdot \pi r^2 \approx \SI{7,1e3}{\newton}$}
 \end{esercizio}
+
+
+\section{Il principio di Archimede}
+
+Un corpo immerso in un liquido sembra ``pesare di meno'': lo sappiamo tutti dall'esperienza di sollevare un sasso sott'acqua. Il motivo è che il liquido spinge il corpo verso l'\emph{alto} con una forza detta \textbf{spinta di Archimede} (o spinta idrostatica).
+
+La spinta nasce dalla legge di Stevino. La pressione del liquido sulla faccia \emph{inferiore} del corpo, che è più in profondità, è maggiore di quella sulla faccia \emph{superiore}: le forze di pressione non si bilanciano e ne resta una risultante diretta verso l'alto.
+
+\subsection{Quanto vale la spinta}
+Immaginiamo di togliere il corpo e di rimpiazzarlo con altro liquido, che occupi esattamente lo stesso spazio. Quella ``bolla'' di liquido è in equilibrio: il suo peso (verso il basso) è bilanciato esattamente dalla spinta che il liquido circostante esercita su di essa (verso l'alto). Ma il liquido circostante non sa che cosa c'è dentro quello spazio: eserciterebbe la stessa spinta su qualunque corpo lo occupasse. Quindi:
+
+\begin{definizione}
+\textbf{Principio di Archimede.} Un corpo immerso in un fluido riceve una spinta verticale verso l'alto uguale al \textbf{peso del fluido spostato}:
+\[ \colorboxed{ocre}{ S = \rho_\text{fluido}\; V_\text{imm}\; g, } \]
+dove $\rho_\text{fluido}$ è la densità del fluido e $V_\text{imm}$ è il volume della parte di corpo immersa (il volume di fluido spostato).
+\end{definizione}
+
+Su un corpo immerso agiscono quindi \textbf{due} forze verticali: il peso $\vec P = \rho_\text{c}\,V_\text{c}\,g$ verso il basso (dove $\rho_\text{c}$ e $V_\text{c}$ sono densità e volume del corpo) e la spinta $\vec S$ verso l'alto.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % liquido
+        \fill[blue!12] (0,0) rectangle (5,3.4);
+        \draw[thick] (0,3.9) -- (0,0) -- (5,0) -- (5,3.9);
+        \draw[blue!45!black,thick] (0,3.4) -- (5,3.4);
+        % dinamometro (stelo che esce dal liquido)
+        \draw[thick] (2.5,5.4) -- (2.5,3.9);
+        \draw[thick,decorate,decoration={coil,aspect=0.6,segment length=4pt,amplitude=4pt}] (2.5,5.4) -- (2.5,4.4);
+        \draw[thick] (2.5,4.4) -- (2.5,2.3);
+        % corpo immerso
+        \draw[thick,fill=brown!30] (1.9,1.0) rectangle (3.1,2.3);
+        % pressioni sulle facce
+        \foreach \x in {2.1,2.5,2.9}{\draw[->,blue!55!black] (\x,2.65) -- (\x,2.35);}
+        \foreach \x in {2.0,2.35,2.7,3.05}{\draw[->,blue!55!black,thick] (\x,0.55) -- (\x,0.95);}
+        % forze risultanti
+        \draw[->,ocre,very thick] (2.5,1.65) -- (2.5,0.2) node[right=1pt,pos=0.85] {$\vec P$};
+        \draw[->,blue!60!black,very thick] (3.55,1.65) -- (3.55,3.05) node[right=1pt,pos=0.9] {$\vec S$};
+        \draw[dotted] (3.1,1.65) -- (3.55,1.65);
+    \end{tikzpicture}
+    \caption{Su un corpo immerso il liquido preme di più sulla faccia inferiore (più profonda) che su quella superiore: ne risulta la spinta di Archimede $\vec S$ verso l'alto, che si oppone al peso $\vec P$. Il dinamometro segna il ``peso apparente'' $P-S$.}
+    \label{fig:archimede}
+\end{figure}
+
+\subsection{Peso apparente e galleggiamento}
+Se il corpo è \emph{tutto} immerso, un dinamometro che lo sostiene segna il \textbf{peso apparente}
+\[ P_\text{app} = P - S = (\rho_\text{c} - \rho_\text{fluido})\,V_\text{c}\,g. \]
+Il segno di questa differenza decide il comportamento di un corpo omogeneo lasciato libero in un liquido:
+\begin{elenco}
+    \item $\rho_\text{c} > \rho_\text{fluido}$: il peso vince la spinta, il corpo \textbf{affonda};
+    \item $\rho_\text{c} < \rho_\text{fluido}$: la spinta vince il peso, il corpo \textbf{sale a galla} e poi galleggia, immerso solo in parte;
+    \item $\rho_\text{c} = \rho_\text{fluido}$: peso e spinta si equilibrano, il corpo resta fermo dove si trova (equilibrio indifferente).
+\end{elenco}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \foreach \i/\lab/\yc/\col in {0/{$\rho_\text{c}>\rho_\text{fluido}$\\ affonda}/0.5/brown!45,
+                                     4.2/{$\rho_\text{c}<\rho_\text{fluido}$\\ galleggia}/2.6/brown!25,
+                                     8.4/{$\rho_\text{c}=\rho_\text{fluido}$\\ resta fermo}/1.85/brown!35}{
+            \begin{scope}[xshift=\i cm]
+                \fill[blue!12] (0,0) rectangle (3,3.2);
+                \draw[thick] (0,3.5) -- (0,0) -- (3,0) -- (3,3.5);
+                \draw[blue!45!black,thick] (0,3.2) -- (3,3.2);
+                \draw[thick,fill=\col] (1.05,\yc) rectangle (1.95,\yc+0.9);
+                \node[font=\footnotesize,align=center] at (1.5,-0.95) {\lab};
+            \end{scope}}
+    \end{tikzpicture}
+    \caption{Un corpo omogeneo in un liquido: il comportamento dipende dal confronto fra la sua densità e quella del liquido.}
+    \label{fig:galleggia}
+\end{figure}
+
+Per un corpo che \textbf{galleggia}, all'equilibrio peso e spinta sono uguali, ma ora la spinta usa solo il volume immerso:
+\[ \rho_\text{c}\,V_\text{c}\,g = \rho_\text{fluido}\,V_\text{imm}\,g \qquad\Longrightarrow\qquad
+   \colorboxed{ocre}{ \frac{V_\text{imm}}{V_\text{c}} = \frac{\rho_\text{c}}{\rho_\text{fluido}}. } \]
+La \emph{frazione di volume immersa} è uguale al rapporto fra le densità. Un iceberg ($\rho \approx \SI{920}{\kilo\gram\per\metre\cubed}$) galleggia nell'acqua di mare ($\rho \approx \SI{1025}{\kilo\gram\per\metre\cubed}$) con circa il $90\%$ del volume sott'acqua.
+
+\begin{remark}
+Una nave d'acciaio galleggia perché non è un blocco pieno: lo scafo racchiude molta aria, e la \emph{densità media} nave$+$aria è minore di quella dell'acqua. Se lo scafo si squarcia e l'acqua prende il posto dell'aria, la densità media aumenta e la nave affonda. Il sottomarino regola apposta la propria densità media riempiendo o svuotando d'acqua le \emph{casse di zavorra}.
+\end{remark}
+
+La spinta di Archimede agisce anche nei gas (\emph{spinta aerostatica}): un pallone gonfio di elio o di aria calda, meno densi dell'aria fredda circostante, riceve una spinta verso l'alto maggiore del proprio peso e si solleva.
+
+\begin{testexample}[\thetcbcounter \, Densità di un oggetto con la bilancia idrostatica]
+Un oggetto di metallo pesa \SI{5,40}{\newton} in aria e, appeso a un dinamometro e tenuto immerso in acqua, ne pesa \SI{4,70}{\newton}. Qual è la sua densità?
+
+La differenza fra i due valori è la spinta di Archimede:
+\[ S = 5{,}40 - 4{,}70 = \SI{0,70}{\newton}. \]
+Poiché $S = \rho_\text{acqua}\,V\,g$, il volume dell'oggetto è
+\[ V = \frac{S}{\rho_\text{acqua}\,g} = \frac{0{,}70}{1000 \cdot 9{,}81} \approx \SI{7,1e-5}{\metre\cubed}. \]
+La massa dell'oggetto è $m = P/g = 5{,}40/9{,}81 \approx \SI{0,550}{\kilo\gram}$, quindi
+\[ \rho_\text{c} = \frac{m}{V} \approx \frac{0{,}550}{\SI{7,1e-5}{}} \approx \SI{7700}{\kilo\gram\per\metre\cubed}. \]
+Un valore compatibile con quello del ferro o dell'acciaio.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Una zattera che porta un carico]
+Una zattera è fatta di pannelli di polistirolo ($\rho = \SI{25}{\kilo\gram\per\metre\cubed}$) per un volume totale di \SI{0,60}{\metre\cubed}. Quanti chilogrammi di carico può reggere restando appena a galla in acqua dolce?
+
+Al limite del galleggiamento la zattera è tutta immersa e la spinta massima è
+\[ S_\text{max} = \rho_\text{acqua}\,V\,g = 1000 \cdot 0{,}60 \cdot 9{,}81 \approx \SI{5890}{\newton}. \]
+Questa deve reggere il peso della zattera più quello del carico:
+\[ P_\text{zattera} = 25 \cdot 0{,}60 \cdot 9{,}81 \approx \SI{147}{\newton}. \]
+Resta per il carico $S_\text{max} - P_\text{zattera} \approx \SI{5740}{\newton}$, cioè una massa di circa
+\[ m_\text{carico} = \frac{5740}{9{,}81} \approx \SI{585}{\kilo\gram}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un cubo di legno di lato \SI{10}{\centi\metre} e densità \SI{700}{\kilo\gram\per\metre\cubed} galleggia in acqua. Quanto sporge dall'acqua?\\
+\risp{$\approx \SI{3}{\centi\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una sfera di alluminio ($\rho = \SI{2700}{\kilo\gram\per\metre\cubed}$) del diametro di \SI{6,0}{\centi\metre} è appesa a un filo e immersa completamente in acqua. Qual è la tensione del filo?\\
+\risp{$T = P - S \approx \SI{1,9}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un blocco pesa \SI{12,0}{\newton} in aria e \SI{7,5}{\newton} immerso in acqua. Calcola il suo volume e la sua densità.\\
+\risp{$V \approx \SI{4,6e-4}{\metre\cubed}$; \; $\rho_\text{c} \approx \SI{2700}{\kilo\gram\per\metre\cubed}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una chiatta a fondo piatto ha la base rettangolare di $\SI{8,0}{\metre}\times\SI{3,0}{\metre}$. Caricandola con \SI{6,0}{\tonne}, di quanto si abbassa nell'acqua (dolce)?\\
+\risp{$\Delta h = 0{,}25\ \si{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un pallone aerostatico ha un volume di \SI{2000}{\metre\cubed} ed è gonfio di elio ($\rho_\text{He} = \SI{0,18}{\kilo\gram\per\metre\cubed}$); l'involucro e la navicella hanno una massa complessiva di \SI{400}{\kilo\gram}. Con quale forza tende a salire, se l'aria ha densità \SI{1,2}{\kilo\gram\per\metre\cubed}? (Trascura il volume di involucro e navicella.)\\
+\risp{$S - P \approx \SI{1,6e4}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Perché una scialuppa di salvataggio, che è di metallo, galleggia anche quando si riempie parzialmente d'acqua, mentre lo stesso metallo fuso in un blocco affonda?\\
+\risp{da vuota, lo scafo racchiude aria e la densità media è minore di quella dell'acqua; il blocco pieno ha la densità (alta) del metallo}
+\end{esercizio}
