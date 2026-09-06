@@ -24,6 +24,10 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   numpy). Risultato tra `[ ]` a fine testo. `g = 9,81 N/kg`.
 - **Notazione**: virgola decimale (siunitx `output-decimal-marker={,}`); ambienti
   `definizione`, `remark`, `testexample`, `esercizio`, `elenco`, box `\colorboxed{ocre}{...}`.
+- **Risultato di un esercizio**: usare la macro `\risp{...}` (definita nel
+  preambolo) — allineata a destra, `\footnotesize`, va a capo se lunga. NON usare
+  `\hspace*{\fill} $\left[...\right]$` (il `\left[..\right]` non si spezza e sfora
+  i margini).
 - Ogni capitolo dell'ampliamento si chiude con una sezione **"Problemi di
   riepilogo"** (~15–19 problemi che coprono tutto il capitolo, risolvibili con la
   sola teoria svolta fino a lì).
@@ -64,22 +68,30 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   attrito (piano inclinato, angolo limite $\tan\alpha_0=k_s$) · §7.3 corpo rigido
   (momento $M=Fb$, due condizioni di equilibrio) · §7.4 coppie di forze · §7.5
   macchine semplici e leve (guadagno, 3 generi) · §7.6 baricentro (centro di
-  simmetria, filo a piombo, equilibrio stabile/instabile/indifferente, stabilità
-  di un corpo appoggiato) · §7.7 Problemi di riepilogo (19).
+  simmetria; ricerca sperimentale con filo a piombo; equilibrio stab/instab/
+  indiff illustrato con la pallina su cunetta/collinetta/piano; stabilità di un
+  corpo appoggiato) · §7.7 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-equilibrio.py`.
 
-Stato compilazione: OK, ~144 pagine, pulito.
+Stato compilazione: OK, ~145 pagine, pulito.
 
 ## Lavoro rimanente
 
-1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
+1. **Splittare il sorgente con `\include`** (fare come PRIMO task, con calma):
+   `preambolo.tex` + un file per capitolo in `capitoli/` + master `appunti-new.tex`
+   con `\include`. Beneficio vero = `\includeonly{...}` per compilare/renderizzare
+   solo il capitolo in lavorazione (risparmio token nel ciclo di revisione delle
+   figure) + read/grep su file piccoli. Attenzione: `\include` forza page break;
+   ricompilare tutto il documento a fine restructuring per verificare i riferimenti.
+   NB: `sezioni/` e `spezzettato/` sono split automatici OBSOLETI, non usarli.
+2. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
    pressione nei liquidi (legge di Stevino) · principio di Pascal · vasi
    comunicanti · pressione atmosferica · principio di Archimede. + Problemi di
-   riepilogo. **Prossima sessione: partire da qui.**
-2. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
+   riepilogo.
+3. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
    lavoro ed energia, termologia, calore — vedi §F di REVISIONE.md.
-3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
+4. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
    (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~22 overfull hbox.
-4. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
+5. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
