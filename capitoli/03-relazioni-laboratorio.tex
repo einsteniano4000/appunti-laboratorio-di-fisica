@@ -744,19 +744,24 @@ Misurare il coefficiente di attrito statico $k_s$ fra un blocchetto di legno e i
         \draw[thick] (-1.4,0) -- (7.4,0);
         % blocchetto
         \draw[thick,fill=brown!25] (0.8,0) rectangle (2.4,1.5);
-        \node at (1.55,1.15) {\small blocchetto};
-        % occhiello sul lato destro del blocchetto
-        \draw[thick] (2.4,0.75) circle (0.07);
+        \node at (1.5,1.15) {\small blocchetto};
         % pesi impilati sopra
         \draw[thick,fill=gray!30] (1.05,1.5) rectangle (2.15,1.85);
         \draw[thick,fill=gray!30] (1.25,1.85) rectangle (1.95,2.15);
         \draw[->] (4.4,2.5) .. controls (3.2,2.4) .. (1.9,2.0);
         \node[right,align=left] at (4.3,2.6) {\small pesi: si aggiungono\\[-1pt] \small per aumentare $F_p$};
-        % dinamometro: tubo con gancio a sinistra, agganciato al blocchetto
-        \draw[thick,fill=gray!12] (2.9,0.52) rectangle (5.5,0.98);
-        \draw[thick] (2.9,0.75) -- (2.66,0.75);
-        \draw[thick] (2.66,0.75) arc (90:-175:0.13);
+        % --- dinamometro: tubo con profilo azzurrino e scala graduata ---
+        \shadedraw[top color=blue!6,bottom color=blue!35,draw=blue!55!black,thick]
+            (2.95,0.5) rectangle (5.5,1.0);
+        \foreach \i in {0,...,12}{\draw[blue!55!black] (3.15+\i*0.18,1.0) -- (3.15+\i*0.18,0.87);}
         \node[right] at (5.6,0.75) {\small dinamometro};
+        % --- i due gancetti intrecciati ---
+        % gancio del blocchetto (apertura a destra)
+        \draw[thick] (2.4,0.75) -- (2.46,0.75);
+        \draw[thick] ([shift=(45:0.14)]2.58,0.75) arc (45:315:0.14);
+        % gancio del dinamometro (apertura a sinistra), intrecciato col primo
+        \draw[thick] (2.95,0.75) -- (2.92,0.75);
+        \draw[thick] ([shift=(225:0.14)]2.78,0.75) arc (225:495:0.14);
         % forze
         \fill[ocre] (1.6,0.75) circle (1.3pt);
         \draw[->,ocre,very thick] (1.6,0.75) -- (1.6,-1.05);
