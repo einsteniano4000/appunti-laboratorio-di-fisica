@@ -261,3 +261,109 @@ Un sollevatore idraulico solleva un carico di \SI{12}{\kilo\newton} spingendo su
 Spiega perché, nell'impianto frenante di un'automobile, una pressione modesta del piede sul pedale produce sulle pastiglie una forza molto grande.\\
 \risp{la pressione si trasmette inalterata (Pascal) dal cilindretto del pedale ai pistoncini delle pinze, che hanno area totale molto maggiore: $F = p\,A$ cresce con l'area}
 \end{esercizio}
+
+
+\section{I vasi comunicanti}
+
+Se colleghiamo con un tubo due o più recipienti -- i \textbf{vasi comunicanti} -- e versiamo un liquido in uno di essi, il liquido si distribuisce fra tutti e si ferma quando ha raggiunto \textbf{lo stesso livello in ciascuno}, indipendentemente dalla forma e dalla larghezza dei recipienti (figura~\ref{fig:vasi}).
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[scale=0.95]
+        % --- liquido: tubo di base + colonne fino al livello y=2.5 ---
+        \fill[blue!14] (0,0) rectangle (10.4,0.5);
+        \fill[blue!14] (0.5,0.5) rectangle (2.0,2.5);                  % vaso A
+        \fill[blue!14] (3.1,0.5) rectangle (3.6,2.5);                  % vaso B
+        \fill[blue!14] (4.7,0.5) -- (5.3,0.5) -- (5.83,2.5) -- (4.26,2.5) -- cycle; % vaso C
+        \fill[blue!14] (7.2,0.5) -- (7.8,0.5) -- (8.52,2.5) -- (7.92,2.5) -- cycle; % vaso D
+        % --- pareti dei vasi ---
+        \draw[thick] (0.5,3.7) -- (0.5,0.5)  (2.0,0.5) -- (2.0,3.7);
+        \draw[thick] (3.1,3.7) -- (3.1,0.5)  (3.6,0.5) -- (3.6,3.7);
+        \draw[thick] (4.0,3.7) -- (4.7,0.5)  (5.3,0.5) -- (6.15,3.7);
+        \draw[thick] (8.35,3.7) -- (7.2,0.5)  (7.8,0.5) -- (8.95,3.7);
+        % --- tubo di base (contorno) ---
+        \draw[thick] (0,0.5) -- (0,0) -- (10.4,0) -- (10.4,0.5);
+        \draw[thick] (0,0.5) -- (0.5,0.5)  (2.0,0.5) -- (3.1,0.5)
+                     (3.6,0.5) -- (4.7,0.5)  (5.3,0.5) -- (7.2,0.5)
+                     (7.8,0.5) -- (10.4,0.5);
+        % --- livello comune ---
+        \draw[dashed,blue!55!black,thick] (-0.3,2.5) -- (9.6,2.5);
+        \node[blue!55!black,anchor=west,font=\footnotesize] at (9.55,2.5) {stesso livello};
+    \end{tikzpicture}
+    \caption{Vasi comunicanti: uno stesso liquido raggiunge in tutti i recipienti lo stesso livello, qualunque sia la loro forma.}
+    \label{fig:vasi}
+\end{figure}
+
+\paragraph{Perché.} Consideriamo il sottile strato di liquido che sta nel tubo di collegamento fra due vasi. Da sinistra il liquido lo preme con la pressione idrostatica $\rho g h_1$ (dove $h_1$ è l'altezza del liquido nel vaso di sinistra sopra il tubo); da destra con $\rho g h_2$. Se il liquido è fermo, quello strato è in equilibrio e le due pressioni sono uguali:
+\[ \rho\,g\,h_1 = \rho\,g\,h_2 \qquad\Longrightarrow\qquad \colorboxed{ocre}{ h_1 = h_2. } \]
+Il livello dipende solo dalla pressione, e la pressione (legge di Stevino) dipende solo dall'altezza: quindi i livelli si pareggiano.
+
+\subsection{Applicazioni}
+\begin{elenco}
+    \item \textbf{Indicatore di livello.} A una cisterna chiusa si collega, sul fondo, un tubo verticale trasparente e graduato. Per i vasi comunicanti il liquido nel tubo sale fino allo stesso livello che ha nella cisterna: si legge così dall'esterno quanto liquido c'è dentro.
+    \item \textbf{Rete idrica.} L'acqua di un acquedotto arriva ai rubinetti perché parte da un serbatoio posto \emph{più in alto} (una torre piezometrica, o un serbatoio in collina). L'acqua può salire nelle case solo fino al livello di quel serbatoio: ai piani più alti di quella quota il rubinetto non dà acqua senza una pompa.
+    \item \textbf{Livella ad acqua.} Due recipienti trasparenti uniti da un tubo flessibile pieno d'acqua: i due peli liberi sono sempre alla stessa quota, e permettono di riportare un livello di riferimento da un punto all'altro di un cantiere, anche dietro un ostacolo.
+    \item \textbf{Chiuse dei canali.} Per far superare a una barca un dislivello, si chiude un tratto di canale fra due porte e lo si riempie o svuota finché il livello dell'acqua non pareggia quello a monte o a valle.
+\end{elenco}
+
+\subsection{Vasi comunicanti con due liquidi}
+Il livello si pareggia solo se il liquido è \emph{uno solo}. Se in un tubo a U mettiamo due liquidi che non si mescolano -- per esempio acqua e olio -- essi si dispongono con l'olio (meno denso) sopra e, nei due rami, a \textbf{altezze diverse} (figura~\ref{fig:utubo}).
+
+All'altezza della superficie di separazione fra i due liquidi, la pressione deve essere la stessa nei due rami. Nel ramo con il liquido~1 (altezza $h_1$ sopra quella superficie) vale $\rho_1 g h_1$; nell'altro $\rho_2 g h_2$. Dall'uguaglianza:
+\[ \rho_1\,g\,h_1 = \rho_2\,g\,h_2 \qquad\Longrightarrow\qquad \colorboxed{ocre}{ \rho_1\,h_1 = \rho_2\,h_2. } \]
+Le altezze delle due colonne sono \emph{inversamente proporzionali} alle densità: il liquido più denso forma la colonna più bassa. Misurando $h_1$ e $h_2$ si può ricavare la densità di un liquido, note quella dell'altro.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % tubo a U (pareti)
+        \draw[thick] (0,4) -- (0,0.8) arc (180:360:1.2 and 0.8) -- (2.4,4);
+        \draw[thick] (0.8,4) -- (0.8,1.0) arc (180:360:0.4 and 0.35) -- (1.6,4);
+        % liquido 1 (denso) a sinistra
+        \fill[blue!22] (0,0.8) arc (180:270:1.2 and 0.8) -- (1.2,1.0)
+            arc (270:180:0.4 and 0.35) -- (0.8,2.6) -- (0,2.6) -- cycle;
+        % liquido 2 (leggero) a destra
+        \fill[yellow!45] (2.4,0.8) arc (0:-90:1.2 and 0.8) -- (1.2,1.0)
+            arc (-90:0:0.4 and 0.35) -- (1.6,3.4) -- (2.4,3.4) -- cycle;
+        % superficie di separazione
+        \draw[dashed,gray!60] (-0.3,1.0) -- (2.7,1.0);
+        \node[gray,anchor=east,font=\footnotesize] at (-0.3,1.0) {separazione};
+        % livelli
+        \draw[dashed,gray!60] (-0.3,2.6) -- (0,2.6);
+        \draw[dashed,gray!60] (2.4,3.4) -- (2.7,3.4);
+        \draw[<->] (-0.3,1.0) -- (-0.3,2.6) node[midway,left] {$h_1$};
+        \draw[<->] (2.7,1.0) -- (2.7,3.4) node[midway,right] {$h_2$};
+        \node[font=\footnotesize] at (-0.4,1.8) {};
+        \node[blue!45!black,font=\footnotesize] at (0.4,2.0) {$\rho_1$};
+        \node[yellow!35!black,font=\footnotesize] at (2.0,2.4) {$\rho_2$};
+    \end{tikzpicture}
+    \caption{Due liquidi non miscibili in un tubo a U: il più denso ($\rho_1$) forma la colonna più bassa. All'altezza della superficie di separazione le pressioni si equilibrano: $\rho_1 h_1 = \rho_2 h_2$.}
+    \label{fig:utubo}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Densità di un olio con il tubo a U]
+In un tubo a U c'è dell'acqua ($\rho_\text{acqua} = \SI{1000}{\kilo\gram\per\metre\cubed}$). Versando dell'olio in un ramo, questo forma una colonna alta \SI{12,0}{\centi\metre}; nell'altro ramo l'acqua, rispetto alla superficie di separazione, è salita di \SI{10,4}{\centi\metre}. Qual è la densità dell'olio?
+
+All'altezza della separazione le pressioni sono uguali: $\rho_\text{olio}\,h_\text{olio} = \rho_\text{acqua}\,h_\text{acqua}$, quindi
+\[ \rho_\text{olio} = \rho_\text{acqua}\,\frac{h_\text{acqua}}{h_\text{olio}} = 1000 \cdot \frac{10{,}4}{12{,}0} \approx \SI{870}{\kilo\gram\per\metre\cubed}. \]
+\end{testexample}
+
+\begin{esercizio}
+Il serbatoio pensile di un paese ha il pelo libero dell'acqua a \SI{34}{\metre} sopra la strada. Un palazzo alto \SI{30}{\metre} riceve l'acqua a tutti i piani? E se costruissero un attico che porta l'altezza a \SI{36}{\metre}?\\
+\risp{sì fino a \SI{34}{\metre}; l'attico a \SI{36}{\metre} resterebbe senz'acqua (serve una pompa o un'autoclave)}
+\end{esercizio}
+
+\begin{esercizio}
+In un tubo a U si versa mercurio ($\rho = \SI{13600}{\kilo\gram\per\metre\cubed}$); poi, in un ramo, si aggiunge acqua fino a formare una colonna di \SI{20}{\centi\metre} sopra la superficie di contatto. Di quanto si alza il mercurio nell'altro ramo rispetto a quella superficie?\\
+\risp{$h_\text{Hg} \approx \SI{1,5}{\centi\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due tubi verticali, uno di sezione \SI{1}{\centi\metre\squared} e uno di sezione \SI{20}{\centi\metre\squared}, sono collegati sul fondo e contengono acqua. Si versano \SI{100}{\milli\litre} d'acqua nel tubo sottile. Di quanto sale il livello (uguale nei due)?\\
+\risp{$\Delta h \approx \SI{4,8}{\centi\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Perché la superficie libera dell'acqua di un lago tranquillo è orizzontale, mentre quella dell'acqua che scorre in un fiume in pendenza non lo è?\\
+\risp{in equilibrio i punti alla stessa quota devono avere la stessa pressione (vasi comunicanti): la superficie libera è orizzontale. L'acqua di un fiume non è in equilibrio, è in moto}
+\end{esercizio}

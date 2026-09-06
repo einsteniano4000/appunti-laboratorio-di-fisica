@@ -88,3 +88,18 @@ print(f"es1  A2/A1 = {ratio:.0f}, F1 = {9600/ratio:.0f} N")
 A2 = 5.0 * 12000 / 80
 n2 = A2 * 25 / (5.0 * 40)
 print(f"es2  A2 = {A2:.0f} cm2, n = {n2:.2f} -> {round(n2)} corse")
+
+# ---------------------------------------------------------------------------
+sez("8.4  Vasi comunicanti")
+
+# Esempio: olio h=12,0 cm; acqua sale 10,4 cm.  rho_olio ?
+rho_olio = 1000 * 10.4 / 12.0
+print(f"olio: rho = {rho_olio:.1f} kg/m3  (~ {round(rho_olio/10)*10} )")
+
+# es: tubo a U, mercurio + acqua colonna 20 cm -> h_Hg ?
+h_hg2 = 1000 * 20 / 13600
+print(f"U-tube Hg/acqua: h_Hg = {h_hg2:.2f} cm")
+
+# es: tubi 1 e 20 cm2, 100 mL nel sottile -> Delta h
+dh = 100 / (1 + 20)
+print(f"tubi 1+20 cm2, 100 cm3 -> Delta h = {dh:.2f} cm")
