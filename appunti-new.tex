@@ -1901,18 +1901,111 @@ Ovviamente, questi valori devono essere arrotondati per difetto al millimetrio p
     \includegraphics[width=\linewidth]{img/graficomanuale.pdf} 
     \caption{Grafico su carta millimetrata.}
     \label{fig:graficomanuale}
-\end{figure} 
+\end{figure}
 
 
- 
+\section{Rette di massima e minima pendenza}
+Quando i dati sperimentali si dispongono lungo una retta, spesso lo scopo dell'esperimento è misurare la \textbf{pendenza} di quella retta, perché la pendenza ha un significato fisico (una velocità, una costante elastica, l'accelerazione di gravità\dots). Tracciando ``a occhio'' una sola linea di tendenza otteniamo un valore per la pendenza, ma non la sua incertezza. Il \textbf{metodo delle rette di massima e minima pendenza} serve proprio a stimare l'errore sulla pendenza a partire dalle barre d'errore dei dati.
 
+\subsection{I quattro punti di ancoraggio}
+Si considerano solo il \textbf{primo} punto sperimentale $P_1(x_1,y_1)$ e l'\textbf{ultimo} $P_n(x_n,y_n)$, cioè quelli agli estremi del grafico, e le loro barre d'errore verticali di semiampiezza $e_y$ (l'incertezza sulla grandezza in ordinata). Sugli estremi delle due barre individuiamo quattro punti:
+\begin{itemize}
+\item sulla barra di $P_1$: \; $A=(x_1,\; y_1+e_y)$ \; (estremo superiore) \quad e \quad $B=(x_1,\; y_1-e_y)$ \; (estremo inferiore);
+\item sulla barra di $P_n$: \; $C=(x_n,\; y_n+e_y)$ \; (estremo superiore) \quad e \quad $D=(x_n,\; y_n-e_y)$ \; (estremo inferiore).
+\end{itemize}
 
+\subsection{Costruzione delle due rette}
+\begin{itemize}
+\item la \textbf{retta di massima pendenza} congiunge $B$ (in basso a sinistra) con $C$ (in alto a destra): è la retta più ``ripida'' compatibile con le barre d'errore;
+\item la \textbf{retta di minima pendenza} congiunge $A$ (in alto a sinistra) con $D$ (in basso a destra): è la retta meno ``ripida''.
+\end{itemize}
+Le due pendenze si calcolano con la solita formula $m=\dfrac{y_{\text{fin}}-y_{\text{in}}}{x_{\text{fin}}-x_{\text{in}}}$:
+\[
+m_{max}=\frac{(y_n+e_y)-(y_1-e_y)}{x_n-x_1}, \qquad
+m_{min}=\frac{(y_n-e_y)-(y_1+e_y)}{x_n-x_1}.
+\]
+Il valore da assumere per la pendenza e la sua incertezza si ottengono poi come valore medio e semidispersione:
+\[
+\colorboxed{ocre}{m=\frac{m_{max}+m_{min}}{2}}, \qquad
+\colorboxed{ocre}{\Delta m=\frac{m_{max}-m_{min}}{2}}.
+\]
+Un controllo va sempre fatto: entrambe le rette limite devono passare (o quasi) anche \emph{attraverso le barre d'errore dei punti intermedi}. Se così non è, o i dati non sono davvero lineari, oppure alcune barre d'errore sono state sottostimate.
 
+\subsection{Esempio: la legge di Hooke}
+Misurando l'allungamento $\Delta x$ di una molla al variare della forza applicata $F$, ci si aspetta la relazione lineare $F=k\,\Delta x$, dove $k$ è la costante elastica (pendenza della retta). I dati sono in tabella \ref{tab:hooke}; l'incertezza sulla forza è $e_F=\SI{0,10}{\newton}$, quella sull'allungamento è trascurabile.
 
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+ & $P_1$ & $P_2$ & $P_3$ & $P_4$ \\
+\midrule
+$\Delta x$ (m) & 0,010 & 0,021 & 0,032 & 0,041 \\
+$F$ (N)        & 0,49  & 0,98  & 1,47  & 1,96  \\
+\bottomrule
+\end{tabular}
+\caption{Forza applicata e allungamento di una molla ($e_F=\SI{0,10}{\newton}$).}
+\label{tab:hooke}
+\end{table}
 
+I quattro punti di ancoraggio sul primo e sull'ultimo dato sono:
+\[
+\begin{aligned}
+A &= (0,010;\ 0,49+0,10) = (0,010;\ 0,59), & B &= (0,010;\ 0,49-0,10) = (0,010;\ 0,39),\\
+C &= (0,041;\ 1,96+0,10) = (0,041;\ 2,06), & D &= (0,041;\ 1,96-0,10) = (0,041;\ 1,86).
+\end{aligned}
+\]
 
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\linewidth, height=6.5cm,
+    xlabel={$\Delta x$ (m)}, ylabel={$F$ (N)},
+    xmin=0, xmax=0.05, ymin=0, ymax=2.6,
+    legend pos=south east, legend cell align=left,
+    grid=both, grid style={gray!20},
+]
+% dati con barra d'errore su F
+\addplot[only marks, mark=*, mark size=1.3pt, black,
+         error bars/.cd, y dir=both, y explicit]
+    coordinates {
+        (0.010,0.49) +- (0,0.10)
+        (0.021,0.98) +- (0,0.10)
+        (0.032,1.47) +- (0,0.10)
+        (0.041,1.96) +- (0,0.10)
+    };
+\addlegendentry{Dati}
+% retta di massima pendenza: per B(0.010,0.39) e C(0.041,2.06)
+\addplot[red, thick, domain=0.003:0.05] {0.39 + 53.87*(x-0.010)};
+\addlegendentry{$m_{max}$}
+% retta di minima pendenza: per A(0.010,0.59) e D(0.041,1.86)
+\addplot[orange, thick, dashed, domain=0:0.05] {0.59 + 40.97*(x-0.010)};
+\addlegendentry{$m_{min}$}
+\node[anchor=east] at (axis cs:0.010,0.59) {\scriptsize $A$};
+\node[anchor=east] at (axis cs:0.010,0.39) {\scriptsize $B$};
+\node[anchor=west] at (axis cs:0.041,2.06) {\scriptsize $C$};
+\node[anchor=west] at (axis cs:0.041,1.86) {\scriptsize $D$};
+\end{axis}
+\end{tikzpicture}
+\caption{Metodo delle rette di massima e minima pendenza applicato alla legge di Hooke.}
+\label{fig:rettemaxmin}
+\end{figure}
 
-
+Le due pendenze limite valgono:
+\[
+m_{max}=\frac{2,06-0,39}{0,041-0,010}=\SI{53,9}{\newton\per\meter}, \qquad
+m_{min}=\frac{1,86-0,59}{0,041-0,010}=\SI{41,0}{\newton\per\meter}.
+\]
+Da cui la costante elastica e la sua incertezza:
+\[
+k=\frac{53,9+41,0}{2}=\SI{47,4}{\newton\per\meter}, \qquad
+\Delta k=\frac{53,9-41,0}{2}=\SI{6,5}{\newton\per\meter}.
+\]
+Scrivendo il risultato in forma corretta (errore a una cifra significativa):
+\[
+k=\left(47 \pm 6\right)\si{\newton\per\meter}.
+\]
 
 
 \section{Uso di un foglio di calcolo}
