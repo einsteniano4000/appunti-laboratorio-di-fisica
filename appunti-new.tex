@@ -3438,6 +3438,233 @@ La regressione lineare cerca la retta $y = a x + b$ che meglio approssima una se
 
 
 
+\chapter{Grandezze vettoriali e forze}
+
+Fino a qui abbiamo trattato grandezze che, per essere assegnate, richiedono soltanto un numero e un'unità di misura: una massa di $\SI{3}{\kilo\gram}$, un intervallo di $\SI{12}{\second}$, un volume di $\SI{2}{\liter}$. In questo capitolo incontreremo grandezze di tipo diverso, per le quali il solo numero non basta: occorre indicare anche una \textit{direzione}. Sono le grandezze vettoriali, e la prima che studieremo è lo spostamento. Introdurremo le regole per sommarle e sottrarle, e poi le applicheremo alle forze.
+
+\section{Grandezze scalari e vettoriali}
+
+Immaginiamo di dare a qualcuno l'indicazione: ``spostati di $\SI{5}{\meter}$''. L'informazione è incompleta: in quale direzione? in avanti o indietro? Per descrivere completamente uno spostamento dobbiamo dire \textbf{di quanto} ci si sposta (per esempio $\SI{5}{\meter}$), lungo \textbf{quale retta} (per esempio la direzione Est--Ovest) e in \textbf{quale dei due versi} (verso Est). Lo spostamento è l'esempio tipico di grandezza vettoriale.
+
+\begin{definizione}
+Una grandezza si dice \textbf{scalare} quando è completamente determinata da un numero (con la sua unità di misura). Sono scalari la massa, il tempo, la temperatura, la lunghezza, l'area, il volume, la densità.
+\end{definizione}
+
+\begin{definizione}
+Una grandezza si dice \textbf{vettoriale} quando, per essere assegnata, richiede tre informazioni: un \textbf{modulo} (o intensità), una \textbf{direzione} e un \textbf{verso}. Sono vettoriali lo spostamento, la velocità, l'accelerazione, la forza.
+\end{definizione}
+
+\subsection{Rappresentazione di un vettore}
+Una grandezza vettoriale si associa a un ente matematico chiamato \textbf{vettore}, che si disegna come un \textbf{segmento orientato}, cioè una freccia (figura~\ref{fig:vettore}):
+\begin{itemize}
+\item la \textbf{lunghezza} della freccia, in una scala scelta, rappresenta il \textbf{modulo};
+\item la \textbf{retta} su cui giace la freccia è la \textbf{direzione};
+\item la \textbf{punta} della freccia indica il \textbf{verso}.
+\end{itemize}
+I vettori si indicano con una lettera sormontata da una freccetta, $\vec{v}$, oppure con le due lettere degli estremi del segmento orientato, $\vec{AB}$ (dove $A$ è la coda e $B$ la punta). Il modulo si scrive $|\vec{v}|$ oppure, più semplicemente, con la lettera senza freccia, $v$.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\draw[->,very thick,ocre] (0,0) -- (4.2,1.4) node[midway,above,sloped]{modulo};
+\draw[dashed,gray] (-0.6,-0.2) -- (5.1,1.7) node[right,black]{direzione};
+\node[ocre] at (4.35,1.15) {verso};
+\fill (0,0) circle (1.5pt) node[below left]{$A$};
+\node at (2,-0.9) {$\vec{v}=\vec{AB}$};
+\end{tikzpicture}
+\caption{Un vettore: la lunghezza dà il modulo, la retta la direzione, la punta il verso.}
+\label{fig:vettore}
+\end{figure}
+
+\begin{remark}
+Il modulo di un vettore è sempre un numero \textbf{positivo} (o nullo): è una lunghezza, un'intensità, e non ha senso che sia negativo. Il ``segno'' di una grandezza vettoriale è portato dal verso, non dal modulo.
+\end{remark}
+
+\subsection{Vettore nullo e vettore opposto}
+Il \textbf{vettore nullo} $\vec{0}$ ha modulo zero; direzione e verso sono indeterminati. Corrisponde, per lo spostamento, al non essersi mossi.
+
+Dato un vettore $\vec{v}$, il suo \textbf{opposto} $-\vec{v}$ ha lo \textbf{stesso modulo} e la \textbf{stessa direzione}, ma \textbf{verso contrario} (figura~\ref{fig:opposto}). Per lo spostamento, $-\vec{v}$ è il ``tornare indietro'' lungo lo stesso tragitto.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\draw[->,very thick] (0,0) -- (2.5,0) node[midway,above]{$\vec{v}$};
+\draw[->,very thick] (5,0) -- (2.5,0) node[midway,above]{$-\vec{v}$};
+\end{tikzpicture}
+\caption{Un vettore e il suo opposto: stesso modulo e direzione, verso contrario.}
+\label{fig:opposto}
+\end{figure}
+
+\section{Operazioni con i vettori}
+
+\subsection{Somma di vettori sulla stessa retta}
+Se due spostamenti avvengono lungo la stessa retta, la somma si riduce a un calcolo con i numeri, tenendo conto del verso:
+\begin{itemize}
+\item se hanno lo \textbf{stesso verso}, i moduli si \textbf{sommano};
+\item se hanno \textbf{verso opposto}, i moduli si \textbf{sottraggono} e il verso del risultante è quello del vettore di modulo maggiore.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.85]
+% stesso verso
+\draw[->,thick] (0,0.35) -- (2,0.35) node[midway,above]{\small $\vec{a}$};
+\draw[->,thick] (2,0.35) -- (3,0.35) node[midway,above]{\small $\vec{b}$};
+\draw[->,very thick,ocre] (0,-0.35) -- (3,-0.35) node[midway,below]{\small $\vec{a}+\vec{b}=\SI{11}{m}$};
+\node[align=center] at (1.5,-1.3) {\scriptsize stesso verso};
+\begin{scope}[xshift=6.5cm]
+% verso opposto
+\draw[->,thick] (0,0.35) -- (3,0.35) node[midway,above]{\small $\vec{a}$};
+\draw[->,thick] (3,-0.05) -- (2,-0.05) node[midway,below]{\small $\vec{b}$};
+\draw[->,very thick,ocre] (0,-0.75) -- (2,-0.75) node[midway,below]{\small $\vec{a}+\vec{b}=\SI{5}{m}$};
+\node[align=center] at (1.5,-1.7) {\scriptsize verso opposto};
+\end{scope}
+\end{tikzpicture}
+\caption{Somma di due vettori sulla stessa retta: stesso verso (a sinistra) e verso opposto (a destra).}
+\label{fig:sommaretta}
+\end{figure}
+
+\subsection{Metodo punta-coda}
+Quando i due vettori non sono sulla stessa retta, si usa il \textbf{metodo punta-coda}: si trasla il secondo vettore, senza cambiarne modulo, direzione e verso, in modo che la sua coda coincida con la punta del primo. Il vettore \textbf{risultante} è il segmento orientato che va dalla coda del primo alla punta del secondo (figura~\ref{fig:puntacoda}).
+
+Lo stesso metodo si estende a più vettori: si dispongono uno di seguito all'altro e il risultante chiude la spezzata, dalla coda del primo alla punta dell'ultimo.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\coordinate (A) at (3,0.6);
+\coordinate (B) at (4,2.4);
+\draw[->,thick] (O) -- (A) node[midway,below right]{$\vec{a}$};
+\draw[->,thick] (A) -- (B) node[midway,right]{$\vec{b}$};
+\draw[->,very thick,ocre] (O) -- (B) node[midway,above left]{$\vec{a}+\vec{b}$};
+\end{tikzpicture}
+\caption{Metodo punta-coda per la somma di due vettori.}
+\label{fig:puntacoda}
+\end{figure}
+
+\subsection{Regola del parallelogramma}
+Se i due vettori sono applicati nello stesso punto, si può usare la \textbf{regola del parallelogramma}, equivalente al metodo punta-coda: si costruisce il parallelogramma che ha per lati i due vettori, e la \textbf{diagonale} uscente dal punto comune è il vettore risultante (figura~\ref{fig:parallelogramma}).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\coordinate (A) at (3,0);
+\coordinate (B) at (1.2,2);
+\coordinate (C) at (4.2,2);
+\draw[->,thick] (O) -- (A) node[midway,below]{$\vec{a}$};
+\draw[->,thick] (O) -- (B) node[midway,above left]{$\vec{b}$};
+\draw[dashed,gray] (A) -- (C) -- (B);
+\draw[->,very thick,ocre] (O) -- (C) node[midway,above right]{$\vec{a}+\vec{b}$};
+\end{tikzpicture}
+\caption{Regola del parallelogramma.}
+\label{fig:parallelogramma}
+\end{figure}
+
+\begin{remark}
+La somma di vettori è \textbf{commutativa}: $\vec{a}+\vec{b}=\vec{b}+\vec{a}$. Il modulo del risultante \textbf{non} è, in generale, la somma dei moduli: dipende dall'angolo tra i due vettori. È uguale alla somma dei moduli solo se i vettori hanno lo stesso verso; è uguale alla differenza se hanno verso opposto.
+\end{remark}
+
+\subsection{Differenza di vettori}
+La differenza $\vec{a}-\vec{b}$ si definisce come la somma del primo con l'opposto del secondo:
+\[
+\vec{a}-\vec{b}=\vec{a}+(-\vec{b}).
+\]
+In pratica si ribalta $\vec{b}$ e lo si somma ad $\vec{a}$ con il metodo punta-coda (figura~\ref{fig:differenza}).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0);
+\coordinate (A) at (3,0.4);
+\coordinate (mB) at (3.8,-1.6);
+\draw[->,thick] (O) -- (A) node[midway,above]{$\vec{a}$};
+\draw[->,thick] (A) -- (mB) node[midway,right]{$-\vec{b}$};
+\draw[->,very thick,ocre] (O) -- (mB) node[midway,below left]{$\vec{a}-\vec{b}$};
+\end{tikzpicture}
+\caption{Differenza di due vettori: $\vec{a}-\vec{b}=\vec{a}+(-\vec{b})$.}
+\label{fig:differenza}
+\end{figure}
+
+\subsection{Moltiplicazione di un vettore per un numero}
+Moltiplicando un vettore $\vec{v}$ per un numero $k$ (uno scalare) si ottiene un nuovo vettore $k\,\vec{v}$:
+\begin{itemize}
+\item di modulo $|k|\cdot v$;
+\item con la \textbf{stessa direzione} di $\vec{v}$;
+\item con lo \textbf{stesso verso} se $k>0$, con verso \textbf{opposto} se $k<0$.
+\end{itemize}
+Per esempio $3\vec{v}$ è tre volte più lungo di $\vec{v}$ e con lo stesso verso; $-2\vec{v}$ è due volte più lungo e con verso opposto.
+
+\subsection{Somma di due vettori perpendicolari}
+Un caso particolare importante è la somma di due vettori \textbf{perpendicolari} tra loro. Poiché il metodo punta-coda forma in questo caso un triangolo rettangolo, il modulo del risultante si ottiene con il \textbf{teorema di Pitagora} (figura~\ref{fig:perpendicolari}):
+\[
+\colorboxed{ocre}{\;|\vec{a}+\vec{b}| = \sqrt{a^2+b^2}\;}
+\]
+La direzione del risultante si individua con l'angolo $\theta$ che esso forma con uno dei due vettori: $\tan\theta = \dfrac{\text{cateto opposto}}{\text{cateto adiacente}}$.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.8]
+\coordinate (O) at (0,0);
+\coordinate (A) at (4,0);
+\coordinate (B) at (4,3);
+\draw[->,thick] (O) -- (A) node[midway,below]{$\vec{a}$};
+\draw[->,thick] (A) -- (B) node[midway,right]{$\vec{b}$};
+\draw[->,very thick,ocre] (O) -- (B) node[midway,above left]{$\vec{a}+\vec{b}$};
+\draw (0.5,0) arc (0:36.87:0.5); \node at (0.95,0.25){\small $\theta$};
+\draw (3.75,0) rectangle (4,0.25);
+\end{tikzpicture}
+\caption{Somma di due vettori perpendicolari: il modulo si trova con Pitagora.}
+\label{fig:perpendicolari}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Spostamento risultante]
+Un'escursionista percorre $\SI{40}{\meter}$ verso Est e poi $\SI{30}{\meter}$ verso Nord. Qual è il suo spostamento risultante rispetto al punto di partenza?
+
+I due spostamenti sono perpendicolari, quindi il modulo del risultante è:
+\[
+s = \sqrt{(\SI{40}{\meter})^2 + (\SI{30}{\meter})^2} = \sqrt{\SI{2500}{\meter\squared}} = \SI{50}{\meter}.
+\]
+La direzione forma con l'Est un angolo $\theta$ tale che $\tan\theta = \dfrac{30}{40} = 0,75$, da cui $\theta \approx 37^\circ$. Lo spostamento risultante è dunque di $\SI{50}{\meter}$, in direzione Nord-Est a circa $37^\circ$ dall'Est.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Due spostamenti collineari]
+Un carrello si sposta di $\SI{8}{\meter}$ verso destra, poi di $\SI{3}{\meter}$ ancora verso destra: lo spostamento risultante ha modulo $\SI{8}{\meter}+\SI{3}{\meter}=\SI{11}{\meter}$, verso destra. Se invece il secondo spostamento fosse di $\SI{3}{\meter}$ verso \emph{sinistra}, il risultante avrebbe modulo $\SI{8}{\meter}-\SI{3}{\meter}=\SI{5}{\meter}$, verso destra.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Classifica le seguenti grandezze come scalari o vettoriali: massa, velocità, temperatura, forza, tempo, spostamento, volume, accelerazione.\\
+\hspace*{\fill} $\left[\text{scalari: massa, temperatura, tempo, volume; vettoriali: velocità, forza, spostamento, accelerazione}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Due vettori giacciono sulla stessa retta: $\vec{a}$ ha modulo $\SI{12}{\newton}$ ed è diretto verso Est, $\vec{b}$ ha modulo $\SI{5}{\newton}$ ed è diretto verso Ovest. Determina modulo e verso di $\vec{a}+\vec{b}$ e di $\vec{a}-\vec{b}$.\\
+\hspace*{\fill} $\left[\vec{a}+\vec{b}:\ \SI{7}{\newton}\ \text{verso Est}\ ;\quad \vec{a}-\vec{b}:\ \SI{17}{\newton}\ \text{verso Est}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un'imbarcazione compie uno spostamento di $\SI{60}{\meter}$ verso Nord e uno di $\SI{80}{\meter}$ verso Est. Calcola il modulo dello spostamento risultante e l'angolo che esso forma con la direzione Nord.\\
+\hspace*{\fill} $\left[s=\SI{100}{\meter}\ ;\quad \theta \approx 53^\circ\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un vettore $\vec{v}$ ha modulo $\SI{3}{\meter\per\second}$. Qual è il modulo del vettore $-2\,\vec{v}$? E il suo verso rispetto a $\vec{v}$?\\
+\hspace*{\fill} $\left[\text{modulo}\ \SI{6}{\meter\per\second}\ ;\quad \text{verso opposto a } \vec{v}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un punto agiscono due forze perpendicolari, di moduli $\SI{9}{\newton}$ e $\SI{12}{\newton}$. Determina il modulo della forza risultante.\\
+\hspace*{\fill} $\left[R=\SI{15}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Disegna su un foglio a quadretti due vettori $\vec{a}$ (orizzontale, verso destra, 4 quadretti) e $\vec{b}$ (verticale, verso l'alto, 3 quadretti) applicati nello stesso punto. Trova graficamente $\vec{a}+\vec{b}$ con la regola del parallelogramma e verifica, contando i quadretti e usando Pitagora, che il modulo del risultante è 5 quadretti.
+\end{esercizio}
+
+
 \end{document}
 
 
