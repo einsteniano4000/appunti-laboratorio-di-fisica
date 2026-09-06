@@ -3,10 +3,26 @@
 ## Scopo
 
 Revisione e ampliamento di una dispensa LaTeX di fisica per il biennio (scuola
-superiore). Il file sorgente è **`appunti-new.tex`** (monolitico, `book` class);
-si compila con **`lualatex appunti-new.tex`** (2 passate; **non** serve più
-`--shell-escape` da quando `minted` è stato rimosso). Stile discorsivo, molti
-esempi ed esercizi.
+superiore). Il master è **`appunti-new.tex`** (`book` class); si compila con
+**`lualatex appunti-new.tex`** (2 passate; **non** serve più `--shell-escape` da
+quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
+
+### Struttura del sorgente (split con `\include`)
+- **`appunti-new.tex`** — master: `\input{preambolo}`, `\begin{document}`, la
+  lista degli `\include{capitoli/NN-...}`, `\end{document}`.
+- **`preambolo.tex`** — preambolo completo (pacchetti, macro, stili, `\title`).
+- **`capitoli/`** — un file per capitolo, senza preambolo:
+  `00-prefazione` (via `\input`), `01-misura-grandezze`, `02-errori-misura`,
+  `03-relazioni-laboratorio`, `04-statistica`,
+  `05-grandezze-vettoriali-forze`, `06-equilibrio-corpi-solidi`.
+- Per lavorare su un solo capitolo: scommentare la riga `\includeonly{...}` nel
+  master (serve una compilazione completa prima, per avere i `.aux` degli altri
+  capitoli → riferimenti incrociati OK). Testato: `\includeonly` cap. 6 → 26 pag.
+- `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
+  `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
+- A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
+  per verificare riferimenti e conteggio pagine (attualmente 145).
+- NB: `sezioni/` e `spezzettato/` sono vecchi split automatici OBSOLETI, ignorarli.
 
 > **Branch**: il lavoro di revisione+ampliamento è stato mergiato su **`master`**
 > (fast-forward, commit `4c5a01e` e precedenti). Si lavora direttamente su `master`.
@@ -27,8 +43,8 @@ esempi ed esercizi.
    `blue!60!black` per le componenti/reazioni, `red!70!black` per l'attrito/forza
    motrice. Ricompilare, renderizzare con `pdftoppm` e **far revisionare le figure
    all'utente** prima di proseguire.
-6. Nuovi capitoli: `\chapter{...}` in coda ad `appunti-new.tex`, prima di
-   `\end{document}` (dopo il cap. "Statistica").
+6. Nuovi capitoli: nuovo file `capitoli/NN-nome.tex` (che inizia con `\chapter{...}`)
+   + una riga `\include{capitoli/NN-nome}` nel master, prima di `\end{document}`.
 7. Commit dei soli sorgenti; aggiornare `CLAUDE.md` e `REVISIONE.md`.
 
 Documento di lavoro dettagliato: **`REVISIONE.md`** (revisione critica completa +
@@ -96,25 +112,23 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   corpo appoggiato) · §7.7 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-equilibrio.py`.
 
+### Split del sorgente
+- `appunti-new.tex` scomposto in `preambolo.tex` + `capitoli/*.tex` (un file per
+  capitolo) inclusi con `\include`; master con `\includeonly` pronto all'uso.
+  Compilazione completa invariata (145 pag., pulita); `\includeonly` verificato.
+
 Stato compilazione: OK, ~145 pagine, pulito.
 
 ## Lavoro rimanente
 
-1. **Splittare il sorgente con `\include`** (fare come PRIMO task, con calma):
-   `preambolo.tex` + un file per capitolo in `capitoli/` + master `appunti-new.tex`
-   con `\include`. Beneficio vero = `\includeonly{...}` per compilare/renderizzare
-   solo il capitolo in lavorazione (risparmio token nel ciclo di revisione delle
-   figure) + read/grep su file piccoli. Attenzione: `\include` forza page break;
-   ricompilare tutto il documento a fine restructuring per verificare i riferimenti.
-   NB: `sezioni/` e `spezzettato/` sono split automatici OBSOLETI, non usarli.
-2. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
+1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
    pressione nei liquidi (legge di Stevino) · principio di Pascal · vasi
    comunicanti · pressione atmosferica · principio di Archimede. + Problemi di
    riepilogo.
-3. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
+2. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
    lavoro ed energia, termologia, calore — vedi §F di REVISIONE.md.
-4. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~22 overfull hbox.
-5. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
+3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~34 overfull hbox.
+4. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.

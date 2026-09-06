@@ -9,12 +9,19 @@
 > - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–5). Figure ridisegnate in TikZ; esercizi e problemi con testo e numeri originali, tutti verificati in `verifica/`. Ogni capitolo si chiude con `\section{Problemi di riepilogo}` (~19, scenari standard riscritti).
 >   - [x] Cap. "Grandezze vettoriali e forze" — COMPLETO. §1–7 + §8 Problemi di riepilogo. `verifica/cap-vettori.py`.
 >   - [x] Cap. "Equilibrio dei corpi solidi" — COMPLETO. §7.1 punto materiale · §7.2 attrito/piano inclinato/angolo limite · §7.3 corpo rigido e momento · §7.4 coppie · §7.5 macchine semplici e leve · §7.6 baricentro (ricerca sperimentale col filo a piombo; stab/instab/indiff con la pallina) · §7.7 Problemi di riepilogo (19). `verifica/cap-equilibrio.py`.
->   - [ ] **Split del sorgente con `\include`** (prossimo task, vedi CLAUDE.md)
+>   - [x] **Split del sorgente con `\include`**: `preambolo.tex` + `capitoli/*.tex`
+>     (00-prefazione … 06-equilibrio-corpi-solidi) + master con `\includeonly`
+>     commentato. Compilazione completa invariata (145 pag., pulita), `\includeonly`
+>     testato sul cap. 6 (26 pag., riferimenti incrociati OK dai `.aux`).
 >   - [ ] Cap. "Equilibrio dei fluidi" (Unità 5) + Problemi di riepilogo
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
 Stato: il documento compila (`lualatex appunti-new.tex`, ~145 pagine, exit 0),
 nessun label duplicato, nessun riferimento indefinito, ~34 *overfull hbox* residui.
+
+Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
+dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
+singolo capitolo.
 
 Struttura attuale:
 

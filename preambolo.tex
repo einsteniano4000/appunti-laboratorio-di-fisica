@@ -1,0 +1,314 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage{multirow}
+
+\newcommand{\measureline}{\mbox{\normalfont\underline{\hspace{2.5cm}}}}
+
+\usepackage[T1]{fontenc} 
+\usepackage{textcomp} 	
+%\usepackage[utf8x]{inputenc}
+\usepackage[italian]{babel}
+\renewcommand{\rmdefault}{ppl}
+\usepackage{mathpazo}
+\usepackage[scaled=.95]{helvet}
+\usepackage{eulervm}
+\usepackage{microtype}
+\usepackage{cancel}
+%=============================TIPOGRAFIA====================================
+\usepackage[bindingoffset=6mm]{geometry}
+%===========================================================================
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{mdframed} % Per le scatole colorate
+\sisetup{output-decimal-marker = {,}}
+\sisetup{
+  per-mode=fraction, % Usa la modalità frazione per le unità per
+  fraction-function=\tfrac % Usa \tfrac per le frazioni
+}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\newtheorem{grf}{Grandezza fisica}
+\newtheorem{udm}{Unità di misura}
+\newtheorem{sdm}{Strumento di misura}
+\newtheorem{nsc}{Notazione scientifica}
+\newtheorem{fco}{Forma corretta}
+\newtheorem{sen}{Sensibilità}
+\newtheorem{csf}{Cifre significative}
+\newtheorem{csp}{Cifre significative in un prodotto}
+\newtheorem{css}{Cifre significative in una somma}
+
+\usepackage{graphicx}
+\usepackage{pgf,tikz}
+\newcommand{\eserciziop}[1]{\noindent\textbf{\textit{Esercizio:}} #1}
+\newcommand{\soluzione}[1]{\noindent\textcolor{blue}{\textbf{Soluzione:}} #1}
+% Risultato di un esercizio: allineato a destra, corpo piccolo, va a capo se lungo
+\newcommand{\risp}[1]{\par\nopagebreak\vspace{0.3ex}%
+  {\raggedleft\footnotesize\relpenalty=0 \binoppenalty=0 [\,#1\,]\par}}
+\usepackage{stmaryrd}
+
+\usetikzlibrary{arrows,patterns,shadows,calc}
+ 
+
+\newcounter{testexample} %serve per l'esempio
+\usepackage{hyperref}
+\usepackage{sectsty} %serve per colorare section
+\usepackage{multicol}
+\usepackage{enumitem} %serve per "elenco"
+\usepackage[table]{xcolor}
+ % Required for specifying colors by name
+\definecolor{remarkpink}{RGB}{255,200,200}
+\definecolor{remarkpinkdark}{RGB}{255,100,100}
+\colorlet{ocre}{red!55!black}
+\usepackage[margin=10pt,font=small,labelfont={bf,color=ocre}
+,labelsep=endash]{caption}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+%aggiunta per cambiare colore alle sezioni
+
+
+
+\newtcolorbox{remark}[1][]{
+  enhanced,
+  colback=pink!20,
+  colframe=pink!60!black,
+  boxrule=0.5pt,
+  arc=4pt,
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  overlay={
+    \node[anchor=east, inner sep=0pt, outer sep=0pt] 
+    at ([xshift=-2mm]frame.west) 
+    {\textcolor{pink!60!black}{\faSmile[regular]}};
+  },
+  enlarge left by=5mm,
+  drop shadow={
+    shadow xshift=0.5mm,
+    shadow yshift=-0.5mm,
+    shadow scale=1.02,
+    opacity=0.3,
+  },
+  #1
+}
+
+
+
+
+
+
+\newtcolorbox{definizione}{
+  colback=yellow!20,
+  colframe=yellow!60!black,
+  title=Definizione,
+  fonttitle=\bfseries
+}
+
+
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+  \colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+  % #1: optional argument for color model
+  % #2: color specification
+  % #3: formula
+  \begingroup
+    \colorlet{cb@saved}{.}%
+    \color#1{#2}%
+    \boxed{%
+      \color{cb@saved}%
+      #3%
+    }%
+  \endgroup
+}
+\usepackage{titletoc} 
+% Chapter text styling
+\titlecontents{chapter}[1.25cm] % Indentation
+{\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
+{\color{ocre}}  
+{\color{ocre!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+
+% Section text styling
+\titlecontents{section}[1.25cm] % Indentation
+{\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+{}
+{\hfill\color{black}\thecontentspage} % Page number
+[]
+
+% Subsection text styling
+\titlecontents{subsection}[1.25cm] % Indentation
+{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+{}
+{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[]
+
+
+% Chapter text styling
+\titlecontents{lchapter}[0em] % Indenting
+{\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+{\color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
+{}  
+{\color{ocre}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+
+% Section text styling
+\titlecontents{lsection}[0em] % Indenting
+{\sffamily\small} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+{}
+{}
+
+%c Subsection text styling
+\titlecontents{lsubsection}[.5em] % Indentation
+{\normalfont\footnotesize\sffamily} % Font settings
+{}
+{}
+{}
+
+%----------------------------------------------------------------------------------------
+%	PAGE HEADERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Required for header and footer configuration
+
+
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
+%\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+\fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
+%\fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
+\renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
+\addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+
+% Removes the header from odd empty pages at the end of chapters
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi}
+
+%----------------------------------------------------------------------------------------
+%	SECTION NUMBERING IN THE MARGIN
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{ocre}{\csname the#1\endcsname}\hspace{1em}}}                    
+
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\normalfont\large\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\color[rgb]{0.141,0.596,0.749}\normalfont\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{.2ex \@plus.2ex }
+{\color[rgb]{0.141,0.596,0.749}\normalfont\small\sffamily\bfseries}}                        
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{.1ex}
+{\normalfont\small\sffamily\bfseries}}
+
+
+\newtheoremstyle{esercizio}
+{}                % Space above
+{}                % Space below
+{\upshape\small}        % Theorem body font % (default is "\upshape")
+{}                % Indent amount
+{\bfseries}       % Theorem head font % (default is \mdseries)
+{.}               % Punctuation after theorem head % default: no punctuation
+{ }               % Space after theorem head
+{}    
+\theoremstyle{esercizio}
+\newtheorem{esercizio}{}
+
+\newsavebox{\boxa}
+\savebox{\boxa}[12pt][c]{\fbox{A}}
+\newcommand{\boxA}{\usebox{\boxa}}
+
+\newsavebox{\boxb}
+\savebox{\boxb}[12pt][c]{\fbox{B}}
+\newcommand{\boxB}{\usebox{\boxb}}
+
+\newsavebox{\boxc}
+\savebox{\boxc}[12pt][c]{\fbox{C}}
+\newcommand{\boxC}{\usebox{\boxc}}
+
+\newsavebox{\boxd}
+\savebox{\boxd}[12pt][c]{\fbox{D}}
+\newcommand{\boxD}{\usebox{\boxd}}
+
+
+\newenvironment{elenco}{\begin{enumerate}[label=\bfseries\alph*.]}{\end{enumerate}}
+
+%\chapterfont{\color{red!55!black}}
+%\sectionfont{\color{red!55!black}}
+\chapterfont{\color[rgb]{0.141,0.596,0.749}
+}
+\sectionfont{\color[rgb]{0.141,0.596,0.749}
+}
+
+
+
+
+
+%%AMBIENTE ESEMBIO BEGIN
+
+\def\exampletext{Esempio}
+
+\NewDocumentEnvironment{testexample}{ O{} }
+{
+	\colorlet{colexam}{rgb:red,0.141;green,0.596;blue,0.749}
+	\newtcolorbox[use counter=testexample]{testexamplebox}{%
+		% Example Frame Start
+		empty,% Empty previously set parameters
+		title={\exampletext: #1},
+		attach boxed title to top left,
+		minipage boxed title,
+		boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+		coltitle=colexam,fonttitle=\bfseries,fontupper=\sffamily\small,
+		before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+		before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+		% Handles box when it exists on one page only
+		overlay unbroken={\draw[colexam,line width=2.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+		% Handles multipage box: first page
+		overlay first={\draw[colexam,line width=2.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+		% Handles multipage box: middle page
+		overlay middle={\draw[colexam,line width=2.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+		% Handles multipage box: last page
+		overlay last={\draw[colexam,line width=2.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+	}
+	\begin{testexamplebox}}
+	{\end{testexamplebox}\endlist}
+
+%%AMBIENTE ESEMPIO END
+
+
+
+
+
+
+
+
+
+
+
+\title{Laboratorio di fisica}
+\author{Prof. Romano}
+

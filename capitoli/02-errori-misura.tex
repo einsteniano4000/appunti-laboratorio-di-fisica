@@ -1,0 +1,1345 @@
+\chapter{Errori di misura}
+\section{Incertezza nelle misure ripetute }
+Supponiamo di voler misurare il periodo di oscillazione di un pendolo. Un pendolo, in fisica, è costituito da una sferetta sospesa ad un filo. Quando la pallina viene sollevata e lasciata andare, compie un moto periodico. Il tempo che impiega la pallina ad andare e venire, si chiama periodo e si misura in secondi. Si veda la figura \ref{fig:pendolo}. I due punti più in alto si chiamano \textit{punti morti superiori} e il punto più basso, \textit{punto morto inferiore}. Nei punti alti superiori il pendolo rimane per un attimo fermo (prima di invertire il senso del moto) mentre nel punto morto inferiore, raggiunge la massima velocità.
+
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{img/pendolo.png} 
+    \caption{Un pendolo oscillante.}
+    \label{fig:pendolo}
+\end{figure}  
+
+
+Se si cronometrano le oscillazioni, si vede che, ripetendo la misura, non si ottiene lo stesso tempo. La ragione è che questo tipo di misura è soggetto ad incertezze casuali (ad esempio dovute al tempo di reazione di chi misura, tempo che cambia ogni volta che si ripete la misura stessa). Per ovviare a questo problema, è stata sviluppata una teoria statistica che consente di valutare il miglior valore e l'errore da associare alla misura nel limite in cui si fanno tante misure con strumenti di alta sensibilità. Senza entrare nel merito, ricordiamo semplicemente che il miglior valore risulta la media dei valori :
+
+\[
+\overline{T} = \frac{1}{N} \sum_{i=1}^{N} T_i
+\]
+
+\noindent
+Questo significa che sommiamo tutti i valori $T_1, T_2, \ldots, T_N$ e poi dividiamo per il numero totale di valori $N$. In altre parole:
+\[
+\overline{T} = \frac{1}{N} (T_1 + T_2 + \cdots + T_N)
+\]
+Lo sparpagliamento dei dati  è legato alla cosiddetta deviazione standard:
+
+\[
+\sigma = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (T_i - \overline{T})^2}
+\]
+
+\noindent
+Questo significa che per ogni valore $T_i$, calcoliamo la differenza tra $T_i$ e la media $\overline{T}$, la eleviamo al quadrato, sommiamo questi quadrati per tutti i valori da $1$ a $N$, dividiamo per $N-1$, e infine prendiamo la radice quadrata. In altre parole:
+\[
+\sigma = \sqrt{\frac{1}{N-1} \left[ (T_1 - \overline{T})^2 + (T_2 - \overline{T})^2 + \cdots + (T_N - \overline{T})^2 \right]}
+\]
+(la divisione per $N-1$ anziché per $N$ è una correzione che rende la stima più attendibile quando i dati sono pochi; è la stessa formula usata dai fogli di calcolo con la funzione \texttt{DEV.ST}).
+
+Si assume invece, come incertezza (o errore assoluto), il rapporto tra la deviazione standard e la radice quadrata del numero di dati:
+\[
+\sigma_{\overline{T}}=\frac{\sigma}{\sqrt{N}}
+\] 
+Notiamo che questa quantità, diminuisce all'aumentare dei dati perché cresce il denominatore. Su questo punto, torneremo nell'ultimo capitolo di questi appunti.
+Dopo aver calcolato l'incertezza, dobbiamo sempre ricordarci di scriverla con una sola cifra significativa. Vedremo più avanti vari esempi su come farlo. Le formule sono abbastanza complesse ma è semplice applicarle con un foglio di calcolo, dove esistono funzioni apposite per questo tipo di calcoli (\texttt{MEDIA}, \texttt{DEV.ST}). \\
+
+Se non possiamo ripetere la misura molte volte (diciamo almeno 30) allora la statistica (ossia le tre formule scritte prima) non ci fornisce risultati attendibili. In tal caso, si segue una strada diversa. L'errore si calcola come semidispersione massima ed è dato dalla formula:
+\[
+\Delta X = \frac{X_{max}-X_{min}}{2}
+\]
+dove $X_{max}$  e$X_{min}$ sono il valore massimo e  il valore minimo dei nostri dati. Se questo valore viene più piccolo della sensibilità comunque, si assume come errore assoluto la sensibilità. Infatti,ricordando l'esempio del pendolo, se usiamo un cronometro con sensibilità di 0,1 s, è impossibile distinguere due valori che abbiano una differenza minore di questa quantità. 
+
+Supponiamo di aver misurato il periodo $T$ di oscillazione di un pendolo 5 volte e di aver calcolato la media e la semidispersione, ottenendo $T=\SI{1,21}{s}$ e $\Delta x = \SI{0,51}{s}$. Anzitutto arrotondiamo l'errore ad \underline{una} cifra significativa, ossia $\Delta x \approx \SI{0,5}{s}$, poi arrotondiamo il periodo alla seconda cifra decimale: $T\approx \SI{1,2}{s}$ e , in fine, scriviamo il risultato corretto:
+\[
+T=\left(1,2 \pm 0,5 \right)\si{\second}
+\]  
+\section{Incertezza relativa e e percentuale}
+Data una misura $x=\left( \overline{x} \pm \Delta x \right)$ si definisce incertezza relativa il rapporto:
+\[  \colorboxed{ocre}{
+E_r =\frac{\Delta x}{\overline{x}}}
+\]
+L'incertezza relativa è un numero senza unità di misura, generalmente piccolo. Infatti, in un esperimento ben progettato, gli errori sono piccoli, rispetto alla grandezza, e dunque il rapporto è minore di uno. Strettamente legata all'incertezza, c'è l'incertezza percentuale, definita come il prodotto della prima per cento. L'incertezza relativa, consente di confrontare due misure, anche di grandezze diverse. Date due grandezze misurate, \textbf{quella più precisa ha l'incertezza relativa minore}. A titolo di esempio, calcoliamo l'incertezza relativa e percentuale della misura di periodo fatta sopra:
+\[
+Er=\frac{0,5}{1,2}=0,417
+\]
+mentre l'errore percentuale vale:
+\[
+E_{\%} = E_r \cdot 100 = 41,7\, \%
+\]
+Volendo confrontare la precisione di questa misura con questa misura di massa:
+\[
+m=\left(0,10 \pm 0,01 \right) \si{g}
+\]
+devo calcolare l'errore relativo della massa:
+\[
+E_r = \frac{0,01}{0,10}= 0,1
+\]
+quindi questa misura è più precisa.
+\section{Esercizi}
+\begin{esercizio}
+E' stato misurato il volume di un oggetto ottenendo il risultato
+\[
+V=\left( 90,0 \pm 0,4\right)\si{mL}.
+\]
+Determina il risultato corretto nel sistema SI.\\
+\risp{$V=\left( 90,0 \pm 0,4\right)\times10^{-6}\,\si{m^3}$}
+\end{esercizio}
+
+\begin{esercizio}
+In laboratorio è stata misurata la durata del periodo di un pendolo ottenendo il valore $T=\SI{1,874}{s}$ con una semidispersione di $\Delta T =\SI{0,0291}{s}$. Scrivi il risultato in maniera corretta e calcola l'errore percentuale.\\
+\risp{$T=\left(1,87 \pm 0,03\right)\si{s}\text{;} E_{\%}=1,6\%$}
+\end{esercizio}
+
+\begin{esercizio}
+Un gruppo di studenti ha misurato il periodo di oscillazione di un pendolo semplice per 20 volte. I dati raccolti sono riportati nella tabella \ref{tab:pend}. Calcola la media delle misure del periodo (\(\overline{T}\)) e l'incertezza $\Delta T$ e scrivi il risultato in forma corretta.
+\risp{$T=\left(2,16 \pm 0,02\right)\,\si{s}$}
+\begin{table}[h!]
+\centering
+\caption{Misure del periodo di oscillazione di un pendolo}
+\label{tab:pend}
+\begin{tabular}{cc}
+\toprule
+\textbf{Numero di occorrenze} & \textbf{Misura del periodo (s)} \\
+\midrule
+5  & 2,14 \\
+4  & 2,15 \\
+5  & 2,16 \\
+3  & 2,17 \\
+3  & 2,18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\end{esercizio}
+
+
+\begin{esercizio}
+E' stato misurato l'intervallo d'incertezza per la massa di un oggetto e si è ottenuto l'intervallo compreso tra $\SI{459,7}{g}$ e $\SI{460,3}{g}$. Determina la massa e il suo errore e scrivi il risultato in forma corretta.\\
+ \risp{$M=\left(460,0 \pm 0,3\right)\si{g}$}
+\end{esercizio}
+
+
+\begin{esercizio}
+Spiega la differenza tra incertezza assoluta e relativa.
+\end{esercizio}
+
+\begin{esercizio}
+Elenca le seguenti misure per ordine crescente di precisione.
+\begin{multicols}{3}
+\begin{elenco}
+ \item[a)] $L=\left(20,2 \pm 0,1\right)\si{cm}$
+ \item[b)] $M=\left(4,01 \pm 0,01\right)\si{kg}$
+ \item[c)] $t=\left(1,22 \pm 0,02\right)\si{s}$ \\
+ \risp{b, a, c}
+\end{elenco}
+\end{multicols}
+
+\end{esercizio}
+
+
+\section{Confronto tra misure}
+Supponiamo che due gruppi di studenti abbiano misurato la densità di un oggetto ottenendo i valori $d_1=\left(6,7 \pm 0,2\right)\si{g/cm^3}$ e $d_2=\left(6,9 \pm 0,2\right)\si{g/cm^3}$. Ci chiediamo: questi due valori sono compatibili? All'apparenza no, perchè sono diversi. Siamo portati a pensare che i materiali siano leggermente diversi, oppure uno dei gruppi abbia sbagliato la presa dati. In realtà, per rispondere correttamente, dobbiamo ricordare che le misure sono incerte e il risultato è un intervallo di valori. Nel primo caso l'intervallo và da un minimo di $\SI{6,5}{g/	cm^3}$ ad un massimo di $\SI{6,9}{g/cm^3}$. Per il secondo gruppo, l'intervallo va da $\SI{6,7}{g/cm^3}$ a $\SI{7,1}{g/cm^3}$. La situazione è rappresentata in figura:
+
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqzz}{rgb}{0,0,0.6}
+\definecolor{zzqqtt}{rgb}{0.6,0,0.2}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.92,-2.28) rectangle (10.44,3.34);
+\fill[pattern color=zzttqq,fill=zzttqq,pattern=north east lines] (2.98,1.02) -- (2.96,0) -- (6,0) -- (6.02,1.02) -- cycle;
+\draw [line width=3.6pt,color=zzqqtt] (0,0)-- (6,0);
+\draw [line width=3.6pt,color=qqqqzz] (2.98,1.02)-- (8.98,1.02);
+\draw (-0.12,-0.14) node[anchor=north west] {$6,5 $};
+\draw (6.24,0.4) node[anchor=north west] {$6,9$};
+\draw (2.1,1.42) node[anchor=north west] {$6,7$};
+\draw (9.1,1.44) node[anchor=north west] {$7,1$};
+\draw [line width=2pt,dash pattern=on 2pt off 2pt] (2.96,1.94)-- (2.96,-1.06);
+\draw [dash pattern=on 2pt off 2pt] (6.02,1.94)-- (6.02,-1.06);
+\draw [color=zzttqq] (2.98,1.02)-- (2.96,0);
+\draw [color=zzttqq] (2.96,0)-- (6,0);
+\draw [color=zzttqq] (6,0)-- (6.02,1.02);
+\draw [color=zzttqq] (6.02,1.02)-- (2.98,1.02);
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\fill [color=qqqqff] (6,0) circle (1.5pt);
+\fill [color=qqqqff] (2.98,1.02) circle (1.5pt);
+\fill [color=qqqqff] (8.98,1.02) circle (1.5pt);
+\fill [color=uququq] (2.96,0) circle (1.5pt);
+\fill [color=uququq] (6.02,1.02) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+In questo grafico abbiamo riportato i due intervalli di misura in rosso e blu. La zona tratteggiata indica che i due intervalli hanno una zona in comune, ossia la nostra grandezza potrebbe avere come valore vero un valore compreso tra $6,7$ e $6,9$ ma non sappiamo dire di più. Si dice allora che le due misure sono compatibili. Se i due intervalli non si sovrappongono, allora le misure si dicono incompatibili. Consideriamo ad esempio le misure $d_1 = \left(6,7 \pm 0,1\right)\si{g/cm^3}$ e $d_2 = \left(7,1 \pm 0,1\right)\si{g/cm^3}$: il primo intervallo va da $6,6$ a $6,8$, il secondo da $7,0$ a $7,2$. Nel seguente grafico vediamo che non si sovrappongono.
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.92,-2.28) rectangle (14.94,3.34);
+\draw [line width=3.6pt,color=zzqqtt] (0,0)-- (5.02,0);
+\draw [line width=3.6pt,color=qqqqzz] (7.5,1.02)-- (12.52,1.02);
+\draw (-0.32,-0.04) node[anchor=north west] {$6,6 $};
+\draw (4.70,-0.04) node[anchor=north west] {$6,8$};
+\draw (7.18,1.44) node[anchor=north west] {$7,0$};
+\draw (12.20,1.44) node[anchor=north west] {$7,2$};
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\fill [color=qqqqff] (5.02,0) circle (1.5pt);
+\fill [color=qqqqff] (7.5,1.02) circle (1.5pt);
+\fill [color=qqqqff] (12.52,1.02) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+Come si vede il valore massimo della prima misura, $6,8$, è minore del valore minimo della seconda ($7,0$) dunque non ci sono valori comuni ai due intervalli d'incertezza, per cui le misure sono incompatibili. Questo si può generalizzare al caso di più misure. Se anche un solo intervallo non si sovrappone agli altri, allora le misure sono incompatibili. Ovviamente, se tutte le altre sono vicine tra loro e una sola misura è parecchio diversa, probabilmente gli sperimentatori hanno commesso qualche errore di distrazione in quel momento e la misura andrebbe
+ ripetuta o semplicemente ignorata.
+ 
+ \section{Esercizi}
+ 
+\begin{esercizio}
+Determina se le seguenti misure sono compatibili ed eventualmente indica quella non compatibile con le altre.
+\begin{multicols}{3}
+\begin{elenco}
+ \item[a)] $\left(20,2 \pm 0,2\right)\si{cm}$\\
+ \item[b)] $\left(20,0 \pm 0,1\right)\si{cm}$\\
+ \item[c)] $\left(19,0 \pm 0,5\right)\si{cm}$ \\
+ \risp{No}
+\end{elenco}
+\end{multicols}
+
+\end{esercizio} 
+ 
+\begin{esercizio}
+Determina se le seguenti misure sono compatibili:
+\begin{multicols}{3}
+\begin{elenco}
+ \item[a)] $\left(210 \pm 5\right)\si{mm}$
+ \item[b)] $\left(20,0 \pm 0,6\right)\si{cm}$
+ \item[c)] $\left(20.5 \pm 0,1\right)\si{cm}$ \\
+ \risp{Si}
+\end{elenco}
+\end{multicols}
+
+\end{esercizio}   
+ 
+ 
+ 
+
+
+ 
+\section{Misure indirette: propagazione degli errori.}
+Quando si misura una grandezza attraverso un calcolo, l'incertezza presente nei dati si ``propaga'' e la ritroviamo nella misura finale. Il modo con cui le incertezze si propagano viene studiato col metodo della propagazione degli errori. Alla base di questo metodo, ci sono due formule, usate nel caso la formula contenga prodotti/quozienti oppure somme/differenze. Tali formule, è bene dirlo, hanno una bene precisa giusitificazione matematica, ma noi non la forniremo, accontentandoci dei risultati.
+\subsection{Somme/differenze}
+Supponiamo che 
+
+\[
+c=a+b
+\]
+
+dove $a$ e $b$ sono grandezze di cui conosciamo l'errore. Quanto valgono il miglior valore di $c$  e il suo errore assoluto $\Delta c$? Ovviamente il miglior valore di $c$ è $\overline{c}=\overline{a}+\overline{b}$ (ad esempio se $a=1$ e $b=3$ allora $c= 4$). Per conoscere invece l'errore assoluto $\Delta c$ dovremmo conoscere l'intervallo di incertezza di $c$, ma $c$ non è stato misurato con uno strumento, ma con un calcolo. Non disponiamo di una riga, una bilancia o qualunque altro strumento per valutare la sensibilità. Dunque non è così ovvio come procedere. I risultati della teoria prevedono che $c$ abbia un valore che è compreso tra $\overline{c} -\Delta c$ e $\overline{c} +\Delta c$ dove l'errore assoluto è semplicemente la somma degli errori:
+\[  \colorboxed{ocre}{
+\Delta c = \Delta a +\Delta b}
+\]
+
+Questa formula quando si applica? Molto semplice. Supponiamo di voler misurare la lunghezza di un tavolo di circa $\SI{1100}{\milli\meter}$ e di disporre di una riga di $\SI{600}{\milli\meter}$ di portata. Allora dovremmo usare \textit{due volte} la riga, una volta per intero   e una volta per una parte in modo che la nostra lunghezza diventi:
+\[
+\overline{l}= \SI{600}{\milli\meter} +\SI{500}{\milli\meter}=\SI{1100}{\milli\meter}
+\]
+Dunque, abbiamo fatto un calcolo. Accostando la riga cioè, abbiamo mentalmente fatto una somma perché ci sembra ovvio che, mettendo in fila la riga, le lunghezze si sommino. La teoria ci dice che l'errore sulla lunghezza vale:
+\[
+\Delta l = \SI{1}{\milli\meter}+\SI{1}{\milli\meter}=\SI{2}{\milli\meter}
+\]
+in quanto l'errore di lettura sulla riga è di $\SI{1}{\milli\meter}$.
+
+Lo stesso discorso si può fare in altri casi. Supponiamo ad esempio di disporre di una bilancia di portata $\SI{4000}{\gram}$. Se dobbiamo pesare due pacchi di peso $\SI{3500}{\gram}$ e $\SI{2000}{\gram}$, non possiamo metterli entrambi sulla bilancia perchè si romperebbe (lo so l'esempio vi sembra artificioso e vi starete chiedendo ``come fai a sapere quanto pesano senza pesarli?'', ma  si può  valutare  ad occhio la massa.) Poi è sempre meglio essere prudenti in queste cose e se una volta pesati separatamente, vediamo che la somma è minore di $\SI{4000}{\gram}$, allora significa che siamo stati troppo prudenti!). Anche  in questo caso quindi, ricorreremo ad una \underline{somma} e, supponendo che la singola pesata abbia un errore di $\SI{1}{g}$, il nostro risultato è :
+\[
+M =\left(5500 \pm 2 \right)\si{\gram}
+\]
+Notiamo che abbiamo preso come errore la somma degli errori, come nel caso precedente.
+
+Questo discorso vale anche per le differenze. La formula analoga alla precedente, nel caso $d=a-b$, è 
+
+
+\[  \colorboxed{ocre}{
+\Delta d = \Delta a + \Delta b}
+\]
+ossia facciamo \textbf{la somma degli errori}, non la differenza. Un esempio è la misura della'area di una figura cava.
+\begin{testexample}[ \thetcbcounter \, Area di un trapezio forato]
+ Guardando la figura in basso, si chiede di calcolare l'area della parte in grigio conoscendo l'area esterna e l'area del cerchio. Supponiamo che l'area esterna (trapezio) valga:
+\[
+A_{tot}=\left (120 \pm 2\right)\si{cm^2}
+\]
+mentre quella del cerchio
+\[
+A_{cerc}=\left( 65 \pm 1\right)\si{cm^2}
+\]
+\definecolor{ffffff}{rgb}{1,1,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.86,-0.18) rectangle (10.16,4.14);
+\fill[fill=black,fill opacity=0.65] (0,0) -- (4,4) -- (10,4) -- (10,0) -- cycle;
+\draw [line width=0.4pt,fill=black,fill opacity=1.0] (6.42,2) circle (1.4cm);
+\draw (0,0)-- (4,4);
+\draw (4,4)-- (10,4);
+\draw (10,4)-- (10,0);
+\draw (10,0)-- (0,0);
+\draw [color=ffffff](6,2.18) node[anchor=north west] {\textbf{$A_{cerc}$}};
+\draw [color=ffffff](2.52,0.92) node[anchor=north west] {\textbf{$A_{est}$}};
+\end{tikzpicture}
+
+allora l'area grigia vale:
+\[
+A_{est}=\left ( 55 \pm  3\right)\si{cm^2}
+\]
+\end{testexample}
+\subsection{Moltiplicazioni/divisioni}
+La regola per gli errori sui prodotti è più complessa. Essa afferma che se una grandezza è prodotto o rapporto tra due grandezze, il suo errore relativo si può calcolare direttamente senza calcolare l'errore assoluto. Quindi con i prodotti e quozienti noi calcoliamo subito l'errore relativo. Traduciamo in formule questa frase. Se $c=a \cdot b$, allora:
+\[  \colorboxed{ocre}{
+\frac{\Delta c}{\overline{c}} =\frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}}
+}
+\]
+Questa formula lega l'errore relativo su $c$ a quelli di $a$ e $b$. Facciamo un esempio. Supponiamo di aver misurato i lati $a$ e $b$ di un rettangolo coi relativi errori ottenendo: $a=\left(10,25  \pm 0,05\right)\si{mm}$ e  $b=\left(15,00  \pm 0,05\right)\si{mm}$. L'errore relativo su $c$ è pertanto:
+\[
+\frac{\Delta c}{\overline{c}}=\frac{0,05}{10,25} +\frac{0,05}{15,00}=0,008211382
+\]
+Essendo questo un errore relativo, possiamo lasciare qualche cifra significativa in più. Ora calcoliamo l'area :
+\[
+\overline{A}=\overline{a} \cdot \overline{b} = \SI{10,25}{mm} \cdot \SI{15,00}{mm}  = \SI{153.75}{mm^2} 
+\]
+Ora ci chiediamo come calcolare l'errore assoluto. Ma sappiamo che l'errore relativo e l'errore assoluto sono legati, e l'errore assoluto, si può calcolare da una formula inversa: $\Delta A = E_r \cdot \overline{A}=0,008211382 \cdot \SI{153.75}{mm^2}=\SI{1,26}{mm^2}	\approx \SI{1}{mm^2}$. In definitiva abbiamo:
+\[
+A=\left(154 \pm 1\right)\si{mm^2}
+\]
+Notiamo che abbiamo approssimato l'area per avere lo stesso numero di cifre decimali dell'errore.
+
+\textbf{Osservazione.} In questo esercizio abbiamo calcolato prima l'errore relativo e poi quello assoluto. Se in un problema è richiesto solo l'errore relativo, questo approccio è il più conveniente. In laboratorio di solito, si richiede di calcolare direttamente l'errore assoluto. In tal caso, possiamo verificare che la formula da applicare è:
+\[  \colorboxed{ocre}{
+\Delta c = \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}\right)}
+\]
+Notiamo che l'unità di misura dell'errore è la stessa di $c$ perché la quantità in parentesi è una somma di errori relativi e quindi non ha unità di misura. Per questo, quando si fanno gli esercizi. è sempre bene effettuare i calcoli portandosi dietro le unità di misura. Notiamo ancora che, in parentesi, c'è una somma di errori relativi. Se uno dei due è molto più piccolo dell'altro, allora possiamo trascurarlo. Questo significa che l'errore relativo finale è l'errore relativo della misura \underline{meno precisa}. Per questo, quando in laboratorio facciamo misure, dobbiamo evitare che una misura rozza ``rovini'' il risultato. Questa formula vale anche se vogliamo calcolare l'errore in un rapporto, ovvero, se $c=\frac{a}{b}$, allora: 
+
+\[
+\Delta c = \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}} + \frac{\Delta b}{\overline{b}}\right)
+\] 
+
+
+Facciamo un altro esempio.
+\vspace{0.5 cm}
+\begin{testexample}[\thetcbcounter \, Densità di un liquido]
+Supponiamo di aver misurato la massa e il volume di un liquido ottenendo i risultati: $M=\left(320,0  \pm 0,1 \right)\si{g} $ e $V=\left(407 \pm 1 \right)\si{mL}$. Calcoliamo la densità senza approssimarla:
+\[
+\overline{d}=\frac{\overline{M}}{\overline{V}}=\frac{\SI{320,0}{g}}{\SI{407}{mL}}=\SI{7,400491}{\frac{g}{mL}}
+\]
+Ora calcoliamo l'errore:
+\[
+\Delta d = \overline{d}\cdot \left(\frac{\Delta M}{\overline{M}} +\frac{\Delta V}{\overline{V}}  \right)   = \SI{7,400491}{\frac{g}{mL}}\cdot\left(\frac{0,1}{320,0} +\frac{1}{407}  \right) =\SI{0,02}{\frac{g}{mL}}
+\]
+In definitiva la nostra densità vale:
+\[
+d=\left(7,40 \pm 0.02 \right)\si{\frac{g}{mL}}
+\]
+\end{testexample}
+
+
+\begin{testexample}[\thetcbcounter \, Velocità media]
+Un gruppo di studenti ha misurato il tempo $t=\left(2,3450 \pm 0,0001\right)\,\si{\second}$ impiegato da un carrello, per percorrere  lo spazio percorso $s=\left(1822 \pm 1\right)\,\si{\milli\meter}$.  Determinare la velocità media e il suo errore assoluto e scrivere il risultato in forma corretta nel sistema internazionale: $v = \left( \overline{v} \pm \Delta v\right)\,\si{\meter\per\second}$.
+
+
+La velocità media $\overline{v}$ si ottiene dividendo lo spazio percorso $s$ per il tempo impiegato $t$:
+
+$$\overline{v} = \frac{\overline{s}}{\overline{t}} = \frac{1822\,\si{\milli\meter}}{2,345\,\si{\second}} = \SI{776,97}{\milli\meter\per\second} =  \SI{0,77697}{\meter\per\second}  $$
+Calcolo dell'errore assoluto:
+\[
+\Delta v = \overline{v}\cdot \left(\frac{\Delta s}{\overline{s}} +\frac{\Delta t}{\overline{t}}  \right) =  \left( \SI{0,77697}{\meter\per\second}\right)\cdot \left(\frac{1}{1822} +\frac{0,0001}{2,3450}  \right) = \SI{0,000459571}{\meter\per\second} \approx \SI{0,0005}{\meter\per\second}.   
+\]
+In definitiva:
+\[
+v=\left(0,7770 \pm 0,0005\right) \, \si{\meter\per\second}
+\]
+Osserviamo che nel calcolo dell'errore relativo, non occorre trasformare i dati nel sistema S.I. perché eventuali fattori di conversione, si semplificherebbero nella frazione. Inoltre, prima di inserire la velocità nella scrittura corretta, l'abbiamo approssimata alla quarta cifra decimale come l'errore. Si noti in fine, che non c'è stato bisogno di riportare i passaggi intermedi per gli errori relativi e applicare le regole sulle cifre significative nella somma, perché, quando si calcolano gli errori, quelle regole non vanno applicate e si può impostare tutto il calcolo direttamente sulla calcolatrice. Stesso discorso quando abbiamo molte potenze di 10: conviene inserirle nella calcolatrice e lasciare che si occupi del calcolo, questo non è un corso di matematica!
+ \end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Volume di un parallelepipedo]
+Il volume di un parallelepipedo è dato dalla formula:
+\[
+V=a \cdot b \cdot c
+\]
+Immaginiamo di avere i seguenti valori dei lati: $a=\left(10,2 \pm 0,1\right)\si{cm}$, $b=\left(8,0 \pm 0,1\right)\si{cm}$, e $c=\left(12,6 \pm 0,1\right)\si{cm}$.
+Calcoliamo l'errore assoluto sul volume. La regola del prodotto contiene tre fattori, pertanto avremo:
+\[
+\Delta V=\overline{V} \cdot \left( \frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}} +\frac{\Delta c}{\overline{c}}\right)
+\]
+Prima calcoliamo il volume: $\overline{V}=\left(\SI{10,2}{cm}\right)\cdot \left(\SI{8,0}{cm}\right)\cdot \left(\SI{12,6}{cm}\right)=\SI{1028,16}{cm^3}$.
+L'errore diventa:
+\[
+\Delta V=\SI{1028,16}{cm^3} \cdot \left( \frac{0,1}{10,2}+\frac{0,1}{8,0} +\frac{0,1}{12,6}\right)=\SI{31,092}{cm^3}
+\]
+Questo errore ha troppe cifre significative. Per ridurle, possiamo usare la notazione scientifica oppure, un multiplo del centimetro, in modo da ottenere un errore minore di 9 che sappiamo approssimare. Pertanto scriveremo:
+\[
+\Delta V = \SI{0,031092}{dm^3}\approx \SI{0,03}{dm^3}
+\]
+Analogamente si ha:
+\[
+V=\SI{1,02816}{dm^3} 
+\]
+Dunque la misura finale scritta col corretto numero di cifre significative è:
+\[
+V=\left(1,03 \pm 0,03\right)\si{dm^3}
+\]
+Quando gli errori sono maggiori di 10, è concesso lasciare gli zeri ammettendo che, anche se normalmente sarebbero significativi (perché alla fine del numero) in questo caso non lo sono. Quindi, volendo lasciare tutto in centimetri, avremmo anche potuto scrivere:
+\[
+V=\left(1030 \pm 30\right)\,\si{\cubic\centi\meter}.
+\]
+\end{testexample}
+\begin{testexample}[\thetcbcounter \, perimetro di un quadrato]
+Consideriamo un quadrato di lato  $l=\left(10,2 \pm 0,1\right)\si{cm}$. La formula del perimetro è:
+\[
+\overline{P}=4\overline{l} = 4\cdot \left(\SI{10,2}{\centi\meter} \right) =\SI{40,8}{\centi\meter}.
+\]
+pertanto, usando la regola per la propagazione dell'errore in un prodotto, abbiamo:
+\[
+\Delta P= \overline{P}\cdot\left( \cancel{\frac{\Delta 4}{4}} +\frac{\Delta l}{\overline{l}}  \right) = \left(\SI{40,8}{\centi\meter}\right)\cdot \left(\frac{0,1}{10,2} \right) =\SI{0,4}{\centi\meter} .
+\]
+dove abbiamo cancellato il primo addendo perché 4 (cosi come $\pi$ e tutte le costanti nelle formule) non ha errore (però bisogna metterlo nel calcolo del perimetro). In definitiva abbiamo:
+\[
+P=\left(40,8 \pm 0,4\right) \si{\centi\meter}.
+\]
+\end{testexample}
+
+
+
+
+Notiamo che se si ha una formula del tipo:
+\[
+c=\frac{a\cdot b^2}{d}
+\]
+ogni fattore al numeratore o al denominatore contribuisce tante volte all'errore relativo quanto è alta la sua potenza perchè la potenza non è altro che una moltiplicazione ripetuta. Dunque, la formula dell'errore diventa:
+\[
+\Delta c= \overline{c} \cdot \left(\frac{\Delta a}{\overline{a}}+\frac{\Delta b}{\overline{b}} +\frac{\Delta b}{\overline{b}}  +\frac{\Delta d}{\overline{d}} \right)= \left(\frac{\Delta a}{\overline{a}}+2\frac{\Delta b}{\overline{b}}  +\frac{\Delta d}{\overline{d}} \right)
+\]
+\begin{testexample}[\thetcbcounter \, Misura dell'accelerazione di gravità]
+Nella teoria del moto di un oggetto in caduta, si ricava la seguente formula per il calcolo dell'accelerazione di gravità $g$:
+\[
+g=\frac{2\cdot h}{t^2}
+\]
+essendo $h$ l'altezza da cui il corpo cade, e $t$ il tempo impiegato a cadere. Vogliamo calcolare l'errore su $g$ supponendo le seguenti misure: $h=\left(6,00 \pm 0,01\right)\si{m}$, e $t=\left(1,11\pm 0,01\right)\si{s}$. Inserendo i valori otteniamo subito: $g = \SI{9,74}{m/s^2}$.
+Per l'errore è facile convincersi che la formula da usare è:
+\[
+\Delta g= \overline{g}\left(\frac{\Delta h}{\overline{h}} +2\frac{\Delta t}{\overline{t}}\right)=\SI{0,19}{m/s^2}\approx \SI{0,2}{m/s^2}
+\]
+In definitiva:
+\[
+g=\left(9,7 \pm 0,2\right)\si{m/s^2}
+\]
+\end{testexample}
+\begin{testexample}[\thetcbcounter \,  Volume del cilindro]
+Consideriamo un cilindro di raggio $r=\left(1,205 \pm 0,005\right)\si{cm}$ e altezza $h=\left(4,000 \pm 0,005 \right)\si{cm}$. La formula per il calcolo del volume è:
+\[
+V=\pi\cdot  r^2 \cdot h
+\]
+pertanto il valore numerico risulta: $V =\SI{18,247}{cm^3}$, mentre per l'errore si ha:
+\[
+\Delta V=\overline{V}\cdot \left(2\frac{\Delta r}{\overline{r}} +\frac{\Delta h}{\overline{h}}\right)=\SI{0,174}{cm^3}\approx \SI{0,2}{cm^3}
+\]
+La misura comprensiva dell'errore è pertanto:
+\[
+V=\left(18,2 \pm 0,2\right)\si{cm^3}
+\]
+\end{testexample}
+
+
+\subsection{Esercizi}
+\begin{esercizio}
+In laboratorio si vuole misurare il volume di un solido irregolare. Per fare questo, si misura inizialmente il volume di una certa quantità d'acqua presente in un becker, ottenendo il valore  $V_i=\left(60 \pm 1\right)\si{mL}$. Una volta inserito il corpo, il livello sale a $V_f=\left(105 \pm 1\right)\si{mL}$. Determina il volume dell'oggetto sommerso e scrivi il risultato in forma corretta.\\
+ \risp{$V=\left(45 \pm 2\right)\si{mL}$}
+\end{esercizio}
+
+\begin{esercizio}
+Si vuole misurare la lunghezza di una stanza utilizzando un metro con portata $\SI{2,000}{m}$ e sensibilità $\SI{0,1}{cm}$. Il valore misurato risulta essere $L=\SI{6,450}{m}$. Scrivi il risultato in forma corretta (hai già il valore della grandezza, ti manca l'errore). Rifletti su come potrebbe essere stata effettuata la misura per capire quanto vale l'errore.\\
+ \risp{$L=\left(6,450 \pm 0,003\right)\si{m}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un pentagono regolare, ha lato $L=\left(2,5 \pm 0,1\right)\si{cm}$. Determina il suo perimetro e scrivi il risultato con l'errore.\\
+ \risp{$2P=\left(12,5 \pm 0,5\right)\si{cm}$}
+\end{esercizio}
+\begin{esercizio}
+Viene misurato 10 volte il tempo T di oscillazione di un pendolo, ottenendo i risultati in tabella:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+T(s)& Ripetuto\\
+\hline
+1,25 & 2 volte\\
+1,24 & 4 volte \\
+1,23 & 1 volta \\
+1,20 & 2 volte \\
+1,21 & 1 volta \\
+\hline
+\end{tabular}
+\end{center}
+Determina il valore medio e l'errore. In fine, scrivi il risultato in forma corretta.\\
+\risp{$T=\left(1,23 \pm 0,03\right)\si{s}$}
+\end{esercizio}
+\begin{esercizio}
+Un modo per misurare l'accelerazione di caduta, è usare la seguente relazione:
+\[
+g=\frac{v^2}{2 h}
+\]
+essendo $h$ l'altezza da cui si fa cadere un oggetto, e $v$ la velocità di caduta (misurata con un cronometro fatto partire automaticamente quando l'oggetto cade, tramite una fotocellula). Un gruppo di studenti, ha misurato $h$ e $v$ ottenendo:
+\[
+h=\left(1226 \pm 1 \right) \, \si{\milli\meter} \text{;}\,\, v=\left(4,8531 \pm  0,0001\right) \, \si{\meter\per\second} 
+\]
+Determina il valore di $g$ col suo errore e scrivi il risultato in forma corretta. \\\hspace*{\fill} [$g=\left(9,605 \pm 0,008 \right) \, \si{\meter\per\square\second}$] 
+\end{esercizio}
+
+\begin{esercizio}
+In geometria, il volume di una sfera di raggio $r$ si calcola con la formula:
+\[
+V=\frac{4\cdot\pi \cdot r^3}{3}
+\] 
+Supponiamo di aver misurato col calibro il diametro $d$ di una sfera avendo ottenuto $d=\left(9,555 \pm 0,005\right)\si{cm}$. Dimostra che la formula del volume, espressa rispetto al diametro è:
+\[
+V=\frac{\pi \cdot d^3}{6}
+\]
+Utilizzando questa formula:
+\begin{enumerate}
+\item[a)] Calcola il volume;
+\item[b)] Scrivi la formula per il calcolo dell'errore;
+\item[c)] Calcola l'errore.
+\item[d)] Scrivi il risultato in forma corretta.
+\end{enumerate}
+ \hspace*{\fill}   $\left[\overline{V}=\SI{456.76}{cm^3}\text{,} \Delta V=\overline{V}\cdot\left(3\frac{\Delta d}{d}\right)\approx\SI{0.7}{cm^3}\text{,} V=\left(456,8 \pm 0,7 \right)\si{cm^3}\right] $
+\end{esercizio}
+\vspace{0.2cm}
+\begin{esercizio}
+Si sa che una grandezza $f$ dipende dalle grandezze $a$, $b$, $c$, $d$, $e$ attraverso la formula:
+\[
+f = 4 \cdot \frac{a\cdot b^2 \cdot c^3}{d^4 \cdot e^5}
+\]
+Determina la formula per il calcolo dell'errore assoluto su $f$.\\
+
+\risp{$\Delta f=\overline{f}\cdot\left(\frac{\Delta a}{\overline{a}}+ 2\cdot \frac{\Delta b}{\overline{b}} +3\cdot\frac{\Delta c}{\overline{c}} + 4\cdot \frac{\Delta d}{\overline{d}} + 5\cdot \frac{\Delta e}{\overline{e}}  \right)$}
+\end{esercizio}
+\section{Propagazione degli errori indipendenti e casuali}
+
+Nelle misure sperimentali, gli errori casuali associati a grandezze indipendenti si propagano secondo regole specifiche. Questo approccio, basato sulla \textbf{somma in quadratura}, si differenzia dalla propagazione degli errori massimi (strumentali), dove si sommano direttamente i contributi degli errori. Infine, vedremo come combinare un errore casuale con un errore massimo.
+
+\subsection{Somme e differenze}
+Per somme o differenze di grandezze indipendenti, l'errore assoluto totale è dato dalla \textbf{somma in quadratura} degli errori assoluti:
+
+\[
+\Delta S = \sqrt{(\Delta A)^2 + (\Delta B)^2},
+\]
+dove $S = A \pm B$.
+
+Questo approccio si applica quando gli errori sono \textbf{casuali e indipendenti}, ed è meno conservativo rispetto alla propagazione degli errori massimi, che semplicemente somma gli errori: $\Delta S = \Delta A + \Delta B$.
+
+\textbf{Esempio.}
+Supponiamo di avere $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$. Calcoliamo $S = A + B$:
+\[
+S = 5,0 + 3,0 = 8,0,
+\]
+\[
+\Delta S = \sqrt{(0,2)^2 + (0,1)^2} = \sqrt{0,04 + 0,01} = \sqrt{0,05} \approx 0,2.
+\]
+Risultato: $S = 8,0 \pm 0,2$.  
+L'errore assoluto finale è stato arrotondato ad una sola cifra significativa.
+
+\subsection{Prodotti e quozienti}
+Per prodotti o quozienti di grandezze indipendenti, gli errori relativi si sommano in quadratura:
+
+\[
+\frac{\Delta R}{R} = \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2},
+\]
+dove $R = A \cdot B$ oppure $R = A / B$.  
+Da qui, l'errore assoluto risulta:
+\[
+\Delta R = R \cdot \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}.
+\]
+
+\textbf{Esempio.}
+Se $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$, calcoliamo $R = A \cdot B$:
+\[
+R = 5,0 \cdot 3,0 = 15,0,
+\]
+\[
+\frac{\Delta R}{R} = \sqrt{\left(\frac{0,2}{5,0}\right)^2 + \left(\frac{0,1}{3,0}\right)^2} = \sqrt{0,0016 + 0,0011} \approx 0,053.
+\]
+\[
+\Delta R = 15,0 \cdot 0,053 \approx 0,8.
+\]
+Risultato: $R = 15,0 \pm 0,8$.
+
+\subsection{Combinazione di errori casuali ed errori massimi}
+Se una misura è affetta da un errore casuale $\Delta_c$ e da un errore massimo (strumentale) $\Delta_m$, questi possono essere combinati in quadratura:
+\[
+\Delta = \sqrt{(\Delta_c)^2 + (\Delta_m)^2}.
+\]
+
+\textbf{Esempio.}
+Una grandezza $A = 10,0 \pm 0,3$ ha un errore casuale $\Delta_c = 0,3$ e un errore massimo $\Delta_m = 0,5$. L'errore totale sarà:
+\[
+\Delta A = \sqrt{(0,3)^2 + (0,5)^2} = \sqrt{0,09 + 0,25} = \sqrt{0,34} \approx 0,6.
+\]
+Risultato: $A = 10,0 \pm 0,6$.
+
+\subsection{Differenze rispetto alla propagazione degli errori massimi}
+Con la propagazione degli errori massimi, si assume il caso peggiore, cioè che tutti gli errori si sommino direttamente. Questo approccio è più conservativo ma spesso sovrastima l'incertezza, specialmente se gli errori sono indipendenti e casuali.
+
+Ad esempio, per $A = 5,0 \pm 0,2$ e $B = 3,0 \pm 0,1$, nella propagazione degli errori massimi avremmo:
+\[
+\Delta S = \Delta A + \Delta B = 0,2 + 0,1 = 0,3,
+\]
+mentre la somma in quadratura dà $\Delta S \approx 0,2$, che è più realistico.
+
+\subsection{Conclusioni}
+La somma in quadratura fornisce un'approssimazione migliore dell'incertezza totale quando gli errori sono casuali e indipendenti, distinguendosi dall'approccio conservativo della propagazione degli errori massimi. La combinazione con errori massimi tramite la somma in quadratura è particolarmente utile per misure sperimentali complesse.
+
+ \chapter{Grafici di misure}
+In fisica spesso è possibile verificare una formula facendo variare una delle grandezze contenute e osservando su un grafico come varia un'altra grandezza. A questo scopo si predispone una tabella coi dati e poi si realizza un grafico avendo come obiettivo una buona leggibilità. Elencheremo di seguito una procedura passo-passo, per realizzare dei buoni grafici elencando tutte le caratteristiche indispensabili. Nelle prossime sezioni, realizzeremo, prima un grafico a mano, poi con l'uso del foglio di calcolo.
+\section{Un esempio di grafico realizzato a mano}
+
+Supponiamo di aver misurato la capacità $C$ di un condensatore (unità di misura picofarad, pF)  in funzione della distanza tra le armature di un condensatore piano (distanza d espressa in mm). I dati sono in tabella \ref{tab:condensatore}: 
+
+\begin{table}
+\begin{center}
+{
+\def\arraystretch{1.5} %serve a inserire spazio bianco
+\begin{tabular}{|c|c|}
+\hline 
+ $d\left( \si{\milli\meter}\right)$ & $C \left( \si{\pico\farad}\right)$   \\
+\hline
+2 & 420\\
+3 &  282 \\
+4 &  219 \\
+5 & 182 \\
+6 & 158 \\
+7 &  139\\
+8 &  127\\
+9  & 115\\
+10 & 108\\
+\hline
+\end{tabular}
+}
+\caption{Dati per il grafico capacità-distanza}
+\label{tab:condensatore}
+\end{center}
+\end{table}
+La prima cosa che notiamo, è che all'aumentare della distanza, la capacità diminuisce. Questo tipo di andamento, vedremo, è indizio (ma non è sufficiente) di una proporzionalità inversa. Ti invito a realizzare il grafico che stiamo costruendo, anche col foglio di calcolo, usando il metodo che vedremo più avanti. Vediamo quali scelte vanno fatte per il grafico.
+\subsection{Disegno degli assi e titolo del grafico}
+Possiamo disegnare subito gli assi lungo il bordo arancione e dare un titolo al grafico (figura \ref{fig:titoloassi})
+
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/titoloassi.pdf} 
+    \caption{Titolo e  etichette sugli assi}
+    \label{fig:titoloassi}
+\end{figure}  
+
+\subsection{Scelta dei fattori di scala i valori maggiori} 
+Per scegliere la scala, dobbiamo calcolare approssimativamente dove vogliamo che il grafico termini, e poiché vogliamo che venga grande, faremo in modo che i valori massimi delle due variabili capitino alla fine del foglio. Abbiamo un foglio in cui l'area arancione ha   dimensioni di $280 \times 200 $ millimetri e vogliamo che il massimo valore della distanza in tabella, ossia $\SI{10}{\milli\meter}$, capiti alla fine dell'asse X ad una distanza di circa $\SI{280}{\milli\meter}$. Dunque calcoliamo il fattore di scala sull'asse X:
+\[
+F_x=\frac{\SI{280}{\milli\meter}}{\SI{10}{\milli\meter}} = 28
+\]
+Con questo fattore potremo inserire ogni dato della prima colonna sul grafico moltiplicandolo per $F_x$. Per esempio, il valore $\SI{2}{\milli\meter}$ andrà inserito sul punto dell'asse X di ascissa $28\times\SI{2}{\milli\meter} = \SI{56}{\milli\meter}$. Analogamente, il fattore di scala sull'asse Y è:
+\[
+F_y = \frac{\SI{200}{\milli\meter}}{\SI{420}{\pico\farad}} = \SI{0,476}{\milli\meter\per\pico\farad}.
+\] 
+
+E' sempre meglio approssimare per difetto i fattori di scala, altrimenti i valori massimi della tabella, potrebbero uscire dai bordi del foglio (dalla parte colorata).
+Effettuando i calcoli, otteniamo per i dati sull'asse X:
+\begin{equation*}
+\begin{aligned}
+\SI{2}{\milli\meter} \times 28 &= \SI{56}{\milli\meter}  \\
+\SI{3}{\milli\meter}  \times 28 &= \SI{84}{\milli\meter}  \\
+\SI{4}{\milli\meter}  \times 28 &= \SI{112}{\milli\meter}   \\
+\SI{5}{\milli\meter}  \times 28 &= \SI{140}{\milli\meter}  \\
+\SI{6}{\milli\meter}  \times 28 &= \SI{168}{\milli\meter}   \\
+\SI{7}{\milli\meter}  \times 28 &= \SI{196}{\milli\meter}  \\
+\SI{8}{\milli\meter}  \times 28 &= \SI{224}{\milli\meter}  \\
+\SI{9}{\milli\meter}  \times 28 &= \SI{252}{\milli\meter}  \\
+\SI{10}{\milli\meter}  \times 28 &= \SI{280}{\milli\meter}  \\
+\end{aligned}
+\end{equation*}
+Facciamo anche i calcoli per i dati da inserire sull'asse Y:
+
+\[
+\begin{array}{rcl}
+\SI{420}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{199.92}{\milli\meter} \\
+\SI{282}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{134.232}{\milli\meter} \\
+\SI{219}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{104.244}{\milli\meter} \\
+\SI{182}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{86.632}{\milli\meter} \\
+\SI{158}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{75.208}{\milli\meter} \\
+\SI{139}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{66.164}{\milli\meter} \\
+\SI{127}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{60.452}{\milli\meter} \\
+\SI{115}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{54.74}{\milli\meter} \\
+\SI{108}{\pico\farad} \times \SI{0.476}{\milli\meter\per\pico\farad} &=& \SI{51.408}{\milli\meter} \\
+\end{array}
+\]
+Ovviamente, questi valori devono essere arrotondati per difetto al millimetrio più vicino (il foglio permette al massimo di tracciare i millimetri). Queste due tabelle dei calcoli, non vanno riportate sul foglio di relazione ma solo sui propri appunti. Quello che ci interessa sono i numeri finali (i millimetri). Riportiamo in fine, i dati sul grafico (figura \ref{fig:graficomanuale}) dove abbiamo anche tracciato (ad occhio) una linea di tendenza. 
+ 
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/graficomanuale.pdf} 
+    \caption{Grafico su carta millimetrata.}
+    \label{fig:graficomanuale}
+\end{figure}
+
+
+\section{Rette di massima e minima pendenza}\label{sec:rettemaxmin}
+Quando i dati sperimentali si dispongono lungo una retta, spesso lo scopo dell'esperimento è misurare la \textbf{pendenza} di quella retta, perché la pendenza ha un significato fisico (una velocità, una costante elastica, l'accelerazione di gravità\dots). Tracciando ``a occhio'' una sola linea di tendenza otteniamo un valore per la pendenza, ma non la sua incertezza. Il \textbf{metodo delle rette di massima e minima pendenza} serve proprio a stimare l'errore sulla pendenza a partire dalle barre d'errore dei dati.
+
+\subsection{I quattro punti di ancoraggio}
+Si considerano solo il \textbf{primo} punto sperimentale $P_1(x_1,y_1)$ e l'\textbf{ultimo} $P_n(x_n,y_n)$, cioè quelli agli estremi del grafico, e le loro barre d'errore verticali di semiampiezza $e_y$ (l'incertezza sulla grandezza in ordinata). Sugli estremi delle due barre individuiamo quattro punti:
+\begin{itemize}
+\item sulla barra di $P_1$: \; $A=(x_1,\; y_1+e_y)$ \; (estremo superiore) \quad e \quad $B=(x_1,\; y_1-e_y)$ \; (estremo inferiore);
+\item sulla barra di $P_n$: \; $C=(x_n,\; y_n+e_y)$ \; (estremo superiore) \quad e \quad $D=(x_n,\; y_n-e_y)$ \; (estremo inferiore).
+\end{itemize}
+
+\subsection{Costruzione delle due rette}
+\begin{itemize}
+\item la \textbf{retta di massima pendenza} congiunge $B$ (in basso a sinistra) con $C$ (in alto a destra): è la retta più ``ripida'' compatibile con le barre d'errore;
+\item la \textbf{retta di minima pendenza} congiunge $A$ (in alto a sinistra) con $D$ (in basso a destra): è la retta meno ``ripida''.
+\end{itemize}
+Le due pendenze si calcolano con la solita formula $m=\dfrac{y_{\text{fin}}-y_{\text{in}}}{x_{\text{fin}}-x_{\text{in}}}$:
+\[
+m_{max}=\frac{(y_n+e_y)-(y_1-e_y)}{x_n-x_1}, \qquad
+m_{min}=\frac{(y_n-e_y)-(y_1+e_y)}{x_n-x_1}.
+\]
+Il valore da assumere per la pendenza e la sua incertezza si ottengono poi come valore medio e semidispersione:
+\[
+\colorboxed{ocre}{m=\frac{m_{max}+m_{min}}{2}}, \qquad
+\colorboxed{ocre}{\Delta m=\frac{m_{max}-m_{min}}{2}}.
+\]
+Un controllo va sempre fatto: entrambe le rette limite devono passare (o quasi) anche \emph{attraverso le barre d'errore dei punti intermedi}. Se così non è, o i dati non sono davvero lineari, oppure alcune barre d'errore sono state sottostimate.
+
+\subsection{Esempio: la legge di Hooke}
+Misurando l'allungamento $\Delta x$ di una molla al variare della forza applicata $F$, ci si aspetta la relazione lineare $F=k\,\Delta x$, dove $k$ è la costante elastica (pendenza della retta). I dati sono in tabella \ref{tab:hooke}; l'incertezza sulla forza è $e_F=\SI{0,10}{\newton}$, quella sull'allungamento è trascurabile.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+ & $P_1$ & $P_2$ & $P_3$ & $P_4$ \\
+\midrule
+$\Delta x$ (m) & 0,010 & 0,021 & 0,032 & 0,041 \\
+$F$ (N)        & 0,49  & 0,98  & 1,47  & 1,96  \\
+\bottomrule
+\end{tabular}
+\caption{Forza applicata e allungamento di una molla ($e_F=\SI{0,10}{\newton}$).}
+\label{tab:hooke}
+\end{table}
+
+I quattro punti di ancoraggio sul primo e sull'ultimo dato sono:
+\[
+\begin{aligned}
+A &= (0,010;\ 0,49+0,10) = (0,010;\ 0,59), & B &= (0,010;\ 0,49-0,10) = (0,010;\ 0,39),\\
+C &= (0,041;\ 1,96+0,10) = (0,041;\ 2,06), & D &= (0,041;\ 1,96-0,10) = (0,041;\ 1,86).
+\end{aligned}
+\]
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\linewidth, height=6.5cm,
+    xlabel={$\Delta x$ (m)}, ylabel={$F$ (N)},
+    xmin=0, xmax=0.05, ymin=0, ymax=2.6,
+    legend pos=south east, legend cell align=left,
+    grid=both, grid style={gray!20},
+]
+% dati con barra d'errore su F
+\addplot[only marks, mark=*, mark size=1.3pt, black,
+         error bars/.cd, y dir=both, y explicit]
+    coordinates {
+        (0.010,0.49) +- (0,0.10)
+        (0.021,0.98) +- (0,0.10)
+        (0.032,1.47) +- (0,0.10)
+        (0.041,1.96) +- (0,0.10)
+    };
+\addlegendentry{Dati}
+% retta di massima pendenza: per B(0.010,0.39) e C(0.041,2.06)
+\addplot[red, thick, domain=0.003:0.05] {0.39 + 53.87*(x-0.010)};
+\addlegendentry{$m_{max}$}
+% retta di minima pendenza: per A(0.010,0.59) e D(0.041,1.86)
+\addplot[orange, thick, dashed, domain=0:0.05] {0.59 + 40.97*(x-0.010)};
+\addlegendentry{$m_{min}$}
+\node[anchor=east] at (axis cs:0.010,0.59) {\scriptsize $A$};
+\node[anchor=east] at (axis cs:0.010,0.39) {\scriptsize $B$};
+\node[anchor=west] at (axis cs:0.041,2.06) {\scriptsize $C$};
+\node[anchor=west] at (axis cs:0.041,1.86) {\scriptsize $D$};
+\end{axis}
+\end{tikzpicture}
+\caption{Metodo delle rette di massima e minima pendenza applicato alla legge di Hooke.}
+\label{fig:rettemaxmin}
+\end{figure}
+
+Le due pendenze limite valgono:
+\[
+m_{max}=\frac{2,06-0,39}{0,041-0,010}=\SI{53,9}{\newton\per\meter}, \qquad
+m_{min}=\frac{1,86-0,59}{0,041-0,010}=\SI{41,0}{\newton\per\meter}.
+\]
+Da cui la costante elastica e la sua incertezza:
+\[
+k=\frac{53,9+41,0}{2}=\SI{47,4}{\newton\per\meter}, \qquad
+\Delta k=\frac{53,9-41,0}{2}=\SI{6,5}{\newton\per\meter}.
+\]
+Scrivendo il risultato in forma corretta (errore a una cifra significativa):
+\[
+k=\left(47 \pm 6\right)\si{\newton\per\meter}.
+\]
+
+
+\section{Uso di un foglio di calcolo}
+
+\begin{definizione}
+    Il foglio di calcolo è uno strumento informatico per l'elaborazione e l'analisi  dei dati.
+\end{definizione}
+
+Con il suo aiuto possiamo organizzare  i dati in tabelle ed eseguire un'ampia serie di operazioni matematiche per elaborare e analizzare dati scientifici. Esistono diversi programmi di calcolo tra i quali Microsoft Excel, Libreoffice calc, Google sheets, Numbers, OpenOffice calc. 
+
+\begin{remark}
+Tutti i fogli di calcolo presentano caratteristiche generali di funzionamento simili e le operazioni più comuni vengono eseguite con le stesse istruzioni nella maggior parte dei programmi. Perciò, una volta imparati i principi base di uno di essi, sarà facile cominciare ad usarne un altro. 
+    \end{remark}
+
+    Ogni file creato da un foglio di calcolo rappresenta una cartella di lavoro, che contiene a sua volta più fogli di lavoro. Ciascun foglio di lavoro è formato da una grande tabella di celle; la posizione delle celle nel foglio (indirizzo) è identificata da una lettera e da un numero (per esempio, la cella C6 si trova nella terza colonna, chiamata C, e nella sesta riga) che sono il suo riferimento di cella.
+    Una cella può contenere parole, numeri, date o formule.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{img/calc.png} 
+        \caption{Panoramica foglio di calcolo.}
+        \label{fig:librecalc}
+    \end{figure} 
+
+\subsection{Inserire e modificare i dati}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{img/tasti.png} 
+    \label{fig:tasti}
+\end{figure} 
+
+Per scrivere all'interno di una cella, è necessario selezionarla puntandola col mouse e facendo clic su di essa. La cella selezionata si attiva e il suo indirizzo compare nel riquadro in alto a sinistra.
+Il testo digitato in una cella viene contemporaneamente riprodotto nella barra della formula. Per confermare l'immissione premiamo \texttt{Invio}, oppure un tasto freccia sulla tastiera che porta a un'altra cella.
+Se l'immissione è riconosciuta come testo, viene allineata a sinistra della cella; se è riconosciuta come numero, viene allineata a destra.
+Si può selezionare un insieme di celle facendo clic con il mouse sulla prima e, tenendo premuto il pulsante, trascinando il cursore fino all'ultima. Per selezionare gruppi di celle non adiacenti, si seleziona il primo gruppo e poi si procede con i successivi tenendo premuto il tasto CTRL (oppure il tasto Command).
+
+\subsection{Formato di una cella}
+
+
+Il formato di una cella determina come viene mostrato il suo contenuto.
+ Per esempio, se vogliamo visualizzare numeri in notazione scientifica, scegliamo
+  il menu \texttt{Formato}, poi \texttt{Celle} e infine, nella finestra di dialogo che comparirà, 
+  scegliamo la scheda \texttt{Numeri} e la categoria \texttt{Scientifico} 
+  (se digitiamo il numero 0,000005 e premiamo invio, 
+  nella cella comparirà $\num{5,00e-6}$).
+  Il numero può anche essere inserito direttamente in notazione scientifica,
+   per esempio come 3E+6 per indicare $\num{3e+6}$.
+  Utilizzando invece il menù \texttt{Formato/Celle/Numero} possiamo scegliere
+   quante cifre decimali di ogni numero mostrare, per facilitare
+    la lettura e il confronto. I dati sono comunque registrati e utilizzati 
+    con tutte le cifre con cui sono stati inseriti o calcolati e 
+    la modifica riguarda solo la loro presentazione grafica.
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{img/formato-cella.png} 
+    \caption{Formato in notazione scientifica}
+    \label{fig:formatocella}
+\end{figure} 
+
+Nella colonna A della figura \ref{fig:insdati} sono stati inseriti quattro numeri decimali, di cui due in notazione scientifica. I numeri sono stati copiati nella colonna B, formattata con due cifre decimali, 
+e nella colonna C, formattata in notazione scientifica con una cifra decimale.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{img/inserimento-dati.png} 
+    \caption{Inserimento dati}
+    \label{fig:insdati}
+\end{figure}
+\subsection{Inserire e modificare le formule}
+
+\begin{definizione}
+Una formula è un'espressione che, digitata in una cella,
+ effettua automaticamente dei calcoli o delle operazioni sui dati del 
+ foglio di calcolo. Ogni formula deve essere preceduta dal simbolo =.
+\end{definizione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{testexample}
+
+La cella A2 contiene il valore 2,5 e la cella B2 contiene
+ il valore 3,5. Se nella cella C2 digitiamo \texttt{=A2+B2} e premiamo \texttt{Invio}, 
+ in essa comparirà il valore 6,
+ ossia la somma dei contenuti delle celle A2 e B2.
+
+ \begin{minipage}{\linewidth}
+	\centering
+    \includegraphics[scale=0.4]{img/inserimento-formula.png} 
+	\captionof{figure}{Inserimento formule}
+    \label{fig:esempioformule}\end{minipage}
+\end{testexample}
+
+\subsubsection{Riferimenti relativi}
+Consideriamo la tabella a due colonne rappresentata nella figura \ref{fig:rifrel}. Vogliamo
+eseguire il prodotto tra i dati $x$ della colonna A e i corrispondenti dati $y$ della 
+colonna B, scrivendo il risultato nella colonna C. Dobbiamo allora eseguire le
+seguenti operazioni:
+\begin{itemize}
+    \item Selezioniamo la cella C2.
+    \item Digitiamo la formula = A2*B2.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.4]{img/riferimenti-relativi.png} 
+        \caption{Riferimenti relativi.}
+        \label{fig:rifrel}
+    \end{figure}
+    \item Premiamo \texttt{Invio} nella cella C2 compare il risultato del prodotto.
+    \item Selezioniamo di nuovo la cella C2.
+    \item Facciamo clic sul quadratino di trascinamento (nell'angolo in basso della cella) e,
+    tenendo premuto, lo trasciniamo fino alla cella 6 (i dettagli potrebbero cambiare
+    a seconda del foglio di calcolo). Otteniamo la situazione in figura \ref{fig:copyform}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.4]{img/copia-formula.png} 
+        \caption{}
+        \label{fig:copyform}
+    \end{figure} 
+\end{itemize}
+In questo modo, appariranno i prodotti A3*B3 in C3, A4*B4 in C4 e così via. 
+Osserviamo dunque che la formula è stata copiata \textit{adattando riga per riga i riferimenti} che, per questa
+ragione, sono detti \textit{relativi}.
+\subsubsection{Riferimenti assoluti}
+
+Supponiamo ora di voler moltiplicare ciascun dato della colonna A 
+per il coefficiente costante $k =  3$, memorizzato nella cella con riferimento E2,
+ e scrivere i risultati nella colonna B.
+
+Se seguissimo i passaggi descritti in precedenza, il foglio eseguirebbe i
+ seguenti calcoli: A2*E2 in B2, A3*E3 in B3, ecc. Non è quello che vogliamo, 
+ perché il secondo fattore deve rimanere sempre E2 in tutta la colonna B.
+  Per ottenere questo risultato, è sufficiente ripetere le operazioni 
+  descritte in precedenza con la differenza che nel passaggio 2 si deve digitare la
+   formula =A2+\$E\$2.
+Con l'aggiunta del simbolo \$ nella scrittura si specifica che, in tutti i prodotti,
+ il riferimento al contenuto della cella E2 deve rimanere fisso, cioè \textit{assoluto}.
+
+\subsubsection{Ricalcolo automatico}
+Proviamo ora a cambiare il dato nella cella E2: inseriamo il valore
+2 al posto di 3 e premiamo \texttt{Invio}. Tutti i valori contenuti nella cella B,
+che si basano sul valore di E2, si modificano in modo automatico (\ref{fig:ricalcolo}).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{img/ricalcolo.png} 
+    \caption{Ricalcolo istantaneo.}
+    \label{fig:ricalcolo}
+\end{figure} 
+Il foglio ha effettuato il \textit{ricalcolo automatico}, utilizzando le formule
+introdotte in precedenza nelle celle della colonna B, ma aggiornando il risultato
+del prodotto.
+\subsubsection{Funzioni integrate}
+Un foglio di calcolo, contiene una \textit{Libreria di funzioni}, cioè Formule
+predefinite che svolgono automaticamente le operazioni usate più di frequente.
+Per esempio, se vogliamo sommare i numeri della colonna B della tabella in figura 
+\ref{fig:somma}, possiamo usare la funzione \texttt{SOMMA}.La sintassi di una funzione
+è definita dal \textit{nome} e dagli \textit{argomenti}.
+\begin{testexample}
+
+    Nella funzione \texttt{SOMMA(B1:B6)}, \texttt{SOMMA} è il nome 
+    (ciò che definisce cosa fa la funzione) e \texttt{B1:B6} è \textit{l'argomento}
+    (il gruppo di celle coi valori da sommare).
+    
+     \begin{minipage}{\linewidth}
+        \centering
+        \includegraphics[scale=0.4]{img/somma.png} 
+        \captionof{figure}{Funzione somma.}
+        \label{fig:somma}\end{minipage}
+    \end{testexample}
+
+\subsection{Grafici}
+La rappresentazione grafica di una serie di dati è fondamentale per la loro interpretazione: ci permette di cogliere in modo visuale se c'è o meno una correlazione tra due grandezze e di che tipo sia.
+Il foglio di calcolo permette di realizzare grafici di diversi tipi, come grafici cartesiani, grafici a barre, areogrammi e istogrammi.
+Per l'analisi dei dati raccolti negli esperimenti useremo dei grafici cartesiani, che nel foglio di calcolo si chiamano Grafici a dispersione XY
+
+\subsubsection{Grafici cartesiani}
+
+Un grafico cartesiano rappresenta punti che corrispondono a coppie di valori e si usa per studiare l'eventuale relazione tra due grandezze.
+Ecco i passaggi che dobbiamo seguire per costruire un grafico cartesiano a partire dai dati raccolti in una tabella.
+\begin{enumerate}
+    \item Inseriamo i dati in due colonne adiacenti, scrivendo nella prima
+    riga il nome della grandezza e la sua unità di misura. 
+    \item Se vogliamo inserire anche le incertezze, dobbiamo distinguere due casi: 
+    \item \begin{itemize}
+    \item se l'incertezza di una grandezza è la stessa per tutti i dati, 
+    possiamo inserirla nella riga di intestazione;
+
+\item se l'incertezza è diversa a seconda dei dati, aggiungiamo una colonna
+che riporta l'incertezza di ogni dato.
+    \end{itemize}
+
+    \begin{testexample}
+
+    
+        
+         \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[scale=0.2]{img/barre-libre.png} 
+            \captionof{figure}{Inserimento dei dati per il grafico.}
+            \label{fig:barrelibre}\end{minipage}
+        \end{testexample}
+
+\item Selezioniamo le celle che contengono i dati da rappresentare
+(trascuriamo per ora l'eventuale colonna delle incertezze).
+\item Seguiamo il percorso \texttt{Inserisci/Ogetto/Grafico} o selezioniamo
+direttamente l'icona corrispondente a \texttt{Inserisci grafico}:
+appare una finestra di dialogo in cui si può selezionare il tipo di grafico
+(anche in questi casi la posizione dei comandi nei menù potrebbe cambiare in
+base al programma usato.)
+\item Per ottenere un grafico cartesiano, bisogna scegliere \texttt{Dispersione}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{img/dispersione-libreoffice.png} 
+    \caption{}
+    \label{fig:disperslo}
+\end{figure}
+\item Scegliamo inoltre di rappresentare solo i punti, senza nessun  tipo di connessione
+tra essi. 
+\item Modifichiamo il \textit{Titolo del grafico} e aggiungiamo i \textit{Titoli degli assi},
+inserendo le grandezze e le rispettive unità di misura.
+\item Selezionando con il tasto destro gli assi cartesiani, possiamo inserire la
+\textit{griglia secondaria}  ed eventualmente modificare l'intervallo da 
+rappresentare su ogni asse.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{img/grafico-libreoffice.png} 
+    \caption{Grafico a dispersione.}
+    \label{fig:puntilibre}
+\end{figure}
+\end{enumerate}
+
+\subsection{Elementi accessori per l'analisi dei dati}
+Ai grafici è possibile aggiungere alcuni elementi che ci aiutano ad 
+analizzare i dati, come le \textit{barre di errore} e le \textit{linee di tendenza}. 
+
+\begin{definizione}
+    Le barre di errore ci permettono di visualizzare in modo grafico le incertezze nelle
+    misure raccolte.
+\end{definizione}
+Possiamo chiedere al foglio di calcolo di mostrare le barre di errore  sul grafico.
+
+\begin{itemize}
+    \item Selezioniamo i punti sul grafico con il tasto destro del mouse.
+    \item Si apre un menù specifico per inserire le incertezze. Bisogna specificare
+    se l'incertezza è la stessa per tutti i dati o se si vuole selezionare 
+    una colonna con le diverse incertezze. 
+\end{itemize}
+In alternativa, è possibile inserire le barre di errore seguendo il percorso
+\texttt{Struttura grafico/Aggiungi elemento  grafico/Barre d'errore.} In 
+\texttt{Altre opzioni barre d'errore} è possibile stabilire nel dettaglio 
+i valori da assegnare alle barre su entrambi gli assi.
+\begin{remark}
+    Se le barre sono troppo piccole per essere visualizzate, non le inserire
+    nel grafico ma fa in modo che gli errori siano scritti altrove, per esempio nella
+    tabella di raccolta e di elaborazione dei dati. Così, chi legge, può sempre
+    trovare l'informazione sugli errori nella tua relazione.
+\end{remark}
+
+\begin{testexample}
+
+    In questo grafico abbiamo impostato la stessa incertezza su tutte le misure 
+    di tempo in ascissa e un'incertezza variabile per le misure in ordinata.
+    
+     \begin{minipage}{\linewidth}
+        \centering
+        \includegraphics[scale=0.3]{img/moto-carrello-libre.png} 
+        \captionof{figure}{Esempio di grafico con barre di errore.}
+        \label{fig:motocarrellolibre}\end{minipage}
+    \end{testexample}
+
+\subsubsection{Linea di tendenza}
+
+\begin{definizione}
+    La linea di tendenza è la curva (o la retta) che meglio approssima i dati
+    rappresentati.
+\end{definizione}
+
+Possiamo chiedere al foglio elettronico di tracciare la linea di tendenza e 
+scriverne l'equazione. 
+\begin{enumerate}
+    \item Quando il grafico è attivo, clicchiamo col tasto destro sui punti e 
+    selezioniamo \texttt{Aggiungi linea di tendenza}. 
+    \item Nella finestra di dialogo che si apre, scegliamo \texttt{Visualizza l'equazione sul grafico}. 
+    \item Se riteniamo chela relazione sia di proporzionalità diretta (e non 
+    semplicemente una relazione lineare), selezioniamo anche l'opzione 
+    \texttt{Imposta intercetta 0,0}. 
+\end{enumerate}
+
+\begin{testexample}
+
+    In questo grafico è stata selezionata una linea di tendenza senza fissare un valore
+    dell'intercetta. L'equazione della retta è visualizzata sul grafico.
+    
+     \begin{minipage}{\linewidth}
+        \centering
+        \includegraphics[scale=0.2]{img/linea-tendenza-libre.png} 
+        \captionof{figure}{Linea di tendenza lineare.}
+        \label{fig:libretendenza}\end{minipage}
+    \end{testexample}
+
+
+\section{Uso dei fogli Google}
+In questa sezione, impareremo come creare un grafico a dispersione utilizzando Google Sheets. Seguendo passo per passo, vedremo come inserire i dati, creare il grafico, personalizzarlo con titolo e etichette, e aggiungere una linea di tendenza. Infine, vedremo come mostrare due grafici contemporaneamente.
+
+
+
+\subsection{Creazione del Documento}
+\begin{enumerate}
+    \item Apri Google Sheets e crea un nuovo foglio di calcolo.
+    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/creadoc.png} 
+    \caption{Creazione del documento in Google Sheets}
+\end{figure}    
+    
+    \item Rinomina il foglio in modo appropriato, ad esempio, \textit{Esperimento di Fisica} (figura \ref{fig:rinomina}).
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/rinomina.png} 
+    \caption{Rinomina il  documento in Google Sheets}
+    \label{fig:rinomina}
+\end{figure} 
+\end{enumerate}
+
+
+\subsection{Inserimento dei dati}
+\begin{enumerate}
+    \item Inserisci i dati nelle colonne A e B. Ad esempio, nella colonna A metti i valori della variabile indipendente (ad esempio, tempo in secondi), e nella colonna B i valori della variabile dipendente (ad esempio, distanza in metri) (figura \ref{fig:dati}).
+    \item Digita i dati manualmente, facendo clic su una cella e digitando il valore. Premi \textbf{Invio} per passare alla cella sottostante.
+    \item Esempio di dati:
+    \begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    Tempo (s) & Distanza (m) \\
+    \hline
+    1 & 1,2 \\
+    2 & 2,5 \\
+    3 & 3,1 \\
+    4 & 4,0 \\
+    5 & 5,3 \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{enumerate}
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/dati.png} 
+    \caption{Inserimento dei dati.}
+    \label{fig:dati}
+\end{figure} 
+
+Da notare che Google Sheets (``fogli di calcolo'', in italiano) utilizza le virgole per i numeri decimali (esattamente come facciamo noi). Altri programmi (e calcolatrici) invece, usano i puntini. Vi accorgete che il foglio di calcolo considera effettivamente scritte come 1,2 come numeri, perché li allinea a destra nella cella.
+
+
+\subsection{Creazione del Grafico a Dispersione}
+\begin{enumerate}
+    \item Seleziona i dati inseriti nelle colonne A e B. Puoi farlo cliccando e trascinando il mouse dall'angolo superiore sinistro (A1) all'angolo inferiore destro (B5) dei tuoi dati (figura \ref{fig:selezione}).
+     \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/selezione.png} 
+    \caption{Seleziome dei dati.}
+    \label{fig:selezione}
+\end{figure} 
+    
+    
+    \item Vai su \textbf{Inserisci} nel menu e seleziona \textbf{Grafico} (figura \ref{fig:insgrafico}).
+    
+        \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/inseriscigrafico.png} 
+    \caption{Inserimento del grafico.}
+    \label{fig:insgrafico}).
+\end{figure}  
+    
+    
+    
+    \item Nella finestra delle opzioni del grafico, seleziona \textbf{Grafico a dispersione} dal menu a tendina \textbf{Tipo di grafico} (figura \ref{fig:dispersione}).
+    
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/dispersione.png} 
+    \caption{Grafico a dispersione.}
+            \label{fig:dispersione}
+\end{figure} 
+\end{enumerate}
+
+
+
+\subsection{Personalizzazione del Grafico}
+\begin{enumerate}
+    \item Per personalizzare il grafico, devi aprire la finestra di modifica (a destra). Se non è già visibile, clicca i tre puntini sul grafico e scegli \textbf{modifica}. Se non vedi i tre puntini, clicca su un'area bianca sul grafico (non sul foglio di calcolo, proprio sul grafico):
+    
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/modifica.png} 
+    \caption{Modifica del grafico.}
+\end{figure} 
+    
+    \item Clicca sulla scheda \textbf{personalizza} (figura \ref{fig:personalizza})
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/personalizza.png} 
+    \caption{Scheda \textbf{Scheda personalizza.}}
+    \label{fig:personalizza}
+\end{figure} 
+    
+    
+    \item Aggiungi il titolo del grafico: ad esempio, \textit{Relazione tra Tempo e Distanza}: espandendo il sottomenu \textbf{Titolo di grafico e assi} figura \ref{fig:titolo}:
+    
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/titolo.png} 
+    \caption{Scheda \textbf{Modifica del titolo.}}
+    \label{fig:titolo}
+\end{figure} 
+    
+    \item Aggiungi le etichette agli assi. Seleziona dal menu a tendina \textbf{Titolo asse orizzontale: } (figura \ref{fig:sceltax})
+        \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/sceltax.png} 
+    \caption{Scelta menu per il titolo dell'asse orizzontale.}
+    \label{fig:sceltax}
+\end{figure}  
+        
+        
+        \item Imposta il titolo per l'asse X: \textit{Tempo (s)} (figura \ref{fig:titolox})
+        
+       \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/titolox.png} 
+    \caption{Scelta del titolo per l'asse x}
+    \label{fig:titolox}
+\end{figure} 
+
+
+
+    \item Seleziona dal menu a tendina \textbf{Titolo asse verticale: } (figura \ref{fig:sceltay}).  
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/sceltay.png} 
+    \caption{Scelta menu per l'asse verticale.}
+    \label{fig:sceltay}
+\end{figure}  
+
+
+
+        \item Imposta un titolo per l'asse  Y: \textit{Distanza (m)} (figura \ref{fig:titoloy})
+        
+    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/titoloy.png} 
+    \caption{Scelta del titolo per l'asse verticale.}
+    \label{fig:titoloy}
+\end{figure}
+        
+
+    \item Per aggiungere una linea di tendenza, espendi il sottomenu \textbf{Serie} (figura \ref{fig:serie}) e seleziona \textbf{Linea di tendenza}. Puoi scegliere il tipo di linea di tendenza (lineare, polinomiale etc.) in base ai tuoi dati. I nostri dati sembrano adattarsi ad una retta, per cui sceglieremo \textbf{Lineare}. In fine. scegliamo di mostrare l'equazione della linea di tendenza (sottomenu \textbf{Etichetta}, voce \textbf{Utilizza equazione}. Si tratta della formula che stiamo cercando, ossia il legame tra X ed Y, figura \ref{fig:tendenza}). Anticipiamo che nel caso specifico, l'equazione mostrata è la formula che lega lo spazio al tempo in un moto rettilineo uniforme. Più avanti la scriveremo nella forma:
+    \[
+    s=v\cdot t +s_0
+    \]
+    essendo $s$ la distanza percorsa ad un certo istante $t$, $v$ la velocità costante, ed $s_0$ la posizione iniziale del moto. Possiamo vedere che il corpo si è mosso ad una velocità di $\SI{0,97}{\meter\per\second}$ partendo da una posizione all'istante zero pari a $\SI{0,31}{\meter}$ (figura \ref{fig:polinomiale}). Perché è comoda questa equazione? L'equazione permette di calcolare la posizione ad un qualunque istante, anche se non presente in tabella. Ad esempio, per $t=\SI{2,9}{\second}$, abbiamo:
+    
+    \[
+    s=\left(\SI{0,97}{\meter\per\second}\right)\times \left( \SI{2,9}{\second}\right) + \SI{0,31}{\meter}=\SI{3,12}{\meter}.
+    \]
+    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/serie.png} 
+    \caption{Scheda \textbf{serie} per la linea di tendenza.}
+    \label{fig:serie}
+\end{figure}    
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/tendenza.png} 
+    \caption{Scheda \textbf{serie} Inserimento linea di tendenza lineare (retta).}
+    \label{fig:tendenza}
+\end{figure}    
+   In generale non è facile scegliere il tipo di linea di tendenza. In fisica, i dati possono essere legati da una relazione di proporzionalità diretta, quadratica, inversa, quadratica inversa o molte altre. Il tipo lineare è il più semplice. Quando i grafici hanno un andamento curvo, è possibile che i dati siano legati da una formula parabolica (ossia una formula del tipo $y=ax^2 +bx +c$.) In questo caso, la linea di tendenza sarà una parabola. Nei fogli google, basterà selezionare dal sottomenu la linea \textbf{Polinomiale} (figura \ref{fig:polinomiale}):
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/polinomiale.png} 
+    \caption{Scelta per l'inserimento della linea di tendenza polinomiale (parabola).}
+    \label{fig:polinomiale}
+\end{figure}     
+ In generale, ti consiglio di provare varie linee di tendenza, in modo da trovare quella che meglio si adatta ai dati.    L'adattamento è tanto migliore quanto più il cosiddetto fatto $R^2$ è vicino ad uno. Per visualizzare questo fattore sul grafico, barrare la casella $\mathbf{Mostra \,\,R^2}$ come in figura \ref{fig:r2}:
+ 
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/r2.png} 
+    \caption{Visualizzazione del parametro $R^2$.}
+    \label{fig:r2}
+ \end{figure}
+ 
+    
+\end{enumerate}
+Tutti gli elementi grafici e  testuali sono ulteriormente personalizzabili (ad esempio l'aspetto dei punti del grafico, il font per i titoli degli assi etc.). Ti consiglio di sperimentare con questi aspetti modificando a tuo piacimento questi elementi dalla scheda personalizzazione. Il loro uso è molto intuitivo.
+
+\subsection{Visualizzare due Grafici Contemporaneamente}
+\begin{enumerate}
+    \item Inserisci una nuova serie di dati in una colonna diversa. Ad esempio, nella colonna C metti i valori della variabile dipendente di un secondo esperimento (ad esempio, distanza in metri).
+    \item Esempio di dati:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Tempo (s) & Distanza 1 (m) & Distanza 2 (m) \\
+    \hline
+    1 & 1,2 & 0,8 \\
+    2 & 2,5 & 1,5 \\
+    3 & 3,1 & 2,2 \\
+    4 & 4,0 & 3,0 \\
+    5 & 5,3 & 4,1 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \item Seleziona i dati inseriti nelle colonne A, B e C. Puoi farlo cliccando e trascinando il mouse dall'angolo superiore sinistro (A1) all'angolo inferiore destro (C5) dei tuoi dati oppure (vedi figura \ref{fig:intervallo2}) selezionando \textbf{aggiungi serie}, figura \ref{fig:intervallo2} e. successivamente, cliccando il tasto ``+''. Si aprirà un campo di testo in cui inserire l'intervallo di cella. Per farlo, si può agire graficamente, selezionando tutta la colonna col tasto destro del mouse e verrà automaticamente scritto l'intervallo (figura \ref{fig:intervallo2-dialogo}. La scrittura \textit{Foglio1!C1:C6} indica di selezionare l'intervallo del foglio attuale (Foglio1) dalla cella C1 alla cella C6). In fine clicca ``Ok'' e la serie verrà inserita. A questo punto puoi personalizzare il grafico come vuoi, inserire linee di tendenza etc. Come regola generale, si consiglia di realizzare grafici in cui le due serie sullì'asse Y sono della stessa natura ma non è vietato inserire anche serie diverse purché, è bene ribadirlo, sull'asse X, ci sia una sola serie per entrambe le grandezze dipendenti (ossia le Y, nel nostro caso, il tempo). Come esercizio, puoi provare a disegnare la linea di tendenza della serie 2. Il grafico finale è in figura \ref{fig:finale}.
+    
+      \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/intervallo2.png} 
+    \caption{Selezione di una serie, tasto ``+''.}
+    \label{fig:intervallo2}
+ \end{figure} 
+    
+    
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/intervallo2-dialogo.png} 
+    \caption{Finestra di dialogo per la scelta dell'intervallo della serie 2.}
+    \label{fig:intervallo2-dialogo}
+ \end{figure} 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{img/finale.png} 
+    \caption{Come si presenta il grafico costruito nel tutorial.}
+    \label{fig:finale}
+ \end{figure} 
+\end{enumerate}
+
+
+
+
+
+\subsection{Conclusione}
+Seguendo questi passaggi, sarai in grado di creare e personalizzare grafici a dispersione su Google Sheets per analizzare e visualizzare i tuoi dati sperimentali. Questa competenza è utile non solo per le lezioni di fisica, ma anche per altre discipline scientifiche.
+

@@ -1,0 +1,915 @@
+\chapter{Misura di grandezze}
+\section{Introduzione}
+La fisica è una scienza sperimentale di tipo \textbf{quantitativo}, ossia una scienza che studia la natura attraverso l'uso della matematica. Le sue affermazioni sono sempre traducibili in equazioni. Cosa sia un'equazione lo imparerete presto. Da un punto di vista matematico, si tratta di una relazione (spesso algebrica, ma ce ne sono di più complesse) che lega tra loro i valori misurati di una o più grandezze fisiche. La fisica è un insieme di \textbf{teorie}. Una teoria, detta in modo semplice, è un modello della realtà. Un modello è una sorta di riproduzione semplificata della realtà. Per capire tutto ciò però, dobbiamo anzitutto cominciare ad allenare il cervello sui concetti matematici fondamentali.
+\section{Formule e formule inverse}
+
+In fisica, lo scopo finale è comprendere come le grandezze fisiche  sono legate tra di loro. Approfondiremo il concetto di grandezza più avanti. Per il momento, pensate che una grandezza può essere una proprietà di un oggetto (ad esempio la sua massa) espressa da un numero ed indicata da una lettera. La parte della matematica che studia le formule (dette più correttamente \textbf{equazioni}) si chiama algebra. L'algebra, al pari dell'aritmetica, tratta di numeri, solo che questi sono rappresentati da lettere. In fisica, le lettere rappresentano grandezze e sono costituite da un numero che esprime una misura fatta rispetto ad una certa unità. Ad esempio:
+\[
+m=\SI{30}{kg}
+\]
+
+indica il valore di una massa. In questo paragrafo, vedremo come si estrae una varibile incognita da una formula (le cosiddette formule inverse). Non ci interessa chiarire il significato dei simboli ma piuttosto mostrare come si ricava una incognita usando due principi matematici (chiamati principi di equivalenza). In quanto segue, darò per scontata la conoscenza delle frazioni e di questi principi. Quì voglio solo mostrarvi con un serie di esempi, come si ricava una formula inversa. Partiamo:
+
+	
+	
+	\[F= ma, \,\,  a = \text{?} \rightarrow \frac{F}{m} =\frac{\cancel{m} a}{\cancel{m}}\rightarrow a=\frac{F}{m}
+	\]
+
+ Abbiamo diviso entrambi i lati dell'equazione (chiamati membri) per uno stesso numero (la massa $m$) in modo da lasciare la nostra incognita (la lettera $a$) isolata al numeratore. La formula quindi, ci permette di calcolare $a$ conoscendo $F$ ed $m$.
+
+\[
+d=\frac{m}{V} \,\,\text{,}\,\,\,  m=\text{?} \rightarrow  V\cdot  d = \frac{m}{\cancel{V}}\cdot \cancel{V}.\rightarrow m = d V.
+\]
+
+Abbiamo ricavato la formula per la massa, noti densità e volume.
+
+\[
+F=k\cdot \frac{q_1 q_2}{r^2} \,\,\text{,}\,\,\,  r=\text{?} \rightarrow r^2 = k\cdot \frac{q_1 q_2}{F}\rightarrow r=\sqrt{k\cdot \frac{q_1 q_2}{F}}
+\]
+In questo caso abbiamo applicato la regola secondo cui, spostando una lettera che è moltiplicata da un lato all'altro dell'uguaglianza, se è denominatore, diventa numeratore e viceversa ($r^2$ è diventato numeratore ed $F$ denominatore). In fine, per eliminare il quadrato, abbiamo estratto la radice quadrata, poichè è l'operazione inversa del quadrato. Provate a calcolare la radice quadrata di $2^2$ con la calcolatrice e vedrete che otterrete 2!.
+\[
+s= s_0 + v t \,\,\text{,}\,\,\,  t=\text{?} \rightarrow s-s_0 = s_0 -s_0 + v t\rightarrow \frac{s-s_0}{v} = \frac{\cancel{v} t }{\cancel{v}}\rightarrow t=\frac{s-s_0}{v}
+\]
+In questo caso, per ricavare $t$, abbiamo aggiunto ai due membri il termine $-s_0$ in modo da lasciare il termine $v t$ e solo dopo abbiamo diviso per $v$.
+
+
+\[
+V=\pi r^2 h \,\,\text{,}\,\,\,  h=\text{?} \rightarrow \frac{V}{\pi r^2} = \frac{\cancel{ \pi r^2} h}{\cancel{\pi r^2}} \rightarrow h= \frac{V}{\pi r^2 }
+\]
+Abbiamo ricavato l'altezza del cilindro conoscendo raggio e volume. Nella prossima equazione, vogliamo calcolare il diametro note altezza e volume.
+\[
+V=\pi r^2 h =\pi \left(\frac{D}{2} \right)^2 h= \pi \frac{D^2}{4}  h\,\,\text{,}\,\,\,  D=\text{?} 
+\]
+Procediamo in analogia ai casi precedenti:
+\[
+\frac{4 V}{\pi h} = \frac{ \cancel{ 4 \pi h }D^2 }{ \cancel{4 \pi h}} \rightarrow D=\sqrt{\frac{4 V}{\pi h}}
+\]
+
+
+
+
+\section{Sistema internazionale S.I.}
+
+Diamo la seguente definizione:
+\begin{grf}
+	Una grandezza fisica è una proprietà di un corpo che si può misurare oggettivamente (nel senso che chiunque la misuri deve ottenere lo stesso risultato).
+\end{grf}
+
+Per misurare una grandezza occorre confrontare la grandezza con l'unità di misura:
+\begin{udm}
+    L'unità di misura di una grandezza è un campione di riferimento dello stesso tipo della grandezza.
+\end{udm}
+Se vogliamo misure una massa ad esempio, dovremo usare come unità di misura il chilogrammo, se dobbiamo misurare
+una superficie, useremo il metro quadro, e così via. Abbiamo citato gli strumenti di misura e quindi li definiamo:
+\begin{sdm}
+Uno strumento di misura è un oggetto su cui è riportata un'unità di misura.
+\end{sdm}
+
+ Consideriamo la prima grandezza che incontreremo nello studio della meccanica, la lunghezza. Per definire una grandezza fisica, occorre darne una definizione operativa, ossia definire \textit{come si misura}, fornendo un procedimento e una unità di misura. Nel caso della lunghezza, si utilizza un righello (o un metro da falegname) che è un oggetto rettilineo sul quale sono indicate delle tacche. Le tacche riportano l'unità di misura ripetura tante volte. Ad intervalli regolari, la scala così costruita, contiene tacche più grandi utili per calcolare la cosiddetta sensibilità dello strumento ossia, \textbf{la più piccola variazione di una grandezza che uno strumento può rilevare}. Nel caso della  figura \ref{fig:lun} la misura della lunghezza del lato del tavolo, si scrivedrà:
+ \[
+ L=\SI{0,763}{\meter} =\SI{763}{\milli\meter}
+ \]
+ 
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/lun.jpg} 
+    \caption{Misura di lunghezza col metro da sarto}
+    \label{fig:lun}
+\end{figure}  
+ 
+Questa misura, indica chiaramente che abbiamo un ``errore'' di un millimetro (vedremo più avanti cosa sono gli errori) ossia, siamo certi che la nostra misura è compresa nel seguente intervallo:
+\[
+\SI{762}{\milli\meter} \le L \le \SI{764}{\milli\meter}
+\]
+
+
+Uno strumento di misura è uno strumento tarato, ossia uno strumento che ci fornisce direttamente  il valore di  una misura rispetto ad una certa unità di misura. Ad esempio, lo strumento che abbiamo usato per misurare il lato del tavolo, si chiama "metro da falegname" ed ha tacche distanti tra loro 1 mm. Questo strumento misura la lunghezza, ma esistono altre grandezze fisiche e quindi altri strumenti. Nella tabella \ref{tab:si_units} elenchiamo le grandezze fondamentali del cosiddetto sistema internazionale (abbreviato S.I.) un insieme di 7 grandezze che un comitato tecnico scientifico ha approvato in modo da semplificare ad esempio i commerci e la comunicazione scientifica poiché al mondo, in ambiti e paesi diversi, erano e sono tutt'ora in uso, unità diverse (nei paesi anglosassoni ad esempio, sopravvivono unità come pollice, piede, oncia, miglia, gallone etc.). Per questo corso ci serviranno il primo anno solo le prime quattro (lunghezza, massa, tempo, temperatura). Per quanto riguarda la temperatura, useremo quest'anno il grado centigrado, simbolo °C. 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Grandezza} & \textbf{Simb.} & \textbf{Unità (nome)} & \textbf{Strumento} \\
+		\hline
+		Lunghezza & l & m (metro) & Metro, righello \\
+		\hline
+		Massa & m & kg (chilogrammo) & Bilancia \\
+		\hline
+		Tempo & t & s (secondo) & Cronometro \\
+		\hline
+		Corr. elettrica & I & A (ampere) & Amperometro \\
+		\hline
+		Temp. termodin. & T & K (kelvin) & Termometro \\
+		\hline
+		Quant. sostanza & n & mol (mole) & Cont. particelle \\
+		\hline
+		Int. luminosa & $I_v$ & cd (candela) & Fotometro \\
+		\hline
+	\end{tabular}
+	\caption{Grandezze fondamentali del SI.}
+	\label{tab:si_units}
+\end{table}
+
+Come avrete notato, il valore di una grandezza si scrive usando una lettera, nel nostro caso la L. Non bisogna confondere le lettere usate per la misura con le lettere usate per l'unità di misura. Ad esempio nella scrittura $m=\SI{4}{\kilo\gram}$, emme è il simbolo della grandezza. Nella scrittura $L=\SI{10}{\meter}$, la emme significa "metro" ed è l'unità di misura.
+
+\section{Sensibilità e scrittura formale}
+
+Ricordando l'esempio del tavolo, possiamo riassumere l'importante concetto di sensibilità di uno strumento di misura:
+
+\begin{sen}
+	La sensibilità di uno strumento di misura, è la più piccola variazione della grandezza fisica che lo strumento può misurare.
+\end{sen}
+
+Si badi alla parola ``variazione''. Se ho un termometro le cui divisioni hanno una differenza tra loro di un grado ma il termometro ha una temperatura minima di -20 gradi, la sensibilità sarà di un grado.
+
+\begin{remark}
+Prima di proseguire, fissiamo il significato di due lettere greche maiuscole che useremo spesso.
+\begin{itemize}
+\item $\Delta$ (\textbf{delta}) posta davanti al simbolo di una grandezza indica una \textbf{differenza} o \textbf{variazione} di quella grandezza, cioè ``valore finale meno valore iniziale''. Ad esempio $\Delta T$ è una differenza di temperatura e $\Delta x$ una variazione di posizione. Quando la useremo per l'incertezza di misura, $\Delta x$ indicherà di quanto il valore misurato può differire dal valore vero.
+\item $\Sigma$ (\textbf{sigma}), che incontreremo dal prossimo capitolo, è il simbolo di \textbf{sommatoria}: abbrevia la somma di molti termini simili tra loro. La scrittura $\sum_{i=1}^{N} x_i$ significa ``somma i valori $x_1, x_2, \ldots, x_N$'', cioè $x_1 + x_2 + \cdots + x_N$.
+\end{itemize}
+\end{remark}
+
+Una volta definite le grandezze fisiche, bisogna prendere coscienza del fatto che la misura di una grandezza va sempre indicata come segue:
+
+\[
+x=\left( \overline{x} \pm \Delta x\right)
+\]
+dove :
+\begin{itemize}
+\item $x$ rappresenta il nome della grandezza;
+\item $\overline{x}$ rappresenta il valore misurato (direttamente o indirettamente, come vedremo). Talvolta esso viene chiamato il miglior valore. Questa espressione non significa che si tratti di uno dei tanti misurati ma si tratta di un valore che rappresenta meglio di altri il risultato della misura. Tale valore può essere una misura unica, una media o il risultato di calcoli;
+\item $\Delta x$ rappresenta l'incertezza di misura o \textbf{errore assoluto}. Questa incertezza può avere origine dallo strumento (in tal caso si usa la sensibilità)oppure, se la misura è indiretta, essere causata da un calcolo. In tal caso si parla di incertezza \textit{propagata}. Faremo solo alcuni cenni all'incertezza propagata. In generale, per noi l'incertezza $\Delta x$ sarà quel numero positivo tale che il risultato della misura, $\overline{x}$, sia compreso tra $\overline{x} -\Delta x$ e  $\overline{x} +\Delta x$
+\end{itemize}
+
+Misurando la lunghezza dell'altro lato del tavolo, avremmo potuto ottenere:
+\[
+L=\left(1,200 \pm 0,001\right)\si{\meter}  \,\, \text{abbiamo usato il metro come unità di misura.}
+\]
+
+Volendo usare la scrittura $L=\left(1,2 \pm 0,001\right)\si{\meter}$, sbaglieremmo, ed anche se scrivessimo $L=\left(1,2 \pm \SI{1}{\milli\meter}\right)$ o, ancora, $L=\left(1,200 \pm 1\right)\si{\meter}$ perché vorrebbe dire che la sensibilità (ossia la distanza tra due tacche) è un metro!
+
+Ricordiamo quindi che \textbf{la misura e l'errore assoluto, devono avere lo stesso numero di cifre decimali} (da non confondere con la cifre significative su cui ci soffermeremo più avanti).
+\section{Proprietà degli strumenti}
+Gli strumenti di misura appartengono a due grandi categorie: gli strumenti analogici (dotati di una scala e a volte di un indice mobile, come negli orologi o i cronometri a lancetta) e digitali. Uno strumento digitale ha un display elettronico sul quale leggiamo direttamente la misura. In laboratorio di elettronica userete principalmente strumenti digitali i quali hanno grandi vantaggi rispetto a quelli analogici. Tuttavia è bene osservare che spesso tali strumenti, danno una certa sicurezza in quanto risparmiano la fatica di leggere una scala e  forniscono immediatamente il risultato. Comunque, come tutti gli strumenti di misura, anch'essi hanno dei limiti di funzionamento, possono cioè danneggiarsi se usati male, e, inoltre, avendo molte funzioni, possono avere una curva di apprendimento molto ripida.  Entrambi i tipi di strumenti hanno quattro importanti caratteristiche: \textbf{sensibilità}, \textbf{portata massima (e minima)}, \textbf{prontezza}, \textbf{precisione}. 
+\begin{description}
+\item[Sensibilità] Si tratta, come abbiamo già detto, della minima \textit{variazione} della grandezza che può essere rilevata dallo strumento. Essa, nelle misure dirette, rappresenta anche l'incertezza di misura (o errore assoluto). Per determinare la sensibilità di uno strumento analogico si osserva la sua scala. Nel caso di un righello o di un cilindro graduato, basta leggere due valori scritti e contare le tacche fra di essi. La sensibilità è data dalla differenza tra i due valori, divisa per il numero di tacche. Per strumenti più sofisticati, tipo un calibro o una bilancia elettronica, di solito la sensibilità è indicata sullo strumento stesso. In laboratorio abbiamo in dotazione vari tipi di calibro con sensibilità di $\SI{0,05}{mm}$, $\SI{0,1}{mm}$ e persino $\SI{0,01}{mm}$ (calibro Palmer).
+\item[Portata massima] Si tratta del massimo valore della grandezza che uno strumento può rilevare. Essa è particolarmente importante ai fini del corretto uso dello strumento. Se si tenta di leggere un valore più grande della portata, lo strumento rischia di rompersi. A volte si parla anche di \textit{campo} di misura. Il campo è, più in generale, l'intervallo di valori che uno strumento può leggere. Se abbiamo un termometro che legge da $\SI{-20}{\celsius}$ a $\SI{100}{\celsius}$, allora il campo è $\SI{-20}{\celsius}\div\SI{100}{\celsius}$. 
+
+
+\item[Precisione] La precisione è definita come il rapporto tra sensibilità e portata. In quanto tale non ha unità di misura. Sui testi si trova una diversa definizione di precisione. Si dice che uno strumento è più preciso di un altro se, ripetendo la misura di una grandezza costante, si ottengono sempre gli stessi valori oppure valori più vicini. Noi preferiamo definire questa come l'affidabilità di uno strumento.
+\item[Prontezza] Si tratta della velocità con cui lo strumento ci restituisce il valore misurato. Se uno strumento è più rapido di un altro nel fornire una lettura, si dice che è più \textit{pronto}.
+
+E' importante osservare che, potendo scegliere, è sempre bene preferire lo strumento con sensibilità piccola ma non sempre è possibile. Se il nostro strumento ha una portata non adatta, potremmo romperlo. Si pensi al caso di una bilancia di precisione. Queste bilance, a volte hanno portate di poco più di un kilo e potrebbero rompersi se ci caricassimo più peso (oppure segnerebbero errore (se digitali)). Riprenderemo questo concetto più avanti dopo una lunga parentesi matematica..
+\end{description}
+
+
+\section{Equivalenze e notazione scientifica}
+
+Misurare, vuol dire eseguire un confronto. Se scrivo:
+\[
+L=\SI{10}{\meter}
+\]
+significa che $\frac{L}{m} = 10$, ossia l'unità di misura è contenuta dieci volte nella misura della grandezza. Dobbiamo quindi conoscere le frazioni. Nella pratica, le grandezze fondamentali a volte sono scomode da usare. In luogo del metro ad esempio, nella meccanica di precisione si usa il millimetro, scritto mm ( 1 m = 1000 mm, si legge ``un metro è uguale a mille millimetri''). Si dice che il millimetro è un sottomultiplo del metro. Analogamente, il kilometro (simbolo km) è un multiplo del metro (1 km = 1000 m). Nella tabella \ref{tab:prefixes}indichiamo i prefissi del sistema metrico decimale. 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Nome prefisso} & \textbf{Simbolo prefisso} & \textbf{Significato} \\
+		\hline
+		Giga & G & \( \times 10^9 \) \\
+		\hline
+		Mega & M & \( \times 10^6 \) \\
+		\hline
+		Kilo & k & \( \times 10^3 \) \\
+		\hline
+		Etto & h & \( \times 10^2 \) \\
+		\hline
+		Deca & da & \( \times 10^1 \) \\
+		\hline
+		Deci & d & \( \frac{1}{10} \) \\
+		\hline
+		Centi & c & \( \frac{1}{100} \) \\
+		\hline
+		Milli & m & \( \frac{1}{1000} \) \\
+		\hline
+		Micro & \(\mu\) & \( \frac{1}{10^6} \) \\
+		\hline
+		Nano & n & \( \frac{1}{10^9} \) \\
+		\hline
+		Pico & p & \( \frac{1}{10^{12}} \) \\
+		\hline
+	\end{tabular}
+	\caption{Prefissi da Giga a Pico con simboli e significato}
+	\label{tab:prefixes}
+\end{table}
+
+\begin{testexample}[Qualche equivalenza]
+$\SI{0,48}{\meter} = \cdots \si{\centi\meter}$. Dobbiamo scrivere $\SI{1}{\meter} = \SI{100}{\centi\meter}$. Ok, e poi? $m=\SI{100}{\meter} \rightarrow \SI{0,48}{\meter} = 0,48\times\left(\SI{100}{\centi\meter}\right) = \SI{48}{\centi\meter}$ (abbiamo spostato la virgola). Come abbiamo fatto a sapere che  $\SI{1}{\meter} = \SI{100}{\centi\meter}$? Semplice, abbiamo usato una formula inversa! Dalla tabella vediamo che 
+\[
+\SI{1}{\centi\meter} = \frac{1}{100}\si{\meter}
+\]
+Vogliamo ricavare $m$:
+\[
+\textcolor{red}{100}\cdot \SI{1}{\centi\meter} = \frac{1}{\cancel{100}}\cdot m \cdot \textcolor{red}{\cancel{100}} \rightarrow \SI{100}{\centi\meter}  = \SI{1}{\meter}.
+\]
+Magico, vero? Facciamo un altro esempio.\\
+
+$\SI{27}{\milli\meter} = \cdots \si{\deca\meter}$. Questa è più difficile perché so che $ \SI{1}{\milli\meter}  = \frac{1}{1000} \si{\meter}$. Però, ricordiamo che $ \SI{1}{\meter}  = \frac
+{\SI{1}{\deca\meter}}{10}$ (provatelo), dunque $ \SI{27}{\milli\meter}  = 27\times \frac
+{1}{1000}\times\frac{\SI{1}{\deca\meter}}{10} =\frac{27}{10000}\si{\deca\meter} =\SI{0,027}{\deca\meter}$. 
+
+Questi numeri, numeri con molti zeri, sono scomodi da scrivere. Per sperimentare una notazione (ossia un modo di scrittura) più comodo per tali numeri, dobbiamo ripassare alcuni concetti sulle potenze.
+\end{testexample}
+
+\subsection{Potenze di 10}
+Ricordiamo che $10^5=10\times 10 \times 10\times 10\times10$. Esistono anche le potenze negative, ad esempio $10^{-2}$. Ma non possiamo moltiplicare un numero per ``meno due volte'' per sè stesso. In realtà, questa è una frazione che si scrive in forma decimale (sappiamo passare dai numeri alle frazioni, vero??):
+\[
+10^{-2}=\frac{1}{100} = 0,01
+\]
+In matematica imparerete anche a calcolare espressioni del tipo $\left(\frac{1}{3}\right)^{-2} =\left(\frac{3}{1}\right)^{2} = 9$ ma a noi non interessa così tanto l'algebra. poiché calcoleremo tutto usando la calcolatrice. Dobbiamo però capire il significato di certe scritture. Anzitutto dobbiamo capire che $10^{-2}$ \underline{non è negativo}, è solo un numero positivo minore di uno (vale $0,01$). È il segno \emph{davanti} alla potenza a renderla negativa: $-10^{2}=-100$ e $-10^{-2}=-0,01$. Nella scrittura $10^{-2}$, il numero $-2$ si chiama esponente e $10$ è la base. Le potenze di 10 godono di alcune proprietà che è bene conoscere. Moltiplicando due potenze \textbf{della stessa base} si ottiene una sola potenza che ha per esponente, \textbf{la somma degli esponenti}:
+\[
+10^2\times 10^3 = 10^5
+\]
+Vale anche con potenze negative:
+\[
+10^3\times10^{-5} = 10^{-2} = 0,01.
+\]
+Si possono ovviamente calcolare espressioni senza grande fatica, ad esempio:
+\[
+\left( 2 \cdot 10^2 \right) \times \left( 3 \cdot 10^3 \right) = \left( 3 \cdot 2 \right) \cdot 10^{(2+3)} = 6 \cdot 10^5
+\]
+A noi comunque, interessa il modo con cui è scritto il risultato, ossia  in notazione scientifica. Ne parleremo nella prossima sezione. Per concludere questi cenni, ricordiamo alcune altre proprietà delle potenze che ritroveremo. Il rapporto tra due potenze, si calcola usando la differenza di esponenti
+\[
+\frac{10^4}{10^2}=10^{4-2} = 10^2
+\]
+Vale anche se la seconda potenza è negativa:
+\[
+\frac{10^2}{10^{-5}}=10^{2-(-5)} = 10^{2+5} = 10^7.
+\]
+Ricordiamo ancora le identià (si assumono, non si dimostrano): $$a^0 =1 $$ (qualunque a diverso da zero)  ; $$a^1 = a$$ (qualunqiue sia il numero a).  
+\subsection{Notazione scientifica}
+Il numero $6 \cdot 10^5$ è scritto in notazione scientifica. Definiamo questo modo di scrivere i numeri:
+\begin{nsc}
+	Un numero è scritto in notazione scientifica se è scritto come il prodotto di un numero decimale $m$ maggiore o uguale a 1 e minore di 10 (cioè $1 \le m < 10$) e una potenza di 10 con esponente intero (positivo, negativo o nullo).
+\end{nsc}
+Secondo questa definizione, $24 \cdot 10^5$ non è scritto in notazione scientifica perché 24 non è minore di 10. Nemmeno $0,2\times10^3$ è scritto in notazione scientifica perché 0,2 è minore di 1. Ogni numero si può scrivere in notazione scientifica usando le proprietà delle potenze e la rappresentazione decimale. Ad esempio: $24 \cdot 10^5 = (2,4\cdot10)\cdot10^5 = 2,4\times 10^{1+5}=2,4\cdot 10^6$. Abbiamo usato il fatto che $10^1 = 10$. Ricordiamo inoltre che $10^0 = 1$  ma che non ha senso calcolare $0^0$. Una proprietà che si rivelerà utile quando eseguiremo le equivalenze coi metri quadri, è la potenza di potenza. Vediamo come si applica:
+\[
+\left(10^2\right)^3 = 10^6
+\]
+ossia,  \textbf{si moltiplicano gli esponenti}. In fine, un esempio con potenze con segno negativo:
+\[
+\left(10^2\right)^{-3} = 10^{-6}
+\]
+Quando si lavora con le potenze, bisogna stare molto attenti a quello che si fa. Nel caso di questi due esempi, sarebbe sbagliato sommare gli esponenti, perché questo si fa solo quando si moltiplicano due potenze (quando si moltiplica ad esempio $10^2$ per $10^3$,  il risultato fa $10^5$ e non $10^6$). Notare poi come tutto torna, ad esempio $10^0\cdot 10^1 = 10^{0+1} =10^1 = 10$ il che è ovvio perché $10^0$ è uno e qualunque numero moltiplicato uno fa sempre uno. Queste considerazioni, valgono anche per espressioni contenenti frazioni, come questa:
+\[
+\left(\frac{1}{2}\right)^2\times \left(\frac{1}{2}\right)^3 \times\left(\frac{1}{2}\right)^{-6}= \left(\frac{1}{2}\right)^{2+3-6} = \left(\frac{1}{2}\right)^{-1} =2.
+\]
+ma ci fermiamo quì.
+
+
+\begin{testexample}[ \thetcbcounter \, Scrittura corretta]
+Supponiamo di avere misurato la quantità
+\[
+L=\left(1240\pm1\right)\si{\milli\meter}
+\]
+Voglio esprimere questa misura in metri (unità del sistema internazionale) in modo compatto. Potrei dividere tutto per mille e scrivere:
+\[
+L=\left(1,240\pm 0,001\right)\si{\meter}
+\]
+
+Tuttavia, usando le potenze di 10 abbiamo:
+\[
+L=\left(1240\pm 1\right)\cdot 10^{-3}\si{\meter}
+\]
+In questo modo, non dobbiamo cambiare la quantità in parentesi. Notiamo inoltre, che anche l'errore è moltiplicato per la potenza. La scrittura, è un modo breve di scrivere in realtà.
+
+\[
+L= 1240\cdot 10^{-3}\si{\meter} \pm 1\cdot 10^{-3}\si{\meter}
+\]
+Questa informazione è importante quando dobbiamo trasformare (non ci capiterà spesso) una misura di temperatura da Celsius a Kelvin e viceversa, ma questo lo vedremo dopo aver fatto qualche osservazione in più sugli strumenti di misura.
+
+Proviamo a scrivere nel sistema internazionale, la misura di massa:
+\[
+m=\left(240,0\pm 0,1\right)\si{\gram}
+\]
+Dobbiamo trasformare tutto (misura ed errore) in kilogrammi, in quanto questi rappresentano l'unità di massa (base) nel sistema internazionale. Sappiamo che $\SI{1}{\kilo\gram}=\SI{e3}{\gram}$. Ricaviamo la formula inversa:
+\[
+\frac{\SI{1}{\kilo\gram}}{10^3} = \frac{\textcolor{red}{\cancel{10^3}}\,\si{\gram}}{\textcolor{red}{\cancel{10^3}}} \rightarrow \SI{1}{\gram} = \frac{\SI{1}{\kilo\gram}}{10^3} = \SI{1}{\kilo\gram}\cdot 10^{-3}. 
+\]
+dunque,
+\[
+m=\left(240,0\pm 0,1\right)\,\si{\gram} = \left(240,0\pm 0,1\right)\cdot 10^{-3}\,\si{\kilo\gram}
+\]
+Comode le potenze negative!
+
+
+\end{testexample}
+
+\section{Alcuni esempi sulla sensibilità e la portata}
+Quando dobbiamo valutare la sensibilità di uno strumento digitale (con display per intenderci) possiamo cercare questa informazione che dovrebbe essere riportata da qualche parte, insieme alla portata, sullo strumento stesso. Nelle nostre bilance di laboratorio è proprio così (figura~\ref{fig:bilancia}). Se non è scritto, la sensibilità è una unità sull'ultima posizione decimale che comprare sul display. Nel caso della bilancia in figura, vediamo che quando è scarica, sul display c'è scritto 0,0 g e capiamo che la sensibilità è di 0,1 g. Per la portata è più complicato in certi casi. 
+
+\begin{testexample}[\thetcbcounter \, Bilancia digitale]
+	
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.14]{img/bilancia}
+	\captionof{figure}{Bilancia digitale}
+	\label{fig:bilancia}
+\end{minipage}
+	
+	
+\end{testexample}
+\begin{testexample}[\thetcbcounter \,Cronometro analogico]
+Guardando il cronometro analogico in figura \ref{fig:cron}, vediamo che il valore massimo del tempo, si ottiene quando la lancetta interna (che và in 30 secondi dal bianco al rosso) arriva su 15 minuti, dunque la sensibilità è di 0,1 s e la portata da massima di 15 min = 900 s. La misura che vediamo in foto, corrisponde ad un tempo di 3 minuti e 5,6 secondi, ossia $3\times 60 \,\si{\second} +\SI{5,6}{\second}= \SI{185,6}{\second}$ quindi la scrittura formale (o corretta) della misura sarà:
+\[
+t=\left(185,6\pm 0,1\right)\,\si{\second}
+\]
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.2]{img/cronometro}
+	\captionof{figure}{Cronometro analogico}
+	\label{fig:cron}
+\end{minipage}
+
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Cilindro graduato]
+In chimica e in fisica, spesso si misurano volumi di liquidi usando un cilindro graduato. Guardando la figura \ref{fig:cil}, possiamo calcolare la sensibilità del cilindro, infatti, tra 70 mL e 80 mL ci sono 10 tacche, quindi la sensibilità vale:
+\[
+s = \frac{(80 - 70),\si{\milli\liter}}{10,\text{Div}} = \SI{1}{\milli\liter} 
+\]
+
+Per quanto riguarda invece il campo di misura, i valori sono: minimo $\SI{10}{\milli\liter}$ e massimo $\SI{100}{\milli\liter}$. In fine, la misura del liquido contenuto è:
+
+\[
+V=\left(60 \pm 1\right)\,\si{\milli\liter}
+\]
+
+E' bene comunque notare che non è sempre così semplice. In laboratorio, abbiamo cilindri con varie sensibilità. Se la sensibilità è ad esempio 5 mL e il liquido sale due tacche sopra i 200 mL, allora la nostra misura sarà: $$V=\left(210 \pm 5 \right) \, \si{\milli\liter}$$.
+
+
+\begin{minipage}{\linewidth}
+	\centering
+    \includegraphics[scale=0.35]{img/cil.jpg}
+   \captionof{figure}{Cilindro graduato}
+	\label{fig:cil}
+\end{minipage}
+\end{testexample}
+
+
+\begin{testexample}[\thetcbcounter \,Cordella metrica]
+	Lo strumento nella figura \ref{fig:cordella1} è una cordella metrica, usata per misurare lunghezze di alcuni metri. Guardando la figura, possiamo cercare di valutarne la sensibilità anche se sulla scala ci sono pochi numeri. Vediamo scritto 10 ma ovviamente non può trattarsi di millimetri, altrimenti 10 mm sarebbero un cm! Dunque sono 10 cm e, siccome tra 0 e 10 ci sono 10 divisioni, la sensibilità è di 1 cm. La portata è scritta sulla cordella ed è di 20 m (dovremmo usare la sensibilità come unità di misura anche per indicare la portata e quindi la portata si dovrebbe scrivere P= $20\times 100\,\si{\centi\meter = 2000\,\si{\centi\meter}}$)
+		
+		\begin{minipage}{\linewidth}
+			\centering
+		\includegraphics[scale=0.2]{img/cordella1}
+		\captionof{figure}{Cordella metrica da 1 cm di sensibilità}
+		\label{fig:cordella1}
+	\end{minipage}
+Nella figura  \ref{fig:cordella2}, vediamo invece una cordella metrica diversa.	Sulla scala leggiamo 1|0 che evidentemente indica 10 cm (infatti 2|0 dista grosso modo 10 cm da tale tacca). Tra 10 e 11 ci sono 5 tacche, pertanto la sensibilità, sarà:
+\[
+s=\frac{\left(11-10\right)\,\si{\centi\meter}}{5\, \text{Div}} = \SI{0,2}{\centi\meter}.
+\]
+	
+			\begin{minipage}{\linewidth}
+		\centering
+	\includegraphics[scale=0.2]{img/cordella2}
+		\captionof{figure}{Cordella metrica da 0,2 cm di sensibilità}
+		\label{fig:cordella2}
+	\end{minipage}
+
+mentre la portata è di	30 m.
+	
+\end{testexample}
+
+Quale strumento usare quando se ne hanno vari a disposizione? Il metro da falegname è più sensibile delle cordelle metriche col suo millimetro di sensibilità ma non è indicato per misurare lunghezze maggiori della sua portata di 2 metri. Se devo pesare una persona, non potrò usare la bilancia di laboratorio con la sua portata di 1200 g!
+
+
+\begin{testexample}[\thetcbcounter \,Una semplice misura di lunghezza.]
+Supponiamo di dover misurare la lunghezza di un muro e di usare la cordella metrica con sensibilità di 0,2 cm. Poiché la sensibilità è di 0,2 cm, il risultato dovrà essere indicato in cm. Guardando la figura, vediamo che la tacca più vicina al bordo è la terza dopo 360 cm, quindi $L = \SI{360}{\centi\meter} + 3\times (\SI{0,2}{\centi\meter}) = \SI{360,6}{\centi\meter}$, dunque la misura corretta si scriverà:
+\[
+l=\left(360,6 \pm 0,2\right)\si{\centi\meter}
+\]	
+% DISEGNAQUI e fai la foto in laboratorio	
+	\begin{tikzpicture}[x=1cm, y=1cm]
+
+% Tacche principali e etichette
+\foreach \x in {360,370} {
+    \draw[thick] (\x-360,0) -- (\x-360,1); % Tacche lunghe
+    \node[above] at (\x-360,1) {\pgfmathparse{int(\x/10)}\pgfmathresult|0}; % Etichette principali
+}
+
+% Tacche intermedie e etichette
+\foreach \i in {1,...,9} {
+    \draw (\i,0) -- (\i,0.5); % Tacche corte
+    \node[above] at (\i,0.5) {\i}; % Etichette intermedie
+
+    % Suddivisioni piccolissime
+    \foreach \j in {1,...,4} {
+        \draw (\i + \j*0.2,0) -- (\i + \j*0.2,0.25); % Tacche piccolissime
+    }
+}
+
+% Suddivisioni tra la tacca 9 e la tacca principale a 10
+\foreach \j in {1,...,4} {
+    \draw (9 + \j*0.2,0) -- (9 + \j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi ulteriori tacche piccole tra 0 e 1
+\foreach \j in {1,...,4} {
+    \draw (\j*0.2,0) -- (\j*0.2,0.25); % Tacche piccolissime
+}
+
+% Aggiungi freccia rossa verticale che indica la terza tacca dopo 360 cm
+\draw[red, thick, ->] (0.6, -0.5) -- (0.6, 0.05); % Freccia rossa con punta alla y del terzo segmento
+
+\end{tikzpicture}
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Un esercizio completo]
+
+    \noindent \textbf{1) Determinare la misura, con il rispettivo errore assoluto, delle grandezze 
+    indicate, selezionando lo strumento più idoneo tra quelli indicati ed 
+    esprimere il risultato nella forma G = (G $\pm$ $\Delta$G) u.m. 
+    Trasformare poi la misura, ove necessario, in unità del S.I. (scrivere il 
+    risultato nella riga a fianco)}
+    
+    \vspace{0.2cm}
+    \noindent \textbf{(Privilegiare in ogni caso le misure dirette)}
+    
+    \vspace{0.3cm}
+    
+    \noindent\begin{tabular}{@{}p{4cm}@{\hspace{0.5cm}}p{5cm}@{\hspace{0.5cm}}p{2.5cm}@{\hspace{0.5cm}}p{2.5cm}@{}}
+        \textbf{a) Spessore} \newline \textbf{del libro di testo:}
+        & 1. Righello & \measureline & \measureline \\[1.5ex]
+        & 2. Calibro & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da sarto & \measureline & \measureline \\[1.5ex]
+        & 4. Cordella Metrica & \measureline & \measureline \\[2.5ex]
+    \textbf{b) Massa} \newline \textbf{dell'astuccio:}
+        & 1. Bilancia pesa persone & \measureline & \measureline \\[1.5ex]
+        & 2. Termometro digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da sarto & \measureline & \measureline \\[1.5ex]
+        & 4. Bilancia digitale & \measureline & \measureline \\[2.5ex]
+    \textbf{c) Tempo di 2} \newline \textbf{oscillazioni:}
+        & 1. Cronometro manuale & \measureline & \measureline \\[1.5ex]
+        & 2. Orologio da muro & \measureline & \measureline \\[1.5ex]
+        & 3. Metro da falegname & \measureline & \measureline \\[1.5ex]
+        & 4. Termometro digitale & \measureline & \measureline \\[2.5ex]
+    \textbf{d) Volume del} \newline \textbf{liquido contenuto:}
+        & 1. Cilindro graduato marrone & \measureline & \measureline \\[1.5ex]
+        & 2. Bilancia digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Righello & \measureline & \measureline \\[1.5ex]
+        & 4. Cilindro graduato blu & \measureline & \measureline \\[2.5ex]
+    \textbf{e) Temperatura} \newline \textbf{del liquido:}
+        & 1. Cronometro manuale & \measureline & \measureline \\[1.5ex]
+        & 2. Termometro digitale & \measureline & \measureline \\[1.5ex]
+        & 3. Termometro analogico & \measureline & \measureline \\[1.5ex]
+        & 4. Cilindro graduato blu & \measureline & \measureline \\[2.5ex]
+    \textbf{f) Altezza} \newline \textbf{della cattedra:}
+        & 1. Nastro metallico & \measureline & \measureline \\[1.5ex]
+        & 2. Calibro & \measureline & \measureline \\[1.5ex]
+        & 3. Riga & \measureline & \measureline \\[1.5ex]
+        & 4. Cordella metrica & \measureline & \measureline
+    \end{tabular}
+    
+\section*{Soluzione}
+\noindent\begin{tabular}{@{}p{2.8cm}p{5.5cm}@{\hspace{0.2cm}}p{8.5cm}@{}}
+    \textbf{a) Spessore} \newline \textbf{del libro di testo:}
+        & 1. Righello & \small{$d=(24\pm1)$ mm \quad $d=(24\pm 1)\times10^{-3}$ m} \\
+        & 2. Calibro & \\
+        & 3. Metro da sarto & \\
+        & 4. Cordella Metrica & \\[2.5ex]
+    \textbf{b) Massa} \newline \textbf{dell'astuccio:}
+        & 1. Bilancia pesa persone & \\
+        & 2. Termometro digitale & \\
+        & 3. Metro da sarto & \\
+        & 4. Bilancia digitale & \footnotesize{$m = (250,0\pm1)$ g \quad $m = (250,0\pm 0,1)\times10^{-3}$ kg} \\[2.5ex]
+    \textbf{c) Tempo di 2} \newline \textbf{oscillazioni:}
+        & 1. Cronometro manuale & \small{$t = (3,2\pm0,1)$ s \quad $t = (3,2\pm0,1)$ s} \\
+        & 2. Orologio da muro & \\
+        & 3. Metro da falegname & \\
+        & 4. Termometro digitale & \\[2.5ex]
+    \textbf{d) Volume del} \newline \textbf{liquido nel cilindro:}
+        & 1. Cilindro graduato marrone & \\
+        & 2. Bilancia digitale & \\
+        & 3. Righello & \\
+        & 4. Cilindro graduato blu & \small{$V = (125\pm 5)$ cm$^3$ \quad $V=(125\pm 5)\times10^{-6}$ m$^3$} \\[2.5ex]
+    \textbf{e) Temperatura} \newline \textbf{del liquido nel becker:}
+        & 1. Cronometro manuale & \\
+        & 2. Termometro digitale & \small{$ T =(22,3\pm0,1)$ $^\circ$C \quad $T = (22,3\pm 0,1)$ $^\circ$C} \\
+        & 3. Termometro analogico & \\
+        & 4. Cilindro graduato blu & \\[2.5ex]
+    \textbf{f) Altezza} \newline \textbf{della cattedra:}
+        & 1. Nastro metallico & \small{$h=(752\pm1)$ mm \quad $h=(752\pm 1)\times10^{-3}$ m} \\
+        & 2. Calibro & \\
+        & 3. Riga & \\
+        & 4. Cordella metrica & 
+    \end{tabular}
+    
+
+\end{testexample}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Cifre significative}
+	Diamo una importante definizione:
+\begin{csf}
+	Le cifre significative di un numero, sono tutte le cifre certe e la prima incerta.
+\end{csf}
+Dunque, per conoscere le cifre significative di un numero, occorre conoscere l'incertezza su tale numero. L'incertezza è un concetto nuovo per voi ma abbiamo già visto un esempio di incertezza (la sensibilità nelle misure dirette). La misura $L = \SI{10,234671}{\milli\meter}$,con un errore di $\SI{1}{\milli\meter}$, avrebbe come cifre significative solo le prime 2 (1 e 0) perché 1 è certa e 0 è la prima cifra incerta, dunque non ha senso scrivere il 2, il 3 e le altre cifre più a destra, per cui scriveremo:
+\[
+\SI{10,234671}{\milli\meter} \approx \SI{10}{\milli\meter}
+\]
+Se la misura fosse stata $\SI{10,634671}{\milli\meter}$, poiché 6 è maggiore di 5, avremmo approssimato come segue:
+\[
+\SI{10,634671}{\milli\meter} \approx \SI{11}{\milli\meter}
+\]
+\subsection{Valutazione a vista delle cifre significative}
+Se in un testo non ci viene data l'incertezza ma solo la misura di una grandezza, ci sono convenzioni per valutare le cifre significative. Si assume che tutti gli zeri prima della prima cifra diversa da zero, siano non significativi. Ad esempio, nel numero 0,00034040, i primi quattro zeri non sono significativi. Lo zero tra i due 4 è significativo e lo è anche lo zero finale, dunque il numero 0,00034040 ha 5 cifre significative. Se volessimo scrivere il numero con 4 cifre significative, dovremmeo prima arrotondare e poi togliere l'ultima cifra, nel nostro caso quindi, otterremmo 0,0003404 perché la prima cifra tolta è uno zero. Se una misura è scritta in notazione scientifica, si contano solo le cifre significative della parte decimale, quindi il numero $\SI{1,206e+3}{\milli\meter}$ ha 4 cifre significative. Se volessimo approssimarlo a 3 cifre, scriveremmo: $\SI{1,206e+3}{\milli\meter} \approx \SI{1,21e+3}{\milli\meter}$ perché abbiamo eliminato una cifra maggiore di 5. Se la cifra che elimiamo è 5, non c'è una regola condivisa (noi però approssimeremo sempre per difetto).
+
+
+
+\subsection{Cifre significative nelle operazioni}
+
+Una delle domande più frequenti degli studenti durante le verifiche, riguarda le cifre decimali nei risultati: quante cifre bisogna tenere nei calcoli? La calcolatrice scientifica, comunemente ha un display che mostra 12 cifre ma non è sempre necessario tenerle tutte. Tutto dipende dalle cifre significative nei dati. Le regole, che non dimostreremo (ma useremo), sono due:
+\begin{csp}
+Moltiplicando o dividendo due grandezze, il risultato và fornito con il numero di cifre significative di quella che ne ha di meno.
+\end{csp}
+Se ad esempio, abbiamo v=$\SI{12,6}{\meter\per\second}$ e t=$\SI{0,10}{\second}$, allora scriveremo:
+\[
+s=v\cdot t =  \left(\SI{12,6}{\meter\per\second} \right)\cdot\left( \SI{0,10}{\second}\right) = \SI{1,26}{\meter\per\second} \approx \SI{1,3}{\meter}. 
+\]
+\begin{css}
+Sommando o sottraendo due grandezze, si tengono nel risultato, solo le cifre decimali ottenute sommando cifre significative.
+\end{css}
+Se ad esempio, abbiamo $s_1=\SI{45,26}{\meter}$ e $s_2=\SI{17,4}{\meter}$, abbiamo: $s_1 +s_2 = \SI{62,66}{\meter} \approx \SI{62,7}{\meter}$. Da notare che in questa definizione si usano le cifre decimali, mentre nella precedente le cifre significative. Queste due regole sono regole approssimate, se vogliamo una valutazione corretta delle cifre significative nelle operazioni, dobbiamo applicare le regole del prossimo capitolo.
+
+\section{Area e volume}
+L'area è definita nel sistema internazionale come la misura della superficie rispetto all'unità di riferimento (il metro quadro, simbolo $\si{\square\meter}$, figura  \ref{fig:quad}), ossia un quadrato di lato 1 m. Il volume invece è definito come la misura dello spazio occupato da un corpo rispetto all'unità di misura base, un cubo di lato un metro, il metro cubo (simbolo $\si{\cubic\meter}$, figura \ref{fig:cub})\\
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.3]{img/quad}
+	\captionof{figure}{Il metro quadro}
+	\label{fig:quad}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.3]{img/cub}
+	\captionof{figure}{Il metro cubo}
+	\label{fig:cub}
+\end{minipage}
+
+
+Poichè queste due grandezze non fanno parte delle 7 grandezze fondamentali, si chiamano \textit{derivate}. I multipli di \(\si{\square\meter}\) sono quadrati con lati di lunghezza \(\SI{1}{\deca\meter}\) (\(\si{\square\deca\meter}\), decametro quadro), \(\SI{1}{\hecto\meter}\) (\(\si{\square\hecto\meter}\), ettometro quadro), \(\SI{1}{\kilo\meter}\) (\(\si{\square\kilo\meter}\), chilometro quadro), mentre i sottomultipli sono quadrati di lato \(\SI{1}{\deci\meter}\) (\(\si{\square\deci\meter}\), decimetro quadro), \(\SI{1}{\centi\meter}\) (\(\si{\square\centi\meter}\), centimetro quadro), \(\SI{1}{\milli\meter}\)\ (\(\si{\square\milli\meter}\), millimetro quadro). Analogamente per il volume: \(\si{\cubic\deca\meter}\) (decametro cubo), \(\si{\cubic\deci\meter}\) (decimetro cubo), ecc.
+
+
+Le  equivalenze con questa grandezze si riducono a quelle lineari (basta contare i quadrati o i cubi contenuti) per andare dal multiplo a sottomultiplo). Per andare da sottomultipli a  multipli, basta dividere per un'opportuna potenza di 10. Vediamo un esempio: \,$\SI{1,5}{\cubic\meter} = \cdots \si{\cubic\centi\meter}$. Un cubo di lato $\SI{1}{\meter}$ ha su ogni lato 100 cm (oppure 10 dm, vedi  figura \ref{fig:da-m3-a-cm3}), dunque $\SI{1}{\cubic\meter} = 100\times100\times100 = \SI{e+6}{\cubic\centi\meter}$, per cui:
+\[
+\SI{1,5}{\cubic\meter} = \SI{1,5e+6}{\cubic\centi\meter}
+\]
+
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.5]{img/da-m3-a-cm3}
+	\captionof{figure}{Suddivisione di $\SI{1}{\cubic\meter}$ in cubi di lato 1 dm e 1 cm}
+	\label{fig:da-m3-a-cm3}
+\end{minipage}
+
+
+
+
+
+
+Altro esempio: $\SI{1200}{\cubic\deci\meter} = \cdots \si{\cubic\meter}$.
+
+Poichè 1 metro cubo contiene  $10\times10\times10 = \SI{e3}{\cubic\deci\meter}$,   e poiché   nella nostra equivalenza andiamo da sottomultiplo a multiplo, dobbiamo dividere per $10^3$:
+\[
+\SI{1200}{\cubic\deci\meter} = \frac{1200}{10^3}\,\si{\cubic\meter} = \SI{1,2}{\cubic\meter}.
+\]
+
+Nella pratica dei laboratori, si incontra il litro, simbolo L, definito come un decimetro cubo. Proviamo a risolvere l'equivalenza: $\SI{1}{\cubic\centi\meter} =\cdots \si{\milli\liter}$. In questi casi, conviene trasformare in litri e poi da litri a millilitri:
+\[
+\SI{1}{\cubic\centi\meter} = \SI{e-3}{\cubic\deci\meter}= \SI{e-3}{\liter}=10^{-3}\times\SI{e+3}{\milli\liter} =\SI{1}{\milli\liter}.
+\]
+Abbiamo usato la regola seguente: se tra due multipli lineari c'è una potenza di 10 $``N''$, tra i cubi c'è una potenza $3 N$. Poiché tra centimetri e decimetri c'è solo una potenza $10^1$, allora tra i cubi c'è $10^3$. Si guardi a tal proposito la figura \ref{fig:equiv2}
+\vspace{0.5cm}
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[scale=0.3]{img/equiv2}
+	\captionof{figure}{Equivalenze tra volumi}
+	\label{fig:equiv2}
+\end{minipage}
+
+
+Questa equivalenza è particolarmente importante per cui la mettiamo in evidenza:
+\[
+\colorboxed{ocre}{
+\SI{1}{\cubic\centi\meter} = \SI{1}{\milli\liter}
+}
+\]
+Risolviamo in fine una equivalenza con un'area: $\SI{2,34e+4}{\square\deci\meter} = \cdots \si{\square\deca\meter}$. Qui vale la ``regola del 2'': se tra due unità lineari c'è una potenza di 10 ``$N$'', tra i quadrati c'è la potenza $2N$. Dal decimetro al decametro il fattore lineare è $10^{-2}$ (infatti $\SI{1}{\deci\meter} = 10^{-2}\,\si{\deca\meter}$), quindi tra i quadrati il fattore è $10^{-4}$:
+\[
+\SI{2,34e+4}{\square\deci\meter} = 2,34\times10^{4}\times 10^{-4}\,\si{\square\deca\meter} = \SI{2,34}{\square\deca\meter}.
+\]
+
+\section{Volumi di solidi regolari}
+\subsection{Cubo}
+Il cubo è un solido con 6 facce quadrate congruenti.
+
+\begin{figure}[!htbp] 
+\centering
+\begin{tikzpicture}[scale=0.8]
+    \draw (0,0,0) -- (2,0,0) -- (2,2,0) -- (0,2,0) -- cycle;
+    \draw (0,0,0) -- (0,0,2) -- (0,2,2) -- (0,2,0);
+    \draw (2,0,0) -- (2,0,2) -- (2,2,2) -- (2,2,0);
+    \draw (0,0,2) -- (2,0,2) -- (2,2,2) -- (0,2,2) -- cycle;
+    \draw[<->] (0,-0.5,0) -- node[below] {$l$} (2,-0.5,0);
+\end{tikzpicture}
+\caption{Cubo con lato $l$}
+\end{figure}
+
+\textbf{Formula del volume:} $V = l^3$
+
+\subsection{Parallelepipedo}
+Il parallelepipedo è un solido con 6 facce rettangolari.
+
+\begin{figure}[!htbp] 
+\centering
+\begin{tikzpicture}[scale=0.6]
+    \draw (0,0,0) -- (3,0,0) -- (3,2,0) -- (0,2,0) -- cycle;
+    \draw (0,0,0) -- (0,0,4) -- (0,2,4) -- (0,2,0);
+    \draw (3,0,0) -- (3,0,4) -- (3,2,4) -- (3,2,0);
+    \draw (0,0,4) -- (3,0,4) -- (3,2,4) -- (0,2,4) -- cycle;
+    \draw[<->] (0,-0.5,0) -- node[below] {$l$} (3,-0.5,0);
+    \draw[<->] (3.5,0,0) -- node[right] {$h$} (3.5,2,0);
+    \draw[<->] (3,0,-0.5) -- node[below] {$p$} (3,0,3.5);
+\end{tikzpicture}
+\caption{Parallelepipedo con dimensioni $l$, $h$, $p$}
+\end{figure}
+
+\textbf{Formula del volume:} $V = l \cdot h \cdot p$
+
+\subsection{Cilindro}
+Il cilindro è un solido generato dalla rotazione di un rettangolo attorno a uno dei suoi lati.
+
+\begin{figure}[!htbp] 
+\centering
+\begin{tikzpicture}[scale=0.7]
+    % Disegna le ellissi
+    \draw (0,0) ellipse (1.5cm and 0.5cm);
+    \draw (0,4) ellipse (1.5cm and 0.5cm);
+    % Disegna le linee verticali
+    \draw (-1.5,0) -- (-1.5,4);
+    \draw (1.5,0) -- (1.5,4);
+    % Disegna le linee laterali
+    \draw (0,0) -- (0,4);
+    % Disegna le linee di misurazione
+    \draw[<->] (-1.5,0) -- node[below] {$d$} (1.5,0);
+    \draw[<->] (2,0) -- node[right] {$h$} (2,4);
+\end{tikzpicture}
+\caption{Cilindro con diametro $d$ e altezza $h$}
+\end{figure}
+
+\textbf{Formula del volume:} $V = \frac{\pi d^2}{4} \cdot h$
+
+\subsection{Cono a base retta}
+Il cono a base retta è un solido generato dalla rotazione di un triangolo rettangolo attorno a uno dei suoi cateti.
+
+\begin{figure}[!htbp] 
+\centering
+\begin{tikzpicture}[scale=0.7]
+    \draw (0,0) ellipse (2cm and 0.5cm);
+    \draw (0,0) -- (0,4);
+    \draw (2,0) -- (0,4);
+    \draw (-2,0) -- (0,4);
+    \draw[dashed] (0,0) -- (2,0);
+\draw[<->] (-2,0) -- node[below] {$d$} (2,0);
+    \draw[<->] (2.5,0) -- node[right] {$h$} (2.5,4);
+\end{tikzpicture}
+\caption{Cono con diametro $d$ e altezza $h$}
+\end{figure}
+
+\textbf{Formula del volume:} $V = \frac{\pi d^2}{12} \cdot h$
+
+\subsection{Sfera}
+La sfera è un solido generato dalla rotazione di un semicerchio attorno al suo diametro.
+
+\begin{figure}[!htbp] 
+\centering
+\begin{tikzpicture}[scale=1]
+    % Disegna la sfera con sfumatura
+    \shade[ball color=blue!30] (0,0) circle (2cm);
+    % Disegna l'equatore con linea continua
+    \draw[dashed, thick] (0,0) ellipse (2cm and 0.6cm);
+
+    % Disegna il contorno della sfera
+    \draw[thick] (0,0) circle (2cm);
+
+    % Disegna il diametro orizzontale tratteggiato
+    \draw[dashed] (-2,0) -- (2,0);
+
+    % Etichetta del diametro
+    \node[below] at (0,0) {$d$};
+\end{tikzpicture}
+\caption{Sfera.}
+\end{figure}
+
+\textbf{Formula del volume:} $V = \frac{\pi d^3}{6}$
+
+\subsection{Esercizi svolti}
+
+\eserciziop{Calcola il volume di un cubo con lato \SI{5,00}{\centi\metre}.}
+
+\soluzione{
+$V = l^3 = (\SI{5}{\centi\metre})^3 = \SI{125}{\centi\metre\cubed}$
+}
+
+\eserciziop{Calcola il volume di un parallelepipedo con lunghezza \SI{6,0}{\centi\metre}, larghezza \SI{4,0}{\centi\metre} e altezza \SI{3,0}{\centi\metre}.}
+
+\soluzione{
+$V = l \cdot h \cdot p = \SI{6}{\centi\metre} \cdot \SI{4}{\centi\metre} \cdot \SI{3}{\centi\metre} = \SI{72}{\centi\metre\cubed}$
+}
+
+\eserciziop{Calcola il volume di un cilindro con diametro \SI{8,00000}{\centi\metre} e altezza \SI{10,000}{\centi\metre}.}
+
+\soluzione{
+$V = \frac{\pi d^2}{4} \cdot h = \frac{\pi \cdot (\SI{8}{\centi\metre})^2}{4} \cdot \SI{10}{\centi\metre} \approx \SI{502,65}{\centi\metre\cubed}$
+}
+
+\eserciziop{Calcola il volume di un cono a base retta con diametro \SI{6,000}{\centi\metre} e altezza \SI{9,000}{\centi\metre}.}
+
+\soluzione{
+$V = \frac{\pi d^2}{12} \cdot h = \frac{\pi \cdot (\SI{6}{\centi\metre})^2}{12} \cdot \SI{9}{\centi\metre} \approx \SI{84,82}{\centi\metre\cubed}$
+}
+
+\eserciziop{Calcola il volume di una sfera con diametro \SI{10,000}{\centi\metre}.}
+
+\soluzione{
+$V = \frac{\pi d^3}{6} = \frac{\pi \cdot (\SI{10}{\centi\metre})^3}{6} \approx \SI{523,60}{\centi\metre\cubed}$
+}
+
+
+\section{Densità} Dato un corpo (solido, liquido o gassoso) di massa $M$ e volume $V$, la densità è la grandezza (derivata):
+\[
+d=\frac{M}{V}
+\]
+Guardando la formula, ricaviamo che l'unità di misura è quella di una massa diviso un volume. Nel sistema internazionale, l'unità base è $\si{\kilo\gram\per\cubic\meter}$ ma esistono ovviamente altre unità. Ad esempio $\si{\gram\per\cubic\centi\meter}$.
+
+\begin{testexample}[\thetcbcounter \,Calcoli con la densità]
+$\SI{7860}{\kilo\gram\per\cubic\meter} = \cdots  \si{\kilo\gram\per\cubic\centi\meter} $. Dobbiamo trasformare il denominatore con le regole che conosciamo (ricordiamo che $\SI{1}{\cubic\meter} = \SI{e+6}{\cubic\centi\meter}$):
+\[
+\SI{7860}{\kilo\gram\per\cubic\meter} =\frac{\SI{7860}{\kilogram}}{\SI{e+6}{\cubic\centi\meter}}  =\SI{7,860e-3}{\kilo\gram\per\cubic\centi\meter}
+\]
+
+$\SI{1000}{\kilo\gram\per\cubic\meter} = \cdots \si{\gram\per\milli\liter}$. Ricordiamo che $\SI{1}{\cubic\centi\meter} = \SI{1}{\milli\liter}$:
+
+
+
+\[
+\SI{1000}{\kilo\gram\per\cubic\meter} = \frac{1000\cdot \SI{e+3}{\gram}}{\SI{e6}{\milli\liter}} = \SI{1}{\gram\per\milli\liter}
+\]
+
+Questa equivalenza è molto importante nella pratica dove si usano spesso i millilitri, dunque la mettiamo in evidenza:
+\[
+\colorboxed{ocre}{
+\SI{e3}{\kilo\gram\per\cubic\meter} = \SI{1}{\gram\per\milli\liter}
+}
+\]
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \,Formule inverse e calcolo dimensionale.]
+
+Introduciamo il calcolo delle unità di misura (calcolo dimensionale). Per ricavare l' unità di misura di una grandezza G (rappresentata dalla scrittura [G]) basta inserire nella formula, al posto di ogni grandezza, la sua unità di misura. Facciamo un esempio.
+Notiamo che la formula del volume è corretta dal punto di vista delle unità di misura. Infatti, $[m]=\text{kg}\;\, [d]=\frac{\text{kg}}{{\text{m}^3}}$ e quindi:
+        \[
+        [V]=\frac{\text{kg}}{\frac{\text{kg}}{{\text{m}^3}}}=\cancel{\text{kg}}\cdot \frac{\text{m}^3}{\cancel{\text{kg}}   }=\text{m}^3.
+      \]
+\end{testexample}
+
+
+
+\begin{testexample}[\thetcbcounter \,Esercizio sulla densità]
+
+Un'ampolla di vetro ha una massa di $\SI{85,382}{\gram}$ e un volume di $\SI{80}{\milli\liter}$. L'ampolla viene riempita con gas xenon e la sua massa diventa $\SI{85,852}{\gram}$.
+\begin{itemize}
+\item Calcola la densità $d_{X_e}$ dello xenon.
+\item In seguito, la lampada viene di nuovo svuotata e riempita con un gas più leggero, di densità $d_g = 0,153\, d_{X_e}$ (valore scelto solo per l'esercizio, non corrisponde a un gas reale). Determina la  massa totale della lampada riempita con questo gas.
+\end{itemize}
+\end{testexample}
+
+Approfittiamo per poter ripassare le formule inverse e le cifre significative. Calcoliamo anzitutto la massa dello xenon per differenza:
+\[
+M_{X_e} = \SI{85,852}{\gram} -\SI{85,382}{\gram}  = \SI{0,470}{\gram} =\SI{4,70e-4}{\kilo\gram}
+\]
+Il testo vuole la densità in $\si{\kilo\gram\per\cubic\meter}$, quindi trasformiamo il volume in $\si{\cubic\meter}$ :  $\SI{80}{\milli\liter} =\SI{8,0e-5}{\cubic\meter}$.
+Usando la formula per la densità, abbiamo:
+\[
+d_{X_e}=\frac{M}{V} = \frac{\SI{4,70e-4}{\kilo\gram}}{\SI{8,0e-5}{\cubic\meter}}=\SI{5,875}{\kilo\gram\per\cubic\meter}      \approx  \SI{5,9}{\kilo\gram\per\cubic\meter}.  
+\]
+Per determinare la massa totale della lampada riempita con il gas, dobbiamo sommare la massa dell'ampolla e la massa del gas, che possiamo calcolare con la formula: $M=d\cdot V$.
+Dai dati, vediamo che la densità del gas vale:
+\[
+d_{g} = 0,153 \cdot\left( \SI{5,9}{\kilo\gram\per\cubic\meter}\right) = \SI{0,9027}{\kilo\gram\per\cubic\meter } \approx \SI{0,90}{\kilo\gram\per\cubic\meter }.
+\]
+La massa totale dell'ampolla e del gas è dunque:
+\[
+\begin{aligned}
+    M &= \SI{0,085382}{\kilo\gram} + d \cdot V \\
+      &= \SI{0,085382}{\kilo\gram} + \left(\SI{0,90}{\kilo\gram\per\cubic\meter}\right) \times \left(\SI{8,0e-5}{\cubic\meter}\right) \\
+      &= \SI{0,085382}{\kilo\gram}  + \SI{0,00045}{\kilo\gram} = \SI{0,085454}{\kilo\gram} = \SI{85,454}{\gram}.
+\end{aligned}
+\]
+
+Notiamo che abbiamo dovuto fare un passaggio in più per poter decidere nella somma quante cifre tenere, togliendo la notazione scientifica. Questa operazione è spesso lunga per cui capiterà in calcoli molto lunghi di non usare la regola per le cifre significative della somma e tenere nel risultato finale, tante cifre significative quante presenti nei dati meno precisi.
+
+
+\begin{testexample}[\thetcbcounter \,Esercizio sulla densità e il volume]
+Un cilindro di metallo ha un'altezza di \(h = \SI{50,0}{\centi\metre}\) e un diametro di base \(d = \SI{20,0}{\centi\metre}\). La massa del cilindro è \(M = \SI{15,0}{\kilogram}\).
+
+\begin{enumerate}
+    \item \textbf{Calcola il volume del cilindro in litri.}
+    \item \textbf{Calcola la densità del cilindro in \si{\kilogram\per\litre}.}
+\end{enumerate}
+\end{testexample}
+
+Le formule sono:
+
+\begin{itemize}
+    \item Il volume \(V\) di un cilindro si calcola con la formula:
+    \[
+    V = \pi \left(\frac{d}{2}\right)^2 h = \frac{\pi d^2 h}{4}
+    \]
+    dove \(d\) è il diametro della base e \(h\) è l'altezza.
+
+    \item La densità \(\rho\) di un oggetto si calcola con la formula:
+    \[
+    \rho = \frac{M}{V}
+    \]
+    dove \(M\) è la massa e \(V\) è il volume.
+\end{itemize}
+
+\textit{Svolgimento}\\
+
+\begin{enumerate}
+    \item \textbf{Calcolo del volume del cilindro:}
+
+    \begin{itemize}
+        \item Il diametro \(d\) e l'altezza \(h\) sono dati in centimetri:
+        \[
+        d = \SI{20,0}{\centi\metre}, \quad h = \SI{50,0}{\centi\metre}
+        \]
+        \item Il volume in centimetri cubi è:
+        \[
+        V = \frac{\pi d^2 h}{4} = \frac{\pi (\SI{20}{\centi\metre})^2 \times \SI{50}{\centi\metre}}{4} =  \SI{15708}{\centi\metre\cubed} \approx\SI{1,57e+4}{\centi\meter\cubed}
+        \]
+        \item Convertiamo il volume in litri (1 litro = 1000 centimetri cubi):
+        \[
+        V = \SI{1,57e+4}{\centi\meter\cubed} = \SI{15,7}{\liter}
+        \]
+    \end{itemize}
+
+    \item \textbf{Calcolo della densità del cilindro:}
+
+    \begin{itemize}
+        \item La massa \(M\) del cilindro è già data in chilogrammi:
+        \[
+        M = \SI{15}{\kilogram}
+        \]
+        \item Utilizziamo la formula della densità:
+        \[
+        \rho = \frac{M}{V} = \frac{\SI{15}{\kilogram}}{\SI{15.7}{\litre}} \approx \SI{0.955}{\kilogram\per\litre}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
