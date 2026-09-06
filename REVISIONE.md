@@ -68,7 +68,7 @@ La meccanica compare **solo** dentro le relazioni di laboratorio, mai come teori
 | B5 | Due sistemi per il codice: `minted` **e** `lstlisting` usati in parallele. | Sceglierne uno (consiglio `minted`, già caricato, o `listings` per evitare `--shell-escape`). |
 | B6 | Preambolo: `caption` caricato 2× con opzioni in conflitto (righe 46 e 66), `microtype` 2×, `cancel` 3×. `% Local Variables: TeX-engine: xetex` ma il README dice `lualatex`. | Ripulire il preambolo; allineare engine. |
 | B7 | README: parla di `appunti.tex`; il file reale è `appunti-new.tex`. | Aggiornare README (o rinominare il file). |
-| B8 | Cartella `sezioni/` = split automatico **obsoleto** (numeri/titoli non combaciano più col sorgente). Non è incluso da nessuna parte. | Rigenerare con `crea-spezzattato.sh` o rimuovere per evitare confusione. |
+| B8 | ~~Cartella `sezioni/` = split automatico **obsoleto**~~ | **RISOLTO**: `sezioni/` e le altre cartelle non usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`, `mappa-errori/`, `auto/`) rimosse dal repo (backup in `../_backup-appunti-fisica-2026-09-06/`). Split ufficiale ora in `capitoli/`. |
 | B9 | Autore «Prof. Romano» ma prefazione in 1ª persona; nessuna bibliografia, nessun libro di testo citato per nome. | — |
 | B10 | Frase troncata a metà, riga ~4271: «…si ottengono dal vettorem» seguito da una tabella. | Completare il periodo. |
 

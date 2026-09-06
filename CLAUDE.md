@@ -22,7 +22,10 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
   per verificare riferimenti e conteggio pagine (attualmente 145).
-- NB: `sezioni/` e `spezzettato/` sono vecchi split automatici OBSOLETI, ignorarli.
+- NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
+  usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
+  `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
+  `../_backup-appunti-fisica-2026-09-06/` (fuori dal repo).
 
 > **Branch**: il lavoro di revisione+ampliamento è stato mergiato su **`master`**
 > (fast-forward, commit `4c5a01e` e precedenti). Si lavora direttamente su `master`.
