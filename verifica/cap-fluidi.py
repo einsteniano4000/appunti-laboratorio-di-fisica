@@ -67,3 +67,24 @@ F_tot = (40 + m_oil) * g
 A_piedi = 3 * 15e-4
 p_piede = F_tot / A_piedi
 print(f"es4  V_oil={V_oil:.3f} m3, m_oil={m_oil:.0f} kg, F_tot={F_tot:.0f} N, p={p_piede:.3e} Pa = {p_piede/1e6:.1f} MPa")
+
+# ---------------------------------------------------------------------------
+sez("8.3  Principio di Pascal / torchio idraulico")
+
+# torchio: rapporto aree 50, F1=200
+print(f"torchio A2/A1=50, F1=200 N -> F2 = {200*50} N")
+
+# Esempio cric: A1=2, A2=50 cm2, F2=6000 N
+F1 = 6000 * 2.0 / 50
+print(f"cric: F1 = {F1:.0f} N")
+n = (50 * 12) / (2.0 * 3.0)
+print(f"cric: n pompate = {n:.0f}")
+
+# es1: diametri 4,0 e 32 cm, carico 9,6 kN
+ratio = (32 / 4.0) ** 2
+print(f"es1  A2/A1 = {ratio:.0f}, F1 = {9600/ratio:.0f} N")
+
+# es2: A1=5 cm2, F1=80 N, F2=12 kN
+A2 = 5.0 * 12000 / 80
+n2 = A2 * 25 / (5.0 * 40)
+print(f"es2  A2 = {A2:.0f} cm2, n = {n2:.2f} -> {round(n2)} corse")

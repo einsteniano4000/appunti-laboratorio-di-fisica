@@ -178,3 +178,86 @@ Un serbatoio cilindrico vuoto ha massa \SI{40}{\kilo\gram}, diametro \SI{1,2}{\m
 Due recipienti, uno cilindrico stretto e uno largo e svasato, contengono acqua fino alla stessa altezza di \SI{20}{\centi\metre}. In quale dei due la pressione sul fondo è maggiore? Motiva la risposta.\\
 \risp{è uguale: la pressione idrostatica dipende solo dall'altezza del liquido, non dalla forma né dal volume}
 \end{esercizio}
+
+
+\section{Il principio di Pascal}
+
+Nella legge di Stevino abbiamo considerato la pressione dovuta al \emph{peso} del liquido. Ma se sul liquido, chiuso in un recipiente, agisce anche una pressione dall'esterno -- per esempio la mano che spinge sul tappo di una siringa piena d'acqua -- che fine fa quella pressione?
+
+L'esperienza dice che si trasmette dappertutto: se buchiamo la siringa in un punto qualsiasi, l'acqua schizza fuori con la stessa forza. Lo enunciò a metà del Seicento il matematico e fisico francese Blaise Pascal.
+
+\begin{definizione}
+\textbf{Principio di Pascal.} Una pressione esercitata sulla superficie di un liquido racchiuso si trasmette \textbf{inalterata} a ogni punto del liquido e a tutte le pareti del recipiente, qualunque sia la loro orientazione.
+\end{definizione}
+
+La pressione totale in un punto del liquido è quindi la somma di quella esterna e di quella idrostatica di Stevino, come già visto per la pressione atmosferica: $p = p_\text{esterna} + \rho g h$.
+
+\subsection{Il torchio idraulico}
+La conseguenza più utile del principio di Pascal è una macchina capace di \textbf{moltiplicare le forze}: il \textbf{torchio idraulico} (o pressa idraulica). Due cilindri di sezione diversa, $A_1$ piccola e $A_2$ grande, sono collegati sul fondo e riempiti di un liquido; ciascuno è chiuso da un pistone (figura~\ref{fig:torchio}).
+
+Se sul pistone piccolo premiamo con una forza $F_1$, nel liquido nasce una pressione
+\[ p = \frac{F_1}{A_1}, \]
+che per il principio di Pascal si ritrova identica sotto il pistone grande. Là questa pressione agisce sull'area $A_2$ e produce una forza
+\[ \colorboxed{ocre}{ F_2 = p\,A_2 = F_1\,\frac{A_2}{A_1}. } \]
+Poiché $A_2 > A_1$, la forza $F_2$ è \emph{più grande} di $F_1$, tante volte quanto è il rapporto fra le aree. Con un cilindro grande $50$ volte quello piccolo, una spinta di \SI{200}{\newton} sul pistone piccolo diventa una spinta di \SI{10000}{\newton} sul pistone grande: abbastanza da sollevare un'automobile.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % liquido (canale + due colonne)
+        \fill[blue!12] (1.0,0) rectangle (5.6,0.5);
+        \fill[blue!12] (1.0,0.5) rectangle (1.8,2.55);
+        \fill[blue!12] (3.4,0.5) rectangle (5.6,2.95);
+        % pareti del torchio (tubo a U)
+        \draw[thick] (1.0,3.2) -- (1.0,0) -- (5.6,0) -- (5.6,3.6);
+        \draw[thick] (1.8,3.2) -- (1.8,0.5) -- (3.4,0.5) -- (3.4,3.6);
+        % pistone piccolo + stelo
+        \fill[gray!35] (1.02,2.55) rectangle (1.78,2.85);
+        \draw[thick] (1.02,2.55) rectangle (1.78,2.85);
+        \draw[thick] (1.4,2.85) -- (1.4,3.35);
+        % pistone grande + carico
+        \fill[gray!35] (3.42,2.95) rectangle (5.58,3.25);
+        \draw[thick] (3.42,2.95) rectangle (5.58,3.25);
+        \draw[thick,fill=gray!45] (4.0,3.25) rectangle (5.0,3.75);
+        % forze
+        \draw[->,red!70!black,very thick] (1.4,4.15) -- (1.4,3.4);
+        \node[red!70!black,above] at (1.4,4.15) {$\vec F_1$};
+        \draw[->,ocre,very thick] (4.5,3.75) -- (4.5,3.28);
+        \node[ocre,anchor=west] at (5.1,3.9) {$\vec F_2$ (carico)};
+        % aree
+        \draw[<->] (1.02,2.35) -- (1.78,2.35);
+        \node[below,font=\footnotesize] at (1.4,2.33) {$A_1$};
+        \draw[<->] (3.42,2.7) -- (5.58,2.7);
+        \node[below,font=\footnotesize] at (4.5,2.68) {$A_2$};
+    \end{tikzpicture}
+    \caption{Torchio idraulico. La pressione prodotta dalla piccola forza $F_1$ sull'area $A_1$ si trasmette inalterata sotto il pistone grande, dove sull'area $A_2$ dà una forza $F_2 = F_1\,A_2/A_1$, molto maggiore.}
+    \label{fig:torchio}
+\end{figure}
+
+\begin{remark}
+Il torchio idraulico non ``crea'' energia. Quando il pistone piccolo scende di un tratto $d_1$, sposta un volume di liquido $A_1 d_1$ che fa salire il pistone grande di un tratto $d_2$ molto minore, tale che $A_1 d_1 = A_2 d_2$. Si ha allora $F_1 d_1 = F_2 d_2$: si guadagna in forza esattamente quanto si perde in spostamento, come per le leve. Per sollevare un carico di parecchio, il pistone piccolo va pompato molte volte.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Un cric idraulico]
+Il cric idraulico di un'officina ha il pistone di spinta di sezione $A_1 = \SI{2,0}{\centi\metre\squared}$ e quello di sollevamento di sezione $A_2 = \SI{50}{\centi\metre\squared}$. Vogliamo sollevare un'auto che grava sul cric con \SI{6000}{\newton}.
+
+\emph{Forza da applicare.} Serve che $F_2 = \SI{6000}{\newton}$, quindi
+\[ F_1 = F_2\,\frac{A_1}{A_2} = 6000 \cdot \frac{2{,}0}{50} = \SI{240}{\newton}. \]
+\emph{Quante pompate.} Ogni corsa del pistone piccolo è lunga $d_1 = \SI{3,0}{\centi\metre}$. Il volume spostato a ogni corsa è $A_1 d_1$; per far salire l'auto di $d_2 = \SI{12}{\centi\metre}$ serve un volume totale $A_2 d_2$. Il numero di pompate è
+\[ n = \frac{A_2\,d_2}{A_1\,d_1} = \frac{50 \cdot 12}{2{,}0 \cdot 3{,}0} = 100. \]
+\end{testexample}
+
+\begin{esercizio}
+In un torchio idraulico i pistoni hanno diametri di \SI{4,0}{\centi\metre} e \SI{32}{\centi\metre}. Che forza va applicata al pistone piccolo per equilibrare un carico di \SI{9,6}{\kilo\newton} su quello grande?\\
+\risp{$F_1 = \SI{150}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sollevatore idraulico solleva un carico di \SI{12}{\kilo\newton} spingendo sul pistone piccolo (sezione \SI{5,0}{\centi\metre\squared}) con una forza di \SI{80}{\newton}. Qual è la sezione del pistone grande? Se il pistone piccolo compie corse di \SI{40}{\centi\metre}, quante corse servono per alzare il carico di \SI{25}{\centi\metre}?\\
+\risp{$A_2 = \SI{750}{\centi\metre\squared}$; \; $n \approx 94$ corse}
+\end{esercizio}
+
+\begin{esercizio}
+Spiega perché, nell'impianto frenante di un'automobile, una pressione modesta del piede sul pedale produce sulle pastiglie una forza molto grande.\\
+\risp{la pressione si trasmette inalterata (Pascal) dal cilindretto del pedale ai pistoncini delle pinze, che hanno area totale molto maggiore: $F = p\,A$ cresce con l'area}
+\end{esercizio}
