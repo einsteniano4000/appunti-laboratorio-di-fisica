@@ -4136,6 +4136,176 @@ Per tenere un libro di massa $\SI{400}{\gram}$ fermo contro una parete verticale
 \end{esercizio}
 
 
+\chapter{Equilibrio dei corpi solidi}
+
+Nel capitolo precedente abbiamo introdotto le forze e le loro operazioni. Ora ci chiediamo: sotto quali condizioni un corpo, soggetto a più forze, resta fermo? La risposta dipende da come schematizziamo il corpo. Cominciamo dal caso più semplice, il punto materiale; passeremo poi al corpo rigido, in cui una forza può produrre anche una rotazione.
+
+\section{L'equilibrio di un punto materiale}
+
+\begin{definizione}
+Un corpo è in \textbf{equilibrio} quando la sua posizione non cambia al passare del tempo.
+\end{definizione}
+
+Una biglia appoggiata sul tavolo, un'automobile parcheggiata, un quadro appeso alla parete sono esempi di corpi in equilibrio.
+
+Chiamiamo \textbf{punto materiale} un corpo le cui dimensioni sono trascurabili rispetto al contesto in cui si trova: una biglia rispetto alla stanza, una nave rispetto all'oceano. Un punto materiale non ha forma né dimensioni, ma ha una massa, quindi è soggetto alla forza-peso.
+
+\subsection{La condizione di equilibrio}
+Sappiamo che una forza può cambiare lo stato di moto di un corpo. Se un punto materiale è fermo e la risultante delle forze applicate è nulla, esso resta fermo:
+
+\begin{definizione}
+Un punto materiale è in equilibrio se e solo se la \textbf{risultante di tutte le forze} applicate è nulla:
+\[
+\colorboxed{ocre}{\; \vec{R} = \vec{F}_1 + \vec{F}_2 + \vec{F}_3 + \dots = \vec{0} \;}
+\]
+\end{definizione}
+
+Per esempio, se su una palla da biliardo agiscono due forze uguali e opposte di modulo $\SI{20}{\newton}$, la risultante è nulla e la palla non si muove.
+
+\subsection{Vincoli e reazioni vincolari}
+Consideriamo la biglia ferma sul tavolo. Su di essa agisce la forza-peso $\vec{P}$, diretta verso il basso: se questa fosse l'unica forza, la biglia cadrebbe. Deve quindi agire un'altra forza, uguale e opposta, esercitata dal tavolo.
+
+\begin{definizione}
+Un \textbf{vincolo} è un corpo che, esercitando una forza, impedisce a un altro corpo di compiere certi movimenti. La forza esercitata da un vincolo si chiama \textbf{reazione vincolare} $\vec{R}_v$.
+\end{definizione}
+
+Il tavolo impedisce alla biglia di muoversi verso il basso: la reazione vincolare $\vec{R}_v$ è diretta verso l'alto e la biglia è in equilibrio:
+\[
+\vec{R}_v + \vec{P} = \vec{0} \qquad \Longrightarrow \qquad \vec{R}_v = -\vec{P}.
+\]
+Altri esempi di vincolo: i binari, che costringono il treno a muoversi in una sola direzione; il gancio di una gru, che sostiene un carico.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick] (-1.6,0) -- (1.6,0);
+\foreach \x in {-1.2,-0.6,0,0.6,1.2}{\draw (\x,0) -- (\x-0.25,-0.35);}
+\shade[ball color=orange!60] (0,0.45) circle (0.45);
+\draw[->,very thick,ocre] (0,0.45) -- (0,-1.1) node[right,black]{$\vec{P}$};
+\draw[->,very thick,blue!60!black] (0,0.45) -- (0,2) node[right,black]{$\vec{R}_v$};
+\end{tikzpicture}
+\caption{La biglia sul tavolo è in equilibrio: la reazione vincolare $\vec{R}_v$ bilancia il peso $\vec{P}$.}
+\label{fig:biglia}
+\end{figure}
+
+\subsection{La forza equilibrante}
+Quando un punto materiale \emph{non} è in equilibrio, per equilibrarlo basta aggiungere una forza uguale e opposta alla risultante delle forze già applicate: questa si chiama \textbf{forza equilibrante} $\vec{F}_e$:
+\[
+\vec{F}_e = -\vec{R}.
+\]
+Per esempio, un carico di mattoni di peso $\SI{2000}{\newton}$ tenuto sospeso da una gru è in equilibrio grazie alla \textbf{tensione} $\vec{T}$ del cavo, che è la forza equilibrante: ha modulo $\SI{2000}{\newton}$ ed è diretta verso l'alto.
+
+\begin{testexample}[\thetcbcounter \, Lampada appesa a due fili]
+Una lampada di peso $\SI{30}{\newton}$ è appesa al soffitto tramite due fili verticali che sostengono metà del peso ciascuno. Qual è la tensione di ogni filo? Poiché la lampada è in equilibrio, la somma delle due tensioni (verso l'alto) deve bilanciare il peso (verso il basso): $T_1 + T_2 = \SI{30}{\newton}$. Essendo i fili uguali, $T_1 = T_2 = \SI{15}{\newton}$.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Su un anello agiscono tre forze complanari. Due valgono $\SI{8}{\newton}$ verso Est e $\SI{8}{\newton}$ verso Ovest. Quanto deve valere la terza forza perché l'anello sia in equilibrio?\\
+\hspace*{\fill} $\left[\SI{0}{\newton}\ \text{(nulla): le prime due si bilanciano già)}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un lampadario di peso $\SI{45}{\newton}$ è sostenuto da una catena verticale. Quanto vale la tensione della catena? Come si chiama, rispetto al lampadario, questa forza?\\
+\hspace*{\fill} $\left[T = \SI{45}{\newton}\ ;\ \text{forza equilibrante (reazione vincolare del gancio)}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un punto materiale agiscono due forze perpendicolari, di moduli $\SI{6}{\newton}$ e $\SI{8}{\newton}$. Quale forza equilibrante bisogna aggiungere per metterlo in equilibrio? (indica modulo e direzione).\\
+\hspace*{\fill} $\left[\SI{10}{\newton}\text{, opposta alla risultante delle due forze}\right]$
+\end{esercizio}
+
+
+\section{L'equilibrio e l'attrito}
+
+\subsection{Un oggetto su un piano inclinato}
+Consideriamo un blocco appoggiato su un piano inclinato \textbf{liscio} (senza attrito). Su di esso agiscono la forza-peso $\vec{P}$, verticale verso il basso, e la reazione vincolare $\vec{R}_v$, perpendicolare al piano. Scomponiamo il peso nei vettori componenti $\vec{P}_\parallel$ (parallelo al piano) e $\vec{P}_\perp$ (perpendicolare al piano), come abbiamo fatto nel paragrafo~\ref{sec:scomposizione}.
+
+La reazione vincolare bilancia esattamente $\vec{P}_\perp$: $\vec{R}_v = -\vec{P}_\perp$. Ma la componente $\vec{P}_\parallel$ resta \textbf{non bilanciata}: il blocco scivola verso il basso.
+
+\begin{remark}
+Un oggetto non può stare in equilibrio su un piano inclinato liscio senza una forza esterna che ne bilanci la componente $\vec{P}_\parallel$.
+\end{remark}
+
+Indicando con $l$ la lunghezza del piano e con $h$ la sua altezza, per considerazioni geometriche si ha:
+\[
+\colorboxed{ocre}{\; P_\parallel = P\,\frac{h}{l} \;}
+\]
+che è equivalente a $P_\parallel = P\sin\alpha$, dove $\alpha$ è l'angolo di inclinazione.
+
+\begin{testexample}[\thetcbcounter \, Slitta su un piano inclinato]
+Una slitta di peso $\SI{100}{\newton}$ è su un piano inclinato lungo $\SI{2,6}{\meter}$ e alto $\SI{1,3}{\meter}$. La componente del peso parallela al piano vale:
+\[
+P_\parallel = P\,\frac{h}{l} = \SI{100}{\newton}\times\frac{\SI{1,3}{\meter}}{\SI{2,6}{\meter}} = \SI{50}{\newton}.
+\]
+Per tenere ferma la slitta serve una forza parallela al piano, diretta verso l'alto, di $\SI{50}{\newton}$.
+\end{testexample}
+
+\subsection{Piano inclinato con attrito}
+Se il piano non è liscio, entra in gioco la forza di attrito statico $\vec{F}_{as}$, parallela al piano e diretta verso l'alto (si oppone alla tendenza a scivolare). Il blocco è in equilibrio se l'attrito statico riesce a bilanciare $\vec{P}_\parallel$:
+\[
+F_{as} = P_\parallel .
+\]
+Ma l'attrito statico non può superare il valore massimo $k_s\,F_p$, dove la forza premente è $F_p = P_\perp$. Dunque il blocco resta fermo finché:
+\[
+P_\parallel \le k_s\,P_\perp .
+\]
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\def\ang{25}
+\draw[thick] (0,0) -- (6,0) -- (6,{6*tan(\ang)}) -- cycle;
+\draw (1,0) arc (0:\ang:1); \node at (1.45,0.22){\small $\alpha$};
+\begin{scope}[shift={(3.3,{3.3*tan(\ang)})},rotate=\ang]
+\fill[gray!25] (-0.6,0) rectangle (0.6,0.75);
+\draw (-0.6,0) rectangle (0.6,0.75);
+\end{scope}
+\coordinate (C) at (3.3,{3.3*tan(\ang)+0.37});
+\draw[->,very thick,ocre] (C) -- ++(0,-2) node[right,black]{$\vec{P}$};
+\draw[->,thick,blue!60!black] (C) -- ++({90+\ang}:1.3) node[above,black]{$\vec{R}_v$};
+\draw[->,thick,red!70!black] (C) -- ++({\ang}:1.5) node[above right,black]{$\vec{F}_{as}$};
+\end{tikzpicture}
+\caption{Blocco fermo su un piano inclinato scabro: la reazione vincolare bilancia $\vec{P}_\perp$, l'attrito statico bilancia $\vec{P}_\parallel$.}
+\label{fig:incl-attrito}
+\end{figure}
+
+\subsection{L'angolo limite}
+Aumentiamo l'inclinazione $\alpha$: la componente $P_\parallel$ cresce, mentre $P_\perp$ (e quindi il massimo dell'attrito) diminuisce. Esiste un angolo $\alpha_0$, detto \textbf{angolo limite}, oltre il quale il blocco scivola comunque. Si può dimostrare che:
+\[
+\colorboxed{ocre}{\; \tan\alpha_0 = k_s \;}
+\]
+Notevole: l'angolo limite \textbf{non dipende dalla massa} dell'oggetto, ma solo dal coefficiente di attrito statico. Misurare l'angolo limite di un piano inclinato è quindi un modo per determinare $k_s$.
+
+\begin{testexample}[\thetcbcounter \, Cassa su un piano inclinato]
+Una cassa di massa $\SI{5,0}{\kilo\gram}$ è su un piano inclinato di $20^\circ$; il coefficiente di attrito statico è $k_s = 0,50$. La cassa è in equilibrio?
+
+Peso: $P = mg = \SI{49}{\newton}$. Componenti (con $\sin 20^\circ \approx 0,34$, $\cos 20^\circ \approx 0,94$):
+\[
+P_\parallel \approx \SI{49}{\newton}\times 0,34 \approx \SI{17}{\newton}, \qquad P_\perp \approx \SI{49}{\newton}\times 0,94 \approx \SI{46}{\newton}.
+\]
+Massimo attrito statico: $k_s\,P_\perp = 0,50 \times \SI{46}{\newton} = \SI{23}{\newton}$. Poiché $P_\parallel = \SI{17}{\newton} < \SI{23}{\newton}$, la cassa \textbf{resta ferma}. (Equivalentemente: $\tan 20^\circ \approx 0,36 < k_s = 0,50$, quindi $\alpha < \alpha_0$.)
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Un piano inclinato è lungo $\SI{3,0}{\meter}$ e alto $\SI{1,5}{\meter}$. Un carrello di peso $\SI{80}{\newton}$ vi è appoggiato. Se il piano è liscio, quale forza parallela al piano serve per tenerlo fermo?\\
+\hspace*{\fill} $\left[F = \SI{40}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Il coefficiente di attrito statico tra un blocco e un piano inclinato vale $k_s = 0,70$. Qual è l'angolo limite? Un blocco più pesante avrebbe un angolo limite diverso?\\
+\hspace*{\fill} $\left[\alpha_0 = \arctan 0,70 \approx 35^\circ\ ;\ \text{no, non dipende dalla massa}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa è ferma su un piano inclinato di $18^\circ$. Misurando l'angolo limite si trova $\alpha_0 = 22^\circ$. La cassa è in equilibrio? Quanto vale, circa, il coefficiente di attrito statico?\\
+\hspace*{\fill} $\left[\text{sì}\ (18^\circ < 22^\circ)\ ;\quad k_s = \tan 22^\circ \approx 0,40\right]$
+\end{esercizio}
+
+
 \end{document}
 
 
