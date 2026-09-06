@@ -4596,6 +4596,241 @@ Per ciascuno di questi attrezzi indica il genere di leva: pinzetta da sopraccigl
 \end{esercizio}
 
 
+\section{Il baricentro e l'equilibrio}
+
+\subsection{Centro di simmetria e baricentro}
+Alcuni corpi solidi hanno un \textbf{centro di simmetria}: il cubo, la sfera, il parallelepipedo. I corpi di forma irregolare non ne hanno. Un corpo si dice \textbf{omogeneo} se la sua densità è la stessa in ogni sua parte; il martello, per esempio, non è omogeneo, perché la testa di ferro e il manico di legno hanno densità diverse.
+
+Il peso di un corpo è la somma dei pesi di tutte le sue particelle: è una forza distribuita su tutto il volume. Possiamo però pensare che il peso sia concentrato in un unico punto.
+
+\begin{definizione}
+Il \textbf{baricentro} (o centro di gravità) è il punto in cui si può considerare applicata l'intera forza-peso di un corpo.
+\end{definizione}
+
+Per un corpo \textbf{omogeneo e regolare}, il baricentro coincide con il centro di simmetria. Per un corpo irregolare, o non omogeneo (come una mazza da baseball, più pesante da un lato), il baricentro è spostato verso la parte più pesante e si trova per via sperimentale: si appende il corpo per un punto e si traccia la verticale (con un filo a piombo); si ripete appendendolo per un altro punto; il baricentro è nell'intersezione delle due rette.
+
+\begin{remark}
+Il baricentro è un punto \textbf{immaginario}: non deve necessariamente trovarsi dentro il materiale del corpo. Per un anello o un ferro di cavallo, per esempio, il baricentro cade nel vuoto.
+\end{remark}
+
+\subsection{Equilibrio stabile, instabile e indifferente}
+Consideriamo un corpo in equilibrio e spostiamolo leggermente dalla sua posizione. Possono succedere tre cose:
+\begin{itemize}
+\item il corpo torna nella posizione di partenza: l'equilibrio è \textbf{stabile};
+\item il corpo si allontana ancora di più: l'equilibrio è \textbf{instabile};
+\item il corpo resta nella nuova posizione: l'equilibrio è \textbf{indifferente}.
+\end{itemize}
+Il criterio si può esprimere osservando il baricentro: se lo spostamento lo \textbf{alza}, l'equilibrio è stabile (il peso tende a riportarlo giù); se lo \textbf{abbassa}, è instabile; se lo lascia \textbf{alla stessa quota}, è indifferente.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.8,>=stealth]
+% stabile: vincolo sopra il baricentro (l'asta pende)
+\begin{scope}
+\draw[thick,gray!55] (-0.8,2.2) -- (0.8,2.2);
+\foreach \x in {-0.6,-0.2,0.2,0.6}{\draw[gray!55] (\x,2.2) -- (\x-0.18,2.45);}
+\fill (0,2.2) circle (1.5pt) node[above right]{\small $V$};
+\draw[very thick] (0,2.2) -- (0,0.3);
+\fill[blue!60!black] (0,1) circle (1.5pt) node[right]{\small $B$};
+\draw[->,ocre,thick] (0,1) -- (0,-0.2) node[below,black]{$\vec{P}$};
+\node at (0,-0.9) {\scriptsize stabile};
+\end{scope}
+% instabile: vincolo sotto il baricentro (l'asta sta ritta)
+\begin{scope}[xshift=4.2cm]
+\fill[gray!55] (-0.4,0.3) rectangle (0.4,0.5);
+\fill (0,0.5) circle (1.5pt) node[left=2pt]{\small $V$};
+\draw[very thick] (0,0.5) -- (0,2.4);
+\fill[blue!60!black] (0,1.6) circle (1.5pt) node[right]{\small $B$};
+\draw[->,ocre,thick] (0,1.6) -- (0,0.55) node[right,black,midway]{$\vec{P}$};
+\node at (0,-0.9) {\scriptsize instabile};
+\end{scope}
+% indifferente: vincolo nel baricentro
+\begin{scope}[xshift=8.4cm]
+\draw[thick,gray!55] (-1,1.6) -- (1,1.6);
+\foreach \x in {-0.8,-0.4,0,0.4,0.8}{\draw[gray!55] (\x,1.6) -- (\x-0.18,1.85);}
+\draw[very thick] (0,1.6) -- (0,0.9);
+\fill (0,1.6) circle (1.5pt);
+\fill[blue!60!black] (0,1.6) circle (1.5pt) node[above right]{\small $V\equiv B$};
+\draw[->,ocre,thick] (0,1.6) -- (0,0.4) node[below,black]{$\vec{P}$};
+\node at (0,-0.9) {\scriptsize indifferente};
+\end{scope}
+\end{tikzpicture}
+\caption{Corpo vincolato in un punto $V$: equilibrio stabile se $B$ sta sotto $V$, instabile se sta sopra, indifferente se $B$ coincide con $V$.}
+\label{fig:stab}
+\end{figure}
+
+\subsection{Stabilità di un corpo appoggiato}
+Per un corpo appoggiato su una base, la regola è:
+
+\begin{remark}
+Un corpo appoggiato è in equilibrio finché la \textbf{verticale passante per il baricentro cade dentro la base d'appoggio}. Se, inclinando il corpo, quella verticale esce dalla base, il corpo si ribalta.
+\end{remark}
+
+Ne segue che un corpo è tanto più stabile quanto più il suo baricentro è \textbf{basso} e quanto più la sua base d'appoggio è \textbf{ampia}: per questo un'automobile da corsa ha assetto ribassato e carreggiata larga, e una bottiglia piena è più stabile da vuota (da piena il baricentro è più in basso).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.9,>=stealth]
+% caso stabile
+\begin{scope}
+\draw[thick] (-0.4,0) -- (2.8,0);
+\begin{scope}[rotate around={14:(0.3,0)}]
+\fill[gray!20] (0.3,0) rectangle (1.9,1.8);
+\draw (0.3,0) rectangle (1.9,1.8);
+\coordinate (Ba) at (1.1,0.9);
+\end{scope}
+\fill[blue!60!black] (Ba) circle (1.4pt) node[above right]{\small $B$};
+\draw[->,ocre] (Ba) -- ($(Ba)+(0,-2)$);
+\node[align=center] at (1.3,-2.5) {\scriptsize la verticale cade\\[-2pt]\scriptsize nella base: stabile};
+\end{scope}
+% caso ribaltamento
+\begin{scope}[xshift=6.8cm]
+\draw[thick] (-0.4,0) -- (3.2,0);
+\begin{scope}[rotate around={34:(0.3,0)}]
+\fill[gray!20] (0.3,0) rectangle (1.9,1.8);
+\draw (0.3,0) rectangle (1.9,1.8);
+\coordinate (Bb) at (1.1,0.9);
+\end{scope}
+\fill[blue!60!black] (Bb) circle (1.4pt) node[above right]{\small $B$};
+\draw[->,ocre] (Bb) -- ($(Bb)+(0,-2.4)$);
+\node[align=center] at (1.6,-2.5) {\scriptsize la verticale esce\\[-2pt]\scriptsize dalla base: si ribalta};
+\end{scope}
+\end{tikzpicture}
+\caption{Stabilità di un corpo appoggiato: dipende da dove cade la verticale per il baricentro rispetto alla base d'appoggio.}
+\label{fig:ribalta}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Fino a che inclinazione?]
+Una cassa omogenea ha base quadrata di lato $\SI{40}{\centi\meter}$ e il baricentro al centro, ad altezza $\SI{60}{\centi\meter}$. Inclinando lentamente il piano su cui è appoggiata, a quale angolo la cassa si ribalta?
+
+La cassa si ribalta quando la verticale per $B$ passa oltre lo spigolo inferiore, cioè quando
+\[
+\tan\alpha = \frac{\text{semilato della base}}{\text{altezza di } B} = \frac{\SI{20}{\centi\meter}}{\SI{60}{\centi\meter}} \approx 0,33,
+\]
+da cui $\alpha \approx 18^\circ$. Una cassa più bassa e larga si ribalterebbe a un angolo maggiore.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Dove si trova il baricentro di: una sfera di acciaio omogenea; un anello; una racchetta da tennis?\\
+\hspace*{\fill} $\left[\text{al centro; nel vuoto, al centro del foro; spostato verso il piatto}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Uno sgabello con una sola gamba non può mai stare in equilibrio da solo. Perché?\\
+\hspace*{\fill} $\left[\text{la base d'appoggio è quasi un punto: la verticale per } B \text{ ne esce a ogni minimo spostamento}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un pendolo fermo nella posizione più bassa: che tipo di equilibrio? E un'asta tenuta verticale in bilico sulla punta di un dito?\\
+\hspace*{\fill} $\left[\text{stabile; instabile}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un armadio ha base profonda $\SI{50}{\centi\meter}$ e baricentro ad altezza $\SI{90}{\centi\meter}$. Fino a quale angolo di inclinazione del pavimento resta in piedi?\\
+\hspace*{\fill} $\left[\tan\alpha = 25/90 \approx 0,28 \Rightarrow \alpha \approx 15,5^\circ\right]$
+\end{esercizio}
+
+
+\section{Problemi di riepilogo}
+
+Dove serve usa $g = \SI{9,81}{\newton\per\kilo\gram}$; per gli angoli notevoli, $\sin 30^\circ = 0,5$, $\sin 45^\circ \approx 0,71$, $\sin 60^\circ \approx 0,87$.
+
+\subsection*{Equilibrio del punto materiale}
+
+\begin{esercizio}
+Un libro di peso $\SI{12}{\newton}$ è appoggiato su un tavolo. Quanto vale la reazione vincolare del tavolo? Come è diretta?\\
+\hspace*{\fill} $\left[\SI{12}{\newton}\text{, verticale verso l'alto}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un punto materiale agiscono due forze perpendicolari di moduli $\SI{5}{\newton}$ e $\SI{12}{\newton}$. Quale forza equilibrante bisogna aggiungere?\\
+\hspace*{\fill} $\left[\SI{13}{\newton}\text{, opposta alla risultante delle due}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un carico di $\SI{800}{\newton}$ è tenuto sospeso da un cavo verticale. Quanto vale la tensione del cavo? È una reazione vincolare?\\
+\hspace*{\fill} $\left[\SI{800}{\newton}\text{; sì, del gancio}\right]$
+\end{esercizio}
+
+\subsection*{Piano inclinato e attrito}
+
+\begin{esercizio}
+Un piano inclinato liscio è lungo $\SI{4,0}{\meter}$ e alto $\SI{1,0}{\meter}$. Quale forza parallela al piano serve per tenere fermo un carrello di peso $\SI{60}{\newton}$?\\
+\hspace*{\fill} $\left[F = \SI{15}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Il coefficiente di attrito statico tra una cassa e un piano inclinato è $k_s = 0,45$. Qual è l'angolo limite? Una cassa doppia di peso avrebbe lo stesso angolo limite?\\
+\hspace*{\fill} $\left[\alpha_0 \approx 24^\circ\ ;\ \text{sì, non dipende dalla massa}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa è appoggiata su un piano inclinato di $15^\circ$; il coefficiente di attrito statico è $0,40$. La cassa scivola?\\
+\hspace*{\fill} $\left[\text{no: } \tan 15^\circ \approx 0,27 < 0,40\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa di massa $\SI{20}{\kilo\gram}$ è su un piano inclinato liscio di $25^\circ$. Quale forza parallela al piano la tiene ferma?\\
+\hspace*{\fill} $\left[F \approx \SI{83}{\newton}\right]$
+\end{esercizio}
+
+\subsection*{Momenti, coppie e leve}
+
+\begin{esercizio}
+Una forza di $\SI{25}{\newton}$ è applicata perpendicolarmente a un'asta, a $\SI{30}{\centi\meter}$ dal centro di rotazione. Quanto vale il momento?\\
+\hspace*{\fill} $\left[M = \SI{7,5}{\newton\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un'altalena un bambino di peso $\SI{250}{\newton}$ si siede a $\SI{1,8}{\meter}$ dal fulcro. A che distanza deve sedersi, dall'altra parte, un bambino di $\SI{300}{\newton}$?\\
+\hspace*{\fill} $\left[\SI{1,5}{\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Un'asta è in equilibrio su un fulcro. A sinistra, a $\SI{25}{\centi\meter}$, agisce verso il basso una forza di $\SI{400}{\newton}$. A destra, a $\SI{1,0}{\meter}$ dal fulcro, quale forza verso il basso serve?\\
+\hspace*{\fill} $\left[F = \SI{100}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Su un corpo agiscono due forze parallele di $\SI{6}{\newton}$, di verso opposto, le cui rette d'azione distano $\SI{30}{\centi\meter}$. Qual è la risultante? Qual è il momento della coppia?\\
+\hspace*{\fill} $\left[\vec{R} = \vec{0}\ ;\quad M = \SI{1,8}{\newton\meter}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Con una leva di guadagno $G = 5$ si vuole sollevare un peso di $\SI{3000}{\newton}$. Quale forza motrice serve?\\
+\hspace*{\fill} $\left[F_m = \SI{600}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+In una carriola il carico pesa $\SI{900}{\newton}$ ed è a $\SI{35}{\centi\meter}$ dalla ruota; le stanghe si impugnano a $\SI{1,4}{\meter}$ dalla ruota. Quale forza deve applicare chi la solleva? Di che genere di leva si tratta?\\
+\hspace*{\fill} $\left[F_m = \SI{225}{\newton}\ ;\ \text{secondo genere}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una chiave dinamometrica lunga $\SI{25}{\centi\meter}$ è regolata per un momento massimo di $\SI{30}{\newton\meter}$. Applicando la forza all'estremità, qual è la massima forza applicabile?\\
+\hspace*{\fill} $\left[F = \SI{120}{\newton}\right]$
+\end{esercizio}
+
+\subsection*{Baricentro e stabilità}
+
+\begin{esercizio}
+Uno scatolone contiene oggetti pesanti solo sul fondo. Il suo baricentro è più in alto o più in basso rispetto a quello di uno scatolone omogeneo delle stesse dimensioni? Quale dei due è più stabile?\\
+\hspace*{\fill} $\left[\text{più in basso; quello con il peso sul fondo}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa omogenea ha base di lato $\SI{50}{\centi\meter}$ e altezza $\SI{50}{\centi\meter}$ (baricentro al centro). A quale angolo di inclinazione del piano si ribalta?\\
+\hspace*{\fill} $\left[\tan\alpha = 25/25 = 1 \Rightarrow \alpha = 45^\circ\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Spiega perché, portando uno zaino pesante sulle spalle, si tende a piegarsi in avanti.\\
+\hspace*{\fill} $\left[\text{per riportare la verticale del baricentro (spostato indietro dallo zaino) dentro la base d'appoggio dei piedi}\right]$
+\end{esercizio}
+
+
 \end{document}
 
 

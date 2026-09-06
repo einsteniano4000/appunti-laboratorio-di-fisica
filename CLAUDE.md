@@ -59,30 +59,27 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   peso) · §5 legge di Hooke · §6 operazioni sulle forze + piano inclinato · §7
   attrito (statico/dinamico, angolo limite) · §8 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-vettori.py`.
-- **Cap. "Equilibrio dei corpi solidi"** — IN CORSO. Fatte: §7.1 equilibrio del
-  punto materiale (vincoli, reazioni vincolari, forza equilibrante) · §7.2
-  equilibrio e attrito (piano inclinato, angolo limite $\tan\alpha_0=k_s$) · §7.3
-  corpo rigido (momento $M=Fb$, due condizioni di equilibrio) · §7.4 coppie di
-  forze · §7.5 macchine semplici e leve (guadagno, 3 generi).
+- **Cap. "Equilibrio dei corpi solidi"** — COMPLETO. §7.1 equilibrio del punto
+  materiale (vincoli, reazioni vincolari, forza equilibrante) · §7.2 equilibrio e
+  attrito (piano inclinato, angolo limite $\tan\alpha_0=k_s$) · §7.3 corpo rigido
+  (momento $M=Fb$, due condizioni di equilibrio) · §7.4 coppie di forze · §7.5
+  macchine semplici e leve (guadagno, 3 generi) · §7.6 baricentro (centro di
+  simmetria, filo a piombo, equilibrio stabile/instabile/indifferente, stabilità
+  di un corpo appoggiato) · §7.7 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-equilibrio.py`.
 
-Stato compilazione: OK, ~139 pagine, pulito.
+Stato compilazione: OK, ~144 pagine, pulito.
 
 ## Lavoro rimanente
 
-1. **Finire il Cap. "Equilibrio dei corpi solidi"**:
-   - §7.6 Il baricentro e l'equilibrio (centro di simmetria, ricerca del
-     baricentro, equilibrio stabile/instabile/indifferente, stabilità di un corpo
-     appoggiato: verticale del baricentro dentro la base).
-   - §7.7 Problemi di riepilogo (~15–18, originali e verificati).
-2. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
+1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
    pressione nei liquidi (legge di Stevino) · principio di Pascal · vasi
    comunicanti · pressione atmosferica · principio di Archimede. + Problemi di
-   riepilogo.
-3. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
+   riepilogo. **Prossima sessione: partire da qui.**
+2. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
    lavoro ed energia, termologia, calore — vedi §F di REVISIONE.md.
-4. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
+3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
    (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~22 overfull hbox.
-5. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
+4. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
