@@ -8,9 +8,10 @@ si compila con **`lualatex appunti-new.tex`** (2 passate; **non** serve più
 `--shell-escape` da quando `minted` è stato rimosso). Stile discorsivo, molti
 esempi ed esercizi.
 
-> **ATTENZIONE ALL'AVVIO**: tutto il lavoro è sul branch **`revisione`** (non su
-> `master`). Prima di qualsiasi cosa: `git checkout revisione`. Se `CLAUDE.md` non
-> esiste, sei sul branch sbagliato.
+> **Branch**: il lavoro di revisione+ampliamento è stato mergiato su **`master`**
+> (fast-forward, commit `4c5a01e` e precedenti). Si lavora direttamente su `master`.
+> `master` è avanti rispetto a `origin/master`: **non ancora pushato** (chiedere
+> all'utente). Il branch `revisione` è rimasto come alias dello stesso commit.
 
 ### Come si scrive una sezione nuova (checklist)
 1. Leggere le pagine del libro (`tecnologico.pdf`) solo per taglio/livello.
