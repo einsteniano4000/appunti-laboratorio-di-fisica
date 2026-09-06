@@ -38,3 +38,13 @@ print("== 7.4 Coppie di forze ==")
 print("Esempio volante: M = 20 N * 0.36 m =", round(20 * 0.36, 1), "N m")
 print("E: righello 5 N, b=0.20 m -> M =", 5 * 0.20, "N m")
 print("E: tappo 8 N, d=0.040 m -> M =", 8 * 0.040, "N m")
+
+print()
+print("== 7.5 Macchine semplici e leve ==")
+print("Esempio masso: Fm = 1000*0.20/1.0 =", 1000 * 0.20 / 1.0, "N  G =", 1.0 / 0.20)
+print("Esempio avambraccio: Fm = 50*0.35/0.04 =", round(50 * 0.35 / 0.04),
+      "N  G =", round(50 / (50 * 0.35 / 0.04), 2))
+print("E: Fr=4500, G=6 -> Fm =", 4500 / 6, "N")
+print("E: bm=0.90, br=0.30 -> G =", round(0.90 / 0.30))
+print("E: carriola 800 N, br=0.30, bm=1.5 -> Fm =", 800 * 0.30 / 1.5, "N")
+print("E: schiaccianoci Fm=40, bm=0.12, br=0.03 -> Fr =", 40 * 0.12 / 0.03, "N")

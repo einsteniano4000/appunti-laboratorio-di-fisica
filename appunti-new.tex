@@ -4467,6 +4467,135 @@ Spiega la differenza tra una coppia di forze e due forze qualsiasi uguali e oppo
 \end{esercizio}
 
 
+\section{Le macchine semplici e le leve}
+
+\begin{definizione}
+Una \textbf{macchina semplice} è un dispositivo che permette di equilibrare o vincere una forza (detta \textbf{forza resistente} $\vec{F}_r$) applicandone un'altra di intensità o direzione diversa (detta \textbf{forza motrice} $\vec{F}_m$).
+\end{definizione}
+
+Per valutare la convenienza di una macchina si usa il \textbf{guadagno}:
+\[
+\colorboxed{ocre}{\; G = \frac{F_r}{F_m} \;}
+\]
+È un numero puro (senza unità di misura). Una macchina è:
+\begin{itemize}
+\item \textbf{vantaggiosa} se $G > 1$ (la forza motrice è minore della resistente);
+\item \textbf{svantaggiosa} se $G < 1$;
+\item \textbf{indifferente} se $G = 1$.
+\end{itemize}
+
+\subsection{Le leve}
+La macchina semplice più comune è la \textbf{leva}: un corpo rigido di forma allungata che può ruotare attorno a un punto fisso, il \textbf{fulcro}. Chiamiamo $b_m$ e $b_r$ i \textbf{bracci} della forza motrice e della forza resistente rispetto al fulcro. Perché la leva sia in equilibrio, i momenti delle due forze devono essere uguali e opposti:
+\[
+\colorboxed{ocre}{\; F_m\,b_m = F_r\,b_r \;}
+\]
+Da qui si ricava che il guadagno di una leva dipende solo dai bracci:
+\[
+G = \frac{F_r}{F_m} = \frac{b_m}{b_r}.
+\]
+Una leva è vantaggiosa quando il braccio della forza motrice è maggiore di quello della forza resistente.
+
+\subsection{I tre generi di leva}
+A seconda della posizione del fulcro rispetto alle due forze, si distinguono tre generi di leva.
+
+\paragraph{Leva di primo genere.} Il fulcro è \emph{tra} le due forze (figura~\ref{fig:leva1}). Può essere vantaggiosa, svantaggiosa o indifferente, a seconda dei bracci. Esempi: l'altalena, le forbici, la tenaglia, la bilancia a bracci uguali (leva indifferente).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick] (-2.3,0) -- (1.6,0);
+\fill (-2.3,0) circle (1.1pt);  \fill (1.6,0) circle (1.1pt);
+\fill[gray!45] (-0.28,-0.5) -- (0.28,-0.5) -- (0,0) -- cycle;
+\node[below=6pt] at (0,-0.5) {\small fulcro};
+\draw[<->] (-2.3,0.5) -- (0,0.5) node[midway,above]{\small $b_m$};
+\draw[<->] (0,0.5) -- (1.6,0.5) node[midway,above]{\small $b_r$};
+\draw[->,very thick,red!70!black] (-2.3,0) -- (-2.3,-1.2) node[below,black]{$\vec{F}_m$};
+\draw[->,very thick,ocre] (1.6,0) -- (1.6,-1.5) node[below,black]{$\vec{F}_r$};
+\end{tikzpicture}
+\caption{Leva di primo genere: il fulcro è tra la forza motrice e la forza resistente.}
+\label{fig:leva1}
+\end{figure}
+
+\paragraph{Leva di secondo genere.} La forza resistente è \emph{tra} il fulcro e la forza motrice (figura~\ref{fig:leva2}). È \textbf{sempre vantaggiosa}, perché $b_m > b_r$. Esempi: la carriola, lo schiaccianoci, il remo (in parte).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick] (0,0) -- (3.8,0);
+\fill (0,0) circle (1.1pt);  \fill (3.8,0) circle (1.1pt);
+\fill[gray!45] (-0.28,-0.5) -- (0.28,-0.5) -- (0,0) -- cycle;
+\node[below=6pt] at (0,-0.5) {\small fulcro};
+\draw[<->] (0,0.5) -- (2,0.5) node[midway,above]{\small $b_r$};
+\draw[<->] (0,1.6) -- (3.8,1.6) node[midway,above]{\small $b_m$};
+\draw[->,very thick,ocre] (2,0) -- (2,-1.5) node[below,black]{$\vec{F}_r$};
+\draw[->,very thick,red!70!black] (3.8,0) -- (3.8,1.4) node[right,black]{$\vec{F}_m$};
+\end{tikzpicture}
+\caption{Leva di secondo genere: la forza resistente è tra il fulcro e la forza motrice. Sempre vantaggiosa ($b_m > b_r$).}
+\label{fig:leva2}
+\end{figure}
+
+\paragraph{Leva di terzo genere.} La forza motrice è \emph{tra} il fulcro e la forza resistente (figura~\ref{fig:leva3}). È \textbf{sempre svantaggiosa}, perché $b_m < b_r$. In compenso, permette al punto di applicazione della resistenza di spostarsi molto e velocemente. Esempi: l'avambraccio (il bicipite è la forza motrice), le pinzette, la canna da pesca.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1,>=stealth]
+\draw[thick] (0,0) -- (3.8,0);
+\fill (0,0) circle (1.1pt);  \fill (3.8,0) circle (1.1pt);
+\fill[gray!45] (-0.28,-0.5) -- (0.28,-0.5) -- (0,0) -- cycle;
+\node[below=6pt] at (0,-0.5) {\small fulcro};
+\draw[<->] (0,0.5) -- (1.3,0.5) node[midway,above]{\small $b_m$};
+\draw[<->] (0,2.2) -- (3.8,2.2) node[midway,above]{\small $b_r$};
+\draw[->,very thick,red!70!black] (1.3,0) -- (1.3,1.5) node[above,black]{$\vec{F}_m$};
+\draw[->,very thick,ocre] (3.8,0) -- (3.8,-1.5) node[below,black]{$\vec{F}_r$};
+\end{tikzpicture}
+\caption{Leva di terzo genere: la forza motrice è tra il fulcro e la forza resistente. Sempre svantaggiosa ($b_m < b_r$).}
+\label{fig:leva3}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Sollevare un masso con una leva]
+Vogliamo sollevare un masso di peso $F_r = \SI{1000}{\newton}$ facendo leva con una sbarra. Il fulcro (una pietra d'appoggio) è a $b_r = \SI{0,20}{\meter}$ dal masso, e spingiamo l'altro estremo della sbarra a $b_m = \SI{1,0}{\meter}$ dal fulcro. Che forza dobbiamo esercitare?
+\[
+F_m = \frac{F_r\,b_r}{b_m} = \frac{\SI{1000}{\newton}\times\SI{0,20}{\meter}}{\SI{1,0}{\meter}} = \SI{200}{\newton}.
+\]
+Il guadagno è $G = b_m/b_r = 5$: la leva è vantaggiosa.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, L'avambraccio]
+L'avambraccio è una leva di terzo genere: il fulcro è il gomito, la forza motrice è quella del bicipite (applicata a circa $b_m = \SI{4}{\centi\meter}$ dal gomito), la forza resistente è il peso sostenuto dalla mano (a circa $b_r = \SI{35}{\centi\meter}$ dal gomito). Per sostenere un peso di $\SI{50}{\newton}$ il bicipite deve esercitare:
+\[
+F_m = \frac{F_r\,b_r}{b_m} = \frac{\SI{50}{\newton}\times\SI{35}{\centi\meter}}{\SI{4}{\centi\meter}} \approx \SI{440}{\newton}.
+\]
+Il guadagno è circa $0,11$: molto svantaggiosa in termini di forza, ma la mano si muove su un arco ampio con piccoli accorciamenti del muscolo.
+\end{testexample}
+
+\subsection{Esercizi}
+
+\begin{esercizio}
+Per sollevare un peso di $\SI{4500}{\newton}$ si usa una leva con guadagno $G = 6$. Quale forza motrice bisogna applicare?\\
+\hspace*{\fill} $\left[F_m = \SI{750}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Una leva ha braccio della forza motrice $b_m = \SI{90}{\centi\meter}$ e braccio della forza resistente $b_r = \SI{30}{\centi\meter}$. Qual è il guadagno? La leva è vantaggiosa o svantaggiosa?\\
+\hspace*{\fill} $\left[G = 3\ ;\ \text{vantaggiosa}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+In una carriola (leva di secondo genere) il carico pesa $\SI{800}{\newton}$ ed è a $\SI{30}{\centi\meter}$ dalla ruota; le stanghe si impugnano a $\SI{1,5}{\meter}$ dalla ruota. Quale forza deve applicare chi la solleva?\\
+\hspace*{\fill} $\left[F_m = \SI{160}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Uno schiaccianoci è una leva di secondo genere: si applica una forza di $\SI{40}{\newton}$ all'estremità dei manici, a $\SI{12}{\centi\meter}$ dalla cerniera, mentre la noce è a $\SI{3}{\centi\meter}$ dalla cerniera. Con quale forza viene schiacciata la noce?\\
+\hspace*{\fill} $\left[F_r = \SI{160}{\newton}\right]$
+\end{esercizio}
+
+\begin{esercizio}
+Per ciascuno di questi attrezzi indica il genere di leva: pinzetta da sopracciglia, tenaglia, carriola, remo, altalena.\\
+\hspace*{\fill} $\left[\text{terzo; primo; secondo; secondo; primo}\right]$
+\end{esercizio}
+
+
 \end{document}
 
 
