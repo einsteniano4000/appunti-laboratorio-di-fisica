@@ -13,15 +13,15 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - **`preambolo.tex`** — preambolo completo (pacchetti, macro, stili, `\title`).
 - **`capitoli/`** — un file per capitolo, senza preambolo:
   `00-prefazione` (via `\input`), `01-misura-grandezze`, `02-errori-misura`,
-  `03-relazioni-laboratorio`, `04-statistica`,
-  `05-grandezze-vettoriali-forze`, `06-equilibrio-corpi-solidi`.
+  `03-relazioni-laboratorio`, `04-statistica`, `05-grandezze-vettoriali-forze`,
+  `06-equilibrio-corpi-solidi`, `07-equilibrio-fluidi`.
 - Per lavorare su un solo capitolo: scommentare la riga `\includeonly{...}` nel
   master (serve una compilazione completa prima, per avere i `.aux` degli altri
   capitoli → riferimenti incrociati OK). Testato: `\includeonly` cap. 6 → 26 pag.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente 145).
+  per verificare riferimenti e conteggio pagine (attualmente **179**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -42,10 +42,11 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 4. Esercizi: `\begin{esercizio} testo\\ \risp{$risultato$} \end{esercizio}`.
    Numeri e risultati **verificati** con `python3 verifica/cap-*.py` (aggiornare
    lo script). Ogni capitolo finisce con `\section{Problemi di riepilogo}` (~19).
-5. Figure in TikZ, `>=stealth`, colori: `ocre` per il peso / vettore principale,
-   `blue!60!black` per le componenti/reazioni, `red!70!black` per l'attrito/forza
-   motrice. Ricompilare, renderizzare con `pdftoppm` e **far revisionare le figure
-   all'utente** prima di proseguire.
+5. Figure: TikZ originale (colori: `ocre` peso/vettore principale, `blue!60!black`
+   componenti/reazioni, `red!70!black` attrito/forza motrice); se non riesce bene
+   → Wikimedia Commons (licenza libera, attribuzione) / foto reale / immagine
+   dell'utente. Ricompilare, renderizzare con `pdftoppm` e **far revisionare le
+   figure all'utente** prima di proseguire.
 6. Nuovi capitoli: nuovo file `capitoli/NN-nome.tex` (che inizia con `\chapter{...}`)
    + una riga `\include{capitoli/NN-nome}` nel master, prima di `\end{document}`.
 7. Commit dei soli sorgenti; aggiornare `CLAUDE.md` e `REVISIONE.md`.
@@ -57,10 +58,14 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 
 - **Compilazione pulita = obiettivo**: nessun label duplicato, nessun riferimento
   indefinito. Ricompilare e controllare dopo ogni modifica.
-- **Figure**: ridisegnate in **TikZ** nello stile del libro (niente immagini
-  raster salvo foto di apparati reali). `\usetikzlibrary{...,calc}` è caricato.
-  Fermarsi spesso per far revisionare visivamente le figure all'utente
-  (renderizzare le pagine con `pdftoppm` e mostrarle).
+- **Figure**: prima scelta = **TikZ** originale nello stile del libro (`>=stealth`;
+  `ocre` peso/vettore principale, `blue!60!black` componenti/reazioni,
+  `red!70!black` attrito/forza motrice). Se il disegno non riesce bene →
+  immagine da **Wikimedia Commons** con licenza libera (CC/PD), attribuita in
+  didascalia; oppure foto di un apparato reale; oppure illustrazione fornita
+  dall'utente. **NON** si ritagliano figure da `tecnologico.pdf` o altri PDF di
+  terzi. Renderizzare con `pdftoppm`/`magick` e **far revisionare all'utente**
+  ogni figura prima di proseguire.
 - **Esercizi/problemi**: testi e numeri **originali** su scenari standard; **ogni
   risultato va verificato** con uno script in `verifica/` (Python puro, niente
   numpy). Risultato tra `[ ]` a fine testo. `g = 9,81 N/kg`.
@@ -193,5 +198,5 @@ riferimento indefinito; ~40 overfull hbox residui = Passo 4).
 4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
-5. **Push su `origin`**: `master` è avanti di ~25 commit non pushati (chiedere
-   all'utente).
+5. **Push su `origin`**: `master` è avanti di ~40 commit non pushati (chiedere
+   all'utente prima di pushare).

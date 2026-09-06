@@ -14,14 +14,16 @@
 >     commentato. Compilazione completa invariata (145 pag., pulita), `\includeonly`
 >     testato sul cap. 6 (26 pag., riferimenti incrociati OK dai `.aux`).
 >   - [x] Cap. "Misura di grandezze": nuova §1.8 "Il calibro a corsoio" (nonio
->     ventesimale, lettura, 3 figure TikZ originali).
+>     ventesimale, lettura). Fig. 1.7 = foto reale CC BY-SA 3.0 (`img/calibro-foto.jpg`)
+>     con etichette TikZ; fig. 1.8–1.9 (nonio) = TikZ originali.
 >   - [x] Cap. "Relazioni di Laboratorio": §4.1 riallineata allo schema ufficiale
 >     Keynes; nuove relazioni svolte **§4.3 legge di Hooke** e **§4.6 attrito
 >     statico** (rette di max/min pendenza). Numeri in `verifica/cap-relazioni.py`.
+>     Fig. 4.6 apparato = illustrazione dell'utente (`img/attrito-apparato.jpg`).
 >   - [x] Cap. "Equilibrio dei fluidi" (Unità 5) — COMPLETO: §8.1 pressione ·
 >     §8.2 Stevino · §8.3 Pascal · §8.4 vasi comunicanti · §8.5 pressione
 >     atmosferica · §8.6 Archimede · §8.7 problemi di riepilogo (19).
->     `verifica/cap-fluidi.py`. Figure TikZ (calibro §1.8 = foto CC BY-SA 3.0).
+>     `verifica/cap-fluidi.py`. 10 figure TikZ originali. 179 pagine.
 >   - [x] Prefazione riscritta (testo dell'autore).
 >   - [ ] **PROSSIMO: Cap. "Cinematica"** — Unità 6 "Il moto rettilineo"
 >     (pp. 204–239) + Unità 7 "Il moto nel piano" (pp. 240–269). Seguire la
