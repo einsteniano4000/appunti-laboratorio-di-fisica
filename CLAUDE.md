@@ -8,6 +8,28 @@ si compila con **`lualatex appunti-new.tex`** (2 passate; **non** serve più
 `--shell-escape` da quando `minted` è stato rimosso). Stile discorsivo, molti
 esempi ed esercizi.
 
+> **ATTENZIONE ALL'AVVIO**: tutto il lavoro è sul branch **`revisione`** (non su
+> `master`). Prima di qualsiasi cosa: `git checkout revisione`. Se `CLAUDE.md` non
+> esiste, sei sul branch sbagliato.
+
+### Come si scrive una sezione nuova (checklist)
+1. Leggere le pagine del libro (`tecnologico.pdf`) solo per taglio/livello.
+2. Prosa originale in italiano, stile discorsivo del testo esistente. Le formule
+   chiave in box: `\[ \colorboxed{ocre}{ ... } \]`. Definizioni in
+   `\begin{definizione}...\end{definizione}`; avvertenze in `\begin{remark}`.
+3. Esempi svolti: `\begin{testexample}[\thetcbcounter \, Titolo]...\end{testexample}`
+   (la numerazione è progressiva su tutto il libro).
+4. Esercizi: `\begin{esercizio} testo\\ \risp{$risultato$} \end{esercizio}`.
+   Numeri e risultati **verificati** con `python3 verifica/cap-*.py` (aggiornare
+   lo script). Ogni capitolo finisce con `\section{Problemi di riepilogo}` (~19).
+5. Figure in TikZ, `>=stealth`, colori: `ocre` per il peso / vettore principale,
+   `blue!60!black` per le componenti/reazioni, `red!70!black` per l'attrito/forza
+   motrice. Ricompilare, renderizzare con `pdftoppm` e **far revisionare le figure
+   all'utente** prima di proseguire.
+6. Nuovi capitoli: `\chapter{...}` in coda ad `appunti-new.tex`, prima di
+   `\end{document}` (dopo il cap. "Statistica").
+7. Commit dei soli sorgenti; aggiornare `CLAUDE.md` e `REVISIONE.md`.
+
 Documento di lavoro dettagliato: **`REVISIONE.md`** (revisione critica completa +
 avanzamento passo-passo). Aggiornarlo insieme a questo file.
 

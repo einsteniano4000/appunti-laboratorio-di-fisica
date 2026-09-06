@@ -6,13 +6,15 @@
 > - [x] Passo 3 – (a) **eliminata tutta la trattazione di Python**: rimosso il capitolo "Guida linguaggio python"; nel capitolo "Statistica" tolti tutti i listati e la sezione "Dettagli sul codice", mantenendo teoria, risultati e figure (riformulati come "foglio di calcolo"). Rimosso `minted` dal preambolo → non serve più `--shell-escape`. (b) virgola decimale al posto del punto nelle tabelle dati. Output regressione ricalcolati e coerenti (A12); dataset "altezze" dichiarato illustrativo (A11). Compila pulito, **105 pagine**.
 > - [x] Aggiunta §3.2 "Rette di massima e minima pendenza" (da `rette-max-min.pdf`), con esempio sulla legge di Hooke e figura pgfplots. Rimosse 6 immagini non più referenziate.
 > - [ ] Passo 4 – uniformare le unità (`\si{cm^3}` vs `\si{\cubic\centi\meter}` ecc.) e sistemare gli overfull hbox
-> - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–5). Figure ridisegnate in TikZ; esercizi e problemi con testo e numeri originali, tutti verificati in `verifica/`. Ogni capitolo si chiude con una sezione **"Problemi di riepilogo"** (~ scenari dei problemi di fine unità del libro, riscritti).
->   - [x] Cap. "Grandezze vettoriali e forze" completo: §1 scalari/vettori · §2 operazioni · §3 scomposizione · §4 forze (peso, $P=mg$, massa vs peso) · §5 legge di Hooke · §6 operazioni sulle forze + piano inclinato · §7 attrito · §8 Problemi di riepilogo (19 problemi). 13 figure TikZ.
->   - [ ] Cap. "Equilibrio dei corpi solidi" (Unità 4) + Problemi di riepilogo
+> - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–5). Figure ridisegnate in TikZ; esercizi e problemi con testo e numeri originali, tutti verificati in `verifica/`. Ogni capitolo si chiude con `\section{Problemi di riepilogo}` (~19, scenari standard riscritti).
+>   - [x] Cap. "Grandezze vettoriali e forze" — COMPLETO. §1–7 + §8 Problemi di riepilogo. `verifica/cap-vettori.py`.
+>   - [x] Cap. "Equilibrio dei corpi solidi" — COMPLETO. §7.1 punto materiale · §7.2 attrito/piano inclinato/angolo limite · §7.3 corpo rigido e momento · §7.4 coppie · §7.5 macchine semplici e leve · §7.6 baricentro (ricerca sperimentale col filo a piombo; stab/instab/indiff con la pallina) · §7.7 Problemi di riepilogo (19). `verifica/cap-equilibrio.py`.
+>   - [ ] **Split del sorgente con `\include`** (prossimo task, vedi CLAUDE.md)
 >   - [ ] Cap. "Equilibrio dei fluidi" (Unità 5) + Problemi di riepilogo
+> - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex --shell-escape`, 137 pagine, exit 0) ma con
-5 warning di *label multiply defined* e 22 *overfull hbox*.
+Stato: il documento compila (`lualatex appunti-new.tex`, ~145 pagine, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~34 *overfull hbox* residui.
 
 Struttura attuale:
 
