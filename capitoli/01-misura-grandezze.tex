@@ -553,15 +553,15 @@ I becchi grossi, rivolti verso il basso, servono per le misure \emph{esterne} (s
                                  inner sep=1.5pt,rounded corners=1pt},
                      guida/.style={thin,gray!55}}
             % punti sulle parti
-            \foreach \p in {(0.105,0.955),(0.205,0.905),(0.115,0.11),(0.215,0.30),
+            \foreach \p in {(0.062,0.965),(0.104,0.975),(0.115,0.11),(0.215,0.30),
                             (0.55,0.585),(0.365,0.79),(0.33,0.545),(0.405,0.42)}
                 \fill[red!70!black] \p circle (0.5pt);
             % --- etichette sopra ---
             \draw[guida] (0.365,0.79) -- (0.365,1.05);
             \node[lab,anchor=south] at (0.365,1.05) {corsoio};
-            \draw[guida] (0.105,0.955) -- (0.135,1.05);
-            \draw[guida] (0.205,0.905) -- (0.155,1.05);
-            \node[lab,anchor=south] at (0.145,1.05) {becchi per misure interne};
+            \draw[guida] (0.062,0.965) -- (0.11,1.05);
+            \draw[guida] (0.104,0.975) -- (0.15,1.05);
+            \node[lab,anchor=south] at (0.13,1.05) {becchi per misure interne};
             \draw[guida] (0.55,0.585) .. controls (0.62,0.80) .. (0.70,0.90);
             \node[lab,anchor=west] at (0.70,0.90) {asta fissa (scala in mm)};
             % --- etichette sotto ---
