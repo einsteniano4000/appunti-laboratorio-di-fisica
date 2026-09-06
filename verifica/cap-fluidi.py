@@ -103,3 +103,30 @@ print(f"U-tube Hg/acqua: h_Hg = {h_hg2:.2f} cm")
 # es: tubi 1 e 20 cm2, 100 mL nel sottile -> Delta h
 dh = 100 / (1 + 20)
 print(f"tubi 1+20 cm2, 100 cm3 -> Delta h = {dh:.2f} cm")
+
+# ---------------------------------------------------------------------------
+sez("8.5  Pressione atmosferica")
+
+p0 = rho_hg * g * 0.76
+print(f"Torricelli: p0 = {p0:.0f} Pa = {p0/1e5:.3f} e5")
+h_water_col = p0 / (rho_acqua * g)
+print(f"colonna d'acqua equivalente: h = {h_water_col:.1f} m")
+
+# banco 120x60 cm
+A_banco = 1.20 * 0.60
+print(f"banco: A={A_banco} m2, F = {1e5*A_banco:.0f} N = {1e5*A_banco/9810:.1f} t-peso")
+
+# es1: 120 mmHg
+p_art = 120 * 133
+print(f"120 mmHg = {p_art} Pa = {p_art/101325:.3f} atm")
+
+# es2: montagna, dp = 240 hPa, rho_air = 1,2
+dp = (1000 - 760) * 100
+h_mont = dp / (1.2 * g)
+print(f"montagna: h = {h_mont:.0f} m")
+
+# es4: emisferi di Magdeburgo, d = 30 cm
+import math
+r = 0.15
+F_mag = 101325 * math.pi * r**2
+print(f"Magdeburgo: F = {F_mag:.0f} N = {F_mag/1e3:.1f} e3")

@@ -367,3 +367,93 @@ Due tubi verticali, uno di sezione \SI{1}{\centi\metre\squared} e uno di sezione
 Perché la superficie libera dell'acqua di un lago tranquillo è orizzontale, mentre quella dell'acqua che scorre in un fiume in pendenza non lo è?\\
 \risp{in equilibrio i punti alla stessa quota devono avere la stessa pressione (vasi comunicanti): la superficie libera è orizzontale. L'acqua di un fiume non è in equilibrio, è in moto}
 \end{esercizio}
+
+
+\section{La pressione atmosferica}\label{sec:atm}
+
+Anche l'aria è un fluido e ha un peso. La Terra è avvolta da uno strato di aria -- l'\textbf{atmosfera} -- alto oltre un centinaio di chilometri; il peso di tutta quest'aria preme su ogni corpo che si trova sulla superficie terrestre. Questa pressione si chiama \textbf{pressione atmosferica}, $p_0$.
+
+Non la avvertiamo perché agisce ugualmente da tutte le parti, e perché i fluidi del nostro corpo spingono verso l'esterno con la stessa pressione. Ma c'è: se togliamo l'aria da un recipiente a pareti sottili (una lattina, una bottiglia di plastica), la pressione esterna lo schiaccia.
+
+\subsection{L'esperimento di Torricelli}
+Nel 1643 Evangelista Torricelli, allievo di Galileo, misurò per la prima volta la pressione atmosferica. Prese un tubo di vetro lungo circa un metro, chiuso a un'estremità, lo riempì completamente di mercurio, lo tappò con un dito e lo capovolse immergendo l'estremità aperta in una vaschetta piena di mercurio (figura~\ref{fig:torricelli}). Tolto il dito, il mercurio nel tubo scese, ma non del tutto: si fermò formando una colonna alta circa \textbf{\SI{76}{\centi\metre}} sopra il livello della vaschetta. Sopra il mercurio, nel tubo, restò uno spazio \emph{vuoto} (il ``vuoto di Torricelli'').
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % vaschetta di mercurio
+        % vaschetta di mercurio
+        \fill[gray!45] (0,0) rectangle (5.4,1.0);
+        \draw[thick] (0,1.5) -- (0,0) -- (5.4,0) -- (5.4,1.5);
+        \node[anchor=east,font=\footnotesize] at (0,0.5) {mercurio};
+        % tubo (chiuso in alto, immerso in basso)
+        \draw[thick] (2.5,0.35) -- (2.5,6.0) -- (3.0,6.0) -- (3.0,0.35);
+        % mercurio nel tubo, fino a 76 (scala: 1 unita' = ~16 cm -> colonna 4.75)
+        \fill[gray!45] (2.5,0.35) rectangle (3.0,5.1);
+        % vuoto sopra la colonna
+        \node[anchor=west,font=\footnotesize] at (3.25,5.6) {vuoto};
+        \draw[->] (3.2,5.6) -- (2.9,5.6);
+        % quota della colonna, misurata dal pelo libero della vaschetta
+        \draw[dashed,gray!55] (1.4,1.0) -- (2.5,1.0);
+        \draw[dashed,gray!55] (3.0,5.1) -- (3.9,5.1);
+        \draw[<->] (1.7,1.0) -- (1.7,5.1)
+            node[midway,fill=white,inner sep=1.5pt,font=\footnotesize] {$\approx \SI{76}{\centi\metre}$};
+        % pressione atmosferica sul pelo libero
+        \foreach \x in {0.5,1.1,1.7,3.8,4.4,5.0}{
+            \draw[->,ocre,thick] (\x,2.0) -- (\x,1.05);}
+        \node[ocre,anchor=west,font=\footnotesize] at (3.6,2.3) {$p_0$ (atmosfera)};
+    \end{tikzpicture}
+    \caption{L'esperimento di Torricelli. La pressione atmosferica $p_0$ preme sulla superficie del mercurio nella vaschetta e regge, nel tubo, una colonna di mercurio alta circa \SI{76}{\centi\metre}. Sopra la colonna c'è il vuoto.}
+    \label{fig:torricelli}
+\end{figure}
+
+\paragraph{Perché.} Consideriamo il mercurio all'imboccatura del tubo, al livello della superficie libera nella vaschetta. Da fuori, la pressione atmosferica preme sulla vaschetta e si trasmette fin lì (principio di Pascal). Da dentro il tubo preme solo il peso della colonna di mercurio, cioè la pressione di Stevino $\rho_\text{Hg}\,g\,h$ (sopra c'è il vuoto, che non pesa). All'equilibrio le due pressioni sono uguali:
+\[ \colorboxed{ocre}{ p_0 = \rho_\text{Hg}\,g\,h. } \]
+
+Con $\rho_\text{Hg} = \SI{13600}{\kilo\gram\per\metre\cubed}$ e $h = \SI{0,76}{\metre}$:
+\[ p_0 = 13600 \cdot 9{,}81 \cdot 0{,}76 \approx \SI{1,01e5}{\pascal}. \]
+
+\subsection{Le unità di pressione atmosferica}
+Il valore trovato da Torricelli serve da riferimento e dà origine a diverse unità pratiche:
+\begin{itemize}
+    \item l'\textbf{atmosfera}: $\SI{1}{atm} = \SI{101325}{\pascal}$ (per definizione);
+    \item il \textbf{millimetro di mercurio} (o \emph{torr}): la pressione di \SI{1}{\milli\metre} di mercurio, circa \SI{133}{\pascal}. Quindi $\SI{1}{atm} = \SI{760}{\mmHg}$. È l'unità usata per la pressione del sangue;
+    \item il \textbf{bar} e l'\textbf{ettopascal}: $\SI{1}{\bar} = \SI{1e5}{\pascal}$, $\SI{1}{\hecto\pascal} = \SI{100}{\pascal} = \SI{1}{mbar}$. I bollettini meteo danno la pressione in hPa: circa \SI{1013}{\hecto\pascal} in condizioni normali.
+\end{itemize}
+Lo strumento che misura la pressione atmosferica si chiama \textbf{barometro} (a mercurio, come quello di Torricelli, oppure metallico -- \emph{aneroide}).
+
+\begin{remark}
+Perché Torricelli usò il mercurio e non l'acqua? Perché l'acqua è $13{,}6$ volte meno densa: una ``colonna d'acqua'' capace di reggere la pressione atmosferica sarebbe alta
+\[ h = \frac{p_0}{\rho_\text{acqua}\,g} = \frac{\SI{1,01e5}{\pascal}}{1000 \cdot 9{,}81} \approx \SI{10,3}{\metre}, \]
+un tubo impraticabile. Questo spiega anche perché una pompa aspirante non riesce a ``tirare su'' l'acqua da un pozzo più profondo di circa \SI{10}{\metre}.
+\end{remark}
+
+La pressione atmosferica \textbf{diminuisce con la quota}, perché salendo si lascia sotto di sé una parte sempre maggiore dell'aria: è circa \SI{1013}{\hecto\pascal} al livello del mare, scende a circa \SI{900}{\hecto\pascal} a \SI{1000}{\metre} e a circa \SI{700}{\hecto\pascal} a \SI{3000}{\metre}. Gli altimetri degli aerei e degli orologi da montagna sfruttano proprio questa variazione.
+
+\begin{testexample}[\thetcbcounter \, La forza dell'aria su un banco]
+Il piano di un banco misura $\SI{120}{\centi\metre}\times\SI{60}{\centi\metre}$. Con quale forza l'aria preme sulla sua faccia superiore?
+
+L'area è $A = 1{,}20 \cdot 0{,}60 = \SI{0,72}{\metre\squared}$. Con $p_0 \approx \SI{1,0e5}{\pascal}$:
+\[ F = p_0\,A \approx 1{,}0\cdot 10^5 \cdot 0{,}72 \approx \SI{72000}{\newton}, \]
+il peso di più di sette tonnellate! Non schiaccia il banco solo perché la stessa aria preme con \SI{72000}{\newton} anche \emph{da sotto}, e le due forze si annullano.
+\end{testexample}
+
+\begin{esercizio}
+Esprimi in pascal e in atmosfere una pressione arteriosa di \SI{120}{\mmHg} ($\SI{1}{\mmHg} \approx \SI{133}{\pascal}$).\\
+\risp{$\approx \SI{16000}{\pascal} \approx 0{,}16\ \si{atm}$}
+\end{esercizio}
+
+\begin{esercizio}
+In cima a una montagna un barometro segna \SI{760}{\hecto\pascal}, mentre a valle segna \SI{1000}{\hecto\pascal}. Stimando la densità media dell'aria in \SI{1,2}{\kilo\gram\per\metre\cubed}, quanto è alta all'incirca la montagna rispetto al fondovalle?\\
+\risp{$\approx \SI{2000}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un tubo lungo \SI{1,0}{\metre}, chiuso a un'estremità, viene riempito d'acqua e capovolto in una bacinella d'acqua, come nell'esperimento di Torricelli. Che cosa si osserva?\\
+\risp{il tubo resta pieno: la pressione atmosferica regge una colonna d'acqua fino a $\sim\SI{10}{\metre}$, quindi $\SI{1}{\metre}$ non basta a farla scendere}
+\end{esercizio}
+
+\begin{esercizio}
+Due emisferi metallici vengono accostati e si fa il vuoto al loro interno. Il loro cerchio di contatto ha un diametro di \SI{30}{\centi\metre}. Stima la forza minima necessaria per staccarli (emisferi di Magdeburgo).\\
+\risp{$F \approx p_0 \cdot \pi r^2 \approx \SI{7,1e3}{\newton}$}
+\end{esercizio}
