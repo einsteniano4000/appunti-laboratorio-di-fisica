@@ -5,8 +5,8 @@
 > - [x] Passo 2 – correzioni di fisica: A1–A10, A13, A14, A16 (A11 e A12 risolti nel passo 3 togliendo gli script).
 > - [x] Passo 3 – (a) **eliminata tutta la trattazione di Python**: rimosso il capitolo "Guida linguaggio python"; nel capitolo "Statistica" tolti tutti i listati e la sezione "Dettagli sul codice", mantenendo teoria, risultati e figure (riformulati come "foglio di calcolo"). Rimosso `minted` dal preambolo → non serve più `--shell-escape`. (b) virgola decimale al posto del punto nelle tabelle dati. Output regressione ricalcolati e coerenti (A12); dataset "altezze" dichiarato illustrativo (A11). Compila pulito, **105 pagine**.
 > - [x] Aggiunta §3.2 "Rette di massima e minima pendenza" (da `rette-max-min.pdf`), con esempio sulla legge di Hooke e figura pgfplots. Rimosse 6 immagini non più referenziate.
-> - [ ] Passo 4 – uniformare le unità (`\si{cm^3}` vs `\si{\cubic\centi\meter}` ecc.) e sistemare gli overfull hbox
-> - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–5). Figure ridisegnate in TikZ; esercizi e problemi con testo e numeri originali, tutti verificati in `verifica/`. Ogni capitolo si chiude con `\section{Problemi di riepilogo}` (~19, scenari standard riscritti).
+> - [ ] Passo 4 – uniformare le unità (`\si{cm^3}` vs `\si{\cubic\centi\meter}` ecc.), sistemare i ~40 overfull hbox e il glifo `—` mancante in `capitoli/06-...`
+> - [~] Passo 5 – ampliamento. Fonte: `tecnologico.pdf` (Unità 3–6+). Figure originali in TikZ (o da Wikimedia con licenza libera); esercizi e problemi con testo e numeri originali, multi-step, tutti verificati in `verifica/`. Ogni capitolo si chiude con `\section{Problemi di riepilogo}` (~19).
 >   - [x] Cap. "Grandezze vettoriali e forze" — COMPLETO. §1–7 + §8 Problemi di riepilogo. `verifica/cap-vettori.py`.
 >   - [x] Cap. "Equilibrio dei corpi solidi" — COMPLETO. §7.1 punto materiale · §7.2 attrito/piano inclinato/angolo limite · §7.3 corpo rigido e momento · §7.4 coppie · §7.5 macchine semplici e leve · §7.6 baricentro (ricerca sperimentale col filo a piombo; stab/instab/indiff con la pallina) · §7.7 Problemi di riepilogo (19). `verifica/cap-equilibrio.py`.
 >   - [x] **Split del sorgente con `\include`**: `preambolo.tex` + `capitoli/*.tex`
@@ -21,26 +21,32 @@
 >   - [x] Cap. "Equilibrio dei fluidi" (Unità 5) — COMPLETO: §8.1 pressione ·
 >     §8.2 Stevino · §8.3 Pascal · §8.4 vasi comunicanti · §8.5 pressione
 >     atmosferica · §8.6 Archimede · §8.7 problemi di riepilogo (19).
->     `verifica/cap-fluidi.py`. Figure TikZ (calibro §1.8 = foto CC BY-SA).
+>     `verifica/cap-fluidi.py`. Figure TikZ (calibro §1.8 = foto CC BY-SA 3.0).
+>   - [x] Prefazione riscritta (testo dell'autore).
+>   - [ ] **PROSSIMO: Cap. "Cinematica"** — Unità 6 "Il moto rettilineo"
+>     (pp. 204–239) + Unità 7 "Il moto nel piano" (pp. 240–269). Seguire la
+>     scansione del libro. Vedi CLAUDE.md per il dettaglio delle sezioni.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, ~145 pagine, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~34 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **179 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~40 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
 singolo capitolo.
 
-Struttura attuale:
+Struttura attuale (`capitoli/`, nell'ordine degli `\include`):
 
-1. Misura di grandezze (grandezze, S.I., sensibilità, cifre significative, area/volume, densità)
-2. Errori di misura (misure ripetute, incertezza relativa, confronto, propagazione max, propagazione in quadratura)
-3. Grafici di misure (grafico a mano, foglio di calcolo, Google Sheets)
-4. Relazioni di Laboratorio (metodo + 4 esperimenti svolti)
-5. Guida linguaggio Python
-6. Statistica (gaussiana, istogrammi, regressione lineare)
+1. `01-misura-grandezze` (grandezze, S.I., sensibilità, §1.8 calibro a corsoio, cifre significative, area/volume, densità)
+2. `02-errori-misura` (misure ripetute, incertezza relativa, confronto, propagazione max e in quadratura, grafico a mano, §rette di max/min pendenza, foglio di calcolo)
+3. `03-relazioni-laboratorio` (schema ufficiale Keynes + esempi svolti: studio del moto, legge di Hooke, secondo principio, caduta su piano inclinato, attrito statico)
+4. `04-statistica` (gaussiana, istogrammi, regressione lineare)
+5. `05-grandezze-vettoriali-forze` (ampliamento, Unità 3)
+6. `06-equilibrio-corpi-solidi` (ampliamento, Unità 4)
+7. `07-equilibrio-fluidi` (ampliamento, Unità 5)
 
-La meccanica compare **solo** dentro le relazioni di laboratorio, mai come teoria.
+I capitoli di teoria (5–7, e i prossimi) sono in coda; da valutare una Parte II
+"Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
 
 ---
 
@@ -115,24 +121,24 @@ Il titolo è "Laboratorio di fisica" ma i nuovi capitoli sono **teoria**. Due op
 2. Tenere il corpo attuale e inserire i capitoli di teoria **prima** delle Relazioni, così che
    ogni esperimento possa citare la teoria relativa.
 
-Bozza indice Parte II:
+Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
 
-- **Cinematica**: sistemi di riferimento, posizione/spostamento, velocità media e istantanea,
-  moto rettilineo uniforme, moto uniformemente accelerato, caduta libera, grafici $s$–$t$ e $v$–$t$
-  (aggancio naturale a §3 e §5.3), moto del proiettile (cenni).
-- **Dinamica**: forze, misura statica di una forza (dinamometro), i tre principi, massa vs peso,
-  forza peso, attrito radente, piano inclinato, forza elastica e legge di Hooke, quantità di moto (cenni).
-- **Statica**: equilibrio del punto materiale, equilibrio del corpo rigido, momento di una forza,
-  baricentro, leve, equilibrio su piano inclinato.
-- **Lavoro ed energia**: lavoro, potenza, energia cinetica, energia potenziale (grav. ed elastica),
-  conservazione dell'energia meccanica, attrito e dissipazione.
-- **Termologia**: temperatura e sua misura, scale Celsius/Kelvin (riprende §1.3), dilatazione
-  termica lineare/volumica, gas perfetti (cenni).
-- **Calore**: calore come energia, capacità termica e calore specifico, calorimetro delle mescolanze,
-  passaggi di stato e calori latenti, propagazione del calore (conduzione/convezione/irraggiamento, cenni).
+- **Grandezze vettoriali e forze** (Unità 3) — FATTO, `capitoli/05-...`.
+- **Equilibrio dei corpi solidi / statica** (Unità 4) — FATTO, `capitoli/06-...`.
+- **Equilibrio dei fluidi** (Unità 5) — FATTO, `capitoli/07-...`.
+- **Cinematica** (Unità 6 "Il moto rettilineo" + Unità 7 "Il moto nel piano") — PROSSIMO:
+  studio del moto e sistemi di riferimento, velocità media/istantanea, moto rettilineo
+  uniforme, accelerazione, moto uniformemente accelerato, leggi orarie e grafici
+  $s$–$t$/$v$–$t$; poi moto circolare uniforme, velocità angolare, moto armonico, moto
+  parabolico, composizione dei moti. (Aggancio naturale alle relazioni del cap. 3.)
+- **Dinamica** (Unità 7 "I princìpi della dinamica" + Unità 8): i tre principi, massa vs
+  peso, forze apparenti, forza gravitazionale, satelliti.
+- **Lavoro ed energia** (Unità 9) e **princìpi di conservazione** (Unità 10).
+- **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
+  calorimetro, passaggi di stato, propagazione del calore.
 
-Ogni capitolo: teoria discorsiva (stile attuale) → box `definizione`/`testexample` → esercizi svolti
-→ esercizi proposti con risultato → (dove esiste) relazione di laboratorio collegata.
+Ogni capitolo: teoria discorsiva (stile attuale) → box `definizione`/`testexample` → esempi
+svolti → esercizi con risultato verificato → `\section{Problemi di riepilogo}` (~19).
 
 ---
 

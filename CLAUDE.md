@@ -121,7 +121,7 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (`img/attrito-statico-grafico.png`). Da `lab-attrito.pdf`.
 - Verifiche numeriche: `verifica/cap-relazioni.py` (Hooke + attrito).
 
-### Ampliamento – Parte "meccanica" (fonte: `tecnologico.pdf`, Unità 3–5)
+### Ampliamento – Parte "meccanica" (fonte: `tecnologico.pdf`, Unità 3–6)
 - **Cap. "Grandezze vettoriali e forze"** — COMPLETO. §1 scalari/vettori · §2
   operazioni (punta-coda, parallelogramma, differenza, prodotto per scalare,
   perpendicolari/Pitagora) · §3 scomposizione · §4 forze (peso $P=mg$, massa vs
@@ -137,35 +137,60 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   indiff illustrato con la pallina su cunetta/collinetta/piano; stabilità di un
   corpo appoggiato) · §7.7 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-equilibrio.py`.
+- **Cap. "Equilibrio dei fluidi"** — COMPLETO (`capitoli/07-equilibrio-fluidi.tex`).
+  Fonte: Unità 5 (pp. stampate 172–203). §8.1 pressione ($p=F/A$) · §8.2 legge di
+  Stevino ($p=\rho g h$, assoluta/relativa) · §8.3 principio di Pascal (torchio
+  idraulico) · §8.4 vasi comunicanti (livello; due liquidi $\rho_1 h_1=\rho_2 h_2$)
+  · §8.5 pressione atmosferica (Torricelli, atm/mmHg/bar/hPa, barometro) · §8.6
+  principio di Archimede (spinta, galleggiamento, spinta aerostatica) · §8.7
+  Problemi di riepilogo (19). Verifiche: `verifica/cap-fluidi.py`.
+  Nuove unità siunitx nel preambolo: `\bar`, `\mmHg`, `\atm`.
 
 ### Split del sorgente
 - `appunti-new.tex` scomposto in `preambolo.tex` + `capitoli/*.tex` (un file per
   capitolo) inclusi con `\include`; master con `\includeonly` pronto all'uso.
-  Compilazione completa invariata (145 pag., pulita); `\includeonly` verificato.
 
-Stato compilazione: OK, ~145 pagine, pulito.
+Prefazione riscritta (testo dell'autore).
+Stato compilazione: OK, **179 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~40 overfull hbox residui = Passo 4).
+
+## Regole per ogni nuovo capitolo di teoria (valgono sempre)
+
+- **Struttura = scansione del libro** (`tecnologico.pdf`): stesse sezioni,
+  stesso ordine, stesso taglio/livello. Prosa e numeri originali (NON si
+  riproduce il testo del libro né i suoi esercizi).
+- Ogni capitolo = nuovo file `capitoli/NN-nome.tex` + riga `\include` nel master.
+- **Esercizi**: pochi diretti; alta quota di problemi **multi-step / a formule
+  inverse**, ispirati per tipo e livello a quelli del libro ma con **scenari e
+  numeri originali**. Vale a fine paragrafo e nei "Problemi di riepilogo" (~19,
+  organizzati per argomento). Ogni numero verificato in `verifica/cap-*.py`.
+- **Figure**: TikZ originali nello stile del libro; se un disegno non riesce
+  bene → immagine da **Wikimedia Commons** con licenza libera (CC/PD),
+  attribuita in didascalia, eventualmente ritoccata. Foto di apparati reali
+  ammesse. **NON** si ritagliano figure da `tecnologico.pdf` (libro commerciale)
+  né da altri PDF di terzi. Fermarsi spesso a far revisionare le figure.
 
 ## Lavoro rimanente
 
-1. **Cap. "Equilibrio dei fluidi"** — **COMPLETO** (`capitoli/07-equilibrio-fluidi.tex`,
-   `\include` nel master). Fonte: Unità 5 di `tecnologico.pdf` (pp. stampate
-   172–203 = PDF 192–223, offset +20). §8.1 pressione ($p=F/A$) · §8.2 legge di
-   Stevino ($p=\rho g h$, assoluta/relativa) · §8.3 principio di Pascal (torchio
-   idraulico) · §8.4 vasi comunicanti (livello, due liquidi) · §8.5 pressione
-   atmosferica (Torricelli, unità, barometro) · §8.6 principio di Archimede
-   (spinta, galleggiamento, spinta aerostatica) · §8.7 Problemi di riepilogo (19).
-   Verifiche: `verifica/cap-fluidi.py`. Compila pulito, 179 pagine.
-   - **Esercizi**: non solo applicazione diretta di una formula. Alta quota di
-     problemi multi-step / a formule inverse, ispirati per *tipo e livello* a
-     quelli del libro ma con scenari e numeri originali. Vale a fine paragrafo
-     e nei problemi di riepilogo.
-   - **Figure**: TikZ originali; se un disegno non riesce bene → immagine da
-     **Wikimedia Commons** con licenza libera (CC/PD), attribuita in didascalia,
-     eventualmente ritoccata. NON si ritagliano figure da `tecnologico.pdf`.
-2. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
-   lavoro ed energia, termologia, calore — vedi §F di REVISIONE.md.
+1. **Cap. "Cinematica"** — PROSSIMO. Fonte: `tecnologico.pdf` **Unità 6 "Il moto
+   rettilineo"** (pp. stampate 204–239 = PDF 224–259) e **Unità 7 "Il moto nel
+   piano"** (pp. 240–269 = PDF 260–289). Scansione del libro:
+   - Unità 6: (1) lo studio del moto — sistemi di riferimento, posizione,
+     spostamento, traiettoria · (2) la velocità (media, istantanea) · (3) moto
+     rettilineo uniforme · (4) l'accelerazione · (5) moto rettilineo
+     uniformemente accelerato · (6) leggi orarie e grafici ($s$–$t$, $v$–$t$).
+   - Unità 7: (1) moto circolare uniforme · (2) velocità angolare · (3) moto
+     armonico · (4) moto parabolico · (5) composizione dei moti.
+   - Decidere se un unico capitolo "Cinematica" o due capitoli. Chiudere con
+     "Problemi di riepilogo". Nuovo file `capitoli/08-cinematica.tex` (o
+     `08-...` / `09-...`), `verifica/cap-cinematica.py`.
+2. (Più avanti) altri capitoli: dinamica (Unità 7–8 principi), lavoro ed
+   energia (Unità 9–10), termologia, calore — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~34 overfull hbox.
-4. **Collocazione definitiva** dei nuovi capitoli (ora sono in coda dopo
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~40 overfull hbox,
+   il glifo `—` mancante in `capitoli/06-...` (usare `--` o `\textemdash`).
+4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
+5. **Push su `origin`**: `master` è avanti di ~25 commit non pushati (chiedere
+   all'utente).
