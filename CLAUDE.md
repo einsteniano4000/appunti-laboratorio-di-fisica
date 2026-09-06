@@ -147,10 +147,20 @@ Stato compilazione: OK, ~145 pagine, pulito.
 
 ## Lavoro rimanente
 
-1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`): pressione ·
-   pressione nei liquidi (legge di Stevino) · principio di Pascal · vasi
-   comunicanti · pressione atmosferica · principio di Archimede. + Problemi di
-   riepilogo.
+1. **Cap. "Equilibrio dei fluidi"** (Unità 5 di `tecnologico.pdf`, pp. stampate
+   172–203 = PDF 192–223, offset +20). IN CORSO:
+   - [x] §8.1 La pressione ($p=F/A$); §8.2 Legge di Stevino ($p=\rho g h$,
+     pressione assoluta/relativa). Numeri in `verifica/cap-fluidi.py`.
+   - [ ] §8.3 principio di Pascal (torchio idraulico) · §8.4 vasi comunicanti ·
+     §8.5 pressione atmosferica (Torricelli) · §8.6 principio di Archimede ·
+     §8.7 Problemi di riepilogo (~19).
+   - **Esercizi**: non solo applicazione diretta di una formula. Alta quota di
+     problemi multi-step / a formule inverse, ispirati per *tipo e livello* a
+     quelli del libro ma con scenari e numeri originali. Vale a fine paragrafo
+     e nei problemi di riepilogo.
+   - **Figure**: TikZ originali; se un disegno non riesce bene → immagine da
+     **Wikimedia Commons** con licenza libera (CC/PD), attribuita in didascalia,
+     eventualmente ritoccata. NON si ritagliano figure da `tecnologico.pdf`.
 2. (Più avanti, se richiesto) altri capitoli di teoria: cinematica, dinamica,
    lavoro ed energia, termologia, calore — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità

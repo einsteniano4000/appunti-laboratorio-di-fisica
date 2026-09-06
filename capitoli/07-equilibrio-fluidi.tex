@@ -1,0 +1,180 @@
+\chapter{Equilibrio dei fluidi}
+
+I \textbf{fluidi} sono i liquidi e i gas: sostanze che non hanno forma propria e prendono la forma del recipiente che le contiene. A differenza di un corpo solido, un fluido non può ``spingere di taglio'': le forze che scambia con le pareti del recipiente e con i corpi immersi sono sempre \emph{perpendicolari} alle superfici di contatto. Per questo, quando si studia l'equilibrio dei fluidi, la grandezza giusta da usare non è la forza ma la \textbf{pressione}.
+
+\section{La pressione}
+
+Immaginiamo di appoggiare su un tavolo un mattone, prima di piatto e poi di punta. Il peso del mattone è sempre lo stesso, ma nei due casi quel peso si ``spalma'' su un'area di appoggio molto diversa: appoggiando il mattone di punta, la stessa forza agisce su una superficie molto più piccola e il tavolo viene ``premuto'' molto di più in quel punto. La grandezza che misura quanto una forza è concentrata su una superficie è la pressione.
+
+\begin{definizione}
+La \textbf{pressione} $p$ è il rapporto fra il modulo della forza $F$ che agisce perpendicolarmente a una superficie e l'area $A$ di quella superficie:
+\[ \colorboxed{ocre}{ p = \frac{F}{A}. } \]
+\end{definizione}
+
+La pressione è una grandezza \emph{scalare}: non ha una direzione. Nel Sistema Internazionale si misura in \textbf{pascal} (simbolo \si{\pascal}):
+\[ \SI{1}{\pascal} = \SI{1}{\newton\per\metre\squared}. \]
+Un pascal è una pressione piccolissima (è il peso di circa un etto di pane distribuito su un metro quadrato), quindi nella pratica si usano spesso i suoi multipli: l'ettopascal ($\SI{1}{\hecto\pascal}=\SI{100}{\pascal}$), il chilopascal ($\SI{1}{\kilo\pascal}=\SI{1000}{\pascal}$) e il bar ($\SI{1}{\bar}=\SI{100000}{\pascal}$).
+
+Dalla formula si legge subito che, a parità di forza:
+\begin{itemize}
+    \item più piccola è l'area di contatto, più grande è la pressione;
+    \item più grande è l'area di contatto, più piccola è la pressione.
+\end{itemize}
+È il motivo per cui un coltello affilato (lama sottile, area piccolissima) taglia, mentre lo stesso coltello con il dorso non fa nulla; ed è il motivo per cui con le racchette da neve non si sprofonda: il peso è lo stesso, ma distribuito su un'area molto maggiore.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % --- caso A: mattone di piatto ---
+        \begin{scope}
+            \draw[thick] (-0.2,0) -- (3.6,0);
+            \fill[pattern=north east lines] (-0.2,-0.25) rectangle (3.6,0);
+            \draw[thick,fill=brown!25] (0.4,0) rectangle (3.0,0.9);
+            \draw[->,ocre,very thick] (1.7,2.0) -- (1.7,0.95);
+            \node[ocre,above] at (1.7,2.0) {$\vec F$};
+            \draw[|<->|] (0.4,-0.45) -- (3.0,-0.45);
+            \node[below] at (1.7,-0.5) {\footnotesize area $A$ grande};
+            \node[below] at (1.7,-1.15) {pressione piccola};
+        \end{scope}
+        % --- caso B: mattone di punta ---
+        \begin{scope}[xshift=6cm]
+            \draw[thick] (-0.2,0) -- (2.6,0);
+            \fill[pattern=north east lines] (-0.2,-0.25) rectangle (2.6,0);
+            \draw[thick,fill=brown!25] (0.85,0) rectangle (1.55,2.6);
+            \draw[->,ocre,very thick] (1.2,3.7) -- (1.2,2.65);
+            \node[ocre,above] at (1.2,3.7) {$\vec F$};
+            \draw[|<->|] (0.85,-0.45) -- (1.55,-0.45);
+            \node[below] at (1.2,-0.5) {\footnotesize area $A$ piccola};
+            \node[below] at (1.2,-1.15) {pressione grande};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Lo stesso mattone, con lo stesso peso $\vec F$, appoggiato di piatto e di punta: l'area di contatto $A$ cambia molto, quindi cambia la pressione $p=F/A$ sul piano.}
+    \label{fig:pressione-mattone}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Pressione di un mattone]
+Un mattone pesa $\SI{25}{\newton}$. La faccia più grande misura $\SI{25}{\centi\metre}\times\SI{12}{\centi\metre}$, quella più piccola $\SI{12}{\centi\metre}\times\SI{6}{\centi\metre}$. Calcoliamo la pressione che il mattone esercita sul piano nei due casi.
+
+Le aree, in metri quadrati, valgono
+\[ A_1 = 0{,}25\cdot 0{,}12 = \SI{0,030}{\metre\squared}, \qquad
+   A_2 = 0{,}12\cdot 0{,}06 = \SI{0,0072}{\metre\squared}. \]
+Le pressioni sono quindi
+\[ p_1 = \frac{\SI{25}{\newton}}{\SI{0,030}{\metre\squared}} \approx \SI{830}{\pascal}, \qquad
+   p_2 = \frac{\SI{25}{\newton}}{\SI{0,0072}{\metre\squared}} \approx \SI{3500}{\pascal}. \]
+Appoggiando il mattone di punta la pressione è più di quattro volte maggiore, pur restando invariato il peso.
+\end{testexample}
+
+\begin{esercizio}
+Una cassa pesa $\SI{600}{\newton}$ e appoggia a terra con una base di $\SI{0,50}{\metre}\times\SI{0,40}{\metre}$. Calcola la pressione esercitata sul pavimento.\\
+\risp{$p = \SI{3000}{\pascal}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un chiodo viene premuto contro una tavola con una forza di $\SI{40}{\newton}$; la punta ha un'area di circa $\SI{0,02}{\milli\metre\squared}$. Che pressione agisce sulla punta? (Esprimi il risultato in \si{\mega\pascal}.)\\
+\risp{$p = \SI{2000}{\mega\pascal}$}
+\end{esercizio}
+
+
+\section{La pressione nei liquidi: legge di Stevino}
+
+Un liquido ha un peso, e quel peso preme su tutto ciò che gli sta sotto. Perciò, \textbf{dentro un liquido la pressione non è la stessa dappertutto: cresce con la profondità}. È un fatto che tutti abbiamo sperimentato tuffandoci in piscina: a un paio di metri sotto il pelo dell'acqua si sente la pressione ``spingere'' sui timpani.
+
+Per trovare quanto vale, immaginiamo di isolare, dentro il liquido, una colonna verticale di sezione $A$ che va dalla superficie libera fino a una profondità $h$ (figura~\ref{fig:stevino}). Su quella colonna grava il suo stesso peso:
+\[ F = m\,g = \rho\,V\,g = \rho\,(A\,h)\,g, \]
+dove $\rho$ è la densità del liquido. Questo peso preme sul fondo della colonna, cioè sul liquido che sta alla profondità $h$, su un'area $A$. La pressione a quella profondità è quindi
+\[ p = \frac{F}{A} = \frac{\rho\,A\,h\,g}{A} = \rho\,g\,h. \]
+
+\begin{definizione}
+\textbf{Legge di Stevino.} In un liquido di densità $\rho$ in equilibrio, la pressione dovuta al peso del liquido (\emph{pressione idrostatica}) alla profondità $h$ sotto la superficie libera vale
+\[ \colorboxed{ocre}{ p = \rho\,g\,h. } \]
+\end{definizione}
+
+Guardando la formula si notano tre cose importanti:
+\begin{itemize}
+    \item la pressione dipende \emph{solo} dalla profondità $h$ e dalla densità $\rho$: \textbf{non} dalla forma del recipiente né dalla quantità totale di liquido. Sul fondo di un sottile tubo alto un metro e sul fondo di un lago profondo un metro (stesso liquido) la pressione è la stessa;
+    \item a parità di profondità, un liquido più denso dà una pressione maggiore;
+    \item in un punto del liquido la pressione agisce \textbf{ugualmente in tutte le direzioni} (verso il basso, verso l'alto e lateralmente): se così non fosse, il liquido si metterebbe in moto e non sarebbe in equilibrio. Contro una parete, la spinta del liquido è sempre perpendicolare alla parete e cresce scendendo.
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % liquido
+        \fill[blue!10] (0,0) rectangle (5,3.6);
+        % recipiente (aperto in alto)
+        \draw[thick] (0,4.1) -- (0,0) -- (5,0) -- (5,4.1);
+        % superficie libera
+        \draw[blue!45!black,thick] (0,3.6) -- (5,3.6);
+        \node[blue!45!black,anchor=south west] at (0.1,3.62) {\footnotesize superficie libera};
+        % colonna di liquido sovrastante P
+        \fill[blue!22] (1.75,1.35) rectangle (2.45,3.6);
+        \draw[dashed,gray!65] (1.75,1.35) -- (1.75,3.6)  (2.45,1.35) -- (2.45,3.6);
+        \node[gray!55] at (2.1,2.6) {\footnotesize $A$};
+        % quota h
+        \draw[<->] (0.85,3.6) -- (0.85,1.35) node[midway,fill=blue!10,inner sep=1.5pt] {$h$};
+        % punto P e frecce (la pressione agisce ugualmente in ogni direzione)
+        \foreach \a in {0,45,...,315}{
+            \draw[->,ocre,semithick] (2.1,1.35) -- ++(\a:0.62);}
+        \fill (2.1,1.35) circle (1.6pt);
+        \node[below left=1pt] at (2.1,1.35) {$P$};
+    \end{tikzpicture}
+    \caption{La pressione idrostatica nel punto $P$, a profondità $h$, è dovuta al peso della colonna di liquido sovrastante e vale $\rho g h$; in $P$ agisce con lo stesso valore in tutte le direzioni.}
+    \label{fig:stevino}
+\end{figure}
+
+\subsection{Pressione assoluta e pressione relativa}
+Sulla superficie libera del liquido, di solito, non c'è il vuoto ma l'aria, che a sua volta preme con la \emph{pressione atmosferica} $p_0$ (circa \SI{1e5}{\pascal} al livello del mare, ne riparleremo più avanti). Questa pressione si trasmette a tutto il liquido, quindi la pressione \textbf{totale} (o \emph{assoluta}) alla profondità $h$ è
+\[ p = p_0 + \rho\,g\,h. \]
+Spesso però interessa solo di quanto la pressione supera quella atmosferica -- per esempio è questo che ``sentono'' i timpani, o che misura un manometro: si parla allora di \textbf{pressione relativa}, pari alla sola parte $\rho g h$.
+
+\begin{testexample}[\thetcbcounter \, La pressione a \SI{10}{\metre} sott'acqua]
+Calcoliamo la pressione (relativa) dell'acqua ($\rho = \SI{1000}{\kilo\gram\per\metre\cubed}$) alla profondità di \SI{10}{\metre}:
+\[ p = \rho\,g\,h = 1000 \cdot 9{,}81 \cdot 10 \approx \SI{98100}{\pascal} \approx \SI{0,98}{\bar}. \]
+È quasi esattamente una pressione atmosferica. Vale la regola pratica: \textbf{ogni \SI{10}{\metre} di acqua in più, la pressione aumenta di circa \SI{1}{atm}}. A \SI{10}{\metre} di profondità un sub sopporta quindi una pressione assoluta di circa \SI{2}{atm}, a \SI{20}{\metre} circa \SI{3}{atm}, e così via.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Forza sul timpano di un sub]
+Un sub scende in un lago fino a \SI{18}{\metre} di profondità. Il timpano ha un'area di circa \SI{55}{\milli\metre\squared}. Che forza esercita l'acqua sul timpano?
+
+Non c'è una formula unica: bisogna prima trovare la pressione e poi la forza. La pressione relativa alla profondità $h$ è
+\[ p = \rho\,g\,h = 1000 \cdot 9{,}81 \cdot 18 \approx \SI{1,77e5}{\pascal}. \]
+L'area, in metri quadrati, è $A = \SI{55}{\milli\metre\squared} = \SI{55e-6}{\metre\squared}$. La forza è allora
+\[ F = p\,A \approx \SI{1,77e5}{\pascal} \cdot \SI{55e-6}{\metre\squared} \approx \SI{9,7}{\newton}. \]
+Quasi un chilogrammo-peso spinge sul timpano da un lato solo: per questo, scendendo, occorre ``compensare'' mandando aria nell'orecchio medio.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Un pilastro e una persona]
+Confrontiamo la pressione che un pilastro di cemento ($\rho = \SI{2400}{\kilo\gram\per\metre\cubed}$) a base quadrata di lato \SI{30}{\centi\metre} e alto \SI{4,0}{\metre} esercita sul suolo, con quella di una persona di \SI{70}{\kilo\gram} in piedi su una sola scarpa (area d'appoggio \SI{180}{\centi\metre\squared}).
+
+\emph{Pilastro.} Volume $V = 0{,}30^2 \cdot 4{,}0 = \SI{0,36}{\metre\cubed}$; massa $m = \rho V = 2400 \cdot 0{,}36 = \SI{864}{\kilo\gram}$; peso $P = mg \approx \SI{8480}{\newton}$. La base ha area $A = 0{,}09\ \si{\metre\squared}$, quindi
+\[ p_\text{pil} = \frac{P}{A} \approx \frac{8480}{0{,}09} \approx \SI{94000}{\pascal}. \]
+\emph{Persona.} $P = 70 \cdot 9{,}81 \approx \SI{687}{\newton}$, $A = \SI{180}{\centi\metre\squared} = \SI{0,018}{\metre\squared}$:
+\[ p_\text{pers} = \frac{687}{0{,}018} \approx \SI{38000}{\pascal}. \]
+Il pilastro preme sul suolo con una pressione circa $2{,}5$ volte quella della persona.
+\end{testexample}
+
+\begin{esercizio}
+Nell'acqua di mare ($\rho = \SI{1030}{\kilo\gram\per\metre\cubed}$), a quale profondità la pressione relativa raggiunge \SI{2,5}{\bar}?\\
+\risp{$h \approx \SI{24,7}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una vasca di raccolta contiene acqua fino a \SI{1,8}{\metre} di altezza. Su una parete verticale è ricavata una paratoia (uno sportello) rettangolare larga \SI{60}{\centi\metre} e alta \SI{40}{\centi\metre}, il cui bordo inferiore tocca il fondo della vasca. Stima la forza totale con cui l'acqua preme sulla paratoia. \\
+\textit{Suggerimento: la pressione non è uniforme; usa il suo valore alla profondità del centro della paratoia.}\\
+\risp{$F \approx \SI{3,8e3}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una colonna di \SI{15}{\centi\metre} di mercurio ($\rho = \SI{13600}{\kilo\gram\per\metre\cubed}$) esercita, sul fondo, la stessa pressione di una colonna d'acqua alta quanto? \\
+\risp{$h \approx \SI{2,0}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un serbatoio cilindrico vuoto ha massa \SI{40}{\kilo\gram}, diametro \SI{1,2}{\metre} e poggia su 3 piedini, ciascuno con base d'appoggio di \SI{15}{\centi\metre\squared}. Viene riempito di gasolio ($\rho = \SI{840}{\kilo\gram\per\metre\cubed}$) fino all'altezza di \SI{1,5}{\metre}. Calcola la pressione che ciascun piedino esercita sul pavimento.\\
+\risp{$p \approx \SI{3,2}{\mega\pascal}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due recipienti, uno cilindrico stretto e uno largo e svasato, contengono acqua fino alla stessa altezza di \SI{20}{\centi\metre}. In quale dei due la pressione sul fondo è maggiore? Motiva la risposta.\\
+\risp{è uguale: la pressione idrostatica dipende solo dall'altezza del liquido, non dalla forma né dal volume}
+\end{esercizio}
