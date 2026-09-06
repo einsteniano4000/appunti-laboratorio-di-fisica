@@ -740,27 +740,31 @@ Misurare il coefficiente di attrito statico $k_s$ fra un blocchetto di legno e i
     \centering
     \begin{tikzpicture}[>=stealth,scale=1.1]
         % piano d'appoggio
-        \fill[pattern=north east lines] (-1.2,-0.3) rectangle (7.6,0);
-        \draw[thick] (-1.2,0) -- (7.6,0);
+        \fill[pattern=north east lines] (-1.4,-0.3) rectangle (7.4,0);
+        \draw[thick] (-1.4,0) -- (7.4,0);
         % blocchetto
-        \draw[thick,fill=brown!25] (1.0,0) rectangle (3.0,1.2);
-        \node at (2.0,0.6) {\small blocchetto};
+        \draw[thick,fill=brown!25] (0.8,0) rectangle (2.4,1.5);
+        \node at (1.55,1.15) {\small blocchetto};
+        % occhiello sul lato destro del blocchetto
+        \draw[thick] (2.4,0.75) circle (0.07);
         % pesi impilati sopra
-        \draw[thick,fill=gray!30] (1.3,1.2) rectangle (2.7,1.55);
-        \draw[thick,fill=gray!30] (1.5,1.55) rectangle (2.5,1.85);
-        \draw[->] (4.7,2.15) .. controls (3.6,2.1) .. (2.3,1.75);
-        \node[right,align=left] at (4.6,2.25) {\small pesi: si aggiungono\\[-2pt] \small per aumentare $F_p$};
-        % dinamometro (tira il blocchetto verso destra)
-        \draw[thick] (3.0,0.55) -- (3.7,0.55);
-        \draw[thick,decorate,decoration={coil,aspect=0.6,segment length=4pt,amplitude=4pt}] (3.7,0.55) -- (5.3,0.55);
-        \draw[thick] (5.3,0.55) -- (6.0,0.55);
-        \draw[thick,fill=white] (6.0,0.35) rectangle (6.5,0.75);
-        \node[right] at (6.6,0.55) {\small dinamometro};
+        \draw[thick,fill=gray!30] (1.05,1.5) rectangle (2.15,1.85);
+        \draw[thick,fill=gray!30] (1.25,1.85) rectangle (1.95,2.15);
+        \draw[->] (4.4,2.5) .. controls (3.2,2.4) .. (1.9,2.0);
+        \node[right,align=left] at (4.3,2.6) {\small pesi: si aggiungono\\[-1pt] \small per aumentare $F_p$};
+        % dinamometro: tubo con gancio a sinistra, agganciato al blocchetto
+        \draw[thick,fill=gray!12] (2.9,0.52) rectangle (5.5,0.98);
+        \draw[thick] (2.9,0.75) -- (2.66,0.75);
+        \draw[thick] (2.66,0.75) arc (90:-175:0.13);
+        \node[right] at (5.6,0.75) {\small dinamometro};
         % forze
-        \draw[->,ocre,very thick] (1.7,0) -- (1.7,-1.1) node[below] {$\vec F_p$};
-        \draw[->,red!70!black,very thick] (3.0,1.0) -- (4.15,1.0);
-        \node[red!70!black,above] at (3.5,1.03) {$\vec F_{pd}$};
-        \draw[->,blue!60!black,very thick] (1.0,0.28) -- (-0.3,0.28) node[left] {attrito};
+        \fill[ocre] (1.6,0.75) circle (1.3pt);
+        \draw[->,ocre,very thick] (1.6,0.75) -- (1.6,-1.05);
+        \node[ocre,below] at (1.6,-1.05) {$\vec F_p$};
+        \draw[->,red!70!black,very thick] (2.4,1.25) -- (3.5,1.25);
+        \node[red!70!black,above] at (2.95,1.27) {$\vec F_{pd}$};
+        \draw[->,blue!60!black,very thick] (0.8,0.22) -- (-0.5,0.22);
+        \node[blue!60!black,left] at (-0.5,0.22) {attrito};
     \end{tikzpicture}
     \caption{Il blocchetto è tirato orizzontalmente dal dinamometro; sopra si appoggiano pesi via via maggiori. Si legge la forza $F_{pd}$ nell'istante in cui il blocchetto si stacca (primo distacco). La forza premente $F_p$ è il peso complessivo di blocchetto e pesi.}
     \label{fig:apparato-attrito}
