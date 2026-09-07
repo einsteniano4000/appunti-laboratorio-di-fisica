@@ -1,0 +1,1097 @@
+\chapter{Il moto rettilineo}
+
+Nei capitoli precedenti abbiamo studiato a quali condizioni un corpo resta \textit{fermo}, cioè in equilibrio. Da qui in avanti ci occupiamo invece dei corpi \textit{in movimento}. La parte della fisica che descrive il moto -- senza chiedersi \emph{perché} un corpo si muova, ma solo \emph{come} si muove -- si chiama \textbf{cinematica}.
+
+Cominciamo dal caso più semplice: un corpo che si muove lungo una retta. È il \textbf{moto rettilineo}, e sarà l'argomento di questo capitolo; il moto lungo traiettorie curve lo affronteremo nel capitolo successivo.
+
+\section{Lo studio del moto}
+
+\subsection{Il punto materiale}
+Un corpo reale ha una forma e delle dimensioni, e durante il moto può anche ruotare o deformarsi. Per cominciare conviene mettere da parte queste complicazioni e schematizzare il corpo come un \textbf{punto materiale}: un punto geometrico, privo di dimensioni, a cui si attribuisce tutta la massa del corpo.
+
+\begin{definizione}
+Un corpo si può trattare come \textbf{punto materiale} quando le sue dimensioni sono piccole rispetto allo spazio in cui avviene il suo moto, oppure quando tutti i suoi punti si muovono nello stesso modo.
+\end{definizione}
+
+Un'automobile che percorre un viaggio di centinaia di chilometri, un giocatore visto dall'alto di uno stadio, la Terra nel suo giro attorno al Sole: in tutti questi casi la schematizzazione a punto materiale è del tutto ragionevole. Non lo è, invece, se studiamo una ruota che gira su sé stessa o una trottola.
+
+\subsection{Traiettoria e sistema di riferimento}
+Mentre si muove, un punto materiale descrive nello spazio una linea, che può essere una retta o una curva: questa linea si chiama \textbf{traiettoria}. La traiettoria di un sasso lasciato cadere è un segmento verticale; quella della Terra attorno al Sole è (quasi) un'ellisse; quella di un pallone calciato è un arco.
+
+Dire che un corpo ``si muove'' ha senso solo rispetto a qualcosa che consideriamo fermo. Un passeggero seduto in treno è fermo rispetto al vagone, ma in moto rispetto alla banchina della stazione. Per studiare un moto dobbiamo perciò fissare un \textbf{sistema di riferimento}.
+
+Per un moto rettilineo il sistema di riferimento è semplicemente una retta orientata (figura~\ref{fig:sr-rettilineo}), costituita da:
+\begin{itemize}
+    \item un'\textbf{origine} $O$, il punto da cui si contano le distanze;
+    \item un \textbf{verso} di percorrenza positivo, indicato da una freccia;
+    \item un'\textbf{unità di misura} per le lunghezze.
+\end{itemize}
+Fissato il riferimento, la \textbf{posizione} del punto materiale è individuata da un solo numero $s$ (con segno): il valore assoluto di $s$ è la distanza dall'origine, il segno dice da quale parte di $O$ si trova il punto. Questo numero si chiama anche \emph{coordinata} (o \emph{ascissa}) del punto sulla retta.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \draw[->,thick] (-3,0) -- (5.7,0) node[right]{$s$};
+        \foreach \x in {-2,-1,1,2,3,4,5}{\draw (\x,0.08) -- (\x,-0.08);}
+        \fill (0,0) circle (1.8pt);
+        \node[below=4pt] at (0,0) {$O$};
+        \node[above=7pt] at (0,0) {\footnotesize origine};
+        \draw[<->] (1,-0.5) -- (2,-0.5) node[midway,below]{\footnotesize unità};
+        \fill[ocre] (3.5,0) circle (2.2pt);
+        \node[ocre,below=4pt] at (3.5,0) {$P$};
+        \draw[ocre,dashed] (3.5,0) -- (3.5,1.05);
+        \draw[ocre,<->] (0,1.05) -- (3.5,1.05) node[midway,fill=white,inner sep=1.5pt]{\footnotesize $s_P = \SI{3,5}{\metre}$};
+    \end{tikzpicture}
+    \caption{Il sistema di riferimento di un moto rettilineo: origine $O$, verso positivo, unità di misura. La posizione del punto $P$ è data dalla sola coordinata $s_P$.}
+    \label{fig:sr-rettilineo}
+\end{figure}
+
+Se il moto avviene su un piano non basta più un numero: servono \textbf{due} coordinate $(x,\,y)$. Per un moto nello spazio ne servono \textbf{tre}, $(x,\,y,\,z)$. In questo capitolo, però, un solo numero è sufficiente.
+
+\subsection{Spazio percorso e spostamento}
+Consideriamo un punto materiale che all'istante $t_1$ si trova nella posizione $s_1$ e all'istante $t_2$ nella posizione $s_2$. Nell'intervallo di tempo $\Delta t = t_2 - t_1$ sono cambiate due cose diverse, che è importante non confondere.
+
+\begin{definizione}
+Lo \textbf{spazio percorso} è la lunghezza del tragitto effettivamente compiuto dal corpo, misurata \emph{lungo la traiettoria}. È una grandezza scalare, sempre positiva, e si indica spesso con $\Delta s$ quando la traiettoria non ``torna indietro''.
+
+Lo \textbf{spostamento} è il vettore che unisce la posizione iniziale a quella finale (dalla ``coda'' in $s_1$ alla ``punta'' in $s_2$). Il suo modulo è la distanza in linea d'aria fra il punto di partenza e quello di arrivo.
+\end{definizione}
+
+Se il moto è rettilineo e avviene \textbf{sempre nello stesso verso}, lo spazio percorso e il modulo dello spostamento \textbf{coincidono}, e valgono $|s_2 - s_1|$. Ma appena la traiettoria è curva, o il corpo inverte la marcia, le due grandezze si separano: lo spazio percorso continua ad aumentare, mentre lo spostamento tiene conto solo di ``dove si è finiti''.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        % semicirconferenza
+        \draw[ocre,very thick] (0,0) arc (180:0:2.2);
+        \draw[->,blue!60!black,very thick] (0,0) -- (4.4,0);
+        \fill (0,0) circle (2pt);
+        \node[left] at (0,0) {$P_1$};
+        \fill (4.4,0) circle (2pt);
+        \node[right] at (4.4,0) {$P_2$};
+        \draw[dashed,gray] (2.2,0) -- (2.2,2.2);
+        \node[gray] at (2.5,1.15) {$R$};
+        \node[ocre] at (2.2,2.55) {spazio percorso $=\pi R$};
+        \node[blue!60!black] at (2.2,-0.6) {spostamento, modulo $2R$};
+    \end{tikzpicture}
+    \caption{Un corpo va da $P_1$ a $P_2$ lungo una semicirconferenza di raggio $R$: lo spazio percorso è $\pi R$, il modulo dello spostamento è $2R$.}
+    \label{fig:percorso-spostamento}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Attorno all'isolato]
+Per andare da un punto $A$ a un punto $B$ di una città a scacchiera si cammina prima per \SI{60}{\metre} verso Est, poi per \SI{80}{\metre} verso Nord. Qual è lo spazio percorso? E il modulo dello spostamento?
+
+Lo spazio percorso è la somma dei due tratti:
+\[ \Delta s = \SI{60}{\metre} + \SI{80}{\metre} = \SI{140}{\metre}. \]
+Il modulo dello spostamento si trova invece con il teorema di Pitagora, perché i due tratti sono perpendicolari:
+\[ AB = \sqrt{(\SI{60}{\metre})^2 + (\SI{80}{\metre})^2} = \sqrt{\SI{10000}{\metre\squared}} = \SI{100}{\metre}. \]
+Si cammina per \SI{140}{\metre}, ma ci si ritrova a soli \SI{100}{\metre} in linea d'aria dal punto di partenza.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Mezzo giro di pista]
+Un atleta corre lungo una pista circolare di raggio $R = \SI{25}{\metre}$ e ne percorre esattamente metà, portandosi dal punto di partenza al punto diametralmente opposto.
+
+Lo spazio percorso è la lunghezza della semicirconferenza:
+\[ \Delta s = \pi R = \pi \cdot \SI{25}{\metre} \approx \SI{78,5}{\metre}. \]
+Il modulo dello spostamento è invece il diametro:
+\[ d = 2R = \SI{50}{\metre}. \]
+Se l'atleta completasse il giro intero, lo spazio percorso sarebbe $2\pi R \approx \SI{157}{\metre}$, ma lo spostamento sarebbe \textbf{nullo}: si tornerebbe esattamente al punto di partenza.
+\end{testexample}
+
+\begin{esercizio}
+Un ciclista percorre tre lati di un isolato quadrato di lato \SI{50}{\metre}, partendo da un angolo. Calcola lo spazio percorso e il modulo dello spostamento.\\
+\risp{$\Delta s = \SI{150}{\metre}$; \; spostamento $\approx \SI{70,7}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'escursionista cammina per \SI{120}{\metre} verso Est e poi per \SI{50}{\metre} verso Sud. Determina lo spazio percorso e il modulo dello spostamento.\\
+\risp{$\Delta s = \SI{170}{\metre}$; \; spostamento $= \SI{130}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un nuotatore si allena in una vasca lunga \SI{25}{\metre} e completa tre vasche di fila. Qual è lo spazio percorso? E il modulo dello spostamento?\\
+\risp{$\Delta s = \SI{75}{\metre}$; \; spostamento $= \SI{25}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo si sposta da un punto $P_1$ a un punto $P_2$ muovendosi lungo una semicirconferenza. Il modulo dello spostamento risulta \SI{18}{\metre}. Quanto vale il raggio della traiettoria? Qual è lo spazio percorso?\\
+\risp{$R = \SI{9}{\metre}$; \; $\Delta s = \pi R \approx \SI{28,3}{\metre}$}
+\end{esercizio}
+
+\section{La velocità}
+
+Sapere che un corpo si è spostato di \SI{100}{\metre} non basta a descriverne il moto: quei \SI{100}{\metre} possono essere stati percorsi in dieci secondi o in un'ora. Serve una grandezza che metta in relazione lo spazio percorso con il tempo impiegato: è la \textbf{velocità}.
+
+\subsection{La velocità media}
+Consideriamo un corpo che nell'intervallo di tempo $\Delta t = t_2 - t_1$ percorre lo spazio $\Delta s = s_2 - s_1$.
+
+\begin{definizione}
+La \textbf{velocità media} $v_m$ è il rapporto fra lo spazio percorso e l'intervallo di tempo impiegato a percorrerlo:
+\[ \colorboxed{ocre}{ v_m = \frac{\Delta s}{\Delta t} = \frac{s_2 - s_1}{t_2 - t_1}. } \]
+\end{definizione}
+
+Nel Sistema Internazionale lo spazio si misura in metri e il tempo in secondi, quindi la velocità si misura in \textbf{metri al secondo} (\si{\metre\per\second}). Dire che un corpo ha una velocità media di \SI{3}{\metre\per\second} significa che, \emph{in media}, percorre \SI{3}{\metre} ogni secondo.
+
+\begin{remark}
+Quella che abbiamo definito è, più precisamente, la \emph{velocità media scalare}: si ottiene dividendo lo spazio \emph{percorso} (misurato lungo la traiettoria) per il tempo. Ne esiste anche una versione \emph{vettoriale}, legata allo spostamento. In questo capitolo il moto è rettilineo e in un solo verso: le due coincidono, e diremo semplicemente ``velocità media''.
+\end{remark}
+
+\subsection{Chilometri all'ora e metri al secondo}
+Nella vita di tutti i giorni la velocità si esprime quasi sempre in \textbf{chilometri all'ora} (\si{\kilo\metre\per\hour}). Per passare da un'unità all'altra ricordiamo che $\SI{1}{\kilo\metre} = \SI{1000}{\metre}$ e $\SI{1}{\hour} = \SI{3600}{\second}$, quindi
+\[ \SI{1}{\kilo\metre\per\hour} = \frac{\SI{1000}{\metre}}{\SI{3600}{\second}} = \frac{1}{3{,}6}\ \si{\metre\per\second}. \]
+Ne segue la regola pratica:
+\begin{itemize}
+    \item da \si{\kilo\metre\per\hour} a \si{\metre\per\second} si \textbf{divide per} $3{,}6$;
+    \item da \si{\metre\per\second} a \si{\kilo\metre\per\hour} si \textbf{moltiplica per} $3{,}6$.
+\end{itemize}
+Per esempio $\SI{90}{\kilo\metre\per\hour} = 90 : 3{,}6 = \SI{25}{\metre\per\second}$, e $\SI{20}{\metre\per\second} = 20 \times 3{,}6 = \SI{72}{\kilo\metre\per\hour}$.
+
+\begin{testexample}[\thetcbcounter \, In discesa e in salita]
+Un'automobile percorre una discesa di \SI{9,0}{\kilo\metre} in \SI{6,0}{\minute}, poi una salita di \SI{3,0}{\kilo\metre} in \SI{12}{\minute}. Qual è la sua velocità media sull'intero percorso?
+
+La velocità media è lo spazio \emph{totale} diviso il tempo \emph{totale} -- non la media delle due velocità. Lo spazio totale è
+\[ \Delta s = \SI{9,0}{\kilo\metre} + \SI{3,0}{\kilo\metre} = \SI{12}{\kilo\metre} = \SI{12000}{\metre}. \]
+Il tempo totale, in secondi, è
+\[ \Delta t = (6{,}0 + 12)\ \si{\minute} = 18 \cdot \SI{60}{\second} = \SI{1080}{\second}. \]
+Quindi
+\[ v_m = \frac{\Delta s}{\Delta t} = \frac{\SI{12000}{\metre}}{\SI{1080}{\second}} \approx \SI{11,1}{\metre\per\second} \approx \SI{40}{\kilo\metre\per\hour}. \]
+\end{testexample}
+
+\subsection{Il grafico spazio--tempo}
+Un modo efficace di descrivere un moto è riportare in un grafico cartesiano il tempo $t$ (in ascissa) e la posizione $s$ (in ordinata). Immaginiamo una persona che cammina e registra la propria posizione ogni \SI{5}{\second}, ottenendo i valori della tabella~\ref{tab:camminatore}.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{c|cccccccc}
+        \toprule
+        $t$ (s) & 0 & 5 & 10 & 15 & 20 & 25 & 30 & 35 \\
+        $s$ (m) & 0 & 8 & 16 & 24 & 24 & 24 & 34 & 44 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Posizione di un pedone, misurata ogni \SI{5}{\second}.}
+    \label{tab:camminatore}
+\end{table}
+
+Riportando i punti sul grafico e unendoli si ottiene la spezzata della figura~\ref{fig:st-camminatore}. Il tratto \textbf{orizzontale} fra $t = \SI{15}{\second}$ e $t = \SI{25}{\second}$ indica che in quell'intervallo la posizione non cambia: la persona è \textbf{ferma}. Dove la spezzata sale più ripida, il moto è più veloce.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth, height=6cm,
+        xlabel={$t$ (s)}, ylabel={$s$ (m)},
+        xmin=0, xmax=37, ymin=0, ymax=50,
+        xtick={0,5,...,35}, ytick={0,10,...,50},
+        grid=both, grid style={gray!20},
+    ]
+    \addplot[ocre, very thick, mark=*, mark options={fill=ocre}]
+        coordinates {(0,0)(5,8)(10,16)(15,24)(20,24)(25,24)(30,34)(35,44)};
+    \node[anchor=south] at (axis cs:20,24.5) {\footnotesize fermo};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico spazio--tempo del pedone. Il segmento orizzontale corrisponde a un intervallo in cui il corpo è fermo.}
+    \label{fig:st-camminatore}
+\end{figure}
+
+In tutto la persona ha percorso \SI{44}{\metre} in \SI{35}{\second}, quindi la sua velocità media sull'intero tragitto è
+\[ v_m = \frac{\SI{44}{\metre}}{\SI{35}{\second}} \approx \SI{1,3}{\metre\per\second}. \]
+Questo unico numero, però, è una descrizione grossolana: nasconde il fatto che per un tratto la persona è stata ferma e in un altro è andata più svelta.
+
+\subsection{Il grafico velocità--tempo}
+Per avere un quadro più preciso calcoliamo la velocità media in \emph{ciascun} intervallo di \SI{5}{\second}, dividendo lo spazio percorso in quell'intervallo per \SI{5}{\second} (tabella~\ref{tab:camminatore-v}).
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{c|ccccccc}
+        \toprule
+        intervallo (s) & 0--5 & 5--10 & 10--15 & 15--20 & 20--25 & 25--30 & 30--35 \\
+        $\Delta s$ (m) & 8 & 8 & 8 & 0 & 0 & 10 & 10 \\
+        $v = \Delta s / \Delta t$ (m/s) & 1{,}6 & 1{,}6 & 1{,}6 & 0 & 0 & 2{,}0 & 2{,}0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Velocità media del pedone in ogni intervallo di \SI{5}{\second}.}
+    \label{tab:camminatore-v}
+\end{table}
+
+Riportando questi valori otteniamo il grafico velocità--tempo della figura~\ref{fig:vt-camminatore}: una serie di gradini, perché stiamo assegnando a ogni intervallo un unico valore di velocità.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth, height=5.5cm,
+        xlabel={$t$ (s)}, ylabel={$v$ (m/s)},
+        xmin=0, xmax=37, ymin=-0.1, ymax=2.6,
+        xtick={0,5,...,35},
+        ytick={0,0.5,1,1.5,2,2.5},
+        yticklabels={0,{0,5},{1,0},{1,5},{2,0},{2,5}},
+        grid=both, grid style={gray!20},
+    ]
+    \addplot[ocre, very thick, const plot]
+        coordinates {(0,1.6)(15,0)(25,2.0)(35,2.0)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico velocità--tempo del pedone, costruito con le velocità medie della tabella~\ref{tab:camminatore-v}.}
+    \label{fig:vt-camminatore}
+\end{figure}
+
+\subsection{La velocità istantanea}
+Se invece di ogni \SI{5}{\second} misurassimo la posizione ogni decimo di secondo, gli intervalli diventerebbero piccolissimi e la ``spezzata'' della velocità si trasformerebbe in una curva continua: conosceremmo la velocità in \emph{ogni} istante.
+
+\begin{definizione}
+La velocità calcolata in un intervallo di tempo $\Delta t$ molto piccolo si chiama \textbf{velocità istantanea} $v$.
+\end{definizione}
+
+È la velocità istantanea quella che leggiamo sul \textbf{tachimetro} di un'automobile: il valore che segna cambia di continuo e indica quanto stiamo andando veloce \emph{in quel momento}, non in media sull'intero viaggio. La velocità media e quella istantanea coincidono solo quando il moto avviene a velocità costante.
+
+\begin{testexample}[\thetcbcounter \, Media e istantanea non sono la stessa cosa]
+In autostrada un'auto percorre \SI{120}{\kilo\metre} in \SI{1,5}{\hour}. La sua velocità media è
+\[ v_m = \frac{\SI{120}{\kilo\metre}}{\SI{1,5}{\hour}} = \SI{80}{\kilo\metre\per\hour}. \]
+Questo \textbf{non} vuol dire che il tachimetro abbia sempre segnato \SI{80}{\kilo\metre\per\hour}: in certi tratti l'auto sarà andata a \SI{130}{\kilo\metre\per\hour}, in altri avrà rallentato a \SI{50}{\kilo\metre\per\hour} nel traffico, e forse si sarà fermata a un autogrill. La velocità media riassume tutto in un solo numero.
+\end{testexample}
+
+\begin{esercizio}
+Esprimi \SI{108}{\kilo\metre\per\hour} in metri al secondo, e \SI{15}{\metre\per\second} in chilometri all'ora.\\
+\risp{$\SI{108}{\kilo\metre\per\hour} = \SI{30}{\metre\per\second}$; \quad $\SI{15}{\metre\per\second} = \SI{54}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un treno regionale percorre \SI{210}{\kilo\metre} in \SI{1}{\hour} e \SI{45}{\minute}. Calcola la sua velocità media in chilometri all'ora e in metri al secondo.\\
+\risp{$v_m = \SI{120}{\kilo\metre\per\hour} \approx \SI{33,3}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un ciclista tiene una velocità media di \SI{6,0}{\metre\per\second}. Quanto tempo impiega a percorrere \SI{2,4}{\kilo\metre}?\\
+\risp{$\Delta t = \SI{400}{\second} = \SI{6}{\minute}\ \SI{40}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un pullman viaggia a velocità media di \SI{90}{\kilo\metre\per\hour}. Che distanza copre in \SI{20}{\minute}?\\
+\risp{$\Delta s = \SI{30}{\kilo\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Per andare a scuola Anna percorre \SI{800}{\metre} in \SI{10}{\minute}; al ritorno, in salita, impiega \SI{12}{\minute} per lo stesso tragitto. Calcola la velocità media sull'intero percorso (andata e ritorno). È uguale alla media delle due velocità?\\
+\risp{$v_m \approx \SI{1,21}{\metre\per\second}$; \; no: la media delle velocità darebbe $\approx \SI{1,22}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Nella finale dei \SI{100}{\metre} il primo atleta chiude in \SI{11,0}{\second}, il secondo in \SI{12,5}{\second}. Calcola le due velocità medie in \si{\metre\per\second} e la loro differenza.\\
+\risp{$v_1 \approx \SI{9,09}{\metre\per\second}$, $v_2 = \SI{8,0}{\metre\per\second}$; \; $\Delta v \approx \SI{1,1}{\metre\per\second}$}
+\end{esercizio}
+
+\section{Il moto rettilineo uniforme}
+
+Il moto più semplice che si possa immaginare è quello di un corpo che si muove su una retta mantenendo \textbf{sempre la stessa velocità}.
+
+\begin{definizione}
+Si chiama \textbf{moto rettilineo uniforme} un moto che avviene lungo una retta con \textbf{velocità costante}, cioè uguale in ogni istante e in ogni intervallo di tempo.
+\end{definizione}
+
+\begin{remark}
+In un moto uniforme non c'è differenza fra velocità media e velocità istantanea: hanno lo stesso valore in qualsiasi istante e su qualsiasi intervallo. Per questo, parlando di moto uniforme, diremo semplicemente ``la velocità''.
+\end{remark}
+
+Se la velocità è costante, in intervalli di tempo uguali il corpo percorre spazi uguali. Anzi, \textbf{spazio percorso e tempo impiegato sono direttamente proporzionali}, e la costante di proporzionalità è proprio la velocità:
+\[ \Delta s = v \cdot \Delta t. \]
+
+\subsection{La legge oraria}
+Vogliamo ora una formula che dia la \emph{posizione} del corpo a ogni istante $t$, e non solo lo spazio percorso in un intervallo.
+
+\begin{definizione}
+La formula che esprime la posizione $s$ di un corpo in funzione del tempo $t$ si chiama \textbf{legge oraria} del moto.
+\end{definizione}
+
+Se al tempo $t = 0$ il corpo si trova nell'origine ($s_0 = 0$), dopo un tempo $t$ avrà percorso $s = v\,t$: la posizione coincide con lo spazio percorso. Se invece all'istante iniziale il corpo si trova già in una posizione $s_0 \neq 0$, basta aggiungerla:
+\[ \colorboxed{ocre}{ s = s_0 + v\,t. } \]
+Questa è la legge oraria del moto rettilineo uniforme. I tre simboli hanno un significato preciso: $s_0$ è la posizione di partenza (dove si trova il corpo a $t = 0$), $v$ è la velocità (costante), $t$ è il tempo trascorso.
+
+\begin{testexample}[\thetcbcounter \, La legge oraria di un'automobile]
+Un'automobile viaggia a velocità costante di \SI{15}{\metre\per\second} lungo un rettilineo. All'istante $t = 0$ si trova a \SI{400}{\metre} da un semaforo, che prendiamo come origine. Scriviamo la legge oraria e usiamola per rispondere a due domande.
+
+La posizione iniziale è $s_0 = \SI{400}{\metre}$ e la velocità $v = \SI{15}{\metre\per\second}$, quindi
+\[ s = 400 + 15\,t \qquad (\text{$s$ in metri, $t$ in secondi}). \]
+
+\emph{Dove si trova dopo \SI{30}{\second}?} Sostituiamo $t = 30$:
+\[ s = 400 + 15 \cdot 30 = \SI{850}{\metre}. \]
+
+\emph{Dopo quanto tempo raggiunge la posizione $s = \SI{1000}{\metre}$?} Ricaviamo $t$ dalla legge oraria:
+\[ t = \frac{s - s_0}{v} = \frac{1000 - 400}{15} = \SI{40}{\second}. \]
+\end{testexample}
+
+\subsection{Il grafico spazio--tempo e la pendenza}
+Se riportiamo su un grafico $s$--$t$ i valori dati dalla legge oraria, otteniamo sempre una \textbf{semiretta} (figura~\ref{fig:st-uniforme}). Quando $s_0 = 0$ la semiretta parte dall'origine degli assi; quando $s_0 \neq 0$ parte dal punto $(0,\,s_0)$, ma ha la \emph{stessa inclinazione}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth, height=6.5cm,
+        xlabel={$t$ (s)}, ylabel={$s$ (m)},
+        xmin=0, xmax=10.5, ymin=0, ymax=85,
+        xtick={0,2,...,10}, ytick={0,20,...,80},
+        grid=both, grid style={gray!20},
+        legend pos=north west, legend cell align=left,
+    ]
+    \addplot[ocre, very thick, domain=0:10] {6*x};
+    \addlegendentry{$s = 6\,t$ \; ($s_0 = 0$)}
+    \addplot[blue!60!black, very thick, dashed, domain=0:10] {20 + 6*x};
+    \addlegendentry{$s = 20 + 6\,t$ \; ($s_0 = 20$)}
+    % triangolo della pendenza sulla retta s0=0
+    \draw[gray, thick] (axis cs:2,12) -- (axis cs:5,12) -- (axis cs:5,30);
+    \node[gray, below] at (axis cs:3.5,12) {\footnotesize $\Delta t = \SI{3}{\second}$};
+    \node[gray, right] at (axis cs:5,21) {\footnotesize $\Delta s = \SI{18}{\metre}$};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico spazio--tempo di due moti uniformi con la stessa velocità ($v = \SI{6}{\metre\per\second}$) ma posizione iniziale diversa. La pendenza della semiretta, $\Delta s / \Delta t$, è uguale alla velocità.}
+    \label{fig:st-uniforme}
+\end{figure}
+
+Calcoliamo la \textbf{pendenza} della semiretta, cioè il rapporto fra l'incremento della posizione e l'incremento del tempo fra due suoi punti qualsiasi. Nella figura, passando da $t = \SI{2}{\second}$ a $t = \SI{5}{\second}$ la posizione passa da \SI{12}{\metre} a \SI{30}{\metre}, quindi
+\[ \text{pendenza} = \frac{\Delta s}{\Delta t} = \frac{\SI{18}{\metre}}{\SI{3}{\second}} = \SI{6}{\metre\per\second}, \]
+che è proprio la velocità del moto.
+
+\begin{remark}
+Nel grafico spazio--tempo di un moto rettilineo uniforme, la pendenza della semiretta coincide con la velocità. Una semiretta più ripida corrisponde a un moto più veloce; una semiretta \emph{decrescente} (pendenza negativa) corrisponde a un corpo che si muove nel verso negativo, cioè che torna verso l'origine.
+\end{remark}
+
+\subsection{Il grafico velocità--tempo}
+Poiché in un moto uniforme la velocità ha sempre lo stesso valore, il grafico $v$--$t$ è una \textbf{semiretta orizzontale} (figura~\ref{fig:vt-uniforme}), all'altezza $v$ per tutta la durata del moto.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth, height=4.5cm,
+        xlabel={$t$ (s)}, ylabel={$v$ (m/s)},
+        xmin=0, xmax=10.5, ymin=0, ymax=9,
+        xtick={0,2,...,10}, ytick={0,3,6,9},
+        grid=both, grid style={gray!20},
+    ]
+    \addplot[ocre, very thick, domain=0:10] {6};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico velocità--tempo del moto uniforme a $v = \SI{6}{\metre\per\second}$: una retta orizzontale.}
+    \label{fig:vt-uniforme}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Un'automobile e una motocicletta]
+Su una stessa strada rettilinea si muovono un'automobile e una motocicletta, entrambe di moto uniforme. Prendiamo $t = 0$ nell'istante in cui l'auto passa per l'origine. In quel momento la moto si trova \SI{200}{\metre} più avanti. L'auto viaggia a \SI{30}{\metre\per\second}, la moto a \SI{20}{\metre\per\second}. Dopo quanto tempo l'auto raggiunge la moto?
+
+Scriviamo le due leggi orarie:
+\[ s_\text{auto} = 30\,t, \qquad s_\text{moto} = 200 + 20\,t. \]
+L'auto raggiunge la moto quando le due posizioni sono uguali:
+\[ 30\,t = 200 + 20\,t \;\Longrightarrow\; 10\,t = 200 \;\Longrightarrow\; t = \SI{20}{\second}. \]
+In quell'istante si trovano entrambe in $s = 30 \cdot 20 = \SI{600}{\metre}$.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Una pendenza negativa]
+Un corpo si muove con legge oraria $s = 100 - 4\,t$ (unità del SI). Che moto è? Dove si trova a $t = 0$? Quando passa per l'origine?
+
+Confrontando con $s = s_0 + v\,t$ si legge $s_0 = \SI{100}{\metre}$ e $v = \SI{-4}{\metre\per\second}$: è un moto uniforme che parte da \SI{100}{\metre} e procede nel verso negativo, avvicinandosi all'origine di \SI{4}{\metre} al secondo. Passa per l'origine quando $s = 0$:
+\[ 0 = 100 - 4\,t \;\Longrightarrow\; t = \SI{25}{\second}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un moto rettilineo uniforme ha legge oraria $s = 4{,}0\,t$ (unità del SI). Qual è la velocità? Dove si trova il corpo a $t = \SI{10}{\second}$? In quale istante si trova in $s = \SI{90}{\metre}$?\\
+\risp{$v = \SI{4,0}{\metre\per\second}$; \; $s = \SI{40}{\metre}$; \; $t = \SI{22,5}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile viaggia a \SI{25}{\metre\per\second} costanti su un rettilineo. Prendendo l'auto come origine a $t = 0$, un cartello si trova \SI{300}{\metre} più avanti. Scrivi la legge oraria della posizione dell'auto e calcola dopo quanto tempo raggiunge il cartello.\\
+\risp{$s = 25\,t$; \; $t = \SI{12}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+In una tappa, un ciclista in fuga ha \SI{1,2}{\kilo\metre} di vantaggio sul gruppo. La sua velocità è \SI{36}{\kilo\metre\per\hour}, quella del gruppo \SI{45}{\kilo\metre\per\hour}. Dopo quanto tempo il gruppo lo raggiunge?\\
+\risp{$\Delta t = \SI{480}{\second} = \SI{8}{\minute}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due treni percorrono lo stesso binario rettilineo in versi opposti, avvicinandosi. All'istante $t = 0$ distano \SI{12}{\kilo\metre}; uno viaggia a \SI{90}{\kilo\metre\per\hour}, l'altro a \SI{126}{\kilo\metre\per\hour}. Dopo quanto tempo si incrociano?\\
+\risp{$\Delta t = \SI{200}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un moto uniforme ha legge oraria $s = 12 + 3\,t$ (unità del SI). Indica la posizione iniziale e la velocità, poi calcola in quale istante il corpo si trova in $s = \SI{54}{\metre}$.\\
+\risp{$s_0 = \SI{12}{\metre}$; \; $v = \SI{3}{\metre\per\second}$; \; $t = \SI{14}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un radar invia un impulso che viaggia alla velocità della luce ($c = \SI{3,0e8}{\metre\per\second}$), si riflette su un aereo e torna indietro. L'eco viene ricevuta dopo \SI{6,0e-5}{\second} (sessanta milionesimi di secondo). A che distanza si trova l'aereo?\\
+\risp{$d = \dfrac{c\,\Delta t}{2} = \SI{9,0}{\kilo\metre}$}
+\end{esercizio}
+
+\section{L'accelerazione}
+
+Il moto uniforme è un caso particolare: nella realtà, la velocità di un corpo cambia di continuo. Un'automobile che parte da un semaforo aumenta la sua velocità; un'auto di Formula 1 in frenata prima di una curva la diminuisce bruscamente; un sasso lanciato in aria rallenta salendo. Per descrivere \emph{quanto rapidamente} la velocità cambia serve una nuova grandezza: l'\textbf{accelerazione}.
+
+\subsection{L'accelerazione media}
+Consideriamo un corpo che all'istante $t_1$ ha velocità $v_1$ e all'istante $t_2$ ha velocità $v_2$. Nell'intervallo $\Delta t = t_2 - t_1$ la velocità è variata di $\Delta v = v_2 - v_1$.
+
+\begin{definizione}
+L'\textbf{accelerazione media} $a_m$ è il rapporto fra la variazione di velocità e l'intervallo di tempo in cui essa avviene:
+\[ \colorboxed{ocre}{ a_m = \frac{\Delta v}{\Delta t} = \frac{v_2 - v_1}{t_2 - t_1}. } \]
+\end{definizione}
+
+Nel Sistema Internazionale la velocità si misura in \si{\metre\per\second} e il tempo in secondi, quindi l'accelerazione si misura in \textbf{metri al secondo quadrato} (\si{\metre\per\second\squared}):
+\[ \frac{\si{\metre\per\second}}{\si{\second}} = \frac{\si{\metre}}{\si{\second}} \cdot \frac{1}{\si{\second}} = \si{\metre\per\second\squared}. \]
+Dire che un'automobile ha un'accelerazione media di \SI{3}{\metre\per\second\squared} significa che, in media, la sua velocità aumenta di \SI{3}{\metre\per\second} ogni secondo.
+
+\subsection{Accelerazione e decelerazione}
+Nella definizione, $\Delta t$ è sempre positivo: il segno di $a_m$ dipende quindi soltanto dal segno di $\Delta v$.
+\begin{itemize}
+    \item Se la velocità \textbf{aumenta}, $\Delta v > 0$ e l'accelerazione è \textbf{positiva}: il moto si dice \emph{accelerato}.
+    \item Se la velocità \textbf{diminuisce}, $\Delta v < 0$ e l'accelerazione è \textbf{negativa}: il moto si dice \emph{decelerato} (e si parla spesso di \emph{decelerazione}, intendendo il valore assoluto).
+    \item Se $\Delta v = 0$, l'accelerazione è nulla e la velocità è costante (moto uniforme).
+\end{itemize}
+
+\begin{remark}
+Se la velocità finale è uguale a quella iniziale, l'accelerazione media \emph{sull'intero intervallo} è nulla, anche se nel frattempo la velocità è cambiata parecchio. Un autobus che parte dal capolinea, viaggia e si riferma ha $\Delta v = 0$ fra partenza e arrivo, quindi $a_m = 0$ complessiva: ma questo non vuol dire che non abbia mai accelerato! Per descrivere davvero il moto bisogna spezzarlo in intervalli.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Lo scatto di un'automobile]
+Le schede tecniche delle auto riportano il tempo per passare da ferma a \SI{100}{\kilo\metre\per\hour}. Un'utilitaria impiega \SI{8,0}{\second}. Qual è la sua accelerazione media in unità del SI?
+
+Prima trasformiamo la velocità finale: $v_2 = \SI{100}{\kilo\metre\per\hour} = 100 : 3{,}6 \approx \SI{27,8}{\metre\per\second}$. La velocità iniziale è $v_1 = 0$, quindi
+\[ a_m = \frac{\Delta v}{\Delta t} = \frac{\SI{27,8}{\metre\per\second} - 0}{\SI{8,0}{\second}} \approx \SI{3,5}{\metre\per\second\squared}. \]
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Una frenata]
+Un'automobile che viaggia a \SI{90}{\kilo\metre\per\hour} frena e si arresta in \SI{5,0}{\second}. Qual è la sua accelerazione media?
+
+$v_1 = \SI{90}{\kilo\metre\per\hour} = \SI{25}{\metre\per\second}$, $v_2 = 0$, quindi $\Delta v = 0 - 25 = \SI{-25}{\metre\per\second}$ e
+\[ a_m = \frac{\SI{-25}{\metre\per\second}}{\SI{5,0}{\second}} = \SI{-5,0}{\metre\per\second\squared}. \]
+Il segno meno dice che l'accelerazione è opposta al moto: l'auto sta rallentando. Diremo che la decelerazione è \SI{5,0}{\metre\per\second\squared}.
+\end{testexample}
+
+\subsection{Leggere l'accelerazione da un grafico velocità--tempo}
+Consideriamo il moto di un treno di metropolitana: parte da fermo e accelera per \SI{10}{\second} fino a \SI{12}{\metre\per\second}, poi procede a velocità costante per \SI{30}{\second}, infine frena e si ferma in \SI{6}{\second}. Il grafico $v$--$t$ è la spezzata della figura~\ref{fig:vt-metro}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.82\linewidth, height=6cm,
+        xlabel={$t$ (s)}, ylabel={$v$ (m/s)},
+        xmin=0, xmax=48, ymin=0, ymax=14,
+        xtick={0,10,20,30,40,46}, ytick={0,3,6,9,12},
+        grid=both, grid style={gray!20},
+    ]
+    \addplot[ocre, very thick] coordinates {(0,0)(10,12)};
+    \addplot[black, very thick] coordinates {(10,12)(40,12)};
+    \addplot[blue!60!black, very thick] coordinates {(40,12)(46,0)};
+    \node[ocre, anchor=west] at (axis cs:7,3.5) {\footnotesize accelera};
+    \node[black] at (axis cs:25,12.9) {\footnotesize velocità costante};
+    \node[blue!60!black, anchor=east] at (axis cs:39,4) {\footnotesize frena};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico velocità--tempo del treno di metropolitana. In arancione il tratto in accelerazione, in blu quello in frenata.}
+    \label{fig:vt-metro}
+\end{figure}
+
+Calcoliamo l'accelerazione media in ciascuna fase:
+\begin{itemize}
+    \item \textbf{partenza} ($t$ da 0 a \SI{10}{\second}): $\Delta v = 12 - 0 = \SI{12}{\metre\per\second}$, quindi $a = 12 / 10 = \SI{1,2}{\metre\per\second\squared}$;
+    \item \textbf{tratto centrale} ($t$ da 10 a \SI{40}{\second}): $\Delta v = 0$, quindi $a = 0$;
+    \item \textbf{frenata} ($t$ da 40 a \SI{46}{\second}): $\Delta v = 0 - 12 = \SI{-12}{\metre\per\second}$, quindi $a = -12 / 6 = \SI{-2,0}{\metre\per\second\squared}$.
+\end{itemize}
+Il tratto in frenata è più \emph{ripido} di quello in partenza: a una pendenza maggiore (in valore assoluto) del grafico $v$--$t$ corrisponde un'accelerazione maggiore.
+
+\subsection{L'accelerazione istantanea}
+Come per la velocità, se calcoliamo $\Delta v / \Delta t$ su intervalli di tempo sempre più piccoli otteniamo l'\textbf{accelerazione istantanea} $a$: il valore dell'accelerazione in ogni singolo istante. Esiste uno strumento che la misura direttamente, l'\textbf{accelerometro}; ne contiene uno ogni smartphone (è ciò che gli permette di capire come è orientato e di ruotare l'immagine sullo schermo).
+
+\begin{esercizio}
+Un'auto da ferma raggiunge \SI{30}{\metre\per\second} in \SI{12}{\second} con accelerazione costante. Quanto vale l'accelerazione?\\
+\risp{$a = \SI{2,5}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una motocicletta ha un'accelerazione costante di \SI{1,5}{\metre\per\second\squared}. Di quanto aumenta la sua velocità in \SI{10}{\second}?\\
+\risp{$\Delta v = \SI{15}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo passa da \SI{5,0}{\metre\per\second} a \SI{23}{\metre\per\second} con accelerazione costante di \SI{2,0}{\metre\per\second\squared}. Quanto tempo impiega?\\
+\risp{$\Delta t = \SI{9,0}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile viaggia a \SI{108}{\kilo\metre\per\hour} e frena con decelerazione costante di \SI{6,0}{\metre\per\second\squared}. Dopo quanto tempo si ferma?\\
+\risp{$\Delta t = \SI{5,0}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Entrando in stazione, un treno rallenta da \SI{144}{\kilo\metre\per\hour} a \SI{72}{\kilo\metre\per\hour} in \SI{20}{\second}. Calcola la sua accelerazione media.\\
+\risp{$a_m = \SI{-1,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+A parità di potenza, due automobili accelerano da ferme fino a \SI{100}{\kilo\metre\per\hour}: la prima in \SI{7,0}{\second}, la seconda in \SI{11}{\second}. Calcola le due accelerazioni medie e quante volte la prima è più ``pronta'' della seconda.\\
+\risp{$a_1 \approx \SI{4,0}{\metre\per\second\squared}$, $a_2 \approx \SI{2,5}{\metre\per\second\squared}$; \; circa $1{,}6$ volte}
+\end{esercizio}
+
+\section{Il moto rettilineo uniformemente accelerato}
+
+Così come il moto uniforme è il moto rettilineo con velocità costante, il moto che studieremo ora è il moto rettilineo con \textbf{accelerazione costante}.
+
+\begin{definizione}
+Si chiama \textbf{moto rettilineo uniformemente accelerato} un moto che avviene lungo una retta con \textbf{accelerazione costante}: in ogni secondo la velocità cambia sempre della stessa quantità.
+\end{definizione}
+
+Se $a > 0$ il moto è accelerato (la velocità aumenta); se $a < 0$ è uniformemente decelerato (la velocità diminuisce), come nel caso di una frenata a fondo costante.
+
+\subsection{La legge della velocità}
+Immaginiamo una motocicletta che parte da ferma a un semaforo con accelerazione costante $a = \SI{0,5}{\metre\per\second\squared}$: ogni secondo la sua velocità aumenta di \SI{0,5}{\metre\per\second}, come nella tabella~\ref{tab:mrua}.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{c|cccccc}
+        \toprule
+        $t$ (s) & 0 & 1 & 2 & 3 & 4 & 10 \\
+        $v$ (m/s) & 0 & 0{,}5 & 1{,}0 & 1{,}5 & 2{,}0 & 5{,}0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Velocità di una moto che parte da ferma con $a = \SI{0,5}{\metre\per\second\squared}$.}
+    \label{tab:mrua}
+\end{table}
+
+Si vede che al raddoppiare del tempo raddoppia la velocità: partendo da fermo, \textbf{velocità e tempo sono direttamente proporzionali}, con costante di proporzionalità $a$. Ogni valore di $v$ si ottiene moltiplicando $a$ per il tempo:
+\[ v = a\,t \qquad (\text{se } v_0 = 0). \]
+Se invece all'istante iniziale il corpo ha già una velocità $v_0 \neq 0$, basta sommarla:
+\[ \colorboxed{ocre}{ v = v_0 + a\,t. } \]
+Questa è la \textbf{legge della velocità} del moto uniformemente accelerato. Attenzione a non confonderla con la legge oraria (che dà la \emph{posizione} e vedremo nel prossimo paragrafo): questa dà la \emph{velocità} a ogni istante.
+
+\begin{testexample}[\thetcbcounter \, Velocità di una moto]
+Una moto parte da ferma con accelerazione costante $a = \SI{1,5}{\metre\per\second\squared}$, dopo aver acquistato una velocità iniziale $v_0 = \SI{8,0}{\metre\per\second}$ all'ingresso di un rettilineo. Scriviamo la legge della velocità e calcoliamo dopo quanto tempo raggiunge \SI{30}{\metre\per\second}.
+
+Con $v_0 = \SI{8,0}{\metre\per\second}$ e $a = \SI{1,5}{\metre\per\second\squared}$:
+\[ v = 8{,}0 + 1{,}5\,t \qquad (\text{$v$ in \si{\metre\per\second}, $t$ in \si{\second}}). \]
+Dopo \SI{10}{\second}: $v = 8{,}0 + 1{,}5 \cdot 10 = \SI{23}{\metre\per\second}$.
+Per sapere quando $v = \SI{30}{\metre\per\second}$ ricaviamo $t$:
+\[ t = \frac{v - v_0}{a} = \frac{30 - 8{,}0}{1{,}5} \approx \SI{14,7}{\second}. \]
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Lo spazio di frenata visto come decelerazione]
+Un'automobile viaggia a $v_0 = \SI{30}{\metre\per\second}$ e frena con accelerazione costante $a = \SI{-5,0}{\metre\per\second\squared}$. Dopo quanto tempo si ferma?
+
+La legge della velocità è $v = 30 - 5{,}0\,t$. L'auto è ferma quando $v = 0$:
+\[ 0 = 30 - 5{,}0\,t \;\Longrightarrow\; t = \SI{6,0}{\second}. \]
+\end{testexample}
+
+\subsection{Il grafico velocità--tempo e la pendenza}
+Il grafico $v$--$t$ di un moto uniformemente accelerato è una \textbf{semiretta} (figura~\ref{fig:vt-mrua}). Se $v_0 = 0$ parte dall'origine degli assi; se $v_0 \neq 0$ parte dal punto $(0,\,v_0)$, con la stessa inclinazione.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth, height=6.5cm,
+        xlabel={$t$ (s)}, ylabel={$v$ (m/s)},
+        xmin=0, xmax=10.5, ymin=0, ymax=32,
+        xtick={0,2,...,10}, ytick={0,5,...,30},
+        grid=both, grid style={gray!20},
+        legend pos=north west, legend cell align=left,
+    ]
+    \addplot[ocre, very thick, domain=0:10] {2.5*x};
+    \addlegendentry{$v = 2{,}5\,t$ \; ($v_0 = 0$)}
+    \addplot[blue!60!black, very thick, dashed, domain=0:10] {8 + 2.5*x};
+    \addlegendentry{$v = 8 + 2{,}5\,t$ \; ($v_0 = 8$)}
+    \draw[gray, thick] (axis cs:2,5) -- (axis cs:6,5) -- (axis cs:6,15);
+    \node[gray, below] at (axis cs:4,5) {\footnotesize $\Delta t = \SI{4}{\second}$};
+    \node[gray, right] at (axis cs:6,10) {\footnotesize $\Delta v = \SI{10}{\metre\per\second}$};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico velocità--tempo di due moti uniformemente accelerati con la stessa accelerazione ($a = \SI{2,5}{\metre\per\second\squared}$) ma velocità iniziale diversa. La pendenza della semiretta, $\Delta v / \Delta t$, è uguale all'accelerazione.}
+    \label{fig:vt-mrua}
+\end{figure}
+
+Come nel grafico spazio--tempo del moto uniforme, la \textbf{pendenza} ha un significato fisico: nel grafico $v$--$t$ di un moto uniformemente accelerato, la pendenza della semiretta è uguale all'\textbf{accelerazione}. Nella figura, passando da $t = \SI{2}{\second}$ a $t = \SI{6}{\second}$ la velocità aumenta di \SI{10}{\metre\per\second}, quindi
+\[ \frac{\Delta v}{\Delta t} = \frac{\SI{10}{\metre\per\second}}{\SI{4}{\second}} = \SI{2,5}{\metre\per\second\squared}. \]
+Una semiretta più ripida corrisponde a un'accelerazione maggiore.
+
+\subsection{L'accelerazione di gravità}
+Quando si può trascurare l'attrito dell'aria, un corpo lasciato libero cade con accelerazione \textbf{costante}, uguale per tutti i corpi. Si dice che è in \textbf{caduta libera}, e la sua accelerazione si chiama \textbf{accelerazione di gravità}, indicata con $g$. Al livello del mare e alle nostre latitudini
+\[ g \approx \SI{9,81}{\metre\per\second\squared}. \]
+La velocità di un corpo in caduta libera si ottiene dalla legge della velocità mettendo $a = g$ e (se parte da fermo) $v_0 = 0$:
+\[ v = g\,t. \]
+
+\begin{remark}
+Che tutti i corpi cadano con la stessa accelerazione vale \emph{solo} se si trascura l'attrito dell'aria. Nel vuoto una piuma e una biglia di piombo, lasciate cadere insieme, toccano terra nello stesso istante; nell'aria, la biglia arriva molto prima, perché sulla piuma l'attrito non è affatto trascurabile.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Un sasso che cade]
+Un sasso viene lasciato cadere (da fermo) dal bordo di un dirupo. Che velocità ha dopo \SI{2,0}{\second}, trascurando l'attrito dell'aria?
+\[ v = g\,t = 9{,}81 \cdot 2{,}0 \approx \SI{19,6}{\metre\per\second} \approx \SI{71}{\kilo\metre\per\hour}. \]
+\end{testexample}
+
+\subsection{L'accelerazione su un piano inclinato}
+Un corpo che scende lungo un piano inclinato \textbf{liscio} (senza attrito) di altezza $h$ e lunghezza $l$ si muove anch'esso di moto uniformemente accelerato. Si può dimostrare che la sua accelerazione è una frazione di $g$:
+\[ \colorboxed{ocre}{ a = g \cdot \frac{h}{l}. } \]
+Poiché $h < l$, il rapporto $h/l$ è minore di 1: un corpo su un piano inclinato scende sempre \emph{più lentamente} di un corpo in caduta libera. Al limite, con il piano quasi verticale ($h \approx l$) si ritrova $a \approx g$; con il piano quasi orizzontale ($h$ molto piccola) l'accelerazione è piccolissima. È il motivo per cui Galileo studiò la caduta dei gravi ``rallentandola'' su piani poco inclinati.
+
+La velocità lungo il piano, partendo da fermo, è allora
+\[ v = a\,t = g \cdot \frac{h}{l} \cdot t. \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[scale=1,>=stealth]
+        \def\ang{25}
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (6,0);
+        \coordinate (C) at (6,{6*tan(\ang)});
+        \draw[thick,fill=brown!12] (A) -- (B) -- (C) -- cycle;
+        \draw (1,0) arc (0:\ang:1);
+        \node at (1.35,0.22) {\small $\alpha$};
+        % quote
+        \draw[<->] (6.5,0) -- (6.5,{6*tan(\ang)}) node[midway,right]{$h$};
+        \draw[<->] (0,-0.5) -- (6,-0.5) node[midway,below]{base};
+        \node[rotate=\ang,above] at (1.7,{1.7*tan(\ang)}) {$l$};
+        % blocco sul piano con freccia accelerazione (verso valle)
+        \begin{scope}[shift={(3.7,{3.7*tan(\ang)})},rotate=\ang]
+            \draw[fill=gray!25] (-0.5,0) rectangle (0.5,0.6);
+            \draw[->,very thick,ocre] (-0.5,0.3) -- (-1.7,0.3) node[above,black]{$\vec a$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Un corpo scende lungo un piano inclinato liscio di altezza $h$ e lunghezza $l$ con accelerazione costante $a = g\,h/l$, minore di $g$.}
+    \label{fig:piano-inclinato-mrua}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Un carrello su una guida inclinata]
+Un carrello parte da fermo e scende lungo una guida rettilinea liscia, lunga \SI{12}{\metre} e alta \SI{1,5}{\metre}. Qual è la sua accelerazione? Che velocità ha dopo \SI{4,0}{\second}?
+
+L'accelerazione è
+\[ a = g \cdot \frac{h}{l} = 9{,}81 \cdot \frac{\SI{1,5}{\metre}}{\SI{12}{\metre}} \approx \SI{1,23}{\metre\per\second\squared}. \]
+La velocità dopo \SI{4,0}{\second}, partendo da fermo, è
+\[ v = a\,t \approx 1{,}23 \cdot 4{,}0 \approx \SI{4,9}{\metre\per\second}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un'auto parte da ferma con accelerazione costante di \SI{1,2}{\metre\per\second\squared}. Che velocità ha dopo \SI{4,0}{\second}?\\
+\risp{$v = \SI{4,8}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una moto viaggia a \SI{30}{\metre\per\second} e decelera in modo uniforme a \SI{-3,0}{\metre\per\second\squared}. Che velocità ha dopo \SI{3,0}{\second}?\\
+\risp{$v = \SI{21}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso in caduta libera (da fermo, attrito dell'aria trascurabile) raggiunge la velocità di \SI{24,5}{\metre\per\second}. Da quanto tempo sta cadendo?\\
+\risp{$t = \SI{2,5}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo passa da \SI{6,0}{\metre\per\second} a \SI{42}{\metre\per\second} con accelerazione costante di \SI{2,0}{\metre\per\second\squared}. Quanto tempo impiega?\\
+\risp{$t = \SI{18}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una mela si stacca da un ramo e tocca il suolo con una velocità di \SI{5,2}{\metre\per\second}. Trascurando l'attrito dell'aria, quanto è durata la caduta?\\
+\risp{$t \approx \SI{0,53}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una slitta scende da ferma lungo un pendio rettilineo liscio, lungo \SI{20}{\metre} e alto \SI{2,0}{\metre}. Calcola l'accelerazione e la velocità dopo \SI{3,0}{\second}.\\
+\risp{$a \approx \SI{0,98}{\metre\per\second\squared}$; \; $v \approx \SI{2,9}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una biglia scende da ferma lungo una rotaia inclinata con accelerazione pari a un terzo di $g$. Dopo quanto tempo la sua velocità raggiunge \SI{4,0}{\metre\per\second}?\\
+\risp{$t \approx \SI{1,2}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una sfera lanciata verticalmente verso l'alto parte con velocità $v_0 = \SI{15}{\metre\per\second}$. Trascurando l'attrito dell'aria, dopo quanto tempo si ferma nel punto più alto? (In salita l'accelerazione è $-g$.)\\
+\risp{$t \approx \SI{1,5}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto di Formula 1 entra in un rettilineo a \SI{160}{\kilo\metre\per\hour} e accelera in modo uniforme a \SI{9,0}{\metre\per\second\squared} per \SI{3,0}{\second}. Qual è la sua velocità finale, in chilometri all'ora?\\
+\risp{$v \approx \SI{71}{\metre\per\second} \approx \SI{257}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\section{Leggi orarie e grafici}
+
+Sappiamo calcolare la \emph{velocità} a ogni istante, sia nel moto uniforme sia in quello uniformemente accelerato. Ci manca la \textbf{legge oraria} del moto accelerato, cioè la formula che dà la \emph{posizione}. La ricaveremo con un'idea semplice e potente: nel grafico velocità--tempo, lo spazio percorso è un'\textbf{area}.
+
+\subsection{Lo spazio percorso è l'area sotto il grafico \texorpdfstring{$v$--$t$}{v-t}}
+Partiamo dal moto uniforme. Un corpo che viaggia a velocità costante $v$ per un tempo $t$ percorre lo spazio $\Delta s = v\,t$. Ma $v\,t$ è esattamente l'\textbf{area del rettangolo} di base $t$ e altezza $v$ che sta sotto il grafico $v$--$t$ (figura~\ref{fig:area-mru}, a sinistra). Questa osservazione ha valore generale.
+
+\begin{definizione}
+In un grafico velocità--tempo, l'\textbf{area} compresa fra la linea che rappresenta la velocità, l'asse dei tempi e i segmenti verticali tracciati negli istanti iniziale e finale è uguale allo \textbf{spazio percorso} dal corpo in quell'intervallo.
+\end{definizione}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        name=ax1,
+        width=0.46\linewidth, height=4.8cm,
+        ylabel={$v$},
+        xtick={4}, xticklabels={$t$}, ytick={4}, yticklabels={$v$},
+        xmin=0, xmax=5, ymin=0, ymax=6,
+        axis lines=left, clip=false,
+        tick label style={font=\footnotesize},
+    ]
+    \fill[ocre!18] (axis cs:0,0) rectangle (axis cs:4,4);
+    \addplot[ocre, very thick] coordinates {(0,4)(4,4)};
+    \draw[dashed,gray] (axis cs:4,0) -- (axis cs:4,4);
+    \node[font=\footnotesize] at (axis cs:2,2) {$\Delta s = v\,t$};
+    \end{axis}
+    \begin{axis}[
+        name=ax2, at={($(ax1.east)+(1.6cm,0)$)}, anchor=west,
+        width=0.46\linewidth, height=4.8cm,
+        ylabel={$v$},
+        xtick={4}, xticklabels={$t$}, ytick={5}, yticklabels={$v$},
+        xmin=0, xmax=5, ymin=0, ymax=6,
+        axis lines=left, clip=false,
+        tick label style={font=\footnotesize},
+    ]
+    \fill[ocre!18] (axis cs:0,0) -- (axis cs:4,5) -- (axis cs:4,0) -- cycle;
+    \addplot[ocre, very thick] coordinates {(0,0)(4,5)};
+    \draw[dashed,gray] (axis cs:4,0) -- (axis cs:4,5);
+    \node[font=\footnotesize] at (axis cs:2.7,1.4) {$\Delta s = \tfrac{1}{2}v\,t$};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{A sinistra: moto uniforme, lo spazio percorso è l'area di un rettangolo. A destra: moto uniformemente accelerato che parte da fermo, l'area è quella di un triangolo.}
+    \label{fig:area-mru}
+\end{figure}
+
+\subsection{La legge oraria del moto accelerato (partenza da fermo)}
+In un moto uniformemente accelerato con velocità iniziale nulla, il grafico $v$--$t$ è una semiretta uscente dall'origine (figura~\ref{fig:area-mru}, a destra). L'area sotto di essa, fino all'istante $t$, è quella di un \textbf{triangolo rettangolo} di base $t$ e altezza $v$:
+\[ \Delta s = \frac{v \cdot t}{2}. \]
+Ma in questo moto $v = a\,t$; sostituendo,
+\[ \Delta s = \frac{(a\,t)\cdot t}{2} = \frac{1}{2}\,a\,t^2. \]
+
+\begin{definizione}
+In un moto uniformemente accelerato che parte da fermo, con partenza dall'origine, la \textbf{legge oraria} è
+\[ \colorboxed{ocre}{ s = \frac{1}{2}\,a\,t^2. } \]
+Lo spazio percorso è \textbf{direttamente proporzionale al quadrato del tempo}: in un tempo doppio si percorre uno spazio quattro volte maggiore, in un tempo triplo nove volte maggiore.
+\end{definizione}
+
+Se si riportano su un grafico $s$--$t$ i valori dati da questa legge, non si ottiene più una retta ma una \textbf{parabola} (figura~\ref{fig:st-parabola}): all'inizio la curva sale piano (il corpo è lento), poi sempre più ripida (il corpo accelera).
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\linewidth, height=5.5cm,
+        xlabel={$t$ (s)}, ylabel={$s$ (m)},
+        xmin=0, xmax=6.3, ymin=0, ymax=42,
+        xtick={0,1,...,6}, ytick={0,10,...,40},
+        grid=both, grid style={gray!20},
+    ]
+    \addplot[ocre, very thick, samples=50, domain=0:6] {0.5*2*x^2};
+    \addplot[only marks, mark=*, mark size=1.2pt, black]
+        coordinates {(0,0)(1,1)(2,4)(3,9)(4,16)(5,25)(6,36)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Grafico spazio--tempo di un moto uniformemente accelerato che parte da fermo ($a = \SI{2}{\metre\per\second\squared}$): è una parabola.}
+    \label{fig:st-parabola}
+\end{figure}
+
+\subsection{Il caso generale}
+Se il corpo parte da una posizione $s_0$ con una velocità iniziale $v_0$, l'area sotto il grafico $v$--$t$ (che ora è un \textbf{trapezio}) si spezza in due pezzi: un rettangolo di area $v_0\,t$ e un triangolo di area $\tfrac{1}{2}a\,t^2$. Aggiungendo la posizione di partenza $s_0$ si ottiene la legge oraria completa:
+\[ \colorboxed{ocre}{ s = s_0 + v_0\,t + \frac{1}{2}\,a\,t^2. } \]
+
+\begin{remark}
+La formula generale contiene come casi particolari tutte le altre:
+\begin{itemize}
+    \item se il corpo parte dall'origine, $s_0 = 0$;
+    \item se parte da fermo, $v_0 = 0$ e sparisce il termine $v_0\,t$;
+    \item se l'accelerazione è nulla, sparisce il termine $\tfrac{1}{2}a\,t^2$ e resta $s = s_0 + v_0\,t$, la legge oraria del moto uniforme.
+\end{itemize}
+\end{remark}
+
+Anche in caduta libera la legge oraria si ottiene ponendo $a = g$: partendo da fermo, lo spazio di caduta in un tempo $t$ è
+\[ \Delta s = \frac{1}{2}\,g\,t^2. \]
+
+\begin{testexample}[\thetcbcounter \, Spazio percorso da un'auto che accelera]
+Un'automobile parte da ferma con accelerazione costante $a = \SI{3,0}{\metre\per\second\squared}$. Quanto spazio percorre nei primi \SI{5,0}{\second}?
+
+Usiamo la legge oraria con $v_0 = 0$:
+\[ \Delta s = \frac{1}{2}\,a\,t^2 = \frac{1}{2}\cdot 3{,}0 \cdot (5{,}0)^2 = \frac{1}{2}\cdot 3{,}0 \cdot 25 = \SI{37,5}{\metre}. \]
+Verifichiamo con l'area: dopo \SI{5,0}{\second} la velocità è $v = a\,t = \SI{15}{\metre\per\second}$, e l'area del triangolo è $\tfrac{1}{2}\cdot 15 \cdot 5{,}0 = \SI{37,5}{\metre}$. Coincide.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Un treno che parte dalla stazione]
+Un treno esce dalla stazione: all'istante $t = 0$ ha già una velocità $v_0 = \SI{10}{\metre\per\second}$ e accelera in modo uniforme con $a = \SI{0,5}{\metre\per\second\squared}$. Che distanza ha percorso dopo \SI{20}{\second}?
+
+Con $s_0 = 0$:
+\[ s = v_0\,t + \frac{1}{2}\,a\,t^2 = 10 \cdot 20 + \frac{1}{2}\cdot 0{,}5 \cdot (20)^2 = 200 + 100 = \SI{300}{\metre}. \]
+Il primo termine (\SI{200}{\metre}) è lo spazio che avrebbe percorso restando a \SI{10}{\metre\per\second}; il secondo (\SI{100}{\metre}) è il ``di più'' dovuto all'accelerazione.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Lo spazio di frenata]
+Un'automobile viaggia a $v_0 = \SI{25}{\metre\per\second}$ e frena con decelerazione costante di \SI{5,0}{\metre\per\second\squared}. Quanto spazio percorre prima di fermarsi?
+
+Prima troviamo \emph{quando} si ferma, con la legge della velocità: $0 = 25 - 5{,}0\,t$, da cui $t = \SI{5,0}{\second}$. Poi applichiamo la legge oraria con $a = \SI{-5,0}{\metre\per\second\squared}$:
+\[ \Delta s = v_0\,t + \frac{1}{2}\,a\,t^2 = 25 \cdot 5{,}0 + \frac{1}{2}\cdot(-5{,}0)\cdot(5{,}0)^2 = 125 - 62{,}5 = \SI{62,5}{\metre}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un ciclista viaggia a velocità costante di \SI{15}{\metre\per\second} per \SI{12}{\second}. Ricava lo spazio percorso come area del grafico velocità--tempo.\\
+\risp{$\Delta s = \SI{180}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto parte da ferma con accelerazione costante di \SI{2,0}{\metre\per\second\squared}. Che spazio percorre in \SI{6,0}{\second}?\\
+\risp{$\Delta s = \SI{36}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso è lasciato cadere da fermo (attrito dell'aria trascurabile). Di quanto scende in \SI{2,0}{\second}? E in \SI{4,0}{\second}? Confronta i due valori.\\
+\risp{$\SI{19,6}{\metre}$ e \SI{78,5}{\metre}: in un tempo doppio lo spazio è quadruplo}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto parte da ferma con accelerazione costante e percorre \SI{50}{\metre} nei primi \SI{5,0}{\second}. Qual è la sua accelerazione?\\
+\risp{$a = \SI{4,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso cade da fermo da un ponte alto \SI{45}{\metre} (attrito trascurabile). Dopo quanto tempo tocca l'acqua? Con che velocità vi arriva?\\
+\risp{$t \approx \SI{3,0}{\second}$; \; $v \approx \SI{29,7}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Il moto di un camion è descritto dalla legge oraria $s = 10\,t + 0{,}25\,t^2$ (unità del SI). Indica la velocità iniziale e l'accelerazione, poi calcola la posizione a $t = \SI{10}{\second}$.\\
+\risp{$v_0 = \SI{10}{\metre\per\second}$; \; $a = \SI{0,50}{\metre\per\second\squared}$; \; $s = \SI{125}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile a \SI{108}{\kilo\metre\per\hour} frena con decelerazione costante di \SI{6,0}{\metre\per\second\squared}. Calcola il tempo e lo spazio necessari per fermarsi.\\
+\risp{$t = \SI{5,0}{\second}$; \; $\Delta s = \SI{75}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Per stimare la profondità di un pozzo si lascia cadere un sasso: si sente il tonfo nell'acqua dopo \SI{2,0}{\second}. Trascurando l'attrito dell'aria e il tempo di propagazione del suono, quanto è profondo il pozzo?\\
+\risp{profondità $\approx \SI{19,6}{\metre}$}
+\end{esercizio}
+
+\subsection{Il lancio verticale e la caduta dei gravi}
+Mettiamo insieme quanto visto per studiare il moto di un corpo che si muove \emph{solo verticalmente} sotto l'effetto della gravità, trascurando l'attrito dell'aria. È un moto uniformemente accelerato, e l'unica accelerazione in gioco è quella di gravità: costante, diretta \textbf{sempre verso il basso}, sia mentre il corpo sale, sia nel punto più alto, sia mentre scende.
+
+\begin{remark}
+Conviene fissare una volta per tutte un asse verticale con \textbf{origine nel punto di lancio} e \textbf{verso positivo verso l'alto}. Con questa scelta l'accelerazione è $a = -g$ (punta verso il basso), e le due leggi diventano:
+\[ v = v_0 - g\,t, \qquad s = v_0\,t - \frac{1}{2}\,g\,t^2. \]
+Una quota $s > 0$ è sopra il punto di lancio, $s < 0$ sotto; una velocità $v > 0$ è diretta verso l'alto, $v < 0$ verso il basso.
+\end{remark}
+
+\subsubsection{Lancio verso l'alto}
+Un corpo lanciato verticalmente verso l'alto con velocità $v_0$ rallenta ($a = -g$), si ferma un istante nel punto più alto, poi ricade accelerando. Dalle due leggi si ricavano i risultati classici:
+\begin{itemize}
+    \item \textbf{tempo di salita}: nel punto più alto $v = 0$, quindi da $0 = v_0 - g\,t$ si ha
+    \[ t_\text{sal} = \frac{v_0}{g}; \]
+    \item \textbf{altezza massima}: si sostituisce $t_\text{sal}$ nella legge oraria,
+    \[ h_\text{max} = v_0\,t_\text{sal} - \frac{1}{2}\,g\,t_\text{sal}^2 = \frac{v_0^2}{2g}; \]
+    \item \textbf{simmetria}: la discesa fino al punto di lancio dura quanto la salita, e il corpo torna al punto di partenza con velocità di \emph{modulo} $v_0$, diretta però verso il basso. Il \textbf{tempo di volo} totale (fino al ritorno alla quota di partenza) è $t_\text{volo} = 2\,v_0/g$.
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \draw[->,thick] (0,-0.3) -- (0,5.2) node[left]{$s$};
+        \fill (0,0) circle (1.6pt) node[left=2pt]{$O$};
+        % punto più alto
+        \fill (1.5,4.4) circle (1.6pt);
+        \node[right] at (1.65,4.4) {\footnotesize $v = 0$};
+        \draw[dashed,gray] (0,4.4) -- (1.5,4.4);
+        \node[gray,left] at (0,4.4) {$h_\text{max}$};
+        % traiettoria (salita e discesa disegnate affiancate per chiarezza)
+        \draw[ocre,thick] (1.2,0) .. controls (1.3,3.4) .. (1.5,4.4);
+        \draw[blue!60!black,thick] (1.5,4.4) .. controls (1.7,3.4) .. (1.8,0);
+        % frecce velocità
+        \draw[->,very thick,ocre] (1.05,0.6) -- (1.05,1.9) node[midway,left]{$v_0$};
+        \node[ocre,anchor=north east] at (1.15,-0.05) {\footnotesize salita};
+        \draw[->,very thick,blue!60!black] (1.95,1.9) -- (1.95,0.6) node[midway,right]{$v_0$};
+        \node[blue!60!black,anchor=north west] at (1.85,-0.05) {\footnotesize discesa};
+    \end{tikzpicture}
+    \caption{Lancio verticale verso l'alto (le due fasi sono disegnate affiancate solo per chiarezza: il moto avviene lungo la verticale). In salita, arancione, la velocità diminuisce; nel punto più alto è nulla; in discesa, blu, riaumenta. Il corpo torna al punto di lancio con la stessa velocità in modulo, dopo un tempo doppio di quello di salita.}
+    \label{fig:lancio-verticale}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Una palla lanciata in alto]
+Una palla è lanciata verticalmente verso l'alto con velocità $v_0 = \SI{18}{\metre\per\second}$. Trascurando l'attrito dell'aria, calcoliamo il tempo di salita, l'altezza massima, il tempo di volo e la velocità con cui torna al punto di lancio.
+
+Con l'asse rivolto verso l'alto e origine nel punto di lancio, $a = -g$.
+\emph{Tempo di salita} (quando $v = 0$):
+\[ t_\text{sal} = \frac{v_0}{g} = \frac{18}{9{,}81} \approx \SI{1,8}{\second}. \]
+\emph{Altezza massima}:
+\[ h_\text{max} = v_0\,t_\text{sal} - \frac{1}{2}\,g\,t_\text{sal}^2 \approx 18 \cdot 1{,}8 - \frac{1}{2}\cdot 9{,}81 \cdot (1{,}8)^2 \approx \SI{16,5}{\metre}. \]
+\emph{Tempo di volo}: $t_\text{volo} = 2\,t_\text{sal} \approx \SI{3,7}{\second}$.
+\emph{Velocità di ritorno}: con $t = t_\text{volo}$, $v = v_0 - g\,t_\text{volo} = 18 - 9{,}81\cdot 3{,}67 \approx \SI{-18}{\metre\per\second}$: stesso modulo della velocità di lancio, ma diretta verso il basso.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Un vaso che cade da un balcone]
+Un vaso cade (da fermo) da un balcone alto \SI{12}{\metre}. Dopo quanto tocca terra? Con che velocità?
+
+Qui conviene prendere l'asse rivolto \emph{verso il basso}, con origine sul balcone: allora $a = +g$, $v_0 = 0$ e la legge di caduta è $s = \tfrac{1}{2}\,g\,t^2$. Il vaso tocca terra quando $s = \SI{12}{\metre}$:
+\[ 12 = \frac{1}{2}\cdot 9{,}81 \cdot t^2 \;\Longrightarrow\; t^2 = \frac{24}{9{,}81} \approx 2{,}45 \;\Longrightarrow\; t \approx \SI{1,6}{\second}. \]
+La velocità di impatto si trova con la legge della velocità:
+\[ v = g\,t \approx 9{,}81 \cdot 1{,}56 \approx \SI{15,3}{\metre\per\second} \approx \SI{55}{\kilo\metre\per\hour}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un sasso è lanciato verticalmente verso l'alto con $v_0 = \SI{25}{\metre\per\second}$. Calcola il tempo di salita e l'altezza massima raggiunta.\\
+\risp{$t_\text{sal} \approx \SI{2,5}{\second}$; \; $h_\text{max} \approx \SI{31,9}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un oggetto lasciato cadere da fermo tocca il suolo dopo \SI{1,8}{\second}. Da che altezza è caduto? Con che velocità arriva a terra? (Attrito dell'aria trascurabile.)\\
+\risp{$h \approx \SI{15,9}{\metre}$; \; $v \approx \SI{17,7}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una pallina lanciata verticalmente verso l'alto ricade nel punto di partenza dopo \SI{4,0}{\second} complessivi. Con che velocità era stata lanciata? Quanto è salita?\\
+\risp{$v_0 \approx \SI{19,6}{\metre\per\second}$; \; $h_\text{max} \approx \SI{19,6}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Da un elicottero fermo in volo si lascia cadere un pacco, che raggiunge il suolo con una velocità di \SI{30}{\metre\per\second}. A che quota si trovava l'elicottero? (Attrito dell'aria trascurabile.)\\
+\risp{$h \approx \SI{45,9}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Da un ponte alto \SI{20}{\metre} un sasso viene lanciato verso il basso con velocità iniziale di \SI{5,0}{\metre\per\second}. Dopo quanto tempo tocca l'acqua? Con che velocità? (Suggerimento: risolvi l'equazione $20 = 5{,}0\,t + \tfrac{1}{2}\,g\,t^2$.)\\
+\risp{$t \approx \SI{1,6}{\second}$; \; $v \approx \SI{20,4}{\metre\per\second}$}
+\end{esercizio}
+
+\subsection{Una formula senza il tempo}
+Le due leggi del moto uniformemente accelerato -- $v = v_0 + a\,t$ e $s = s_0 + v_0\,t + \tfrac{1}{2}a\,t^2$ -- contengono entrambe il tempo. A volte, però, il tempo non è noto e non interessa: si conoscono la velocità iniziale, quella finale e lo spazio percorso, e si cerca l'accelerazione (o viceversa). In questi casi torna utile una terza relazione, che si ottiene \emph{eliminando il tempo} fra le due.
+
+Dalla legge della velocità si ricava $t = \dfrac{v - v_0}{a}$; sostituendo nello spazio percorso $\Delta s = v_0\,t + \tfrac{1}{2}a\,t^2$ e semplificando si arriva a:
+\[ \colorboxed{ocre}{ v^2 = v_0^2 + 2\,a\,\Delta s. } \]
+
+\begin{remark}
+Questa formula non aggiunge nulla di nuovo: dà gli stessi risultati che si otterrebbero applicando in due passi le due leggi precedenti (prima si ricava il tempo, poi si sostituisce). È solo una scorciatoia comoda quando nel problema il tempo non compare. Attenzione ai segni: in una frenata $a$ è negativa, e $\Delta s$ va preso con il segno dello spostamento.
+\end{remark}
+
+Come caso particolare, l'altezza massima di un lancio verticale si ritrova subito ponendo $v = 0$, $a = -g$ e $\Delta s = h_\text{max}$:
+\[ 0 = v_0^2 - 2\,g\,h_\text{max} \;\Longrightarrow\; h_\text{max} = \frac{v_0^2}{2g}. \]
+
+\begin{testexample}[\thetcbcounter \, Lo spazio di frenata, in un passo solo]
+Un'automobile viaggia a $v_0 = \SI{30}{\metre\per\second}$ e frena con decelerazione costante di \SI{5,0}{\metre\per\second\squared}. Quanto spazio percorre prima di fermarsi?
+
+La velocità finale è $v = 0$ e l'accelerazione $a = \SI{-5,0}{\metre\per\second\squared}$. Dalla formula senza il tempo:
+\[ 0 = v_0^2 + 2\,a\,\Delta s \;\Longrightarrow\; \Delta s = -\frac{v_0^2}{2a} = -\frac{(30)^2}{2\cdot(-5{,}0)} = \frac{900}{10} = \SI{90}{\metre}. \]
+Lo stesso risultato si otterrebbe trovando prima il tempo di arresto ($t = \SI{6,0}{\second}$) e poi applicando la legge oraria: i due metodi sono equivalenti.
+\end{testexample}
+
+\begin{esercizio}
+Un aereo da turismo parte da fermo e accelera in modo uniforme a \SI{3,0}{\metre\per\second\squared}; si stacca da terra quando raggiunge \SI{60}{\metre\per\second}. Qual è la lunghezza minima della pista?\\
+\risp{$\Delta s = \dfrac{v^2}{2a} = \SI{600}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso cade da fermo da un ponte alto \SI{45}{\metre} (attrito trascurabile). Con che velocità arriva all'acqua? Usa la formula senza il tempo.\\
+\risp{$v = \sqrt{2\,g\,\Delta s} \approx \SI{29,7}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Nella canna di una carabina, lunga \SI{0,60}{\metre}, il proiettile viene accelerato da fermo fino a \SI{380}{\metre\per\second}. Qual è l'accelerazione media nella canna?\\
+\risp{$a = \dfrac{v^2}{2\,\Delta s} \approx \SI{1,2e5}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un treno accelera in modo uniforme da \SI{12}{\metre\per\second} a \SI{30}{\metre\per\second} percorrendo \SI{525}{\metre}. Qual è la sua accelerazione?\\
+\risp{$a = \dfrac{v^2 - v_0^2}{2\,\Delta s} \approx \SI{0,72}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\section{Problemi di riepilogo}
+
+\begin{esercizio}
+Un'escursionista cammina per \SI{300}{\metre} verso Nord, poi \SI{400}{\metre} verso Est, poi \SI{300}{\metre} verso Sud. Calcola lo spazio percorso e il modulo dello spostamento.\\
+\risp{$\Delta s = \SI{1000}{\metre}$; \; spostamento $= \SI{400}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile percorre \SI{40}{\kilo\metre} di autostrada in \SI{30}{\minute}, poi \SI{12}{\kilo\metre} di città in altri \SI{30}{\minute}. Qual è la sua velocità media sull'intero tragitto?\\
+\risp{$v_m = \SI{52}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+Chi si muove più velocemente: un ciclista a \SI{30}{\kilo\metre\per\hour} o un corridore a \SI{9,0}{\metre\per\second}?\\
+\risp{il corridore: $\SI{9,0}{\metre\per\second} = 9{,}0 \cdot 3{,}6 = \SI{32,4}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto (\SI{20}{\metre\per\second}) e un camion (\SI{15}{\metre\per\second}) partono nello stesso istante dallo stesso punto, nello stesso verso, ciascuno di moto uniforme. Che distanza li separa dopo \SI{40}{\second}?\\
+\risp{$\SI{200}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo si muove con legge oraria $s = 500 - 25\,t$ (unità del SI). Da quale posizione parte? In quale verso si muove? Dopo quanto tempo passa per l'origine?\\
+\risp{$s_0 = \SI{500}{\metre}$; \; verso negativo ($v = \SI{-25}{\metre\per\second}$); \; $t = \SI{20}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Sulla stessa strada rettilinea, all'istante $t = 0$, un'auto parte dall'origine a \SI{12}{\metre\per\second} e un'altra parte da \SI{600}{\metre} venendo in senso opposto a \SI{8,0}{\metre\per\second}. Dove e quando si incontrano?\\
+\risp{a $t = \SI{30}{\second}$, nella posizione $s = \SI{360}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile rallenta uniformemente da \SI{108}{\kilo\metre\per\hour} a \SI{72}{\kilo\metre\per\hour} in \SI{8,0}{\second}. Calcola la sua accelerazione media.\\
+\risp{$a_m = \SI{-1,25}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto parte da ferma con accelerazione costante di \SI{2,5}{\metre\per\second\squared}. Che velocità raggiunge dopo \SI{6,0}{\second}? Quanto spazio ha percorso?\\
+\risp{$v = \SI{15}{\metre\per\second}$; \; $\Delta s = \SI{45}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile a \SI{25}{\metre\per\second} frena con decelerazione costante di \SI{6,25}{\metre\per\second\squared}. In quanti metri si ferma? (Usa la formula senza il tempo.)\\
+\risp{$\Delta s = \dfrac{v_0^2}{2\,|a|} = \SI{50}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso è lasciato cadere da fermo (attrito dell'aria trascurabile). Dopo \SI{3,0}{\second}, che velocità ha e quanto è sceso?\\
+\risp{$v \approx \SI{29,4}{\metre\per\second}$; \; $\Delta s \approx \SI{44,1}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Da un ponte alto \SI{30}{\metre} si lascia cadere un sasso. Dopo quanto tempo tocca l'acqua? Con che velocità? (Attrito dell'aria trascurabile.)\\
+\risp{$t \approx \SI{2,5}{\second}$; \; $v \approx \SI{24,3}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un pallone viene calciato verticalmente verso l'alto con velocità iniziale di \SI{22}{\metre\per\second}. Qual è l'altezza massima raggiunta? Dopo quanto tempo ricade al suolo (alla quota di partenza)?\\
+\risp{$h_\text{max} \approx \SI{24,7}{\metre}$; \; $t_\text{volo} \approx \SI{4,5}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un carrello scende da fermo lungo una guida rettilinea liscia, lunga \SI{3,0}{\metre} e alta \SI{0,45}{\metre}. Calcola l'accelerazione e la velocità che il carrello ha dopo \SI{1,5}{\second}.\\
+\risp{$a \approx \SI{1,47}{\metre\per\second\squared}$; \; $v \approx \SI{2,2}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un veicolo accelera in modo uniforme da \SI{5,0}{\metre\per\second} a \SI{25}{\metre\per\second} in \SI{10}{\second}. Ricava lo spazio percorso come area del grafico velocità--tempo.\\
+\risp{$\Delta s = \SI{150}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto parte da ferma e percorre \SI{100}{\metre} in \SI{8,0}{\second} con accelerazione costante. Calcola l'accelerazione e la velocità raggiunta alla fine dei \SI{100}{\metre}.\\
+\risp{$a \approx \SI{3,1}{\metre\per\second\squared}$; \; $v = \SI{25}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un guidatore viaggia a \SI{30}{\metre\per\second}. Vede un ostacolo, impiega \SI{0,80}{\second} a reagire (durante i quali procede a velocità costante), poi frena con decelerazione di \SI{7,5}{\metre\per\second\squared}. Qual è lo spazio totale di arresto?\\
+\risp{$\SI{24}{\metre}$ (reazione) $+\ \SI{60}{\metre}$ (frenata) $=\ \SI{84}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un treno parte da fermo, accelera in modo uniforme a \SI{0,80}{\metre\per\second\squared} per \SI{15}{\second}, poi prosegue a velocità costante. Quale velocità raggiunge? Che spazio percorre nei primi \SI{15}{\second}? E complessivamente dopo \SI{60}{\second} dalla partenza?\\
+\risp{$v = \SI{12}{\metre\per\second}$; \; \SI{90}{\metre}; \; \SI{630}{\metre}}
+\end{esercizio}
+
+\begin{esercizio}
+Da un ponte alto \SI{25}{\metre} un sasso viene lanciato verso il basso con velocità iniziale di \SI{8,0}{\metre\per\second}. Dopo quanto tempo tocca l'acqua? Con che velocità? (Risolvi $25 = 8{,}0\,t + \tfrac{1}{2}\,g\,t^2$.)\\
+\risp{$t \approx \SI{1,6}{\second}$; \; $v \approx \SI{23,5}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Da quale altezza deve cadere liberamente un corpo per arrivare a terra con la stessa velocità che avrebbe scendendo da fermo lungo una rampa liscia lunga \SI{8,0}{\metre} e alta \SI{2,0}{\metre}?\\
+\risp{$h = \SI{2,0}{\metre}$ (la velocità finale dipende solo dal dislivello, non dalla lunghezza del percorso)}
+\end{esercizio}

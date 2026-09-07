@@ -11,10 +11,14 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - **`appunti-new.tex`** — master: `\input{preambolo}`, `\begin{document}`, la
   lista degli `\include{capitoli/NN-...}`, `\end{document}`.
 - **`preambolo.tex`** — preambolo completo (pacchetti, macro, stili, `\title`).
-- **`capitoli/`** — un file per capitolo, senza preambolo:
+- **`capitoli/`** — un file per capitolo, senza preambolo (file NN = capitolo N):
   `00-prefazione` (via `\input`), `01-misura-grandezze`, `02-errori-misura`,
-  `03-relazioni-laboratorio`, `04-statistica`, `05-grandezze-vettoriali-forze`,
-  `06-equilibrio-corpi-solidi`, `07-equilibrio-fluidi`.
+  `03-grafici-misure`, `04-relazioni-grandezze`, `05-relazioni-laboratorio`,
+  `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
+  `09-equilibrio-fluidi`, `10-moto-rettilineo`.
+  NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
+  `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
+  successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
 - Per lavorare su un solo capitolo: scommentare la riga `\includeonly{...}` nel
   master (serve una compilazione completa prima, per avere i `.aux` degli altri
   capitoli → riferimenti incrociati OK). Testato: `\includeonly` cap. 6 → 26 pag.
@@ -153,13 +157,40 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   Problemi di riepilogo (19). Verifiche: `verifica/cap-fluidi.py`.
   Nuove unità siunitx nel preambolo: `\bar`, `\mmHg`, `\atm`.
 
+### Cap. "Il moto rettilineo" (Unità 6) — COMPLETO (`capitoli/10-moto-rettilineo.tex`)
+- Cap. 10. §9.1 lo studio del moto (punto materiale, sistema di riferimento,
+  spazio percorso vs spostamento) · §9.2 la velocità (media, km/h↔m/s, grafici
+  $s$–$t$ e $v$–$t$, istantanea) · §9.3 moto rettilineo uniforme (legge oraria
+  $s=s_0+vt$, pendenza) · §9.4 accelerazione (media, $v$–$t$, istantanea) · §9.5
+  MRUA (legge della velocità, $g$, piano inclinato $a=g\,h/l$) · §9.6 leggi
+  orarie e grafici (area = spazio; $s=\tfrac12at^2$; caso generale; §9.6.4 lancio
+  verticale e caduta dei gravi — AGGIUNTA oltre il libro; §9.6.5 formula senza il
+  tempo $v^2=v_0^2+2a\Delta s$ — AGGIUNTA) · §9.7 Problemi di riepilogo (19).
+  Verifiche: `verifica/cap-moto-rettilineo.py`. Fonte: Unità 6. COMPLETO.
+- Fix preambolo: `\micro` di siunitx NON si stampa (glifo tofu) — evitato nel cap.
+  con notazione scientifica; serve soluzione vera per l'elettricità (vedi memoria).
+
+### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
+- Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
+  è cap. 3) perché ne usa i grafici e ne scioglie il rinvio alla "proporzionalità
+  inversa". §4.1 diretta ($y=kx$, retta per l'origine; circonferenza, $V=Ah$ nel
+  cilindro, densità, Hooke, moto uniforme) · §4.2 inversa ($xy=k$, iperbole,
+  linearizzazione con $1/x$; rettangoli area fissa, $vt=d$, Boyle) · §4.3
+  quadratica ($y=kx^2$, parabola; area quadrato/cerchio, caduta libera) · §4.4
+  inverso del quadrato ($y=k/x^2$; stesso liquido in cilindri di diametro diverso,
+  $h\propto 1/d^2$; cenno gravità/luce) · §4.5 riconoscere la relazione da
+  tabella/grafico · §4.6 Problemi di riepilogo (13). 6 figure TikZ/pgfplots
+  originali. Verifiche: `verifica/cap-relazioni-grandezze.py`.
+
 ### Split del sorgente
 - `appunti-new.tex` scomposto in `preambolo.tex` + `capitoli/*.tex` (un file per
   capitolo) inclusi con `\include`; master con `\includeonly` pronto all'uso.
+- "Grafici di misure" separato in `03-grafici-misure.tex`; capitoli rinumerati
+  (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **181 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~40 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **224 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~50 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -179,23 +210,17 @@ riferimento indefinito; ~40 overfull hbox residui = Passo 4).
 
 ## Lavoro rimanente
 
-1. **Cap. "Cinematica"** — PROSSIMO. Fonte: `tecnologico.pdf` **Unità 6 "Il moto
-   rettilineo"** (pp. stampate 204–239 = PDF 224–259) e **Unità 7 "Il moto nel
-   piano"** (pp. 240–269 = PDF 260–289). Scansione del libro:
-   - Unità 6: (1) lo studio del moto — sistemi di riferimento, posizione,
-     spostamento, traiettoria · (2) la velocità (media, istantanea) · (3) moto
-     rettilineo uniforme · (4) l'accelerazione · (5) moto rettilineo
-     uniformemente accelerato · (6) leggi orarie e grafici ($s$–$t$, $v$–$t$).
-   - Unità 7: (1) moto circolare uniforme · (2) velocità angolare · (3) moto
-     armonico · (4) moto parabolico · (5) composizione dei moti.
-   - Decidere se un unico capitolo "Cinematica" o due capitoli. Chiudere con
-     "Problemi di riepilogo". Nuovo file `capitoli/08-cinematica.tex` (o
-     `08-...` / `09-...`), `verifica/cap-cinematica.py`.
+1. **Cap. "Il moto nel piano"** (Unità 7, pp. stampate 240–269 = PDF 260–289) —
+   PROSSIMO: moto circolare uniforme · velocità angolare · moto armonico · moto
+   parabolico · composizione dei moti. Nuovo file `capitoli/11-moto-nel-piano.tex`,
+   `verifica/cap-moto-nel-piano.py`. (Deciso: due capitoli separati, non uno solo.)
 2. (Più avanti) altri capitoli: dinamica (Unità 7–8 principi), lavoro ed
    energia (Unità 9–10), termologia, calore — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~40 overfull hbox,
-   il glifo `—` mancante in `capitoli/06-...` (usare `--` o `\textemdash`).
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~50 overfull hbox (in
+   gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
+   il glifo `—` mancante in `capitoli/08-equilibrio-corpi-solidi.tex`, e il
+   prefisso `\micro` di siunitx (vedi memoria).
 4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.

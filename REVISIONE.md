@@ -30,29 +30,40 @@
 >     → verso le zone dense; esempio sbarretta Al+Fe con semplificazione del
 >     volume) e remark in §7.3.2 (polo libero per l'equilibrio rotazionale se la
 >     risultante è nulla). 181 pagine.
->   - [ ] **PROSSIMO: Cap. "Cinematica"** — Unità 6 "Il moto rettilineo"
->     (pp. 204–239) + Unità 7 "Il moto nel piano" (pp. 240–269). Seguire la
->     scansione del libro. Vedi CLAUDE.md per il dettaglio delle sezioni.
+>   - [x] Cap. "Il moto rettilineo" (Unità 6) — cap. 10 `10-moto-rettilineo.tex`.
+>     COMPLETO: §1–6 + §6.4 lancio verticale e §6.5 formula senza tempo (aggiunte
+>     oltre il libro, su richiesta) + §7 Problemi di riepilogo (19).
+>     `verifica/cap-moto-rettilineo.py`.
+>   - [x] Cap. NUOVO "Relazioni tra grandezze" — cap. 4 `04-relazioni-grandezze.tex`
+>     (richiesto dall'utente; non nel libro). Diretta/inversa/quadratica/inverso
+>     del quadrato + riconoscere la relazione + 13 problemi. 6 figure originali.
+>     Collocato dopo "Grafici di misure" (ora cap. 3, separato in file proprio).
+>   - [x] Split di `02-errori-misura.tex`: "Grafici di misure" → `03-grafici-misure.tex`;
+>     capitoli successivi rinumerati (file NN = capitolo N).
+>   - [ ] **PROSSIMO: Cap. "Il moto nel piano"** (Unità 7) → `11-moto-nel-piano.tex`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **181 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~40 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **224 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~50 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
 singolo capitolo.
 
-Struttura attuale (`capitoli/`, nell'ordine degli `\include`):
+Struttura attuale (`capitoli/`, file NN = capitolo N):
 
 1. `01-misura-grandezze` (grandezze, S.I., sensibilità, §1.8 calibro a corsoio, cifre significative, area/volume, densità)
-2. `02-errori-misura` (misure ripetute, incertezza relativa, confronto, propagazione max e in quadratura, grafico a mano, §rette di max/min pendenza, foglio di calcolo)
-3. `03-relazioni-laboratorio` (schema ufficiale Keynes + esempi svolti: studio del moto, legge di Hooke, secondo principio, caduta su piano inclinato, attrito statico)
-4. `04-statistica` (gaussiana, istogrammi, regressione lineare)
-5. `05-grandezze-vettoriali-forze` (ampliamento, Unità 3)
-6. `06-equilibrio-corpi-solidi` (ampliamento, Unità 4)
-7. `07-equilibrio-fluidi` (ampliamento, Unità 5)
+2. `02-errori-misura` (misure ripetute, incertezza relativa, confronto, propagazione max e in quadratura)
+3. `03-grafici-misure` (grafico a mano, §rette di max/min pendenza, foglio di calcolo) — era annidato in `02-…`
+4. `04-relazioni-grandezze` (NUOVO: proporzionalità diretta/inversa/quadratica/inverso del quadrato; riconoscere la relazione)
+5. `05-relazioni-laboratorio` (schema ufficiale Keynes + esempi svolti: studio del moto, legge di Hooke, secondo principio, caduta su piano inclinato, attrito statico)
+6. `06-statistica` (gaussiana, istogrammi, regressione lineare)
+7. `07-grandezze-vettoriali-forze` (ampliamento, Unità 3)
+8. `08-equilibrio-corpi-solidi` (ampliamento, Unità 4)
+9. `09-equilibrio-fluidi` (ampliamento, Unità 5)
+10. `10-moto-rettilineo` (ampliamento, Unità 6 — manca §9.7 problemi di riepilogo)
 
-I capitoli di teoria (5–7, e i prossimi) sono in coda; da valutare una Parte II
+I capitoli di teoria (7–10, e i prossimi) sono in coda; da valutare una Parte II
 "Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
 
 ---
