@@ -40,11 +40,19 @@
 >     Collocato dopo "Grafici di misure" (ora cap. 3, separato in file proprio).
 >   - [x] Split di `02-errori-misura.tex`: "Grafici di misure" → `03-grafici-misure.tex`;
 >     capitoli successivi rinumerati (file NN = capitolo N).
->   - [ ] **PROSSIMO: Cap. "Il moto nel piano"** (Unità 7) → `11-moto-nel-piano.tex`.
+>   - [x] Cap. "Il moto nel piano" (Unità 7) — cap. 11 `11-moto-nel-piano.tex`.
+>     COMPLETO: §11.1 moto circolare uniforme (T, f, giri/min, $a_c=v^2/r$) ·
+>     §11.2 velocità angolare (radiante, $\omega$, $v=\omega r$, $a_c=\omega^2 r$) ·
+>     §11.3 moto armonico ($s=A\cos\omega t$, cosinusoide, $a=-\omega^2 s$) ·
+>     §11.4 moto parabolico (lancio orizzontale/obliquo, $h$, gittata, $45^\circ$) ·
+>     §11.5 composizione dei moti (spostamenti/velocità/accelerazioni; nuotatore
+>     nel fiume; cenno principio di relatività) · §11.6 riepilogo (19).
+>     11 figure TikZ/pgfplots. `verifica/cap-moto-nel-piano.py`.
+>     NB: `°` letterale non si stampa con questo font (esce «ř») → usare `^\circ`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **224 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~50 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **250 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~55 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
@@ -144,13 +152,12 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
 - **Grandezze vettoriali e forze** (Unità 3) — FATTO, `capitoli/05-...`.
 - **Equilibrio dei corpi solidi / statica** (Unità 4) — FATTO, `capitoli/06-...`.
 - **Equilibrio dei fluidi** (Unità 5) — FATTO, `capitoli/07-...`.
-- **Cinematica** (Unità 6 "Il moto rettilineo" + Unità 7 "Il moto nel piano") — PROSSIMO:
-  studio del moto e sistemi di riferimento, velocità media/istantanea, moto rettilineo
-  uniforme, accelerazione, moto uniformemente accelerato, leggi orarie e grafici
-  $s$–$t$/$v$–$t$; poi moto circolare uniforme, velocità angolare, moto armonico, moto
-  parabolico, composizione dei moti. (Aggancio naturale alle relazioni del cap. 3.)
-- **Dinamica** (Unità 7 "I princìpi della dinamica" + Unità 8): i tre principi, massa vs
-  peso, forze apparenti, forza gravitazionale, satelliti.
+- **Cinematica** (Unità 6 "Il moto rettilineo" + Unità 7 "Il moto nel piano") — FATTO,
+  `capitoli/10-...` e `capitoli/11-...` (moto rettilineo uniforme/accelerato, leggi
+  orarie e grafici; moto circolare uniforme, velocità angolare, moto armonico, moto
+  parabolico, composizione dei moti).
+- **Dinamica** (Unità 7 "I princìpi della dinamica" + Unità 8) — PROSSIMO: i tre
+  principi, massa vs peso, forze apparenti, forza gravitazionale, satelliti.
 - **Lavoro ed energia** (Unità 9) e **princìpi di conservazione** (Unità 10).
 - **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
   calorimetro, passaggi di stato, propagazione del calore.

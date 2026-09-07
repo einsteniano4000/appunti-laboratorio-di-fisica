@@ -15,7 +15,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `00-prefazione` (via `\input`), `01-misura-grandezze`, `02-errori-misura`,
   `03-grafici-misure`, `04-relazioni-grandezze`, `05-relazioni-laboratorio`,
   `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
-  `09-equilibrio-fluidi`, `10-moto-rettilineo`.
+  `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`.
   NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
   `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
   successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
@@ -25,7 +25,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **181**).
+  per verificare riferimenti e conteggio pagine (attualmente **250**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -170,6 +170,28 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 - Fix preambolo: `\micro` di siunitx NON si stampa (glifo tofu) — evitato nel cap.
   con notazione scientifica; serve soluzione vera per l'elettricità (vedi memoria).
 
+### Cap. "Il moto nel piano" (Unità 7) — COMPLETO (`capitoli/11-moto-nel-piano.tex`)
+- Cap. 11. §11.1 moto circolare uniforme (vettore velocità tangente; $T$;
+  $v=2\pi r/T$; frequenza $f=1/T$, hertz, giri/min; $v=2\pi r f$; accelerazione
+  centripeta $a_c=v^2/r$ verso il centro) · §11.2 velocità angolare (radiante
+  = arco/raggio, $360^\circ=2\pi$ rad, $1$ rad $\approx 57{,}3^\circ$;
+  $\omega=\Delta\alpha/\Delta t$ in rad/s; $\omega=2\pi/T=2\pi f$; $v=\omega r$;
+  $a_c=\omega^2 r$; remark corpo rigido = stesso $\omega$, $v$ diverso) · §11.3
+  moto armonico (proiezione del m.c.u. sul diametro; centro/ampiezza/periodo;
+  legge oraria $s=A\cos(\omega t)$, $\omega$ pulsazione; grafico = cosinusoide;
+  $a=-\omega^2 s$) · §11.4 moto parabolico (lancio orizzontale $x=v_0 t$,
+  $y=\tfrac12 g t^2$, traiettoria parabola; lancio obliquo $v_x=v_0\cos\alpha$,
+  $v_y=v_0\sin\alpha$, $h=v_y^2/2g$, gittata $s_x=2v_x v_y/g$, massima a
+  $45^\circ$) · §11.5 composizione dei moti (spostamenti $\Delta\vec s=\Delta\vec
+  s'+\Delta\vec s_t$; velocità $\vec v=\vec v'+\vec v_t$, caso perpendicolare →
+  Pitagora, es. nuotatore nel fiume; accelerazioni $\vec a=\vec a'$ se
+  trascinamento uniforme → cenno principio di relatività) · §11.6 Problemi di
+  riepilogo (19). 11 figure TikZ/pgfplots originali (tangenti calcolate dalla
+  derivata della traiettoria). Verifiche: `verifica/cap-moto-nel-piano.py`.
+  Nuove unità siunitx usate: `\radian`, `\radian\per\second`, `\hertz`, `\degree`.
+  NB: il carattere `°` letterale NON si stampa con questo font (esce «ř») —
+  usare sempre `^\circ` o `\SI{}{\degree}`.
+
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
   è cap. 3) perché ne usa i grafici e ne scioglie il rinvio alla "proporzionalità
@@ -189,8 +211,8 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **224 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~50 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **250 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~55 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -210,12 +232,12 @@ riferimento indefinito; ~50 overfull hbox residui = Passo 4).
 
 ## Lavoro rimanente
 
-1. **Cap. "Il moto nel piano"** (Unità 7, pp. stampate 240–269 = PDF 260–289) —
-   PROSSIMO: moto circolare uniforme · velocità angolare · moto armonico · moto
-   parabolico · composizione dei moti. Nuovo file `capitoli/11-moto-nel-piano.tex`,
-   `verifica/cap-moto-nel-piano.py`. (Deciso: due capitoli separati, non uno solo.)
-2. (Più avanti) altri capitoli: dinamica (Unità 7–8 principi), lavoro ed
-   energia (Unità 9–10), termologia, calore — vedi §F di REVISIONE.md.
+1. **Cap. "Il moto nel piano"** (Unità 7) — FATTO (`capitoli/11-moto-nel-piano.tex`,
+   cap. 11). Vedi sopra "Lavoro fatto". Prossimo passo della cinematica: nessuno,
+   si passa alla dinamica.
+2. **PROSSIMO — dinamica** (Unità 7–8: i tre princìpi, massa vs peso, forze
+   apparenti, forza gravitazionale, satelliti). Poi lavoro ed energia (Unità
+   9–10), termologia, calore — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
    (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~50 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
