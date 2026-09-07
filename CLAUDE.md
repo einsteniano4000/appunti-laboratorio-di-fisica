@@ -16,7 +16,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `03-grafici-misure`, `04-relazioni-grandezze`, `05-relazioni-laboratorio`,
   `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
   `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`,
-  `12-principi-dinamica`, `13-forza-gravitazionale`.
+  `12-principi-dinamica`, `13-forza-gravitazionale`, `14-lavoro-energia`.
   NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
   `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
   successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
@@ -26,7 +26,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **283**).
+  per verificare riferimenti e conteggio pagine (attualmente **308**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -215,7 +215,25 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   accelerazione di gravità $g=GM/R^2$; $g$ su altri pianeti; $g$ con l'altezza ·
   §13.5 moto dei satelliti: $v=\sqrt{GM/(R+h)}$, $T=2\pi(R+h)/v$; geostazionario ·
   §13.6 Problemi di riepilogo (16). 5 figure TikZ. Verifiche:
-  `verifica/cap-forza-gravitazionale.py`. Prossimo (Unità 9): lavoro ed energia.
+  `verifica/cap-forza-gravitazionale.py`.
+
+### Cap. "Lavoro ed energia" (Unità 9, "Energia e lavoro") — COMPLETO (`capitoli/14-lavoro-energia.tex`)
+- Cap. 14. §14.1 il lavoro ($L=F\,s\cos\alpha$, joule; motore/resistente/nullo;
+  lavoro di più forze) · §14.2 potenza e rendimento ($P=L/\Delta t$, watt;
+  $P=F\,v$; potenza utile/assorbita/persa; $r=P_\text{u}/P_\text{a}$) · §14.3
+  energia cinetica ($E_\text{c}=\tfrac12 m v^2$; effetto di una forza: //, ⊥,
+  obliqua; teorema dell'energia cinetica $L_\text{tot}=\Delta E_\text{c}$; spazio
+  di frenata $s=v^2/(2kg)$, indipendente dalla massa) · §14.4 energia potenziale
+  gravitazionale ($E_\text{p}=mgh$; scelta del livello di riferimento, $E_\text{p}$
+  può essere negativa; forze conservative vs dissipative; $L_\text{peso}=-\Delta
+  E_\text{p}$; energia dissipata dall'attrito) · §14.5 lavoro ed energia nei corpi
+  elastici (lavoro di forza variabile = area sotto $F$–$s$; energia potenziale
+  elastica $E_\text{e}=\tfrac12 k s^2$) · §14.6 i mille volti dell'energia (forme
+  di energia; principio di conservazione; macchine e rendimento in energia; il
+  kilowattora, $\SI{1}{kWh}=\SI{3,6}{MJ}$) · §14.7 Problemi di riepilogo (20).
+  4 figure TikZ originali. Verifiche: `verifica/cap-lavoro-energia.py` (tutte OK).
+  Prossimo (Unità 10): princìpi di conservazione (energia meccanica, quantità di
+  moto).
 
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
@@ -236,8 +254,8 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **283 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~60 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **308 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~68 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -257,10 +275,11 @@ riferimento indefinito; ~60 overfull hbox residui = Passo 4).
 
 ## Lavoro rimanente
 
-1. **Cinematica (Unità 6–7)** e **dinamica + gravitazione (Unità 8)** — FATTE
-   (capitoli 10–13). Vedi sopra "Lavoro fatto".
-2. **PROSSIMO — Lavoro ed energia** (Unità 9) e **princìpi di conservazione**
-   (Unità 10). Poi termologia e calore — vedi §F di REVISIONE.md.
+1. **Cinematica (Unità 6–7)**, **dinamica + gravitazione (Unità 8)** e **lavoro
+   ed energia (Unità 9)** — FATTE (capitoli 10–14). Vedi sopra "Lavoro fatto".
+2. **PROSSIMO — Princìpi di conservazione** (Unità 10): conservazione dell'energia
+   meccanica, quantità di moto e sua conservazione, urti. Poi termologia e calore
+   — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
    (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~60 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),

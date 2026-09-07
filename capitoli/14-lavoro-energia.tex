@@ -1,0 +1,736 @@
+\chapter{Lavoro ed energia}
+
+Nei capitoli precedenti abbiamo imparato a descrivere il moto (cinematica) e a collegarlo alle forze (dinamica). Restano però fuori dal quadro alcune domande naturali: quanto ``costa'' sollevare un carico o accelerare un'automobile? Perché un martello che si muove veloce riesce a piantare un chiodo, mentre lo stesso martello fermo non fa nulla? Per rispondere servono due nuove grandezze, strettamente legate fra loro: il \textbf{lavoro} e l'\textbf{energia}.
+
+Sono concetti che attraversano tutta la fisica -- dalla meccanica alla termologia, dall'elettricità alla fisica nucleare -- e che permettono di trattare in modo unitario fenomeni all'apparenza lontanissimi. In questo capitolo li introduciamo nel contesto della meccanica: definiamo il lavoro di una forza, la potenza, l'energia cinetica e l'energia potenziale, e vediamo come una forma di energia si trasformi continuamente in un'altra.
+
+\section{Il lavoro}
+
+\subsection{Le forze e lo spostamento}
+
+Una colonna di pietra può sostenere il peso di un intero edificio: esercita quindi una forza enorme. Eppure questa forza non sposta nulla, perché il suo punto di applicazione resta fermo. In fisica diciamo che la colonna \emph{non compie lavoro}.
+
+Quando invece spingiamo un carrello e questo avanza, la nostra forza \emph{provoca uno spostamento}: in questo caso diciamo che essa \textbf{compie lavoro}. Il lavoro è la grandezza che mette in relazione una forza con lo spostamento del suo punto di applicazione.
+
+Se la forza $\vec F$ è parallela allo spostamento $\vec s$ e ha lo stesso verso, il lavoro è semplicemente il prodotto dei due moduli:
+\[ L = F\,s. \]
+In generale, però, la forza forma un angolo $\alpha$ con lo spostamento (figura~\ref{fig:lavoro-componente}). In tal caso solo la \textbf{componente della forza parallela allo spostamento}, $F_\parallel = F\cos\alpha$, contribuisce al lavoro; la componente perpendicolare $F_\perp$ non sposta il corpo lungo la direzione del moto e non compie lavoro.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \draw[gray!45] (-0.4,0) -- (6.2,0);
+        \draw[fill=ocre!12,draw=gray!60] (0,0) rectangle (1.2,0.8);
+        \draw[->,thick,blue!60!black] (0.6,-0.45) -- (4.8,-0.45) node[midway,below]{$\vec s$};
+        \coordinate (A) at (1.2,0.4);
+        \draw[->,very thick,ocre] (A) -- ++(1.97,1.38) node[above right]{$\vec F$};
+        \draw[->,thick,red!70!black] (A) -- ++(1.97,0) node[pos=0.75,below=1pt]{$\vec F_\parallel$};
+        \draw[->,thick,blue!60!black] (A) -- ++(0,1.38) node[midway,left=1pt]{$\vec F_\perp$};
+        \draw[dashed,gray!70] ($(A)+(1.97,0)$) -- ($(A)+(1.97,1.38)$);
+        \draw (A)++(0.85,0) arc (0:35:0.85);
+        \node at ($(A)+(1.08,0.27)$) {\footnotesize $\alpha$};
+    \end{tikzpicture}
+    \caption{La forza $\vec F$ forma un angolo $\alpha$ con lo spostamento $\vec s$. Solo la componente parallela $F_\parallel = F\cos\alpha$ compie lavoro.}
+    \label{fig:lavoro-componente}
+\end{figure}
+
+\begin{definizione}
+Il \textbf{lavoro} $L$ compiuto da una forza costante $\vec F$, quando il suo punto di applicazione subisce uno spostamento $\vec s$, è il prodotto della componente della forza parallela allo spostamento per il modulo dello spostamento:
+\[ \colorboxed{ocre}{ L = F_\parallel\, s = F\,s\cos\alpha } \]
+dove $\alpha$ è l'angolo compreso fra $\vec F$ e $\vec s$.
+\end{definizione}
+
+Nel Sistema Internazionale il lavoro si misura in \textbf{joule} (simbolo \si{\joule}), dal nome del fisico inglese James Prescott Joule. Un joule è il lavoro compiuto da una forza di \SI{1}{\newton} il cui punto di applicazione si sposta di \SI{1}{\metre} nella direzione della forza:
+\[ \SI{1}{\joule} = \SI{1}{\newton} \cdot \SI{1}{\metre}. \]
+
+\begin{remark}
+Il lavoro è una grandezza \textbf{scalare}: non ha direzione né verso. Ha però un \emph{segno}, che dipende dall'angolo $\alpha$ e quindi dal fattore $\cos\alpha$. Ricorda che il coseno di un angolo maggiore di $90^\circ$ (e minore di $270^\circ$) è negativo; in particolare $\cos 90^\circ = 0$ e $\cos 180^\circ = -1$.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Il lavoro di una spinta obliqua]
+Una persona spinge una valigia su un carrello applicando una forza di \SI{25}{\newton} inclinata di $60^\circ$ rispetto all'orizzontale. Il carrello avanza in orizzontale di \SI{8,0}{\metre}. Quanto lavoro compie la persona?
+
+Solo la componente orizzontale della forza compie lavoro:
+\[ L = F\,s\cos\alpha = \SI{25}{\newton} \cdot \SI{8,0}{\metre} \cdot \cos 60^\circ = \SI{25}{\newton} \cdot \SI{8,0}{\metre} \cdot 0{,}50 = \SI{100}{\joule}. \]
+La componente verticale della forza (diretta verso il basso) non compie lavoro, perché lo spostamento è orizzontale.
+\end{testexample}
+
+\subsection{Lavoro motore, resistente, nullo}
+
+A seconda del valore dell'angolo $\alpha$, il lavoro di una forza può essere positivo, negativo o nullo (figura~\ref{fig:lavoro-segni}):
+\begin{itemize}
+    \item se $\alpha < 90^\circ$ la componente parallela ha lo stesso verso dello spostamento: il lavoro è \textbf{positivo} e si dice \textbf{lavoro motore} (la forza favorisce il moto);
+    \item se $\alpha = 90^\circ$ la forza è perpendicolare allo spostamento: il lavoro è \textbf{nullo}. È il caso della reazione vincolare di un piano, della forza centripeta nel moto circolare uniforme e della forza-peso quando lo spostamento è orizzontale;
+    \item se $\alpha > 90^\circ$ la componente parallela ha verso opposto allo spostamento: il lavoro è \textbf{negativo} e si dice \textbf{lavoro resistente} (la forza ostacola il moto). Le forze di attrito dinamico e la resistenza dell'aria compiono sempre lavoro resistente.
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=0.95]
+        \foreach \x/\ang/\lab/\sub in {0/35/{$L>0$}/{lavoro motore}, 4.2/90/{$L=0$}/{lavoro nullo}, 8.4/145/{$L<0$}/{lavoro resistente}}{
+            \begin{scope}[shift={(\x,0)}]
+                \draw[gray!45] (-0.3,0) -- (2.9,0);
+                \draw[fill=ocre!12,draw=gray!60] (0.55,0) rectangle (1.35,0.7);
+                \draw[->,thick,blue!60!black] (0.95,-0.4) -- (2.6,-0.4) node[midway,below]{\footnotesize $\vec s$};
+                \draw[->,very thick,ocre] (0.95,0.7) -- ++(\ang:1.25);
+                \node[font=\footnotesize,ocre] at ($(0.95,0.7)+(\ang:1.5)$) {$\vec F$};
+                \node[font=\footnotesize] at (1.3,-1.2) {\lab};
+                \node[font=\scriptsize\itshape] at (1.3,-1.55) {\sub};
+            \end{scope}
+        }
+    \end{tikzpicture}
+    \caption{Il segno del lavoro dipende dall'angolo fra la forza e lo spostamento: motore se acuto, nullo se retto, resistente se ottuso.}
+    \label{fig:lavoro-segni}
+\end{figure}
+
+\subsection{Il lavoro di più forze}
+
+Se su un corpo agiscono contemporaneamente più forze, ciascuna compie il proprio lavoro in modo indipendente dalle altre. Il \textbf{lavoro totale} si può calcolare in due modi equivalenti:
+\begin{itemize}
+    \item sommando \emph{algebricamente} (cioè con il loro segno) i lavori delle singole forze;
+    \item calcolando prima la risultante $\vec F$ delle forze e poi il lavoro di $\vec F$.
+\end{itemize}
+
+\begin{testexample}[\thetcbcounter \, La cassa trascinata sul pavimento]
+Una cassa viene trascinata in orizzontale per \SI{6,0}{\metre} da una fune parallela al pavimento che esercita una forza di \SI{250}{\newton}. L'attrito fra cassa e pavimento vale \SI{40}{\newton}. Qual è il lavoro totale?
+
+Il lavoro della fune è motore, quello dell'attrito è resistente:
+\[ L_{\text{fune}} = \SI{250}{\newton} \cdot \SI{6,0}{\metre} = \SI{1500}{\joule}, \qquad L_{\text{attr}} = -\,\SI{40}{\newton} \cdot \SI{6,0}{\metre} = -\,\SI{240}{\joule}. \]
+Il peso della cassa e la reazione del pavimento sono perpendicolari allo spostamento e non compiono lavoro. Il lavoro totale è
+\[ L_{\text{tot}} = \SI{1500}{\joule} - \SI{240}{\joule} = \SI{1260}{\joule}. \]
+Si ottiene lo stesso risultato calcolando il lavoro della forza risultante, di modulo $\SI{250}{\newton} - \SI{40}{\newton} = \SI{210}{\newton}$: $L = \SI{210}{\newton} \cdot \SI{6,0}{\metre} = \SI{1260}{\joule}$.
+\end{testexample}
+
+\begin{esercizio}
+Una forza costante di \SI{60}{\newton}, parallela allo spostamento, agisce su un corpo che percorre \SI{4,0}{\metre}. Quanto lavoro compie? E se la stessa forza formasse un angolo di $60^\circ$ con lo spostamento?\\
+\risp{$L = \SI{240}{\joule}$; \; con l'angolo $L = \SI{240}{\joule} \cdot \cos 60^\circ = \SI{120}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un bambino trascina una slitta per \SI{12}{\metre} tirando la corda con una forza di \SI{120}{\newton} inclinata di $60^\circ$ rispetto al terreno. L'attrito vale \SI{15}{\newton}. Calcola il lavoro compiuto dal bambino, quello dell'attrito e il lavoro totale.\\
+\risp{$L_{\text{bambino}} = 120 \cdot 12 \cdot \cos 60^\circ = \SI{720}{\joule}$; \; $L_{\text{attr}} = -15 \cdot 12 = \SI{-180}{\joule}$; \; $L_{\text{tot}} = \SI{540}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un uomo trascina a velocità costante una cassa di massa \SI{25}{\kilo\gram} su per un piano inclinato alto \SI{4,0}{\metre} e lungo \SI{30}{\metre}. L'attrito fra cassa e piano vale \SI{25}{\newton} e la forza dell'uomo è parallela al piano. Calcola il lavoro compiuto dall'uomo. (Suggerimento: a velocità costante la forza dell'uomo equilibra la componente del peso parallela al piano più l'attrito; la componente parallela del peso vale $P_\parallel = mg\,h/l$.)\\
+\risp{$P_\parallel = 25 \cdot 9{,}81 \cdot \tfrac{4{,}0}{30} \approx \SI{32,7}{\newton}$; \; $F = 32{,}7 + 25 \approx \SI{57,7}{\newton}$; \; $L = F \cdot l \approx \SI{1,7e3}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un cameriere porta un vassoio del peso di \SI{8,0}{\newton} tenendolo alla stessa altezza e percorrendo in orizzontale \SI{10}{\metre}. Quanto lavoro compie la forza con cui la mano sostiene il vassoio? Perché?\\
+\risp{$L = 0$: la forza è verticale, lo spostamento orizzontale, quindi $\alpha = 90^\circ$ e $\cos\alpha = 0$}
+\end{esercizio}
+
+\begin{esercizio}
+Su un blocco che scivola per \SI{3,0}{\metre} su un piano orizzontale agisce una forza di attrito dinamico di \SI{12}{\newton}. Quanto lavoro compie l'attrito?\\
+\risp{$L = -12 \cdot 3{,}0 = \SI{-36}{\joule}$ (lavoro resistente)}
+\end{esercizio}
+
+\begin{esercizio}
+In palestra un atleta solleva \num{30} volte un bilanciere di massa \SI{40}{\kilo\gram}, ogni volta di \SI{50}{\centi\metre}. Qual è il lavoro complessivo compiuto nelle fasi di sollevamento? (Considera solo la salita.)\\
+\risp{$L = 30 \cdot m g h = 30 \cdot 40 \cdot 9{,}81 \cdot 0{,}50 \approx \SI{5,9e3}{\joule}$}
+\end{esercizio}
+
+\section{Potenza e rendimento}
+\label{sec:potenza-rendimento}
+
+\subsection{Il lavoro e il tempo impiegato}
+
+Due gru sollevano un carico identico alla stessa altezza, compiendo quindi lo \emph{stesso} lavoro; ma la prima impiega \SI{30}{\second}, la seconda solo \SI{10}{\second}. Il lavoro non basta a descrivere la differenza fra le due macchine: la seconda è più \emph{efficace}, perché svolge lo stesso compito più rapidamente. Per tenere conto del tempo impiegato a compiere un certo lavoro si introduce la \textbf{potenza}.
+
+\begin{definizione}
+La \textbf{potenza} $P$ è il rapporto fra il lavoro $L$ compiuto e l'intervallo di tempo $\Delta t$ impiegato per compierlo:
+\[ \colorboxed{ocre}{ P = \frac{L}{\Delta t} } \]
+\end{definizione}
+
+Anche la potenza è una grandezza scalare. Nel Sistema Internazionale si misura in \textbf{watt} (simbolo \si{\watt}), dal nome dell'ingegnere scozzese James Watt: \SI{1}{\watt} corrisponde a un lavoro di \SI{1}{\joule} compiuto in \SI{1}{\second},
+\[ \SI{1}{\watt} = \SI{1}{\joule\per\second}. \]
+Il watt è un'unità piccola, e spesso si usano i suoi multipli: il \textbf{kilowatt} ($\SI{1}{\kilo\watt} = \SI{1000}{\watt}$), il \textbf{megawatt} ($\SI{1}{\mega\watt} = \SI{e6}{\watt}$), il \textbf{gigawatt} ($\SI{1}{\giga\watt} = \SI{e9}{\watt}$). In ambito motoristico sopravvive anche una vecchia unità, il \emph{cavallo vapore} (CV o HP), pari a circa \SI{735}{\watt} (la versione inglese, $\SI{1}{HP} \approx \SI{745,7}{\watt}$).
+
+\begin{testexample}[\thetcbcounter \, Le due gru]
+Ciascuna gru solleva un carico di \SI{500}{\newton} fino a un'altezza di \SI{4,0}{\metre}. Il lavoro è lo stesso per entrambe:
+\[ L = P_{\text{carico}} \cdot h = \SI{500}{\newton} \cdot \SI{4,0}{\metre} = \SI{2000}{\joule}. \]
+Se la prima gru impiega \SI{25}{\second} e la seconda \SI{8,0}{\second}, le potenze sono
+\[ P_1 = \frac{\SI{2000}{\joule}}{\SI{25}{\second}} = \SI{80}{\watt}, \qquad P_2 = \frac{\SI{2000}{\joule}}{\SI{8,0}{\second}} = \SI{250}{\watt}. \]
+\end{testexample}
+
+\subsection{Potenza e velocità}
+
+Supponiamo che una forza $\vec F$ costante agisca su un corpo che si sposta di un tratto $s$, parallelo alla forza, in un intervallo di tempo $\Delta t$. La potenza è
+\[ P = \frac{L}{\Delta t} = \frac{F\,s}{\Delta t} = F\,\frac{s}{\Delta t}. \]
+Se il corpo si muove a velocità costante, il rapporto $s/\Delta t$ è la sua velocità $v$, e quindi
+
+\[ \colorboxed{ocre}{ P = F\,v } \]
+
+La potenza che una forza deve fornire per far avanzare un corpo a velocità costante è il prodotto della forza per la velocità.
+
+\begin{testexample}[\thetcbcounter \, La potenza del motore di un'automobile]
+Per mantenere la velocità costante di \SI{72}{\kilo\metre\per\hour} un'automobile deve vincere forze di attrito (con l'aria e con l'asfalto) che complessivamente valgono \SI{1500}{\newton}. Quale potenza sviluppa il motore?
+
+Convertiamo la velocità: $v = \SI{72}{\kilo\metre\per\hour} = \SI{20}{\metre\per\second}$. Allora
+\[ P = F\,v = \SI{1500}{\newton} \cdot \SI{20}{\metre\per\second} = \SI{30000}{\watt} = \SI{30}{\kilo\watt}. \]
+\end{testexample}
+
+\subsection{Potenza utile, potenza assorbita, rendimento}
+
+Nessuna macchina reale restituisce sotto forma di lavoro utile tutta la potenza che riceve: una parte viene sempre spesa per vincere gli attriti interni, la resistenza dell'aria, la deformazione degli organi in movimento, e si disperde nell'ambiente sotto forma di calore. Distinguiamo perciò due grandezze (figura~\ref{fig:macchina-blocchi}):
+\begin{itemize}
+    \item la \textbf{potenza assorbita} $P_{\text{a}}$, cioè la potenza che la macchina riceve per funzionare;
+    \item la \textbf{potenza utile} $P_{\text{u}}$, cioè la potenza effettivamente disponibile all'uscita, sotto forma di lavoro utile nell'unità di tempo.
+\end{itemize}
+La differenza $P_{\text{a}} - P_{\text{u}}$ è la \textbf{potenza persa}, sempre maggiore di zero.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \draw[fill=ocre!12,draw=gray!60] (0,0) rectangle (3.2,1.6);
+        \node at (1.6,0.8) {\footnotesize macchina};
+        \draw[->,very thick,ocre] (-2.1,0.8) -- (0,0.8) node[midway,above]{\footnotesize $P_{\text{a}}$};
+        \node[font=\scriptsize,align=center] at (-2.1,0.25) {potenza\\assorbita};
+        \draw[->,very thick,blue!60!black] (3.2,0.8) -- (5.3,0.8) node[midway,above]{\footnotesize $P_{\text{u}}$};
+        \node[font=\scriptsize,align=center] at (5.3,0.25) {potenza\\utile};
+        \draw[->,very thick,red!70!black] (1.6,1.6) -- (1.6,2.6) node[midway,right]{\footnotesize $P_{\text{persa}}$ (calore, attriti)};
+    \end{tikzpicture}
+    \caption{In ogni macchina la potenza utile in uscita è minore della potenza assorbita in ingresso: la differenza è la potenza persa.}
+    \label{fig:macchina-blocchi}
+\end{figure}
+
+\begin{definizione}
+Il \textbf{rendimento} $r$ di una macchina è il rapporto fra la potenza utile e la potenza assorbita:
+\[ \colorboxed{ocre}{ r = \frac{P_{\text{u}}}{P_{\text{a}}} } \]
+È un numero puro, compreso fra $0$ e $1$, spesso espresso in percentuale. Poiché la potenza persa non è mai nulla, il rendimento di una macchina reale è sempre minore di $1$ (cioè del $100\%$).
+\end{definizione}
+
+\begin{remark}
+Poiché $L = P\,\Delta t$, nello stesso intervallo di tempo il rendimento si può calcolare anche come rapporto fra il lavoro utile e il lavoro (o l'energia) assorbito: $r = L_{\text{u}}/L_{\text{a}}$. Il valore non cambia.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Il rendimento di un montacarichi]
+Un montacarichi assorbe una potenza di \SI{5,0}{\kilo\watt} e solleva il carico con una potenza utile di \SI{4,0}{\kilo\watt}. Qual è il rendimento? Quanta potenza si perde?
+\[ r = \frac{P_{\text{u}}}{P_{\text{a}}} = \frac{\SI{4,0}{\kilo\watt}}{\SI{5,0}{\kilo\watt}} = 0{,}80 = 80\%. \]
+La potenza persa è $P_{\text{a}} - P_{\text{u}} = \SI{1,0}{\kilo\watt}$, dissipata in calore negli attriti del meccanismo.
+\end{testexample}
+
+\begin{esercizio}
+Una gru solleva un carico di massa \SI{600}{\kilo\gram} fino a un'altezza di \SI{18}{\metre} in \SI{7,0}{\second}. Quale potenza sviluppa il motore della gru?\\
+\risp{$L = mgh \approx \SI{1,06e5}{\joule}$; \; $P = L/\Delta t \approx \SI{1,5e4}{\watt} = \SI{15}{\kilo\watt}$}
+\end{esercizio}
+
+\begin{esercizio}
+Per vincere gli attriti e mantenere la velocità costante di \SI{120}{\kilo\metre\per\hour}, il motore di un'automobile sviluppa una potenza di \SI{27}{\kilo\watt}. Calcola il modulo complessivo delle forze di attrito che agiscono sull'automobile.\\
+\risp{$v = \SI{120}{\kilo\metre\per\hour} \approx \SI{33,3}{\metre\per\second}$; \; $F = P/v \approx \SI{810}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un motore elettrico assorbe una potenza di \SI{2,0}{\kilo\watt} e ha un rendimento dell'$80\%$. Qual è la sua potenza utile? Quanta energia dissipa in \SI{10}{\minute} di funzionamento?\\
+\risp{$P_{\text{u}} = 0{,}80 \cdot \SI{2,0}{\kilo\watt} = \SI{1,6}{\kilo\watt}$; \; $P_{\text{persa}} = \SI{0,4}{\kilo\watt}$, \; $E = P_{\text{persa}}\,\Delta t = 400 \cdot 600 = \SI{2,4e5}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una macchina ha un rendimento del $72\%$. Se deve erogare una potenza utile di \SI{400}{\watt}, quale potenza assorbe?\\
+\risp{$P_{\text{a}} = P_{\text{u}}/r = 400/0{,}72 \approx \SI{5,6e2}{\watt}$}
+\end{esercizio}
+
+\begin{esercizio}
+Il motore di un'automobile eroga una potenza di \SI{90}{\kilo\watt}. A quanti cavalli vapore (HP) corrisponde? ($\SI{1}{HP} \approx \SI{745,7}{\watt}$.)\\
+\risp{$\num{90000}/745{,}7 \approx \num{121}$ HP}
+\end{esercizio}
+
+\begin{esercizio}
+Un montacarichi solleva a velocità costante un carico di peso \SI{4000}{\newton} fino a un'altezza di \SI{45}{\metre} in \SI{40}{\second}. Qual è la potenza sviluppata dal motore? (Trascura gli attriti.)\\
+\risp{$L = 4000 \cdot 45 = \SI{1,8e5}{\joule}$; \; $P = L/\Delta t = \SI{4,5e3}{\watt} = \SI{4,5}{\kilo\watt}$}
+\end{esercizio}
+
+\begin{esercizio}
+A un concorso, un ragazzo di massa \SI{70}{\kilo\gram} esegue \num{20} trazioni alla sbarra in \SI{40}{\second}, sollevando ogni volta il proprio baricentro di \SI{30}{\centi\metre}. Quale potenza sviluppa nelle fasi di sollevamento?\\
+\risp{$L = 20 \cdot mgh = 20 \cdot 70 \cdot 9{,}81 \cdot 0{,}30 \approx \SI{4120}{\joule}$; \; $P = L/\Delta t \approx \SI{103}{\watt}$}
+\end{esercizio}
+
+\section{L'energia cinetica}
+
+\subsection{L'energia di movimento}
+
+Immaginiamo un carrello che, muovendosi, urta una pallina ferma e la spinge in avanti: durante l'urto il carrello esercita una forza sulla pallina e ne provoca lo spostamento, quindi \emph{compie un lavoro} su di essa. Un carrello fermo, invece, non sposta nulla.
+
+Quando un corpo, per il fatto di trovarsi in una certa condizione, è in grado di compiere un lavoro, diciamo che possiede \textbf{energia}. Un corpo in movimento possiede dunque energia in virtù della sua velocità: la chiamiamo \textbf{energia cinetica} (dal greco \emph{kín\=esis}, movimento). Ci aspettiamo che dipenda sia dalla massa del corpo sia dalla sua velocità: un camion lanciato a \SI{50}{\kilo\metre\per\hour} è molto più temibile di una bicicletta alla stessa velocità, e la stessa bicicletta a \SI{40}{\kilo\metre\per\hour} lo è più che a \SI{10}{\kilo\metre\per\hour}.
+
+L'energia, come il lavoro, è una grandezza scalare e nel Sistema Internazionale si misura in \textbf{joule}.
+
+\subsection{La definizione di energia cinetica}
+
+Si dimostra -- lo faremo fra poco con il teorema dell'energia cinetica -- che l'energia di movimento di un corpo è data dalla formula seguente.
+
+\begin{definizione}
+L'\textbf{energia cinetica} $E_\text{c}$ di un corpo di massa $m$ che si muove con velocità di modulo $v$ è il semiprodotto della massa per il quadrato della velocità:
+\[ \colorboxed{ocre}{ E_\text{c} = \frac{1}{2}\,m\,v^2 } \]
+\end{definizione}
+
+Verifichiamo che l'unità di misura è effettivamente il joule:
+\[ \si{\kilo\gram} \cdot (\si{\metre\per\second})^2 = (\si{\kilo\gram\metre\per\square\second}) \cdot \si{\metre} = \si{\newton} \cdot \si{\metre} = \si{\joule}. \]
+
+\begin{remark}
+L'energia cinetica dipende dal \emph{quadrato} della velocità: se la velocità raddoppia, l'energia cinetica diventa quattro volte più grande; se triplica, diventa nove volte più grande. È il motivo per cui, alle alte velocità, un piccolo aumento dell'andatura allunga di molto lo spazio necessario a fermarsi.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, L'energia cinetica di un'automobile]
+Un'automobile di massa \SI{1000}{\kilo\gram} viaggia a \SI{108}{\kilo\metre\per\hour}. Qual è la sua energia cinetica?
+
+Convertiamo la velocità: $v = \SI{108}{\kilo\metre\per\hour} = \SI{30}{\metre\per\second}$. Allora
+\[ E_\text{c} = \frac{1}{2}\,m\,v^2 = \frac{1}{2} \cdot \SI{1000}{\kilo\gram} \cdot (\SI{30}{\metre\per\second})^2 = \SI{4,5e5}{\joule} = \SI{450}{\kilo\joule}. \]
+Se la stessa automobile viaggiasse a \SI{54}{\kilo\metre\per\hour} (velocità dimezzata), la sua energia cinetica sarebbe un quarto: \SI{112,5}{\kilo\joule}.
+\end{testexample}
+
+\subsection{L'effetto di una forza sull'energia cinetica}
+
+Che cosa succede all'energia cinetica di un corpo quando su di esso agisce una forza? Per il secondo principio della dinamica la forza produce un'accelerazione, cioè cambia la velocità del corpo. Distinguiamo tre casi:
+\begin{itemize}
+    \item la forza è \textbf{parallela alla velocità}: se ha lo stesso verso, il modulo della velocità aumenta e l'energia cinetica cresce (la forza compie lavoro motore); se ha verso opposto, la velocità diminuisce e l'energia cinetica cala (lavoro resistente);
+    \item la forza è \textbf{perpendicolare alla velocità}: cambia la direzione del moto ma non il modulo della velocità. L'energia cinetica \emph{non varia}. È il caso della forza centripeta nel moto circolare uniforme;
+    \item la forza forma un \textbf{angolo qualsiasi} con la velocità: si scompone in una componente parallela, che modifica il modulo della velocità e quindi l'energia cinetica, e una perpendicolare, che ne cambia solo la direzione.
+\end{itemize}
+
+\subsection{Il teorema dell'energia cinetica}
+
+Colleghiamo ora quantitativamente il lavoro all'energia cinetica. Consideriamo un corpo di massa $m$ che si muove con velocità iniziale $v_\text{i}$; una forza risultante costante $\vec F$, parallela allo spostamento, agisce su di esso lungo un tratto $s$, portandone la velocità al valore $v_\text{f}$ (figura~\ref{fig:teorema-ec}).
+
+Per il secondo principio $F = m\,a$, e per il moto uniformemente accelerato vale la relazione $v_\text{f}^2 = v_\text{i}^2 + 2\,a\,s$, da cui $a\,s = \dfrac{v_\text{f}^2 - v_\text{i}^2}{2}$. Il lavoro della forza risultante è allora
+\[ L = F\,s = m\,a\,s = m\,\frac{v_\text{f}^2 - v_\text{i}^2}{2} = \frac{1}{2}\,m\,v_\text{f}^2 - \frac{1}{2}\,m\,v_\text{i}^2. \]
+Il secondo membro è la differenza fra l'energia cinetica finale e quella iniziale: abbiamo dimostrato il \textbf{teorema dell'energia cinetica}.
+
+\begin{definizione}
+Il \textbf{lavoro totale} compiuto dalle forze che agiscono su un corpo è uguale alla variazione della sua energia cinetica:
+\[ \colorboxed{ocre}{ L_\text{tot} = \frac{1}{2}\,m\,v_\text{f}^2 - \frac{1}{2}\,m\,v_\text{i}^2 = \Delta E_\text{c} } \]
+\end{definizione}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \draw[gray!45] (-0.3,0) -- (8.3,0);
+        \draw[fill=ocre!12,draw=gray!60] (0.4,0) rectangle (1.4,0.8);
+        \node at (0.9,0.4) {\footnotesize $m$};
+        \draw[->,thick,blue!60!black] (0.9,1.15) -- (2.0,1.15) node[right]{$\vec v_\text{i}$};
+        \draw[fill=ocre!12,draw=gray!60] (6.2,0) rectangle (7.2,0.8);
+        \node at (6.7,0.4) {\footnotesize $m$};
+        \draw[->,thick,blue!60!black] (6.7,1.15) -- (8.2,1.15) node[right]{$\vec v_\text{f}$};
+        \draw[->,very thick,ocre] (1.7,0.4) -- (3.3,0.4) node[midway,above]{$\vec F$};
+        \draw[<->,gray!70] (0.9,-0.45) -- (6.7,-0.45) node[midway,below]{$s$};
+    \end{tikzpicture}
+    \caption{Una forza risultante $\vec F$ agisce sul corpo lungo il tratto $s$: il suo lavoro è uguale alla variazione di energia cinetica, $L = \tfrac12 m v_\text{f}^2 - \tfrac12 m v_\text{i}^2$.}
+    \label{fig:teorema-ec}
+\end{figure}
+
+Questo teorema è uno strumento potente: permette di calcolare il lavoro di forze difficili da misurare (l'attrito, la resistenza dell'aria, la spinta dei muscoli) a partire da grandezze facili da misurare come la massa e la velocità. Vale sempre, anche quando la forza non è costante, purché per $L_\text{tot}$ si intenda il lavoro della risultante di tutte le forze.
+
+\begin{remark}
+Se il lavoro totale è positivo l'energia cinetica aumenta; se è negativo diminuisce; se è nullo (per esempio nel moto circolare uniforme, o quando forza motrice e attrito si equilibrano) la velocità resta costante in modulo.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Il lavoro dei freni]
+L'automobile dell'esempio precedente (\SI{1000}{\kilo\gram} a \SI{30}{\metre\per\second}) frena e si arresta in \SI{50}{\metre}. Qual è il lavoro compiuto dalle forze frenanti? E il loro modulo medio?
+
+Per il teorema dell'energia cinetica il lavoro totale è
+\[ L_\text{tot} = 0 - \frac{1}{2} \cdot \SI{1000}{\kilo\gram} \cdot (\SI{30}{\metre\per\second})^2 = -\,\SI{4,5e5}{\joule}. \]
+Il lavoro è negativo (resistente), come ci si aspetta da una forza che si oppone al moto. Poiché $L = -F\,s$, il modulo medio della forza frenante è
+\[ F = \frac{\SI{4,5e5}{\joule}}{\SI{50}{\metre}} = \SI{9,0e3}{\newton} = \SI{9,0}{\kilo\newton}. \]
+\end{testexample}
+
+\subsection{Lo spazio di frenata}
+
+Il teorema dell'energia cinetica spiega perché lo spazio necessario a fermare un veicolo cresce così rapidamente con la velocità. Quando un'automobile frena su strada piana, la forza che la rallenta è l'attrito fra pneumatici e asfalto, di modulo $F_\text{a} = k\,m\,g$ (con $k$ coefficiente di attrito dinamico). Questa forza compie un lavoro resistente lungo lo spazio di frenata $s$, che porta a zero l'energia cinetica:
+\[ k\,m\,g\,s = \frac{1}{2}\,m\,v^2 \qquad\Longrightarrow\qquad \colorboxed{ocre}{ s = \frac{v^2}{2\,k\,g} } \]
+La massa si semplifica: lo spazio di frenata \emph{non dipende dalla massa} del veicolo, ma è proporzionale al \emph{quadrato} della velocità. Raddoppiando la velocità, lo spazio di frenata diventa quattro volte più lungo.
+
+\begin{testexample}[\thetcbcounter \, Frenata sull'asciutto e sul bagnato]
+Un'automobile viaggia a \SI{90}{\kilo\metre\per\hour}, cioè \SI{25}{\metre\per\second}. Su asfalto asciutto il coefficiente di attrito vale $k = 0{,}70$; sotto la pioggia scende a $k = 0{,}40$. Lo spazio di frenata nei due casi è
+\[ s_\text{asciutto} = \frac{(\SI{25}{\metre\per\second})^2}{2 \cdot 0{,}70 \cdot \SI{9,81}{\metre\per\square\second}} \approx \SI{46}{\metre}, \qquad s_\text{bagnato} = \frac{(\SI{25}{\metre\per\second})^2}{2 \cdot 0{,}40 \cdot \SI{9,81}{\metre\per\square\second}} \approx \SI{80}{\metre}. \]
+Sul bagnato lo spazio di frenata è quasi il doppio.
+\end{testexample}
+
+\begin{esercizio}
+Calcola l'energia cinetica di un pallone da calcio di massa \SI{430}{\gram} che viaggia a \SI{25}{\metre\per\second}.\\
+\risp{$E_\text{c} = \tfrac12 \cdot 0{,}430 \cdot 25^2 \approx \SI{134}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{1200}{\kilo\gram} passa da \SI{36}{\kilo\metre\per\hour} a \SI{90}{\kilo\metre\per\hour}. Di quanto aumenta la sua energia cinetica? Quale lavoro hanno complessivamente compiuto le forze agenti sull'automobile?\\
+\risp{$v_\text{i} = \SI{10}{\metre\per\second}$, $v_\text{f} = \SI{25}{\metre\per\second}$; \; $\Delta E_\text{c} = \tfrac12 \cdot 1200 \cdot (25^2 - 10^2) = \SI{3,15e5}{\joule} = L_\text{tot}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una biglia di massa \SI{30}{\gram} ha energia cinetica \SI{0,60}{\joule}. Con quale velocità si muove?\\
+\risp{$v = \sqrt{2 E_\text{c}/m} = \sqrt{2 \cdot 0{,}60 / 0{,}030} = \sqrt{40} \approx \SI{6,3}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un blocco di massa \SI{5,0}{\kilo\gram} scivola su un piano orizzontale con velocità iniziale \SI{8,0}{\metre\per\second} e si ferma dopo \SI{5,0}{\metre}. Qual è il modulo della forza di attrito? E il coefficiente di attrito dinamico?\\
+\risp{$L_\text{attr} = \Delta E_\text{c} = -\tfrac12 \cdot 5{,}0 \cdot 8{,}0^2 = \SI{-160}{\joule}$; \; $F_\text{a} = 160/5{,}0 = \SI{32}{\newton}$; \; $k = F_\text{a}/(mg) = 32/(5{,}0 \cdot 9{,}81) \approx 0{,}65$}
+\end{esercizio}
+
+\begin{esercizio}
+Su asfalto asciutto ($k = 0{,}65$) un'automobile viaggia a \SI{100}{\kilo\metre\per\hour}. Calcola lo spazio di frenata. Di quanto diventa più lungo se la velocità è \SI{130}{\kilo\metre\per\hour}?\\
+\risp{$v_1 \approx \SI{27,8}{\metre\per\second}$: $s_1 = v_1^2/(2kg) \approx \SI{60}{\metre}$; \; $v_2 \approx \SI{36,1}{\metre\per\second}$: $s_2 \approx \SI{102}{\metre}$; \; l'aumento è di circa \SI{42}{\metre}}
+\end{esercizio}
+
+\begin{esercizio}
+Una freccia di massa \SI{25}{\gram} viene scoccata da un arco che compie su di essa un lavoro di \SI{45}{\joule}. Con quale velocità parte, trascurando la resistenza dell'aria?\\
+\risp{$L = \tfrac12 m v^2 \Rightarrow v = \sqrt{2L/m} = \sqrt{2 \cdot 45 / 0{,}025} = \sqrt{3600} = \SI{60}{\metre\per\second}$}
+\end{esercizio}
+
+\section{L'energia potenziale}
+
+\subsection{L'energia dovuta alla posizione}
+
+Non serve che un corpo sia in movimento perché possieda energia. Un masso in bilico sul ciglio di una rupe è fermo, eppure, se cade, può frantumare ciò che incontra: è dunque in grado di compiere lavoro. Un contrappeso sollevato, l'acqua di un bacino di montagna, una massa appesa a una certa altezza: tutti questi corpi possiedono energia \emph{per il solo fatto di occupare una certa posizione}. La chiamiamo \textbf{energia potenziale}.
+
+In questo capitolo ci interessano due casi: l'energia potenziale legata alla posizione di un corpo nel campo gravitazionale terrestre -- l'\textbf{energia potenziale gravitazionale} -- e quella immagazzinata in una molla deformata -- l'\textbf{energia potenziale elastica}, di cui parleremo nel paragrafo~\ref{sec:corpi-elastici}.
+
+\subsection{L'energia potenziale gravitazionale}
+
+Da che cosa dipende l'energia potenziale gravitazionale di un corpo? Per portare un corpo di peso $P = m\,g$ da terra fino a un'altezza $h$, sollevandolo a velocità costante, dobbiamo applicare una forza uguale e contraria al peso e compiere un lavoro
+\[ L = P\,h = m\,g\,h. \]
+Questo lavoro non va perduto: resta ``immagazzinato'' nel corpo sollevato, che potrà restituirlo per intero ricadendo. L'energia potenziale gravitazionale è proprio uguale a questo lavoro.
+
+\begin{definizione}
+L'\textbf{energia potenziale gravitazionale} $E_\text{p}$ di un corpo di massa $m$ posto a un'altezza $h$ rispetto a un livello di riferimento è
+\[ \colorboxed{ocre}{ E_\text{p} = m\,g\,h = P\,h } \]
+\end{definizione}
+
+Dipende dalla massa del corpo (attraverso il peso) e dall'altezza a cui si trova. Si misura in joule.
+
+\begin{testexample}[\thetcbcounter \, Il masso sulla rupe]
+Un masso di massa \SI{200}{\kilo\gram} si trova sul ciglio di una rupe, \SI{15}{\metre} sopra il livello della strada. Qual è la sua energia potenziale rispetto alla strada?
+\[ E_\text{p} = m\,g\,h = \SI{200}{\kilo\gram} \cdot \SI{9,81}{\metre\per\square\second} \cdot \SI{15}{\metre} \approx \SI{2,9e4}{\joule} = \SI{29}{\kilo\joule}. \]
+\end{testexample}
+
+\subsection{La scelta del livello di riferimento}
+
+Nell'esempio precedente abbiamo misurato l'altezza a partire dalla strada. Ma se ai piedi della rupe si aprisse un burrone profondo \SI{25}{\metre}, rispetto al fondo del burrone il masso si troverebbe a \SI{40}{\metre} di altezza e la sua energia potenziale sarebbe più che doppia.
+
+Il valore dell'energia potenziale, quindi, \textbf{dipende dal livello che scegliamo come riferimento}: non ha senso parlare di energia potenziale ``assoluta''. Ciò che ha significato fisico -- ed è ciò che conta nei problemi -- è la \emph{variazione} di energia potenziale fra due posizioni, che non dipende dalla scelta del riferimento. Di solito si sceglie il livello di riferimento in modo da semplificare i calcoli: il suolo, il piano di un tavolo, la posizione iniziale del corpo.
+
+\begin{remark}
+Se scegliamo come riferimento un livello più alto del corpo, la sua energia potenziale risulta \emph{negativa}: significa semplicemente che il corpo si trova più in basso del riferimento, e che occorre fornirgli energia per riportarlo al livello zero.
+\end{remark}
+
+\subsection{Forze conservative e forze dissipative}
+
+Portiamo una cassa di peso $P$ in cima a un piano inclinato, alto $h$ e lungo $l$, spingendola a velocità costante. Se l'attrito è trascurabile, la forza da applicare è la componente del peso parallela al piano, $F_\parallel = P\,h/l$, e il lavoro che compiamo è
+\[ L = F_\parallel \cdot l = P\,\frac{h}{l}\cdot l = P\,h. \]
+È lo \emph{stesso} lavoro che avremmo compiuto sollevando la cassa verticalmente per un tratto $h$. In generale: \textbf{il lavoro della forza-peso non dipende dal percorso seguito, ma solo dalle quote del punto di partenza e del punto di arrivo} (figura~\ref{fig:conservativa}).
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \fill[ocre!12] (0,0) -- (5,0) -- (5,3) -- cycle;
+        \draw[draw=gray!60] (0,0) -- (5,0) -- (5,3) -- cycle;
+        \node[below left] at (0,0) {A};
+        \node[above right] at (5,3) {B};
+        \draw[->,very thick,red!70!black] (0.15,0.09) -- (4.9,2.94) node[midway,sloped,above]{\footnotesize percorso 1};
+        \draw[->,very thick,blue!60!black] (0,0.09) -- (0,3) -- (4.85,3);
+        \node[blue!60!black,font=\footnotesize] at (-0.8,1.5) {percorso 2};
+        \draw[<->,gray!70] (5.5,0) -- (5.5,3) node[midway,right]{$h$};
+        \draw[dashed,gray!55] (5,0) -- (5.6,0);
+        \draw[dashed,gray!55] (5,3) -- (5.6,3);
+    \end{tikzpicture}
+    \caption{Il lavoro della forza-peso per portare la cassa da A a B vale $-\,P\,h$ sia lungo il piano inclinato (percorso 1) sia lungo il tratto verticale seguito da quello orizzontale (percorso 2): lungo l'orizzontale, a quota costante, il peso non compie lavoro.}
+    \label{fig:conservativa}
+\end{figure}
+
+\begin{definizione}
+Una forza si dice \textbf{conservativa} se il lavoro che essa compie su un corpo dipende solo dalla posizione iniziale e da quella finale, e non dal percorso seguito. Per una forza conservativa si può definire un'energia potenziale.
+\end{definizione}
+
+La forza-peso e la forza elastica sono conservative. La forza di attrito dinamico, invece, \textbf{non} è conservativa: il suo lavoro resistente è tanto più grande quanto più lungo è il percorso, e non viene mai restituito -- si trasforma in calore e si disperde nell'ambiente. Per questo l'attrito (come la resistenza dell'aria e dell'acqua) si dice \textbf{forza dissipativa}.
+
+\begin{remark}
+Quando spostiamo un corpo e poi lo riportiamo al punto di partenza, il lavoro totale di una forza conservativa è \emph{nullo} (l'energia potenziale torna al valore di prima). Il lavoro di una forza dissipativa, invece, è sempre negativo su qualunque percorso chiuso.
+\end{remark}
+
+\subsection{Il lavoro della forza-peso e l'energia dissipata}
+
+Quando un corpo si sposta, il lavoro della forza-peso è legato alla variazione di energia potenziale da una relazione semplice:
+\[ L_\text{peso} = E_{\text{p,i}} - E_{\text{p,f}} = -\,\Delta E_\text{p}. \]
+Se il corpo scende, $h$ diminuisce, $E_\text{p}$ diminuisce e il lavoro del peso è positivo (il peso ``favorisce'' il moto). Se il corpo sale, il lavoro del peso è negativo.
+
+Se sul corpo agisce anche l'attrito, il lavoro che dobbiamo compiere per sollevarlo è maggiore dell'aumento di energia potenziale: la differenza è l'\textbf{energia dissipata} dall'attrito.
+
+\begin{testexample}[\thetcbcounter \, Sollevare una cassa con attrito]
+Una macchina che eroga una potenza di \SI{100}{\watt} impiega \SI{15}{\second} per trascinare a velocità costante una cassa di massa \SI{20}{\kilo\gram} lungo un piano inclinato, sollevandola di \SI{6,0}{\metre}. Quanta energia viene dissipata dall'attrito?
+
+Il lavoro compiuto dalla macchina è $L = P\,\Delta t = \SI{100}{\watt} \cdot \SI{15}{\second} = \SI{1500}{\joule}$. L'aumento di energia potenziale della cassa è
+\[ \Delta E_\text{p} = m\,g\,h = \SI{20}{\kilo\gram} \cdot \SI{9,81}{\metre\per\square\second} \cdot \SI{6,0}{\metre} \approx \SI{1177}{\joule}. \]
+L'energia dissipata dall'attrito è la differenza:
+\[ E_\text{dissipata} = L - \Delta E_\text{p} \approx \SI{1500}{\joule} - \SI{1177}{\joule} \approx \SI{3,2e2}{\joule}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un sacco di cemento di massa \SI{25}{\kilo\gram} viene portato al terzo piano di un cantiere, a \SI{9,0}{\metre} dal suolo. Calcola la sua energia potenziale gravitazionale rispetto al suolo e rispetto al primo piano (a \SI{3,0}{\metre} dal suolo).\\
+\risp{rispetto al suolo $E_\text{p} = 25 \cdot 9{,}81 \cdot 9{,}0 \approx \SI{2,2e3}{\joule}$; \; rispetto al primo piano $E_\text{p} = 25 \cdot 9{,}81 \cdot 6{,}0 \approx \SI{1,5e3}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa di massa \SI{18}{\kilo\gram} viene sollevata di \SI{2,5}{\metre} in tre modi diversi: verticalmente, lungo un piano inclinato lungo \SI{5,0}{\metre}, lungo un piano inclinato lungo \SI{10}{\metre} (sempre a velocità costante e senza attrito). Quale lavoro compie la forza-peso nei tre casi?\\
+\risp{$L_\text{peso} = -m g h = -18 \cdot 9{,}81 \cdot 2{,}5 \approx \SI{-4,4e2}{\joule}$ in tutti e tre i casi: il peso è una forza conservativa}
+\end{esercizio}
+
+\begin{esercizio}
+Un secchio d'acqua di peso \SI{120}{\newton} viene sollevato dal fondo di un pozzo con un lavoro di \SI{900}{\joule}. A quale profondità si trovava? Di quanto è aumentata la sua energia potenziale?\\
+\risp{$h = L/P = 900/120 = \SI{7,5}{\metre}$; \; $\Delta E_\text{p} = +\SI{900}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un ascensore solleva quattro persone di massa complessiva \SI{260}{\kilo\gram} dal piano terra al quinto piano; ogni piano è alto \SI{3,0}{\metre}. Calcola la variazione di energia potenziale del gruppo.\\
+\risp{$h = 5 \cdot 3{,}0 = \SI{15}{\metre}$; \; $\Delta E_\text{p} = 260 \cdot 9{,}81 \cdot 15 \approx \SI{3,8e4}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Spiega perché la forza di attrito dinamico non è una forza conservativa, mentre la forza-peso lo è.\\
+\risp{il lavoro dell'attrito dipende dalla lunghezza del percorso (più lungo il tragitto, maggiore il lavoro resistente) e non viene mai restituito: si trasforma in calore. Il lavoro del peso dipende solo dalla differenza di quota fra partenza e arrivo}
+\end{esercizio}
+
+\section{Lavoro ed energia nei corpi elastici}
+\label{sec:corpi-elastici}
+
+\subsection{Il lavoro di una forza variabile}
+
+Per comprimere una molla dobbiamo applicare una forza e spostarne l'estremo: compiamo quindi un lavoro. Ma la forza da applicare non è costante: per la legge di Hooke cresce proporzionalmente alla deformazione, $F = k\,s$. Non possiamo allora usare direttamente la formula $L = F\,s$.
+
+Ricorriamo a un metodo grafico. Riportiamo su un grafico cartesiano la forza $F$ in funzione dello spostamento $s$ del suo punto di applicazione. Si dimostra che, in generale, \emph{il lavoro compiuto da una forza è uguale all'area compresa fra il grafico $F$--$s$ e l'asse degli spostamenti}. Se la forza è costante (figura~\ref{fig:lavoro-area}\,a), il grafico è una retta orizzontale e l'area è quella di un rettangolo di base $s$ e altezza $F$: ritroviamo $L = F\,s$. Se la forza è elastica (figura~\ref{fig:lavoro-area}\,b), il grafico è una retta uscente dall'origine e l'area è quella di un triangolo di base $s$ e altezza $k\,s$:
+\[ L = \frac{1}{2} \cdot \text{base} \cdot \text{altezza} = \frac{1}{2}\,s\,(k\,s) = \frac{1}{2}\,k\,s^2. \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \begin{scope}
+            \draw[->] (0,0) -- (3.3,0) node[right]{\footnotesize $s$};
+            \draw[->] (0,0) -- (0,2.7) node[above]{\footnotesize $F$};
+            \fill[ocre!25] (0,0) rectangle (2.4,1.6);
+            \draw[thick,ocre] (0,1.6) -- (2.4,1.6);
+            \draw[dashed,gray!60] (2.4,0) -- (2.4,1.6);
+            \node[font=\footnotesize] at (1.2,0.8) {$L = F\,s$};
+            \node[below,font=\footnotesize] at (2.4,0) {$s$};
+            \node[left,font=\footnotesize] at (0,1.6) {$F$};
+            \node[font=\footnotesize] at (1.2,-0.9) {(a) forza costante};
+        \end{scope}
+        \begin{scope}[shift={(5.2,0)}]
+            \draw[->] (0,0) -- (3.3,0) node[right]{\footnotesize $s$};
+            \draw[->] (0,0) -- (0,2.7) node[above]{\footnotesize $F$};
+            \fill[ocre!25] (0,0) -- (2.4,0) -- (2.4,2.0) -- cycle;
+            \draw[thick,ocre] (0,0) -- (2.4,2.0);
+            \draw[dashed,gray!60] (2.4,0) -- (2.4,2.0);
+            \node[font=\footnotesize] at (1.55,0.5) {$L = \tfrac12 k s^2$};
+            \node[below,font=\footnotesize] at (2.4,0) {$s$};
+            \node[left,font=\footnotesize] at (0,2.0) {$k\,s$};
+            \node[font=\footnotesize] at (1.2,-0.9) {(b) forza elastica};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Il lavoro di una forza è l'area sotto il grafico $F$--$s$: un rettangolo se la forza è costante, un triangolo se la forza è proporzionale allo spostamento.}
+    \label{fig:lavoro-area}
+\end{figure}
+
+\subsection{L'energia potenziale elastica}
+
+Il lavoro che compiamo per deformare la molla resta immagazzinato nella molla stessa, che lo restituisce quando torna alla forma di riposo: è l'\textbf{energia potenziale elastica}.
+
+\begin{definizione}
+L'\textbf{energia potenziale elastica} $E_\text{e}$ immagazzinata in una molla di costante elastica $k$, deformata di un tratto $s$ rispetto alla posizione di riposo, è
+\[ \colorboxed{ocre}{ E_\text{e} = \frac{1}{2}\,k\,s^2 } \]
+\end{definizione}
+
+\begin{remark}
+Nella formula compare $s^2$: l'energia potenziale elastica è la stessa sia che la molla venga compressa, sia che venga allungata di uno stesso tratto $s$. Inoltre, raddoppiando la deformazione l'energia diventa quattro volte più grande.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, La molla del flipper]
+La molla di un flipper ha costante elastica $k = \SI{800}{\newton\per\metre}$ e viene compressa di \SI{4,0}{\centi\metre} per lanciare una pallina di massa \SI{30}{\gram}. Quanta energia potenziale elastica accumula la molla? Con quale velocità parte la pallina, trascurando gli attriti?
+
+L'energia potenziale elastica è
+\[ E_\text{e} = \frac{1}{2}\,k\,s^2 = \frac{1}{2} \cdot \SI{800}{\newton\per\metre} \cdot (\SI{0,040}{\metre})^2 = \SI{0,64}{\joule}. \]
+Quando la molla si distende, questa energia si trasforma nell'energia cinetica della pallina:
+\[ \frac{1}{2}\,m\,v^2 = E_\text{e} \qquad\Longrightarrow\qquad v = \sqrt{\frac{2\,E_\text{e}}{m}} = \sqrt{\frac{2 \cdot \SI{0,64}{\joule}}{\SI{0,030}{\kilo\gram}}} \approx \SI{6,5}{\metre\per\second}. \]
+\end{testexample}
+
+\begin{esercizio}
+Una molla ha costante elastica \SI{500}{\newton\per\metre}. Calcola la sua energia potenziale elastica quando è compressa di \SI{8,0}{\centi\metre} e quando è allungata di \SI{8,0}{\centi\metre}.\\
+\risp{$E_\text{e} = \tfrac12 \cdot 500 \cdot 0{,}080^2 = \SI{1,6}{\joule}$ in entrambi i casi}
+\end{esercizio}
+
+\begin{esercizio}
+La molla di un fucile giocattolo ($k = \SI{300}{\newton\per\metre}$) viene compressa di \SI{5,0}{\centi\metre} per lanciare orizzontalmente un dardo di massa \SI{10}{\gram}. Con quale velocità parte il dardo, trascurando gli attriti?\\
+\risp{$E_\text{e} = \tfrac12 \cdot 300 \cdot 0{,}050^2 = \SI{0,375}{\joule}$; \; $v = \sqrt{2 E_\text{e}/m} = \sqrt{75} \approx \SI{8,7}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due molle vengono caricate con la stessa energia potenziale elastica di \SI{2,0}{\joule}. La prima ha costante elastica \SI{200}{\newton\per\metre}, la seconda \SI{800}{\newton\per\metre}. Di quanto è deformata ciascuna molla?\\
+\risp{$s = \sqrt{2 E_\text{e}/k}$: \; prima molla $s = \sqrt{4/200} \approx \SI{14}{\centi\metre}$; \; seconda molla $s = \sqrt{4/800} \approx \SI{7,1}{\centi\metre}$}
+\end{esercizio}
+
+\section{I mille volti dell'energia}
+
+\subsection{Una continua trasformazione}
+
+Abbiamo incontrato finora tre forme di energia meccanica: l'energia cinetica e le energie potenziali gravitazionale ed elastica. Ma il concetto di energia è molto più ampio: esistono l'\textbf{energia termica} (legata alla temperatura di un corpo), l'\textbf{energia elettrica}, l'\textbf{energia chimica} (immagazzinata nei legami delle molecole, per esempio nei combustibili e negli alimenti), l'\textbf{energia raggiante} trasportata dalla luce, l'\textbf{energia nucleare}. Tutte si misurano in joule.
+
+Il fatto notevole è che queste forme di energia si \textbf{trasformano continuamente l'una nell'altra}. Una valanga che scende trasforma energia potenziale gravitazionale in energia cinetica, e questa, negli urti, in energia termica. Una centrale idroelettrica trasforma l'energia potenziale dell'acqua di un bacino in energia cinetica e poi in energia elettrica (figura~\ref{fig:trasformazioni}). Un'automobile trasforma l'energia chimica del carburante in energia cinetica e in calore. In ogni caso il ``bilancio'' torna sempre.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \draw[draw=gray!60,fill=ocre!12] (0,0) rectangle (2.6,1.2);
+        \node[align=center,font=\footnotesize] at (1.3,0.6) {energia\\potenziale};
+        \draw[draw=gray!60,fill=ocre!12] (4.2,0) rectangle (6.8,1.2);
+        \node[align=center,font=\footnotesize] at (5.5,0.6) {energia\\cinetica};
+        \draw[draw=gray!60,fill=ocre!12] (8.4,0) rectangle (11.0,1.2);
+        \node[align=center,font=\footnotesize] at (9.7,0.6) {energia\\elettrica};
+        \draw[->,very thick,ocre] (2.6,0.6) -- (4.2,0.6);
+        \draw[->,very thick,ocre] (6.8,0.6) -- (8.4,0.6);
+        \node[font=\scriptsize,align=center] at (3.4,1.5) {caduta\\dell'acqua};
+        \node[font=\scriptsize,align=center] at (7.6,1.5) {turbina e\\generatore};
+    \end{tikzpicture}
+    \caption{Le trasformazioni di energia in una centrale idroelettrica.}
+    \label{fig:trasformazioni}
+\end{figure}
+
+\begin{definizione}
+\textbf{Principio di conservazione dell'energia.} L'energia non si crea né si distrugge: può soltanto trasformarsi da una forma all'altra, oppure trasferirsi da un corpo a un altro. La quantità totale di energia di un sistema isolato resta costante.
+\end{definizione}
+
+\begin{remark}
+Il lavoro non è una forma di energia a sé stante: è il \emph{modo} in cui l'energia passa da un corpo a un altro, o da una forma all'altra. Quando solleviamo un oggetto, il nostro lavoro trasferisce energia chimica (dei muscoli) in energia potenziale gravitazionale dell'oggetto.
+\end{remark}
+
+\subsection{Le macchine e l'energia}
+
+Le \textbf{macchine} sono dispositivi che trasformano energia da una forma all'altra: un motore elettrico trasforma energia elettrica in energia cinetica, un generatore fa il contrario, una stufa trasforma energia elettrica o chimica in calore. Come abbiamo visto parlando di potenza (paragrafo~\ref{sec:potenza-rendimento}), nessuna macchina reale è perfetta: una parte dell'energia assorbita si trasforma sempre in calore disperso, per gli attriti e le resistenze passive. Il \textbf{rendimento} misura la frazione di energia assorbita che si ritrova come energia utile:
+\[ r = \frac{E_\text{utile}}{E_\text{assorbita}}, \qquad 0 < r < 1. \]
+L'energia ``persa'' non scompare -- questo violerebbe il principio di conservazione -- ma diventa energia termica poco utilizzabile.
+
+\subsection{Il kilowattora}
+
+Nella pratica, per misurare l'energia elettrica prodotta o consumata, il joule è un'unità troppo piccola. Si usa allora il \textbf{kilowattora} (\si{\kilo\watt\hour}), cioè l'energia fornita in un'ora da una potenza di \SI{1}{\kilo\watt}:
+\[ \colorboxed{ocre}{ \SI{1}{\kilo\watt\hour} = \SI{1000}{\watt} \cdot \SI{3600}{\second} = \SI{3,6e6}{\joule} = \SI{3,6}{\mega\joule} } \]
+È l'unità che compare nelle bollette dell'energia elettrica.
+
+\begin{testexample}[\thetcbcounter \, Il consumo di un forno elettrico]
+Un forno elettrico da \SI{2,2}{\kilo\watt} resta acceso per \SI{40}{\minute}. Quanta energia consuma?
+
+In kilowattora: $E = P \cdot \Delta t = \SI{2,2}{\kilo\watt} \cdot \tfrac{40}{60}\,\si{\hour} \approx \SI{1,5}{\kilo\watt\hour}$.
+In joule: $E = \SI{2200}{\watt} \cdot \SI{2400}{\second} = \SI{5,28e6}{\joule} \approx \SI{5,3}{\mega\joule}$.
+\end{testexample}
+
+\begin{esercizio}
+Descrivi le trasformazioni di energia che avvengono: (a) in una centrale idroelettrica; (b) in una lampadina; (c) quando un ciclista frena.\\
+\risp{(a) energia potenziale gravitazionale $\to$ cinetica dell'acqua $\to$ elettrica; \; (b) elettrica $\to$ raggiante (luce) $+$ termica; \; (c) cinetica $\to$ termica (calore nei freni)}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{1000}{\kilo\gram} sale da un parcheggio sotterraneo a una terrazza panoramica \SI{18}{\metre} più in alto. Qual è la minima energia (in kilowattora) che il motore deve fornire per il solo sollevamento?\\
+\risp{$E = m g h = 1000 \cdot 9{,}81 \cdot 18 \approx \SI{1,77e5}{\joule}$; \; in kWh: $\num{1,77e5}/\num{3,6e6} \approx \SI{0,049}{\kilo\watt\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+In una centrale idroelettrica ogni secondo arrivano alle turbine \SI{1500}{\kilo\gram} d'acqua dopo un salto di \SI{220}{\metre}. Se il $12\%$ dell'energia viene dissipato negli attriti della condotta, quale potenza al massimo può fornire l'impianto?\\
+\risp{energia potenziale al secondo $= 1500 \cdot 9{,}81 \cdot 220 \approx \SI{3,24e6}{\joule}$; \; disponibile l'$88\%$: $P \approx \SI{2,8e6}{\watt} = \SI{2,8}{\mega\watt}$}
+\end{esercizio}
+
+\section{Problemi di riepilogo}
+
+\begin{esercizio}
+Spiega la differenza fra lavoro motore, lavoro resistente e lavoro nullo, facendo un esempio per ciascuno.\\
+\risp{motore se la forza favorisce il moto ($\alpha < 90^\circ$), es. la spinta su un carrello; nullo se la forza è perpendicolare allo spostamento ($\alpha = 90^\circ$), es. la forza-peso su un corpo che si muove in orizzontale; resistente se la forza ostacola il moto ($\alpha > 90^\circ$), es. l'attrito dinamico}
+\end{esercizio}
+
+\begin{esercizio}
+Un operaio spinge una cassa con una forza di \SI{180}{\newton} parallela al pavimento e la fa avanzare di \SI{7,5}{\metre} a velocità costante. Quanto lavoro compie? E se applicasse la stessa forza inclinata di $30^\circ$ sull'orizzontale?\\
+\risp{$L = 180 \cdot 7{,}5 = \SI{1350}{\joule}$; \; con l'angolo $L = 1350 \cdot \cos 30^\circ \approx \SI{1169}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una gru solleva verticalmente a velocità costante un fascio di travi di massa \SI{350}{\kilo\gram} fino a \SI{12}{\metre} di altezza in \SI{8,0}{\second}. Calcola il lavoro compiuto e la potenza sviluppata.\\
+\risp{$L = mgh = 350 \cdot 9{,}81 \cdot 12 \approx \SI{4,1e4}{\joule}$; \; $P = L/\Delta t \approx \SI{5,2e3}{\watt} = \SI{5,2}{\kilo\watt}$}
+\end{esercizio}
+
+\begin{esercizio}
+Il motore di un tapis roulant sviluppa una potenza utile di \SI{1,5}{\kilo\watt} per far scorrere il nastro a velocità costante di \SI{0,80}{\metre\per\second}. Quale forza complessiva esercita il nastro?\\
+\risp{$F = P/v = 1500/0{,}80 \approx \SI{1,9e3}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una pompa solleva \SI{600}{\litre} d'acqua da un pozzo profondo \SI{15}{\metre} in \SI{2,0}{\minute}. Trascurando gli attriti, quale potenza sviluppa? (\SI{1}{\litre} d'acqua ha massa \SI{1}{\kilo\gram}.)\\
+\risp{$m = \SI{600}{\kilo\gram}$; \; $L = mgh = 600 \cdot 9{,}81 \cdot 15 \approx \SI{8,8e4}{\joule}$; \; $P = L/\SI{120}{\second} \approx \SI{7,4e2}{\watt}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un montacarichi con rendimento \num{0,75} solleva un carico di peso \SI{2500}{\newton} a velocità costante fino a \SI{9,0}{\metre} di altezza. Quale energia assorbe il motore?\\
+\risp{$L_\text{utile} = 2500 \cdot 9{,}0 = \SI{22500}{\joule}$; \; $E_\text{assorbita} = L_\text{utile}/r = 22500/0{,}75 = \SI{3,0e4}{\joule} = \SI{30}{\kilo\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Calcola l'energia cinetica di: (a) un'automobile di \SI{1200}{\kilo\gram} a \SI{90}{\kilo\metre\per\hour}; (b) un autoarticolato di \SI{15000}{\kilo\gram} a \SI{72}{\kilo\metre\per\hour}; (c) un proiettile di \SI{12}{\gram} a \SI{350}{\metre\per\second}.\\
+\risp{(a) $v = \SI{25}{\metre\per\second}$, $E_\text{c} \approx \SI{3,8e5}{\joule}$; \; (b) $v = \SI{20}{\metre\per\second}$, $E_\text{c} = \SI{3,0e6}{\joule} = \SI{3,0}{\mega\joule}$; \; (c) $E_\text{c} = \SI{735}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una palla da baseball di massa \SI{145}{\gram} ha energia cinetica \SI{108}{\joule}. A quale velocità si muove? Esprimi il risultato anche in km/h.\\
+\risp{$v = \sqrt{2 E_\text{c}/m} = \sqrt{2 \cdot 108/0{,}145} \approx \SI{38,6}{\metre\per\second} \approx \SI{139}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di \SI{900}{\kilo\gram} accelera da \SI{36}{\kilo\metre\per\hour} a \SI{108}{\kilo\metre\per\hour}. Qual è il lavoro totale compiuto dalle forze che agiscono su di essa?\\
+\risp{$v_\text{i} = \SI{10}{\metre\per\second}$, $v_\text{f} = \SI{30}{\metre\per\second}$; \; $L_\text{tot} = \Delta E_\text{c} = \tfrac12 \cdot 900 \cdot (30^2 - 10^2) = \SI{3,6e5}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un blocco di \SI{4,0}{\kilo\gram} scivola su un piano orizzontale con velocità iniziale \SI{6,0}{\metre\per\second} e si ferma dopo \SI{3,0}{\metre} per effetto dell'attrito. Qual è il modulo della forza di attrito? E il coefficiente di attrito dinamico?\\
+\risp{$L_\text{attr} = \Delta E_\text{c} = -\tfrac12 \cdot 4{,}0 \cdot 6{,}0^2 = \SI{-72}{\joule}$; \; $F_\text{a} = 72/3{,}0 = \SI{24}{\newton}$; \; $k = 24/(4{,}0 \cdot 9{,}81) \approx 0{,}61$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'auto di \SI{1100}{\kilo\gram} viaggia a \SI{100}{\kilo\metre\per\hour} su asfalto asciutto ($k = 0{,}65$). Calcola lo spazio di frenata. Cambierebbe se l'auto, a pieno carico, pesasse \SI{1500}{\kilo\gram}?\\
+\risp{$v \approx \SI{27,8}{\metre\per\second}$; \; $s = v^2/(2kg) \approx \SI{60}{\metre}$. \; Non cambia: lo spazio di frenata non dipende dalla massa}
+\end{esercizio}
+
+\begin{esercizio}
+Una freccia di \SI{25}{\gram} viene scoccata da un arco che compie su di essa un lavoro di \SI{45}{\joule}. Con quale velocità parte, trascurando la resistenza dell'aria?\\
+\risp{$v = \sqrt{2L/m} = \sqrt{2 \cdot 45/0{,}025} = \sqrt{3600} = \SI{60}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sacco di sabbia di massa \SI{30}{\kilo\gram} è appoggiato su un ponteggio a \SI{8,0}{\metre} dal suolo. Calcola la sua energia potenziale rispetto al suolo. Quanto lavoro compie la forza-peso se il sacco cade a terra?\\
+\risp{$E_\text{p} = 30 \cdot 9{,}81 \cdot 8{,}0 \approx \SI{2,4e3}{\joule}$; \; cadendo, $L_\text{peso} = +\SI{2,4e3}{\joule}$ ($E_\text{p}$ si annulla)}
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa di \SI{18}{\kilo\gram} viene portata in cima a un piano inclinato alto \SI{2,5}{\metre} e lungo \SI{6,0}{\metre}, a velocità costante e senza attrito. Quale lavoro compie la forza applicata (parallela al piano)? E la forza-peso? Il risultato dipende dalla lunghezza del piano?\\
+\risp{$F_\parallel = mgh/l = 18 \cdot 9{,}81 \cdot 2{,}5/6{,}0 \approx \SI{73,6}{\newton}$; \; $L_\text{forza} = F_\parallel \cdot l \approx \SI{441}{\joule}$; \; $L_\text{peso} \approx \SI{-441}{\joule}$; \; non dipende da $l$ (il peso è conservativo)}
+\end{esercizio}
+
+\begin{esercizio}
+Un secchio d'acqua di peso \SI{120}{\newton} viene sollevato dal fondo di un pozzo con un lavoro di \SI{900}{\joule}. A quale profondità si trovava?\\
+\risp{$h = L/P = 900/120 = \SI{7,5}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una macchina che eroga \SI{100}{\watt} impiega \SI{15}{\second} per trascinare a velocità costante una cassa di \SI{20}{\kilo\gram} lungo un piano inclinato, sollevandola di \SI{6,0}{\metre}. Quanta energia dissipa l'attrito? Qual è il rendimento del sistema?\\
+\risp{$L = 100 \cdot 15 = \SI{1500}{\joule}$; \; $\Delta E_\text{p} = 20 \cdot 9{,}81 \cdot 6{,}0 \approx \SI{1177}{\joule}$; \; $E_\text{dissipata} \approx \SI{3,2e2}{\joule}$; \; $r = 1177/1500 \approx 0{,}78$}
+\end{esercizio}
+
+\begin{esercizio}
+Una molla ha costante elastica \SI{500}{\newton\per\metre}. Calcola l'energia potenziale elastica quando è compressa di \SI{8,0}{\centi\metre}. Quanta se ne accumula se la compressione raddoppia?\\
+\risp{$E_\text{e} = \tfrac12 \cdot 500 \cdot 0{,}080^2 = \SI{1,6}{\joule}$; \; con deformazione doppia diventa quattro volte, cioè \SI{6,4}{\joule}}
+\end{esercizio}
+
+\begin{esercizio}
+La molla di un fucile a molla ($k = \SI{300}{\newton\per\metre}$) viene compressa di \SI{5,0}{\centi\metre} per lanciare orizzontalmente un dardo di massa \SI{10}{\gram}. Con quale velocità parte il dardo?\\
+\risp{$E_\text{e} = \tfrac12 \cdot 300 \cdot 0{,}050^2 = \SI{0,375}{\joule}$; \; $v = \sqrt{2 E_\text{e}/m} = \sqrt{75} \approx \SI{8,7}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un forno elettrico da \SI{2,2}{\kilo\watt} resta acceso per \SI{40}{\minute}. Quanta energia consuma, in kWh e in joule?\\
+\risp{$E = 2{,}2 \cdot \tfrac{40}{60} \approx \SI{1,5}{\kilo\watt\hour}$; \; in joule $E = 1{,}5 \cdot \num{3,6e6} \approx \SI{5,3e6}{\joule}$}
+\end{esercizio}
+
+\begin{esercizio}
+In una centrale idroelettrica ogni secondo arrivano alle turbine \SI{1500}{\kilo\gram} d'acqua dopo un salto di \SI{220}{\metre}. Se il $12\%$ dell'energia viene dissipato, quale potenza fornisce l'impianto?\\
+\risp{energia potenziale al secondo $\approx \SI{3,2e6}{\joule}$; \; $P \approx 0{,}88 \cdot \num{3,2e6} \approx \SI{2,8e6}{\watt} = \SI{2,8}{\mega\watt}$}
+\end{esercizio}

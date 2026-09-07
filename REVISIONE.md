@@ -63,10 +63,20 @@
 >     universale $F=G\,m_1 m_2/r^2$ · §13.3 proprietà · §13.4 accelerazione di
 >     gravità $g=GM/R^2$ · §13.5 moto dei satelliti $v=\sqrt{GM/(R+h)}$,
 >     geostazionario · §13.6 riepilogo (16). 5 figure. `verifica/cap-forza-gravitazionale.py`.
+>   - [x] Cap. "Lavoro ed energia" (Unità 9) — cap. 14 `14-lavoro-energia.tex`.
+>     §14.1 il lavoro ($L=F s\cos\alpha$; motore/resistente/nullo) · §14.2 potenza
+>     e rendimento ($P=L/\Delta t$; $P=Fv$; $r=P_\text{u}/P_\text{a}$) · §14.3
+>     energia cinetica ($E_\text{c}=\tfrac12 mv^2$; teorema $L_\text{tot}=\Delta
+>     E_\text{c}$; spazio di frenata $s=v^2/2kg$) · §14.4 energia potenziale
+>     gravitazionale ($E_\text{p}=mgh$; livello di riferimento; forze conservative
+>     vs dissipative) · §14.5 corpi elastici (lavoro = area sotto $F$–$s$;
+>     $E_\text{e}=\tfrac12 k s^2$) · §14.6 i mille volti dell'energia
+>     (conservazione; kilowattora) · §14.7 riepilogo (20). 4 figure.
+>     `verifica/cap-lavoro-energia.py`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **283 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~60 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **308 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~68 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
@@ -87,8 +97,9 @@ Struttura attuale (`capitoli/`, file NN = capitolo N):
 11. `11-moto-nel-piano` (ampliamento, Unità 7)
 12. `12-principi-dinamica` (ampliamento, Unità 8, Lez. 1–6)
 13. `13-forza-gravitazionale` (ampliamento, Unità 8, Lez. 7–8)
+14. `14-lavoro-energia` (ampliamento, Unità 9)
 
-I capitoli di teoria (7–13, e i prossimi) sono in coda; da valutare una Parte II
+I capitoli di teoria (7–14, e i prossimi) sono in coda; da valutare una Parte II
 "Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
 
 ---
@@ -176,7 +187,11 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
 - **Dinamica** (Unità 8) — FATTO: `capitoli/12-...` (tre princìpi, peso, piano
   inclinato dinamico, forza centripeta, forze apparenti, moto oscillatorio) e
   `capitoli/13-...` (gravitazione universale, $g$ sui pianeti, satelliti).
-- **Lavoro ed energia** (Unità 9) e **princìpi di conservazione** (Unità 10) — PROSSIMO.
+- **Lavoro ed energia** (Unità 9) — FATTO, `capitoli/14-...` (lavoro, potenza e
+  rendimento, energia cinetica e teorema, spazio di frenata, energia potenziale
+  gravitazionale, forze conservative/dissipative, energia potenziale elastica,
+  conservazione dell'energia, kilowattora).
+- **Princìpi di conservazione** (Unità 10) — PROSSIMO.
 - **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
   calorimetro, passaggi di stato, propagazione del calore.
 
