@@ -386,5 +386,8 @@ duplicato né riferimento indefinito; ~79 overfull hbox residui = Passo 4).
 4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
-5. **Push su `origin`**: `master` è avanti di ~46 commit non pushati (chiedere
-   all'utente prima di pushare).
+5. **Push su `origin`**: allineato con `origin/master` il 2026-09-08 (fino al
+   commit dei capp. 17-18). Continuare a chiedere all'utente prima di pushare.
+   NB: nella working dir restano file non tracciati e non versionabili
+   (`calibro.avif`, `IL CALIBRO A CORSOIO.pdf`, `Caliper_detail_view.jpeg`,
+   `Come riaprire una sessione.rtf`) — lasciarli fuori dai commit.
