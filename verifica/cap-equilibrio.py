@@ -51,6 +51,10 @@ print("E: schiaccianoci Fm=40, bm=0.12, br=0.03 -> Fr =", 40 * 0.12 / 0.03, "N")
 
 print()
 print("== 7.6 Baricentro e stabilita' ==")
+rho1, rho2 = 2700, 7800   # alluminio, ferro
+x_cm = (rho1 * 5 + rho2 * 15) / (rho1 + rho2)
+print(f"Sbarretta 20 cm meta' Al / meta' Fe -> x_cm = {x_cm:.2f} cm"
+      f" (centro geometrico 10 cm, spostamento {x_cm - 10:.2f} cm verso il ferro)")
 print("Esempio cassa base 40 cm, B a 60 cm -> tan a =", round(0.20 / 0.60, 2),
       "-> a =", round(math.degrees(math.atan(0.20 / 0.60))), "deg")
 print("E armadio base 50 cm, B a 90 cm -> tan a =", round(0.25 / 0.90, 2),

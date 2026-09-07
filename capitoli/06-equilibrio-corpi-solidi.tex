@@ -229,6 +229,11 @@ Un corpo rigido è in equilibrio se e solo se:
 \end{enumerate}
 \end{definizione}
 
+\begin{remark}
+Il punto rispetto al quale si calcolano i momenti -- il \textbf{polo} -- si può scegliere \emph{liberamente}. In generale la somma dei momenti dipende dal polo; ma se il corpo è già in equilibrio alla \textbf{traslazione} (risultante nulla), allora quella somma è la \emph{stessa} rispetto a qualunque punto: se è nulla per un polo, lo è per tutti. Conviene allora prendere come polo un punto in cui agisce una forza \emph{incognita}, così che il suo momento (braccio nullo) sparisca dall'equazione -- è quello che faremo, senza dirlo, prendendo i momenti rispetto al fulcro dell'altalena. \\[2pt]
+\emph{Perché}: cambiando polo, il momento di ogni singola forza cambia; ma la somma di tutte queste variazioni è proporzionale alla risultante $\vec R$, e se $\vec R = \vec 0$ quel termine si annulla. (Il momento di una coppia, sezione~\ref{sec:coppie}, è il caso particolare in cui $\vec R = \vec 0$ per due sole forze.)
+\end{remark}
+
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[scale=1,>=stealth]
@@ -274,7 +279,7 @@ Una chiave dinamometrica è regolata per un momento massimo di $\SI{40}{\newton\
 \end{esercizio}
 
 
-\section{Le coppie di forze}
+\section{Le coppie di forze}\label{sec:coppie}
 
 \begin{definizione}
 Due forze parallele, di uguale intensità e verso opposto, applicate in punti diversi di uno stesso corpo rigido, formano una \textbf{coppia di forze}.
@@ -474,6 +479,22 @@ Per un corpo \textbf{omogeneo e regolare}, il baricentro coincide con il centro 
 \begin{remark}
 Il baricentro è un punto \textbf{immaginario}: non deve necessariamente trovarsi dentro il materiale del corpo. Per un anello o un ferro di cavallo, per esempio, il baricentro cade nel vuoto.
 \end{remark}
+
+\subsection{Centro di massa e baricentro}
+Il baricentro è legato alla forza-peso. C'è un altro punto, il \textbf{centro di massa}, che dipende \emph{solo} da come la materia è distribuita nel corpo e non dalla gravità: è la posizione ``media'' di tutta la massa, quella in cui ogni pezzetto conta in proporzione alla propria massa.
+
+Finché il corpo si trova in un campo di gravità \textbf{uniforme} -- come accade, con ottima approssimazione, per qualsiasi oggetto di dimensioni ordinarie sulla superficie terrestre -- il centro di massa e il baricentro \textbf{coincidono}, e i due nomi si usano come sinonimi. I due punti si separerebbero soltanto per un corpo così esteso che $g$ cambi sensibilmente da una parte all'altra (una catena montuosa, un satellite molto allungato).
+
+Il centro di massa \textbf{non} coincide con il centro geometrico se il corpo è \textbf{disomogeneo}: allora è spostato verso le zone di \textbf{maggiore densità}, dove è concentrata più massa.
+
+\begin{testexample}[\thetcbcounter \, Una sbarretta di due materiali]
+Una sbarretta lunga \SI{20}{\centi\metre}, di sezione costante, è fatta per metà di alluminio ($\rho_1 = \SI{2700}{\kilo\gram\per\metre\cubed}$) e per metà di ferro ($\rho_2 = \SI{7800}{\kilo\gram\per\metre\cubed}$). Dove si trova il centro di massa?
+
+Le due metà hanno lo stesso volume, quindi le loro masse stanno fra loro come le densità. Il centro di massa di ciascuna metà è nel suo punto medio: a \SI{5}{\centi\metre} dall'estremo di alluminio la prima, a \SI{15}{\centi\metre} la seconda. La posizione media, pesata con le masse, è
+\[ x_\text{cm} = \frac{\rho_1 \cdot 5 + \rho_2 \cdot 15}{\rho_1 + \rho_2}
+   = \frac{2700 \cdot 5 + 7800 \cdot 15}{2700 + 7800} \approx \SI{12,4}{\centi\metre}. \]
+Non è al centro geometrico (\SI{10}{\centi\metre}), ma è spostato di circa \SI{2,4}{\centi\metre} verso la metà di ferro, più densa.
+\end{testexample}
 
 \subsection{Ricerca sperimentale del baricentro}
 Per trovare il baricentro di un corpo piatto e irregolare (per esempio un cartoncino ritagliato) si procede così:
