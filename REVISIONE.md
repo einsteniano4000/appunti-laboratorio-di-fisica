@@ -213,17 +213,23 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
   rendimento, energia cinetica e teorema, spazio di frenata, energia potenziale
   gravitazionale, forze conservative/dissipative, energia potenziale elastica,
   conservazione dell'energia, kilowattora).
-- **Princìpi di conservazione** (Unità 10) — Lez. 1–3 FATTE (`capitoli/15-...`:
-  energia meccanica, quantità di moto, urti). **Lez. 4 (momento angolare) e Lez. 5
-  (energia nei liquidi / Bernoulli) DA COMPLETARE PIÙ AVANTI** (rimandate nello
-  split, deciso con l'utente il 2026-09-07): saranno un cap. 16 da inserire prima
-  di termologia. Fonte `tecnologico.pdf` Unità 10, PDF ~374–383.
+- **Princìpi di conservazione** (Unità 10) — COMPLETO. Lez. 1–3 in
+  `capitoli/15-principi-conservazione.tex` (energia meccanica, quantità di moto,
+  urti); Lez. 4–5 in `capitoli/18-momento-angolare-fluidi.tex` (momento angolare
+  e sua conservazione; portata, continuità, Bernoulli, Venturi, Torricelli) —
+  aggiunto il 2026-09-08. 3 figure TikZ + 5 illustrazioni Gemini
+  (`img/portata-tubo.jpg`, `img/continuita.jpg`, `img/bernoulli-tubo.jpg`,
+  `img/venturi.jpg`, `img/torricelli.jpg`). Fonte `tecnologico.pdf` Unità 10,
+  PDF ~374–383.
 - **Termologia** (Unità 11, Lez. 1–2) — FATTO, `capitoli/16-...` (temperatura,
   scale, equilibrio termico; dilatazione lineare/volumica, anomalia dell'acqua).
-- **Il calore** (Unità 11, Lez. 3–5) — PROSSIMO: energia termica e calore;
-  capacità termica e calore specifico, $Q=c m\Delta T$; equilibrio termico e
-  calorimetro; cambiamenti di stato e calori latenti; propagazione (conduzione /
-  Fourier, convezione, irraggiamento).
+- **Il calore** (Unità 11, Lez. 3–5) — FATTO, `capitoli/17-calore.tex`: energia
+  termica e calore; capacità termica e calore specifico, $Q=c m\Delta T$;
+  equilibrio termico e calorimetro delle mescolanze; cambiamenti di stato e calori
+  latenti ($\lambda_f$, $\lambda_v$), processi multi-tratto; propagazione
+  (conduzione / Fourier, convezione, irraggiamento / Stefan–Boltzmann). 6 figure
+  TikZ + Fig. 17.2 `img/calorimetro.jpg` (illustrazione Gemini fornita
+  dall'utente), `verifica/cap-calore.py`.
 
 Ogni capitolo: teoria discorsiva (stile attuale) → box `definizione`/`testexample` → esempi
 svolti → esercizi con risultato verificato → `\section{Problemi di riepilogo}` (~19).

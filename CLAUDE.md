@@ -27,7 +27,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **337**).
+  per verificare riferimenti e conteggio pagine (attualmente **377**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -265,6 +265,60 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   preambolo `\per\celsius` esce come frazione `1/°C`; in alternativa
   `\SI[per-mode=power]{...}{\per\celsius}`).
 
+### Cap. "Il calore" (Unità 11, Lez. 3–5) — COMPLETO (`capitoli/17-calore.tex`)
+- Cap. 17. Seconda parte della termologia. §17.1 energia termica e calore (calore
+  = energia in transito, joule; cenno caloria/kcal) · §17.2 capacità termica
+  $C=Q/\Delta T$, calore specifico $c=C/m$, legge fondamentale $Q=c\,m\,\Delta T$,
+  tabella calori specifici · §17.3 equilibrio termico ($Q_\text{acq}=-Q_\text{ced}$;
+  $T_\text{eq}$ = media pesata con le capacità termiche; calorimetro delle
+  mescolanze, misura di $c$) · §17.4 cambiamenti di stato (i sei passaggi, $T$
+  costante; calore latente di fusione $Q=\lambda_f m$ e di vaporizzazione
+  $Q=\lambda_v m$; evaporazione vs ebollizione; processi multi-tratto
+  $\sum c_i m\Delta T_i + \sum \lambda_i m$; calore d'attrito che fonde la neve) ·
+  §17.5 propagazione (conduzione, legge di Fourier $Q=\tfrac{kA\Delta T\Delta t}{d}$,
+  $P=kA\Delta T/d$, conduttori/isolanti, tabella conducibilità; convezione, correnti
+  convettive, convezione forzata; irraggiamento, Stefan–Boltzmann $P=cAT^4$,
+  assorbimento/riflessione/trasmissione) · §17.6 Problemi di riepilogo (19).
+  6 figure TikZ/pgfplots originali (calore in transito, i sei cambiamenti di
+  stato, curva di riscaldamento dell'acqua con i due plateau, conduzione
+  attraverso una parete, correnti convettive, irraggiamento) + Fig. 17.2
+  calorimetro in sezione = `img/calorimetro.jpg` (illustrazione generata
+  dall'utente con Gemini, etichette già nell'immagine; sorgente originale in
+  `../appunti-latex/img/Gemini_Generated_Image_d4aro5d4aro5d4ar.jpeg`).
+  Verifiche: `verifica/cap-calore.py` (tutte OK).
+- Unità siunitx usate: `\joule\per\kilogram\per\kelvin` (calore specifico, con
+  `per-mode=fraction` esce come frazione piccola J/(kg K) — accettabile),
+  `\watt\per\metre\per\kelvin` (conducibilità), `\joule\per\kilogram` (calore
+  latente), `\joule\per\kelvin` (capacità termica). La caloria scritta come testo
+  (`\SI{1}{cal}`), non come unità siunitx.
+
+### Cap. "Il momento angolare e l'energia dei fluidi" (Unità 10, Lez. 4–5) — COMPLETO (`capitoli/18-momento-angolare-fluidi.tex`)
+- Cap. 18. Le due lezioni di Unità 10 staccate dal cap. 15 il 2026-09-07 e
+  completate ora (2026-09-08). Chiude la trattazione dei princìpi di conservazione.
+- §18.1 accelerazione angolare ($\alpha = \Delta\omega/\Delta t$ in \si{\radian\per\second\squared};
+  $a_t = r\,\alpha$) · §18.2 momento di una forza e momento di inerzia
+  ($M = m r^2\alpha$; $I = m r^2$, sistema $I = \sum m_i r_i^2$; tabella anello/disco/sfera;
+  $M = I\,\alpha$ analogo di $F = m a$) · §18.3 momento angolare $L = I\,\omega$
+  (\si{\kilogram\metre\squared\per\second}), conservazione per $M_\text{ext}=0$;
+  corpi non rigidi (pattinatrice, tuffatore, gatto, satelliti) · §18.4 portata
+  $Q = V/\Delta t = A\,v$ · §18.5 equazione di continuità $A_1 v_1 = A_2 v_2$
+  (liquidi incomprimibili) · §18.6 equazione di Bernoulli
+  $p + d g h + \tfrac12 d v^2 = $ cost (liquido ideale); casi particolari: tubo
+  orizzontale $\to$ effetto Venturi ($v\uparrow \Rightarrow p\downarrow$); tubo a
+  sezione costante $\to$ Stevino; §18.6.2 legge di Torricelli $v = \sqrt{2 g h}$ ·
+  §18.7 Problemi di riepilogo (19, ~10 su momento angolare + ~9 su fluidi).
+  3 figure TikZ originali (acc. angolare, momento di inerzia, pattinatrice) +
+  5 illustrazioni Gemini fornite dall'utente: Fig. 18.4 `img/portata-tubo.jpg`,
+  Fig. 18.5 `img/continuita.jpg`, Fig. 18.6 `img/bernoulli-tubo.jpg`, Fig. 18.7
+  `img/venturi.jpg`, Fig. 18.8 `img/torricelli.jpg` (etichette già nell'immagine;
+  sorgenti `../appunti-latex/img/Gemini_Generated_Image_{7ldmip,p06jqc,tbhvnp,84k70y,9wyfhu}...jpeg`).
+  NB: le illustrazioni Gemini hanno qualche artefatto (Fig. 18.6 usa `P` maiuscola
+  per la pressione; Fig. 18.8 ha etichette ripetute) ma sono state scelte dall'utente.
+  Verifiche: `verifica/cap-momento-angolare-fluidi.py` (tutte OK).
+- Header: titolo capitolo lungo $\to$ `\chapter[Momento angolare e fluidi]{...}`
+  e `\section[breve]{completo}` su tutte le sezioni (evita sovrapposizione con
+  l'header). `fig:torricelli` è già usato nel cap. 9 $\to$ qui `fig:efflusso-serbatoio`.
+
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
   è cap. 3) perché ne usa i grafici e ne scioglie il rinvio alla "proporzionalità
@@ -284,8 +338,19 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **337 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~74 overfull hbox residui = Passo 4).
+
+Frontespizio (2026-09-08, richiesta utente): titolo **"Scienze integrate Fisica"**,
+sottotitolo **"Ad uso degli istituti tecnici"**, autore **Antonio Romano**
+(`\title`/`\author` in `preambolo.tex`; `\thanks` sull'autore = nota "realizzata
+con l'aiuto di Claude Code di Anthropic e composta in LaTeX"; `\date{}` per NON
+stampare la data). Nel master, subito dopo `\maketitle`, pagina di
+copyright/licenza (verso del frontespizio): © 2026 Antonio Romano + nota sulla
+realizzazione (Claude Code + LuaLaTeX; alcune illustrazioni con Google Gemini,
+modello ``Nano Banana'') + licenza **CC BY-NC-SA 4.0** (testo in chiaro + link
+`creativecommons.org/licenses/by-nc-sa/4.0/deed.it`).
+
+Stato compilazione: OK, **377 pagine** (printed ~375), pulito (nessun label
+duplicato né riferimento indefinito; ~79 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -306,30 +371,20 @@ riferimento indefinito; ~74 overfull hbox residui = Passo 4).
 ## Lavoro rimanente
 
 1. **Cinematica (Unità 6–7)**, **dinamica + gravitazione (Unità 8)**, **lavoro
-   ed energia (Unità 9)**, **princìpi di conservazione Lez. 1–3 (Unità 10)** e
-   **temperatura + dilatazione, Lez. 1–2 (Unità 11)** — FATTE (capitoli 10–16).
-   Vedi sopra "Lavoro fatto".
-2. **PROSSIMO — Il calore** (Unità 11, Lez. 3–5): energia termica e calore;
-   capacità termica $C=Q/\Delta T$, calore specifico, $Q=c\,m\,\Delta T$;
-   equilibrio termico e calorimetro; cambiamenti di stato e calori latenti
-   ($Q=\lambda_f m$, $Q=\lambda_v m$); propagazione (conduzione, legge di Fourier
-   $Q=\tfrac{k A\,\Delta T\,\Delta t}{d}$; convezione; irraggiamento). Fonte:
-   `tecnologico.pdf` Unità 11 (PDF ~398–409). Nuovo cap. 17.
-3. **DA COMPLETARE PIÙ AVANTI — Unità 10, Lez. 4–5** (rimandate nello split del
-   cap. 15, deciso con l'utente il 2026-09-07): **momento angolare** (accel.
-   angolare $\alpha$, momento d'inerzia $I=m r^2$, $L=I\omega$ e sua
-   conservazione; pattinatore, gatto che cade) ed **energia nei liquidi**
-   (portata $Q=A v$, equazione di continuità $A_1 v_1 = A_2 v_2$, equazione di
-   Bernoulli $p+\rho g h+\tfrac12\rho v^2=$ cost, effetto Venturi). Fonte:
-   `tecnologico.pdf` Unità 10 (PDF ~374–383). Sarà un nuovo capitolo, numerazione
-   e collocazione da decidere (probabilmente in coda o come Parte II).
-4. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~74 overfull hbox (in
+   ed energia (Unità 9)**, **princìpi di conservazione, Unità 10 completa**
+   (Lez. 1–3 nel cap. 15; Lez. 4–5 nel cap. 18), **temperatura + dilatazione,
+   Lez. 1–2 (Unità 11)** e **il calore, Lez. 3–5 (Unità 11)** — FATTE
+   (capitoli 10–18). Vedi sopra "Lavoro fatto".
+2. **PROSSIMO** — da concordare con l'utente. La scansione del libro (`tecnologico.pdf`)
+   dopo l'Unità 11 prosegue con la termodinamica (Unità 12) e poi elettricità /
+   magnetismo. Vedi anche il punto 4 qui sotto (Parte II).
+3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~79 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
    il glifo `—` mancante in `capitoli/08-equilibrio-corpi-solidi.tex`, e il
    prefisso `\micro` di siunitx (vedi memoria).
-5. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
+4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
-6. **Push su `origin`**: `master` è avanti di ~46 commit non pushati (chiedere
+5. **Push su `origin`**: `master` è avanti di ~46 commit non pushati (chiedere
    all'utente prima di pushare).
