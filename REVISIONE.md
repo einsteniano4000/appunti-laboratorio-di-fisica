@@ -73,10 +73,21 @@
 >     $E_\text{e}=\tfrac12 k s^2$) · §14.6 i mille volti dell'energia
 >     (conservazione; kilowattora) · §14.7 riepilogo (20). 4 figure.
 >     `verifica/cap-lavoro-energia.py`.
+>   - [x] Cap. "I princìpi di conservazione" (Unità 10, Lez. 1–3) — cap. 15
+>     `15-principi-conservazione.tex`. Split deciso dall'utente: solo energia
+>     meccanica + quantità di moto (Lez. 4 momento angolare e Lez. 5 Bernoulli
+>     rimandate). §15.1 conservazione $E_m$ ($E_m=E_c+E_p$; $v=\sqrt{2gh}$; moti
+>     curvilinei/pendolo; sistemi elastici) · §15.2 quando non si conserva
+>     (attrito → calore; $E_{mB}-E_{mA}=L_a$; forze conservative/dissipative) ·
+>     §15.3 conservazione di $\vec p$ ($\vec p=m\vec v$; impulso; sistema isolato;
+>     urti elastici/anelastici; pendolo balistico) · §15.4 riepilogo (19).
+>     4 figure. `verifica/cap-principi-conservazione.py`.
+>     NB header: sezioni con titolo lungo si sovrappongono al titolo capitolo →
+>     usato `\section[breve]{completo}`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **308 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~68 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **324 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~71 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
@@ -98,6 +109,7 @@ Struttura attuale (`capitoli/`, file NN = capitolo N):
 12. `12-principi-dinamica` (ampliamento, Unità 8, Lez. 1–6)
 13. `13-forza-gravitazionale` (ampliamento, Unità 8, Lez. 7–8)
 14. `14-lavoro-energia` (ampliamento, Unità 9)
+15. `15-principi-conservazione` (ampliamento, Unità 10, Lez. 1–3)
 
 I capitoli di teoria (7–14, e i prossimi) sono in coda; da valutare una Parte II
 "Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
@@ -191,7 +203,10 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
   rendimento, energia cinetica e teorema, spazio di frenata, energia potenziale
   gravitazionale, forze conservative/dissipative, energia potenziale elastica,
   conservazione dell'energia, kilowattora).
-- **Princìpi di conservazione** (Unità 10) — PROSSIMO.
+- **Princìpi di conservazione** (Unità 10) — Lez. 1–3 FATTE (`capitoli/15-...`:
+  energia meccanica, quantità di moto, urti). Lez. 4 (momento angolare) e Lez. 5
+  (energia nei liquidi / Bernoulli) rimandate.
+- **Termologia** e **calore** — PROSSIMO.
 - **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
   calorimetro, passaggi di stato, propagazione del calore.
 

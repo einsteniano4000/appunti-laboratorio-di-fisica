@@ -16,7 +16,8 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `03-grafici-misure`, `04-relazioni-grandezze`, `05-relazioni-laboratorio`,
   `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
   `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`,
-  `12-principi-dinamica`, `13-forza-gravitazionale`, `14-lavoro-energia`.
+  `12-principi-dinamica`, `13-forza-gravitazionale`, `14-lavoro-energia`,
+  `15-principi-conservazione`.
   NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
   `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
   successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
@@ -26,7 +27,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **308**).
+  per verificare riferimenti e conteggio pagine (attualmente **324**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -232,8 +233,21 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   di energia; principio di conservazione; macchine e rendimento in energia; il
   kilowattora, $\SI{1}{kWh}=\SI{3,6}{MJ}$) · §14.7 Problemi di riepilogo (20).
   4 figure TikZ originali. Verifiche: `verifica/cap-lavoro-energia.py` (tutte OK).
-  Prossimo (Unità 10): princìpi di conservazione (energia meccanica, quantità di
-  moto).
+
+### Cap. "I princìpi di conservazione" (Unità 10, Lez. 1–3) — COMPLETO (`capitoli/15-principi-conservazione.tex`)
+- Cap. 15. Split deciso dall'utente: solo Lez. 1–3 (energia meccanica + quantità
+  di moto); Lez. 4 (momento angolare) e Lez. 5 (Bernoulli) rimandate/saltate.
+- §15.1 conservazione dell'energia meccanica ($E_m=E_c+E_p$; conservazione se
+  agisce solo il peso; $v=\sqrt{2gh}$; moti curvilinei/pendolo, peso conservativo;
+  sistemi elastici $E_m=E_c+E_p+E_e$) · §15.2 quando non si conserva (attrito →
+  energia termica; $E_{mB}-E_{mA}=L_a$; forze conservative vs dissipative;
+  $\Delta E_m=-\Delta E_t$; montagne russe) · §15.3 conservazione della quantità
+  di moto ($\vec p=m\vec v$; impulso $\vec F\Delta t=\Delta\vec p$; sistema
+  isolato $\vec p_f=\vec p_i$; rinculo; urti elastici/anelastici/completamente
+  anelastici; pendolo balistico in 2 fasi) · §15.4 Problemi di riepilogo (19).
+  4 figure TikZ. Verifiche: `verifica/cap-principi-conservazione.py` (tutte OK).
+- NB header: titoli di sezione lunghi si sovrappongono al titolo del capitolo
+  nell'header → usare `\section[titolo breve]{titolo completo}` (fatto in cap. 15).
 
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
@@ -254,8 +268,8 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **308 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~68 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **324 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~71 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -275,13 +289,15 @@ riferimento indefinito; ~68 overfull hbox residui = Passo 4).
 
 ## Lavoro rimanente
 
-1. **Cinematica (Unità 6–7)**, **dinamica + gravitazione (Unità 8)** e **lavoro
-   ed energia (Unità 9)** — FATTE (capitoli 10–14). Vedi sopra "Lavoro fatto".
-2. **PROSSIMO — Princìpi di conservazione** (Unità 10): conservazione dell'energia
-   meccanica, quantità di moto e sua conservazione, urti. Poi termologia e calore
-   — vedi §F di REVISIONE.md.
+1. **Cinematica (Unità 6–7)**, **dinamica + gravitazione (Unità 8)**, **lavoro
+   ed energia (Unità 9)** e **princìpi di conservazione, Lez. 1–3 (Unità 10)** —
+   FATTE (capitoli 10–15). Vedi sopra "Lavoro fatto".
+2. **PROSSIMO** — a scelta: (a) Unità 10 Lez. 4–5 (momento angolare; energia nei
+   liquidi / Bernoulli), rimandate nello split del cap. 15; (b) **termologia e
+   calore** (temperatura e scale, dilatazione, calore specifico, calorimetro,
+   passaggi di stato, propagazione) — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~60 overfull hbox (in
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~71 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
    il glifo `—` mancante in `capitoli/08-equilibrio-corpi-solidi.tex`, e il
    prefisso `\micro` di siunitx (vedi memoria).
