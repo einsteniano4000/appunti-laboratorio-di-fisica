@@ -278,11 +278,13 @@ Nella notazione $\vec F_{AB}$ il primo pedice indica \emph{da} quale corpo parte
     \begin{tikzpicture}[>=stealth]
         \node[circle,fill=blue!25,minimum size=16pt] (A) at (0,0) {\footnotesize $A$};
         \node[circle,fill=red!25,minimum size=16pt] (B) at (3.4,0) {\footnotesize $B$};
-        \draw[->,very thick,ocre] (0.35,0) -- (2.9,0) node[midway,above]{$\vec F_{AB}$};
-        \draw[->,very thick,blue!60!black] (-0.35,0) -- (-1.7,0) node[midway,below]{$\vec F_{BA}$};
-        \node at (1.6,-0.9) {\footnotesize $A$ spinge $B$ verso destra $\;\Rightarrow\;$ $B$ spinge $A$ verso sinistra};
+        % reazione: forza di B su A, applicata ad A, verso sinistra
+        \draw[->,very thick,blue!60!black] (-0.35,0) -- (-2.15,0) node[midway,above]{$\vec F_{BA}$};
+        % azione: forza di A su B, applicata a B, verso destra -- stessa lunghezza
+        \draw[->,very thick,ocre] (3.75,0) -- (5.55,0) node[midway,above]{$\vec F_{AB}$};
+        \node at (1.7,-1.0) {\footnotesize $A$ spinge $B$ verso destra $\;\Rightarrow\;$ $B$ spinge $A$ verso sinistra};
     \end{tikzpicture}
-    \caption{Terzo principio: le due forze sono uguali e opposte, ma applicate a corpi diversi ($\vec F_{AB}$ su $B$, $\vec F_{BA}$ su $A$).}
+    \caption{Terzo principio: le due forze hanno lo stesso modulo e verso opposto, ma sono applicate a corpi diversi -- $\vec F_{AB}$ al corpo $B$, $\vec F_{BA}$ al corpo $A$.}
     \label{fig:terzo-principio}
 \end{figure}
 
