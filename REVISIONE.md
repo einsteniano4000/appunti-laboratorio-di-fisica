@@ -25,6 +25,9 @@
 >     atmosferica · §8.6 Archimede · §8.7 problemi di riepilogo (19).
 >     `verifica/cap-fluidi.py`. 10 figure TikZ originali. 179 pagine.
 >   - [x] Prefazione riscritta (testo dell'autore).
+>   - [x] Cap. corpi solidi: aggiunte §7.6.2 "Centro di massa e baricentro"
+>     (disomogeneo → verso le zone dense, esempio sbarretta Al+Fe) e remark in
+>     §7.3.2 (polo libero se la risultante è nulla). 181 pagine.
 >   - [ ] **PROSSIMO: Cap. "Cinematica"** — Unità 6 "Il moto rettilineo"
 >     (pp. 204–239) + Unità 7 "Il moto nel piano" (pp. 240–269). Seguire la
 >     scansione del libro. Vedi CLAUDE.md per il dettaglio delle sezioni.
