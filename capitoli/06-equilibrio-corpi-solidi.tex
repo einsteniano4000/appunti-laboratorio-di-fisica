@@ -483,17 +483,27 @@ Il baricentro è un punto \textbf{immaginario}: non deve necessariamente trovars
 \subsection{Centro di massa e baricentro}
 Il baricentro è legato alla forza-peso. C'è un altro punto, il \textbf{centro di massa}, che dipende \emph{solo} da come la materia è distribuita nel corpo e non dalla gravità: è la posizione ``media'' di tutta la massa, quella in cui ogni pezzetto conta in proporzione alla propria massa.
 
+\begin{definizione}
+Se un corpo si può pensare diviso in parti di masse $m_1, m_2, \dots, m_n$, i cui centri stanno nelle posizioni $x_1, x_2, \dots, x_n$ lungo un asse, il \textbf{centro di massa} si trova in
+\[ \colorboxed{ocre}{ x_\text{cm} = \frac{m_1 x_1 + m_2 x_2 + \dots + m_n x_n}{m_1 + m_2 + \dots + m_n}. } \]
+È la media delle posizioni, ciascuna ``pesata'' con la massa della sua parte (la stessa formula vale, separatamente, per le coordinate $y$ e $z$).
+\end{definizione}
+
 Finché il corpo si trova in un campo di gravità \textbf{uniforme} -- come accade, con ottima approssimazione, per qualsiasi oggetto di dimensioni ordinarie sulla superficie terrestre -- il centro di massa e il baricentro \textbf{coincidono}, e i due nomi si usano come sinonimi. I due punti si separerebbero soltanto per un corpo così esteso che $g$ cambi sensibilmente da una parte all'altra (una catena montuosa, un satellite molto allungato).
 
-Il centro di massa \textbf{non} coincide con il centro geometrico se il corpo è \textbf{disomogeneo}: allora è spostato verso le zone di \textbf{maggiore densità}, dove è concentrata più massa.
+Dalla formula si legge subito che il centro di massa \textbf{non} sta al centro geometrico se il corpo è \textbf{disomogeneo}: le parti più massicce ``tirano'' la media verso di sé, cioè verso le zone di \textbf{maggiore densità}.
 
 \begin{testexample}[\thetcbcounter \, Una sbarretta di due materiali]
-Una sbarretta lunga \SI{20}{\centi\metre}, di sezione costante, è fatta per metà di alluminio ($\rho_1 = \SI{2700}{\kilo\gram\per\metre\cubed}$) e per metà di ferro ($\rho_2 = \SI{7800}{\kilo\gram\per\metre\cubed}$). Dove si trova il centro di massa?
+Una sbarretta lunga \SI{20}{\centi\metre}, di sezione costante $A$, è fatta per metà di alluminio ($\rho_1 = \SI{2700}{\kilo\gram\per\metre\cubed}$) e per metà di ferro ($\rho_2 = \SI{7800}{\kilo\gram\per\metre\cubed}$). Dove si trova il centro di massa?
 
-Le due metà hanno lo stesso volume, quindi le loro masse stanno fra loro come le densità. Il centro di massa di ciascuna metà è nel suo punto medio: a \SI{5}{\centi\metre} dall'estremo di alluminio la prima, a \SI{15}{\centi\metre} la seconda. La posizione media, pesata con le masse, è
-\[ x_\text{cm} = \frac{\rho_1 \cdot 5 + \rho_2 \cdot 15}{\rho_1 + \rho_2}
+Consideriamo le due metà come due parti. Ciascuna è lunga \SI{10}{\centi\metre}, quindi ha volume $V_0 = A \cdot \SI{10}{\centi\metre}$ (uguale per entrambe), e il suo centro sta nel punto medio: $x_1 = \SI{5}{\centi\metre}$ dall'estremo di alluminio, $x_2 = \SI{15}{\centi\metre}$. Le masse sono $m_1 = \rho_1 V_0$ e $m_2 = \rho_2 V_0$. Applichiamo la formula:
+\[ x_\text{cm} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}
+   = \frac{\rho_1 V_0\, x_1 + \rho_2 V_0\, x_2}{\rho_1 V_0 + \rho_2 V_0}
+   = \frac{V_0\,(\rho_1 x_1 + \rho_2 x_2)}{V_0\,(\rho_1 + \rho_2)}. \]
+Il volume $V_0$ si raccoglie a numeratore e a denominatore e si \textbf{semplifica}:
+\[ x_\text{cm} = \frac{\rho_1 x_1 + \rho_2 x_2}{\rho_1 + \rho_2}
    = \frac{2700 \cdot 5 + 7800 \cdot 15}{2700 + 7800} \approx \SI{12,4}{\centi\metre}. \]
-Non è al centro geometrico (\SI{10}{\centi\metre}), ma è spostato di circa \SI{2,4}{\centi\metre} verso la metà di ferro, più densa.
+Non è al centro geometrico (\SI{10}{\centi\metre}): è spostato di circa \SI{2,4}{\centi\metre} verso la metà di ferro, più densa. La sezione $A$ non compare nel risultato: qualunque sia lo spessore della sbarretta, il centro di massa è nello stesso punto.
 \end{testexample}
 
 \subsection{Ricerca sperimentale del baricentro}
