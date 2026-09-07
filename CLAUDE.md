@@ -17,7 +17,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
   `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`,
   `12-principi-dinamica`, `13-forza-gravitazionale`, `14-lavoro-energia`,
-  `15-principi-conservazione`.
+  `15-principi-conservazione`, `16-temperatura-dilatazione`.
   NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
   `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
   successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
@@ -27,7 +27,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **324**).
+  per verificare riferimenti e conteggio pagine (attualmente **337**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -249,6 +249,22 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 - NB header: titoli di sezione lunghi si sovrappongono al titolo del capitolo
   nell'header → usare `\section[titolo breve]{titolo completo}` (fatto in cap. 15).
 
+### Cap. "Temperatura e dilatazione termica" (Unità 11, Lez. 1–2) — COMPLETO (`capitoli/16-temperatura-dilatazione.tex`)
+- Cap. 16. Prima parte della termologia (Unità 11 del libro, splittata: Lez. 3–5
+  = "Il calore" nel prossimo capitolo).
+- §16.1 la temperatura (agitazione termica; equilibrio termico; termometro; scala
+  Celsius e Kelvin, $T_K=T_C+273{,}15$, zero assoluto; $\Delta T_K=\Delta T_C$;
+  scala Fahrenheit $T_F=\tfrac95 T_C+32$) · §16.2 dilatazione termica (lineare
+  $\Delta l=\lambda l_0\Delta T$; volumica $\Delta V=k V_0\Delta T$ con $k\approx
+  3\lambda$; i fori si allargano; dilatazione dei liquidi; anomalia dell'acqua,
+  volume minimo a \SI{4}{\celsius}) · §16.3 Problemi di riepilogo (20).
+  3 figure TikZ/pgfplots. Verifiche: `verifica/cap-temperatura-dilatazione.py`.
+- Preambolo: `\DeclareSIUnit\fahrenheit{\text{\textdegree F}}` (il `\degree` di
+  siunitx non si può annidare in `\DeclareSIUnit`; `\text{\textdegree F}` sì). Per
+  `°C⁻¹` / `K⁻¹` usare `\si{\celsius}^{-1}` in math (con `per-mode=fraction` del
+  preambolo `\per\celsius` esce come frazione `1/°C`; in alternativa
+  `\SI[per-mode=power]{...}{\per\celsius}`).
+
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
   è cap. 3) perché ne usa i grafici e ne scioglie il rinvio alla "proporzionalità
@@ -268,8 +284,8 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **324 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~71 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **337 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~74 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -290,19 +306,30 @@ riferimento indefinito; ~71 overfull hbox residui = Passo 4).
 ## Lavoro rimanente
 
 1. **Cinematica (Unità 6–7)**, **dinamica + gravitazione (Unità 8)**, **lavoro
-   ed energia (Unità 9)** e **princìpi di conservazione, Lez. 1–3 (Unità 10)** —
-   FATTE (capitoli 10–15). Vedi sopra "Lavoro fatto".
-2. **PROSSIMO** — a scelta: (a) Unità 10 Lez. 4–5 (momento angolare; energia nei
-   liquidi / Bernoulli), rimandate nello split del cap. 15; (b) **termologia e
-   calore** (temperatura e scale, dilatazione, calore specifico, calorimetro,
-   passaggi di stato, propagazione) — vedi §F di REVISIONE.md.
-3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~71 overfull hbox (in
+   ed energia (Unità 9)**, **princìpi di conservazione Lez. 1–3 (Unità 10)** e
+   **temperatura + dilatazione, Lez. 1–2 (Unità 11)** — FATTE (capitoli 10–16).
+   Vedi sopra "Lavoro fatto".
+2. **PROSSIMO — Il calore** (Unità 11, Lez. 3–5): energia termica e calore;
+   capacità termica $C=Q/\Delta T$, calore specifico, $Q=c\,m\,\Delta T$;
+   equilibrio termico e calorimetro; cambiamenti di stato e calori latenti
+   ($Q=\lambda_f m$, $Q=\lambda_v m$); propagazione (conduzione, legge di Fourier
+   $Q=\tfrac{k A\,\Delta T\,\Delta t}{d}$; convezione; irraggiamento). Fonte:
+   `tecnologico.pdf` Unità 11 (PDF ~398–409). Nuovo cap. 17.
+3. **DA COMPLETARE PIÙ AVANTI — Unità 10, Lez. 4–5** (rimandate nello split del
+   cap. 15, deciso con l'utente il 2026-09-07): **momento angolare** (accel.
+   angolare $\alpha$, momento d'inerzia $I=m r^2$, $L=I\omega$ e sua
+   conservazione; pattinatore, gatto che cade) ed **energia nei liquidi**
+   (portata $Q=A v$, equazione di continuità $A_1 v_1 = A_2 v_2$, equazione di
+   Bernoulli $p+\rho g h+\tfrac12\rho v^2=$ cost, effetto Venturi). Fonte:
+   `tecnologico.pdf` Unità 10 (PDF ~374–383). Sarà un nuovo capitolo, numerazione
+   e collocazione da decidere (probabilmente in coda o come Parte II).
+4. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~74 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
    il glifo `—` mancante in `capitoli/08-equilibrio-corpi-solidi.tex`, e il
    prefisso `\micro` di siunitx (vedi memoria).
-4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
+5. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
-5. **Push su `origin`**: `master` è avanti di ~40 commit non pushati (chiedere
+6. **Push su `origin`**: `master` è avanti di ~46 commit non pushati (chiedere
    all'utente prima di pushare).

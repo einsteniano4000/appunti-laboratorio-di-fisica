@@ -84,10 +84,19 @@
 >     4 figure. `verifica/cap-principi-conservazione.py`.
 >     NB header: sezioni con titolo lungo si sovrappongono al titolo capitolo →
 >     usato `\section[breve]{completo}`.
+>   - [x] Cap. "Temperatura e dilatazione termica" (Unità 11, Lez. 1–2) — cap. 16
+>     `16-temperatura-dilatazione.tex`. §16.1 la temperatura (agitazione termica;
+>     equilibrio termico; scale Celsius/Kelvin, $T_K=T_C+273{,}15$, zero assoluto;
+>     $\Delta T_K=\Delta T_C$; Fahrenheit) · §16.2 dilatazione lineare
+>     $\Delta l=\lambda l_0\Delta T$, volumica $\Delta V=k V_0\Delta T$ ($k\approx
+>     3\lambda$), fori che si allargano, dilatazione dei liquidi, anomalia
+>     dell'acqua · §16.3 riepilogo (20). 3 figure. `verifica/cap-temperatura-dilatazione.py`.
+>     Preambolo: `\DeclareSIUnit\fahrenheit{\text{\textdegree F}}`. Per `°C⁻¹` usare
+>     `\si{\celsius}^{-1}` in math.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **324 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~71 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **337 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~74 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
@@ -110,6 +119,7 @@ Struttura attuale (`capitoli/`, file NN = capitolo N):
 13. `13-forza-gravitazionale` (ampliamento, Unità 8, Lez. 7–8)
 14. `14-lavoro-energia` (ampliamento, Unità 9)
 15. `15-principi-conservazione` (ampliamento, Unità 10, Lez. 1–3)
+16. `16-temperatura-dilatazione` (ampliamento, Unità 11, Lez. 1–2)
 
 I capitoli di teoria (7–14, e i prossimi) sono in coda; da valutare una Parte II
 "Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
@@ -204,11 +214,16 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
   gravitazionale, forze conservative/dissipative, energia potenziale elastica,
   conservazione dell'energia, kilowattora).
 - **Princìpi di conservazione** (Unità 10) — Lez. 1–3 FATTE (`capitoli/15-...`:
-  energia meccanica, quantità di moto, urti). Lez. 4 (momento angolare) e Lez. 5
-  (energia nei liquidi / Bernoulli) rimandate.
-- **Termologia** e **calore** — PROSSIMO.
-- **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
-  calorimetro, passaggi di stato, propagazione del calore.
+  energia meccanica, quantità di moto, urti). **Lez. 4 (momento angolare) e Lez. 5
+  (energia nei liquidi / Bernoulli) DA COMPLETARE PIÙ AVANTI** (rimandate nello
+  split, deciso con l'utente il 2026-09-07): saranno un cap. 16 da inserire prima
+  di termologia. Fonte `tecnologico.pdf` Unità 10, PDF ~374–383.
+- **Termologia** (Unità 11, Lez. 1–2) — FATTO, `capitoli/16-...` (temperatura,
+  scale, equilibrio termico; dilatazione lineare/volumica, anomalia dell'acqua).
+- **Il calore** (Unità 11, Lez. 3–5) — PROSSIMO: energia termica e calore;
+  capacità termica e calore specifico, $Q=c m\Delta T$; equilibrio termico e
+  calorimetro; cambiamenti di stato e calori latenti; propagazione (conduzione /
+  Fourier, convezione, irraggiamento).
 
 Ogni capitolo: teoria discorsiva (stile attuale) → box `definizione`/`testexample` → esempi
 svolti → esercizi con risultato verificato → `\section{Problemi di riepilogo}` (~19).
