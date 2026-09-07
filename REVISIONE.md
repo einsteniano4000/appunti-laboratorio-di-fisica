@@ -26,14 +26,16 @@
 >     `verifica/cap-fluidi.py`. 10 figure TikZ originali. 179 pagine.
 >   - [x] Prefazione riscritta (testo dell'autore).
 >   - [x] Cap. corpi solidi: aggiunte §7.6.2 "Centro di massa e baricentro"
->     (disomogeneo → verso le zone dense, esempio sbarretta Al+Fe) e remark in
->     §7.3.2 (polo libero se la risultante è nulla). 181 pagine.
+>     (definizione generale $x_\text{cm}=\sum m_i x_i/\sum m_i$; corpo disomogeneo
+>     → verso le zone dense; esempio sbarretta Al+Fe con semplificazione del
+>     volume) e remark in §7.3.2 (polo libero per l'equilibrio rotazionale se la
+>     risultante è nulla). 181 pagine.
 >   - [ ] **PROSSIMO: Cap. "Cinematica"** — Unità 6 "Il moto rettilineo"
 >     (pp. 204–239) + Unità 7 "Il moto nel piano" (pp. 240–269). Seguire la
 >     scansione del libro. Vedi CLAUDE.md per il dettaglio delle sezioni.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **179 pagine**, exit 0),
+Stato: il documento compila (`lualatex appunti-new.tex`, **181 pagine**, exit 0),
 nessun label duplicato, nessun riferimento indefinito, ~40 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`

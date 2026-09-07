@@ -21,7 +21,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **179**).
+  per verificare riferimenti e conteggio pagine (attualmente **181**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -137,10 +137,11 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 - **Cap. "Equilibrio dei corpi solidi"** — COMPLETO. §7.1 equilibrio del punto
   materiale (vincoli, reazioni vincolari, forza equilibrante) · §7.2 equilibrio e
   attrito (piano inclinato, angolo limite $\tan\alpha_0=k_s$) · §7.3 corpo rigido
-  (momento $M=Fb$, due condizioni di equilibrio) · §7.4 coppie di forze · §7.5
-  macchine semplici e leve (guadagno, 3 generi) · §7.6 baricentro (centro di
-  simmetria; ricerca sperimentale con filo a piombo; equilibrio stab/instab/
-  indiff illustrato con la pallina su cunetta/collinetta/piano; stabilità di un
+  (momento $M=Fb$, due condizioni di equilibrio; remark: il polo è libero se la
+  risultante è nulla) · §7.4 coppie di forze · §7.5 macchine semplici e leve
+  (guadagno, 3 generi) · §7.6 baricentro (centro di simmetria; §7.6.2 centro di
+  massa $x_\text{cm}=\sum m_i x_i/\sum m_i$, corpo disomogeneo; ricerca
+  sperimentale con filo a piombo; equilibrio stab/instab/indiff; stabilità di un
   corpo appoggiato) · §7.7 Problemi di riepilogo (19).
   Verifiche: `verifica/cap-equilibrio.py`.
 - **Cap. "Equilibrio dei fluidi"** — COMPLETO (`capitoli/07-equilibrio-fluidi.tex`).
@@ -157,7 +158,7 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   capitolo) inclusi con `\include`; master con `\includeonly` pronto all'uso.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **179 pagine**, pulito (nessun label duplicato né
+Stato compilazione: OK, **181 pagine**, pulito (nessun label duplicato né
 riferimento indefinito; ~40 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
