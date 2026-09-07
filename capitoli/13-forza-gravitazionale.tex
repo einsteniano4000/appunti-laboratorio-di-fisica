@@ -1,0 +1,339 @@
+\chapter{La forza gravitazionale}
+
+Fra tutte le forze della natura, quella di gravità è la più familiare -- è ciò che fa cadere gli oggetti -- e insieme la più universale: agisce fra due sassi come fra la Terra e il Sole, fra la Luna e gli oceani, fra le galassie. In questo capitolo studiamo la legge che la governa, scoperta da Newton, e la usiamo per due grandi applicazioni: calcolare l'accelerazione di gravità sulla superficie di un pianeta e descrivere il moto dei satelliti.
+
+\section{Le leggi di Keplero}
+
+Prima di Newton, l'astronomo tedesco \textbf{Johannes Kepler} (Keplero, 1571--1630) aveva ricavato dai dati osservativi tre leggi che descrivono \emph{come} si muovono i pianeti attorno al Sole, senza però spiegarne la causa.
+
+\begin{definizione}
+\textbf{Prima legge (legge delle orbite).} I pianeti descrivono attorno al Sole orbite ellittiche, di cui il Sole occupa uno dei due fuochi.
+
+\textbf{Seconda legge (legge delle aree).} Il segmento che congiunge il Sole a un pianeta (raggio vettore) spazza aree uguali in tempi uguali.
+
+\textbf{Terza legge (legge dei periodi).} Il rapporto fra il cubo del semiasse maggiore dell'orbita e il quadrato del periodo di rivoluzione è lo stesso per tutti i pianeti:
+\[ \frac{r^3}{T^2} = \text{costante}. \]
+\end{definizione}
+
+Dalla seconda legge segue che un pianeta \textbf{non} si muove a velocità costante: quando è vicino al Sole (al \emph{perielio}) va più veloce, quando è lontano (all'\emph{afelio}) va più lento -- solo così può spazzare la stessa area in tempi uguali (figura~\ref{fig:keplero-aree}).
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \pgfmathsetmacro\ec{sqrt(3.4*3.4-2.7*2.7)}   % distanza fuoco-centro
+        \draw[gray!70,thick] (0,0) ellipse (3.4 and 2.7);
+        % Sole nel fuoco destro
+        \coordinate (S) at (\ec,0);
+        \fill[ocre] (S) circle (3.5pt) node[below=3pt]{\footnotesize Sole};
+        % perielio (vicino al Sole, a destra) e afelio (lontano, a sinistra)
+        \fill (3.4,0) circle (1.6pt) node[right]{\footnotesize perielio};
+        \fill (-3.4,0) circle (1.6pt) node[left]{\footnotesize afelio};
+        % settore al perielio: arco breve, angolo ampio
+        \fill[ocre!22] (S) -- (3.4,0) arc (0:40:3.4 and 2.7) -- cycle;
+        % settore all'afelio: arco lungo, angolo stretto (schematico: stessa area)
+        \fill[ocre!22] (S) -- ({3.4*cos(163)},{2.7*sin(163)}) arc (163:197:3.4 and 2.7) -- cycle;
+        \node[font=\footnotesize] at (0.2,-1.75) {aree uguali in tempi uguali};
+    \end{tikzpicture}
+    \caption{Le prime due leggi di Keplero: orbita ellittica con il Sole in un fuoco; il raggio vettore spazza aree uguali in tempi uguali, quindi il pianeta è più veloce al perielio.}
+    \label{fig:keplero-aree}
+\end{figure}
+
+Per la maggior parte dei pianeti l'orbita è quasi circolare, e in prima approssimazione si può trattare come una circonferenza percorsa di moto circolare uniforme.
+
+\section{La legge di gravitazione universale}
+
+Newton fece un passo decisivo: capì che la forza che tiene i pianeti in orbita attorno al Sole è la \emph{stessa} che fa cadere una mela, e che ogni coppia di corpi dotati di massa si attrae.
+
+\begin{definizione}
+\textbf{Legge di gravitazione universale.} Due corpi puntiformi di masse $m_1$ e $m_2$, posti a distanza $r$, si attraggono con una forza diretta lungo la loro congiungente, di modulo
+\[ \colorboxed{ocre}{ F = G\,\frac{m_1\,m_2}{r^2}. } \]
+La costante $G$ è la stessa per tutti i corpi dell'universo (\textbf{costante di gravitazione universale}):
+\[ G \approx \SI{6,67e-11}{\newton\metre\squared\per\kilo\gram\squared}. \]
+\end{definizione}
+
+Le due forze -- quella che $m_1$ esercita su $m_2$ e quella che $m_2$ esercita su $m_1$ -- sono uguali in modulo e opposte in verso, come richiede il terzo principio della dinamica (figura~\ref{fig:due-masse}). Per i corpi estesi (pianeti, stelle) si può considerare tutta la massa concentrata nel baricentro.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \fill[gray!50] (0,0) circle (9pt) node[below=8pt]{\footnotesize $m_1$};
+        \fill[gray!50] (5,0) circle (6pt) node[below=6pt]{\footnotesize $m_2$};
+        \draw[<->] (0,0.9) -- (5,0.9) node[midway,fill=white,inner sep=1pt]{\footnotesize $r$};
+        \draw[->,very thick,ocre] (0.4,0) -- (2.1,0) node[midway,above]{\footnotesize $\vec F_{21}$};
+        \draw[->,very thick,ocre] (4.7,0) -- (3.0,0) node[midway,above]{\footnotesize $\vec F_{12}$};
+    \end{tikzpicture}
+    \caption{Due masse si attraggono con forze uguali e opposte, dirette lungo la congiungente, di modulo $F = G\,m_1 m_2 / r^2$.}
+    \label{fig:due-masse}
+\end{figure}
+
+\subsection{Le proprietà della forza gravitazionale}
+\begin{itemize}
+    \item È \textbf{direttamente proporzionale a ciascuna delle due masse}: se una massa raddoppia, la forza raddoppia.
+    \item È \textbf{inversamente proporzionale al quadrato della distanza}: se la distanza raddoppia, la forza diventa un \emph{quarto}; se triplica, un nono.
+    \item È sempre \textbf{attrattiva} e diretta lungo la congiungente dei due corpi.
+    \item Il valore di $G$ è piccolissimo, quindi fra corpi di uso comune la forza è del tutto trascurabile: diventa importante solo quando almeno una delle masse è enorme, come quella di un pianeta o di una stella.
+\end{itemize}
+
+\begin{remark}
+Che $F$ vari come $1/r^2$ ha una conseguenza che ritroveremo per la luce e per il campo elettrico: raddoppiando la distanza l'effetto si riduce a un quarto, non alla metà. È la ``legge dell'inverso del quadrato'', tipica di ogni grandezza che si distribuisce su una superficie sferica in espansione.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, L'attrazione fra la Terra e la Luna]
+La massa della Terra è $m_T = \SI{6,0e24}{\kilo\gram}$, quella della Luna $m_L = \SI{7,35e22}{\kilo\gram}$; la distanza fra i centri è \SI{384000}{\kilo\metre}. Qual è la forza di attrazione fra i due corpi?
+
+Convertiamo la distanza: $r = \SI{384000}{\kilo\metre} = \SI{3,84e8}{\metre}$. Allora
+\[ F = G\,\frac{m_T\,m_L}{r^2} = \num{6,67e-11} \cdot \frac{\num{6,0e24} \cdot \num{7,35e22}}{(\num{3,84e8})^2} \approx \SI{2,0e20}{\newton}. \]
+La stessa forza (di verso opposto) è quella con cui la Luna attrae la Terra ed è responsabile, fra l'altro, delle maree.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Due sfere in laboratorio]
+Due sfere di piombo di massa \SI{1,0}{\kilo\gram} ciascuna hanno i centri a \SI{20}{\centi\metre} di distanza. Con quale forza si attraggono?
+\[ F = G\,\frac{m_1 m_2}{r^2} = \num{6,67e-11} \cdot \frac{1{,}0 \cdot 1{,}0}{(0{,}20)^2} = \num{6,67e-11} \cdot 25 \approx \SI{1,7e-9}{\newton}. \]
+Una forza piccolissima, del tutto impercettibile: ecco perché non ci accorgiamo dell'attrazione gravitazionale fra gli oggetti di tutti i giorni.
+\end{testexample}
+
+\begin{esercizio}
+Due grandi navi da \SI{2,0e7}{\kilo\gram} ciascuna sono ormeggiate a \SI{50}{\metre} di distanza. Con quale forza si attraggono per gravità? (È un effetto reale: navi vicine tendono ad avvicinarsi.)\\
+\risp{$F = G\,m^2/r^2 = \num{6,67e-11} \cdot \num{4,0e14} / 2500 \approx \SI{11}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Se la distanza fra due corpi che si attraggono per gravità viene triplicata, come cambia la forza? E se, oltre a triplicare la distanza, si raddoppia una delle due masse?\\
+\risp{diventa $1/9$; \; poi $\times 2$, quindi in tutto $2/9$ della forza iniziale}
+\end{esercizio}
+
+\begin{esercizio}
+Tre sfere identiche di massa \SI{1,0}{\kilo\gram} sono allineate: $A$ e $B$ distano \SI{3,0}{\metre}, $B$ e $C$ distano \SI{2,0}{\metre}. Calcola il modulo della forza gravitazionale risultante sulla sfera $C$ (le due attrazioni sono dirette nello stesso verso, verso $A$ e $B$).\\
+\risp{$F_{BC} = G/2{,}0^2 = \num{1,67e-11}$; \; $F_{AC} = G/5{,}0^2 = \num{2,67e-12}$; \; risultante $\approx \SI{1,9e-11}{\newton}$}
+\end{esercizio}
+
+\section{L'accelerazione di gravità}
+
+La legge di gravitazione permette di capire da dove viene il valore $g \approx \SI{9,81}{\metre\per\second\squared}$ che usiamo per la caduta dei gravi.
+
+Consideriamo un corpo di massa $m$ a distanza $h$ dalla superficie di un pianeta di massa $M$ e raggio $R$ (figura~\ref{fig:g-altezza}). La sua distanza dal centro del pianeta è $R + h$, e la forza gravitazionale che lo attira è
+\[ F = G\,\frac{M\,m}{(R + h)^2}. \]
+Ma questa forza è il \textbf{peso} del corpo, e per il secondo principio della dinamica $P = m\,g$. Uguagliando:
+\[ m\,g = G\,\frac{M\,m}{(R + h)^2} \;\Longrightarrow\; g = G\,\frac{M}{(R + h)^2}. \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \draw[fill=blue!12] (0,0) circle (1.7);
+        \fill (0,0) circle (1.5pt) node[below left=-2pt]{\footnotesize $C$};
+        \draw[->] (0,0) -- (35:1.7) node[midway,above,sloped]{\footnotesize $R$};
+        \coordinate (P) at (35:2.8);
+        \fill[gray!60] (P) circle (3pt) node[right=2pt]{\footnotesize $m$};
+        \draw[->] (35:1.7) -- (P) node[midway,above,sloped]{\footnotesize $h$};
+        \draw[->,very thick,ocre] (P) -- ($(P)!0.9!(0,0)$) node[midway,below right]{\footnotesize $\vec P$};
+        \draw[gray,dashed] (0,0) -- (P);
+    \end{tikzpicture}
+    \caption{Un corpo di massa $m$ a quota $h$ dista $R + h$ dal centro $C$ del pianeta. Il suo peso è la forza gravitazionale $G\,Mm/(R+h)^2$.}
+    \label{fig:g-altezza}
+\end{figure}
+
+Sulla \textbf{superficie} del pianeta ($h = 0$):
+\[ \colorboxed{ocre}{ g = G\,\frac{M}{R^2}. } \]
+
+Da questa formula si legge tutto:
+\begin{itemize}
+    \item $g$ \textbf{non dipende dalla massa} $m$ del corpo che cade: due corpi di massa diversa, nello stesso punto, cadono con la stessa accelerazione (lo sapevamo da Galileo, ora sappiamo perché);
+    \item $g$ \textbf{diminuisce con l'altezza}: salendo in montagna, o mettendosi in orbita, $R + h$ cresce e $g$ cala;
+    \item conoscendo massa e raggio di un pianeta si può calcolare la sua $g$ superficiale, senza andarci.
+\end{itemize}
+
+\begin{testexample}[\thetcbcounter \, L'accelerazione di gravità su Marte]
+La massa di Marte è $M = \SI{6,4e23}{\kilo\gram}$, il raggio $R = \SI{3,4e6}{\metre}$. Quanto vale $g$ sulla sua superficie?
+\[ g = G\,\frac{M}{R^2} = \num{6,67e-11} \cdot \frac{\num{6,4e23}}{(\num{3,4e6})^2} \approx \SI{3,7}{\metre\per\second\squared}. \]
+Poco più di un terzo del valore terrestre: su Marte un corpo pesa circa \num{2,7} volte meno che sulla Terra.
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Verifica per la Terra]
+Con $M_T = \SI{6,0e24}{\kilo\gram}$ e $R_T = \SI{6,4e6}{\metre}$:
+\[ g = G\,\frac{M_T}{R_T^2} = \num{6,67e-11} \cdot \frac{\num{6,0e24}}{(\num{6,4e6})^2} \approx \SI{9,8}{\metre\per\second\squared}, \]
+in accordo con il valore misurato per la caduta dei gravi.
+\end{testexample}
+
+\begin{esercizio}
+La Luna ha massa \SI{7,35e22}{\kilo\gram} e raggio \SI{1,74e6}{\metre}. Calcola l'accelerazione di gravità sulla sua superficie. Quante volte è minore di quella terrestre?\\
+\risp{$g_L = G\,M/R^2 \approx \SI{1,62}{\metre\per\second\squared}$; \; circa $6$ volte minore}
+\end{esercizio}
+
+\begin{esercizio}
+Un pianeta ha massa doppia della Terra e raggio doppio. Quanto vale $g$ sulla sua superficie, rispetto a quella terrestre?\\
+\risp{$g \propto M/R^2$, quindi $g_{\text{pianeta}} = \dfrac{2}{2^2}\,g_T = \dfrac{1}{2}\,g_T \approx \SI{4,9}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+A quale altezza $h$ sopra la superficie terrestre l'accelerazione di gravità si riduce alla metà del valore al suolo? (Usa $g(h) = g_0\,R^2/(R+h)^2$ e $R = \SI{6,4e6}{\metre}$.)\\
+\risp{$(R+h)^2 = 2R^2 \Rightarrow R + h = R\sqrt{2} \Rightarrow h = R(\sqrt{2} - 1) \approx \SI{2,7e6}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Il Sole ha massa \SI{2,0e30}{\kilo\gram} e raggio \SI{7,0e8}{\metre}. Calcola $g$ sulla sua ``superficie''.\\
+\risp{$g = G\,M/R^2 \approx \SI{272}{\metre\per\second\squared}$ (circa $28$ volte quella terrestre)}
+\end{esercizio}
+
+\section{Il moto dei satelliti}
+
+Un \textbf{satellite} è un corpo che orbita attorno a un pianeta: la Luna attorno alla Terra, o i satelliti artificiali per le telecomunicazioni, la meteorologia, il GPS. Le leggi che ne governano il moto sono quelle di Keplero; qui consideriamo il caso semplice di un'\textbf{orbita circolare}.
+
+\subsection{La velocità di un satellite}
+Un satellite di massa $m$ orbita a quota $h$ sopra la superficie di un pianeta di massa $M$ e raggio $R$: il raggio della sua orbita è $r = R + h$. Perché descriva una circonferenza serve una forza centripeta
+\[ F_c = \frac{m\,v^2}{R + h}, \]
+e questa forza è fornita \emph{esattamente} dall'attrazione gravitazionale del pianeta:
+\[ \frac{m\,v^2}{R + h} = G\,\frac{M\,m}{(R + h)^2}. \]
+Moltiplicando entrambi i membri per $(R + h)$, dividendo per $m$ ed estraendo la radice quadrata:
+\[ \colorboxed{ocre}{ v = \sqrt{\frac{G\,M}{R + h}}. } \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \draw[fill=blue!12] (0,0) circle (1.25);
+        \node[font=\footnotesize] at (0,-0.5) {Terra};
+        \fill (0,0) circle (1.3pt);
+        \draw[gray!70,dashed] (0,0) circle (3.4);
+        \coordinate (Sat) at (62:3.4);
+        \fill[gray!60] (Sat) circle (3pt);
+        \node[font=\footnotesize,right=2pt] at (Sat) {satellite};
+        \draw[thin,gray] (0,0) -- (Sat);
+        \node[font=\footnotesize,sloped,above=2pt] at ($(0,0)!0.82!(Sat)$) {$R+h$};
+        \draw[->,very thick,red!70!black] (Sat) -- ($(Sat)!0.5!(0,0)$);
+        \node[font=\footnotesize,left=3pt] at ($(0,0)!0.5!(Sat)$) {$\vec F$};
+        \draw[->,very thick,blue!60!black] (Sat) -- ++(152:1.6) node[above left=-1pt]{\footnotesize $\vec v$};
+    \end{tikzpicture}
+    \caption{Satellite in orbita circolare: la forza gravitazionale $\vec F$ fa da forza centripeta, mantenendolo sulla circonferenza di raggio $R + h$.}
+    \label{fig:satellite}
+\end{figure}
+
+Osserviamo due fatti:
+\begin{itemize}
+    \item nella formula \textbf{non compare la massa} $m$ del satellite: a una data quota, tutti i satelliti (grandi o piccoli) hanno la stessa velocità orbitale;
+    \item la velocità \textbf{diminuisce} all'aumentare della quota: un satellite basso è più veloce di uno alto.
+\end{itemize}
+
+\subsection{Il periodo di rivoluzione}
+Il \textbf{periodo} $T$ è il tempo di un giro completo. In un moto circolare uniforme vale $v = 2\pi(R + h)/T$, da cui
+\[ \colorboxed{ocre}{ T = \frac{2\pi\,(R + h)}{v}. } \]
+
+Un satellite il cui periodo è esattamente uguale al giorno terrestre (\SI{24}{\hour}) resta sempre sopra lo stesso punto dell'equatore: si dice \textbf{geostazionario}, ed è il tipo usato per le telecomunicazioni e la TV satellitare. La sua quota risulta di circa \SI{35800}{\kilo\metre}.
+
+\begin{testexample}[\thetcbcounter \, Un satellite a bassa quota]
+Un satellite orbita a \SI{500}{\kilo\metre} di altezza. La Terra ha massa $M_T = \SI{6,0e24}{\kilo\gram}$ e raggio $R_T = \SI{6,4e6}{\metre}$. Con quale velocità viaggia?
+
+Il raggio dell'orbita è $r = R_T + h = \SI{6,4e6}{\metre} + \SI{5,0e5}{\metre} = \SI{6,9e6}{\metre}$, quindi
+\[ v = \sqrt{\frac{G\,M_T}{R_T + h}} = \sqrt{\frac{\num{6,67e-11} \cdot \num{6,0e24}}{\num{6,9e6}}} \approx \SI{7,6e3}{\metre\per\second}, \]
+cioè circa \SI{7,6}{\kilo\metre\per\second} (più di \SI{27000}{\kilo\metre\per\hour}).
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, Il satellite geostazionario]
+Un satellite geostazionario orbita a $h = \SI{35800}{\kilo\metre}$ di altezza. Calcoliamo la sua velocità e verifichiamo il periodo.
+
+Il raggio dell'orbita è $r = R_T + h = \SI{6400}{\kilo\metre} + \SI{35800}{\kilo\metre} = \SI{42200}{\kilo\metre} = \SI{4,22e7}{\metre}$. La velocità è
+\[ v = \sqrt{\frac{G\,M_T}{r}} = \sqrt{\frac{\num{6,67e-11} \cdot \num{6,0e24}}{\num{4,22e7}}} \approx \SI{3,1e3}{\metre\per\second}. \]
+Il periodo è
+\[ T = \frac{2\pi\,r}{v} = \frac{2\pi \cdot \num{4,22e7}}{\num{3,08e3}} \approx \SI{8,6e4}{\second} \approx \SI{24}{\hour}, \]
+esattamente un giorno, come deve essere per un satellite geostazionario.
+\end{testexample}
+
+\begin{esercizio}
+Un satellite orbita a \SI{800}{\kilo\metre} di altezza attorno alla Terra ($M_T = \SI{6,0e24}{\kilo\gram}$, $R_T = \SI{6,4e6}{\metre}$). Calcola la sua velocità orbitale.\\
+\risp{$r = \SI{7,2e6}{\metre}$; \; $v = \sqrt{G M_T / r} \approx \SI{7,5e3}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due satelliti orbitano attorno alla Terra, uno a bassa quota e uno molto alto. Quale dei due è più veloce? Quale ha il periodo più lungo?\\
+\risp{il satellite basso è più veloce (v decresce con $r$); quello alto ha il periodo più lungo (orbita più lunga e velocità minore)}
+\end{esercizio}
+
+\begin{esercizio}
+La Stazione Spaziale Internazionale orbita a circa \SI{420}{\kilo\metre} di altezza. Calcola la velocità orbitale e il periodo ($M_T = \SI{6,0e24}{\kilo\gram}$, $R_T = \SI{6,4e6}{\metre}$).\\
+\risp{$r \approx \SI{6,82e6}{\metre}$; \; $v \approx \SI{7,66e3}{\metre\per\second}$; \; $T = 2\pi r/v \approx \SI{5,6e3}{\second} \approx \SI{93}{\minute}$}
+\end{esercizio}
+
+\begin{esercizio}
+I satelliti del GPS percorrono un'orbita di raggio \SI{26600}{\kilo\metre} attorno al centro della Terra. Calcola la loro velocità ($M_T = \SI{6,0e24}{\kilo\gram}$).\\
+\risp{$v = \sqrt{G M_T / r} = \sqrt{\num{4,0e14}/\num{2,66e7}} \approx \SI{3,9e3}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un satellite deve orbitare attorno alla Luna ($M_L = \SI{7,35e22}{\kilo\gram}$, $R_L = \SI{1,74e6}{\metre}$) a \SI{100}{\kilo\metre} di quota. Con quale velocità?\\
+\risp{$r = \SI{1,84e6}{\metre}$; \; $v = \sqrt{G M_L / r} \approx \SI{1,6e3}{\metre\per\second}$}
+\end{esercizio}
+
+\section{Problemi di riepilogo}
+
+\begin{esercizio}
+Enuncia le tre leggi di Keplero. In quale punto dell'orbita un pianeta si muove più velocemente, e perché?\\
+\risp{orbite ellittiche col Sole in un fuoco; aree uguali in tempi uguali; $r^3/T^2$ costante. Più veloce al perielio (punto più vicino al Sole), per la legge delle aree}
+\end{esercizio}
+
+\begin{esercizio}
+Due corpi di massa \SI{5,0}{\kilo\gram} e \SI{8,0}{\kilo\gram} hanno i centri a \SI{40}{\centi\metre} di distanza. Con quale forza si attraggono?\\
+\risp{$F = G\,m_1 m_2 / r^2 = \num{6,67e-11} \cdot 40 / 0{,}16 \approx \SI{1,7e-8}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+La forza gravitazionale fra due corpi vale \SI{6,0e-9}{\newton}. Quanto varrebbe se si dimezzasse la distanza fra i due corpi?\\
+\risp{$F \propto 1/r^2$: dimezzando $r$ la forza diventa $4$ volte, cioè \SI{2,4e-8}{\newton}}
+\end{esercizio}
+
+\begin{esercizio}
+Calcola la forza con cui la Terra ($M_T = \SI{6,0e24}{\kilo\gram}$, $R_T = \SI{6,4e6}{\metre}$) attira un corpo di massa \SI{2,0}{\kilo\gram} posto sulla sua superficie. Verifica che è il peso del corpo.\\
+\risp{$F = G\,M_T m / R_T^2 \approx \SI{19,5}{\newton}$, praticamente uguale a $P = m g = 2{,}0 \cdot 9{,}81 \approx \SI{19,6}{\newton}$ (la piccola differenza è dovuta agli arrotondamenti su $M_T$ e $R_T$)}
+\end{esercizio}
+
+\begin{esercizio}
+Un pianeta ha la stessa massa della Terra ma raggio metà. Quanto vale $g$ sulla sua superficie, rispetto a quella terrestre?\\
+\risp{$g \propto M/R^2$: raggio metà $\Rightarrow$ $g$ quadruplo $\approx \SI{39}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Su Giove $g \approx \SI{24,8}{\metre\per\second\squared}$. Un astronauta con la sua attrezzatura ha massa \SI{120}{\kilo\gram}. Quanto pesa sulla Terra? E su Giove?\\
+\risp{sulla Terra $P = 120 \cdot 9{,}81 \approx \SI{1177}{\newton}$; \; su Giove $P = 120 \cdot 24{,}8 \approx \SI{2976}{\newton}$ (la massa resta \SI{120}{\kilo\gram})}
+\end{esercizio}
+
+\begin{esercizio}
+La massa di Venere è \SI{4,87e24}{\kilo\gram} e il raggio \SI{6,05e6}{\metre}. Calcola $g$ sulla sua superficie.\\
+\risp{$g = G\,M/R^2 \approx \SI{8,9}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un satellite orbita attorno alla Terra a \SI{1200}{\kilo\metre} di altezza ($M_T = \SI{6,0e24}{\kilo\gram}$, $R_T = \SI{6,4e6}{\metre}$). Calcola velocità orbitale e periodo.\\
+\risp{$r = \SI{7,6e6}{\metre}$; \; $v \approx \SI{7,3e3}{\metre\per\second}$; \; $T = 2\pi r / v \approx \SI{6,6e3}{\second} \approx \SI{110}{\minute}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un satellite orbita a una quota tale che la sua velocità è \SI{6,0}{\kilo\metre\per\second}. A quale distanza dal centro della Terra si trova ($G M_T = \SI{4,0e14}{}$ in unità SI)?\\
+\risp{da $v^2 = G M_T / r$: $r = G M_T / v^2 = \num{4,0e14} / (\num{6,0e3})^2 \approx \SI{1,1e7}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Perché un astronauta a bordo della Stazione Spaziale ``fluttua'', pur trovandosi a una quota in cui $g$ vale ancora circa il $90\%$ del valore al suolo?\\
+\risp{la Stazione e tutto ciò che contiene sono in caduta libera attorno alla Terra: la gravità c'è (fa da forza centripeta), ma non c'è nessun pavimento che spinge l'astronauta, quindi il suo ``peso apparente'' è nullo, come in un ascensore in caduta libera}
+\end{esercizio}
+
+\begin{esercizio}
+La massa del Sole è \SI{2,0e30}{\kilo\gram} e la Terra dista da esso \SI{1,5e11}{\metre}. Calcola la forza con cui il Sole attrae la Terra ($M_T = \SI{6,0e24}{\kilo\gram}$) e l'accelerazione centripeta della Terra sulla sua orbita.\\
+\risp{$F = G\,M_S M_T / r^2 \approx \SI{3,6e22}{\newton}$; \; $a_c = F/M_T \approx \SI{5,9e-3}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due sfere identiche si toccano; i loro centri distano \SI{10}{\centi\metre} e si attraggono con una forza di \SI{6,67e-8}{\newton}. Qual è la massa di ciascuna sfera?\\
+\risp{da $F = G\,m^2/r^2$: $m = r\sqrt{F/G} = 0{,}10 \cdot \sqrt{\num{6,67e-8}/\num{6,67e-11}} = 0{,}10 \cdot \sqrt{1000} \approx \SI{3,2}{\kilo\gram}$}
+\end{esercizio}
+
+\begin{esercizio}
+La terza legge di Keplero afferma che $r^3/T^2$ è costante per tutti i pianeti. Marte dista dal Sole circa $1{,}52$ volte più della Terra. Quanti anni terrestri dura un anno marziano? (Usa $T_M/T_T = (r_M/r_T)^{3/2}$.)\\
+\risp{$T_M = (1{,}52)^{3/2}\,T_T \approx 1{,}87$ anni}
+\end{esercizio}
+
+\begin{esercizio}
+A che altezza dovrebbe trovarsi un satellite perché il suo peso fosse metà di quello che ha al suolo? (È lo stesso conto del dimezzamento di $g$: $R + h = R\sqrt{2}$, con $R = \SI{6,4e6}{\metre}$.)\\
+\risp{$h = R(\sqrt{2} - 1) \approx \SI{2,7e6}{\metre} \approx \SI{2650}{\kilo\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un satellite geostazionario ha periodo di \SI{24}{\hour} e orbita a raggio \SI{4,22e7}{\metre}. Verifica, con la formula $v = 2\pi r / T$, che la sua velocità è circa \SI{3,1}{\kilo\metre\per\second}.\\
+\risp{$v = 2\pi \cdot \num{4,22e7} / \num{86400} \approx \SI{3,07e3}{\metre\per\second}$: confermato}
+\end{esercizio}

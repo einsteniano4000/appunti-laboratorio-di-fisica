@@ -49,10 +49,24 @@
 >     nel fiume; cenno principio di relatività) · §11.6 riepilogo (19).
 >     11 figure TikZ/pgfplots. `verifica/cap-moto-nel-piano.py`.
 >     NB: `°` letterale non si stampa con questo font (esce «ř») → usare `^\circ`.
+>     Stesso problema con `§` («ğ») e `—` (em-dash) → usare `\ref`/«paragrafo» e `--`.
+>   - [x] Cap. "I princìpi della dinamica" (Unità 8, Lez. 1–6) — cap. 12
+>     `12-principi-dinamica.tex`. §12.1 primo principio/inerzia · §12.2 secondo
+>     principio $\vec F=m\vec a$ (newton; peso $\vec P=m\vec g$; massa vs peso) ·
+>     §12.3 terzo principio · §12.4 applicazioni (caduta in un fluido
+>     $v_r=\sqrt{P/h}$; piano inclinato dinamico; forza centripeta $F_c=mv^2/r$) ·
+>     §12.5 forze apparenti (forza centrifuga; peso apparente in ascensore) ·
+>     §12.6 moto oscillatorio ($T=2\pi\sqrt{m/k}$, pendolo $T=2\pi\sqrt{l/g}$) ·
+>     §12.7 riepilogo (19). 9 figure. `verifica/cap-principi-dinamica.py`.
+>   - [x] Cap. "La forza gravitazionale" (Unità 8, Lez. 7–8) — cap. 13
+>     `13-forza-gravitazionale.tex`. §13.1 leggi di Keplero · §13.2 gravitazione
+>     universale $F=G\,m_1 m_2/r^2$ · §13.3 proprietà · §13.4 accelerazione di
+>     gravità $g=GM/R^2$ · §13.5 moto dei satelliti $v=\sqrt{GM/(R+h)}$,
+>     geostazionario · §13.6 riepilogo (16). 5 figure. `verifica/cap-forza-gravitazionale.py`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **250 pagine**, exit 0),
-nessun label duplicato, nessun riferimento indefinito, ~55 *overfull hbox* residui.
+Stato: il documento compila (`lualatex appunti-new.tex`, **283 pagine**, exit 0),
+nessun label duplicato, nessun riferimento indefinito, ~60 *overfull hbox* residui.
 
 Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
@@ -69,9 +83,12 @@ Struttura attuale (`capitoli/`, file NN = capitolo N):
 7. `07-grandezze-vettoriali-forze` (ampliamento, Unità 3)
 8. `08-equilibrio-corpi-solidi` (ampliamento, Unità 4)
 9. `09-equilibrio-fluidi` (ampliamento, Unità 5)
-10. `10-moto-rettilineo` (ampliamento, Unità 6 — manca §9.7 problemi di riepilogo)
+10. `10-moto-rettilineo` (ampliamento, Unità 6)
+11. `11-moto-nel-piano` (ampliamento, Unità 7)
+12. `12-principi-dinamica` (ampliamento, Unità 8, Lez. 1–6)
+13. `13-forza-gravitazionale` (ampliamento, Unità 8, Lez. 7–8)
 
-I capitoli di teoria (7–10, e i prossimi) sono in coda; da valutare una Parte II
+I capitoli di teoria (7–13, e i prossimi) sono in coda; da valutare una Parte II
 "Meccanica" con `\part{}` e la collocazione rispetto alle Relazioni di Laboratorio.
 
 ---
@@ -156,9 +173,10 @@ Bozza indice Parte II (si segue la scansione di `tecnologico.pdf`):
   `capitoli/10-...` e `capitoli/11-...` (moto rettilineo uniforme/accelerato, leggi
   orarie e grafici; moto circolare uniforme, velocità angolare, moto armonico, moto
   parabolico, composizione dei moti).
-- **Dinamica** (Unità 7 "I princìpi della dinamica" + Unità 8) — PROSSIMO: i tre
-  principi, massa vs peso, forze apparenti, forza gravitazionale, satelliti.
-- **Lavoro ed energia** (Unità 9) e **princìpi di conservazione** (Unità 10).
+- **Dinamica** (Unità 8) — FATTO: `capitoli/12-...` (tre princìpi, peso, piano
+  inclinato dinamico, forza centripeta, forze apparenti, moto oscillatorio) e
+  `capitoli/13-...` (gravitazione universale, $g$ sui pianeti, satelliti).
+- **Lavoro ed energia** (Unità 9) e **princìpi di conservazione** (Unità 10) — PROSSIMO.
 - **Termologia** e **calore**: temperatura e scale, dilatazione termica, calore specifico,
   calorimetro, passaggi di stato, propagazione del calore.
 

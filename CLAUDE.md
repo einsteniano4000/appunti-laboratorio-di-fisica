@@ -15,7 +15,8 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
   `00-prefazione` (via `\input`), `01-misura-grandezze`, `02-errori-misura`,
   `03-grafici-misure`, `04-relazioni-grandezze`, `05-relazioni-laboratorio`,
   `06-statistica`, `07-grandezze-vettoriali-forze`, `08-equilibrio-corpi-solidi`,
-  `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`.
+  `09-equilibrio-fluidi`, `10-moto-rettilineo`, `11-moto-nel-piano`,
+  `12-principi-dinamica`, `13-forza-gravitazionale`.
   NB: "Grafici di misure" era annidato dentro `02-errori-misura.tex` (due
   `\chapter` in un file); ora è nel suo file `03-grafici-misure.tex` e i capitoli
   successivi sono stati rinumerati (03→05, 04→06, 05→07, 06→08, 07→09, 08→10).
@@ -25,7 +26,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **250**).
+  per verificare riferimenti e conteggio pagine (attualmente **283**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -190,7 +191,31 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   derivata della traiettoria). Verifiche: `verifica/cap-moto-nel-piano.py`.
   Nuove unità siunitx usate: `\radian`, `\radian\per\second`, `\hertz`, `\degree`.
   NB: il carattere `°` letterale NON si stampa con questo font (esce «ř») —
-  usare sempre `^\circ` o `\SI{}{\degree}`.
+  usare sempre `^\circ` o `\SI{}{\degree}`. Stesso problema con `§` (esce «ğ») e
+  `—` (em-dash): usare `\ref{}`/«paragrafo» e `--`.
+
+### Cap. "I princìpi della dinamica" (Unità 8, Lez. 1–6) — COMPLETO (`capitoli/12-principi-dinamica.tex`)
+- Cap. 12. §12.1 primo principio / inerzia (Aristotele vs Galileo; sistemi
+  inerziali) · §12.2 secondo principio $\vec F=m\vec a$ (esperimenti $F\propto a$,
+  $a\propto 1/m$; newton; legge vettoriale; peso $\vec P=m\vec g$, massa vs peso) ·
+  §12.3 terzo principio $\vec F_{AB}=-\vec F_{BA}$ (azione-reazione; attrito che fa
+  avanzare; equilibrio) · §12.4 applicazioni: caduta in un fluido (velocità di
+  regime $v_r=\sqrt{P/h}$), piano inclinato dinamico ($a=gh/l$, con attrito
+  $a=gh/l-F_a/m$), corpo lanciato, forza centripeta $F_c=mv^2/r=m\omega^2 r$ ·
+  §12.5 forze apparenti (sistemi non inerziali; $F_{ap}=ma$; forza centrifuga
+  $F_{cf}=m\omega^2 r$; peso apparente in ascensore $R=m(g\pm a)$) · §12.6 moto
+  oscillatorio (oscillatore a molla $T=2\pi\sqrt{m/k}$; pendolo
+  $T=2\pi\sqrt{l/g}$; oscillazioni smorzate) · §12.7 Problemi di riepilogo (19).
+  9 figure TikZ/pgfplots. Verifiche: `verifica/cap-principi-dinamica.py`.
+
+### Cap. "La forza gravitazionale" (Unità 8, Lez. 7–8) — COMPLETO (`capitoli/13-forza-gravitazionale.tex`)
+- Cap. 13. §13.1 leggi di Keplero (orbite ellittiche, aree, $r^3/T^2$ cost.;
+  perielio/afelio) · §13.2 gravitazione universale $F=G\,m_1 m_2/r^2$, $G\approx
+  6{,}67\cdot10^{-11}$ · §13.3 proprietà (∝ masse, ∝ $1/r^2$) · §13.4
+  accelerazione di gravità $g=GM/R^2$; $g$ su altri pianeti; $g$ con l'altezza ·
+  §13.5 moto dei satelliti: $v=\sqrt{GM/(R+h)}$, $T=2\pi(R+h)/v$; geostazionario ·
+  §13.6 Problemi di riepilogo (16). 5 figure TikZ. Verifiche:
+  `verifica/cap-forza-gravitazionale.py`. Prossimo (Unità 9): lavoro ed energia.
 
 ### Cap. "Relazioni tra grandezze" (nuovo, cap. 4) — COMPLETO (`capitoli/04-relazioni-grandezze.tex`)
 - Richiesto dall'utente, non nel libro. Collocato dopo "Grafici di misure" (che ora
@@ -211,8 +236,8 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
 
 Prefazione riscritta (testo dell'autore).
-Stato compilazione: OK, **250 pagine**, pulito (nessun label duplicato né
-riferimento indefinito; ~55 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **283 pagine**, pulito (nessun label duplicato né
+riferimento indefinito; ~60 overfull hbox residui = Passo 4).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 
@@ -232,14 +257,12 @@ riferimento indefinito; ~55 overfull hbox residui = Passo 4).
 
 ## Lavoro rimanente
 
-1. **Cap. "Il moto nel piano"** (Unità 7) — FATTO (`capitoli/11-moto-nel-piano.tex`,
-   cap. 11). Vedi sopra "Lavoro fatto". Prossimo passo della cinematica: nessuno,
-   si passa alla dinamica.
-2. **PROSSIMO — dinamica** (Unità 7–8: i tre princìpi, massa vs peso, forze
-   apparenti, forza gravitazionale, satelliti). Poi lavoro ed energia (Unità
-   9–10), termologia, calore — vedi §F di REVISIONE.md.
+1. **Cinematica (Unità 6–7)** e **dinamica + gravitazione (Unità 8)** — FATTE
+   (capitoli 10–13). Vedi sopra "Lavoro fatto".
+2. **PROSSIMO — Lavoro ed energia** (Unità 9) e **princìpi di conservazione**
+   (Unità 10). Poi termologia e calore — vedi §F di REVISIONE.md.
 3. **Passo 4 della revisione** (non ancora fatto): uniformare le unità
-   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~50 overfull hbox (in
+   (`\si{cm^3}` vs `\si{\cubic\centi\meter}`), sistemare i ~60 overfull hbox (in
    gran parte i box `remark`, che sforano di 14 pt per la geometria dell'ambiente),
    il glifo `—` mancante in `capitoli/08-equilibrio-corpi-solidi.tex`, e il
    prefisso `\micro` di siunitx (vedi memoria).

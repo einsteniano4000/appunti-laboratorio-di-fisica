@@ -1,0 +1,732 @@
+\chapter{I princìpi della dinamica}
+
+Nei due capitoli precedenti abbiamo imparato a \emph{descrivere} il moto: posizione, velocità, accelerazione, leggi orarie. Non ci siamo però mai chiesti \emph{perché} un corpo si muova in un certo modo, o perché la sua velocità cambi. È il problema di cui si occupa la \textbf{dinamica}: mettere in relazione il moto di un corpo con le \textbf{forze} che agiscono su di esso.
+
+Tutta la dinamica classica si regge su tre affermazioni fondamentali -- i \textbf{tre princìpi della dinamica} -- formulate da Isaac Newton alla fine del Seicento, raccogliendo e completando le intuizioni di Galileo. In questo capitolo li enunciamo, li applichiamo a situazioni concrete (piani inclinati, attrito, moto circolare) e vediamo che cosa succede quando li si usa da un veicolo che accelera. Nel capitolo successivo studieremo la più importante delle forze, quella di gravitazione.
+
+\section{Il primo principio della dinamica}
+
+\subsection{Da Aristotele a Galileo}
+Osservando la vita di tutti i giorni sembra naturale pensare che, per mantenere un corpo in movimento, occorra spingerlo di continuo: una bicicletta si ferma se il ciclista smette di pedalare, una palla lanciata sul prato rallenta fino a fermarsi. Il filosofo greco \textbf{Aristotele} (IV secolo a.C.) ne concluse che lo \emph{stato naturale} dei corpi è la quiete, e che il moto richiede una causa sempre presente. Questa idea rimase indiscussa per quasi duemila anni.
+
+All'inizio del Seicento \textbf{Galileo Galilei} capovolse il ragionamento. Facciamo scendere una pallina lungo un piano inclinato liscio: essa arriva in fondo con una certa velocità e poi, sul piano orizzontale, percorre un tratto prima di fermarsi. Se rendiamo il piano orizzontale più liscio, la pallina va più lontano. Riducendo ancora l'attrito, ancora più lontano. Galileo intuì che \textbf{se l'attrito fosse del tutto assente, la pallina continuerebbe a muoversi per sempre, a velocità costante}, senza bisogno di alcuna spinta.
+
+Il rallentamento che osserviamo non è dunque una proprietà del moto, ma l'effetto di una forza -- l'attrito, la resistenza dell'aria -- che di solito non possiamo eliminare.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \def\qy{2.4}
+        \pgfmathsetmacro\xl{-\qy/tan(40)}
+        \pgfmathsetmacro\xr{\qy/tan(58)}
+        \pgfmathsetmacro\xd{\qy/tan(24)}
+        % linea della quota di partenza
+        \draw[gray,dashed] (\xl-0.2,\qy) -- (\xd+0.4,\qy);
+        \node[gray,above,font=\footnotesize] at ($({(\xl+0)/2},\qy)$) {quota di partenza};
+        % rampa di sinistra
+        \draw[very thick] (\xl,\qy) -- (0,0);
+        % due rampe di destra
+        \draw[very thick] (0,0) -- (\xr,\qy);
+        \draw[very thick] (0,0) -- (\xd,\qy);
+        \fill (\xr,\qy) circle (1.6pt);
+        \fill (\xd,\qy) circle (1.6pt);
+        % pallina in discesa sulla rampa di sinistra
+        \fill[ocre] ({0.62*\xl},{0.62*\qy}) circle (3pt);
+        \draw[->,ocre,very thick] ({0.62*\xl+0.35},{0.62*\qy-0.30}) -- ++(0.55,-0.46);
+        % etichette (nello spazio libero fra le due rampe di destra)
+        \node[font=\footnotesize,anchor=south west] at ({0.5*\xr},{0.78*\qy}) {piano ripido};
+        \node[font=\footnotesize,align=center,anchor=north] at ({0.62*\xd},{0.5*\qy}) {piano dolce:\\arriva più lontano};
+    \end{tikzpicture}
+    \caption{Esperimento ideale di Galileo: la pallina risale sempre fino alla quota di partenza. Più il secondo piano è dolce, più lontano deve arrivare per riguadagnare quella quota; al limite orizzontale non si ferma mai.}
+    \label{fig:galileo-rampe}
+\end{figure}
+
+\subsection{L'enunciato del primo principio}
+
+\begin{definizione}
+\textbf{Primo principio della dinamica} (o \textbf{principio d'inerzia}): un corpo mantiene il proprio stato di quiete o di moto rettilineo uniforme finché non interviene una forza a modificarlo.
+\end{definizione}
+
+In altre parole, quando la \textbf{risultante} delle forze che agiscono su un corpo è \textbf{nulla}:
+\begin{itemize}
+    \item se il corpo è fermo, resta fermo;
+    \item se il corpo è in moto, prosegue in linea retta con velocità costante.
+\end{itemize}
+
+La tendenza di un corpo a mantenere invariato il proprio stato di quiete o di moto si chiama \textbf{inerzia}. L'inerzia di un corpo dipende dalla sua \textbf{massa}: più un corpo è massiccio, più è difficile metterlo in moto o fermarlo. È molto più facile far partire una bicicletta che un camion.
+
+\begin{remark}
+Il primo principio non dice che ``se non c'è forza il corpo è fermo'': dice che se non c'è forza la \emph{velocità non cambia}. Un corpo può muoversi velocissimo pur non essendo soggetto ad alcuna forza -- è il caso di una sonda spaziale lontana da ogni pianeta, che viaggia a decine di migliaia di chilometri all'ora in linea retta senza motori accesi.
+\end{remark}
+
+\subsection{I sistemi di riferimento inerziali}
+C'è un dettaglio importante. Consideriamo un disco appoggiato su un tavolo liscio in un vagone ferroviario: peso e reazione del tavolo si bilanciano, la risultante è nulla. Se il treno viaggia di moto rettilineo uniforme, il disco resta fermo rispetto al vagone -- il primo principio funziona. Ma se il treno \emph{frena}, il disco parte in avanti da solo, pur non essendo spinto da nulla: rispetto al vagone il primo principio sembra violato.
+
+\begin{definizione}
+Si chiama \textbf{sistema di riferimento inerziale} un sistema in cui vale il principio d'inerzia. Un sistema che si muove di moto rettilineo uniforme rispetto a un sistema inerziale è anch'esso inerziale; un sistema che accelera o ruota è \textbf{non inerziale}.
+\end{definizione}
+
+I princìpi della dinamica, nella forma che vedremo, valgono nei sistemi inerziali. Alle forze che compaiono nei sistemi non inerziali (come la ``spinta'' che avvertiamo in un'auto in frenata) è dedicato il paragrafo~\ref{sec:forze-apparenti}.
+
+\begin{esercizio}
+Un lampadario pende immobile dal soffitto. Quali forze agiscono su di esso? Quanto vale la loro risultante?\\
+\risp{il peso (verso il basso) e la tensione del filo (verso l'alto); risultante nulla, quindi resta fermo}
+\end{esercizio}
+
+\begin{esercizio}
+Un'astronave in viaggio interstellare spegne i motori mentre viaggia a \SI{40000}{\kilo\metre\per\hour}. Che cosa fa da quel momento in poi, lontana da ogni corpo celeste?\\
+\risp{prosegue in linea retta a \SI{40000}{\kilo\metre\per\hour} costanti (risultante nulla $\Rightarrow$ velocità costante)}
+\end{esercizio}
+
+\begin{esercizio}
+In quale di questi sistemi di riferimento vale il principio d'inerzia: un treno a velocità costante, un'automobile che affronta una curva, un ascensore che sale a velocità costante, una giostra che gira?\\
+\risp{il treno a velocità costante e l'ascensore a velocità costante (inerziali); l'auto in curva e la giostra accelerano (non inerziali)}
+\end{esercizio}
+
+\section{Il secondo principio della dinamica}
+
+Il primo principio dice \emph{che cosa} succede quando la risultante delle forze è nulla. Il secondo dice \emph{quanto} un corpo accelera quando la risultante \emph{non} è nulla.
+
+\subsection{La forza fa variare la velocità}
+Immaginiamo un carrello su una guida orizzontale liscia, tirato da un filo con una forza costante $F$; a bordo un accelerometro misura l'accelerazione $a$ (figura~\ref{fig:carrello-2principio}). Facciamo due serie di prove.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \def\rw{0.16}                       % raggio ruote
+        \draw[thick] (-0.3,0) -- (6.6,0);
+        % corpo del carrello, appoggiato sugli assi delle ruote
+        \draw[fill=gray!20] (1.1,{2*\rw}) rectangle (3.1,{2*\rw+0.7});
+        % ruote tangenti alla guida (centro a quota = raggio)
+        \draw[fill=gray!35] (1.5,\rw) circle (\rw);
+        \draw[fill=gray!35] (2.7,\rw) circle (\rw);
+        \fill (1.5,\rw) circle (0.6pt); \fill (2.7,\rw) circle (0.6pt);
+        % forza applicata al carrello, orizzontale
+        \draw[->,very thick,ocre] (3.1,{2*\rw+0.35}) -- (4.9,{2*\rw+0.35}) node[midway,above]{$\vec F$};
+        % accelerazione
+        \draw[->,very thick,blue!60!black] (1.7,{2*\rw+0.95}) -- (2.7,{2*\rw+0.95}) node[right]{$\vec a$};
+        \node at (2.1,-0.35) {\footnotesize massa $m$};
+    \end{tikzpicture}
+    \caption{Una forza costante $\vec F$ tira il carrello di massa $m$ su una guida orizzontale liscia; si misura l'accelerazione $\vec a$.}
+    \label{fig:carrello-2principio}
+\end{figure}
+
+\textbf{Prima serie: massa fissa, forza variabile.} Teniamo costante la massa del carrello e applichiamo prima $F$, poi $2F$, poi $3F$. Le accelerazioni misurate sono $a$, $2a$, $3a$: riportate su un grafico danno una \textbf{retta per l'origine}. Forza e accelerazione sono \textbf{direttamente proporzionali}.
+
+\textbf{Seconda serie: forza fissa, massa variabile.} Teniamo costante la forza e aumentiamo la massa del carrello aggiungendo pesetti. Raddoppiando la massa l'accelerazione si dimezza, triplicandola si riduce a un terzo: il grafico dell'accelerazione in funzione della massa è un'\textbf{iperbole}. Accelerazione e massa sono \textbf{inversamente proporzionali}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        name=g1, width=0.44\linewidth, height=4.6cm,
+        xlabel={forza}, ylabel={accelerazione},
+        xtick={2,4,6}, xticklabels={$F$,$2F$,$3F$},
+        ytick={2,4,6}, yticklabels={$a$,$2a$,$3a$},
+        xmin=0,xmax=7.2, ymin=0,ymax=7.2,
+        axis lines=left, tick label style={font=\footnotesize},
+        label style={font=\footnotesize},
+    ]
+    \addplot[ocre,very thick,domain=0:7] {x};
+    \addplot[only marks,mark=*,mark size=1.5pt,black] coordinates {(2,2)(4,4)(6,6)};
+    \end{axis}
+    \begin{axis}[
+        name=g2, at={($(g1.east)+(1.5cm,0)$)}, anchor=west,
+        width=0.44\linewidth, height=4.6cm,
+        xlabel={massa}, ylabel={accelerazione},
+        xtick=\empty, ytick=\empty,
+        xmin=0,xmax=7.2, ymin=0,ymax=7.5,
+        axis lines=left, label style={font=\footnotesize},
+    ]
+    \addplot[ocre,very thick,samples=80,domain=0.9:7] {6/x};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{A sinistra: a massa fissa, l'accelerazione è proporzionale alla forza (retta). A destra: a forza fissa, l'accelerazione è inversamente proporzionale alla massa (iperbole).}
+    \label{fig:2principio-grafici}
+\end{figure}
+
+\subsection{L'enunciato del secondo principio}
+
+\begin{definizione}
+\textbf{Secondo principio della dinamica} (o \textbf{legge fondamentale della dinamica}): la risultante $\vec F$ delle forze applicate a un corpo è uguale al prodotto della massa $m$ del corpo per l'accelerazione $\vec a$ che esso acquista:
+\[ \colorboxed{ocre}{ \vec F = m\,\vec a. } \]
+\end{definizione}
+
+La formula riassume tutto quello che abbiamo osservato: a parità di massa $a$ cresce con $F$; a parità di forza $a$ diminuisce all'aumentare di $m$; e il corpo accelera nella stessa direzione e verso della forza risultante.
+
+\begin{definizione}
+Nel Sistema Internazionale l'unità di misura della forza è il \textbf{newton} (simbolo \si{\newton}): $\SI{1}{\newton}$ è la forza che imprime a una massa di \SI{1}{\kilo\gram} un'accelerazione di \SI{1}{\metre\per\second\squared}.
+\[ \SI{1}{\newton} = \SI{1}{\kilo\gram} \cdot \SI{1}{\metre\per\second\squared} = \SI{1}{\kilo\gram\metre\per\second\squared}. \]
+\end{definizione}
+
+\subsection{Una legge vettoriale}
+Forza e accelerazione sono vettori, quindi $\vec F = m\vec a$ è una relazione \textbf{vettoriale}. Occorre sempre ragionare sulla \emph{risultante} delle forze (figura~\ref{fig:2principio-vettori}):
+\begin{itemize}
+    \item se sul corpo agisce \textbf{una sola forza}, l'accelerazione ha la stessa direzione e verso di quella forza;
+    \item se agiscono \textbf{due forze uguali e opposte}, la risultante è nulla e l'accelerazione è nulla (si ricade nel primo principio);
+    \item se agiscono \textbf{più forze con risultante non nulla}, l'accelerazione ha la direzione e il verso della risultante, e modulo $a = F_{\text{ris}}/m$.
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=0.95]
+        % caso 1
+        \begin{scope}
+        \fill[gray!40] (0,0) circle (7pt);
+        \draw[->,very thick,ocre] (0.25,0) -- (1.7,0) node[below]{\footnotesize $\vec F$};
+        \draw[->,very thick,blue!60!black] (0,0.5) -- (1.0,0.5) node[above]{\footnotesize $\vec a$};
+        \node at (0.8,-0.9) {\footnotesize una forza};
+        \end{scope}
+        % caso 2
+        \begin{scope}[shift={(4,0)}]
+        \fill[gray!40] (0,0) circle (7pt);
+        \draw[->,very thick,ocre] (-0.25,0) -- (-1.5,0) node[left]{\footnotesize $\vec F_2$};
+        \draw[->,very thick,ocre] (0.25,0) -- (1.5,0) node[right]{\footnotesize $\vec F_1$};
+        \node at (0,0.55) {\footnotesize $\vec a = 0$};
+        \node at (0,-0.9) {\footnotesize forze opposte};
+        \end{scope}
+        % caso 3
+        \begin{scope}[shift={(8.4,-0.3)}]
+        \fill[gray!40] (0,0) circle (7pt);
+        \draw[->,very thick,ocre] (0.2,0.1) -- (1.5,0.1) node[right]{\footnotesize $\vec F_1$};
+        \draw[->,very thick,ocre] (0.1,0.2) -- (0.1,1.5) node[above]{\footnotesize $\vec F_2$};
+        \draw[->,very thick,blue!60!black] (0.15,0.15) -- (1.2,1.2) node[above right]{\footnotesize $\vec a$};
+        \draw[gray,dashed] (1.5,0.1) -- (1.5,1.5) -- (0.1,1.5);
+        \node at (0.6,-0.95) {\footnotesize risultante $\neq 0$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Il secondo principio è vettoriale: l'accelerazione ha sempre la direzione e il verso della \emph{risultante} delle forze.}
+    \label{fig:2principio-vettori}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Forza per una data accelerazione]
+Quale forza risultante serve per imprimere a una massa di \SI{3,0}{\kilo\gram} un'accelerazione di \SI{2,0}{\metre\per\second\squared}? E se la stessa forza agisse su una massa di \SI{6,0}{\kilo\gram}?
+\[ F = m\,a = \SI{3,0}{\kilo\gram} \cdot \SI{2,0}{\metre\per\second\squared} = \SI{6,0}{\newton}. \]
+La stessa forza su una massa doppia produce un'accelerazione dimezzata:
+\[ a = \frac{F}{m} = \frac{\SI{6,0}{\newton}}{\SI{6,0}{\kilo\gram}} = \SI{1,0}{\metre\per\second\squared}. \]
+\end{testexample}
+
+\begin{testexample}[\thetcbcounter \, La partenza di un bob]
+Alla partenza di una gara di bob a due, i due atleti spingono ciascuno con una forza di \SI{100}{\newton} per \SI{4,0}{\second}. La massa del bob (con gli atleti) è \SI{180}{\kilo\gram} e gli attriti sono trascurabili. Con che velocità arriva il bob alla fine della spinta?
+
+La forza complessiva è $F = 2 \cdot \SI{100}{\newton} = \SI{200}{\newton}$ (le due spinte sono concordi). L'accelerazione impressa al bob è
+\[ a = \frac{F}{m} = \frac{\SI{200}{\newton}}{\SI{180}{\kilo\gram}} \approx \SI{1,1}{\metre\per\second\squared}. \]
+Partendo da fermo, dopo \SI{4,0}{\second} la velocità è (legge della velocità del moto accelerato):
+\[ v = a\,t \approx 1{,}1 \cdot 4{,}0 \approx \SI{4,4}{\metre\per\second}. \]
+\end{testexample}
+
+\subsection{Il secondo principio e il peso}
+Nel capitolo sulle forze avevamo scritto il peso come $P = mg$, con $g = \SI{9,81}{\newton\per\kilo\gram}$. Ora possiamo capire da dove viene quella formula. Un corpo lasciato cadere (attrito dell'aria trascurabile) è soggetto a una sola forza, il peso $\vec P$, e si muove con accelerazione $\vec g$. Applicando il secondo principio:
+\[ \colorboxed{ocre}{ \vec P = m\,\vec g. } \]
+
+Il peso di un corpo, in un certo luogo, è il prodotto della sua massa per l'accelerazione di gravità in quel luogo. La costante $g$ è dunque \emph{sia} l'accelerazione di caduta libera (\si{\metre\per\second\squared}) \emph{sia} il peso per unità di massa (\si{\newton\per\kilo\gram}): sono due modi di leggere lo stesso numero.
+
+\begin{remark}
+\textbf{Massa e peso non sono la stessa cosa.} La massa $m$ misura l'inerzia del corpo e la quantità di materia: è la stessa ovunque, sulla Terra come sulla Luna. Il peso $P = mg$ è una \emph{forza}, e cambia da luogo a luogo perché cambia $g$: sulla Luna, dove $g \approx \SI{1,6}{\metre\per\second\squared}$, un corpo pesa circa sei volte meno che sulla Terra, pur avendo la stessa massa.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Peso sulla Terra e sulla Luna]
+Un astronauta ha una massa di \SI{80}{\kilo\gram}. Quanto pesa sulla Terra ($g = \SI{9,81}{\metre\per\second\squared}$)? E sulla Luna ($g_L = \SI{1,6}{\metre\per\second\squared}$)?
+\[ P_T = m\,g = 80 \cdot 9{,}81 \approx \SI{785}{\newton}; \qquad P_L = m\,g_L = 80 \cdot 1{,}6 = \SI{128}{\newton}. \]
+La massa resta \SI{80}{\kilo\gram} in entrambi i casi.
+\end{testexample}
+
+\begin{esercizio}
+Una forza risultante di \SI{12}{\newton} agisce su un corpo di massa \SI{4,0}{\kilo\gram}, inizialmente fermo. Qual è l'accelerazione? Che velocità raggiunge il corpo dopo \SI{5,0}{\second}?\\
+\risp{$a = \SI{3,0}{\metre\per\second\squared}$; \; $v = \SI{15}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{1200}{\kilo\gram} accelera da ferma fino a \SI{25}{\metre\per\second} in \SI{10}{\second}. Qual è la forza risultante che agisce su di essa?\\
+\risp{$a = \SI{2,5}{\metre\per\second\squared}$; \; $F = \SI{3000}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Su un corpo di massa \SI{2,0}{\kilo\gram} agiscono due forze perpendicolari, di \SI{6,0}{\newton} e \SI{8,0}{\newton}. Calcola il modulo della risultante e l'accelerazione del corpo.\\
+\risp{$F_{\text{ris}} = \SI{10}{\newton}$; \; $a = \SI{5,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un carrello viene tirato con una forza costante e accelera a \SI{3,0}{\metre\per\second\squared}. Se si raddoppia la massa del carrello (stessa forza), quanto vale la nuova accelerazione?\\
+\risp{$a = \SI{1,5}{\metre\per\second\squared}$ (accelerazione e massa inversamente proporzionali)}
+\end{esercizio}
+
+\begin{esercizio}
+Un pattinatore di massa \SI{60}{\kilo\gram} si dà una spinta e raggiunge \SI{4,0}{\metre\per\second} in \SI{2,0}{\second}. Qual è la forza media che ha esercitato il ghiaccio sui pattini?\\
+\risp{$a = \SI{2,0}{\metre\per\second\squared}$; \; $F = \SI{120}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso di massa \SI{0,50}{\kilo\gram} viene lasciato cadere (attrito dell'aria trascurabile). Quale forza agisce su di esso e quanto vale la sua accelerazione? Che cosa cambierebbe se il sasso avesse massa \SI{2,0}{\kilo\gram}?\\
+\risp{$P = mg = \SI{4,9}{\newton}$, $a = g = \SI{9,81}{\metre\per\second\squared}$; \; con \SI{2,0}{\kilo\gram}: $P = \SI{19,6}{\newton}$ ma $a = g$ invariata}
+\end{esercizio}
+
+\section{Il terzo principio della dinamica}
+
+\subsection{Forze a coppie}
+Due calamite $A$ e $B$ montate su carrellini si attraggono: se misuriamo con due dinamometri la forza che $A$ esercita su $B$ e quella che $B$ esercita su $A$, troviamo lo \textbf{stesso valore}. Lo stesso accade per i corpi a contatto: se due pattinatori fermi si spingono a vicenda, partono entrambi, in versi opposti.
+
+\begin{definizione}
+\textbf{Terzo principio della dinamica} (o \textbf{principio di azione e reazione}): quando un corpo $A$ esercita una forza su un corpo $B$, il corpo $B$ esercita su $A$ una forza uguale in modulo e direzione, ma di verso opposto:
+\[ \colorboxed{ocre}{ \vec F_{AB} = -\,\vec F_{BA}. } \]
+\end{definizione}
+
+Nella notazione $\vec F_{AB}$ il primo pedice indica \emph{da} quale corpo parte la forza, il secondo \emph{su} quale corpo agisce. Le due forze di una coppia azione--reazione sono sempre applicate a \textbf{corpi diversi}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        \node[circle,fill=blue!25,minimum size=16pt] (A) at (0,0) {\footnotesize $A$};
+        \node[circle,fill=red!25,minimum size=16pt] (B) at (3.4,0) {\footnotesize $B$};
+        \draw[->,very thick,ocre] (0.35,0) -- (2.9,0) node[midway,above]{$\vec F_{AB}$};
+        \draw[->,very thick,blue!60!black] (-0.35,0) -- (-1.7,0) node[midway,below]{$\vec F_{BA}$};
+        \node at (1.6,-0.9) {\footnotesize $A$ spinge $B$ verso destra $\;\Rightarrow\;$ $B$ spinge $A$ verso sinistra};
+    \end{tikzpicture}
+    \caption{Terzo principio: le due forze sono uguali e opposte, ma applicate a corpi diversi ($\vec F_{AB}$ su $B$, $\vec F_{BA}$ su $A$).}
+    \label{fig:terzo-principio}
+\end{figure}
+
+\subsection{È l'attrito che ci fa avanzare}
+Quando camminiamo, il piede spinge \emph{all'indietro} contro il suolo con una forza $\vec F_{ps}$; per il terzo principio il suolo spinge \emph{in avanti} il piede con una forza uguale e contraria $\vec F_{sp}$, ed è questa a farci avanzare. L'interazione è possibile solo grazie all'\textbf{attrito}: su una lastra di ghiaccio, dove l'attrito è quasi nullo, il piede scivola e non riusciamo a spingerci in avanti. Allo stesso modo, le ruote motrici di un'automobile spingono all'indietro l'asfalto, e l'asfalto spinge in avanti l'automobile.
+
+\begin{remark}
+Se azione e reazione sono uguali e opposte, perché non si annullano sempre? Perché \textbf{agiscono su corpi diversi}. La forza con cui il piede spinge il suolo agisce sul \emph{suolo}; quella con cui il suolo spinge il piede agisce sulla \emph{persona}. Per studiare il moto della persona conta solo la seconda. Il caso di due forze uguali e opposte applicate allo \emph{stesso} corpo (equilibrio) è un'altra cosa.
+\end{remark}
+
+\begin{testexample}[\thetcbcounter \, Il rinculo di un'arma]
+Sparando, il fucile esercita sul proiettile una forza in avanti; per il terzo principio il proiettile esercita sul fucile una forza uguale e contraria, che lo fa arretrare (il ``rinculo''). Se il proiettile ha massa \SI{10}{\gram} ed esce con accelerazione media \SI{2,0e5}{\metre\per\second\squared}, la forza sul proiettile è
+\[ F = m\,a = \SI{0,010}{\kilo\gram} \cdot \SI{2,0e5}{\metre\per\second\squared} = \SI{2000}{\newton}, \]
+e la stessa forza (di verso opposto) agisce sul fucile durante lo sparo.
+\end{testexample}
+
+\begin{esercizio}
+Una persona di massa \SI{70}{\kilo\gram} salta giù da una barca ferma spingendola all'indietro. Se la barca (di massa \SI{140}{\kilo\gram}) parte all'indietro con accelerazione \SI{1,0}{\metre\per\second\squared}, con quale forza è stata spinta? Con quale accelerazione parte in avanti la persona?\\
+\risp{$F = \SI{140}{\newton}$; \; sulla persona la stessa forza $\Rightarrow$ $a = 140/70 = \SI{2,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un libro di peso \SI{8,0}{\newton} è appoggiato su un tavolo. Qual è la forza che il libro esercita sul tavolo? E quella che il tavolo esercita sul libro? (Individua le coppie azione--reazione.)\\
+\risp{il libro preme sul tavolo con \SI{8,0}{\newton} verso il basso; il tavolo spinge il libro con \SI{8,0}{\newton} verso l'alto (reazione vincolare). Il peso del libro e la reazione del tavolo \emph{non} sono una coppia azione--reazione: agiscono sullo stesso corpo}
+\end{esercizio}
+
+\begin{esercizio}
+Perché su un lago ghiacciato, senza scarpe chiodate, è quasi impossibile mettersi a camminare?\\
+\risp{camminare richiede che il piede spinga indietro il suolo (azione) e il suolo spinga avanti il piede (reazione); senza attrito il piede scivola e non può esercitare la spinta}
+\end{esercizio}
+
+\section{Alcune applicazioni dei tre princìpi}
+
+\subsection{La caduta in un fluido}
+Un corpo che cade nell'aria o in un liquido è soggetto a due forze: il peso $\vec P$ (verso il basso) e l'\textbf{attrito del fluido} (verso l'alto), che si oppone al moto e cresce con la velocità. Per velocità non piccolissime si può scrivere
+\[ F_a = h\,v^2, \]
+dove $h$ è un coefficiente che dipende dalla forma, dalle dimensioni del corpo e dal fluido.
+
+All'inizio della caduta $v = 0$, quindi $F_a = 0$ e la risultante è tutto il peso: il corpo accelera. Ma man mano che accelera $F_a$ cresce, finché diventa uguale al peso: da quel momento la risultante è nulla e -- per il primo principio -- il corpo prosegue a \textbf{velocità costante}, detta \textbf{velocità di regime} (o velocità limite) $v_r$. La si trova imponendo $F_a = P$:
+\[ h\,v_r^2 = P \;\Longrightarrow\; \colorboxed{ocre}{ v_r = \sqrt{\frac{P}{h}}. } \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\linewidth, height=5cm,
+        xlabel={tempo}, ylabel={velocità},
+        xtick=\empty, ytick={4}, yticklabels={$v_r$},
+        xmin=0, xmax=6, ymin=0, ymax=5,
+        axis lines=left, label style={font=\footnotesize},
+        tick label style={font=\footnotesize},
+    ]
+    \addplot[ocre,very thick,samples=100,domain=0:6] {4*(1 - e^(-0.9*x))};
+    \addplot[gray,dashed,domain=0:6] {4};
+    \node[font=\footnotesize,anchor=south east] at (axis cs:6,4) {velocità di regime};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Caduta in un fluido: la velocità cresce sempre più lentamente e tende a un valore limite $v_r$, raggiunto quando l'attrito eguaglia il peso.}
+    \label{fig:caduta-fluido}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Il paracadutista]
+Un paracadutista di peso \SI{980}{\newton} (col paracadute) si lascia cadere da fermo. La resistenza dell'aria vale $F_a = h\,v^2$ con $h = \SI{24}{\newton\per\metre\squared\second\squared}$ (unità tali che $h\,v^2$ risulti in newton). Qual è la velocità di regime?
+
+Quando l'attrito eguaglia il peso la risultante è nulla:
+\[ h\,v_r^2 = P \;\Longrightarrow\; v_r = \sqrt{\frac{P}{h}} = \sqrt{\frac{\SI{980}{\newton}}{24}} \approx \SI{6,4}{\metre\per\second}. \]
+Da quel momento il paracadutista scende a velocità costante.
+\end{testexample}
+
+\subsection{Le forze su un piano inclinato}
+Un corpo appoggiato su un piano inclinato \textbf{liscio} è soggetto al peso $\vec P$ e alla reazione vincolare $\vec R$ (perpendicolare al piano). Conviene scomporre il peso in due componenti (figura~\ref{fig:piano-dinamico}): una \textbf{parallela} al piano, $P_\parallel$, e una \textbf{perpendicolare}, $P_\perp$. La componente perpendicolare è equilibrata da $\vec R$; quella parallela resta senza equilibrio ed è la sola responsabile del moto. Vale la relazione
+\[ P_\parallel = \frac{P\,h}{l}, \]
+dove $h$ è l'altezza e $l$ la lunghezza del piano. Per il secondo principio, l'accelerazione lungo il piano è
+\[ a = \frac{P_\parallel}{m} = \frac{m\,g\,h}{m\,l} = \colorboxed{ocre}{ \frac{g\,h}{l}. } \]
+Ritroviamo la formula del capitolo sulla cinematica: poiché $h < l$, l'accelerazione è sempre minore di $g$.
+
+Se il piano \textbf{non} è liscio, la forza di attrito $F_a$ si oppone al moto e la forza risultante lungo il piano diventa $F = P_\parallel - F_a$; l'accelerazione è allora
+\[ a = \frac{P_\parallel - F_a}{m} = \frac{g\,h}{l} - \frac{F_a}{m}. \]
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \def\ang{28}
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (6.4,0);
+        \coordinate (C) at (6.4,{6.4*tan(\ang)});
+        \draw[thick,fill=brown!12] (A) -- (B) -- (C) -- cycle;
+        \draw[<->] (6.8,0) -- (6.8,{6.4*tan(\ang)}) node[midway,right]{$h$};
+        \node[rotate=\ang] at (1.4,{1.4*tan(\ang)+0.30}) {$l$};
+        \draw (0.9,0) arc (0:\ang:0.9); \node at (1.25,0.24) {\small $\alpha$};
+        % blocco a metà piano
+        \begin{scope}[shift={(3.4,{3.4*tan(\ang)})}]
+            \draw[fill=gray!25,rotate=\ang] (-0.45,0) rectangle (0.45,0.55);
+            % peso verso il basso
+            \draw[->,very thick,ocre] (0,0.2) -- (0,-1.4) node[below,black]{$\vec P$};
+            % componenti
+            \draw[->,thick,blue!60!black,rotate=\ang] (0,0) -- (0,-1.05) node[right=1pt,black]{\footnotesize $P_\perp$};
+            \draw[->,thick,blue!60!black,rotate=\ang] (0,0) -- (-1.1,0) node[below left=-2pt,black]{\footnotesize $P_\parallel$};
+            % reazione vincolare
+            \draw[->,thick,blue!60!black,rotate=\ang] (0,0.05) -- (0,1.1) node[right=1pt,black]{\footnotesize $\vec R$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Forze su un corpo fermo o in moto lungo un piano inclinato: il peso $\vec P$ si scompone in $P_\perp$ (equilibrata da $\vec R$) e $P_\parallel = P\,h/l$ (responsabile dell'accelerazione).}
+    \label{fig:piano-dinamico}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Accelerazione su un piano inclinato con attrito]
+Un corpo di massa \SI{20}{\kilo\gram} scende lungo un piano inclinato la cui altezza è metà della lunghezza ($h/l = 0{,}50$). L'attrito vale $F_a = \SI{4,0}{\newton}$. Qual è l'accelerazione?
+\[ a = \frac{g\,h}{l} - \frac{F_a}{m} = 9{,}81 \cdot 0{,}50 - \frac{\SI{4,0}{\newton}}{\SI{20}{\kilo\gram}} = 4{,}905 - 0{,}20 \approx \SI{4,7}{\metre\per\second\squared}. \]
+Senza attrito sarebbe $a = \SI{4,9}{\metre\per\second\squared}$: l'attrito toglie \SI{0,2}{\metre\per\second\squared}.
+\end{testexample}
+
+\subsection{La forza centripeta}
+Nel capitolo sul moto nel piano abbiamo visto che un corpo in moto circolare uniforme ha un'accelerazione centripeta $a_c = v^2/r$, diretta verso il centro. Per il secondo principio, se c'è un'accelerazione ci deve essere una forza che la produce, con la stessa direzione e verso: una forza diretta \textbf{verso il centro}, detta \textbf{forza centripeta}.
+
+\begin{definizione}
+Una forza che mantiene un corpo su una traiettoria circolare si chiama \textbf{forza centripeta} $F_c$. Il suo modulo è
+\[ \colorboxed{ocre}{ F_c = m\,a_c = \frac{m\,v^2}{r} = m\,\omega^2\,r. } \]
+\end{definizione}
+
+La forza centripeta non è un tipo nuovo di forza: è il \emph{ruolo} svolto, di volta in volta, da una forza già nota. Per un'auto in curva è l'attrito fra pneumatici e asfalto; per un sasso fatto ruotare con una corda è la tensione della corda; per la Luna è l'attrazione gravitazionale della Terra. Se questa forza viene a mancare (l'auto frena su una lastra di ghiaccio, la corda si spezza), il corpo prosegue in linea retta, lungo la tangente.
+
+\begin{testexample}[\thetcbcounter \, Un sasso fatto ruotare]
+Un sasso di massa \SI{300}{\gram} è fatto ruotare con una corda su una circonferenza di raggio \SI{1,5}{\metre}, con velocità \SI{10}{\metre\per\second}. Che forza deve esercitare la corda?
+\[ F_c = \frac{m\,v^2}{r} = \frac{\SI{0,30}{\kilo\gram} \cdot (\SI{10}{\metre\per\second})^2}{\SI{1,5}{\metre}} = \frac{30}{1{,}5} = \SI{20}{\newton}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un chicco di grandine di peso \SI{0,050}{\newton} raggiunge la velocità di regime quando la resistenza dell'aria vale \SI{0,050}{\newton}. In quel momento qual è la sua accelerazione?\\
+\risp{nulla: risultante zero $\Rightarrow$ velocità costante (primo principio)}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo di massa \SI{5,0}{\kilo\gram} scende lungo un piano inclinato liscio, lungo \SI{4,0}{\metre} e alto \SI{1,0}{\metre}. Qual è la componente del peso parallela al piano e l'accelerazione del corpo?\\
+\risp{$P_\parallel = P\,h/l = 49 \cdot 1{,}0/4{,}0 \approx \SI{12,3}{\newton}$; \; $a = g\,h/l \approx \SI{2,45}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa di massa \SI{15}{\kilo\gram} scende lungo uno scivolo lungo \SI{5,0}{\metre} e alto \SI{3,0}{\metre}; l'attrito vale \SI{12}{\newton}. Calcola l'accelerazione della cassa.\\
+\risp{$a = g\,h/l - F_a/m = 9{,}81 \cdot 0{,}60 - 12/15 = 5{,}886 - 0{,}80 \approx \SI{5,1}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{900}{\kilo\gram} percorre una curva di raggio \SI{50}{\metre} a \SI{54}{\kilo\metre\per\hour}. Qual è la forza centripeta necessaria? Da che cosa è fornita?\\
+\risp{$v = \SI{15}{\metre\per\second}$; \; $F_c = m\,v^2/r = 900 \cdot 225 / 50 = \SI{4050}{\newton}$; \; dall'attrito fra pneumatici e asfalto}
+\end{esercizio}
+
+\begin{esercizio}
+Una pallina di massa \SI{95}{\gram} percorre una pista circolare di raggio \SI{90}{\centi\metre} a \SI{1,2}{\metre\per\second}. Calcola la forza centripeta.\\
+\risp{$F_c = m\,v^2/r = 0{,}095 \cdot 1{,}44 / 0{,}90 \approx \SI{0,15}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un secchio d'acqua di massa totale \SI{2,0}{\kilo\gram} viene fatto ruotare in un piano verticale su una circonferenza di raggio \SI{1,0}{\metre}. Qual è la velocità minima nel punto più alto affinché l'acqua non cada? (Nel punto più alto la forza centripeta è fornita dal peso: $m g = m v^2/r$.)\\
+\risp{$v_{\min} = \sqrt{g\,r} \approx \SI{3,1}{\metre\per\second}$}
+\end{esercizio}
+
+\section{Le forze apparenti}
+\label{sec:forze-apparenti}
+
+\subsection{Un sistema in moto rettilineo accelerato}
+Una persona in piedi su un autobus che parte bruscamente si sente spinta all'indietro; quando l'autobus frena, viene sbalzata in avanti. Eppure nessuno la spinge. Che cosa succede?
+
+Per un osservatore fermo a terra (sistema \textbf{inerziale}) non c'è alcun mistero: quando l'autobus parte, il pavimento e gli appigli si mettono in moto, mentre il corpo della persona -- per inerzia -- tende a restare fermo. Vista da terra, la persona non è ``spinta all'indietro'': è l'autobus che le scivola sotto i piedi in avanti.
+
+Per la persona sull'autobus (sistema \textbf{non inerziale}, perché accelera) le cose vanno diversamente: lei si vede spostare all'indietro senza che nulla la tocchi, e per spiegarlo deve introdurre una forza. Questa forza, che compare solo per l'osservatore accelerato, si chiama \textbf{forza apparente} (o forza fittizia).
+
+\begin{definizione}
+In un sistema di riferimento che accelera con accelerazione $\vec a$, su ogni corpo di massa $m$ sembra agire una \textbf{forza apparente} di modulo $m\,a$, diretta in verso \textbf{opposto} all'accelerazione del sistema.
+\end{definizione}
+
+\begin{remark}
+Le forze apparenti non sono forze ``vere'': non c'è nessun corpo che le esercita, e non esistono per l'osservatore inerziale. Sono un espediente che permette di usare le equazioni della dinamica anche in un sistema che accelera. Le sensazioni che attribuiamo a esse (la schiena premuta contro il sedile in accelerazione, lo stomaco ``leggero'' in un ascensore che scende) sono in realtà dovute alle forze reali che i sedili, il pavimento, le cinture esercitano su di noi per trascinarci con il veicolo.
+\end{remark}
+
+\subsection{La forza centrifuga}
+In una giostra che gira ci sentiamo spinti verso l'esterno. Per l'osservatore a terra, il seggiolino esercita su di noi una forza \emph{centripeta}, verso il centro, che ci obbliga a seguire la traiettoria circolare. Per noi, che ruotiamo con la giostra (sistema non inerziale), compare invece una forza apparente verso l'esterno: la \textbf{forza centrifuga}.
+
+\begin{definizione}
+La \textbf{forza centrifuga} è la forza apparente percepita in un sistema di riferimento rotante. Ha modulo uguale alla forza centripeta e verso opposto:
+\[ \colorboxed{ocre}{ F_{cf} = \frac{m\,v^2}{r} = m\,\omega^2\,r. } \]
+\end{definizione}
+
+\begin{testexample}[\thetcbcounter \, In giostra]
+Un ragazzo di massa \SI{60}{\kilo\gram} è seduto su una giostra di raggio \SI{1,0}{\metre} che gira con velocità angolare $\omega = \SI{0,50}{\radian\per\second}$. Quale forza centrifuga percepisce?
+\[ F_{cf} = m\,\omega^2\,r = 60 \cdot (0{,}50)^2 \cdot 1{,}0 = 60 \cdot 0{,}25 = \SI{15}{\newton}. \]
+Una forza uguale, diretta verso il centro, è quella con cui il seggiolino lo trattiene sulla traiettoria.
+\end{testexample}
+
+\subsection{Il peso apparente in un ascensore}
+Una persona di massa $m$ sale su una bilancia pesapersone dentro un ascensore. Sulla persona agiscono il peso $\vec P = m\vec g$ (verso il basso) e la reazione $\vec R$ della bilancia (verso l'alto); la bilancia segna il valore di $R$.
+
+\begin{itemize}
+    \item \textbf{Ascensore fermo o a velocità costante}: la persona è in equilibrio, $R = P = m\,g$. La bilancia segna il peso vero.
+    \item \textbf{Ascensore che accelera verso l'alto} con accelerazione $a$: per il secondo principio $R - P = m\,a$, quindi $R = m\,g + m\,a = m(g + a)$. La bilancia segna \emph{di più}: ci sentiamo più pesanti.
+    \item \textbf{Ascensore che accelera verso il basso}: $R = m(g - a)$, la bilancia segna \emph{di meno}. Se l'ascensore cadesse liberamente ($a = g$) segnerebbe zero: è l'\textbf{assenza di peso} apparente.
+\end{itemize}
+
+\begin{testexample}[\thetcbcounter \, La bilancia in ascensore]
+Una persona di massa \SI{40}{\kilo\gram} sta su una bilancia in un ascensore. Che cosa segna la bilancia se l'ascensore è fermo? E se sale con accelerazione \SI{1,0}{\metre\per\second\squared}?
+
+Ascensore fermo:
+\[ R = m\,g = 40 \cdot 9{,}81 \approx \SI{392}{\newton}. \]
+Ascensore in accelerazione verso l'alto:
+\[ R = m(g + a) = 40 \cdot (9{,}81 + 1{,}0) = 40 \cdot 10{,}81 \approx \SI{432}{\newton}. \]
+\end{testexample}
+
+\begin{esercizio}
+Un passeggero di massa \SI{70}{\kilo\gram} è in piedi su un treno che frena con decelerazione \SI{1,5}{\metre\per\second\squared}. Qual è il modulo della forza apparente che percepisce, e in quale verso?\\
+\risp{$F_{ap} = m\,a = \SI{105}{\newton}$, diretta in avanti (opposta alla decelerazione, cioè verso la direzione di marcia)}
+\end{esercizio}
+
+\begin{esercizio}
+Una centrifuga per provette gira con $\omega = \SI{100}{\radian\per\second}$; una provetta di massa \SI{15}{\gram} è a \SI{8,0}{\centi\metre} dall'asse. Qual è la forza centrifuga che ``schiaccia'' il contenuto sul fondo?\\
+\risp{$F_{cf} = m\,\omega^2 r = 0{,}015 \cdot 10^4 \cdot 0{,}080 = \SI{12}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una persona di massa \SI{60}{\kilo\gram} è su una bilancia in un ascensore che scende con accelerazione \SI{2,0}{\metre\per\second\squared}. Che valore segna la bilancia (in newton)? La persona si sente più o meno pesante?\\
+\risp{$R = m(g - a) = 60 \cdot 7{,}81 \approx \SI{469}{\newton}$; \; meno pesante}
+\end{esercizio}
+
+\begin{esercizio}
+Un secchio pieno d'acqua viene fatto ruotare velocemente in un piano verticale e l'acqua non cade, nemmeno quando il secchio è capovolto in cima. Spiega il fatto usando la forza centrifuga (nel sistema rotante) e la forza centripeta (nel sistema fisso).\\
+\risp{nel sistema rotante la forza centrifuga spinge l'acqua contro il fondo del secchio, contrastando il peso; nel sistema fisso il peso dell'acqua fornisce (in parte) la forza centripeta necessaria, quindi l'acqua ``insegue'' il fondo del secchio invece di cadere}
+\end{esercizio}
+
+\section{Il moto oscillatorio}
+
+Chiudiamo il capitolo con due sistemi in cui una forza di richiamo, proporzionale allo spostamento, dà origine a un moto armonico: la massa attaccata a una molla e il pendolo. Ne avevamo già incontrato la cinematica nel capitolo sul moto nel piano; ora vediamo la dinamica.
+
+\subsection{L'oscillatore armonico}
+Una pallina di massa $m$ è attaccata a una molla di costante elastica $k$; l'altro estremo è fissato. Spostiamo la pallina di un tratto $s$ dalla posizione di riposo $O$ e lasciamola andare. La molla la richiama con una forza data dalla legge di Hooke,
+\[ \vec F = -k\,\vec s, \]
+diretta sempre verso $O$ e proporzionale allo spostamento. La pallina passa per $O$, la supera, arriva dalla parte opposta, si ferma e torna indietro: se l'attrito è trascurabile oscilla indefinitamente fra due punti $A$ e $B$ simmetrici rispetto a $O$.
+
+Poiché la forza di richiamo è proporzionale allo spostamento e di verso opposto, il moto è \textbf{armonico} (è la condizione che avevamo individuato nel capitolo precedente: $a = -\omega^2 s$). Un sistema di questo tipo si chiama \textbf{oscillatore armonico}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \foreach \y/\xp/\lab in {2/1.6/{A (fermo, forza massima)}, 1/0/{O (riposo, forza nulla)}, 0/-1.6/{B (fermo, forza massima)}}{
+        \begin{scope}[shift={(0,\y)}]
+            \draw[thick] (-3.2,-0.35) -- (-3.2,0.35);
+            \draw[decorate,decoration={coil,segment length=4pt,amplitude=3pt}] (-3.2,0) -- (\xp-0.35,0);
+            \draw[fill=ocre] (\xp-0.35,-0.28) rectangle (\xp+0.35,0.28);
+            \draw[gray,dashed] (0,-0.45) -- (0,0.45);
+            \ifnum\y=1\else
+              \draw[->,very thick,blue!60!black] (\xp,0) -- ({\xp - \xp/1.6*1.1},0) node[midway,above=1pt]{$\vec F$};
+            \fi
+            \node[anchor=west,font=\footnotesize] at (2.4,0) {\lab};
+        \end{scope}}
+        \node[font=\footnotesize] at (0,-0.55) {$O$};
+    \end{tikzpicture}
+    \caption{Oscillatore armonico: la molla richiama la massa verso $O$ con una forza $\vec F = -k\,\vec s$, massima agli estremi $A$ e $B$, nulla in $O$.}
+    \label{fig:oscillatore-molla}
+\end{figure}
+
+Si può dimostrare che, in assenza di attrito, il \textbf{periodo} di un oscillatore armonico è
+\[ \colorboxed{ocre}{ T = 2\pi\sqrt{\frac{m}{k}}. } \]
+Il periodo cresce con la massa (un corpo pesante oscilla lentamente) e diminuisce se la molla è più rigida ($k$ grande). \textbf{Non dipende dall'ampiezza} dell'oscillazione.
+
+\begin{testexample}[\thetcbcounter \, Il periodo di un oscillatore]
+Una massa di \SI{0,10}{\kilo\gram} è attaccata a una molla di costante elastica $k = \SI{400}{\newton\per\metre}$. Qual è il periodo di oscillazione?
+\[ T = 2\pi\sqrt{\frac{m}{k}} = 2\pi\sqrt{\frac{\SI{0,10}{\kilo\gram}}{\SI{400}{\newton\per\metre}}} = 2\pi\sqrt{\num{2,5e-4}} \approx 2\pi \cdot 0{,}0158 \approx \SI{0,10}{\second}. \]
+La molla compie circa dieci oscillazioni al secondo.
+\end{testexample}
+
+\subsection{Il pendolo}
+Un \textbf{pendolo} è una massa appesa a un filo, libera di oscillare. Spostato dalla verticale di un piccolo angolo e lasciato andare, oscilla avanti e indietro lungo un arco di circonferenza di raggio pari alla lunghezza $l$ del filo.
+
+La forza che lo fa oscillare è il peso $\vec P$. Scomponendolo lungo il filo ($P_f$) e lungo la tangente all'arco ($P_t$): la componente $P_f$ è equilibrata dalla tensione del filo, mentre $P_t$ è la forza di richiamo. Per \textbf{piccole oscillazioni} (fino a circa $10^\circ$) si può dimostrare che
+\[ P_t = -\frac{P}{l}\,s, \]
+di nuovo una forza proporzionale allo spostamento $s$ lungo l'arco e di verso opposto: anche il moto del pendolo è \textbf{armonico}.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}[>=stealth,scale=1]
+        \coordinate (O) at (0,0);
+        \def\ang{22}
+        \draw[thick] (-1.4,0) -- (1.4,0);
+        \foreach \x in {-1.2,-0.8,...,1.3}{\draw[thick] (\x,0) -- (\x-0.28,-0.28);}
+        \draw[thick] (O) -- ({-3.2*sin(\ang)},{-3.2*cos(\ang)}) coordinate (M);
+        \node[left] at ($ (O)!0.5!(M) $) {$l$};
+        \draw[gray,dashed] (O) -- (0,-3.4);
+        \draw ([shift=(-90:1.0)]O) arc (-90:{-90-\ang}:1.0);
+        \node at ({-0.55*sin(\ang/2)},{-1.15}) {\small $\alpha$};
+        \fill[ocre] (M) circle (4pt);
+        % peso P (verso il basso) e sue componenti:
+        %  P_f lungo il filo, via dal perno;  P_t tangente all'arco, verso l'equilibrio.
+        \pgfmathsetmacro\Pl{1.7}
+        \coordinate (Pend) at ($(M)+(0,-\Pl)$);
+        \coordinate (Pf) at ($(M)+({-\Pl*cos(\ang)*sin(\ang)},{-\Pl*cos(\ang)*cos(\ang)})$);
+        \coordinate (Pt) at ($(M)+({\Pl*sin(\ang)*cos(\ang)},{-\Pl*sin(\ang)*sin(\ang)})$);
+        \draw[gray,dashed] (Pf) -- (Pend) -- (Pt);
+        \draw[->,very thick,ocre] (M) -- (Pend) node[below,black]{$\vec P$};
+        \draw[->,thick,blue!60!black] (M) -- (Pf) node[left=1pt,black]{\footnotesize $P_f$};
+        \draw[->,thick,blue!60!black] (M) -- (Pt) node[right=1pt,black]{\footnotesize $P_t$};
+    \end{tikzpicture}
+    \caption{Pendolo: il peso si scompone in $P_f$ (lungo il filo, equilibrato dalla tensione) e $P_t$ (lungo l'arco), forza di richiamo proporzionale allo spostamento.}
+    \label{fig:pendolo-dinamico}
+\end{figure}
+
+Il \textbf{periodo} di un pendolo che compie piccole oscillazioni è
+\[ \colorboxed{ocre}{ T = 2\pi\sqrt{\frac{l}{g}}. } \]
+Ha tre proprietà notevoli:
+\begin{itemize}
+    \item cresce con la lunghezza del filo (un pendolo più lungo oscilla più lentamente);
+    \item dipende da $g$, cioè dal luogo: misurando $T$ e $l$ si può \emph{ricavare} $g$ in un posto qualsiasi;
+    \item \textbf{non dipende dalla massa} appesa né (per piccole ampiezze) dall'ampiezza dell'oscillazione -- è la scoperta di Galileo, alla base dell'orologio a pendolo.
+\end{itemize}
+
+\subsection{Le oscillazioni smorzate}
+Quanto detto vale se l'attrito è trascurabile: l'ampiezza resta costante nel tempo. Nella realtà la resistenza dell'aria e gli attriti interni sottraggono energia a ogni oscillazione, così l'ampiezza \emph{diminuisce} gradualmente e il moto si dice \textbf{smorzato}. Il periodo, però, resta praticamente lo stesso; dopo un certo tempo il corpo si ferma. Tanto maggiore è l'attrito, tanto più rapido è lo smorzamento.
+
+\begin{testexample}[\thetcbcounter \, Il periodo di un pendolo]
+Un pendolo lungo \SI{1,0}{\metre} oscilla al livello del mare ($g = \SI{9,81}{\metre\per\second\squared}$). Qual è il suo periodo?
+\[ T = 2\pi\sqrt{\frac{l}{g}} = 2\pi\sqrt{\frac{\SI{1,0}{\metre}}{\SI{9,81}{\metre\per\second\squared}}} = 2\pi\sqrt{0{,}102} \approx 2\pi \cdot 0{,}319 \approx \SI{2,0}{\second}. \]
+Un pendolo di un metro ``batte'' circa ogni secondo (mezzo periodo).
+\end{testexample}
+
+\begin{esercizio}
+Un oscillatore armonico ha massa \SI{0,25}{\kilo\gram} e molla di costante elastica \SI{100}{\newton\per\metre}. Calcola il periodo e la frequenza delle oscillazioni.\\
+\risp{$T = 2\pi\sqrt{m/k} \approx \SI{0,31}{\second}$; \; $f = 1/T \approx \SI{3,2}{\hertz}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due molle hanno costanti elastiche $k$ e $4k$. A ciascuna si appende la stessa massa. Qual è il rapporto fra i due periodi di oscillazione?\\
+\risp{$T \propto 1/\sqrt{k}$, quindi la seconda ha periodo \emph{metà} della prima}
+\end{esercizio}
+
+\begin{esercizio}
+Un pendolo lungo \SI{2,0}{\metre} si trova sulla Luna, dove $g_L = \SI{1,6}{\metre\per\second\squared}$. Qual è il suo periodo? Quante volte è più lungo che sulla Terra (stesso pendolo)?\\
+\risp{$T_L = 2\pi\sqrt{2{,}0/1{,}6} \approx \SI{7,0}{\second}$; \; $T_T = 2\pi\sqrt{2{,}0/9{,}81} \approx \SI{2,8}{\second}$; \; circa $2{,}5$ volte più lungo}
+\end{esercizio}
+
+\begin{esercizio}
+Un orologio a pendolo va troppo veloce (anticipa). Il filo va allungato o accorciato per rallentarlo?\\
+\risp{allungato: $T$ cresce con $l$, quindi ogni oscillazione dura di più e l'orologio rallenta}
+\end{esercizio}
+
+\begin{esercizio}
+In un luogo un pendolo lungo \SI{0,994}{\metre} ha periodo esattamente \SI{2,00}{\second}. Ricava il valore di $g$ in quel luogo. (Dalla formula: $g = \dfrac{4\pi^2 l}{T^2}$.)\\
+\risp{$g = 4\pi^2 \cdot 0{,}994 / 4{,}00 \approx \SI{9,81}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un oscillatore a molla e un pendolo hanno lo stesso periodo di \SI{1,0}{\second}. Se raddoppio la massa dell'oscillatore e la massa del pendolo, che cosa succede ai due periodi?\\
+\risp{l'oscillatore: $T$ diventa $\sqrt{2}$ volte più grande ($\approx \SI{1,4}{\second}$); il pendolo: $T$ invariato (non dipende dalla massa)}
+\end{esercizio}
+
+\section{Problemi di riepilogo}
+
+\begin{esercizio}
+Su un corpo di massa \SI{8,0}{\kilo\gram}, fermo su un piano orizzontale liscio, agisce una forza orizzontale costante di \SI{20}{\newton} per \SI{6,0}{\second}. Calcola l'accelerazione, la velocità finale e lo spazio percorso.\\
+\risp{$a = \SI{2,5}{\metre\per\second\squared}$; \; $v = \SI{15}{\metre\per\second}$; \; $\Delta s = \SI{45}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un ascensore di massa \SI{500}{\kilo\gram} sale con accelerazione \SI{1,2}{\metre\per\second\squared}. Qual è la tensione del cavo che lo regge? (Sul cavo agiscono il peso e la forza per accelerare.)\\
+\risp{$T = m(g + a) = 500 \cdot 11{,}01 \approx \SI{5505}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{1000}{\kilo\gram} passa da \SI{0}{} a \SI{100}{\kilo\metre\per\hour} in \SI{8,0}{\second}. Qual è la forza motrice media (attriti trascurati)?\\
+\risp{$a = 27{,}8/8{,}0 \approx \SI{3,5}{\metre\per\second\squared}$; \; $F \approx \SI{3470}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo di massa \SI{3,0}{\kilo\gram} è soggetto a due forze orizzontali dello stesso verso, di \SI{10}{\newton} e \SI{5,0}{\newton}, e a una forza di attrito di \SI{3,0}{\newton} in verso opposto. Calcola l'accelerazione.\\
+\risp{$F_{\text{ris}} = 10 + 5{,}0 - 3{,}0 = \SI{12}{\newton}$; \; $a = \SI{4,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una cassa di massa \SI{25}{\kilo\gram} viene spinta con una forza orizzontale di \SI{80}{\newton} su un pavimento dove l'attrito è di \SI{30}{\newton}. Calcola l'accelerazione. Che velocità raggiunge in \SI{4,0}{\second} partendo da ferma?\\
+\risp{$a = (80 - 30)/25 = \SI{2,0}{\metre\per\second\squared}$; \; $v = \SI{8,0}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un blocco di massa \SI{40}{\kilo\gram} è appeso a un filo. Calcola la tensione del filo se il blocco è fermo, se sale con $a = \SI{2,0}{\metre\per\second\squared}$, se scende con $a = \SI{2,0}{\metre\per\second\squared}$.\\
+\risp{fermo: \SI{392}{\newton}; \; sale: $40 \cdot 11{,}81 \approx \SI{472}{\newton}$; \; scende: $40 \cdot 7{,}81 \approx \SI{312}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Due pattinatori fermi, di massa \SI{50}{\kilo\gram} e \SI{75}{\kilo\gram}, si respingono a vicenda. Se il primo parte con accelerazione \SI{3,0}{\metre\per\second\squared}, con quale forza si sono spinti? Con quale accelerazione parte il secondo?\\
+\risp{$F = 50 \cdot 3{,}0 = \SI{150}{\newton}$; \; sul secondo la stessa forza $\Rightarrow$ $a = 150/75 = \SI{2,0}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un corpo di massa \SI{10}{\kilo\gram} scende lungo un piano inclinato liscio, lungo \SI{6,0}{\metre} e alto \SI{2,4}{\metre}. Calcola l'accelerazione e la velocità in fondo al piano, partendo da fermo.\\
+\risp{$a = g\,h/l = 9{,}81 \cdot 0{,}40 \approx \SI{3,92}{\metre\per\second\squared}$; \; $v = \sqrt{2\,a\,l} \approx \SI{6,9}{\metre\per\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Sullo stesso piano dell'esercizio precedente, con un attrito di \SI{15}{\newton}, quanto vale ora l'accelerazione?\\
+\risp{$a = g\,h/l - F_a/m = 3{,}924 - 15/10 = 3{,}924 - 1{,}5 \approx \SI{2,4}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un paracadutista di peso \SI{800}{\newton} raggiunge una velocità di regime di \SI{5,5}{\metre\per\second}. Qual è il valore del coefficiente $h$ nella formula $F_a = h\,v^2$?\\
+\risp{$h = P/v_r^2 = 800/30{,}25 \approx \SI{26,4}{}$ (in \si{\newton\per\metre\squared\second\squared})}
+\end{esercizio}
+
+\begin{esercizio}
+Un sasso di massa \SI{0,20}{\kilo\gram} viene fatto ruotare con una fionda su una circonferenza di raggio \SI{0,80}{\metre} con frequenza \SI{3,0}{\hertz}. Calcola la velocità del sasso e la forza che deve esercitare la fionda.\\
+\risp{$v = 2\pi r f \approx \SI{15,1}{\metre\per\second}$; \; $F_c = m\,v^2/r \approx \SI{57}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile percorre a velocità costante il dosso di un ponte, che ha la forma di un arco di circonferenza di raggio \SI{40}{\metre}. A quale velocità le ruote perdono contatto con la strada nel punto più alto? (Lì la forza centripeta è fornita dal solo peso.)\\
+\risp{$v = \sqrt{g\,r} \approx \SI{19,8}{\metre\per\second} \approx \SI{71}{\kilo\metre\per\hour}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un ragazzo di massa \SI{45}{\kilo\gram} è sulla pedana esterna di una giostra, a \SI{3,0}{\metre} dall'asse; la giostra compie un giro in \SI{6,0}{\second}. Calcola la forza centrifuga che il ragazzo percepisce.\\
+\risp{$\omega = 2\pi/6{,}0 \approx \SI{1,05}{\radian\per\second}$; \; $F_{cf} = m\,\omega^2 r = 45 \cdot 1{,}097 \cdot 3{,}0 \approx \SI{148}{\newton}$}
+\end{esercizio}
+
+\begin{esercizio}
+Una persona di massa \SI{55}{\kilo\gram} è su una bilancia in un ascensore. Per un istante la bilancia segna \SI{660}{\newton}. L'ascensore sta accelerando verso l'alto o verso il basso? Con quale accelerazione?\\
+\risp{verso l'alto ($R > mg$): da $R = m(g+a)$, $a = R/m - g = 12 - 9{,}81 \approx \SI{2,2}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un oscillatore armonico è formato da una massa di \SI{0,50}{\kilo\gram} e da una molla di costante elastica \SI{200}{\newton\per\metre}. Calcola il periodo. Se raddoppio la massa, di quanto cambia?\\
+\risp{$T = 2\pi\sqrt{0{,}50/200} \approx \SI{0,31}{\second}$; \; con massa doppia $T$ diventa $\sqrt{2}$ volte $\approx \SI{0,44}{\second}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un pendolo lungo \SI{25}{\centi\metre} oscilla al livello del mare. Calcola il periodo e la frequenza.\\
+\risp{$T = 2\pi\sqrt{0{,}25/9{,}81} \approx \SI{1,0}{\second}$; \; $f \approx \SI{1,0}{\hertz}$}
+\end{esercizio}
+
+\begin{esercizio}
+Quale deve essere la lunghezza di un pendolo perché il suo periodo sia esattamente \SI{1,0}{\second} (al livello del mare)? \\
+\risp{$l = \dfrac{g\,T^2}{4\pi^2} = \dfrac{9{,}81 \cdot 1{,}0}{4\pi^2} \approx \SI{0,25}{\metre}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un carrello di massa \SI{2,0}{\kilo\gram} è tirato lungo un piano orizzontale liscio da un filo che passa su una carrucola e regge, all'altro capo, un pesetto di massa \SI{0,50}{\kilo\gram} (figura tipica dell'esperimento in laboratorio). La forza motrice è il peso del pesetto e accelera l'intero sistema (carrello + pesetto). Calcola l'accelerazione.\\
+\risp{$a = \dfrac{m_p\,g}{m_c + m_p} = \dfrac{0{,}50 \cdot 9{,}81}{2{,}5} \approx \SI{1,96}{\metre\per\second\squared}$}
+\end{esercizio}
+
+\begin{esercizio}
+Un'automobile di massa \SI{1100}{\kilo\gram} affronta una curva piana di raggio \SI{60}{\metre}. Il massimo attrito che gli pneumatici possono fornire è \SI{8000}{\newton}. Qual è la massima velocità a cui può percorrere la curva senza slittare?\\
+\risp{da $F_c = m\,v^2/r \le \SI{8000}{\newton}$: $v_{\max} = \sqrt{F_c\,r/m} = \sqrt{8000 \cdot 60/1100} \approx \SI{20,9}{\metre\per\second} \approx \SI{75}{\kilo\metre\per\hour}$}
+\end{esercizio}
