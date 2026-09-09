@@ -16,11 +16,20 @@ _minted*/
 auto/
 out/
 
-# PDF generato (il sorgente è appunti-new.tex)
-appunti-new.pdf
+# PDF generato (il sorgente è Scienze-Sperimentali-Fisica.tex)
+Scienze-Sperimentali-Fisica.pdf
 
 # Testo di riferimento (non versionato: file grande e materiale protetto)
 tecnologico.pdf
+
+# Materiale di lavoro non versionabile (materiale di terzi protetto, credenziali,
+# appunti personali) - vedi CLAUDE.md "Lavoro rimanente"
+calibro.avif
+IL CALIBRO A CORSOIO.pdf
+Caliper_detail_view.jpeg
+Come riaprire una sessione.rtf
+chiave github.rtf
+*.rtf
 
 # macOS
 .DS_Store

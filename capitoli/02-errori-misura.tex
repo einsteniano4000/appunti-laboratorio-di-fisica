@@ -50,8 +50,93 @@ dove $X_{max}$  e$X_{min}$ sono il valore massimo e  il valore minimo dei nostri
 Supponiamo di aver misurato il periodo $T$ di oscillazione di un pendolo 5 volte e di aver calcolato la media e la semidispersione, ottenendo $T=\SI{1,21}{s}$ e $\Delta x = \SI{0,51}{s}$. Anzitutto arrotondiamo l'errore ad \underline{una} cifra significativa, ossia $\Delta x \approx \SI{0,5}{s}$, poi arrotondiamo il periodo alla seconda cifra decimale: $T\approx \SI{1,2}{s}$ e , in fine, scriviamo il risultato corretto:
 \[
 T=\left(1,2 \pm 0,5 \right)\si{\second}
-\]  
-\section{Incertezza relativa e e percentuale}
+\]
+\section[Stima per difetto e per eccesso]{Stima per difetto e per eccesso: l'area di una figura curva}
+Non sempre una grandezza si può leggere direttamente su uno strumento, e non sempre si può ripetere la misura molte volte per farne la media. In parecchi casi, però, riusciamo comunque a \emph{racchiuderla} fra due valori: uno sicuramente più piccolo di quello vero, che chiamiamo \textbf{stima per difetto}, e uno sicuramente più grande, la \textbf{stima per eccesso}. Il valore vero, qualunque sia, si trova fra i due. Possiamo allora assumere come miglior valore il punto di mezzo dell'intervallo e come incertezza la sua semiampiezza, con lo stesso ragionamento della semidispersione massima:
+\[  \colorboxed{ocre}{
+\overline{x}=\frac{x_{ecc}+x_{dif}}{2} \qquad\qquad \Delta x=\frac{x_{ecc}-x_{dif}}{2}}
+\]
+Un caso tipico è la misura dell'area di una figura dal contorno curvo e irregolare -- una foglia, una macchia d'olio, la superficie di un lago su una carta -- per la quale non esiste una formula geometrica. Si procede così: si ricopia il contorno della figura su un foglio a quadretti (o su carta millimetrata) e si sceglie come unità di misura l'area di un quadretto. Poi si contano due gruppi di quadretti:
+\begin{elenco}
+\item i quadretti \emph{completamente interni} al contorno; il loro numero, moltiplicato per l'area di un quadretto, dà la stima \textbf{per difetto} (i quadretti interni non bastano a coprire tutta la figura);
+\item i quadretti interni \emph{insieme a} tutti quelli attraversati dal contorno, anche solo per un angolino; questa somma, moltiplicata per l'area di un quadretto, dà la stima \textbf{per eccesso} (ora abbiamo contato anche pezzetti di superficie che stanno fuori dalla figura).
+\end{elenco}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.6,
+  interno/.style={fill=green!30},
+  bordo/.style={fill=orange!35}]
+  \foreach \c in {%
+    (2,3),(2,4),(2,5),(3,2),(3,3),(3,4),(3,5),(3,6),(4,2),(4,3),(4,4),(4,5),(4,6),
+    (4,7),(5,1),(5,2),(5,3),(5,4),(5,5),(5,6),(5,7),(6,2),(6,3),(6,4),(6,5),(6,6),
+    (6,7),(7,2),(7,3),(7,4),(7,5),(7,6),(7,7),(8,2),(8,3),(8,4),(8,5),(8,6),(8,7),
+    (9,4),(9,5),(9,6)}
+    {\fill[interno] \c rectangle ++(1,1);}
+  \foreach \c in {%
+    (1,2),(1,3),(1,4),(1,5),(1,6),(2,1),(2,2),(2,6),(2,7),(3,1),(3,7),(3,8),(4,0),
+    (4,1),(4,8),(5,0),(5,8),(6,0),(6,1),(6,8),(7,1),(7,8),(8,1),(8,8),(9,1),(9,2),
+    (9,3),(9,7),(9,8),(10,3),(10,4),(10,5),(10,6),(10,7)}
+    {\fill[bordo] \c rectangle ++(1,1);}
+  \draw[gray!45,very thin] (0,0) grid (12,10);
+  \draw[ocre,line width=1.3pt] plot coordinates {(2.600,1.600) (2.822,1.482)
+    (3.075,1.370) (3.354,1.266) (3.654,1.171) (3.969,1.088) (4.294,1.017)
+    (4.625,0.961) (4.957,0.922) (5.283,0.901) (5.600,0.900) (5.918,0.918)
+    (6.250,0.952) (6.589,1.002) (6.933,1.068) (7.275,1.150) (7.611,1.248)
+    (7.937,1.362) (8.246,1.492) (8.536,1.638) (8.800,1.800) (9.047,1.983)
+    (9.286,2.191) (9.515,2.420) (9.731,2.666) (9.931,2.925) (10.113,3.194)
+    (10.273,3.470) (10.410,3.749) (10.519,4.027) (10.600,4.300) (10.653,4.580)
+    (10.682,4.877) (10.688,5.185) (10.671,5.498) (10.631,5.812) (10.569,6.122)
+    (10.484,6.420) (10.378,6.703) (10.249,6.965) (10.100,7.200) (9.921,7.416)
+    (9.709,7.622) (9.467,7.816) (9.202,7.997) (8.919,8.163) (8.622,8.311)
+    (8.316,8.441) (8.007,8.550) (7.700,8.637) (7.400,8.700) (7.097,8.739)
+    (6.781,8.755) (6.455,8.751) (6.122,8.726) (5.788,8.681) (5.454,8.618)
+    (5.124,8.538) (4.803,8.441) (4.494,8.328) (4.200,8.200) (3.911,8.051)
+    (3.618,7.877) (3.326,7.681) (3.039,7.466) (2.763,7.237) (2.501,6.998)
+    (2.259,6.750) (2.042,6.499) (1.854,6.248) (1.700,6.000) (1.581,5.746)
+    (1.492,5.476) (1.430,5.195) (1.392,4.908) (1.375,4.619) (1.376,4.332)
+    (1.392,4.052) (1.420,3.784) (1.457,3.532) (1.500,3.300) (1.549,3.085)
+    (1.606,2.880) (1.675,2.685) (1.755,2.500) (1.850,2.325) (1.961,2.160)
+    (2.089,2.005) (2.238,1.860) (2.407,1.725)} -- cycle;
+  \draw[|<->|,thick] (0,-0.7) -- (1,-0.7)
+    node[right,font=\footnotesize] {\ \SI{1}{cm}};
+  \fill[interno] (0,-2.05) rectangle ++(0.8,0.8);
+  \node[right,font=\footnotesize] at (0.9,-1.65) {quadretto interno};
+  \fill[bordo] (6,-2.05) rectangle ++(0.8,0.8);
+  \node[right,font=\footnotesize] at (6.9,-1.65) {quadretto di bordo};
+\end{tikzpicture}
+\caption{Il contorno di una foglia ricopiato su un foglio a quadretti di lato \SI{1}{cm}. In verde i quadretti tutti interni (stima per difetto), in arancione quelli attraversati dal bordo: i verdi più gli arancioni danno la stima per eccesso.}
+\label{fig:area-quadretti}
+\end{figure}
+
+\begin{testexample}[\thetcbcounter \, Area di una foglia]
+Nella figura \ref{fig:area-quadretti} ogni quadretto ha lato \SI{1}{cm} e vale quindi \SI{1}{cm^2}. Contiamo i quadretti verdi, interamente dentro il contorno: sono $42$. I quadretti arancioni, toccati dal bordo, sono $34$.
+
+La stima per difetto usa i soli quadretti interni:
+\[
+A_{dif}=42\cdot\SI{1}{cm^2}=\SI{42}{cm^2}
+\]
+La stima per eccesso aggiunge quelli di bordo:
+\[
+A_{ecc}=(42+34)\cdot\SI{1}{cm^2}=\SI{76}{cm^2}
+\]
+L'area vera sta fra questi due valori. Prendiamo come miglior valore la loro media e come incertezza la semidifferenza:
+\[
+\overline{A}=\frac{76+42}{2}\,\si{cm^2}=\SI{59}{cm^2}
+\qquad
+\Delta A=\frac{76-42}{2}\,\si{cm^2}=\SI{17}{cm^2}
+\]
+Arrotondiamo l'errore a una sola cifra significativa, $\Delta A\approx\SI{20}{cm^2}$, e il valore alla stessa posizione, $\overline{A}\approx\SI{60}{cm^2}$:
+\[
+A=\left(60\pm20\right)\si{cm^2}
+\]
+L'incertezza relativa vale $E_r=17/59\approx0,29$, cioè circa il $29\,\%$: una misura piuttosto grossolana, come è lecito aspettarsi da una griglia larga rispetto alla figura.
+\end{testexample}
+
+\begin{remark}
+La precisione di questo metodo dipende da quanto è fitta la griglia. L'incertezza nasce solo dai quadretti di bordo: dimezzando il lato del quadretto, ognuno di essi viene sostituito da quattro quadretti quattro volte più piccoli, ma soltanto quelli ancora attraversati dal contorno restano ``incerti''. Il risultato è che, raffinando la griglia, la stima per difetto e quella per eccesso si avvicinano e $\Delta A$ diminuisce. È lo stesso motivo per cui uno strumento più sensibile fornisce una misura più precisa.
+\end{remark}
+\section{Incertezza relativa e percentuale}
 Data una misura $x=\left( \overline{x} \pm \Delta x \right)$ si definisce incertezza relativa il rapporto:
 \[  \colorboxed{ocre}{
 E_r =\frac{\Delta x}{\overline{x}}}

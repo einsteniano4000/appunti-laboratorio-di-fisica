@@ -3,12 +3,12 @@
 ## Scopo
 
 Revisione e ampliamento di una dispensa LaTeX di fisica per il biennio (scuola
-superiore). Il master è **`appunti-new.tex`** (`book` class); si compila con
-**`lualatex appunti-new.tex`** (2 passate; **non** serve più `--shell-escape` da
+superiore). Il master è **`Scienze-Sperimentali-Fisica.tex`** (`book` class); si compila con
+**`lualatex Scienze-Sperimentali-Fisica.tex`** (2 passate; **non** serve più `--shell-escape` da
 quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 
 ### Struttura del sorgente (split con `\include`)
-- **`appunti-new.tex`** — master: `\input{preambolo}`, `\begin{document}`, la
+- **`Scienze-Sperimentali-Fisica.tex`** — master: `\input{preambolo}`, `\begin{document}`, la
   lista degli `\include{capitoli/NN-...}`, `\end{document}`.
 - **`preambolo.tex`** — preambolo completo (pacchetti, macro, stili, `\title`).
 - **`capitoli/`** — un file per capitolo, senza preambolo (file NN = capitolo N):
@@ -27,7 +27,7 @@ quando `minted` è stato rimosso). Stile discorsivo, molti esempi ed esercizi.
 - `\include` forza un page break e non si annida. Nuovo capitolo = nuovo file in
   `capitoli/` + una riga `\include` nel master (prima di `\end{document}`).
 - A fine lavoro ricompilare **tutto** il documento (`\includeonly` commentato)
-  per verificare riferimenti e conteggio pagine (attualmente **377**).
+  per verificare riferimenti e conteggio pagine (attualmente **379**).
 - NB: i vecchi split automatici (`sezioni/`, `spezzettato/`) e altre cartelle non
   usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`,
   `mappa-errori/`, `auto/`) sono state rimosse dal repo; copia di sicurezza in
@@ -88,7 +88,7 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   versionato — è scansionato, si legge renderizzando le pagine; offset ≈ +20 tra
   pagina stampata e pagina PDF). Usato solo per taglio/livello degli argomenti,
   **non** si riproduce il suo testo né i suoi esercizi.
-- `.gitignore` esclude i file generati dalla compilazione e `appunti-new.pdf`.
+- `.gitignore` esclude i file generati dalla compilazione e `Scienze-Sperimentali-Fisica.pdf`.
   Commit solo dei sorgenti (`.tex`, `verifica/`, `.md`).
 - Fine dei messaggi di commit: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 
@@ -108,6 +108,13 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 4. Aggiunta **§3.2 "Rette di massima e minima pendenza"** (metodo grafico per
    l'incertezza sulla pendenza) con esempio sulla legge di Hooke.
 5. Introdotto il significato di $\Delta$ e $\Sigma$ prima del primo uso.
+6. Cap. "Errori di misura": corretto il titolo di §2.2 (era «relativa e e
+   percentuale») e aggiunta la nuova **§2.2 "Stima per difetto e per eccesso:
+   l'area di una figura curva"** (metodo dei quadretti: $x_{dif}$/$x_{ecc}$ →
+   valore = media, incertezza = semidifferenza; esempio sull'area di una foglia
+   su griglia da 1 cm, Fig. 2.2 TikZ originale; remark sul raffinamento della
+   griglia). Le sezioni seguenti del capitolo sono slittate di un numero.
+   Verifiche: `verifica/cap-errori-misura.py`.
 
 ### Cap. "Misura di grandezze" – ampliato
 - **Nuova §1.8 "Il calibro a corsoio"**: parti dello strumento, nonio ventesimale
@@ -332,7 +339,7 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
   originali. Verifiche: `verifica/cap-relazioni-grandezze.py`.
 
 ### Split del sorgente
-- `appunti-new.tex` scomposto in `preambolo.tex` + `capitoli/*.tex` (un file per
+- `Scienze-Sperimentali-Fisica.tex` scomposto in `preambolo.tex` + `capitoli/*.tex` (un file per
   capitolo) inclusi con `\include`; master con `\includeonly` pronto all'uso.
 - "Grafici di misure" separato in `03-grafici-misure.tex`; capitoli rinumerati
   (vedi sopra "Struttura del sorgente"). File NN = capitolo N.
@@ -349,8 +356,9 @@ realizzazione (Claude Code + LuaLaTeX; alcune illustrazioni con Google Gemini,
 modello ``Nano Banana'') + licenza **CC BY-NC-SA 4.0** (testo in chiaro + link
 `creativecommons.org/licenses/by-nc-sa/4.0/deed.it`).
 
-Stato compilazione: OK, **377 pagine** (printed ~375), pulito (nessun label
-duplicato né riferimento indefinito; ~79 overfull hbox residui = Passo 4).
+Stato compilazione: OK, **379 pagine** (printed ~377), pulito (nessun label
+duplicato né riferimento indefinito; ~80 overfull hbox residui = Passo 4, di cui
+uno nuovo è il consueto sforo da 14 pt del box `remark` in §2.2).
 
 ## Regole per ogni nuovo capitolo di teoria (valgono sempre)
 

@@ -24,19 +24,19 @@ Per compilare il documento, segui questi passi:
 
 Su Linux/macOS:
 ```
-lualatex -synctex=1 -interaction=nonstopmode -file-line-error appunti-new.tex
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error Scienze-Sperimentali-Fisica.tex
 ```
 
 Su Windows:
 ```
-lualatex.exe -synctex=1 -interaction=nonstopmode -file-line-error appunti-new.tex
+lualatex.exe -synctex=1 -interaction=nonstopmode -file-line-error Scienze-Sperimentali-Fisica.tex
 ```
 
-4. Il comando genererà un file PDF chiamato `appunti-new.pdf` nella stessa cartella.
+4. Il comando genererà un file PDF chiamato `Scienze-Sperimentali-Fisica.pdf` nella stessa cartella.
 
 ## Note
 
-- Il file principale del progetto è `appunti-new.tex`. Assicurati che questo file sia presente nella cartella del progetto.
+- Il file principale del progetto è `Scienze-Sperimentali-Fisica.tex`. Assicurati che questo file sia presente nella cartella del progetto.
 - Il comando usa LuaLaTeX come motore di compilazione.
 - Il documento non richiede più `--shell-escape` (il pacchetto `minted` non è più usato).
 - Se `lualatex` non viene riconosciuto come comando, potrebbe essere necessario aggiungere la cartella bin della tua distribuzione LaTeX al PATH del sistema, o usare il percorso completo al comando `lualatex`.

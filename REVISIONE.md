@@ -1,4 +1,4 @@
-# Revisione critica di `appunti-new.tex`
+# Revisione critica di `Scienze-Sperimentali-Fisica.tex`
 
 > **Avanzamento** (branch `revisione`)
 > - [x] Passo 1 – fix che non cambiano i contenuti: B1, B2, B3, B6, B7, A15, `\si{\square\s}`, refusi ricorrenti (D), «cubo di lato 1 m». Compila pulito (133 pagine, nessun label duplicato, nessun riferimento indefinito).
@@ -93,12 +93,24 @@
 >     dell'acqua · §16.3 riepilogo (20). 3 figure. `verifica/cap-temperatura-dilatazione.py`.
 >     Preambolo: `\DeclareSIUnit\fahrenheit{\text{\textdegree F}}`. Per `°C⁻¹` usare
 >     `\si{\celsius}^{-1}` in math.
+>   - [x] Cap. "Errori di misura": corretto il titolo di §2.2 («relativa e e
+>     percentuale» → «relativa e percentuale») e aggiunta la nuova §2.2 **"Stima
+>     per difetto e per eccesso: l'area di una figura curva"** (prima di
+>     "Incertezza relativa e percentuale"; le sezioni successive sono slittate).
+>     Metodo dei quadretti: si racchiude la grandezza fra $x_{dif}$ e $x_{ecc}$,
+>     poi $\overline x=(x_{ecc}+x_{dif})/2$, $\Delta x=(x_{ecc}-x_{dif})/2$ (stesso
+>     ragionamento della semidispersione massima). Esempio svolto sull'area di una
+>     foglia su griglia da \SI{1}{cm} (42 quadretti interni, 34 di bordo →
+>     $A=(60\pm20)\,\si{cm^2}$) + remark sul raffinamento della griglia. Fig. 2.2
+>     TikZ originale (celle classificate con `verifica/blob`-style script, contorno
+>     poligonale a 90 vertici coerente con la classificazione).
+>     Nuovo `verifica/cap-errori-misura.py`.
 > - Aggiunta la macro `\risp{...}` per i risultati degli esercizi (allineata a destra, va a capo).
 
-Stato: il documento compila (`lualatex appunti-new.tex`, **337 pagine**, exit 0),
+Stato: il documento compila (`lualatex Scienze-Sperimentali-Fisica.tex`, **337 pagine**, exit 0),
 nessun label duplicato, nessun riferimento indefinito, ~74 *overfull hbox* residui.
 
-Sorgente splittato: master `appunti-new.tex` (`\input{preambolo}` + `\include`
+Sorgente splittato: master `Scienze-Sperimentali-Fisica.tex` (`\input{preambolo}` + `\include`
 dei file in `capitoli/`), `\includeonly{...}` nel master per lavorare su un
 singolo capitolo.
 
@@ -157,7 +169,7 @@ I capitoli di teoria (7–14, e i prossimi) sono in coda; da valutare una Parte 
 | B4 | Doppia definizione della meccanica dell'incertezza: §2.7 (quadratura) contraddice l'annuncio di §5.4 riga ~3474 «in questo corso la propagazione degli errori statistici non verrà adottata». | Decidere: se non si adotta, spostare §2.7 in appendice; altrimenti togliere la frase. |
 | B5 | Due sistemi per il codice: `minted` **e** `lstlisting` usati in parallele. | Sceglierne uno (consiglio `minted`, già caricato, o `listings` per evitare `--shell-escape`). |
 | B6 | Preambolo: `caption` caricato 2× con opzioni in conflitto (righe 46 e 66), `microtype` 2×, `cancel` 3×. `% Local Variables: TeX-engine: xetex` ma il README dice `lualatex`. | Ripulire il preambolo; allineare engine. |
-| B7 | README: parla di `appunti.tex`; il file reale è `appunti-new.tex`. | Aggiornare README (o rinominare il file). |
+| B7 | README: parla di `appunti.tex`; il file reale è `Scienze-Sperimentali-Fisica.tex`. | Aggiornare README (o rinominare il file). |
 | B8 | ~~Cartella `sezioni/` = split automatico **obsoleto**~~ | **RISOLTO**: `sezioni/` e le altre cartelle non usate dalla compilazione (`script-analisi-dei-dati/`, `path_to_image/`, `mappa-errori/`, `auto/`) rimosse dal repo (backup in `../_backup-appunti-fisica-2026-09-06/`). Split ufficiale ora in `capitoli/`. |
 | B9 | Autore «Prof. Romano» ma prefazione in 1ª persona; nessuna bibliografia, nessun libro di testo citato per nome. | — |
 | B10 | Frase troncata a metà, riga ~4271: «…si ottengono dal vettorem» seguito da una tabella. | Completare il periodo. |
