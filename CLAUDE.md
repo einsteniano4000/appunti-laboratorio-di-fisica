@@ -394,8 +394,9 @@ uno nuovo è il consueto sforo da 14 pt del box `remark` in §2.2).
 4. **Collocazione definitiva** dei nuovi capitoli (ora in coda dopo
    "Statistica"): valutare una Parte II "Meccanica" prima delle Relazioni di
    Laboratorio, e l'uso di `\part{}`.
-5. **Push su `origin`**: allineato con `origin/master` il 2026-09-08 (fino al
-   commit dei capp. 17-18). Continuare a chiedere all'utente prima di pushare.
-   NB: nella working dir restano file non tracciati e non versionabili
-   (`calibro.avif`, `IL CALIBRO A CORSOIO.pdf`, `Caliper_detail_view.jpeg`,
-   `Come riaprire una sessione.rtf`) — lasciarli fuori dai commit.
+5. **Push su `origin`**: allineato con `origin/master` il 2026-09-09 (commit
+   `416f034`: rinomina master + §2.2 "stima per difetto/eccesso").
+   Continuare a chiedere all'utente prima di pushare.
+   NB: il materiale di lavoro non versionabile (`calibro.avif`, `IL CALIBRO A
+   CORSOIO.pdf`, `Caliper_detail_view.jpeg`, i `.rtf` incl. `chiave github.rtf`)
+   è ora in `.gitignore`.
