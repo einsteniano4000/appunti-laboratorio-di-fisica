@@ -339,7 +339,7 @@ avanzamento passo-passo). Aggiornarlo insieme a questo file.
 
 Prefazione riscritta (testo dell'autore).
 
-Frontespizio (2026-09-08, richiesta utente): titolo **"Scienze integrate Fisica"**,
+Frontespizio (2026-09-08, richiesta utente): titolo **"Scienze Sperimentali Fisica"**,
 sottotitolo **"Ad uso degli istituti tecnici"**, autore **Antonio Romano**
 (`\title`/`\author` in `preambolo.tex`; `\thanks` sull'autore = nota "realizzata
 con l'aiuto di Claude Code di Anthropic e composta in LaTeX"; `\date{}` per NON
